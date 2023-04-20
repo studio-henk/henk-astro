@@ -1,0 +1,438 @@
+---
+// import "../styles/global.css";
+// import Test from "../components/Test.astro";
+// import OrgMedia from "../components/OrgMedia.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Content Blocks">
+  <section>
+    <div class="hero-block">
+      <picture>
+        <source
+          media="(max-width: 991px)"
+          sizes="(max-width: 991px) 100vw, 1982px"
+          srcset="
+/images/squashed/hero_1982x1688.jpg 1982w
+"
+        />
+        <img
+          class="hero__image"
+          sizes="(min-width: 1020px) 968px, 95.43vw"
+          srcset="
+/images/squashed/hero.jpg 3024w"
+          src="/images/squashed/hero.jpg"
+          alt="kids on sofa"
+          width="3024"
+          height="1872"
+        />
+      </picture>
+      <div class="hero__content">
+        <div></div>
+        <div class="col2">
+          <h1 class="h4">About Us</h1>
+          <h2 class="h3">
+            We are a conscious Dutch design brand that makes beautiful and
+            functional furniture to last a lifetime.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="content-block" style="background-color: var(--color-accent1);">
+      <div class="content-block__container">
+        <div class="content-block__layout">
+          <div class="content-block__header">
+            <h2 class="content-block__heading">B-corp certified</h2>
+            <p class="content-block__subheading" data-hide="mobile|tablet">
+              ‘We’re proud to be part of the B Corp community.’
+            </p>
+          </div>
+          <div class="content-block__content">
+            <p class="content-block__body-text">
+              2023 is an exciting year for Studio HENK - we celebrate our 10th
+              anniversary and obtaining our B Corp Certification. As a B Corp,
+              we’re part of a global community of businesses that meet high
+              standards of social and environmental impact. We are proud to be
+              part of a movement that uses business as a force for good.
+            </p>
+            <p>
+              2023 is an exciting year for Studio HENK - we celebrate our 10th
+              anniversary and obtaining our B Corp Certification. As a B Corp,
+              we’re part of a global community of businesses that meet high
+              standards of social and environmental impact. We are proud to be
+              part of a movement that uses business as a force for good.
+            </p>
+            <a
+              class="sh-atom-button"
+              data-style="filled"
+              href="#somewhereovertherainbow">Found out more</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class="content-block" style="background-color: var(--color-accent1);">
+      <div class="content-block__container">
+        <div class="content-block__layout">
+          <div class="content-block__header">
+            <h2 class="content-block__heading">B-corp certified</h2>
+            <p class="content-block__subheading" data-hide="mobile|tablet">
+              ‘We’re proud to be part of the B Corp community.’
+            </p>
+          </div>
+          <div class="content-block__content">
+            <p class="content-block__body-text">
+              2023 is an exciting year for Studio HENK - we celebrate our 10th
+              anniversary and obtaining our B Corp Certification. As a B Corp,
+              we’re part of a global community of businesses that meet high
+              standards of social and environmental impact. We are proud to be
+              part of a movement that uses business as a force for good.
+            </p>
+            <a
+              href="#"
+              class="sh-atom-button"
+              data-style="plain-dark"
+              data-icon-arrow-right="true"
+            >
+              Find out more
+              <span class="icon-frame">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="arrow-right-line"
+                    d="M0 10H12.5185"
+                    stroke="currentcolor"
+                    stroke-width="0.8"></path>
+                  <path
+                    id="arrow-right-point"
+                    d="M8.66667 6L13 10L8.66667 14"
+                    stroke="currentcolor"
+                    stroke-width="0.8"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class="content-block" style="background-color: var(--color-accent1);">
+      <div class="content-block__container">
+        <div class="content-block__layout">
+          <div class="content-block__header">
+            <h2 class="content-block__heading">B-corp certified</h2>
+            <p class="content-block__subheading" data-hide="mobile|tablet">
+              ‘We’re proud to be part of the B Corp community.’
+            </p>
+          </div>
+          <div class="content-block__content">
+            <p class="content-block__body-text ts-xxlarge">
+              2023 is an exciting year for Studio HENK - we celebrate our 10th
+              anniversary and obtaining our B Corp Certification. As a B Corp,
+              we’re part of a global community of businesses that meet high
+              standards of social and environmental impact. We are proud to be
+              part of a movement that uses business as a force for good.
+            </p>
+            <a
+              class="sh-atom-button"
+              data-style="filled"
+              href="#somewhereovertherainbow">Found out more</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <h2>Images</h2>
+    <div
+      class="content-block image-block"
+      style="background-color: var(--color-accent1);"
+    >
+      <div class="content-block__container">
+        <div class="image-block__layout">
+          <picture>
+            <source
+              media="(max-width: 991px)"
+              sizes="(max-width: 991px) 100vw, 828px"
+              srcset="
+/images/img_kids/kids_p_414x519.jpg 414w,
+/images/img_kids/kids_p_828x1038.jpg 828w,
+/images/img_kids/kids_p_1656x2076.jpg 1656w
+"
+            />
+            <img
+              class="image-block__image"
+              sizes="(min-width: 1020px) 968px, 95.43vw"
+              srcset="
+/images/img_kids/kids_l_968x587.jpg 968w,
+/images/img_kids/kids_l_1936x1173.jpg 1936w"
+              src="/images/img_kids/kids_l_1936x1173.jpg"
+              alt="kids on sofa"
+              width="1936"
+              height="1173"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <h3>2 columns</h3>
+    <p>wide 968px, gap 32, is 936px / 2 = 468px per image.</p>
+    <div
+      class="content-block image-block"
+      style="background-color: var(--color-accent1);"
+    >
+      <div class="content-block__container">
+        <div class="image-block__layout" data-grid-columns="2">
+          <img
+            class="image-block__image"
+            sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
+            srcset="
+/images/squashed/window_p_468x585.jpg 468w,
+/images/squashed/window_p_740x925.jpg 740w,
+/images/squashed/window_p_936x1170.jpg 936w"
+            src="/images/squashed/window_p_936x1170.jpg"
+            alt="window"
+            width="936"
+            height="1170"
+          />
+          <img
+            class="image-block__image"
+            sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
+            srcset="
+/images/squashed/sea_p_468x585.jpg 468w,
+/images/squashed/sea_p_936x1170.jpg 936w"
+            src="/images/squashed/sea_p_936x1170.jpg"
+            alt="sea"
+            width="936"
+            height="1170"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <h2>Image + Content</h2>
+  <section>
+    <div
+      class="image-text-block"
+      style="background-color: var(--color-accent1);"
+    >
+      <div class="image-text-block__container">
+        <div class="image-text-block__layout" data-grid-columns="2">
+          <img
+            class="image-text-block__image"
+            sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
+            srcset="
+/images/squashed/window_p_468x585.jpg 468w,
+/images/squashed/window_p_740x925.jpg 740w,
+/images/squashed/window_p_936x1170.jpg 936w"
+            src="/images/squashed/window_p_936x1170.jpg"
+            alt="window"
+            width="936"
+            height="1170"
+          />
+          <div class="image-text-block__content">
+            <p>2020</p>
+            <p class="ts-xxlarge">
+              ‘Together with Renewi we created a 100% recycled coniferous wood
+              dining table.’
+            </p>
+            <a
+              href="#"
+              class="sh-atom-button"
+              data-style="filled"
+              data-icon-arrow-right="true"
+            >
+              Find out more
+              <span class="icon-frame">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="arrow-right-line"
+                    d="M0 10H12.5185"
+                    stroke="currentcolor"
+                    stroke-width="0.8"></path>
+                  <path
+                    id="arrow-right-point"
+                    d="M8.66667 6L13 10L8.66667 14"
+                    stroke="currentcolor"
+                    stroke-width="0.8"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>triptych image block</h2>
+    <p>grid with 3 columns, gap 40px: 968 - 80 = 888</p>
+    <p>296 per column</p>
+    <p>image 296 x 2 = 592px wide x</p>
+    <div class="triptych" style="background-color: var(--color-accent1);">
+      <div class="triptych__container">
+        <div class="triptych__layout" data-grid-columns="3">
+          <div class="triptych__item">
+            <a href="#" class="triptych__image-link">
+              <img
+                class="triptych__image"
+                srcset="
+                /images/squashed/xander1_280x373.jpg 280w,
+                /images/squashed/xander1_592x788.jpg 592w,
+                /images/squashed/xander1_943x1255.jpg 943w,
+                /images/squashed/xander1_1886x2510.jpg 1886w
+                "
+                sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
+                src="/images/squashed/xander1_1886x2510.jpg"
+                alt="window"
+                width="1886"
+                height="2510"
+              />
+              <img
+                class="triptych__image-hover"
+                src="/images/squashed/xander2_592x788.jpg"
+                alt="window"
+                width="592"
+                height="788"
+              />
+            </a>
+            <div class="triptych__content">
+              <p>Xander Albers</p>
+              <p class="triptych__quote">
+                ‘We support the personal development of our employees through an
+                annual training’
+              </p>
+            </div>
+          </div>
+          <div class="triptych__item">
+            <a href="#" class="triptych__image-link">
+              <img
+                class="triptych__image"
+                srcset="
+                /images/squashed/okke1_280x373.jpg 280w,
+                /images/squashed/okke1_592x788.jpg 592w,
+                /images/squashed/okke1_943x1255.jpg 943w,
+                /images/squashed/okke1_1886x2510.jpg 1886w
+                "
+                sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
+                src="/images/squashed/okke1_1886x2510.jpg"
+                alt="window"
+                width="1886"
+                height="2510"
+              />
+              <img
+                class="triptych__image-hover"
+                src="/images/squashed/xander2_592x788.jpg"
+                alt="window"
+                width="592"
+                height="788"
+              />
+            </a>
+            <div class="triptych__content">
+              <p>Okke Albers</p>
+              <p class="triptych__quote">
+                ‘We support the personal development of our employees through an
+                annual training’
+              </p>
+            </div>
+          </div>
+          <div class="triptych__item">
+            <a href="#" class="triptych__image-link">
+              <img
+                class="triptych__image"
+                srcset="
+                /images/squashed/xander1_280x373.jpg 280w,
+                /images/squashed/xander1_592x788.jpg 592w,
+                /images/squashed/xander1_943x1255.jpg 943w,
+                /images/squashed/xander1_1886x2510.jpg 1886w
+                "
+                sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
+                src="/images/squashed/xander1_1886x2510.jpg"
+                alt="window"
+                width="1886"
+                height="2510"
+              />
+              <img
+                class="triptych__image-hover"
+                src="/images/squashed/xander2_592x788.jpg"
+                alt="window"
+                width="592"
+                height="788"
+              />
+            </a>
+            <div class="triptych__content">
+              <p>Xander Albers</p>
+              <p class="triptych__quote">
+                ‘We support the personal development of our employees through an
+                annual training’
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .hero-block {
+    position: relative;
+    height: 100vh;
+    background: #e5ddd2;
+  }
+
+  .hero-block * {
+    margin-top: 0;
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+  }
+
+  .hero__content {
+    position: absolute;
+    z-index: 2;
+    top: 125px;
+    left: 24px;
+    max-width: 290px;
+  }
+
+  @media only screen and (min-width: 992px) {
+    .hero__image {
+      object-fit: cover;
+    }
+    .hero__content {
+      max-width: none;
+      /* position: absolute;
+      z-index: 2; */
+      /* top: 125px; */
+      left: 50%;
+      width: 968px;
+      column-gap: 48px;
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      transform: translateX(-50%);
+    }
+  }
+</style>

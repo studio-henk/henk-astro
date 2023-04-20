@@ -1,0 +1,240 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import OrgMedia from "../components/OrgMedia.astro";
+import HeadingBadge from "../components/HeadingBadge.astro";
+import CartList from "../components/CartList.astro";
+---
+
+<BaseLayout title="Cart list">
+
+
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "/src/scripts/vue.esm-browser.js",
+          "vueprod": "/src/scripts/vue.esm-browser.prod.js"
+        }
+      }
+    </script>      
+      <div class="cart-page-layout-container" id="app">
+        <div id="heading-badge" class="cart-page__grid-item" data-hide="tablet|desktop">
+          <!-- heading badge -->
+          <HeadingBadge />
+        </div>
+        <div id="continue-shopping" class="cart-page__grid-item" data-hide="mobile">
+          <div
+            class="sh-molecule-padding-box"
+            style="
+                    --size-spacing-units-top: 5;
+                    --size-spacing-units-right: 6;
+                    --size-spacing-units-bottom: 5;
+                    --size-spacing-units-left: 6;
+                    --size-spacing-units-top-desktop: 5;
+                    --size-spacing-units-right-desktop: 6;
+                    --size-spacing-units-bottom-desktop: 5;
+                    --size-spacing-units-left-desktop: 6;
+                "
+          >       
+            <a
+              href="#"
+              class="sh-atom-button"
+              data-style="soft"
+            >Verder winkelen
+            </a>            
+          </div>
+        </div>
+        <div class="cart-page__grid-item" id="cart-list">
+          <!-- cart-list -->
+          <!-- contains modal for desktop -->
+          <CartList />          
+        </div>
+        <div class="cart-page__grid-item" id="info-boxes">
+          <div class="organism-grid-section-infobox">
+            <div
+              class="molecule-info-box"
+              style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);"
+            >
+              <div
+                class="sh-molecule-padding-box"
+                style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;"
+              >
+                <div class="component-layout-box">
+                  <span class="sh-atom-icon">
+                    <svg
+                      class="sh-atom-icon__svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      aria-labelledby="iconPhone"
+                      id="iconPhone"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <title>iconPhone</title>
+                      <desc>icon of a phone</desc>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.23887 2L7.7656 7.05663L4.92805 9.89418C5.57414 10.8959 6.3477 11.8478 7.24995 12.7501C8.1522 13.6523 9.10409 14.4259 10.1058 15.072L12.9434 12.2344L18 15.7611L16.6193 17.1418C15.858 17.9031 14.7406 18.1855 13.7091 17.8773C11.0295 17.0769 8.62885 15.6102 6.50932 13.4907C4.38979 11.3712 2.92316 8.97048 2.12266 6.2909C1.8145 5.25939 2.09691 4.14196 2.85815 3.38072L4.23887 2ZM11.0332 15.6259C11.9828 16.1491 12.9747 16.5648 14.0089 16.8738C14.6716 17.0717 15.3896 16.8903 15.8786 16.4012L16.375 15.9048L13.0637 13.5953L11.0332 15.6259ZM4.37414 8.96682L6.40467 6.93629L4.09519 3.62495L3.59879 4.12135C3.1097 4.61044 2.92826 5.32836 3.12625 5.99109C3.43523 7.02535 3.85088 8.01721 4.37414 8.96682Z"
+                        fill="currentcolor"></path>
+                    </svg>
+                  </span>
+                  <header class="info-box__header">
+                    <p class="info-box__heading">Waar kunnen we mee helpen?</p>
+                  </header>
+                  <div class="info-box__body">
+                    <a href="tel:+31(0)12345678">+31 (0)12345678</a><br /><a
+                      href="mailto:info@studio-henk.nl">info@studio-henk.nl</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="molecule-info-box"
+              style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);"
+            >
+              <div
+                class="sh-molecule-padding-box"
+                style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;"
+              >
+                <div class="component-layout-box">
+                  <span class="sh-atom-icon">
+                    <svg
+                      class="sh-atom-icon__svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 20 20"
+                      aria-labelledby="iconTruck"
+                      id="iconTruck"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <title>iconTruck</title>
+                      <desc>icon of a delivery truck</desc>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2 5H12.8718V13.674H6.73373V13.0586H12.2564V5.61538H2.61538V13.0586H3.84615V13.674H2V5Z"
+                        fill="currentcolor"></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.2564 6.4652H16.4173L18 9.6307V13.674H15.9194V13.0586H17.3846V9.77597L16.0369 7.08059H12.8718V13.0586H13.6044V13.674H12.2564V6.4652Z"
+                        fill="currentcolor"></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.2381 12.2088C4.59882 12.2088 4.08059 12.727 4.08059 13.3663C4.08059 14.0056 4.59882 14.5238 5.2381 14.5238C5.87737 14.5238 6.3956 14.0056 6.3956 13.3663C6.3956 12.727 5.87737 12.2088 5.2381 12.2088ZM3.4652 13.3663C3.4652 12.3872 4.25895 11.5934 5.2381 11.5934C6.21724 11.5934 7.01099 12.3872 7.01099 13.3663C7.01099 14.3454 6.21724 15.1392 5.2381 15.1392C4.25895 15.1392 3.4652 14.3454 3.4652 13.3663Z"
+                        fill="currentcolor"></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.7619 12.2088C14.1226 12.2088 13.6044 12.727 13.6044 13.3663C13.6044 14.0056 14.1226 14.5238 14.7619 14.5238C15.4012 14.5238 15.9194 14.0056 15.9194 13.3663C15.9194 12.727 15.4012 12.2088 14.7619 12.2088ZM12.989 13.3663C12.989 12.3872 13.7828 11.5934 14.7619 11.5934C15.741 11.5934 16.5348 12.3872 16.5348 13.3663C16.5348 14.3454 15.741 15.1392 14.7619 15.1392C13.7828 15.1392 12.989 14.3454 12.989 13.3663Z"
+                        fill="currentcolor"></path>
+                    </svg>
+                  </span>
+                  <header class="info-box__header">
+                    <p class="info-box__heading">Gratis levering</p>
+                  </header>
+                  <div class="info-box__body">
+                    <p>
+                      Lorem ipsum dolor sit amet, ectetur adi piscing elit,
+                      tincidunt tincidunt.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="molecule-info-box"
+              style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);"
+            >
+              <div
+                class="sh-molecule-padding-box"
+                style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;"
+              >
+                <div class="component-layout-box">
+                  <span class="sh-atom-icon">
+                    <svg
+                      class="sh-atom-icon__svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      aria-labelledby="iconCalendar"
+                      id="iconCalendar"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <title>iconCalendar</title>
+                      <desc>icon of a calendar</desc>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.99702 2V3.62766H14.0031V2H14.5706V3.62766H18V6.88261V7.42125V18H2V7.42125V6.88261V3.62766H5.42951V2H5.99702ZM17.4325 6.88261V4.1663H2.56751V6.88261H17.4325ZM2.56751 7.42125V17.4614H17.4325V7.42125H2.56751ZM10.2838 12.5787H12.8558V13.1173H10.2838V15.5587H9.71625V13.1173H7.1441V12.5787H9.71625V10.1376H10.2838V12.5787Z"
+                        fill="currentcolor"></path>
+                    </svg>
+                  </span>
+                  <header class="info-box__header">
+                    <p class="info-box__heading">Bezorgen op afspraak</p>
+                  </header>
+                  <div class="info-box__body">
+                    <p>
+                      Lorem ipsum dolor sit amet, ectetur adi piscing elit,
+                      tincidunt tincidunt.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="action-console"
+          class="action-console cart-page__grid-item"
+          data-is-sticky="true"
+          data-has-toolbar="true"
+        >
+          <div class="action-console__layout-box">
+            <ul class="cost-section__list">
+              <li class="cost-section__list-item">
+                <p class="cost-section__label">Shipping</p>
+                <p class="cost-section__data"><strong>FREE</strong></p>
+              </li>
+              <li class="cost-section__list-item">
+                <p class="cost-section__label">
+                  <small>Total incl VAT</small>
+                </p>
+                <p class="cost-section__data"><small>€49</small></p>
+              </li>
+            </ul>
+            <div class="action-console__toolbar">
+              <a
+                href="/en/checkout/delivery"
+                class="sh-atom-button"
+                data-role="primary"
+                data-style="filled"
+              >Naar gegevens
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- vue app -->
+    <!--
+      Modal component with customizable slots and CSS transitions.
+      for production use: vue.esm-browser.prod.js
+    -->
+    <script type="module">
+      // import { createApp } from "vue";
+      import { createApp } from "vueprod";
+      import SideModal from "/src/scripts/sideModal.js";
+
+      createApp({
+        components: {
+          SideModal,
+        },
+      }).mount("#app");
+    </script>
+    <script src="src/scripts/org-sheet.js" defer></script>
+  

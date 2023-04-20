@@ -1,0 +1,216 @@
+.sh-atom-button {
+    font-family: "ff-scala-sans-pro", sans-serif;
+    /* 17px */
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 200%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    text-transform: none;
+    padding: 7px 20px;
+    cursor: pointer;
+    font-feature-settings: "pnum" on, "lnum" on;
+    background-color: var(--color-background-button, transparent);
+    color: var(--color-text-button, #fff);
+    border: 1px solid var(--color-border-button, #fff);
+    border-radius: 34px;
+    transition: all 0.6s ease;
+}
+
+.sh-atom-button[data-style="filled"] {
+    --color-background-button: var(--color-henk-black);
+    --color-text-button: var(--color-henk-white);
+    --color-border-button: var(--color-henk-black);
+}
+
+.sh-atom-button[data-style="outline-dark"] {
+    --color-background-button: var(--color-transparent);
+    --color-text-button: var(--color-henk-black);
+    --color-border-button: var(--color-henk-black);
+    border-width: 1px;
+}
+
+.sh-atom-button:hover {
+    --color-background-button: var(--color-henk-black);
+    --color-text-button: var(--color-henk-white);
+    --color-border-button: var(--color-henk-black);
+}
+
+.sh-atom-button[data-style="filled"]:hover,
+.sh-atom-button[data-style*="outline"]:hover {
+    opacity: 0.85;
+}
+
+.sh-atom-button[data-style="soft"] {
+    --color-background-button: var(--color-accent5);
+    --color-text-button: var(--color-henk-black);
+    --color-border-button: var(--color-accent5);
+}
+
+.sh-atom-button[data-style="soft"]:hover {
+    --color-background-button: var(--color-henk-black);
+    --color-text-button: var(--color-henk-white);
+    --color-border-button: var(--color-henk-black);
+}
+
+.sh-atom-button[data-style="plain"],
+.sh-atom-button[data-style="plain-dark"] {
+    --color-background-button: var(--color-transparent);
+    --color-text-button: var(--color-henk-black);
+    padding: 0;
+    border: 0;
+}
+
+.sh-atom-button[data-style="plain-light"] {
+    --color-background-button: var(--color-transparent);
+    --color-text-button: var(--color-henk-white);
+    padding: 0;
+    border: 0;
+}
+
+.sh-atom-button[data-style="plain"]:hover,
+.sh-atom-button[data-style="plain-dark"]:hover,
+.sh-atom-button[data-style="plain-light"]:hover {
+    text-decoration: underline;
+}
+
+/* plain light or dark with animated underline */
+.sh-atom-button[data-style*="plain"][data-animated-hover] {
+    text-decoration: none;
+}
+
+.sh-atom-button[data-animated-hover] {
+    position: relative;
+}
+
+.sh-atom-button[data-style*="plain"][data-animated-hover]::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background: rgba(0 0 0 / 96%);
+    display: block;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    transition: width 0.075s cubic-bezier(0, 0, 1, 0.06), top 0.75s cubic-bezier(0, 0, 1, 0.06);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .sh-atom-button[data-style*="plain"][data-animated-hover]::before {
+        width: 0;
+    }
+}
+
+.sh-atom-button[data-style*="plain"][data-animated-hover]:hover::before {
+    width: 45%;
+    transition: width 0.25s cubic-bezier(0, 0, 0, 1.06);
+}
+
+.sh-atom-button[data-style*="plain"][data-size="small"] {
+    /* 12px */
+    font-size: 0.75rem;
+    line-height: 20px;
+}
+
+/* ,
+.sh-atom-button[data-style*="plain"]:not([data-animated-hover]):hover */
+
+.sh-atom-button[data-text-underline="true"] {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+    text-decoration-skip-ink: auto;
+}
+
+.sh-atom-button:disabled,
+.sh-atom-button[data-disabled="true"] {
+    opacity: 0.5;
+    /* pointer-events: none; */
+}
+
+.sh-atom-button:disabled:hover,
+.sh-atom-button[data-disabled="true"]:hover {
+    cursor: not-allowed;
+}
+
+.sh-atom-button[data-expand="true"] {
+    width: 100%;
+}
+
+/* arrows */
+.sh-atom-button::selection {
+    background-color: transparent;
+    color: currentcolor;
+}
+
+.sh-atom-button[data-icon-arrow-left="true"],
+.sh-atom-button[data-icon-arrow-right="true"] {
+    gap: 8px;
+}
+
+.sh-atom-button[data-icon-arrow-left="true"]:not([data-style*="plain"]) {
+    padding-left: 14px;
+}
+
+.sh-atom-button[data-icon-arrow-right="true"]:not([data-style*="plain"]) {
+    padding-right: 14px;
+}
+
+.sh-atom-button[data-icon-arrow-left="true"] .icon-frame,
+.sh-atom-button[data-icon-arrow-right="true"] .icon-frame {
+    /*padding: 2px 0 0 0;*/
+    padding: 0;
+    width: 20px;
+}
+
+.sh-atom-button[data-icon-arrow-left="true"] path,
+.sh-atom-button[data-icon-arrow-right="true"] path {
+    transition: all 0.3s ease;
+}
+
+.sh-atom-button[data-icon-arrow-right="true"]:hover #arrow-right-line {
+    transform: scaleX(1.5);
+}
+
+.sh-atom-button[data-icon-arrow-right="true"]:hover #arrow-right-point {
+    transform: translateX(7px);
+}
+
+.sh-atom-button[data-icon-arrow-left="true"]:hover #arrow-left-line {
+    transform: scaleX(1.5) translateX(-7px);
+}
+
+.sh-atom-button[data-icon-arrow-left="true"]:hover #arrow-left-point {
+    transform: translateX(-7px);
+}
+
+/* override plain underline */
+.sh-atom-button[data-icon-arrow-left="true"][data-style*="plain"],
+.sh-atom-button[data-icon-arrow-right="true"][data-style*="plain"] {
+    text-decoration: none;
+}
+
+/* high res */
+@media (min-resolution: 2dppx) {
+    .sh-atom-button {
+        border-width: 0.5px;
+    }
+
+    .sh-atom-button[data-text-underline="true"] {
+        text-decoration-thickness: 0.5px;
+    }
+
+    .sh-atom-button[data-text-underline="true"],
+    .sh-atom-button[data-style*="plain"]:not([data-animated-hover]):hover {
+        text-decoration-thickness: 0.5px;
+    }
+
+    .sh-atom-button[data-style*="plain"][data-animated-hover]::before {
+        height: 0.5px;
+    }
+}

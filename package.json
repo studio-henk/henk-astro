@@ -1,0 +1,22 @@
+{
+  "name": "test-henk-astro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^2.1.4",
+    "sass": "^1.59.3"
+  },
+  "devDependencies": {
+    "prettier-plugin-astro": "^0.8.0"
+  }
+}

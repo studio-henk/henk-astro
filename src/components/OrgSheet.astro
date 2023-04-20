@@ -1,0 +1,41 @@
+---
+import OrgMedia from "../components/OrgMedia.astro";
+import ProdSpecs from "../components/ProdSpecs.astro";
+---
+
+<div class="cmp-sheet" data-theme="cmp-sheet-theme-henk">
+  <div class="cmp-sheet__overlay">
+    <div class="cmp-sheet__content">
+      <header class="cmp-sheet__content-header">
+        <div class="cmp-sheet__content-header-touch-target"></div>
+        <button
+          type="button"
+          class="sh-atom-button-icon sh-atom-button--close"
+          id="close-button-sheet"
+        >
+          <svg
+            width="16"
+            height="15"
+            viewBox="0 0 16 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.44766 0.810913L15.0795 14.4427"
+              stroke="currentColor"
+              stroke-linecap="round"></path>
+            <path
+              d="M15.0797 0.810913L1.44785 14.4428"
+              stroke="currentColor"
+              stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </header>
+      <main class="cmp-sheet__content-body">
+        <OrgMedia />
+        <!-- specs -->
+        <ProdSpecs />
+      </main>
+    </div>
+  </div>
+</div>

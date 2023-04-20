@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Buttons">
+  <div class="frame" style="background-color: var(--color-accent16);">
+    <h1>Buttons</h1>
+    <div class="example">
+      <button type="button">button text</button>
+    </div>
+    <div class="example" style="background-color: var(--color-accent16);">
+      <button type="button" class="sh-atom-button">button text</button>
+    </div>
+    <div class="example" style="background-color: var(--color-accent16);">
+      <button type="button" class="sh-atom-button" data-style="outline-dark"
+        >button text</button
+      >
+    </div>
+    <div class="example" style="background-color: var(--color-accent16);">
+      <button type="button" class="sh-atom-button" data-style="filled"
+        >button text</button
+      >
+    </div>
+    <div class="example" style="background-color: var(--color-accent16);">
+      <button type="button" class="sh-atom-button" data-style="soft"
+        >button text</button
+      >
+    </div>
+    <div class="example" style="background-color: var(--color-accent16);">
+      <a
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-icon-arrow-right="true"
+      >
+        icon right
+        <span class="icon-frame">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="arrow-right-line"
+              d="M0 10H12.5185"
+              stroke="currentcolor"
+              stroke-width="0.8"></path>
+            <path
+              id="arrow-right-point"
+              d="M8.66667 6L13 10L8.66667 14"
+              stroke="currentcolor"
+              stroke-width="0.8"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div class="example" style="background-color: var(--color-accent16);">
+      <a
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-icon-arrow-left="true"
+      >
+        <span class="icon-frame">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="arrow-left-line"
+              d="M20 10L7.48148 10"
+              stroke="currentcolor"
+              stroke-width="0.8"></path>
+            <path
+              id="arrow-left-point"
+              d="M11.3333 14L7 10L11.3333 6"
+              stroke="currentcolor"
+              stroke-width="0.8"></path>
+          </svg>
+        </span>
+        icon left
+      </a>
+    </div>
+    <div class="example" style="background-color: var(--color-accent16);">
+      <a
+        href="#"
+        class="sh-atom-button"
+        data-style="plain-light"
+        data-icon-arrow-right="true"
+      >
+        plain + icon right
+        <span class="icon-frame">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="arrow-right-line"
+              d="M0 10H12.5185"
+              stroke="currentcolor"
+              stroke-width="0.8"></path>
+            <path
+              id="arrow-right-point"
+              d="M8.66667 6L13 10L8.66667 14"
+              stroke="currentcolor"
+              stroke-width="0.8"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div class="example" style="background-color: var(--color-accent16);">
+      <a
+        href="#"
+        class="sh-atom-button"
+        data-style="plain-dark"
+        data-icon-arrow-left="true"
+      >
+        <span class="icon-frame">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="arrow-left-line"
+              d="M20 10L7.48148 10"
+              stroke="currentcolor"
+              stroke-width="0.8"></path>
+            <path
+              id="arrow-left-point"
+              d="M11.3333 14L7 10L11.3333 6"
+              stroke="currentcolor"
+              stroke-width="0.8"></path>
+          </svg>
+        </span>
+        icon left
+      </a>
+    </div>
+  </div>
+</BaseLayout>

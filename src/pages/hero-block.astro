@@ -1,0 +1,148 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Hero Block 2">
+  <div class="hero-block">
+    <img
+      class="hero__image"
+      src="/images/squashed/hero@2x.jpg"
+      alt="founders of Studio Henk"
+      width="933"
+      height="607"
+    />
+    <img
+      class="hero__swirl"
+      src="/images/swirl.svg"
+      alt="swirl"
+      width="197"
+      height="51"
+    />
+    <div class="hero__content">
+      <div></div>
+      <div class="col2">
+        <h1 class="h4">About Us</h1>
+        <h2 class="h3">
+          We are a conscious Dutch design brand that makes beautiful and
+          functional furniture to last a lifetime.
+        </h2>
+      </div>
+    </div>
+  </div>
+  <!-- <section>
+    <div class="hero-block2">
+      <div class="hero__content2">
+        <div data-hide="mobile"></div>
+        <div class="col2">
+          <h1 class="h4">About Us</h1>
+          <h2 class="ts-xxlarge">
+            We are a conscious Dutch design brand that makes beautiful and
+            functional furniture to last a lifetime.
+          </h2>
+        </div>
+      </div>
+      <img
+        class="hero__image2"
+        src="/images/squashed/hero_test.jpg"
+        alt="kids on sofa"
+        width="1982"
+        height="1688"
+      />
+    </div>
+  </section> -->
+  <section>
+    <div class="content-block" style="background-color: var(--color-accent1);">
+      <div class="content-block__container">
+        <div class="content-block__layout">
+          <div class="content-block__header">
+            <h2 class="content-block__heading">B-corp certified</h2>
+            <p class="content-block__subheading" data-hide="mobile|tablet">
+              ‘We’re proud to be part of the B Corp community.’
+            </p>
+          </div>
+          <div class="content-block__content">
+            <p class="content-block__body-text">
+              2023 is an exciting year for Studio HENK - we celebrate our 10th
+              anniversary and obtaining our B Corp Certification. As a B Corp,
+              we’re part of a global community of businesses that meet high
+              standards of social and environmental impact. We are proud to be
+              part of a movement that uses business as a force for good.
+            </p>
+            <p>
+              2023 is an exciting year for Studio HENK - we celebrate our 10th
+              anniversary and obtaining our B Corp Certification. As a B Corp,
+              we’re part of a global community of businesses that meet high
+              standards of social and environmental impact. We are proud to be
+              part of a movement that uses business as a force for good.
+            </p>
+            <a
+              class="sh-atom-button"
+              data-style="filled"
+              href="#somewhereovertherainbow">Found out more</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+<!-- <style>
+  .hero-block3 {
+    background: #e5ddd2;
+    height: 100svh;
+    display: grid;
+  }
+
+  .hero-block3 .hero__image3 {
+    object-fit: contain;
+    object-position: center bottom;
+    position: absolute;
+    bottom: 0;
+    justify-self: center;
+  }
+
+  @media only screen and (max-width: 991px) and (orientation: landscape) {
+    .hero-block3 .hero__image3 {
+      justify-self: flex-end;
+      width: 50%;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) and (orientation: landscape) {
+    .hero-block3 .hero__image3 {
+      /* justify-self: flex-end; */
+      width: 80%;
+    }
+  }
+</style> -->
+<!-- <style>
+  .hero-block2 {
+    background-color: yellow;
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  /* fullheight if screen higher than 
+  - 422 (height of text + image on 375)
+  - 446 (height of text + image on 414) 
+  */
+
+  @media only screen and (max-width: 991px) and (orientation: portrait) {
+    .hero-block2 {
+      height: 100svh;
+    }
+  }
+
+  .hero-block2 .hero__content2 {
+    max-width: 290px;
+  }
+
+  .hero-block2 .hero__image2 {
+    height: auto;
+    align-self: flex-end;
+  }
+
+  .hero-block2 .hero-block2__picture {
+    display: block;
+  }
+</style> -->

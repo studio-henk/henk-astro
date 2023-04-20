@@ -1,0 +1,21 @@
+@import url(../../../../v10/public/static/std/assets/toolkit/styles/toolkit.css);
+/* @import url(media.css); */
+/* 
+@import url(atom-button-icon.css);
+@import url(sideModal.css); */
+/* @import url(atom-button-new.css); */
+
+/* config */
+:root {
+    /* button background-color */
+    /* --color-background-button: var(--color-transparent); */
+  
+    /* button text */
+    /* --color-text-button: var(--color-henk-white); */
+  
+    /* button border */
+    /* --color-border-button: var(--color-henk-white); */
+}
+
+/* The keywords in the following list are defined by the CSS Color Module Level 4 specification: AccentColor, AccentColorText, ActiveText, ButtonBorder, ButtonFace, ButtonText, Canvas, CanvasText, Field, FieldText, GrayText, Highlight, HighlightText, LinkText, Mark, MarkText, SelectedItem, SelectedItemText, VisitedText. */
+
