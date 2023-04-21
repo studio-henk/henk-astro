@@ -1,8 +1,6 @@
 ---
-// import "../styles/global.css";
-// import Test from "../components/Test.astro";
-// import OrgMedia from "../components/OrgMedia.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TwoImagesBlock from "../components/content/TwoImagesBlock.astro";
 ---
 
 <BaseLayout title="Content Blocks">
@@ -192,38 +190,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <hr />
     <h3>2 columns</h3>
     <p>wide 968px, gap 32, is 936px / 2 = 468px per image.</p>
-    <div
-      class="content-block image-block"
-      style="background-color: var(--color-accent1);"
-    >
-      <div class="content-block__container">
-        <div class="image-block__layout" data-grid-columns="2">
-          <img
-            class="image-block__image"
-            sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
-            srcset="
-/images/squashed/window_p_468x585.jpg 468w,
-/images/squashed/window_p_740x925.jpg 740w,
-/images/squashed/window_p_936x1170.jpg 936w"
-            src="/images/squashed/window_p_936x1170.jpg"
-            alt="window"
-            width="936"
-            height="1170"
-          />
-          <img
-            class="image-block__image"
-            sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
-            srcset="
-/images/squashed/sea_p_468x585.jpg 468w,
-/images/squashed/sea_p_936x1170.jpg 936w"
-            src="/images/squashed/sea_p_936x1170.jpg"
-            alt="sea"
-            width="936"
-            height="1170"
-          />
-        </div>
-      </div>
-    </div>
+  </section>
+  <section>
+     <TwoImagesBlock />
   </section>
   <hr />
   <h2>Image + Content</h2>
