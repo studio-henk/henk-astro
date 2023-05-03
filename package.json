@@ -19,7 +19,6 @@
   "license": "ISC",
   "dependencies": {
     "astro": "^2.1.4",
-    "astro-webmanifest": "^0.6.0",
     "sass": "^1.59.3",
     "watch-cli": "^0.2.3"
   },
