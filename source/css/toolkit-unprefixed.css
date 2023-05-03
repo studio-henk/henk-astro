@@ -649,10 +649,6 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-html {
-  background-color: greenyellow !important;
-}
-
 body {
   background-color: var(--bg-default, #fff);
   color: var(--fg-default, #000);
