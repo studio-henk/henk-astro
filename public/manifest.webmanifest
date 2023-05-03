@@ -1,0 +1,12 @@
+{
+  "name": "Studio HENK",
+  "short_name": "HENK",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Design furniture with purpose",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
