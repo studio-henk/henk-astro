@@ -8,9 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "watch:scss": "watch -p 'source/scss/**/*.scss' -c 'npm run build'",
-    "build": "npm run compileSass && npm run autoprefix",
-    "z_build": "npm run compileSass && npm run autoprefix && npm run copyCSS && npm run copyCSStoAstro",
+    "watch:scss": "watch -p 'source/scss/**/*.scss' -c 'npm run buildCSS'",
+    "buildCSS": "npm run compileSass && npm run autoprefix",
     "compileSass": "sass source/scss/toolkit.scss source/css/toolkit-unprefixed.css --style=expanded",
     "autoprefix": "npx postcss source/css/toolkit-unprefixed.css --use autoprefixer cssnano --no-map -m -o public/static/std/assets/toolkit/styles/toolkit.css"
   },
