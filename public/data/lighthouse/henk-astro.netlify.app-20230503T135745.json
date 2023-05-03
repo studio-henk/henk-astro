@@ -52,7 +52,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 685.0835,
       "numericUnit": "millisecond",
-      "displayValue": "0.7 s"
+      "displayValue": "0.7 s"
     },
     "largest-contentful-paint": {
       "id": "largest-contentful-paint",
@@ -62,7 +62,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 734.8316,
       "numericUnit": "millisecond",
-      "displayValue": "0.7 s"
+      "displayValue": "0.7 s"
     },
     "first-meaningful-paint": {
       "id": "first-meaningful-paint",
@@ -72,7 +72,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 685.0835,
       "numericUnit": "millisecond",
-      "displayValue": "0.7 s"
+      "displayValue": "0.7 s"
     },
     "speed-index": {
       "id": "speed-index",
@@ -82,7 +82,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 685.0835,
       "numericUnit": "millisecond",
-      "displayValue": "0.7 s"
+      "displayValue": "0.7 s"
     },
     "screenshot-thumbnails": {
       "id": "screenshot-thumbnails",
@@ -158,7 +158,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 0,
       "numericUnit": "millisecond",
-      "displayValue": "0 ms"
+      "displayValue": "0 ms"
     },
     "max-potential-fid": {
       "id": "max-potential-fid",
@@ -168,7 +168,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 16,
       "numericUnit": "millisecond",
-      "displayValue": "20 ms"
+      "displayValue": "20 ms"
     },
     "cumulative-layout-shift": {
       "id": "cumulative-layout-shift",
@@ -209,7 +209,7 @@
       "scoreDisplayMode": "binary",
       "numericValue": 13.934999999999999,
       "numericUnit": "millisecond",
-      "displayValue": "Root document took 10 ms",
+      "displayValue": "Root document took 10 ms",
       "details": {
         "type": "opportunity",
         "headings": [
@@ -241,7 +241,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 685.0835,
       "numericUnit": "millisecond",
-      "displayValue": "0.7 s"
+      "displayValue": "0.7 s"
     },
     "user-timings": {
       "id": "user-timings",
@@ -494,7 +494,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 258.5740000000003,
       "numericUnit": "millisecond",
-      "displayValue": "0.3 s",
+      "displayValue": "0.3 s",
       "details": {
         "type": "table",
         "headings": [
@@ -552,7 +552,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 17.376,
       "numericUnit": "millisecond",
-      "displayValue": "0.0 s",
+      "displayValue": "0.0 s",
       "details": {
         "type": "table",
         "headings": [
@@ -1145,7 +1145,7 @@
       "scoreDisplayMode": "informative",
       "numericValue": 0.07419999999999999,
       "numericUnit": "millisecond",
-      "displayValue": "0 ms",
+      "displayValue": "0 ms",
       "details": {
         "type": "table",
         "headings": [
@@ -1189,7 +1189,7 @@
       "scoreDisplayMode": "informative",
       "numericValue": 21.5108,
       "numericUnit": "millisecond",
-      "displayValue": "20 ms",
+      "displayValue": "20 ms",
       "details": {
         "type": "table",
         "headings": [
@@ -1455,7 +1455,7 @@
       "description": "Third-party code can significantly impact load performance. Limit the number of redundant third-party providers and try to load third-party code after your page has primarily finished loading. [Learn how to minimize third-party impact](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/).",
       "score": 1,
       "scoreDisplayMode": "binary",
-      "displayValue": "Third-party code blocked the main thread for 0 ms",
+      "displayValue": "Third-party code blocked the main thread for 0 ms",
       "details": {
         "type": "table",
         "headings": [
@@ -2760,7 +2760,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 1793743,
       "numericUnit": "byte",
-      "displayValue": "Total size was 1,752 KiB",
+      "displayValue": "Total size was 1,752 KiB",
       "details": {
         "type": "table",
         "headings": [
@@ -2845,7 +2845,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 395,
       "numericUnit": "millisecond",
-      "displayValue": "Potential savings of 400 ms",
+      "displayValue": "Potential savings of 400 ms",
       "details": {
         "type": "opportunity",
         "headings": [
@@ -2905,7 +2905,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 0,
       "numericUnit": "millisecond",
-      "displayValue": "Potential savings of 8 KiB",
+      "displayValue": "Potential savings of 8 KiB",
       "warnings": [],
       "details": {
         "type": "opportunity",
@@ -2946,7 +2946,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 0,
       "numericUnit": "millisecond",
-      "displayValue": "Potential savings of 27 KiB",
+      "displayValue": "Potential savings of 27 KiB",
       "details": {
         "type": "opportunity",
         "headings": [
@@ -3003,7 +3003,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 680,
       "numericUnit": "millisecond",
-      "displayValue": "Potential savings of 837 KiB",
+      "displayValue": "Potential savings of 837 KiB",
       "warnings": [],
       "details": {
         "type": "opportunity",
@@ -3307,7 +3307,7 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 0,
       "numericUnit": "millisecond",
-      "displayValue": "Potential savings of 6 KiB",
+      "displayValue": "Potential savings of 6 KiB",
       "warnings": [],
       "details": {
         "type": "opportunity",
