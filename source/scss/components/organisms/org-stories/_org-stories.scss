@@ -1,0 +1,30 @@
+#sh-stories-overview {}
+
+.sh-stories__grid {}
+
+.sh-atom-link-more {}
+
+.sh-stories {
+  &__grid {
+
+    @media only screen and (min-width: 992px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      margin: 0 30px;
+    }
+  }
+
+  &__story {
+
+    .sh-stories__content {
+      padding: 0 24px 33px 24px;
+
+      @media only screen and (min-width: 992px) {
+        padding: 0;
+      }
+    }
+  }
+
+  &__title {}
+}

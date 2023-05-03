@@ -1,0 +1,52 @@
+.org-segmented-control {
+  // reset owl
+  * + * {
+    margin-top: 0;
+  }
+}
+
+/* component */
+.org-segmented-control {
+}
+
+.org-segmented-control__tab {
+  padding: 1rem 0;
+}
+
+/* set first tab visible on load */
+.org-segmented-control__tab:first-child {
+}
+
+/* control buttons styling */
+.org-segmented-control__controls {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+.org-segmented-control__button {
+  cursor: pointer;
+  flex: 1 1 50%;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  font-size: 0.75rem; // 12px
+  line-height: 28px;
+  color: black;
+}
+
+.org-segmented-control__button.tab__selected {
+  border-bottom: 1px solid #000;
+}
+
+/* active tab border bottom line */
+.org-segmented-control__controls::before {
+}
+
+/* control links styling */
+.org-segmented-control__controls a {
+}
+/* tab content styling */
+.org-segmented-control__tab ul,
+.org-segmented-control__tab ol {
+  margin-left: 20px;
+}

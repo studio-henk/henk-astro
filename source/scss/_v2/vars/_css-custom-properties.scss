@@ -1,0 +1,44 @@
+@use "sass:color";
+
+/* css custom props (variables) */
+:root,
+::before,
+::after {
+  /* fnt sizes */
+  --var-global-fontsize-xxx-large: 35;
+  --var-global-fontsize-xx-large: 24;
+  --var-global-fontsize-x-large: 27;
+  --var-global-fontsize-large: 20;
+  --var-global-fontsize-root: 16;
+  --var-global-fontsize-small: 12;
+  --var-global-fontsize-x-small: 12;
+  --var-global-fontsize-xx-small: 12;
+
+  // buttons
+  --var-global-button-fontsize: 12;
+  --var-global-button-lineheight: 21;
+
+  --var-global-button-bgc: var(--color-background-button);
+  --var-global-button-bgc-hover: var(--color-transparent);
+  --var-global-button-text-color: var(--color-text-button);
+  --var-global-button-text-color-hover: var(--color-black);
+  --var-global-button-border-color: var(--color-henk-black);
+  --var-global-button-border-color-hover: var(--color-black);
+  --bg-default: var(--color-white);
+  --fg-default: var(--color-henk-black);
+
+  /* css-vars */
+  --var-lineheight: 28;
+  --var-global-lineheight: 28;
+  --var-letterspacing: 1.2;
+  --var-letterspacing-ems: calc(var(--var-letterspacing) / var(--var-global-fontsize-root) * 1em);
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --var-global-fontsize-xxx-large: 53;
+    --var-global-fontsize-xx-large: 33;
+    --var-global-fontsize-small: 14;
+    --var-global-fontsize-x-small: 13;
+  }
+}

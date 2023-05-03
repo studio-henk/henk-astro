@@ -1,0 +1,12 @@
+[data-brick-name="faq-brick"] {
+  background-color: var(--var-brick-bg, var(--bg-default, #f00));
+  color: var(--var-brick-fg, currentcolor);
+
+  .section__title {
+    margin: 0 0 2rem;
+  }
+
+  summary + * {
+    color: rgba(247, 248, 246, 0.8);
+  }
+}

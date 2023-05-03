@@ -1,0 +1,41 @@
+// @use "../../../vars" as *;
+
+.sh-atom-link-button {
+  /*--var-color-button-background-hover: var(--color-henk-black);*/
+  background-color: var(--color-henk-white);
+  color: var(--color-henk-black);
+  border: 1px solid var(--color-henk-black);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  white-space: nowrap; // prevent multiple lines
+  font-size: 0.875rem; // 14px
+  line-height: 1.78571429;
+  font-weight: 400;
+  padding: 0.5625rem 2rem;
+  border-radius: 50px;
+  text-decoration: none !important;
+
+  &.--btn-secondary {
+    background-color: var(--color-accent14);
+    color: var(--color-henk-black);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--color-henk-white);
+    /*background-color: var(--var-color-button-background-hover);*/
+    background-color: var(--color-henk-black, #000);
+    text-decoration: none !important;
+  }
+
+  &.--inverse {
+    background-color: #fff;
+    color: #000;
+
+    &:hover,
+    &:focus {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}

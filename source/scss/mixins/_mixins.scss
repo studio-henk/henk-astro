@@ -1,0 +1,69 @@
+@mixin font-light {
+  font-family: "ff-scala-sans-pro", sans-serif;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@mixin font-normal {
+  font-family: "ff-scala-sans-pro", sans-serif;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@mixin font-uppercase {
+  font-family: "ff-scala-sans-pro", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@mixin font-uppercase-light {
+  font-family: "ff-scala-sans-pro", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+// type styles
+// 12px font on mobile, 14 on desktop
+/*@mixin sh-text-style-1 {
+  font-size: calc(var(--var-global-fontsize-small) / 16 * 1rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-feature-settings: "pnum" on, "lnum" on;
+}*/
+
+@mixin underline($state: normal) {
+  @if $state == "hover" {
+    transition: width 0.25s cubic-bezier(0, 0, 0, 1.06);
+    width: 45%;
+  } @else {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.96);
+    display: block;
+    left: 0;
+    pointer-events: none;
+    width: 0;
+    transition: width 0.075s cubic-bezier(0, 0, 1, 0.06), top 0.75s cubic-bezier(0, 0, 1, 0.06);
+  }
+}
+
+@mixin flex-center($height) {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  align-items: center;
+  height: $height;
+  justify-content: space-between;
+}
+
+/// truncate to x number of lines
+@mixin truncate($numberoflines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $numberoflines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,0 +1,53 @@
+// @use "../vars" as *;
+@use "../mixins/_mixins" as *;
+// // @use "../base/font-sizes";
+
+.blogpost {
+  &__copy {
+    &--title {
+      margin-top: 0;
+    }
+    &--btn {
+      margin-top: 0.5rem;
+      //      @include font-uppercase;
+      //      @extend .uppercase;
+      // background-color: red !important;
+      & .icon {
+        // width: 1.2rem;
+        // height: 1.2rem;
+        width: 0.75rem; // 12px
+        height: 0.75rem; // 12px
+      }
+    }
+  }
+  &__text {
+    margin-top: 1rem;
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+  }
+}
+
+.blogpost-small {
+  &__image {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  &__copy {
+    &--title {
+      margin-top: 0;
+    }
+    &--btn {
+      margin-top: 0.5rem;
+      //      @include font-uppercase;
+      //      @extend .uppercase;
+      //        background-color: red !important;
+    }
+  }
+  &__text {
+    margin-top: 1rem;
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+  }
+}

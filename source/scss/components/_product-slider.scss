@@ -1,0 +1,363 @@
+// @use "../vars" as *;
+@use "../mixins/_mixins" as *;
+@use "../utils/helpers";
+
+// reset OWL
+.slick-slider,
+.product-slider {
+  * + * {
+    margin-top: 0;
+  }
+}
+
+.product-slider {
+  margin-top: 0;
+
+  + .product-slider {
+    margin-top: 0;
+  }
+}
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  // user-select: none;
+  -ms-touch-action: pan-y;
+  // touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: "";
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.product-slider {
+  &__large-image {
+    position: relative;
+
+    @media (min-width: 768px) {
+      cursor: url("../../toolkit/images/icons/zoom.png"), default;
+    }
+
+    &.no-cursor {
+      cursor: default;
+    }
+
+    &--download {
+      position: absolute !important;
+      right: 16px;
+      bottom: 16px;
+      z-index: 5678;
+      background: #fff !important;
+    }
+  }
+
+  &__prev-btn,
+  &__next-btn {
+    display: none;
+    width: 25%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    z-index: 91040;
+
+    @at-root .no-touchevents & {
+      display: block;
+    }
+  }
+
+  &__prev-btn {
+    left: 0;
+    cursor: url("../../toolkit/images/icons/chevron-left.png"), default;
+  }
+
+  &__next-btn {
+    right: 0;
+    cursor: url("../../toolkit/images/icons/chevron-right.png"), default;
+  }
+
+  &__thumbnails {
+    list-style: none;
+    display: flex;
+    position: relative;
+    //flex-direction: row;
+    //justify-content: start;
+    //align-content: flex-start;
+    //flex-wrap: wrap;
+    flex-flow: row wrap;
+    // margin: 1rem -0.8rem;
+    margin: 1rem -0.5rem; // -8px
+
+    @media only screen and (max-width: 991px) {
+      // display: none;
+    }
+  }
+
+  &__thumbnail {
+    cursor: pointer;
+    @extend .no-select;
+    padding: 0.5rem;
+    height: auto;
+    // flex: 0 1 calc(25% - 1.6rem);
+    flex: 0 1 calc(25% - 1rem); // 16px
+
+    @media (min-width: 544px) {
+      // flex: 0 1 calc(20% - 1.6rem);
+      flex: 0 1 calc(20% - 1rem); // 16px
+    }
+
+    @media (min-width: 768px) {
+      // flex: 0 1 calc(25% - 1.6rem);
+      flex: 0 1 calc(25% - 1rem); // 16px
+    }
+
+    @media (min-width: 1366px) {
+      // flex: 0 1 calc(20% - 1.6rem);
+      flex: 0 1 calc(20% - 1rem); // 16px
+    }
+  }
+
+  &__indicator {
+    float: right;
+    display: flex;
+    align-items: center;
+  }
+
+  &__bar {
+    list-style: none;
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: row;
+
+    &--item {
+      background-color: rgba(0, 0, 0, 0.36);
+      // width: 1.6rem;
+      width: 1rem; // 16px
+      height: 2px;
+
+      &.active {
+        background-color: rgba(0, 0, 0, 0.88);
+      }
+    }
+  }
+
+  &__controls {
+    position: relative;
+    margin-top: 0.5rem;
+    min-height: 25px;
+
+    & > span {
+      cursor: pointer;
+    }
+
+    &--prev,
+    &--next {
+      transform: translateY(-50%);
+      //-webkit-transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+
+      & .icon {
+        // width: 1.6rem;
+        // height: 1.6rem;
+        width: 1rem; // 16px
+        height: 1rem; // 16px
+      }
+    }
+
+    &--prev {
+      left: 0;
+
+      & .icon {
+        transform: rotate(180deg);
+        //-moz-transform: rotate(180deg);
+        //-webkit-transform: rotate(180deg);
+      }
+    }
+
+    &--resize,
+    &--download {
+      // margin: 0 auto;
+      // display: none;
+      // width: 240px;
+      margin: 0 0 0 20px;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+}
+
+.disable-resize-configurator {
+  display: none;
+}
+
+.fade-slider {
+  &__large-image {
+    position: relative;
+  }
+}
+
+.resp-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100%;
+}
+
+.resp-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+// nils hendriks 10 Jun 2020
+
+.product-slider__controls--resize {
+  float: left;
+  background-color: var(--color-accent1, #fff);
+  font-size: 0.6875rem; // 11px
+  line-height: 18px;
+  letter-spacing: 0.8px;
+  border-radius: 50px;
+  padding: 4px 14px;
+
+  > svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .--hide-on-mobile {
+    @media only screen and (max-width: 370px) {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.product-slider__controls--threed {
+  float: right;
+  height: 24px;
+  // margin-right: 40px;
+  // margin-right: 30px;
+}
+
+.product-slider .product-slider__controls--threed {
+  margin-right: 30px; // room for right arrow for slides
+}
+
+.product-slider__controls--threed img {
+  height: 24px;
+}
+
+.product-slider__controls--save {
+  margin-left: 10px;
+}
+
+// exception
+// hide thumbsnails on mobile
+// unless emersya is shown
+@media only screen and (max-width: 767px) {
+  .product-slider__thumbnails {
+    // display: none;
+  }
+
+  .product-slider.--has3Dconfig .product-slider__thumbnails {
+    display: flex;
+  }
+}

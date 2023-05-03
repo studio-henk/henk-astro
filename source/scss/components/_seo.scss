@@ -1,0 +1,31 @@
+// @use "../vars" as *;
+@use "../mixins/_mixins" as *;
+
+.seo {
+  margin: 4.5rem 0 3rem;
+  @media (min-width: 992px) {
+    margin: 9rem 0 6rem;
+  }
+
+  &__intro {
+    margin-bottom: 3rem;
+  }
+}
+
+.seo-tile {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  margin-bottom: 1rem;
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    margin: 0 0 1rem 0 !important;
+  }
+
+  &__text {
+    margin: 0 0 0.75rem 0 !important;
+  }
+}

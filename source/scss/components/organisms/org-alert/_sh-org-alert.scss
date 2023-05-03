@@ -1,0 +1,42 @@
+
+.sh-org-alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background-component, #f0f8ff);
+  border: 1px solid var(--color-border-component, #f0f8ff);
+  padding: 1rem;
+  //font-weight: 400;
+  border-radius: 6px;
+  width: 90%;
+  margin: 0 auto;
+
+  * {
+    margin: 0;
+  }
+
+  .sh-org-alert__title {
+    font-weight: 400;
+  }
+}
+
+.sh-org-alert[data-variant="success"] {
+  --color-background-component: hsl(120, 73%, 95%);
+  --color-border-component: hsl(120, 73%, 75%);
+}
+
+.sh-org-alert[data-variant="danger"] {
+  --color-background-component: hsl(0, 100%, 90%);
+  --color-border-component: hsl(0, 100%, 75%);
+}
+
+.sh-org-alert[data-variant="warning"] {
+  --color-background-component: hsl(39, 100%, 90%);
+  --color-border-component: hsl(39, 100%, 70%);
+}
+
+.sh-org-alert[data-variant="loading"] {
+  --color-background-component: hsl(0, 0%, 95%);
+  --color-border-component: hsl(0, 0%, 70%);
+}

@@ -1,0 +1,83 @@
+// @use "../vars" as *;
+// @use "../base/font-sizes";
+
+.prices-page {
+  margin-top: 3rem;
+}
+.prices {
+  display: none;
+  @media (min-width: 544px) {
+    display: block;
+  }
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+  &__details {
+    list-style: none;
+    &--item {
+      margin-bottom: 1rem;
+      &-title,
+      &-value {
+        display: block;
+      }
+      &-title {
+        // @extend h5;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__tables {
+    overflow: hidden;
+    padding: 0 0.25rem;
+    @media (min-width: 544px) {
+      padding: 0;
+    }
+    &--subtitle {
+      margin-top: 3rem;
+      & + table {
+        margin-top: 0;
+      }
+    }
+    &--table {
+      margin-top: 3rem;
+      width: 100%;
+      border: 0;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      & thead tr th {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.88);
+        border-collapse: separate;
+        border-spacing: 8px 8px;
+      }
+      & thead {
+        text-align: left;
+        & tr {
+          height: 2rem;
+          vertical-align: top;
+        }
+      }
+      & tr th,
+      & tr td {
+        padding-right: 1.5rem;
+      }
+      & tr:nth-of-type(even) {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      & tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+  &__links {
+    margin-top: 2rem;
+    vertical-align: top;
+    &--download {
+      margin-top: 1rem;
+      display: block;
+      @media (min-width: 544px) {
+        float: right;
+        margin-top: 0;
+      }
+    }
+  }
+}

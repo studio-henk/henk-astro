@@ -1,0 +1,43 @@
+/// media block
+/// @todo check if in use?
+
+.sh-media-block {
+  // $self: &;
+  padding: 0;
+
+  figure.sh-media-block__item {
+    // margin: -24px -24px 24px -24px;
+    max-width: none;
+  }
+
+  .sh-l-flex-container {
+    .sh-l-flex__item {
+
+      +.sh-l-flex__item {
+        .sh-media-block__item {
+          padding: 24px 24px 48px 24px;
+        }
+      }
+    }
+  }
+
+
+
+  @media only screen and (min-width: 992px) {
+    padding: 0;
+
+    .sh-l-flex-container {
+      align-items: center;
+      gap: 0;
+    }
+
+    &[data-order="reverse"] {
+
+      .sh-l-flex-container {
+        flex-direction: row-reverse;
+      }
+
+    }
+  }
+
+}

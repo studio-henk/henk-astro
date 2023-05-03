@@ -4,32 +4,33 @@ import "../styles/atom-button-new.css";
 ---
 
 <BaseLayout title="About">
-  <style type="text/css">.hero-block .hero__image {
-    height: auto;
-    max-height: 47%;
-  }
-
-  @media only screen and (max-width: 300px) {
-
+  <style>
     .hero-block .hero__image {
-      display: none;
+      height: auto;
+      max-height: 47%;
     }
-  }
 
-  @media only screen and (max-height: 425px) and (max-width: 465px) {
+    @media only screen and (max-width: 300px) {
 
-    .hero-block .hero__image {
-      display: none;
+      .hero-block .hero__image {
+        display: none;
+      }
     }
-  }
 
-  @media only screen and (max-height: 400px) and (min-width: 992px) {
+    @media only screen and (max-height: 425px) and (max-width: 465px) {
 
-    .hero-block .hero__image {
-      display: none;
+      .hero-block .hero__image {
+        display: none;
+      }
     }
-  }
-</style>
+
+    @media only screen and (max-height: 400px) and (min-width: 992px) {
+
+      .hero-block .hero__image {
+        display: none;
+      }
+    }
+  </style>
 <!-- hero -->
   <div class="hero-block">
     <img

@@ -1,0 +1,359 @@
+#vt-app {
+  margin-top: 0;
+
+  > * + * {
+    margin-top: 0;
+  }
+
+  .vts {
+    * + * {
+      margin-top: 0;
+    }
+  }
+
+  font-family: "ff-scala-sans-pro", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+
+  @media only screen and (min-width: 992px) and (max-width: 1125px) {
+    top: 139px;
+    height: calc(100% - 139px);
+  }
+
+  @media only screen and (min-width: 1126px) {
+    top: 90px;
+    height: calc(100% - 90px);
+  }
+
+  &.--localFS {
+    @media only screen and (min-width: 992px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      overflow: hidden;
+
+      ~ section.newsletter {
+        display: none;
+      }
+
+      ~ footer {
+        display: none;
+      }
+
+      .vt.screen.active {
+        top: 0;
+        height: 100%;
+        z-index: 99999;
+      }
+    }
+  }
+
+  h1 {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.3125rem; // 37px
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.09em;
+    margin: 0 16px;
+    padding: 0;
+
+    @media only screen and (min-width: 992px) {
+      margin-top: 100px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  h1 + p {
+    font-size: 1.0625rem; // 17px
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 18px 0 0;
+
+    @media only screen and (max-width: 991px) {
+      max-width: 295px;
+    }
+
+    @media only screen and (min-width: 992px) {
+      font-size: 1.3125rem; // 21px
+    }
+  }
+}
+
+.vts.desktop {
+  display: none;
+
+  @media only screen and (min-width: 992px) {
+    display: block;
+    margin-top: 100px;
+    background-color: #f9f6f4;
+
+    .grid {
+      display: flex;
+
+      .column {
+        position: relative;
+
+        .vt-btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+
+          svg {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .intro {
+      max-width: 589px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 100px 0;
+      font-size: 1.3125rem; // 21px
+      line-height: 127.8%;
+      letter-spacing: 0.08em;
+    }
+  }
+}
+
+.vt-iframe {
+  border: 0;
+}
+
+#vt-app .--screen1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media only screen and (max-width: 992px) {
+    position: absolute;
+    top: 57px;
+    height: calc(100% - 57px);
+  }
+}
+
+#vt-app .vt.screen {
+  width: 100%;
+  position: absolute;
+  top: 57px;
+  height: calc(100% - 57px);
+}
+
+#vt-app .overlay {
+  background-color: rgba(30 30 30 / 70%);
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  @media only screen and (min-width: 992px) {
+    z-index: 99999;
+  }
+}
+
+#vt-app .--skipIntro {
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem; // 14px
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes arrow_move1 {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 10px;
+  }
+}
+
+@keyframes arrow_move2 {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: -10px;
+  }
+}
+
+#vt-app .--skipIntro:hover svg {
+  position: relative;
+  animation: 0.6s ease-in-out 0.3s 1 alternate forwards arrow_move1;
+}
+
+#vt-app .--exitLink {
+  font-size: 1.125rem; // 18px
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (min-width: 992px) {
+    z-index: 99999;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .--skipIntro,
+  .--exitLink {
+    font-size: 1.125rem; // 18px
+    line-height: 22px;
+  }
+
+  .--skipIntro svg,
+  .--exitLink svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.--exitLink svg {
+  transform: rotate(180deg);
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
+
+.--exitLink:hover svg {
+  position: relative;
+  animation: 1s ease-in-out 0.3s alternate forwards arrow_move2;
+}
+
+#vt-app .--instruction1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+
+  > span {
+    display: block;
+    font-size: 1.1875rem; // 19px
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    max-width: 265px;
+
+    + span {
+      margin-top: 40px;
+
+      @media only screen and (min-width: 992px) {
+        max-width: 275px;
+      }
+
+      + .btn {
+        font-size: 0.8125rem; // 13px
+        margin-top: 58px;
+        border: 1px solid white;
+        padding: 8px 40px;
+      }
+    }
+
+    @media only screen and (min-width: 992px) {
+      font-size: 1.3125rem; // 21px
+    }
+  }
+
+  .btn {
+    color: #fff;
+    font-size: 1.3125rem; // 21px
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+}
+
+#vt-app .button-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 84px;
+
+  @media only screen and (min-width: 992px) {
+    display: none;
+  }
+
+  /* Landscape */
+  @media only screen and (orientation: landscape) {
+    margin-top: 8px;
+  }
+}
+
+#vt-app .vt-btn {
+  background-color: #141212;
+  color: #fff;
+  font-family: "ff-scala-sans-pro", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8125rem; // 13px
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  width: 290px;
+  height: 60px;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#vt-app .vt-btn + .vt-btn {
+  margin-top: 31px;
+
+  /* Landscape */
+  @media only screen and (orientation: landscape) {
+    margin-top: 8px;
+  }
+}
+
+#vt-app .fade-enter-active,
+#vt-app .fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+#vt-app .fade-enter-from,
+#vt-app .fade-leave-to {
+  opacity: 0;
+}
+
+#vt-app img {
+  display: block;
+  max-width: 100%;
+}

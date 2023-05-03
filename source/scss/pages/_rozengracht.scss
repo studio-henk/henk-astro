@@ -1,0 +1,314 @@
+/// overrides for rozengracht pages
+/// stores
+/// interior-advice
+#sh-rozengracht {
+  .sh-molecule-section-header__title {
+    font-weight: 300;
+    margin: 10px 0;
+  }
+
+  .sh-molecule-section-header__subtitle {
+    text-transform: uppercase;
+    font-size: 0.875rem; // 14px
+    font-weight: 400;
+    line-height: 20px;
+    margin: 10px 0;
+  }
+
+  .sh-section__intro br {
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .sh-org-block:first-child {
+    &[data-hasimage] {
+      @media only screen and (min-width: 768px) {
+        .sh-molecule-section-header__title {
+          font-size: 1.375rem; // 22px
+          line-height: 38px;
+        }
+
+        picture img {
+          max-height: 618px;
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        .sh-molecule-section-header__title {
+          font-size: 2.0625rem; // 33px
+          line-height: 50px;
+        }
+      }
+    }
+
+    .sh-molecule-section-header__title,
+    .sh-molecule-section-header__subtitle {
+      text-align: left;
+    }
+  }
+
+  .sh-org-block__layer1 {
+    padding: 24px;
+
+    .sh-atom-button {
+      align-self: flex-start;
+    }
+
+    @media only screen and (min-width: 768px) {
+      padding: 24px 64px 64px;
+    }
+  }
+
+  /// our stores block
+  .sh-stores {
+    padding-bottom: 48px;
+
+    @media only screen and (min-width: 768px) {
+      padding: 24px 48px 48px;
+    }
+
+    .sh-l-grid__item {
+      &.sh-store {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .sh-buttons {
+          margin-top: auto;
+        }
+      }
+    }
+
+    .sh-store__image {
+      border-radius: 8px;
+    }
+
+    .sh-store__title {
+      //      margin: 0;
+      font-size: 0.875rem; // 14px
+      line-height: 28px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .sh-store__subtitle,
+    .sh-store__link {
+      font-size: 0.75rem; // 12px
+      line-height: 21px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+    .sh-store__link {
+      display: flex;
+      margin: 18px 0;
+    }
+
+    .sh-store__subtitle {
+      + p {
+        margin-top: 8px;
+        margin-bottom: 0;
+
+        &.sh-store__link__interior {
+          margin-bottom: 46px;
+
+          > a {
+            display: block;
+          }
+        }
+      }
+
+      + .sh-store__parking {
+      }
+    }
+  }
+
+  /// 2 column grid
+  .sh-l-grid--2 {
+    display: grid;
+    padding: 24px;
+    gap: 60px;
+
+    .sh-l-grid__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .content__container {
+        padding-bottom: 28px;
+      }
+
+      .sh-atom-button {
+        margin-top: auto;
+      }
+    }
+
+    .sh-section__intro {
+      max-width: none;
+      margin: revert;
+    }
+
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+
+      .sh-molecule-section-header__title,
+      .sh-molecule-section-header__subtitle,
+      .sh-section__content {
+        text-align: left;
+      }
+
+      .sh-section__content {
+        margin: 0;
+      }
+    }
+
+    @media only screen and (min-width: 992px) {
+      padding: 64px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 64px;
+      align-items: stretch;
+    }
+  }
+
+  /// 3 column grid
+  .sh-l-grid--3 {
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (min-width: 1125px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.--no-padding {
+  padding: 0;
+}
+
+/// setMoreModal
+.setMoreModal {
+  display: none;
+
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+
+  .setMoreIframe {
+    border: 0;
+    width: 90vw;
+    height: 90vh;
+    max-width: 600px;
+    max-height: 635px;
+    background-color: var(--color-henk-white);
+    color: #000;
+  }
+
+  .modal-container {
+    position: relative;
+  }
+
+  .--btn-close {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: -10px;
+    height: 32px;
+    width: 32px;
+    top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    --color-background-button: var(--color-black);
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &.modalOpen {
+    display: flex;
+    place-content: center;
+    place-items: center;
+  }
+}
+
+.iframeModal {
+  padding: 24px;
+}
+
+// media block, list
+#sh-rozengracht .sh-media-block {
+  list-style: none;
+  margin: 28px 0 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 28px;
+
+  li {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 24px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+
+      .sh-store__link {
+        margin-top: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    address {
+      font-size: 0.75rem; // 12px
+      line-height: 20px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  @media only screen and (min-width: 500px) {
+    li {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+#sh-rozengracht .sh-stores {
+  .sh-l-grid--2 {
+    padding: 0;
+
+    @media only screen and (min-width: 992px) {
+      padding: 0;
+    }
+  }
+}
+
+#sh-rozengracht .sh-stores .sh-l-grid__item.sh-store p {
+  margin-bottom: 0;
+}
+
+#sh-rozengracht .sh-stores .sh-store__subtitle + p.sh-store__link__interior {
+  margin-bottom: 46px;
+}
+
+.sh-store__phone {
+  text-decoration: none;
+}

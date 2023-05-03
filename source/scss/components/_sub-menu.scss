@@ -1,0 +1,30 @@
+// @use "../vars" as *;
+@use "../mixins/_mixins" as *;
+
+.sub-menu {
+  list-style: none;
+  margin: 1rem 0 2rem 0;
+  padding: 0;
+  position: relative;
+  @media (min-width: 768px) {
+    margin: 1.5rem 0 0 0;
+  }
+  &__list {
+    &--item {
+      display: inline-block;
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
+      @include font-normal;
+      position: relative;
+      & > a:before {
+        @include underline();
+      }
+      @at-root .no-touchevents & > a:hover:before {
+        @include underline(hover);
+      }
+    }
+    &--item-active > a:before {
+      @include underline(hover);
+    }
+  }
+}

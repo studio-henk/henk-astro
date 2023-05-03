@@ -1,0 +1,50 @@
+.newsletter {
+  margin: 3rem 0 0;
+
+  @media (min-width: 768px) {
+    margin: 4.5rem 0 0;
+  }
+
+  @media (min-width: 992px) {
+    margin: 9rem 0 0;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 0.9px;
+  }
+}
+
+.newsletter-signup {
+  margin: 0 auto;
+
+  @media (min-width: 544px) {
+    max-width: 360px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 480px;
+  }
+
+  &__input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    height: 54px;
+
+    @media (min-width: 544px) {
+      padding-right: 118px !important;
+    }
+  }
+
+  &__btn {
+    margin-top: 0.75rem;
+
+    @media (min-width: 544px) {
+      margin-top: 0;
+      float: right;
+      top: -54px;
+    }
+  }
+}

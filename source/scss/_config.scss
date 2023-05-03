@@ -1,0 +1,62 @@
+////
+/// -config.scss
+/// This is the config file
+///
+/// @author Nils Hendriks
+/// date: 2022-08-5, Fri, 11:34
+/// @todo move all calculations to a separate file or token file?
+////
+
+/* variables that control base settings */
+:root,
+::before,
+::after,
+::selection {
+  /* colors */
+  --color-background-page-primary-base: var(--color-white, #fff);
+  --color-background-page: var(--color-white, #fff);
+  --color-text-page: var(--color-henk-black, #000);
+
+  /* text selection */
+  --color-text-selection-bg: var(--color-accent5);
+  --color-text-selection-text: var(--color-henk-black);
+
+  /* sizes from design as plugin numbers */
+  /* sizes from design as plugin numbers. in px */
+  --size-font-body: 16;
+  --size-font-lineheight-body: 28;
+  --size-font-letterspacing-body: 0.5;
+
+  /* tmp, move to size tokens? */
+  --size-horizontal-rhythm: 1;
+
+  /* buttons */
+  // background
+  /*--color-background-button: var(--color-white);
+
+  // foreground ie text
+  --color-text-button: var(--color-henk-black);
+
+  // border
+  --color-border-button: var(--color-henk-black);*/
+
+  /* button background-color */
+  --color-background-button: var(--color-transparent);
+
+  /* button text */
+  /*--color-text-button: var(--color-henk-white);*/
+  --color-text-button: var(--color-henk-black);
+
+  /* button border */
+  /*--color-border-button: var(--color-henk-white);*/
+  --color-border-button: var(--color-henk-black);
+
+  /* forms */
+  /*--color-background-input: var(--color-white);   
+  --color-text-input: var(--color-black); 
+  --color-text-label: hsla(0, 0%, 0%, 0.3);*/
+
+  /* nav */
+  /*dropdown .sh-atom-sup highlight "NEW" color*/
+  --color-text-sup-highlight-nav: var(--color-accent8);
+}

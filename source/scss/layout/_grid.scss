@@ -1,0 +1,512 @@
+// @use "../vars" as *;
+@use "sass:math";
+
+.container-fluid,
+.container-fluid-small,
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+.container .container {
+  padding: 0;
+}
+
+.container {
+  max-width: 1784px;
+}
+
+.container-fluid {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+//TODO: check sizes
+.container-fluid-small {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  max-width: 2080px;
+}
+
+.container-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.row {
+  margin: 0 math.div(-16px, 2);
+}
+
+/* XS-col */
+*[class^=" col-"],
+*[class^="col-"] {
+  float: left;
+  padding: 0 math.div(16px, 2);
+  width: 100%;
+  position: relative;
+}
+
+*[class^=" col-"],
+*[class^=" col-"]:after,
+*[class^=" col-"]:before,
+*[class^="col-"],
+*[class^="col-"]:after,
+*[class^="col-"]:before,
+.container,
+.container:after,
+.container:before {
+  box-sizing: border-box;
+}
+
+.full-cover:before,
+.full-cover:after,
+.row:before,
+.row:after,
+.container:before,
+.container:after {
+  content: " ";
+  display: table;
+}
+
+.full-cover:after,
+.row:after,
+.container:after {
+  clear: both;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+/********************/
+/* COLUMN STRUCTURE */
+/********************/
+
+/* .XS grid */
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+  .off-grid-left-xs {
+    padding-left: 16px;
+  }
+
+  .off-grid-right-xs {
+    padding-right: 16px;
+  }
+
+  .off-grid-large-left-xs {
+    padding-left: 16px * 2;
+  }
+
+  .off-grid-large-right-xs {
+    padding-right: 16px * 2;
+  }
+
+  float: left;
+}
+
+.col-xs-no-float {
+  float: none;
+}
+
+@for $i from 1 through 12 {
+  .col-xs-#{$i} {
+    width: math.percentage(math.div($i, 12));
+  }
+}
+
+@for $i from 1 through 12 {
+  .offset-col-xs-#{$i} {
+    margin-left: math.percentage(math.div($i, 12));
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-xs-pull-#{$i} {
+    right: math.percentage(math.div($i, 12));
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-xs-push-#{$i} {
+    left: math.percentage(math.div($i, 12));
+  }
+}
+
+/* .SM grid */
+@media (min-width: 544px) {
+  /* new gutters */
+  .container-fluid,
+  .container-fluid-small,
+  .container {
+    padding: 0 24px;
+  }
+  *[class^="col-"],
+  *[class^=" col-"] {
+    padding-left: math.div(24px, 2);
+    padding-right: math.div(24px, 2);
+  }
+  .row {
+    margin-left: math.div(-24px, 2);
+    margin-right: math.div(-24px, 2);
+  }
+  .off-grid-left-sm {
+    padding-left: 24px;
+  }
+  .off-grid-right-sm {
+    padding-right: 24px;
+  }
+  .off-grid-large-left-sm {
+    padding-left: 24px * 2;
+  }
+  .off-grid-large-right-sm {
+    padding-right: 24px * 2;
+  }
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
+    float: left;
+  }
+  .col-sm-no-float {
+    float: none;
+  }
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-sm-pull-#{$i} {
+      right: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-sm-push-#{$i} {
+      left: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .offset-col-sm-#{$i} {
+      margin-left: math.percentage(math.div($i, 12));
+    }
+  }
+}
+
+/* .MD grid */
+@media (min-width: 768px) {
+  /* new gutters */
+  .container-fluid,
+  .container-fluid-small,
+  .container {
+    padding: 0 32px;
+  }
+  *[class^="col-"],
+  *[class^=" col-"] {
+    padding-left: math.div(32px, 2);
+    padding-right: math.div(32px, 2);
+  }
+  .row {
+    margin-left: math.div(-32px, 2);
+    margin-right: math.div(-32px, 2);
+  }
+  .off-grid-left-md {
+    padding-left: 32px;
+  }
+  .off-grid-right-md {
+    padding-right: 32px;
+  }
+  .off-grid-large-left-md {
+    padding-left: 32px * 2;
+  }
+  .off-grid-large-right-md {
+    padding-right: 32px * 2;
+  }
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    float: left;
+  }
+  .col-md-no-float {
+    float: none;
+  }
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-md-pull-#{$i} {
+      right: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-md-push-#{$i} {
+      left: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .offset-col-md-#{$i} {
+      margin-left: math.percentage(math.div($i, 12));
+    }
+  }
+}
+
+/* .LG grid */
+@media (min-width: 992px) {
+  /* new gutters */
+  .container-fluid,
+  .container-fluid-small {
+    padding: 0 32px;
+  }
+  .container {
+    padding: 0 64px;
+  }
+  /* new gutters */
+  *[class^="col-"],
+  *[class^=" col-"] {
+    padding-left: math.div(32px, 2);
+    padding-right: math.div(32px, 2);
+  }
+  .row {
+    margin-left: math.div(-32px, 2);
+    margin-right: math.div(-32px, 2);
+  }
+  .off-grid-left-lg {
+    padding-left: 32px;
+  }
+  .off-grid-right-lg {
+    padding-right: 32px;
+  }
+  .off-grid-large-left-lg {
+    padding-left: 32px * 2;
+  }
+  .off-grid-large-right-lg {
+    padding-right: 32px * 2;
+  }
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    float: left;
+  }
+  .col-lg-no-float {
+    float: none;
+  }
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-lg-pull-#{$i} {
+      right: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-lg-push-#{$i} {
+      left: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .offset-col-lg-#{$i} {
+      margin-left: math.percentage(math.div($i, 12));
+    }
+  }
+}
+
+/* .XL grid */
+@media (min-width: 1366px) {
+  /* new gutters */
+  .container-fluid,
+  .container-fluid-small {
+    padding: 0 32px;
+  }
+  .container {
+    padding: 0 80px;
+  }
+  /* new gutters */
+  *[class^="col-"],
+  *[class^=" col-"] {
+    padding-left: math.div(32px, 2);
+    padding-right: math.div(32px, 2);
+  }
+  .row {
+    margin-left: math.div(-32px, 2);
+    margin-right: math.div(-32px, 2);
+  }
+  .off-grid-left-xl {
+    padding-left: 32px;
+  }
+  .off-grid-right-xl {
+    padding-right: 32px;
+  }
+  .off-grid-large-left-xl {
+    padding-left: 32px * 2;
+  }
+  .off-grid-large-right-xl {
+    padding-right: 32px * 2;
+  }
+  .col-xl-1,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12 {
+    float: left;
+  }
+  .col-xl-no-float {
+    float: none;
+  }
+  @for $i from 1 through 12 {
+    .col-xl-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-xl-pull-#{$i} {
+      right: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-xl-push-#{$i} {
+      // left: percentage($i / 12);
+      left: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .offset-col-xl-#{$i} {
+      // margin-left: percentage($i / 12);
+      margin-left: math.percentage(math.div($i, 12));
+    }
+  }
+}
+
+/* .XXL grid */
+@media (min-width: 1920px) {
+  /* new gutters */
+  .container-fluid,
+  .container-fluid-small {
+    padding: 0 64px;
+  }
+  .container-fluid-small {
+    padding: 0 144px;
+  }
+  .container {
+    padding: 0 128px;
+  }
+  /* new gutters */
+  *[class^="col-"],
+  *[class^=" col-"] {
+    padding-left: math.div(64px, 2);
+    padding-right: math.div(64px, 2);
+  }
+  .row {
+    margin-left: math.div(-64px, 2);
+    margin-right: math.div(-64px, 2);
+  }
+  .off-grid-left-xxl {
+    padding-left: 64px;
+  }
+  .off-grid-right-xxl {
+    padding-right: 64px;
+  }
+  .off-grid-large-left-xxl {
+    padding-left: 64px * 2;
+  }
+  .off-grid-large-right-xxl {
+    padding-right: 64px * 2;
+  }
+  .col-xxl-1,
+  .col-xxl-2,
+  .col-xxl-3,
+  .col-xxl-4,
+  .col-xxl-5,
+  .col-xxl-6,
+  .col-xxl-7,
+  .col-xxl-8,
+  .col-xxl-9,
+  .col-xxl-10,
+  .col-xxl-11,
+  .col-xxl-12 {
+    float: left;
+  }
+  .col-xxl-no-float {
+    float: none;
+  }
+  @for $i from 1 through 12 {
+    .col-xxl-#{$i} {
+      // width: percentage($i / 12);
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-xxl-pull-#{$i} {
+      // right: percentage($i / 12);
+      right: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .col-xxl-push-#{$i} {
+      // left: percentage($i / 12);
+      left: math.percentage(math.div($i, 12));
+    }
+  }
+  @for $i from 0 through 12 {
+    .offset-col-xxl-#{$i} {
+      // margin-left: percentage($i / 12);
+      margin-left: math.percentage(math.div($i, 12));
+    }
+  }
+}

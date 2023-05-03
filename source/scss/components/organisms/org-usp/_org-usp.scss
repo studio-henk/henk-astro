@@ -1,0 +1,89 @@
+// // @use "../../../vars" as *;
+.sh-org-usp {
+  background-color: var(--color-accent14, #ccc);
+  /*background-color: var(--color-accent14,  var(--color-accent14));*/
+  color: var(--color-henk-black);
+  display: grid;
+  grid-auto-rows: auto;
+  justify-content: center;
+  row-gap: 4.25rem;
+  padding: 64px 0;
+
+  * {
+    margin: 0;
+  }
+
+  &__container {
+    max-width: 301px;
+    margin: 0 auto;
+    display: grid;
+    row-gap: 6px;
+
+    * {
+      text-align: center;
+    }
+
+    @media only screen and (min-width: 768px) {
+      row-gap: 12px;
+    }
+  }
+
+  &__title {
+    font-size: 0.75rem; // 12px
+    font-weight: 400;
+    line-height: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-align: center;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 0.875rem; // 14px
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+}
+
+/*---
+title:   USP brick V2
+section: Bricks
+author: Nils Hendriks for Studio HENK
+date: 2023-01-26 • 18:39 - CET
+---
+
+Brick with grid with 3 columns containing editable for:
+@title
+@text
+*/
+.sh-org-usp-v2 {
+}
+
+.sh-org-usp-v2 .sh-org-usp__text {
+  text-align: center;
+}
+
+.sh-org-usp-v2 .brick__grid {
+  display: grid;
+  grid-auto-rows: auto;
+  justify-content: center;
+  row-gap: 4.25rem;
+}
+
+.sh-org-usp-v2 .brick__grid .brick__grid-item {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.sh-org-usp-v2 .brick__grid-item * {
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 992px) {
+  .sh-org-usp-v2 .brick__grid.component__layout-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
