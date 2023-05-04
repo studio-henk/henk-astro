@@ -1,0 +1,43 @@
+// @use "../vars" as *;
+@use "../mixins/_mixins" as *;
+// // @use "../base/font-sizes";
+
+.product-card {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  margin: 1.5rem 0;
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    // @include font-uppercase;
+    //@extend .uppercase;
+    margin: 0.5rem 0 0 0 !important;
+    font-size: 0.75rem; // 12px
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: 400;
+
+    &:before {
+      @include underline;
+      bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    // @include font-light;
+    // @extend p;
+    margin: 0 !important;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  @at-root .no-touchevents &:hover .product-card__title:before {
+    @include underline(hover);
+  }
+}

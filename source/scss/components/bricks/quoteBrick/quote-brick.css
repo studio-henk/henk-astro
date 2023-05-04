@@ -1,0 +1,94 @@
+.sh-quote-block,
+.quote-brick {
+  /*border: 8px solid red !important;*/
+}
+
+/*fullwidth block with bg color*/
+.sh-quote-block,
+.quote-brick {
+  padding: 0;
+}
+
+.sh-quote-block .component__layout-box,
+.quote-brick .component__layout-box {
+  /*background-color: pink;*/
+}
+
+.sh-quote-block .component__layout-box *,
+.quote-brick .component__layout-box * {
+  margin: 0;
+}
+
+.sh-quote-block .component__layout-box,
+.quote-brick .component__layout-box,
+.sh-quote-block .component__layout-box blockquote,
+.quote-brick .component__layout-box blockquote {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  max-width: none;
+}
+
+.sh-quote-block .component__layout-box .quote__link,
+.quote-brick .component__layout-box .quote__link {
+  color: currentcolor;
+  text-decoration: none;
+}
+
+
+.sh-quote-block .component__layout-box .quote__text,
+.quote-brick .component__layout-box .quote__text {
+  max-width: none;
+}
+
+/* support for br elements but hidden on mobile */
+@media only screen and (max-width: 991px) {
+  .sh-quote-block .component__layout-box .quote__text br,
+  .quote-brick .component__layout-box .quote__text br {
+    display: none;
+  }
+}
+
+.sh-quote-block .component__layout-box .quote__meta,
+.quote-brick .component__layout-box .quote__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media only screen and (min-width: 992px) {
+  .sh-quote-block .component__layout-box .quote__meta,
+  .quote-brick .component__layout-box .quote__meta {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .sh-quote-block .component__layout-box .quote__meta .quote__jobtitle::before,
+  .quote-brick .component__layout-box .quote__meta .quote__jobtitle::before {
+    content: "-";
+    display: inline-flex;
+    margin-right: 8px;
+  }
+
+  .sh-quote-block .component__layout-box .quote__meta .quote__jobtitle,
+  .quote-brick .component__layout-box .quote__meta .quote__jobtitle {
+    display: inline-flex;
+  }
+}
+
+/*.sh-quote-block,
+.quote-brick blockquote,
+.sh-quote-block,
+.quote-brick .quote__link {
+  margin: 0 auto;
+}*/
+
+/*
+.quote__link {
+  max-width: 945px;
+  display: block;
+}*/

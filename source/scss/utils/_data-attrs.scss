@@ -1,0 +1,58 @@
+/*
+This is a helper to hide stuff on mobile / tablet
+Controlled via data-attribute
+@name data-hide
+@author nils@studio-henk.nl
+@group helpers
+@link http://staging.studio-henk.nl/en/components Docs Components
+@todo remove bg colors when this has been checked?
+*/
+
+/*[data-hide*="mobile" i] {
+  @media only screen and (max-width: 767px) {
+    display: none !important;
+    //background-color: red !important;
+  }
+}
+
+!* means only portrait*!
+[data-hide*="tablet" i] {
+  @media only screen and (min-width: 767px) and (max-width: 991px) {
+    display: none !important;
+    background-color: var(--color-henk-success) !important;
+  }
+}
+
+[data-hide*="mobile tablet" i] {
+  @media only screen and (max-width: 991px) {
+    display: none !important;
+    background-color: var(--color-henk-warning) !important;
+  }
+}*/
+/* mobile */
+[data-hide*="mobile" i] {
+  @media only screen and (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+/* tablet */
+[data-hide*="tablet" i] {
+  @media only screen and (min-width: 767px) and (max-width: 991px) {
+    display: none !important;
+  }
+}
+
+/* desktop */
+[data-hide*="desktop" i] {
+  @media only screen and (min-width: 992px) {
+    display: none !important;
+  }
+}
+
+/* alignment */
+[data-alignment="space-between"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

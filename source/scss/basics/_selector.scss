@@ -1,0 +1,232 @@
+@use "../mixins/_mixins" as *;
+@use "../utils/helpers";
+
+////
+/// This file contains styles for .selector
+/// as used on configurator and PDP pages
+///
+/// @group:
+/// @author: nils@studio-henk.nl
+/// @date: 19 Jan 2022 - 16:08:54
+////
+
+.selector {
+  display: block;
+  height: auto;
+  overflow: hidden;
+
+  &__label {
+    & > span {
+      display: block;
+      margin: 0 !important;
+    }
+
+    margin: 1rem 0 1rem 0 !important;
+
+    /// These changes only apply when .selector__label has .steps as parent
+    /// @author: nils@studio-henk.nl
+    /// @date: 19 Jan 2022 16:38:47
+    .steps & {
+      /// This first span is the step name
+      /// @author: nils@studio-henk.nl
+      /// @date: 19 Jan 2022 16:40:01
+      span:first-child {
+        letter-spacing: 1.5px;
+        font-weight: 400;
+
+        /// This 2nd span is the step description
+        /// @author: nils@studio-henk.nl
+        /// @date: 19 Jan 2022 16:40:40
+        + span {
+          letter-spacing: 1.2px;
+          font-weight: 300;
+        }
+
+        @media only screen and (min-width: 768px) {
+          /// Make sure step name with em dash does not wrap over multiple lines
+          /// @author: nils@studio-henk.nl
+          /// @date: 19 Jan 2022 16:42:22
+          white-space: nowrap;
+          /// Add the em dash automatically
+          /// @author: nils@studio-henk.nl
+          /// @date: 19 Jan 2022 16:43:11
+          &::after {
+            content: "—";
+            margin: 0 6px;
+          }
+        }
+      }
+
+      /// MQ: 768: on tablet and desktop put name and desc next to each other (cosy)
+      /// @author: nils@studio-henk.nl
+      /// @date: 19 Jan 2022 16:41:40
+      @media only screen and (min-width: 768px) {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__sublabel {
+    margin: 1rem 0 1rem 0 !important;
+  }
+
+  &__content {
+    float: left;
+    width: 100%;
+
+    &--text {
+      margin-top: 0;
+    }
+
+    &--info {
+      margin-top: 0.5rem; // 8px
+      & > a {
+        cursor: pointer;
+      }
+
+      & .icon {
+        margin-top: -4px;
+        width: 1.25rem; // 20px
+        height: 1.25rem; // 20px
+      }
+    }
+  }
+
+  &__bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+
+    &--name {
+      padding-right: 0.5rem;
+      margin: auto auto auto 0;
+    }
+
+    &--value {
+      align-items: center;
+      text-align: right;
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: flex-end;
+
+      & span:first-of-type {
+        @media only screen and (max-width: 767px) {
+          // fix for label too wide on mobile
+          font-size: 0.875rem; // 14px
+          // temp fix for camp landing page css
+        }
+      }
+    }
+
+    &--thumb {
+      margin-left: 8px;
+      flex: 0 0 20px;
+
+      > img {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+      }
+    }
+
+    &--icon {
+      padding-left: 0.5rem;
+      flex: 0 0 20px;
+    }
+  }
+
+  .amount {
+    float: right;
+
+    &__quantity,
+    &__price {
+      list-style: none;
+
+      &--item {
+        height: auto;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+
+        &:first-child {
+          min-width: 4rem; // 64px
+        }
+      }
+    }
+
+    &__price--item {
+      &:nth-of-type(2) {
+        float: right;
+      }
+    }
+
+    & .input-holder {
+      display: block;
+      width: 100%;
+      position: relative;
+
+      & input {
+        margin: 0;
+      }
+
+      & input.qtyminus,
+      & input.qtyplus {
+        cursor: pointer;
+        line-height: 0;
+        width: 1.5rem; // 24px
+        height: 1.5rem; // 24px
+        text-align: center;
+        padding: 0 0 2px 2px;
+        transition: background-color 0.2s ease-out;
+      }
+
+      & input.qty {
+        border: 0;
+        padding: 0;
+        text-align: center;
+        width: 4rem; // 64px
+      }
+    }
+  }
+
+  &__error {
+    display: none;
+    margin-top: 0.25rem;
+    color: var(--color-henk-danger);
+    text-align: right;
+  }
+}
+
+#step-four {
+  #thickness_div.selector__content {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.product-configuration > .selector {
+  margin-bottom: 1rem;
+  margin-top: 0;
+
+  + .selector {
+    margin-top: 0;
+  }
+}
+
+////
+/// .selector__cards
+/// add margin between this block and button
+/// @todo: check for removal when vertical rhythm is 100% implemented
+/// @author: nils@studio-henk.nl
+/// @date: 19 Jan 2022 - 17:32:56
+////
+.selector__cards {
+  + .sh-atom-button {
+    margin-top: 1rem;
+  }
+}

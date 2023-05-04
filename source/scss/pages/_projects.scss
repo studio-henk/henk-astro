@@ -1,0 +1,69 @@
+// @use "../vars" as *;
+
+.projects {
+  margin: 1.25rem 0;
+  @media (min-width: 768px) {
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 992px) {
+    margin: 3rem 0;
+  }
+  .full-width-image,
+  .two-image {
+    margin-bottom: 3rem;
+    @media (min-width: 768px) {
+      margin-bottom: 4.5rem;
+    }
+    @media (min-width: 992px) {
+      margin-bottom: 7rem;
+    }
+    & .full-width-image_text {
+      margin-top: 1rem;
+    }
+  }
+  .text-image-left,
+  .text-image-right {
+    margin-bottom: 3rem;
+    @media (min-width: 768px) {
+      margin-bottom: 4.5rem;
+    }
+    @media (min-width: 992px) {
+      margin-bottom: 7rem;
+    }
+    & .image-col {
+      order: 1;
+    }
+    & .text-col {
+      order: 2;
+    }
+    @media (min-width: 992px) {
+      & .image-col {
+        order: 0;
+      }
+      & .text-col {
+        order: 0;
+      }
+    }
+  }
+  .text-container-small {
+    margin-top: 1rem;
+    @media (min-width: 992px) {
+      margin-top: 0;
+      padding: 0 1.5rem;
+    }
+    @media (min-width: 1366px) {
+      padding: 0 4rem;
+    }
+  }
+  .full-width-text {
+    margin-top: 1rem;
+  }
+  .two-image {
+    & div:nth-of-type(2) {
+      margin-top: 1rem;
+      @media (min-width: 992px) {
+        margin-top: 0;
+      }
+    }
+  }
+}

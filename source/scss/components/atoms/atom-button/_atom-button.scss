@@ -1,0 +1,400 @@
+////
+/// This is all about buttons
+/// @name: Buttons
+/// @group: Buttons
+/// @author: nils@studio-henk.nl
+/// @date: 12 Nov 2021 - 12:56:56
+///
+/// @desc: default button and links that look like a button
+/// @desc: padding left and right should be proportional to its fontsize
+/// @fontsize: 12px on mobile, 14px on 1440, maybe sooner, 992?
+/// @padding: 32 for fz 14. 28 for 12.
+////
+
+// reset owl
+.sh-atom-button * + * {
+  margin-top: 0;
+}
+
+.sh-atom-button {
+  box-sizing: border-box;
+  display: inline-block;
+  background-color: var(--color-background-button, #fff);
+  color: var(--color-text-button, #000);
+  border: 1px solid var(--color-border-button, #000);
+  border-radius: 3.57142857em;
+  font-family: "ff-scala-sans-pro", sans-serif;
+  font-size: 0.75rem; // 12px
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 21px;
+  white-space: nowrap; // prevent multiple lines
+  margin-top: 1.75rem;
+  font-weight: 400;
+  padding: 6px 1rem;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    opacity: 0.85;
+    cursor: pointer;
+    background-color: var(--var-local-button-hover-override, var(--color-background-button));
+    color: var(--var-local-button-text-color-override, var(--color-text-button));
+  }
+
+  &[data-variant="icon-only"] {
+    color: currentcolor;
+
+    /*--var-global-button-bgc: transparant !important;*/
+    --color-background-button: transparant !important;
+    padding: 0;
+    border: 0;
+
+    &[data-state="muted"] {
+      .unmuted {
+        display: none;
+      }
+    }
+
+    &[data-state="unmuted"] {
+      .muted {
+        display: none;
+      }
+    }
+  }
+
+  &.--inverse,
+  &.--primary,
+  &[data-variant="primary-button"] {
+    --color-background-button: var(--color-henk-black);
+    --color-text-button: var(--color-henk-white);
+
+    &:hover,
+    &:focus {
+    }
+  }
+
+  &.--secondary {
+    border: 0;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    &.--animated-hover {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 12px;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.96);
+        display: block;
+        // eq to padding
+        // left: 0;
+        left: 2.2857em;
+        pointer-events: none;
+        width: 0;
+        transition: width 0.075s cubic-bezier(0, 0, 1, 0.06), top 0.75s cubic-bezier(0, 0, 1, 0.06);
+      }
+
+      &.--align-left {
+        &:before {
+          left: 0;
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        &:before {
+          width: 45%;
+          transition: width 0.25s cubic-bezier(0, 0, 0, 1.06);
+        }
+      }
+    }
+
+    &.--inverse {
+    }
+  }
+
+  &.--tertiary {
+    //    background-color: transparent;
+    /*--var-global-button-bgc: transparent;
+    --var-global-button-text-color: #000;*/
+    --color-background-button: var(--color-transparent);
+    --color-text-button: var(--color-henk-black);
+  }
+
+  &.--align-left {
+    text-align: left;
+    padding-left: 0;
+  }
+
+  &.--variant-soft {
+    /*--var-global-button-bgc: var(--color-accent14);
+    --var-global-button-text-color: #000;*/
+    --color-background-button: var(--color-accent14);
+    --color-text-button: var(--color-henk-black);
+    --color-border-button: var(--color-background-button);
+    // border: 0;
+    /*font-weight: 300;*/
+  }
+
+  &.--variant-alt {
+    //--var-global-button-bgc: transparent;
+    //--var-global-button-text-color: #000;
+    --color-background-button: var(--color-transparent);
+    --color-text-button: var(--color-henk-black);
+    border: 0;
+    position: relative;
+    display: inline-flex;
+    padding: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.96);
+      display: block;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      transition: width 0.075s cubic-bezier(0, 0, 1, 0.06), top 0.75s cubic-bezier(0, 0, 1, 0.06);
+
+      // only for non-touch devices
+      @media (hover: hover) and (pointer: fine) {
+        width: 0;
+      }
+    }
+
+    // only for non-touch devices
+    @media (hover: hover) and (pointer: fine) {
+      // width: 0;
+      &:hover {
+        &::before {
+          width: 45%;
+          transition: width 0.25s cubic-bezier(0, 0, 0, 1.06);
+        }
+      }
+    }
+  }
+
+  // with icon
+  &[data-icon-align] {
+    display: inline-flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 48px;
+
+    > svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.--sub-button {
+      line-height: 31px;
+
+      > svg {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+
+  // icon left
+  &[data-icon-align="left"] {
+    svg {
+      margin-right: 8px;
+    }
+  }
+
+  &[data-icon-align="right"] {
+    svg {
+      margin-left: 8px;
+    }
+  }
+
+  &.--icon-only {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.--sub-button {
+      svg {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+
+  /// hiding text but not icon on mobile
+  /// @todo check with _data-attr file, maybe some overlap here
+  &[data-hide-label="mobile"] {
+    display: inline-block;
+
+    svg {
+      @media only screen and (max-width: 767px) {
+        margin: 0;
+      }
+    }
+
+    .sh-atom-button__label {
+      @media only screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+
+  &.--animated-hover-arrow-ltr,
+  &[data-hover-icon-animated="true"] {
+    display: inline-flex;
+    align-items: center;
+    // background-color: transparent;
+
+    svg,
+    .sh-atom-icon {
+      margin-left: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+
+      svg,
+      .sh-atom-icon {
+        transform: translateX(7px);
+      }
+    }
+  }
+
+  &.--animated-hover-arrow-rtl {
+    display: inline-flex;
+    align-items: center;
+    // background-color: transparent;
+
+    svg,
+    .sh-atom-icon {
+      margin-right: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+
+      svg,
+      .sh-atom-icon {
+        transform: translateX(-7px);
+      }
+    }
+  }
+
+  &.--transparent {
+    // background-color: transparent;
+    /*--var-global-button-bgc: transparent;*/
+    --color-background-button: transparent;
+    color: var(--color-henk-black, #000);
+    border: 0;
+
+    &.--color-white {
+      color: var(--color-henk-white, #fff);
+    }
+  }
+
+  &.--anchor-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.sh-atom-button[data-variant="quaternary"] {
+  /*--var-global-button-bgc: var(--color-accent14);
+    --var-global-button-bgc-hover: var(--color-accent14);
+    --var-global-button-text-color: var(--color-henk-black);
+    --var-global-button-text-color-hover: var(--color-henk-black);
+    --var-global-button-border-color: var(--color-transparent);
+    --var-global-button-border-color-hover: var(--color-transparent);*/
+  --color-background-button: var(--color-accent14);
+  --color-text-button: var(--color-henk-black);
+  --color-border-button: var(--color-background-button);
+}
+
+.sh-atom-button[data-variant="plain"] {
+  padding: 0;
+  border: 0;
+
+  /*--var-global-button-text-color: var(--color-henk-black);*/
+  --color-text-button: var(--color-henk-black);
+  --color-background-button: var(--color-transparent);
+}
+
+// sizes
+.sh-atom-button[data-size="small"] {
+  padding: 6px 16px;
+  font-size: 0.75rem; // 12px
+  line-height: 21px;
+}
+
+.sh-atom-button[data-size="xsmall"] {
+  padding: 2px 12px;
+  font-size: 0.75rem; // 12px
+  line-height: 21px;
+  letter-spacing: 1.2px;
+}
+
+.sh-atom-button[data-expand="true"] {
+  width: 100%;
+}
+
+// alignment
+.sh-atom-button[data-alignment*="price"] {
+  display: inline-grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 2vw;
+  justify-content: center;
+}
+
+.sh-atom-button[data-alignment="price-around"] {
+  justify-content: space-around;
+}
+
+.sh-atom-button[data-alignment="price-between"] {
+  justify-content: space-between;
+}
+
+.sh-atom-button[data-alignment="price-evenly"] {
+  justify-content: space-evenly;
+}
+
+.sh-atom-button[data-alignment*="separator"] {
+  grid-template-columns: repeat(3, auto);
+}
+
+// states
+.sh-atom-button[data-variant="disabled"],
+.sh-atom-button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  --color-background-button: var(--color-henk-disabled);
+  --color-text-button: var(--color-henk-black);
+}
+
+// media queries
+@media only screen and (min-width: 768px) {
+  .sh-atom-button {
+    font-size: 0.875rem; // 14px
+    line-height: 28px;
+    padding: 8px 2rem;
+  }
+}

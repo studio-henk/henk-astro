@@ -1,0 +1,33 @@
+////
+/// This is used on hero block on campaign landing page
+/// javascript uses this data attribute to add class for fade in animation
+/// @see sh-org-block --is-hero --fade-in
+/// @name data-hasfadein
+/// @author: nils@studio-henk.nl
+////
+
+/// before animation
+[data-hasfadein] {
+  opacity: 0;
+  transition: opacity .3s ease;
+
+  /// adds animation
+  &.--fade-in {
+    opacity: 1;
+  }
+}
+
+////
+/// UPDATE: 20221228 16:36 CET
+/// This is used on hero video brick
+/// animation instead of transition, no javscript
+/// @author: nils@studio-henk.nl
+////
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

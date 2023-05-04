@@ -1,0 +1,20 @@
+/*
+  stylelint-disable
+  selector-class-pattern,
+  custom-property-pattern,
+  scss/dollar-variable-pattern
+*/
+
+.sh-atom__picture {
+  display: block;
+  margin-bottom: 22px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 28px;
+  }
+}

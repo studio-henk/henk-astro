@@ -1,0 +1,46 @@
+// @use "../vars" as *;
+@use "../mixins/_mixins" as *;
+// @use "../base/font-sizes";
+
+/// @TODO: document: about-us?
+/// @todo is this used?
+/// @todo refactor
+
+.people {
+  //  background-color: red !important;
+  //  border: 4px dashed yellow;
+
+  &__name {
+    // @extend h3;
+    display: block;
+    font-weight: 400;
+  }
+
+  &__text {
+    padding-bottom: 1.25rem; // 20px
+    margin: 0;
+  }
+}
+
+.people .people__photos .img-hover {
+  display: none;
+}
+
+.people .people__photos:hover .img-hover {
+  display: block;
+  margin-top: -150%;
+}
+
+.personal .col-md-3 {
+  @media only screen and (min-width: 360px) {
+    width: 50%;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 33%;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    width: 25%;
+  }
+}

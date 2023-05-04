@@ -1,0 +1,66 @@
+// @use "../vars" as *;
+@use "../mixins/_mixins" as *;
+@use "../utils/helpers";
+
+.product-summary {
+  margin-top: 0;
+  float: right;
+
+  &__quantity,
+  &__price {
+    @extend .no-select;
+    list-style: none;
+    margin: 0;
+
+    &--item {
+      max-height: 2.5rem; // 40px
+      display: inline-block;
+      margin: 0;
+      padding: 0.5rem 0;
+
+      &:first-child {
+        min-width: 6.75rem; // 108px
+        padding-right: 1rem; // 16px
+      }
+    }
+  }
+
+  &__price--item {
+    &:nth-of-type(2) {
+      float: right;
+    }
+  }
+
+  & .input-holder {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    & input {
+      margin: 0;
+    }
+
+    & input.qtyminus,
+    & input.qtyplus {
+      cursor: pointer;
+      line-height: 0;
+      width: 1.5rem; // 24px
+      height: 1.5rem; // 24px
+      text-align: center;
+      padding: 0 0 2px 2px;
+      transition: background-color 0.2s ease-out;
+    }
+
+    & input.qty {
+      border: 0;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      width: 4rem; // 64px
+    }
+  }
+
+  &__btn {
+    margin-top: 0.75rem;
+  }
+}

@@ -1,0 +1,7 @@
+/*
+to be removed soon
+quickfix for images causing gap in grid
+*/
+.products-view .product-card.js-equalheight-item img {
+  aspect-ratio: 4 / 5;
+}

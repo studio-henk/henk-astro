@@ -1,0 +1,9 @@
+dl,
+.sh-atom-dl {
+
+  &[data-direction="horizontal"] {
+    display: flex;
+    gap: 8px;
+    //background-color: aliceblue;
+  }
+}

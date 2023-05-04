@@ -1,0 +1,64 @@
+// reset owl
+.sh-molecule-l-button-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 28px;
+
+  .sh-atom-button {
+    margin: 0;
+  }
+
+  // alignment prop if mobile and desktop are the same
+  &[data-alignment="center"] {
+    justify-content: center;
+  }
+
+  &[data-alignment="start"] {
+    justify-content: flex-start;
+  }
+
+  &[data-alignment="end"] {
+    justify-content: flex-end;
+  }
+
+  &[data-alignment="around"] {
+    justify-content: space-around;
+  }
+
+  &[data-alignment="between"] {
+    justify-content: space-between;
+  }
+
+  &[data-alignment="evenly"] {
+    justify-content: space-evenly;
+  }
+
+  /* mobile alignment prop */
+  @media only screen and (max-width: 991px) {
+    &[data-alignment-mobile="end"] {
+      justify-content: flex-end;
+    }
+  }
+
+  /* larger than 991 alignment prop */
+  @media only screen and (min-width: 992px) {
+    &[data-alignment-desktop="start"] {
+      justify-content: flex-start;
+    }
+  }
+
+  // if last-child have margin bottom (ie if footer next?)
+  // update: 2022-08-11 • 14:04 - CEST
+  // turned this off
+  // caused more trouble than it solved.
+  // @todo: find other solution
+//  &:last-child {
+//    padding-bottom: 56px;
+//  }
+}
+
+/// update: 2022-08-26 • 08:40 - CEST
+/// if button group after a swiper/slider then no margin-top
+.swiper + .sh-molecule-l-button-group {
+  margin-top: 0;
+}
