@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'airstreamregular';
+  src: url('/fonts/Airstream-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +35,8 @@ body {
   background-color: var(--bg-default, #fff);
   color: var(--fg-default, #000);
   margin: 0;
-  font-family: "ff-scala-sans-pro", sans-serif;
+  /*font-family: "ff-scala-sans-pro", sans-serif;*/
+  font-family: "airstreamregular", sans-serif;
   font-size: 1rem;
   font-weight: 300;
 }
