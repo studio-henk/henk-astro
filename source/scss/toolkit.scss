@@ -99,6 +99,13 @@
 @use "components/bricks/shop-product-row/shop-product-row-brick.css";
 @use "components/bricks/hero-brick-v2/hero-brick-v2.css";
 
+/* added */
+// 2023-03-16 • 16:26 - CET
+@use "components/bricks/section-header-brick/section-header";
+
+/// web-components
+@use "components/web-components/wc-stepper-quantity/wc-stepper-quantity";
+
 /// update
 /// 2023-04-18 • 13:30 - CEST
 @use "modules/content-blocks.css";

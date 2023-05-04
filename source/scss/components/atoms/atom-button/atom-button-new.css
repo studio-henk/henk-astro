@@ -117,9 +117,6 @@
   line-height: 20px;
 }
 
-/* ,
-.sh-atom-button[data-style*="plain"]:not([data-animated-hover]):hover */
-
 .sh-atom-button[data-text-underline="true"] {
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -192,6 +189,20 @@
 /* override plain underline */
 .sh-atom-button[data-icon-arrow-left="true"][data-style*="plain"],
 .sh-atom-button[data-icon-arrow-right="true"][data-style*="plain"] {
+  text-decoration: none;
+}
+
+/* anchor-link */
+.sh-atom-button.--anchor-link,
+.sh-atom-button[data-icon-arrow-down="true"] {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sh-atom-button.--anchor-link:hover,
+.sh-atom-button[data-icon-arrow-down="true"]:hover {
   text-decoration: none;
 }
 
