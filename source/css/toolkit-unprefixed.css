@@ -13839,6 +13839,10 @@ p.sitemap-list__title {
 }
 
 .mdl-search {
+  /*
+  UPDATE: 2023-05-05 • 13:16 - CEST
+  */
+  display: flex;
   text-align: center;
   position: relative;
 }
@@ -13846,7 +13850,8 @@ p.sitemap-list__title {
 .mdl-search input[type=search] {
   width: 100%;
   margin: 0;
-  padding: 16px 110px 16px 14px;
+  /*padding: 16px 110px 16px 14px;*/
+  padding: 16px 14px 16px 14px;
   font-size: 0.9375rem;
   -webkit-appearance: none;
 }
