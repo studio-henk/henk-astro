@@ -1,8 +1,101 @@
 @font-face {
-  font-family: 'airstreamregular';
-  src: url('/fonts/Airstream-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Haas Grot Text R Web';
+  src: url('/fonts/NeueHaasGrotTextRound-76BoldItalic-Web.woff2') format('woff2'),
+  url('/fonts/NeueHaasGrotTextRound-76BoldItalic-Web.woff') format('woff');
+  font-weight:  700;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+.NeueHaasGrotTextRound-76BoldItalic-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  700;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+
+@font-face {
+  font-family: 'Haas Grot Text R Web';
+  src: url('/fonts/NeueHaasGrotTextRound-75Bold-Web.woff2') format('woff2'),
+  url('/fonts/NeueHaasGrotTextRound-75Bold-Web.woff') format('woff');
+  font-weight:  700;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.NeueHaasGrotTextRound-75Bold-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  700;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Haas Grot Text R Web';
+  src: url('/fonts/NeueHaasGrotTextRound-66MediumItalic-Web.woff2') format('woff2'),
+  url('/fonts/NeueHaasGrotTextRound-66MediumItalic-Web.woff') format('woff');
+  font-weight:  500;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+.NeueHaasGrotTextRound-66MediumItalic-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  500;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+
+@font-face {
+  font-family: 'Haas Grot Text R Web';
+  src: url('/fonts/NeueHaasGrotTextRound-65Medium-Web.woff2') format('woff2'),
+  url('/fonts/NeueHaasGrotTextRound-65Medium-Web.woff') format('woff');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.NeueHaasGrotTextRound-65Medium-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+
+@font-face {
+  font-family: 'Haas Grot Text R Web';
+  src: url('/fonts/NeueHaasGrotTextRound-56Italic-Web.woff2') format('woff2'),
+  url('/fonts/NeueHaasGrotTextRound-56Italic-Web.woff') format('woff');
+  font-weight:  400;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+.NeueHaasGrotTextRound-56Italic-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  400;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+
+@font-face {
+  font-family: 'Haas Grot Text R Web';
+  src: url('/fonts/NeueHaasGrotTextRound-55Roman-Web.woff2') format('woff2'),
+  url('/fonts/NeueHaasGrotTextRound-55Roman-Web.woff') format('woff');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.NeueHaasGrotTextRound-55Roman-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
 }
 
 * {
@@ -36,9 +129,12 @@ body {
   color: var(--fg-default, #000);
   margin: 0;
   /*font-family: "ff-scala-sans-pro", sans-serif;*/
-  font-family: "airstreamregular", sans-serif;
+  /*font-family: "airstreamregular", sans-serif;*/
+  /*font-family: 'Haas Grot Text R Web', sans-serif;*/
+  font-family: "Haas Grot Text R Web", Georgia;
+  font-weight:  400;
   font-size: 1rem;
-  font-weight: 300;
+  /*font-weight: 300;*/
 }
 
 h1,
