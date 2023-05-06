@@ -3,7 +3,7 @@
         <!-- surrounding A element -->
         <a class="hero-video-brick__anchor-link" href="https://www.studio-henk.nl/en/trace-outdoor-collection" style="color: var(--color-henk-white, #fff);">
             <!--video-->
-            <video muted="" loop="" playsinline="" autoplay="" style="height: calc(100vh - 124px);">
+            <video muted="" loop="" playsinline="" autoplay="" style="height: calc(100vh - var(--size-height-for-hero));">
                 <source src="https://assets.studio-henk.nl/assets/Images/home/tmp-off/studio-henk-trace-buitencollectie.mp4" type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
             </video>
@@ -41,6 +41,7 @@
         </a>
     </div>
     <script>
+/*
         const setVideoHeight = {
 
             init: function() {
@@ -55,12 +56,13 @@
                 });
             }
         };
+*/
 
-        document.addEventListener("DOMContentLoaded", function() {
+        /*document.addEventListener("DOMContentLoaded", function() {
             setVideoHeight.init();
-        });
-        window.addEventListener("resize", function() {
+        });*/
+        /*window.addEventListener("resize", function() {
             setVideoHeight.init();
-        });
+        });*/
     </script>
 </section>
