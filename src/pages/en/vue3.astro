@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="vue3 test">
+    <!-- <script is:inline slot="head-scripts" src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <!--<script slot="head-scripts" src="/static/std/assets/toolkit/scripts/intlTelInput/js/intlTelInput.min.js"></script>-->
+    <div id="app" v-cloak>
+        <p>A vue rendered h1 title.</p>
+        <h1>helloooooo</h1>
+        <h1>{{ message }}</h1>
+        <hr />
+        <p>
+            An ordinary button with a vanilla js function with event handler.
+        </p>
+        <button type="button" onclick="btnClick();">click me!</button>
+        <button class="btn2" type="button">click me 2!</button>
+    </div>
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+        createApp({
+            data() {
+                return {
+                    message: "Hello Vue!"
+                };
+            }
+        }).mount("#app");
+    </script>
+</BaseLayout>

@@ -5,3 +5,8 @@
 @use "sh-molecule-bg-box/_sh-molecule-bg-box";
 @use "sh-molecule-padding-box/_sh-molecule-padding-box";
 
+@use "_molecule-input-label.css";
+@use "_molecule-label-checkbox.css";
+@use "_molecule-label-radio.css";
+@use "_molecule-label-select.css";
+@use "_molecule-label-textarea.css";

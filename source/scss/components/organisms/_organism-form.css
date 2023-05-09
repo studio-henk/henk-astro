@@ -1,0 +1,19 @@
+.org-form {
+  background-color: var(--color-background-input);
+  /*padding: 1rem;*/
+  padding-bottom: 2rem;
+}
+
+.org-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.org-form__grid-container {
+  display: flex;
+  gap: 1rem;
+  align-self: stretch;
+}

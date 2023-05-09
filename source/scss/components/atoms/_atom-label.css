@@ -1,0 +1,117 @@
+.atom-label {
+    /* unset because of possible link inside */
+    /*display: inline-flex;*/
+    line-height: 28px;
+    /*color: hsla(0, 0%, 0%, 0.3);*/
+    color: hsla(0, 0%, 0%, 0.54);
+}
+
+/* label effect */
+.atom-label[data-style="labels-as-placeholders"] {
+    cursor: text;
+    padding: 0 4px;
+    align-self: flex-start;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    z-index: 9;
+    transition: top 0.3s ease, font-size 0.3s ease, background 0.3s;
+}
+
+/* label effect */
+.atom-input-txt:focus + .atom-label[data-style="labels-as-placeholders"],
+.molecule-input-label > .iti + .atom-label[data-style="labels-as-placeholders"],
+.atom-input-txt:placeholder-shown:not([placeholder=" "]) + .atom-label[data-style="labels-as-placeholders"],
+.atom-input-txt:not(:placeholder-shown) + .atom-label[data-style="labels-as-placeholders"],
+.atom-select + .atom-label[data-style="labels-as-placeholders"] {
+    top: -10px;
+    font-size: 12px;
+    background-color: var(--color-background-input, var(--color-background-form, #fff));
+    /*background: rgba(255,255,0,0);
+    background: linear-gradient(90deg,rgba(255,255,0,0) 0%, rgba(255,255,0,0) 50%, #000000 51%, rgba(255,255,0,0) 51%, rgba(255,255,0,0) 100%);
+    background: -webkit-linear-gradient(90deg,rgba(255,255,0,0) 0%, rgba(255,255,0,0) 50%, #000000 51%, rgba(255,255,0,0) 51%, rgba(255,255,0,0) 100%);
+    background: -moz-linear-gradient(90deg,rgba(255,255,0,0) 0%, rgba(255,255,0,0) 50%, #000000 51%, rgba(255,255,0,0) 51%, rgba(255,255,0,0) 100%);*/
+}
+
+/* label effect */
+.atom-input-txt:focus + .atom-label[data-style="labels-as-placeholders"]::before,
+.atom-input-txt:placeholder-shown:not([placeholder=" "]) + .atom-label[data-style="labels-as-placeholders"]::before,
+.atom-input-txt:not(:placeholder-shown) + .atom-label[data-style="labels-as-placeholders"]::before,
+.atom-select + .atom-label[data-style="labels-as-placeholders"]::before {
+    content: " ";
+    /*background-color: var(--color-background-input);*/
+    background-color: #fff;
+    position: absolute;
+    text-indent: -999em;
+    width: 102%;
+    /*height: 2px;*/
+    height: 1px;
+    top: 10px;
+    left: -1px;
+    z-index: -1;
+}
+
+/* has placeholder attr */
+/*.atom-input-txt[placeholder] + .atom-label[data-style="labels-as-placeholders"] {
+    border: 1px solid mediumaquamarine;
+}*/
+
+/* has placeholder attr with just a space */
+/*.atom-input-txt[placeholder=" "] + .atom-label[data-style="labels-as-placeholders"] {
+    border: 1px solid aquamarine;
+}*/
+
+/* has placeholder attr with just a space and shown */
+/*.atom-input-txt[placeholder=" "]:placeholder-shown + .atom-label[data-style="labels-as-placeholders"] {
+    border: 1px solid forestgreen;
+}*/
+
+/* has placeholder attr with just a space and not shown */
+.atom-input-txt[placeholder=" "]:not(:placeholder-shown) + .atom-label[data-style="labels-as-placeholders"] {
+    /*border: 1px solid lawngreen;*/
+}
+
+/*.atom-input-txt:invalid {
+    border: 1px solid red;
+}*/
+.atom-input-txt:required:not(:placeholder-shown):invalid {
+    /*border: 1px solid red;*/
+}
+
+/* when invalid show error msg after label */
+[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label:not([data-style="labels-as-placeholders"])::before {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    bottom: -28px;
+    color: hsl(0deg 100% 50%);
+    line-height: 28px;
+    font-size: max(min(2vw, 1em), 0.75rem);
+}
+
+@media only screen and (max-width: 303px) {
+    [data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label::before {
+        font-size: 11px;
+    }
+}
+
+/* show checkmark when valid */
+[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):not(:focus):valid + .atom-label:not([data-style="labels-as-placeholders"])::before {
+    content: "✅";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    color: #000;
+}
+
+/*.atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"]::before {
+    bottom: -66px;
+    width: max-content;
+}*/
+
+.atom-checkbox + .atom-label {
+    color: var(--color-black, #000);
+}

@@ -1,0 +1,47 @@
+.molecule-label-radio {
+    width: 100%;
+}
+
+.molecule-label-radio fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+.molecule-label-radio[data-order="reverse"] fieldset {
+    flex-direction: column-reverse;
+}
+
+.molecule-label-radio[data-layout="horizontal"] fieldset {
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/* alignment */
+.molecule-label-radio[data-layout="horizontal"][data-order="reverse"] fieldset {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.molecule-label-radio[data-style="no-panel"] fieldset legend {
+    /*display: none;*/
+}
+
+.molecule-label-radio fieldset legend {
+}
+
+.molecule-label-radio fieldset > .molecule-label-radio__container {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /*gap: 14px;*/
+}
+
+.molecule-label-radio__hint-required {
+    margin-left: 4px;
+    top: -4px;
+    position: relative;
+    color: hsl(0deg 100% 50%);
+    font-weight: 700;
+}
+
+
