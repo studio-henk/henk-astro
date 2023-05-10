@@ -16,4 +16,9 @@
   display: flex;
   gap: 1rem;
   align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.org-form__grid-container .org-form__grid-item {
+  flex: 1 1 48%;
 }

@@ -5629,7 +5629,6 @@ so calc is unit size * unit num
   /* something to with telephone field and message below and or alignment of space between checkboxes radio buttons? */
   /* case order to be wrong for base input labels, label below input */
   flex-direction: column-reverse;
-  /*flex-direction: column;*/
   width: 100%;
   /* in case child label has [data-style="labels-as-placeholders"]   */
   position: relative;
@@ -10118,6 +10117,11 @@ Brick with grid with 3 columns containing editable for:
   display: flex;
   gap: 1rem;
   align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.org-form__grid-container .org-form__grid-item {
+  flex: 1 1 48%;
 }
 
 /* .navigation {
