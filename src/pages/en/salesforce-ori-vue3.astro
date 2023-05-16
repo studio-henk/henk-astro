@@ -27,7 +27,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             data-use-css-validation="true"
             id="app-vue-contact-form"
         >
-            <form class="org-form__form" action="https://studio-henk--train.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+            <form id="salesforce-crm-form" class="org-form__form" action="https://studio-henk--train.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" @submit.prevent="onSubmit" ref="sf_form">
                 <input name="orgid" type="hidden" value="00D3H0000008q6o" />
                 <input name="retURL" type="hidden" value="https://www.studio-henk.nl/nl/salesforce/contact_bedankt" />
                 <div
@@ -276,7 +276,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </div>
     </div>
     <!-- vue -->
-    <script is:inline type="module">
+    <script is:inline type="module" slot="footer-scripts">
         import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 
         const app = createApp({
@@ -289,13 +289,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                     selectedCategory: "",
                 };
             },
-            methods: {},
+            methods: {
+                onSubmit() {
+                    alert('oi');
+                }
+            },
             computed: {},
             created() {
                 console.log(this.appName + " created");
             },
             mounted() {
                 console.log(this.appName + " mounted");
+                this.$refs.sf_form.setAttribute("novalidate", "novalidate")
                 this.$nextTick(function () {
                     // Code that will run only after the
                     // entire view has been rendered
@@ -323,4 +328,26 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         // runTelField();
     </script>
+    <!--
+    <script slot="footer-scripts" defer>
+        const form = document.querySelector("form#salesforce-crm-form");
+        console.log(form);
+        const email = document.getElementById("email");
+        const emailError = document.querySelector("#email ~ .molecule-input-label__message-invalid");
+        /* add attr novalidate */
+        form.setAttribute("novalidate", "novalidate");
+
+        form.addEventListener("submit", (event) => {
+            console.log("added eventListener on form");
+            // if the email field is valid, we let the form submit
+            if (!email.validity.valid) {
+                // If it isn't, we display an appropriate error message
+                // showError();
+                console.log("showError here");
+                // Then we prevent the form from being sent by canceling the event
+                event.preventDefault();
+            }
+        });
+    </script>
+    -->
 </BaseLayout>

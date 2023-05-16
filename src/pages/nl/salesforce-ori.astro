@@ -18,7 +18,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                     max-width: 652px;
                 ">
         <div id="page-title">
-            <h1 class="h2">Contact</h1>
+            <h1 class="h2">Stel hier je vraag</h1>
         </div>
         <div
             class="org-form"
@@ -26,9 +26,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             data-use-css-validation="true"
             id="app-vue-contact-form"
         >
-            <form class="org-form__form" action="https://studio-henk--train.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+            <form class="org-form__form" action="https://studio-henk--train.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" ref="sf_form" @submit.prevent="onSubmit">
                 <input name="orgid" type="hidden" value="00D3H0000008q6o" />
                 <input name="retURL" type="hidden" value="https://www.studio-henk.nl/nl/salesforce/contact_bedankt" />
+                <input name="subject" type="hidden" v-model="subject" />
                 <div
                         class="molecule-input-label layout-container-input-label"
                         data-style="is-stacked"
@@ -47,7 +48,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                             for="company"
                             data-style="labels-as-placeholders"
                     >
-                        Company
+                        Bedrijfsnaam
                     </label>
                 </div>
                 <div
@@ -69,7 +70,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                         for="name"
                         data-style="labels-as-placeholders"
                     >
-                        Contact Name
+                        Voor- en Achternaam
                     </label>
                 </div>
                 <div
@@ -88,6 +89,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                         required=""
                         pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
                         title="Please enter a valid email address."
+                        v-on:input="emailInput"
                     />
                     <label
                         class="atom-label"
@@ -95,10 +97,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                         data-style="labels-as-placeholders"
                         title="Please enter a valid email address."
                     >
-                        Email
+                        E-mailadres
                     </label>
                     <span class="molecule-input-label__message-invalid">
-                Please enter a valid email address.
+                Voer aub een e-mailadres in.
             </span>
                 </div>
 
@@ -149,15 +151,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 </div>*/}
                 <div class="org-form__grid-container">
                     <div class="molecule-label-select layout-container-input-label org-form__grid-item">
-                        <div class="atom-select">
+                        <div class="atom-select" data-required="true">
                             <div class="atom-select__field">
                                 <select
                                         class="atom-select__select-element"
                                         autocomplete="off"
                                         id="00N3H0000022MGA" name="00N3H0000022MGA" title="Case Category"
                                         v-model="selectedCategory"
+                                        required
+                                        @change="categoryChanged"
                                 >
-                                    <option value="">--None--</option>
+                                    <option value="">--Geen--</option>
                                     <option value="Producten">Producten</option>
                                     <option value="Montage &amp; Onderhoud">Montage &amp; Onderhoud</option>
                                     <option value="Levertijd &amp; Bezorging">Levertijd &amp; Bezorging</option>
@@ -188,56 +192,91 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </span>
                         </div>
                         <label class="atom-label" for="00N3H0000022MGA" data-style="labels-as-placeholders">
-                            Case Category
+                            Onderwerp
                         </label>
                     </div>
                     <!-- col 2 -->
                     <div class="molecule-label-select layout-container-input-label org-form__grid-item">
-                        <div class="atom-select">
+                        <div class="atom-select" data-required="true">
                             <div class="atom-select__field">
                                 <select
                                         class="atom-select__select-element"
                                         autocomplete="off"
-                                        id="00N3H0000022MHe" name="00N3H0000022MHe" title="Case Reason">
-                                    <option value="">--None--</option>
-                                    <option value="Vraag over het gebruik van een product" v-if="selectedCategory == 'Producten'">Vraag over het gebruik van
+                                        id="00N3H0000022MHe"
+                                        name="00N3H0000022MHe"
+                                        title="Case Reason"
+                                        required
+                                        @change="reasonChanged"
+                                        v-model="selectedReason"
+                                >
+                                    <option value="" disabled>--Geen--</option>
+                                    <option value="Vraag over het gebruik van een product"
+                                            v-if="selectedCategory == 'Producten'">Vraag over het gebruik van
                                         een product
                                     </option>
-                                    <option value="Vraag over specifieke afwerkingen" v-if="selectedCategory == 'Producten'">Vraag over specifieke
+                                    <option value="Vraag over specifieke afwerkingen"
+                                            v-if="selectedCategory == 'Producten'">Vraag over specifieke
                                         afwerkingen
                                     </option>
-                                    <option value="Vraag over impregneren stof" v-if="selectedCategory == 'Producten'">Vraag over impregneren stof</option>
-                                    <option value="Vraag over het bestellen van losse onderdelen" v-if="selectedCategory == 'Producten'">Vraag over het
+                                    <option value="Vraag over impregneren stof" v-if="selectedCategory == 'Producten'">
+                                        Vraag over impregneren stof
+                                    </option>
+                                    <option value="Vraag over het bestellen van losse onderdelen"
+                                            v-if="selectedCategory == 'Producten'">Vraag over het
                                         bestellen van losse onderdelen
                                     </option>
-                                    <option value="Vraag over levering in het buitenland" v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Vraag over levering in het
+                                    <option value="Vraag over levering in het buitenland"
+                                            v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Vraag over levering
+                                        in het
                                         buitenland
                                     </option>
-                                    <option value="Vraag over levertijd" v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Vraag over levertijd</option>
-                                    <option value="Afspraak maken interieuradvies" v-if="selectedCategory == 'Verkooppunten'">Afspraak maken interieuradvies
+                                    <option value="Vraag over levertijd"
+                                            v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Vraag over levertijd
                                     </option>
-                                    <option value="Vraag over fysiek bekijken producten in eigen winkel" v-if="selectedCategory == 'Verkooppunten'">Vraag over
+                                    <option value="Afspraak maken interieuradvies"
+                                            v-if="selectedCategory == 'Verkooppunten'">Afspraak maken interieuradvies
+                                    </option>
+                                    <option value="Vraag over fysiek bekijken producten in eigen winkel"
+                                            v-if="selectedCategory == 'Verkooppunten'">Vraag over
                                         fysiek bekijken producten in eigen winkel
                                     </option>
-                                    <option value="Vraag over fysiek bekijken producten bij retailer" v-if="selectedCategory == 'Verkooppunten'">Vraag over fysiek
+                                    <option value="Vraag over fysiek bekijken producten bij retailer"
+                                            v-if="selectedCategory == 'Verkooppunten'">Vraag over fysiek
                                         bekijken producten bij retailer
                                     </option>
-                                    <option value="Vraag over locatie verkooppunt" v-if="selectedCategory == 'Verkooppunten'">Vraag over locatie verkooppunt
+                                    <option value="Vraag over locatie verkooppunt"
+                                            v-if="selectedCategory == 'Verkooppunten'">Vraag over locatie verkooppunt
                                     </option>
-                                    <option value="Vraag over verschil bij kopen Studio HENK vs kopen bij retailer" v-if="selectedCategory == 'Verkooppunten'">
+                                    <option value="Vraag over verschil bij kopen Studio HENK vs kopen bij retailer"
+                                            v-if="selectedCategory == 'Verkooppunten'">
                                         Vraag over verschil bij kopen Studio HENK vs kopen bij retailer
                                     </option>
-                                    <option value="Leverdatum wijzigen" v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Leverdatum wijzigen</option>
-                                    <option value="Is mijn betaling ontvangen" v-if="selectedCategory == 'Betalingen'">Is mijn betaling ontvangen</option>
-                                    <option value="Vraag over betaling slot-termijn" v-if="selectedCategory == 'Betalingen'">Vraag over betaling slot-termijn
+                                    <option value="Leverdatum wijzigen"
+                                            v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Leverdatum wijzigen
                                     </option>
-                                    <option value="Verleggen BTW" v-if="selectedCategory == 'Betalingen'">Verleggen BTW</option>
-                                    <option value="Vervangen viltdoppen" v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vervangen viltdoppen</option>
-                                    <option value="Vragen over montage" v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over montage</option>
-                                    <option value="Vragen over schoonmaak en vlekverwijdering" v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over schoonmaak en
+                                    <option value="Is mijn betaling ontvangen" v-if="selectedCategory == 'Betalingen'">
+                                        Is mijn betaling ontvangen
+                                    </option>
+                                    <option value="Vraag over betaling slot-termijn"
+                                            v-if="selectedCategory == 'Betalingen'">Vraag over betaling slot-termijn
+                                    </option>
+                                    <option value="Verleggen BTW" v-if="selectedCategory == 'Betalingen'">Verleggen
+                                        BTW
+                                    </option>
+                                    <option value="Vervangen viltdoppen"
+                                            v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vervangen viltdoppen
+                                    </option>
+                                    <option value="Vragen over montage"
+                                            v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over montage
+                                    </option>
+                                    <option value="Vragen over schoonmaak en vlekverwijdering"
+                                            v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over schoonmaak
+                                        en
                                         vlekverwijdering
                                     </option>
-                                    <option value="Vragen over behandelen product" v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over behandelen product
+                                    <option value="Vragen over behandelen product"
+                                            v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over behandelen
+                                        product
                                     </option>
                                 </select>
                             </div>
@@ -264,15 +303,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </span>
                         </div>
                         <label class="atom-label" for="00N3H0000022MHe" data-style="labels-as-placeholders">
-                            Case Reason
+                            Reden
                         </label>
                     </div>
                 </div>
                 <div class="molecule-label-textarea layout-container-input-label">
                     <textarea class="atom-textarea" name="description" id="description" autocomplete="off"></textarea>
-                    <label class="atom-label" for="description">Description</label>
+                    <label class="atom-label" for="description">Jouw vraag of opmerking</label>
                 </div>
-                <button type="submit" class="sh-atom-button" style="margin-top: 0;">Submit</button>
+                <button type="submit" class="sh-atom-button" style="margin-top: 0;">Verzend</button>
             </form>
         </div>
     </div>
@@ -287,15 +326,33 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 errored: false,
                 debug: "...",
                 selectedCountry: "NL",
-                selectedCategory: "",
+                selectedCategory: "Producten",
+                selectedReason: "Geen reden",
+                subject: "Geen reden"
             },
-            methods: {},
+            methods: {
+                categoryChanged() {
+                    this.selectedReason = "Geen reden";
+                    this.reasonChanged();
+                },
+                reasonChanged() {
+                    // update subject
+                    this.subject = this.selectedReason;
+                },
+                onSubmit() {
+                    alert('oi');
+                },
+                emailInput() {
+                    console.log('something typed')
+                }
+            },
             computed: {},
             created() {
                 console.log(this.appName + " created");
             },
             mounted() {
                 console.log(this.appName + " mounted");
+                this.$refs.sf_form.setAttribute("novalidate", "novalidate")
                 this.$nextTick(function () {
                     // Code that will run only after the
                     // entire view has been rendered

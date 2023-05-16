@@ -41,7 +41,8 @@
     margin-right: 2px;
 }
 
-[data-use-css-validation="true"] .atom-input-txt:required + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
+/*[data-use-css-validation="true"] .atom-input-txt:required + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {*/
+.atom-input-txt:required + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
     color: red;
     display: none;
 }
@@ -52,19 +53,32 @@
 }*/
 
 @media only screen and (max-width: 767px) {
-    [data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
+    /*[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
+        font-size: 12px;
+    }*/
+    .atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
         font-size: 12px;
     }
 }
 
-[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
-    display: block;
+.molecule-input-label__message-invalid {
     position: absolute;
     top: 46px;
     width: 100%;
     text-align: right;
     font-size: 12px;
     line-height: 1.4;
+}
+
+/*[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {*/
+.atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
+    display: block;
+    /*position: absolute;
+    top: 46px;
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    line-height: 1.4;*/
 }
 
 /* show and hide by vanilla JS */
