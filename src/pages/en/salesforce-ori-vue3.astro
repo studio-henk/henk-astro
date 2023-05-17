@@ -4,7 +4,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <BaseLayout title="Salesforce">
     <link slot="head-styles" rel="stylesheet" href="/static/std/assets/toolkit/scripts/intlTelInput/css/intlTelInput.css">
     <script slot="head-scripts" src="/static/std/assets/toolkit/scripts/intlTelInput/js/intlTelInput.min.js"></script>
-    <script slot="head-scripts" src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- <script slot="head-scripts" src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <!-- <script slot="head-scripts" src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <div class="sh-molecule-padding-box" style="
                     --size-spacing-units-top: 4;
@@ -26,30 +27,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             data-use-css-validation="true"
             id="app-vue-contact-form"
         >
-            <form class="org-form__form" action="https://studio-henk--train.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+            <form id="salesforce-crm-form" class="org-form__form" action="https://studio-henk--train.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" @submit.prevent="onSubmit" ref="sf_form">
                 <input name="orgid" type="hidden" value="00D3H0000008q6o" />
                 <input name="retURL" type="hidden" value="https://www.studio-henk.nl/nl/salesforce/contact_bedankt" />
-                <div
-                        class="molecule-input-label layout-container-input-label"
-                        data-style="is-stacked"
-                >
-                    <input
-                            class="atom-input-txt"
-                            type="text"
-                            name="company"
-                            id="company"
-                            autocomplete="organization"
-                            inputmode="text"
-                            placeholder=" "
-                    />
-                    <label
-                            class="atom-label"
-                            for="company"
-                            data-style="labels-as-placeholders"
-                    >
-                        Company
-                    </label>
-                </div>
                 <div
                     class="molecule-input-label layout-container-input-label"
                     data-style="is-stacked"
@@ -86,7 +66,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                         inputmode="text"
                         placeholder=" "
                         required=""
-                        pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
                         title="Please enter a valid email address."
                     />
                     <label
@@ -101,7 +80,27 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 Please enter a valid email address.
             </span>
                 </div>
-
+                <div
+                    class="molecule-input-label layout-container-input-label"
+                    data-style="is-stacked"
+                >
+                    <input
+                        class="atom-input-txt"
+                        type="text"
+                        name="company"
+                        id="company"
+                        autocomplete="organization"
+                        inputmode="text"
+                        placeholder=" "
+                    />
+                    <label
+                        class="atom-label"
+                        for="company"
+                        data-style="labels-as-placeholders"
+                    >
+                        Company
+                    </label>
+                </div>
                 <!--<div
                     class="molecule-input-label layout-container-input-label"
                     data-style="is-stacked"
@@ -126,7 +125,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                         Phone
                     </label>
                 </div>-->
-                {/*<div
+                <div
                     class="molecule-input-label layout-container-input-label"
                     data-style="is-stacked"
                 >
@@ -146,16 +145,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                     >
                         Subject
                     </label>
-                </div>*/}
+                </div>
+                <div class="molecule-label-textarea layout-container-input-label">
+                    <textarea class="atom-textarea" name="description" id="description" autocomplete="off"></textarea>
+                    <label class="atom-label" for="description">description</label>
+                </div>
                 <div class="org-form__grid-container">
                     <div class="molecule-label-select layout-container-input-label org-form__grid-item">
                         <div class="atom-select">
                             <div class="atom-select__field">
                                 <select
-                                        class="atom-select__select-element"
-                                        autocomplete="off"
-                                        id="00N3H0000022MGA" name="00N3H0000022MGA" title="Case Category"
-                                        v-model="selectedCategory"
+                                    class="atom-select__select-element"
+                                    autocomplete="off"
+                                    id="00N3H0000022MGA" name="00N3H0000022MGA" title="Case Category"
+                                    v-model="selectedCategory"
                                 >
                                     <option value="">--None--</option>
                                     <option value="Producten">Producten</option>
@@ -167,22 +170,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                             </div>
                             <span class="sh-atom-icon">
             <svg
-                    class="sh-atom-icon__svg"
-                    width="15"
-                    height="8"
-                    viewBox="0 0 15 8"
-                    fill="none"
-                    aria-labelledby="iconDisclosureCollapsed"
-                    id="iconDisclosureCollapsed"
-                    xmlns="http://www.w3.org/2000/svg"
+                class="sh-atom-icon__svg"
+                width="15"
+                height="8"
+                viewBox="0 0 15 8"
+                fill="none"
+                aria-labelledby="iconDisclosureCollapsed"
+                id="iconDisclosureCollapsed"
+                xmlns="http://www.w3.org/2000/svg"
             >
                 <title>iconDisclosureCollapsed</title>
                 <desc>Arrow icon pointing down</desc>
                 <path
-                        d="M14 1L7.5 7L1 1"
-                        stroke="currentcolor"
-                        stroke-width="0.7"
-                        stroke-linecap="round"
+                    d="M14 1L7.5 7L1 1"
+                    stroke="currentcolor"
+                    stroke-width="0.7"
+                    stroke-linecap="round"
                 ></path>
             </svg>
         </span>
@@ -196,9 +199,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                         <div class="atom-select">
                             <div class="atom-select__field">
                                 <select
-                                        class="atom-select__select-element"
-                                        autocomplete="off"
-                                        id="00N3H0000022MHe" name="00N3H0000022MHe" title="Case Reason">
+                                    class="atom-select__select-element"
+                                    autocomplete="off"
+                                    id="00N3H0000022MHe" name="00N3H0000022MHe" title="Case Reason">
                                     <option value="">--None--</option>
                                     <option value="Vraag over het gebruik van een product" v-if="selectedCategory == 'Producten'">Vraag over het gebruik van
                                         een product
@@ -243,22 +246,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                             </div>
                             <span class="sh-atom-icon">
             <svg
-                    class="sh-atom-icon__svg"
-                    width="15"
-                    height="8"
-                    viewBox="0 0 15 8"
-                    fill="none"
-                    aria-labelledby="iconDisclosureCollapsed"
-                    id="iconDisclosureCollapsed"
-                    xmlns="http://www.w3.org/2000/svg"
+                class="sh-atom-icon__svg"
+                width="15"
+                height="8"
+                viewBox="0 0 15 8"
+                fill="none"
+                aria-labelledby="iconDisclosureCollapsed"
+                id="iconDisclosureCollapsed"
+                xmlns="http://www.w3.org/2000/svg"
             >
                 <title>iconDisclosureCollapsed</title>
                 <desc>Arrow icon pointing down</desc>
                 <path
-                        d="M14 1L7.5 7L1 1"
-                        stroke="currentcolor"
-                        stroke-width="0.7"
-                        stroke-linecap="round"
+                    d="M14 1L7.5 7L1 1"
+                    stroke="currentcolor"
+                    stroke-width="0.7"
+                    stroke-linecap="round"
                 ></path>
             </svg>
         </span>
@@ -268,34 +271,36 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                         </label>
                     </div>
                 </div>
-                <div class="molecule-label-textarea layout-container-input-label">
-                    <textarea class="atom-textarea" name="description" id="description" autocomplete="off"></textarea>
-                    <label class="atom-label" for="description">Description</label>
-                </div>
                 <button type="submit" class="sh-atom-button" style="margin-top: 0;">Submit</button>
             </form>
         </div>
     </div>
     <!-- vue -->
-    <script is:inline>
-        const app = new Vue({
-            delimiters: ["[[", "]]"],
-            el: "#app-vue-contact-form",
-            data: {
-                appName: "appContactFormVue",
-                loading: true,
-                errored: false,
-                debug: "...",
-                selectedCountry: "NL",
-                selectedCategory: "",
+    <script is:inline type="module" slot="footer-scripts">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+        const app = createApp({
+            data() {
+                return {
+                    appName: "appContactFormVue",
+                    loading: true,
+                    errored: false,
+                    debug: "...",
+                    selectedCategory: "",
+                };
             },
-            methods: {},
+            methods: {
+                onSubmit() {
+                    alert('oi');
+                }
+            },
             computed: {},
             created() {
                 console.log(this.appName + " created");
             },
             mounted() {
                 console.log(this.appName + " mounted");
+                this.$refs.sf_form.setAttribute("novalidate", "novalidate")
                 this.$nextTick(function () {
                     // Code that will run only after the
                     // entire view has been rendered
@@ -303,6 +308,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 });
             }
         });
+
+        app.config.delimiters = ["[[", "]]"];
+        app.mount("#app-vue-contact-form");
     </script>
     <script slot="footer-scripts" defer>
         function runTelField() {
@@ -320,4 +328,26 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         // runTelField();
     </script>
+    <!--
+    <script slot="footer-scripts" defer>
+        const form = document.querySelector("form#salesforce-crm-form");
+        console.log(form);
+        const email = document.getElementById("email");
+        const emailError = document.querySelector("#email ~ .molecule-input-label__message-invalid");
+        /* add attr novalidate */
+        form.setAttribute("novalidate", "novalidate");
+
+        form.addEventListener("submit", (event) => {
+            console.log("added eventListener on form");
+            // if the email field is valid, we let the form submit
+            if (!email.validity.valid) {
+                // If it isn't, we display an appropriate error message
+                // showError();
+                console.log("showError here");
+                // Then we prevent the form from being sent by canceling the event
+                event.preventDefault();
+            }
+        });
+    </script>
+    -->
 </BaseLayout>
