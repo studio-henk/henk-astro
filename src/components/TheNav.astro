@@ -1,3 +1,6 @@
+---
+const { locale } = Astro.props;
+---
 <section class="navigation">
   <div class="main-menu">
     <div class="container-fluid">
@@ -220,7 +223,7 @@
             <li
               class="main-nav__item main-nav__cart hidden-xs visible-lg-block"
             >
-              <a class="quick-cart__launch" href="#">
+              <a class="quick-cart__launch" href={`/${locale}/cart/cart`}>
                 <svg class="icon" icon-cart-empty="">
                   <use
                     xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-cart-empty"
@@ -285,7 +288,7 @@
             <ul class="main-nav__item main-nav__lang">
               <li class="main-nav__lang--item active"><a href="/nl ">NL</a></li>
               <li class="main-nav__lang--divider">|</li>
-              <li class="main-nav__lang--item"><a href="# ">EN</a></li>
+              <li class="main-nav__lang--item"><a href="/en">EN</a></li>
             </ul>
           </ul>
         </nav>

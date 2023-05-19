@@ -186,10 +186,21 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
 }
 
 [data-css-validation="true"] .sh-forms__input-txt:invalid:not(:placeholder-shown) {
+  //border: 1px solid red;
+}
+
+[data-css-validation="true"] .sh-forms__input-txt:invalid:not(:placeholder-shown):focus {
+  border: 1px solid var(--color-henk-warning);
+}
+
+[data-css-validation="true"] .sh-forms__input-txt:invalid:not(:placeholder-shown):not(:focus) {
   border: 1px solid red;
 }
 
-[data-css-validation="true"] .sh-forms__input-txt:invalid:not(:placeholder-shown) + label + .msg-invalid {
+/*[data-css-validation="true"] .sh-forms__input-txt:invalid:not(:placeholder-shown) + label + .msg-invalid {
+  visibility: visible;
+}*/
+[data-css-validation="true"] .sh-forms__input-txt:invalid:not(:placeholder-shown):not(:focus) + label + .msg-invalid {
   visibility: visible;
 }
 
@@ -218,7 +229,9 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   color: hsl(0deg 100% 50%);
   position: absolute;
   right: 20px;
-  bottom: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  //bottom: -28px;
   text-align: right;
 }
 
@@ -233,7 +246,7 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   text-align: right;
 }
 
-// in split fieldset set error mesages aligned left
+// in split fieldset set error messages aligned left
 .sh-forms__fieldset--split [data-invalid-message]::after {
   left: 8px;
   right: auto;

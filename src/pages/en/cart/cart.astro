@@ -1,16 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HeadingBadge from "../components/HeadingBadge.astro";
-import CartList from "../components/CartList.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import HeadingBadge from "../../../components/HeadingBadge.astro";
+import CartList from "../../../components/CartList.astro";
 ---
-<BaseLayout title="Cart list">
+<BaseLayout title="Cart list" locale="en">
       <script slot="head-scripts" src="/static/std/assets/toolkit/scripts/vue/vue.global.js" defer></script>
       <div class="cart-page-layout-container" id="app">
-        <div id="heading-badge" class="cart-page__grid-item" data-hide="tablet|desktop">
+        <div id="heading-badge" class="cart-page__grid-item" data-hide="">
           <!-- heading badge -->
           <HeadingBadge />
         </div>
-        <div id="continue-shopping" class="cart-page__grid-item" data-hide="mobile">
+        <div id="continue-shopping" class="cart-page__grid-item" data-hide="">
           <div
             class="sh-molecule-padding-box"
             style="
@@ -24,7 +24,7 @@ import CartList from "../components/CartList.astro";
                     --size-spacing-units-left-desktop: 6;
                 "
           >
-            <a href="/en/somewhere" class="sh-atom-button" data-style="plain-dark" data-icon-arrow-left="true">
+            <a href="/en/" class="sh-atom-button" data-style="plain-dark" data-icon-arrow-left="true">
                           <span class="icon-frame">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path id="arrow-left-line" d="M20 10L7.48148 10" stroke="currentcolor" stroke-width="0.8"></path>
