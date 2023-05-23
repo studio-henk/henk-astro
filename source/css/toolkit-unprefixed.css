@@ -4770,7 +4770,7 @@ dl[data-direction=horizontal],
   transition: all 0.6s ease;
   background-color: var(--color-background-button-icon, transparent);
   color: var(--color-text-button-icon, #000);
-  border: 0px solid var(--color-border-button-icon, transparent);
+  border: 0 solid var(--color-border-button-icon, transparent);
 }
 
 .sh-atom-button-icon:hover {
@@ -9668,7 +9668,7 @@ Brick with grid with 3 columns containing editable for:
 
 #nav-icon3.open span:nth-child(1) {
   top: 26px;
-  width: 0%;
+  width: 0;
   left: 50%;
 }
 
