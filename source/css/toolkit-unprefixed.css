@@ -616,9 +616,10 @@ templates/Areas/reviews-brick/view.html.twig
   --color-border-button: var(--color-henk-white);
   /*--color-border-button: var(--color-henk-black);*/
   /* forms */
-  /*--color-background-input: var(--color-white);   
-  --color-text-input: var(--color-black); 
-  --color-text-label: hsla(0, 0%, 0%, 0.3);*/
+  --color-background-input: var(--color-white);
+  --color-text-input: var(--color-black);
+  --color-text-label: hsla(0, 0%, 0%, 0.3);
+  --color-autofill-input: var(--color-white);
   /* nav */
   /*dropdown .sh-atom-sup highlight "NEW" color*/
   --color-text-sup-highlight-nav: var(--color-accent8);
@@ -970,6 +971,18 @@ span.hidden-input + input {
   position: static;
   width: auto;
   white-space: inherit;
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 /*
@@ -4826,6 +4839,11 @@ dl[data-direction=horizontal],
   max-height: 100%;
 }
 
+/* see base.scss for h1 - h6 base styles */
+#page-title {
+  margin-bottom: 1.75rem;
+}
+
 .sh-atom-link-button {
   /*--var-color-button-background-hover: var(--color-henk-black);*/
   background-color: var(--color-henk-white);
@@ -5052,6 +5070,382 @@ figure figcaption,
   background-color: hsla(0, 0%, 12%, 0.3);
 }
 
+.atom-input-txt {
+  display: inline-flex;
+  width: 100%;
+  background-color: var(--color-background-input, var(--color-background-form, #fff));
+  color: var(--color-text-input, #000);
+  font-family: ff-scala-sans-pro, sans-serif;
+  font-weight: 300;
+  border-radius: 8px;
+  border: 1px solid var(--color-text-input, #000);
+  /*padding: 0.5em 1em;*/
+  padding: calc(7 / var(--size-font-root) * 1em) calc(var(--size-font-root) / var(--size-font-root) * 1em);
+  letter-spacing: 1px;
+  font-size: calc(var(--size-font-input-text, 16px) / var(--size-font-root) * 1rem);
+  line-height: 28px;
+}
+
+.atom-input-txt:disabled, .atom-input-txt:disabled + label {
+  --color-background-input: #ebebeb;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* placeholder text element itself, not the input field */
+.atom-input-txt::placeholder {
+  /*border: 1px solid blue;*/
+  color: #000;
+  opacity: 0.5;
+}
+
+/* Element that is currently displaying placeholder text,
+* including <input> and <textarea> elements with the placeholder attribute present
+* that has, as yet, no value.
+*/
+/* has placeholder attr */
+.atom-input-txt[placeholder] {
+  /*border: 1px solid yellow;*/
+}
+
+/* does not have placeholder attr */
+.atom-input-txt:not([placeholder]) {
+  /*border: 1px solid green;*/
+}
+
+.atom-input-txt[value] {
+  /*border: 10px solid orangered;*/
+}
+
+/*
+stacked
+placeholder shown by ' ' (space)
+placeholder: ' ',
+*/
+.atom-input-txt:placeholder-shown {
+  /*border: 1px solid aqua;*/
+}
+
+.atom-input-txt:not(:placeholder-shown) {
+  /*border: 1px solid lime;*/
+}
+
+[data-use-css-validation=true] .atom-input-txt:placeholder-shown {
+  /*border: 1px solid mediumpurple;*/
+}
+
+[data-use-css-validation=true] .atom-input-txt:not(:placeholder-shown) {
+  /*border: 1px solid lightcoral;*/
+}
+
+[data-use-css-validation=true] .atom-input-txt:not(:placeholder-shown):valid {
+  /*border: 1px solid lightseagreen;*/
+}
+
+[data-use-css-validation=true] .atom-input-txt:not(:placeholder-shown):invalid {
+  /*border: 1px solid magenta;*/
+}
+
+[data-use-css-validation=true] .atom-input-txt:placeholder-shown:invalid {
+  border: 1px solid black;
+}
+
+.atom-input-txt:optional {
+  /*background-color: #9E5B28;*/
+}
+
+/*.atom-input-txt:required {
+    border: 1px solid yellow;
+}*/
+.atom-input-txt:not(:placeholder-shown):required {
+  /*border: 1px solid darkmagenta;*/
+}
+
+/* not supported yet */
+.atom-input-txt:required:user-invalid {
+  /*border: 1px solid magenta;*/
+}
+
+.atom-input-txt:invalid {
+  /*border: 8px dashed red;*/
+}
+
+.atom-input-txt:valid {
+  /*border: 8px solid green;*/
+}
+
+.atom-input-txt:required:valid {
+  /*border: 8px solid lightseagreen;*/
+}
+
+.atom-input-txt:required:invalid {
+  /*border: 1px solid orange;*/
+}
+
+/* not supported yet */
+.atom-input-txt:blank {
+  /*border: 1px solid coral;*/
+}
+
+.atom-input-txt:autofill {
+  /*background-color: var(--color-accent5);*/
+  background-color: var(--color-autofill-input, #fff);
+  background-clip: content-box;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-autofill-input) inset;
+}
+
+.atom-input-txt:-webkit-autofill {
+  background-color: var(--color-autofill-input);
+  background-clip: content-box;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-autofill-input) inset;
+}
+
+.atom-input-txt[data-com-onepassword-filled],
+.atom-textarea[data-com-onepassword-filled] {
+  /*background-color: unset !important;*/
+  background-color: var(--color-autofill-input) !important;
+  background-clip: content-box;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-autofill-input) inset;
+}
+
+/*
+.atom-input-txt:focus {
+    outline: initial;
+}*/
+.atom-label {
+  /* unset because of possible link inside */
+  /*display: inline-flex;*/
+  line-height: 28px;
+  /*color: hsla(0, 0%, 0%, 0.3);*/
+  color: hsla(0, 0%, 0%, 0.54);
+}
+
+/* label effect */
+.atom-label[data-style=labels-as-placeholders] {
+  cursor: text;
+  padding: 0 4px;
+  align-self: flex-start;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  z-index: 9;
+  transition: top 0.3s ease, font-size 0.3s ease, background 0.3s;
+}
+
+/* label effect */
+.atom-input-txt:focus + .atom-label[data-style=labels-as-placeholders],
+.molecule-input-label > .iti + .atom-label[data-style=labels-as-placeholders],
+.atom-input-txt:placeholder-shown:not([placeholder=" "]) + .atom-label[data-style=labels-as-placeholders],
+.atom-input-txt:not(:placeholder-shown) + .atom-label[data-style=labels-as-placeholders],
+.atom-select + .atom-label[data-style=labels-as-placeholders] {
+  top: -10px;
+  font-size: 12px;
+  background-color: var(--color-background-input, var(--color-background-form, #fff));
+  /*background: rgba(255,255,0,0);
+  background: linear-gradient(90deg,rgba(255,255,0,0) 0%, rgba(255,255,0,0) 50%, #000000 51%, rgba(255,255,0,0) 51%, rgba(255,255,0,0) 100%);
+  background: -webkit-linear-gradient(90deg,rgba(255,255,0,0) 0%, rgba(255,255,0,0) 50%, #000000 51%, rgba(255,255,0,0) 51%, rgba(255,255,0,0) 100%);
+  background: -moz-linear-gradient(90deg,rgba(255,255,0,0) 0%, rgba(255,255,0,0) 50%, #000000 51%, rgba(255,255,0,0) 51%, rgba(255,255,0,0) 100%);*/
+}
+
+/* label effect */
+.atom-input-txt:focus + .atom-label[data-style=labels-as-placeholders]::before,
+.atom-input-txt:placeholder-shown:not([placeholder=" "]) + .atom-label[data-style=labels-as-placeholders]::before,
+.atom-input-txt:not(:placeholder-shown) + .atom-label[data-style=labels-as-placeholders]::before,
+.atom-select + .atom-label[data-style=labels-as-placeholders]::before {
+  content: " ";
+  /*background-color: var(--color-background-input);*/
+  background-color: #fff;
+  position: absolute;
+  text-indent: -999em;
+  width: 102%;
+  /*height: 2px;*/
+  height: 1px;
+  top: 10px;
+  left: -1px;
+  z-index: -1;
+}
+
+/* has placeholder attr */
+/*.atom-input-txt[placeholder] + .atom-label[data-style="labels-as-placeholders"] {
+    border: 1px solid mediumaquamarine;
+}*/
+/* has placeholder attr with just a space */
+/*.atom-input-txt[placeholder=" "] + .atom-label[data-style="labels-as-placeholders"] {
+    border: 1px solid aquamarine;
+}*/
+/* has placeholder attr with just a space and shown */
+/*.atom-input-txt[placeholder=" "]:placeholder-shown + .atom-label[data-style="labels-as-placeholders"] {
+    border: 1px solid forestgreen;
+}*/
+/* has placeholder attr with just a space and not shown */
+.atom-input-txt[placeholder=" "]:not(:placeholder-shown) + .atom-label[data-style=labels-as-placeholders] {
+  /*border: 1px solid lawngreen;*/
+}
+
+/*.atom-input-txt:invalid {
+    border: 1px solid red;
+}*/
+.atom-input-txt:required:not(:placeholder-shown):invalid {
+  /*border: 1px solid red;*/
+}
+
+/* when invalid show error msg after label */
+[data-use-css-validation=true] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label:not([data-style=labels-as-placeholders])::before {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  bottom: -28px;
+  color: hsl(0deg 100% 50%);
+  line-height: 28px;
+  font-size: max(min(2vw, 1em), 0.75rem);
+}
+
+@media only screen and (max-width: 303px) {
+  [data-use-css-validation=true] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label::before {
+    font-size: 11px;
+  }
+}
+/* show checkmark when valid */
+[data-use-css-validation=true] .atom-input-txt:not(:placeholder-shown):not(:focus):valid + .atom-label:not([data-style=labels-as-placeholders])::before {
+  content: "✅";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  color: #000;
+}
+
+/*.atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"]::before {
+    bottom: -66px;
+    width: max-content;
+}*/
+.atom-checkbox + .atom-label {
+  color: var(--color-black, #000);
+}
+
+/*.atom-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex: 1;
+}*/
+.atom-select {
+  position: relative;
+  background-color: var(--color-background-input, var(--color-background-form, #fff));
+  color: var(--color-text-input, #000);
+  border-radius: 8px;
+  border: 1px solid black;
+  letter-spacing: 1.2px;
+  font-size: 16px;
+  line-height: 28px;
+  /*padding: 8px 16px;*/
+}
+
+.atom-select__select-element {
+  width: 100%;
+  font-family: ff-scala-sans-pro, sans-serif;
+  font-weight: 300;
+  appearance: none;
+  height: 2.75em;
+  text-indent: 1em;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--color-text-input, #000);
+  position: relative;
+  z-index: 9;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 2rem;
+}
+
+.atom-select .sh-atom-icon {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+/* states */
+/* disabled */
+.atom-select__select-element:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.atom-checkbox[type=checkbox] {
+  display: inline-flex;
+  height: 1.75rem;
+}
+
+/* state: disabled */
+.atom-checkbox[type=checkbox][disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input.atom-radio[type=radio] {
+  display: inline-flex;
+  /*height: 1.75rem;*/
+  position: relative;
+  top: 5px;
+}
+
+/* state: disabled */
+.atom-radio[type=radio][disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input.atom-radio[type=radio] + .atom-label {
+  /*TODO: hook up to css var and alias in config */
+  color: #000;
+  padding-left: 14px;
+}
+
+/*input.atom-radio[type="radio"]:checked {
+    color: hsl(120deg 100% 25%);
+}*/
+/*input.atom-radio[type="radio"]:checked + label {
+    color: hsl(120deg 100% 25%);
+}*/
+[data-custom-radio=true] .atom-radio {
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  position: relative;
+  /*top: 6px;*/
+}
+
+[data-custom-radio=true] .atom-radio:checked {
+  border: 6px solid black;
+}
+
+.atom-textarea {
+  width: 100%;
+  display: inline-flex;
+  color: var(--color-text-input, #000);
+  font-family: ff-scala-sans-pro, sans-serif;
+  font-weight: 300;
+  border-radius: 8px;
+  border: 1px solid var(--color-text-input, #000);
+  padding: 0.5em 1em;
+  letter-spacing: 1px;
+  font-size: calc(var(--size-font-input-text, 16px) / var(--size-font-root) * 1rem);
+  line-height: 28px;
+  min-height: calc(140px + 2rem);
+}
+
 .sh-molecule-l-button-group {
   display: flex;
   align-items: center;
@@ -5233,6 +5627,423 @@ so calc is unit size * unit num
 
 .sh-molecule-padding-box > * {
   margin-top: 0;
+}
+
+.molecule-input-label,
+.layout-container-input-label {
+  display: flex;
+  /* dont remember why I did this, but causes issue on mobile */
+  /* something to with telephone field and message below and or alignment of space between checkboxes radio buttons? */
+  /* case order to be wrong for base input labels, label below input */
+  flex-direction: column-reverse;
+  width: 100%;
+  /* in case child label has [data-style="labels-as-placeholders"]   */
+  position: relative;
+}
+
+/*[data-css-validation="true"] .sh-forms__input-txt:invalid:not(:placeholder-shown) {
+    border: 1px solid red;
+}*/
+/*[data-use-css-validation="true"] .atom-input-txt {
+    color: yellow;
+    background-color: aqua;
+    border: 1px solid green;
+}*/
+[data-use-css-validation=true] .atom-input-txt:invalid:not(:placeholder-shown):focus {
+  border: 1px solid var(--color-henk-warning) !important;
+}
+
+[data-use-css-validation=true] .atom-input-txt:invalid:not(:placeholder-shown):not(:focus) {
+  border: 1px solid red !important;
+}
+
+[data-show-required-fields=true] .atom-input-txt:required + .atom-label:not([data-style=labels-as-placeholders]) {
+  /*background-color: deeppink;*/
+}
+
+/*[data-show-required-fields="true"] .atom-input-txt:required + .atom-label:not([data-style="labels-as-placeholders"])::after {*/
+[data-show-required-fields=true] .atom-input-txt:required + .atom-label::after {
+  content: "*";
+  color: var(--color-henk-danger);
+  font-weight: 700;
+  position: relative;
+  left: 4px;
+  margin-right: 2px;
+}
+
+/*[data-use-css-validation="true"] .atom-input-txt:required + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {*/
+.atom-input-txt:required + .atom-label[data-style=labels-as-placeholders] + .molecule-input-label__message-invalid {
+  color: red;
+  display: none;
+}
+
+/*[data-use-css-validation="true"] .atom-input-txt:required + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
+    color: red;
+    display: none;
+}*/
+@media only screen and (max-width: 767px) {
+  /*[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {
+      font-size: 12px;
+  }*/
+  .atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style=labels-as-placeholders] + .molecule-input-label__message-invalid {
+    font-size: 12px;
+  }
+}
+.molecule-input-label__message-invalid {
+  position: absolute;
+  top: 46px;
+  width: 100%;
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/*[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style="labels-as-placeholders"] + .molecule-input-label__message-invalid {*/
+.atom-input-txt:not(:placeholder-shown):invalid + .atom-label[data-style=labels-as-placeholders] + .molecule-input-label__message-invalid {
+  display: block;
+  /*position: absolute;
+  top: 46px;
+  width: 100%;
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.4;*/
+}
+
+/* show and hide by vanilla JS */
+[data-show=no] {
+  display: none;
+}
+
+[data-show=yes] {
+  display: block;
+}
+
+.molecule-input-label .molecule-input-label__message-help {
+  margin: 5px 0 5px 0;
+  /*position: absolute;
+  top: 42px;*/
+  font-size: 12px;
+  line-height: 20px;
+  color: hsla(0, 0%, 0%, 0.5);
+}
+
+.molecule-input-label[data-style=is-stacked] .molecule-input-label__message-help {
+  margin: 5px 0 5px 1rem;
+}
+
+.molecule-input-label[data-alert=warning] {
+  border-radius: 5px;
+}
+
+[data-alert=warning] {
+  animation: 1s ease-in 0.1s forwards fadeInWithBoxShadow;
+}
+
+.sh-atom-checkbox-label {
+  display: inline-flex;
+  gap: 14px;
+}
+
+.sh-atom-checkbox-label[data-order=reverse] {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  position: relative;
+}
+
+[data-custom-checkbox=true] {
+  gap: unset;
+}
+
+[data-custom-checkbox=true] .atom-checkbox {
+  width: auto;
+  height: auto;
+  z-index: 9999;
+  opacity: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+}
+
+[data-custom-checkbox=true] .atom-checkbox + .atom-label::after {
+  border-radius: 5px;
+}
+
+[data-custom-checkbox=true] .atom-label {
+  position: relative;
+  /*padding-left: 1.25rem;*/
+  padding-left: calc(28 / var(--size-font-root) * 1rem);
+}
+
+[data-custom-checkbox=true] .atom-label::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 3px;
+  /*top: 50%;*/
+  top: 14px;
+  transform: translateY(-50%);
+  display: none;
+  z-index: 2;
+}
+
+[data-custom-checkbox=true] input[type=checkbox]:checked + .atom-label::before {
+  display: block;
+  background-image: url(https://www.studio-henk.nl/static/std/assets/toolkit/svg-standalone/icon-checkmark.svg);
+}
+
+[data-custom-checkbox=true] .atom-label::after {
+  background: hsl(0deg 0% 100%);
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  /*top: 50%;*/
+  top: 14px;
+  transform: translateY(-50%);
+  border: 1px solid hsl(0deg 0% 0%/56%);
+}
+
+.sh-atom-checkbox-label[data-order=reverse][data-custom-checkbox=true] .atom-label::after {
+  right: 0;
+  left: auto;
+}
+
+.sh-atom-checkbox-label[data-order=reverse][data-custom-checkbox=true] .atom-label {
+  padding-left: 0;
+  /*padding-right: 1.25rem;*/
+  padding-right: calc(28 / var(--size-font-root) * 1rem);
+}
+
+.sh-atom-checkbox-label[data-order=reverse][data-custom-checkbox=true][data-variant=circle] .atom-label {
+  padding-right: 28px;
+}
+
+.sh-atom-checkbox-label[data-order=reverse][data-custom-checkbox=true] input[type=checkbox]:checked + .atom-label::before {
+  left: auto;
+  right: 3px;
+}
+
+.sh-atom-checkbox-label[data-order=reverse][data-custom-checkbox=true] input[type=checkbox]:checked + .atom-label::before {
+  /*right: 0;*/
+}
+
+[data-custom-checkbox=true][data-variant=circle] .atom-label {
+  padding-left: 1.5rem;
+}
+
+[data-custom-checkbox=true][data-variant=circle] input[type=checkbox]:checked + .atom-label::before {
+  background-image: none;
+  background-color: #000;
+  border-radius: 50px;
+  width: 18px;
+  height: 18px;
+  left: 0;
+}
+
+[data-custom-checkbox=true][data-variant=circle] .atom-label::after {
+  display: block;
+  width: 16px;
+  height: 16px;
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  /*top: 50%;*/
+  top: 14px;
+  transform: translateY(-50%);
+  border-radius: 50px;
+  border: 1px solid hsl(0deg 0% 0%);
+}
+
+[data-custom-checkbox=true][data-variant=circle] .atom-label .icon-checkmark {
+  display: none;
+}
+
+[data-custom-checkbox=true][data-variant=circle] input[type=checkbox]:checked + .atom-label .icon-checkmark {
+  background-color: hsl(0deg 0% 0%/0%);
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  /*top: 50%;
+  transform: translateY(-50%);*/
+  z-index: 99;
+  display: inline-flex;
+}
+
+/* reversed order */
+[data-custom-checkbox=true][data-variant=circle][data-order=reverse] input[type=checkbox]:checked + .atom-label .icon-checkmark {
+  left: auto;
+  right: 4px;
+}
+
+[data-variant=circle][data-order=reverse][data-custom-checkbox=true] input[type=checkbox]:checked + .atom-label::before {
+  right: 0;
+}
+
+/* state: disabled */
+[disabled] + .atom-label {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: from-font;
+  cursor: not-allowed;
+}
+
+/* restore focus styles for custom checkbox */
+[data-custom-checkbox=true] .atom-checkbox:focus-visible + .atom-label::after {
+  outline: -webkit-focus-ring-color auto 1px;
+  outline-offset: 4px;
+}
+
+/*[data-show-required-fields="true"] .sh-atom-checkbox-label {
+    background-color: pink;
+}*/
+[data-show-required-fields=true] .sh-atom-checkbox-label .atom-checkbox {
+  background-color: pink;
+}
+
+/*[data-show-required-fields="true"] .sh-atom-checkbox-label .atom-checkbox:required + .atom-label {
+    background-color: deeppink;
+}*/
+[data-show-required-fields=true] .sh-atom-checkbox-label .atom-checkbox:required + .atom-label::before {
+  /*display: flex;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: -6px;
+  transform: none;
+  align-items: flex-start;
+  flex-direction: row;
+  margin: 0;
+  line-height: 1;*/
+}
+
+[data-show-required-fields=true] .atom-checkbox:required + .atom-label::before {
+  /*content: "*";
+  color: var(--color-henk-danger);
+  font-weight: 700;
+  position: relative;
+  left: 4px;
+  margin-right: 2px;*/
+}
+
+.molecule-label-checkbox__hint-required {
+  margin-left: -8px;
+  top: -4px;
+  position: relative;
+  color: hsl(0deg 100% 50%);
+  font-weight: 700;
+}
+
+[data-custom-checkbox=true] .molecule-label-checkbox__hint-required {
+  margin: 0;
+}
+
+[data-order=reverse] .molecule-label-checkbox__hint-required {
+  position: absolute;
+  color: hsl(0deg 100% 50%);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  display: inline;
+  width: auto;
+  height: auto;
+  right: 20px;
+}
+
+/* alignment of input and label */
+.sh-atom-checkbox-label[data-alignment=left] {
+  justify-content: flex-start;
+}
+
+.sh-atom-checkbox-label[data-alignment=right] {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.sh-atom-checkbox-label[data-alignment=between] {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sh-atom-checkbox-label[data-alignment=right][data-order=reverse] {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.sh-atom-checkbox-label[data-alignment=between][data-custom-checkbox=true] .atom-label {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sh-atom-checkbox-label[data-alignment=between][data-custom-checkbox=true][data-order=reverse] .atom-label {
+  justify-content: flex-start;
+}
+
+.sh-atom-checkbox-label[data-alignment=between][data-custom-checkbox=true][data-order=reverse] .molecule-label-checkbox__hint-required {
+  position: relative;
+  left: auto;
+  right: 0;
+}
+
+.molecule-label-radio {
+  width: 100%;
+}
+
+.molecule-label-radio fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.molecule-label-radio[data-order=reverse] fieldset {
+  flex-direction: column-reverse;
+}
+
+.molecule-label-radio[data-layout=horizontal] fieldset {
+  flex-direction: row;
+  gap: 2rem;
+}
+
+/* alignment */
+.molecule-label-radio[data-layout=horizontal][data-order=reverse] fieldset {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.molecule-label-radio[data-style=no-panel] fieldset legend {
+  /*display: none;*/
+}
+
+.molecule-label-radio fieldset > .molecule-label-radio__container {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /*gap: 14px;*/
+}
+
+.molecule-label-radio__hint-required {
+  margin-left: 4px;
+  top: -4px;
+  position: relative;
+  color: hsl(0deg 100% 50%);
+  font-weight: 700;
+}
+
+.molecule-label-select {
+  /*border: 8px solid red;*/
+}
+
+[data-show-required-fields=true] [data-required=true] + .atom-label::after {
+  content: "*";
+  color: var(--color-henk-danger);
+  font-weight: 700;
+  right: -2px;
+  position: absolute;
+  top: -4px;
 }
 
 .org-breadcrumbs * + * {
@@ -9325,6 +10136,31 @@ Brick with grid with 3 columns containing editable for:
     text-align: center;
   }
 }
+.org-form {
+  background-color: var(--color-background-input);
+  /*padding: 1rem;*/
+  padding-bottom: 2rem;
+}
+
+.org-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.org-form__grid-container {
+  display: flex;
+  gap: 1rem;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.org-form__grid-container .org-form__grid-item {
+  flex: 1 1 48%;
+}
+
 /* .navigation {
   // reset owl
   * + * {
