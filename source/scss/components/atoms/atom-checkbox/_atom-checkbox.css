@@ -1,0 +1,10 @@
+.atom-checkbox[type="checkbox"] {
+    display: inline-flex;
+    height: 1.75rem;
+}
+
+/* state: disabled */
+.atom-checkbox[type="checkbox"][disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
