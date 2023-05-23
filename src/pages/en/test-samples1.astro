@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const responseSamples = await fetch('https://www.studio-henk.nl/en/get-sample-product');
+const dataSamples = await responseSamples.json();
+// console.log(dataSamples);
+// const firstSample = dataSamples.results[0];
+// const firstSample = dataSamples.results;
+---
+<BaseLayout title="Test Samples">
+    <p>https://www.studio-henk.nl/en/get-sample-product</p>
+    <hr>
+    <!-- Data fetched at build can be rendered in HTML -->
+    <h1>Samples</h1>
+    <!-- <h2>{firstSample}</h2>
+    <pre>
+        {dataSamples["sample-products"][0].name}
+    </pre>
+    -->
+    <hr>
+    <ul>
+        {dataSamples["sample-products"].map((item) => (
+            <li>{item.name}</li>
+        ))}
+    </ul>
+</BaseLayout>
