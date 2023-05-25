@@ -9,7 +9,6 @@
  */
 html {
   line-height: 1.15; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -636,7 +635,7 @@ templates/Areas/reviews-brick/view.html.twig
 
 ::selection {
   color: var(--color-text-selection-text, var(--color-white, #fff));
-  background-color: var(--color-text-selection-bg, var(--color-accent5, pink));
+  background-color: var(--color-text-selection-bg, var(--color-accent5, #eae4d7));
 }
 
 html {
