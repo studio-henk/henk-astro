@@ -1,6 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/atom-button-new.css";
+import { getLangFromUrl } from '../../i18n/utils';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+// import "../../styles/atom-button-new.css";
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <BaseLayout title="About">
@@ -32,6 +34,7 @@ import "../styles/atom-button-new.css";
     }
   </style>
 <!-- hero -->
+  <h1>current locale is: {lang}</h1>
   <div class="hero-block">
     <img
       alt="founders of Studio Henk"
