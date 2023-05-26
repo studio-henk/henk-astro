@@ -29,6 +29,7 @@ const { title } = Astro.props;
         type="text/css"
     />
     <slot name="head-styles" />
+    <script is:inline src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
     <slot name="head-scripts" />
 </head>
