@@ -5,6 +5,7 @@
   font-weight: 300;
   line-height: 200%;
   display: inline-flex;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -224,4 +225,21 @@
   .sh-atom-button[data-style*="plain"][data-animated-hover]::before {
     height: 0.5px;
   }
+}
+
+/* video sound buttons */
+/*.sh-atom-button[data-state="muted"] .unmuted {
+  display: none;
+}
+
+sh-atom-button[data-state="unmuted"] .muted {
+  display: none;
+}*/
+
+.sh-atom-button[data-state="muted"] .sound-on {
+  display: none !important;
+}
+
+.sh-atom-button[data-state="unmuted"] .sound-muted {
+  display: none !important;
 }

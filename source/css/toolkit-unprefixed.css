@@ -4538,6 +4538,7 @@ dl[data-direction=horizontal],
   font-weight: 300;
   line-height: 200%;
   display: inline-flex;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -4754,6 +4755,22 @@ dl[data-direction=horizontal],
     height: 0.5px;
   }
 }
+/* video sound buttons */
+/*.sh-atom-button[data-state="muted"] .unmuted {
+  display: none;
+}
+
+sh-atom-button[data-state="unmuted"] .muted {
+  display: none;
+}*/
+.sh-atom-button[data-state=muted] .sound-on {
+  display: none !important;
+}
+
+.sh-atom-button[data-state=unmuted] .sound-muted {
+  display: none !important;
+}
+
 .icon-frame {
   width: 24px;
   height: auto;
@@ -4763,15 +4780,17 @@ dl[data-direction=horizontal],
   padding: 2px;
   box-sizing: border-box;
   aspect-ratio: 1/1;
+  pointer-events: none;
 }
 
 [data-size="35"] .icon-frame {
   width: 20px;
 }
 
-/*.icon-frame svg {
-  height: 100%;
-}*/
+.icon-frame svg {
+  pointer-events: none;
+}
+
 .sh-atom-button-icon {
   display: inline-flex;
   justify-content: center;
@@ -4779,7 +4798,7 @@ dl[data-direction=horizontal],
   transition: all 0.6s ease;
   background-color: var(--color-background-button-icon, transparent);
   color: var(--color-text-button-icon, #000);
-  border: 0px solid var(--color-border-button-icon, transparent);
+  border: 0 solid var(--color-border-button-icon, transparent);
 }
 
 .sh-atom-button-icon:hover {
@@ -4833,6 +4852,14 @@ dl[data-direction=horizontal],
   max-height: unset;*/
   max-width: 100%;
   max-height: 100%;
+}
+
+.sh-atom-button-icon[data-state=muted] .sound-on {
+  display: none !important;
+}
+
+.sh-atom-button-icon[data-state=unmuted] .sound-muted {
+  display: none !important;
 }
 
 /* see base.scss for h1 - h6 base styles */
@@ -5444,6 +5471,7 @@ input.atom-radio[type=radio] + .atom-label {
 
 .sh-molecule-l-button-group {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   margin-top: 28px;
   /* mobile alignment prop */
@@ -9944,6 +9972,9 @@ Brick with grid with 3 columns containing editable for:
 .swiper[data-fullscreen=true] .swiper-slide .item__content .item__title + * {
   margin-top: 14px;
 }
+.swiper[data-fullscreen=true] .swiper-slide .item__content .sh-atom-button {
+  margin-top: 28px;
+}
 .swiper[data-fullscreen=true] .swiper-slide .item__content .samples__pack__samples {
   list-style: none;
   margin-bottom: 0;
@@ -11414,7 +11445,7 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   }
 }
 .no-touchevents .main-nav__row > li.main-nav__item a:hover {
-  color: rgba(0, 0, 0, 0.88);
+  /*color: rgba(0, 0, 0, 0.88);*/
   text-decoration: none;
 }
 
@@ -11576,7 +11607,7 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
 
 #nav-icon3.open span:nth-child(1) {
   top: 26px;
-  width: 0%;
+  width: 0;
   left: 50%;
 }
 

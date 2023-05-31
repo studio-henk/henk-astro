@@ -1,3 +1,8 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+---
 <footer class="org-footer">
   <section class="org-footer__newsletter">
     <script>
@@ -45,7 +50,7 @@
         >
       </div>
       <div style="display:none;" id="order_place_loader_div1">
-        <img src="/static/std/assets/toolkit/images/order_place_loader.gif" />
+        <img alt="loading data" src="/static/std/assets/toolkit/images/order_place_loader.gif" />
       </div>
     </div>
     <h3 class="newsletter__title" style="display: none;"></h3>
@@ -240,8 +245,18 @@
       <a href="/en/faq">FAQ</a>
       <a href="/en/maintenance">Maintenance</a>
       <a href="/en/endless-life-services">Endless Life Service</a>
+      {lang == 'nl' ? <p>NL link</p> : <p>EN link</p>}
       <a href="/en/planning">Delivery times</a>
       <a href="/en/stock">Stock</a>
+      {
+          lang == 'nl' &&
+          <p>Show me!</p>
+          <p>Show me!</p>
+          <p>Show me!</p>
+          <p>Show me!</p>
+          <p>Show me!</p>
+          <p>Show me!</p>
+      }
       <a
         href="https://studio-henk-live.s3.eu-west-1.amazonaws.com/assets/Pricelists/STUDIOHENK_Pricelist_2023_DIGITAL.pdf"
         >Price list</a
@@ -250,7 +265,8 @@
     </nav>
   </section>
   <section class="org-footer__rating">
-    <div class="org-g-rating-avg" data-rating="4.6" style="--perc:" 40%="">
+    <!--<div class="org-g-rating-avg" data-rating="4.6" style="&#45;&#45;perc:" 40%="">-->
+    <div class="org-g-rating-avg" data-rating="4.6" style="--perc:40%;">
       <ol class="stars">
         <li class="star">
           <svg
@@ -459,7 +475,6 @@
           ><!-- ideal logo svg -->
 
           <svg
-            version="1.1"
             id="ideal"
             class="payment__logo"
             xmlns="http://www.w3.org/2000/svg"
@@ -467,7 +482,6 @@
             x="0px"
             y="0px"
             viewBox="0 0 306.1 269.8"
-            style="enable-background: new 0 0 306.1 269.8"
             xml:space="preserve"
           >
             <style type="text/css">
@@ -534,17 +548,15 @@
         <span>
           <!-- mr cash logo svg -->
           <svg
-            width="100%"
-            height="100%"
-            class="payment__logo"
-            id="mrcash"
-            viewBox="0 0 2272 1363"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xml:space="preserve"
-            xmlns:serif="http://www.serif.com/"
-            style="fill-rule: evenodd; clip-rule: evenodd; stroke-miterlimit: 2.613"
+              width="100%"
+              height="100%"
+              class="payment__logo"
+              id="mrcash"
+              viewBox="0 0 2272 1363"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xml:space="preserve"
+              style="fill-rule: evenodd; clip-rule: evenodd; stroke-miterlimit: 2.613"
           >
             <g id="Artboard1" transform="matrix(0.986335,0,0,0.975103,0,0)">
               <rect
@@ -636,7 +648,6 @@
           <svg
             class="sh-atom-icon payment__logo"
             id="visa"
-            enable-background="new 0 0 258.381 161.154"
             height="323.65302"
             viewBox="0 0 1000.046 323.653"
             width="1000.046"
