@@ -1,7 +1,7 @@
 export function getOtherLang(lang) {
     let langIndex;
     let otherLang;
-    if (lang == 'en') {
+    if (lang === 'en') {
         langIndex = 0;
         otherLang = 1;
     } else {

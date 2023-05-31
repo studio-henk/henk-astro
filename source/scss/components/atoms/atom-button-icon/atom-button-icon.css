@@ -81,3 +81,11 @@
     max-width: 100%;
     max-height: 100%;
 }
+
+.sh-atom-button-icon[data-state="muted"] .sound-on {
+    display: none !important;
+}
+
+.sh-atom-button-icon[data-state="unmuted"] .sound-muted {
+    display: none !important;
+}

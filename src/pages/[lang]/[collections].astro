@@ -1,14 +1,12 @@
 ---
 import {getOtherLang} from "../../i18n/helpers.js";
-export function getStaticPaths () {
+export function getStaticPaths() {
     return [
         {params: {lang: 'en', collections: 'collections'}},
         {params: {lang: 'nl', collections: 'collecties'}},
     ];
 }
-
-const { lang, collections} = Astro.params;
-
+const {lang, collections} = Astro.params;
 const otherLang = getOtherLang(lang);
 const languages = getStaticPaths();
 const otherLangData = languages[otherLang].params;
