@@ -12,7 +12,7 @@ const otherLang = getOtherLang(lang);
 const languages = getStaticPaths();
 const otherLangData = languages[otherLang].params;
 ---
-<BaseLayout title="About">
+<BaseLayout title="About" data-other-lang={otherLangData}>
     <style>
         .hero-block .hero__image {
             height: auto;
