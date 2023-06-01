@@ -1,5 +1,6 @@
 ---
-const { locale } = Astro.props;
+import {getLangFromUrl} from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
 ---
 <section class="navigation">
   <div class="main-menu">
@@ -223,7 +224,7 @@ const { locale } = Astro.props;
             <li
               class="main-nav__item main-nav__cart hidden-xs visible-lg-block"
             >
-              <a class="quick-cart__launch" href={`/${locale}/cart/cart`}>
+              <a class="quick-cart__launch" href={`/${lang}/cart/list`}>
                 <svg class="icon" icon-cart-empty="">
                   <use
                     xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-cart-empty"

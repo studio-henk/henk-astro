@@ -1,14 +1,12 @@
 ---
+import {getLangFromUrl} from '../i18n/utils';
 import MsgBar from "../components/MsgBar.astro";
 import TheNav from "../components/TheNav.astro";
-import LanguagePicker from '../components/LanguagePicker.astro';
+// import LanguagePicker from '../components/LanguagePicker.astro';
 import TheFooter from "../components/TheFooter.astro";
-const {title} = Astro.props;
-const pageProps = Astro.props;
-import {getLangFromUrl} from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-// console.log(Astro.params);
+const {title, mainID, mainClass} = Astro.props;
 ---
 <html lang={lang}>
 <head>
@@ -40,8 +38,8 @@ const lang = getLangFromUrl(Astro.url);
 <body>
 <div class="wrapper">
     <MsgBar/>
-    <TheNav/>
-    <main>
+    <TheNav />
+    <main class={mainClass} id={mainID}>
         <!--<LanguagePicker/>-->
         <slot/>
     </main>
