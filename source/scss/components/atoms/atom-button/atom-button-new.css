@@ -12,7 +12,8 @@
   letter-spacing: 0.01em;
   text-decoration: none;
   text-transform: none;
-  padding: 7px 20px;
+  /*padding: 7px 20px;*/
+  padding: calc(7 / 17 * 1em) 20px;
   cursor: pointer;
   font-feature-settings: "pnum" on, "lnum" on;
   background-color: var(--color-background-button, transparent);
@@ -110,6 +111,12 @@
 .sh-atom-button[data-style*="plain"][data-animated-hover]:hover::before {
   width: 45%;
   transition: width 0.25s cubic-bezier(0, 0, 0, 1.06);
+}
+
+.sh-atom-button[data-size="small"] {
+  /* 12px */
+  font-size: 0.75rem;
+  /*line-height: 20px;*/
 }
 
 .sh-atom-button[data-style*="plain"][data-size="small"] {
@@ -242,4 +249,29 @@ sh-atom-button[data-state="unmuted"] .muted {
 
 .sh-atom-button[data-state="unmuted"] .sound-muted {
   display: none !important;
+}
+
+/* alignment */
+
+.sh-atom-button[data-alignment*="price"] {
+ display: inline-grid;
+ grid-template-columns: repeat(2, auto);
+ column-gap: 2vw;
+ justify-content: center;
+}
+
+.sh-atom-button[data-alignment="price-around"] {
+  justify-content: space-around;
+}
+
+.sh-atom-button[data-alignment="price-between"] {
+  justify-content: space-between;
+}
+
+.sh-atom-button[data-alignment="price-evenly"] {
+  justify-content: space-evenly;
+}
+
+.sh-atom-button[data-alignment*="separator"] {
+  grid-template-columns: repeat(3, auto);
 }

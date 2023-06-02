@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Icons">
+    <h1>Icons</h1>
+    <h2>New</h2>
+    <style>
+        .icon {
+            display: inline-block;
+            line-height: 1;
+            background: antiquewhite;
+        }
+    </style>
+    <div class="example">
+        <span class="icon">
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    id="arrow-right-line"
+                    d="M0 10H12.5185"
+                    stroke="currentcolor"
+                    stroke-width="0.8"></path>
+                <path
+                    id="arrow-right-point"
+                    d="M8.66667 6L13 10L8.66667 14"
+                    stroke="currentcolor"
+                    stroke-width="0.8"></path>
+            </svg>
+        </span>
+    </div>
+    <hr>
+    <h2>Arrow Right</h2>
+    <div class="example">
+        <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                id="arrow-right-line"
+                d="M0 10H12.5185"
+                stroke="currentcolor"
+                stroke-width="0.8"></path>
+            <path
+                id="arrow-right-point"
+                d="M8.66667 6L13 10L8.66667 14"
+                stroke="currentcolor"
+                stroke-width="0.8"></path>
+        </svg>
+    </div>
+    <hr>
+    <p>Without width and height and viewbox?</p>
+    <div class="example">
+        <span class="icon-frame">
+          <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+                id="arrow-right-line"
+                d="M0 10H12.5185"
+                stroke="currentcolor"
+                stroke-width="0.8"></path>
+            <path
+                id="arrow-right-point"
+                d="M8.66667 6L13 10L8.66667 14"
+                stroke="currentcolor"
+                stroke-width="0.8"></path>
+          </svg>
+        </span>
+    </div>
+</BaseLayout>

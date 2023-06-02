@@ -6,15 +6,15 @@
   background: #f4f2ed;
   border-radius: 40px;
   display: inline-flex;
-  padding: 4px 16px;
-  align-content: flex-start;
+  gap: 0.36363636em;
+  padding: 5px 16px 4px;
   justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 18px;
+  align-items: center;
+  margin: 1.75em 0;
 
   // exceptions !
   // in shopping cart
-  .shopping-cart-product__details--description & {
+  /*.shopping-cart-product__details--description & {
     margin-top: 14px;
-  }
+  }*/
 }
