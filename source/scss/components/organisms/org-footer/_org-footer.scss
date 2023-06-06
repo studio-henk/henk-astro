@@ -196,6 +196,19 @@
 
   &__rating {
     grid-area: org-footer-rating;
+
+    .section-certifications {
+      display: flex;
+      column-gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-certifications__image {
+      &.--cng {
+        width: 88px;
+        height: auto;
+      }
+    }
   }
 
   &__social {
