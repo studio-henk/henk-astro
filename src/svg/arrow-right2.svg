@@ -1,0 +1,20 @@
+<svg
+        width="13"
+        height="8"
+        viewBox="0 0 26 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+>
+    <g>
+    <path
+            id="arrow-right-line"
+            d="M0 10H12.5185"
+            stroke="currentcolor"
+            stroke-width="0.8"></path>
+    <path
+            id="arrow-right-point"
+            d="M8.66667 6L13 10L8.66667 14"
+            stroke="currentcolor"
+            stroke-width="0.8"></path>
+    </g>
+</svg>

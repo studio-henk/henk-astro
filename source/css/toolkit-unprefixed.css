@@ -4527,8 +4527,18 @@ dl[data-direction=horizontal],
 }
 
 .sh-atom-icon {
-  max-width: 24px;
-  max-height: 24px;
+  /*max-width: 24px;
+  max-height: 24px;*/
+}
+
+.sh-atom-icon[data-size=large] {
+  width: 48px;
+  height: auto;
+}
+
+.sh-atom-icon[data-size=small] {
+  width: 16px;
+  height: auto;
 }
 
 .sh-atom-button {
