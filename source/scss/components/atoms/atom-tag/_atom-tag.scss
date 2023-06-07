@@ -1,13 +1,13 @@
 .sh-atom-tag {
-  font-size: 0.6875rem; // 11px
-  line-height: 18px;
+  font-size: 0.75em; // 12px
+  line-height: 1.66666667;
   text-align: center;
-  letter-spacing: 0.8px;
-  background: #f4f2ed;
+  letter-spacing: 0.1em;
+  background-color: var(--color-accent1, #f3f1ec);
   border-radius: 40px;
   display: inline-flex;
   gap: 0.36363636em;
-  padding: 5px 16px 4px;
+  padding: 0.25em 0.83333333em;
   justify-content: flex-start;
   align-items: center;
   margin: 1.75em 0;

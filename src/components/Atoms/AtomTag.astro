@@ -1,0 +1,21 @@
+---
+import Icon from "../Icon.astro";
+const { text, icon, iconPosition } = Astro.props;
+---
+<span
+    class="sh-atom-tag"
+>
+    {
+        iconPosition === "left" && <Icon
+            icon={icon}
+            data-size=""
+        />
+    }
+    { text }
+    {
+        iconPosition === "right" && <Icon
+            icon={icon}
+            data-size=""
+        />
+    }
+</span>
