@@ -4928,7 +4928,7 @@ sh-atom-button[data-state="unmuted"] .muted {
   padding: 0.25em 0.83333333em;
   justify-content: flex-start;
   align-items: center;
-  margin: 1.75em 0;
+  /*margin: 1.75em 0;*/
   vertical-align: middle;
 }
 
