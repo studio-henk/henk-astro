@@ -4929,9 +4929,28 @@ sh-atom-button[data-state="unmuted"] .muted {
   justify-content: flex-start;
   align-items: center;
   margin: 1.75em 0;
-  /*.shopping-cart-product__details--description & {
-    margin-top: 14px;
-  }*/
+  vertical-align: middle;
+}
+
+/* with a link
+padding must be moved from tag to inner link element
+*/
+.sh-atom-tag__link,
+.sh-atom-tag[data-haslink] > a {
+  text-decoration: none;
+}
+
+.sh-atom-tag[data-haslink] {
+  padding: 0;
+}
+
+.sh-atom-tag[data-haslink] .sh-atom-tag__link,
+.sh-atom-tag[data-haslink] > a {
+  padding: 0.25em 0.83333333em;
+  display: flex;
+  gap: 0.36363636em;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 blockquote > p,

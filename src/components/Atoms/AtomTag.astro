@@ -1,21 +1,40 @@
 ---
 import Icon from "../Icon.astro";
-const { text, icon, iconPosition } = Astro.props;
+const { text, icon, iconPosition, hasLink } = Astro.props;
 ---
-<span
-    class="sh-atom-tag"
->
-    {
-        iconPosition === "left" && <Icon
-            icon={icon}
-            data-size=""
-        />
-    }
-    { text }
-    {
-        iconPosition === "right" && <Icon
-            icon={icon}
-            data-size=""
-        />
-    }
-</span>
+{
+    hasLink ?
+        <span
+            class="sh-atom-tag"
+            data-haslink={hasLink}
+        >
+        <a href={hasLink} class="sh-atom-tag__link">
+            {iconPosition === "left" &&
+            <Icon
+                icon={icon}
+                data-size=""/>
+            }
+            {text}
+            {
+                iconPosition === "right" && <Icon
+                    icon={icon}
+                    data-size=""
+                />
+            }
+        </a>
+      </span>
+    : <span class="sh-atom-tag">
+        {iconPosition === "left" &&
+            <Icon
+                icon={icon}
+                data-size=""/>
+        }
+        {text}
+        {
+            iconPosition === "right" && <Icon
+                icon={icon}
+                data-size=""
+            />
+        }
+      </span>
+}
