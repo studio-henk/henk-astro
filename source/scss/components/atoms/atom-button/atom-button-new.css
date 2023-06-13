@@ -5,13 +5,15 @@
   font-weight: 300;
   line-height: 200%;
   display: inline-flex;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   text-align: center;
   letter-spacing: 0.01em;
   text-decoration: none;
   text-transform: none;
-  padding: 7px 20px;
+  /*padding: 7px 20px;*/
+  padding: calc(7 / 17 * 1em) 20px;
   cursor: pointer;
   font-feature-settings: "pnum" on, "lnum" on;
   background-color: var(--color-background-button, transparent);
@@ -111,14 +113,17 @@
   transition: width 0.25s cubic-bezier(0, 0, 0, 1.06);
 }
 
+.sh-atom-button[data-size="small"] {
+  /* 12px */
+  font-size: 0.75rem;
+  /*line-height: 20px;*/
+}
+
 .sh-atom-button[data-style*="plain"][data-size="small"] {
   /* 12px */
   font-size: 0.75rem;
   line-height: 20px;
 }
-
-/* ,
-.sh-atom-button[data-style*="plain"]:not([data-animated-hover]):hover */
 
 .sh-atom-button[data-text-underline="true"] {
   text-decoration: underline;
@@ -195,6 +200,20 @@
   text-decoration: none;
 }
 
+/* anchor-link */
+.sh-atom-button.--anchor-link,
+.sh-atom-button[data-icon-arrow-down="true"] {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sh-atom-button.--anchor-link:hover,
+.sh-atom-button[data-icon-arrow-down="true"]:hover {
+  text-decoration: none;
+}
+
 /* high res */
 @media (min-resolution: 2dppx) {
   .sh-atom-button {
@@ -213,4 +232,46 @@
   .sh-atom-button[data-style*="plain"][data-animated-hover]::before {
     height: 0.5px;
   }
+}
+
+/* video sound buttons */
+/*.sh-atom-button[data-state="muted"] .unmuted {
+  display: none;
+}
+
+sh-atom-button[data-state="unmuted"] .muted {
+  display: none;
+}*/
+
+.sh-atom-button[data-state="muted"] .sound-on {
+  display: none !important;
+}
+
+.sh-atom-button[data-state="unmuted"] .sound-muted {
+  display: none !important;
+}
+
+/* alignment */
+
+.sh-atom-button[data-alignment*="price"] {
+ display: inline-grid;
+ grid-template-columns: repeat(2, auto);
+ column-gap: 2vw;
+ justify-content: center;
+}
+
+.sh-atom-button[data-alignment="price-around"] {
+  justify-content: space-around;
+}
+
+.sh-atom-button[data-alignment="price-between"] {
+  justify-content: space-between;
+}
+
+.sh-atom-button[data-alignment="price-evenly"] {
+  justify-content: space-evenly;
+}
+
+.sh-atom-button[data-alignment*="separator"] {
+  grid-template-columns: repeat(3, auto);
 }

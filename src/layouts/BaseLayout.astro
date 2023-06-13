@@ -1,15 +1,16 @@
 ---
+import {getLangFromUrl} from '../i18n/utils';
 import MsgBar from "../components/MsgBar.astro";
 import TheNav from "../components/TheNav.astro";
 import TheFooter from "../components/TheFooter.astro";
-const { title } = Astro.props;
----
 
-<html lang="en">
-  <head>
+const lang = getLangFromUrl(Astro.url);
+const {title, mainID, mainClass} = Astro.props;
+---
+<html lang={lang}>
+<head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -18,7 +19,7 @@ const { title } = Astro.props;
         name="description"
         content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture."
     />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
     <!-- henk styles -->
     <!-- <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css" /> -->
@@ -28,15 +29,17 @@ const { title } = Astro.props;
         rel="stylesheet"
         type="text/css"
     />
-    <slot name="head-styles" />
+    <slot name="head-styles"/>
+    <script is:inline src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
-    <slot name="head-scripts" />
+    <slot name="head-scripts"/>
 </head>
 <body>
 <div class="wrapper">
     <MsgBar />
     <TheNav />
-    <main>
+    <main class={mainClass} id={mainID}>
+        <!--<LanguagePicker/>-->
         <slot />
     </main>
     <TheFooter />

@@ -1,0 +1,15 @@
+---
+import {getOtherLang} from "../../i18n/helpers.js";
+export function getStaticPaths() {
+    return [
+        {params: {lang: 'en', about: 'about'}},
+        {params: {lang: 'nl', about: 'over'}},
+    ];
+}
+const {lang, about} = Astro.params;
+const otherLang = getOtherLang(lang);
+const languages = getStaticPaths();
+const otherLangData = languages[otherLang].params;
+---
+<h1>hello: {lang} - {about}</h1>
+<p>This page in the other language is at: url here: {otherLangData.about} - {otherLangData.lang}</p>

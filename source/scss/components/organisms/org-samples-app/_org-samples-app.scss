@@ -1,7 +1,5 @@
 /// samples app
 // todo-nils element naming
-// @use "../../../vars" as *;
-/*@use "../../../_v2/text-styles/text-styles" as *;*/
 @use "../../../mixins/mixins" as *;
 
 // hide until loaded
@@ -135,7 +133,7 @@ img.sh-atom-sample {
     font-weight: 400;
     line-height: 21px;
     color: var(--color-henk-black);
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     display: grid;
     grid-template-columns: 37px 1fr;
     gap: 0 22px;
