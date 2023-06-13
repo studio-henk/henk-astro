@@ -11,34 +11,36 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <meta
-      name="description"
-      content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture."
+        name="description"
+        content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture."
     />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <!-- henk styles -->
     <!-- <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css" /> -->
-     <link
-            href="/static/std/assets/toolkit/styles/toolkit.css"
-            media="screen"
-            rel="stylesheet"
-            type="text/css"
-          />
-     <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
-  </head>
-  <body>
-    <div class="wrapper">
-      <MsgBar />
-      <TheNav />
-      <main>
+    <link
+        href="/static/std/assets/toolkit/styles/toolkit.css"
+        media="screen"
+        rel="stylesheet"
+        type="text/css"
+    />
+    <slot name="head-styles" />
+    <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
+    <slot name="head-scripts" />
+</head>
+<body>
+<div class="wrapper">
+    <MsgBar />
+    <TheNav />
+    <main>
         <slot />
-      </main>
-      <TheFooter />
-    </div>
-  </body>
+    </main>
+    <TheFooter />
+</div>
+<slot name="footer-scripts" />
+</body>
 </html>
