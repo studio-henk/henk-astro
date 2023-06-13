@@ -551,6 +551,8 @@ templates/Areas/reviews-brick/view.html.twig
 ::before,
 ::after,
 ::selection {
+  /* font */
+  --font-body: "Haas Grot Text R Web";
   /* colors */
   --color-background-page-primary-base: var(--color-white, #fff);
   --color-background-page: var(--color-white, #fff);
@@ -704,13 +706,10 @@ body {
   background-color: var(--bg-default, #fff);
   color: var(--fg-default, #000);
   margin: 0;
-  /*font-family: "ff-scala-sans-pro", sans-serif;*/
-  /*font-family: "airstreamregular", sans-serif;*/
-  /*font-family: 'Haas Grot Text R Web', sans-serif;*/
-  font-family: "Haas Grot Text R Web", Georgia;
+  /*font-family: "Haas Grot Text R Web", sans-serif;*/
+  font-family: var(--font-body, sans-serif), sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  /*font-weight: 300;*/
 }
 
 h1,
@@ -5220,7 +5219,7 @@ figure figcaption,
   width: 100%;
   background-color: var(--color-background-input, var(--color-background-form, #fff));
   color: var(--color-text-input, #000);
-  font-family: ff-scala-sans-pro, sans-serif;
+  font-family: var(--font-body, sans-serif), sans-serif;
   font-weight: 300;
   border-radius: 8px;
   border: 1px solid var(--color-text-input, #000);

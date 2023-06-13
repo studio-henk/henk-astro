@@ -128,13 +128,10 @@ body {
   background-color: var(--bg-default, #fff);
   color: var(--fg-default, #000);
   margin: 0;
-  /*font-family: "ff-scala-sans-pro", sans-serif;*/
-  /*font-family: "airstreamregular", sans-serif;*/
-  /*font-family: 'Haas Grot Text R Web', sans-serif;*/
-  font-family: "Haas Grot Text R Web", Georgia;
+  /*font-family: "Haas Grot Text R Web", sans-serif;*/
+  font-family: var(--font-body, sans-serif), sans-serif;
   font-weight:  400;
   font-size: 1rem;
-  /*font-weight: 300;*/
 }
 
 h1,

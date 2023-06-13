@@ -1,7 +1,6 @@
 ---
 import {getLangFromUrl} from '../../i18n/utils';
 import BaseLayout from "../../layouts/BaseLayout.astro";
-// import "../../styles/atom-button-new.css";
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -183,14 +182,19 @@ https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg 936w"
                 <div class="content-block__header">
                     <h2 class="content-block__heading">Our Journey</h2>
                 </div>
-
-                <div class="content-block__content"><img alt="timeline" class="timeline-svg" data-hide="tablet|desktop"
-                                                         height="310"
-                                                         src="https://assets.studio-henk.nl/assets/Images/about-us/timeline-mobile2.svg"
-                                                         width="364"/> <img alt="timeline" class="timeline-svg"
-                                                                            data-hide="mobile" height="333"
-                                                                            src="https://assets.studio-henk.nl/assets/Images/about-us/timeline2.svg"
-                                                                            width="658"/></div>
+                <div class="content-block__content">
+                    <img alt="timeline" class="timeline-svg" data-hide="tablet|desktop"
+                         src="https://assets.studio-henk.nl/assets/Images/about-us/about-us-images/timeline-mobile-aboutus.svg"
+                         width="371"
+                    />
+                    <img
+                        alt="timeline"
+                        class="timeline-svg"
+                        data-hide="mobile"
+                        src="https://assets.studio-henk.nl/assets/Images/about-us/about-us-images/timeline-mobile-aboutus.svg"
+                        width="371"
+                    />
+                </div>
             </div>
         </div>
     </div>
