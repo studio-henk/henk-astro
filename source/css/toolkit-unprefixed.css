@@ -7349,6 +7349,16 @@ Icons for facebook etc, used in footer
 .org-footer__rating {
   grid-area: org-footer-rating;
 }
+.org-footer__rating .section-certifications {
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.org-footer__rating .section-certifications__image.--cng {
+  width: 88px;
+  height: auto;
+}
 .org-footer__social {
   grid-area: org-footer-social;
 }
