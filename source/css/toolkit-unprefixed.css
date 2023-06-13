@@ -599,6 +599,7 @@ templates/Areas/reviews-brick/view.html.twig
   font-weight: 700;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 .NeueHaasGrotTextRound-76BoldItalic-Web {
   font-family: "Haas Grot Text R Web";
@@ -613,6 +614,7 @@ templates/Areas/reviews-brick/view.html.twig
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 .NeueHaasGrotTextRound-75Bold-Web {
   font-family: "Haas Grot Text R Web";
@@ -627,6 +629,7 @@ templates/Areas/reviews-brick/view.html.twig
   font-weight: 500;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 .NeueHaasGrotTextRound-66MediumItalic-Web {
   font-family: "Haas Grot Text R Web";
@@ -641,6 +644,7 @@ templates/Areas/reviews-brick/view.html.twig
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 .NeueHaasGrotTextRound-65Medium-Web {
   font-family: "Haas Grot Text R Web";
@@ -655,6 +659,7 @@ templates/Areas/reviews-brick/view.html.twig
   font-weight: 400;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 .NeueHaasGrotTextRound-56Italic-Web {
   font-family: "Haas Grot Text R Web";
@@ -669,6 +674,7 @@ templates/Areas/reviews-brick/view.html.twig
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 .NeueHaasGrotTextRound-55Roman-Web {
   font-family: "Haas Grot Text R Web";
