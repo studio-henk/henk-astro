@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Salesforce">
+<BaseLayout title="Contact">
     <link slot="head-styles" rel="stylesheet" href="/static/std/assets/toolkit/scripts/intlTelInput/css/intlTelInput.css">
     <script slot="head-scripts" src="/static/std/assets/toolkit/scripts/intlTelInput/js/intlTelInput.min.js"></script>
     <script slot="head-scripts" src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -304,7 +304,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             }
         });
     </script>
-    <script slot="footer-scripts" defer>
+    <!--<script slot="footer-scripts" defer>
         function runTelField() {
             var input = document.querySelector("#phone");
             window.intlTelInput(input, {
@@ -319,5 +319,5 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         }
 
         // runTelField();
-    </script>
+    </script>-->
 </BaseLayout>

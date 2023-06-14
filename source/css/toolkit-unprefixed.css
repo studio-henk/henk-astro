@@ -15389,7 +15389,8 @@ quickfix for images causing gap in grid
   letter-spacing: 0.2em;
 }
 
-.hero-brick .sh-atom-button.--transparent.--anchor-link {
+.hero-brick .sh-atom-button.--transparent.--anchor-link,
+.hero-brick .sh-atom-button[data-icon-arrow-down=true] {
   position: absolute;
   bottom: 20px;
   left: 50%;

@@ -72,7 +72,8 @@
 .hero-brick__body-intro {
 }
 
-.hero-brick .sh-atom-button.--transparent.--anchor-link {
+.hero-brick .sh-atom-button.--transparent.--anchor-link,
+.hero-brick .sh-atom-button[data-icon-arrow-down="true"] {
   position: absolute;
   bottom: 20px;
   left: 50%;
