@@ -1,0 +1,304 @@
+---
+const navLinks = [
+    {
+        name: 'Shop',
+        url: '#Shop',
+        style: 'transparent',
+        submenu: [
+            {
+                name: 'Tables',
+                url: '#tables',
+                submenu: [
+                    {
+                        name: 'All Tables',
+                        url: '#tables',
+                    },
+                    {
+                        name: 'Dining Tables',
+                        url: '#dining-tables',
+                    },
+                    {
+                        name: 'Coffee Tables',
+                        url: '#coffee-tables',
+                    },
+                    {
+                        name: 'Home Desks',
+                        url: '#home-desks',
+                    },
+                    {
+                        name: 'Bistro Tables',
+                        url: '#bistro-tables',
+                    }
+                ]
+            },
+            {
+                name: 'Chairs',
+                url: '#chairs',
+                submenu: [
+                    {
+                        name: 'All Chairs',
+                        url: '#all-chairs',
+                    },
+                    {
+                        name: 'Dining Chairs',
+                        url: '#dining-chairs',
+                    }
+                ]
+            },
+            {
+                name: 'Sofas',
+                url: '#sofas',
+                submenu: [
+                    {
+                        name: 'All Sofas',
+                        url: '#all-sofas',
+                    },
+                    {
+                        name: 'Sofas',
+                        url: '#sofas',
+                    },
+                    {
+                        name: 'Poufs',
+                        url: '#poufs',
+                    }
+                ]
+            },
+            {
+                name: 'Cabinets',
+                url: '#cabinets',
+            },
+            {
+                name: 'Accessories',
+                url: '#accessories',
+            },
+            {
+                name: 'Outdoor',
+                url: '/en/outdoor',
+            }
+        ]
+    },
+    {
+        name: 'Configurator',
+        url: '#Configurator',
+        style: 'transparent',
+        submenu: null,
+    },
+    {
+        name: 'Samples',
+        url: '#Samples',
+        style: 'transparent',
+        submenu: null,
+    },
+    {
+        name: 'Visit',
+        url: '#Visit',
+        style: 'transparent',
+        submenu: [
+            {
+                name: 'Our Stores',
+                url: '/en/shops',
+            },
+            {
+                name: 'Interior advice',
+                url: '/en/advice',
+            }
+        ]
+    },
+    {
+        name: 'Inspiration',
+        url: '#',
+        style: 'transparent',
+        submenu: [
+            {
+                name: 'Stories',
+                url: '/en/blogs',
+            },
+            {
+                name: 'Projects',
+                url: '/en/projects',
+            }
+        ]
+
+    },
+    {
+        name: 'About',
+        url: '/en/about-us',
+        style: 'transparent',
+        submenu: null,
+    },
+    {
+        name: 'Search',
+        url: '#',
+        style: 'transparent',
+        submenu: null,
+    },
+    {
+        name: 'Language',
+        url: '#',
+        style: 'transparent',
+        submenu: null,
+    }
+]
+---
+<nav class="main-navigation" id="main-navigation">
+    <ul class="main-navigation__link-list --nav-level1">
+        {
+            navLinks.map((link, index) => (
+                <li role="none" class={ link.submenu ? '--has-submenu' : '' }>
+                    <a
+                        class={link.submenu ? 'subview-link' : ''}
+                        href={link.url}
+                    >{link.name} { link.submenu ? '>' : '' }
+                    </a>
+                    {
+                        (link.submenu != null) &&
+                        <ul class="submenu --nav-level2" id={link.name}>
+                            <li><a href="#back" class="--back">&lt; Back</a></li>
+                            {
+                                link.submenu.map(subitem => (
+                                    <li class={ subitem.submenu ? '--has-submenu' : '' }>
+                                        <a
+                                            href={subitem.url}
+                                            class={subitem.submenu ? 'subview-link' : ''}
+                                        >{subitem.name} { subitem.submenu ? '>' : '' }
+                                        </a>
+                                        {
+                                            (subitem.submenu != null) &&
+                                            <ul class="submenu --nav-level3">
+                                                <li><a href="#back" class="--back">&lt; Back</a></li>
+                                                {
+                                                    subitem.submenu.map(subsubitem => (
+                                                        <li>
+                                                            <a href={subsubitem.url}>
+                                                                {subsubitem.name}
+                                                            </a>
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
+                                        }
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    }
+                </li>
+            ))
+        }
+    </ul>
+</nav>
+<script>
+    // elements
+    const rootElement = document.documentElement;
+    const masthead = document.querySelector('#masthead');
+    const navBtn = document.querySelector('#menu-btn');
+    const backLinks = document.querySelectorAll('.--back');
+    // console.log(backLinks);
+    const level1SubviewLinks = document.querySelectorAll('.--nav-level1 > .--has-submenu > .subview-link');
+    // console.log(level1SubviewLinks);
+    const level2SubviewLinks = document.querySelectorAll('.--nav-level2 > .--has-submenu > .subview-link');
+    //console.log(level2SubviewLinks);
+
+    // eventhandlers
+    // menu button
+    navBtn.addEventListener('click', () => {
+        navBtn.setAttribute('aria-expanded', navBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false')
+        // toggle class on html?
+        rootElement.classList.toggle('--menu-open');
+        if (masthead.classList.contains('--moveToLevel2')) {
+            masthead.classList.remove('--moveToLevel2');
+        } else if (masthead.classList.contains('--moveToLevel3')) {
+            masthead.classList.remove('--moveToLevel3');
+        }
+    })
+
+    // level 1
+    level1SubviewLinks.forEach(function (currentElement, currentIndex, listObj) {
+        currentElement.addEventListener("click", function (e) {
+            handleLevel1Links(currentElement);
+        });
+    });
+
+    // level 2
+    level2SubviewLinks.forEach(function (currentElement, currentIndex, listObj) {
+        currentElement.addEventListener("click", function (e) {
+            handleLevel2Links(currentElement);
+        });
+    });
+
+    // back links
+    backLinks.forEach(function (currentElement, currentIndex, listObj) {
+        currentElement.addEventListener("click", function (e) {
+            handleBackLinks(currentElement);
+        });
+    });
+
+    function handleLevel1Links (currentElement) {
+        event.preventDefault();
+        // remove class --active everywhere?
+        masthead.querySelectorAll('.--active').forEach(function (currentElement, currentIndex, listObj) {
+            currentElement.classList.remove('--active');
+        });
+
+        // add --active
+        currentElement.classList.add('--active');
+
+        // tell parent to move?
+        masthead.classList.add('--moveToLevel2');
+    }
+
+    function handleLevel2Links (currentElement) {
+        event.preventDefault();
+
+        // add --active
+        currentElement.classList.add('--active');
+
+        // tell parent to move?
+        masthead.classList.remove('--moveToLevel2');
+        masthead.classList.add('--moveToLevel3');
+    }
+
+    function handleBackLinks (currentElement) {
+        event.preventDefault();
+        // TODO: make general? get level number by active class ?
+        if (masthead.classList.contains('--moveToLevel2')) {
+            masthead.classList.remove('--moveToLevel2');
+        } else if (masthead.classList.contains('--moveToLevel3')) {
+            masthead.classList.remove('--moveToLevel3');
+            masthead.classList.add('--moveToLevel2');
+        }
+        // only remove active from current level
+        currentElement.parentElement.parentElement.parentElement.querySelector('.--active').classList.remove('--active');
+    }
+</script>
+<style is:global>
+
+    /* wireframe styles */
+    @keyframes wf-fade-in {
+        0% {
+            opacity: 0;
+            background-color: transparent;
+        }
+        100% {
+            opacity: 1;
+            background-color: lightgrey;
+        }
+    }
+
+    @keyframes wf-fade-out {
+        0% {
+            opacity: 1;
+            background-color: lightgrey;
+        }
+        100% {
+            opacity: 0;
+            background-color: transparent;
+        }
+    }
+
+    .--menu-open .wf-greyscale.masthead,
+    .wf-greyscale .submenu {
+        background-color: lightgrey !important;
+    }
+
+</style>

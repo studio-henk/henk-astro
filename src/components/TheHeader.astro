@@ -1,26 +1,39 @@
 ---
+import NavBar from '../components/NavBar3.astro';
+import '../../source/scss/components/organisms/_navbar.css'
+import Icon from "./Icon.astro";
 ---
 
-<header class="masthead">
-  <nav>
-    <a href="index">Home</a>
-    <a href="buttons">Buttons</a>
-    <a href="cart-elements">Cart elements</a>
-    <a href="cart">Cart List page</a>
-    <a href="content-blocks">Content blocks</a>
-    <a href="about">About</a>
-    <a href="hero-block">Hero block 2</a>
-  </nav>
+<header class="masthead wf-greyscale" id="masthead">
+    <div class="tmp-level1">
+        <a href="/" class="tmp-logo">
+            <Icon
+                icon="henk-logo"
+                width="174"
+                height="16"
+            />
+        </a>
+        <span class="tmp-badge">10</span>
+        <button
+            class="sh-atom-button"
+            id="menu-btn"
+            data-style="plain"
+            aria-expanded="false"
+            aria-label="Open mobile navigation"
+        >
+            <Icon
+                icon="icon-hamburger"
+                class="icon-hamburger"
+                width="24"
+                height="24"
+            />
+            <Icon
+                icon="icon-close"
+                class="icon-close"
+                width="24"
+                height="24"
+            />
+        </button>
+    </div>
+    <NavBar/>
 </header>
-<style>
-  .masthead {
-    border-bottom: 1px solid black;
-    padding: 1rem;
-    width: auto;
-  }
-
-  .masthead a {
-      text-decoration: none;
-    }
-  }
-</style>
