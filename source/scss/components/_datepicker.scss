@@ -45,19 +45,14 @@ td[data-handler="selectDay"] .ui-state-default {
 
 .ui-datepicker-prev > .ui-icon {
   // background-image: url('../images/icons/chevron_left-24px.svg');
-  background-image: url('/static/std/assets/toolkit/images/icons1/chevron_left-24px.svg');
+  background-image: url('/static/std/assets/toolkit/images/icons1/chevron_left-24px.svg') !important;
   background-position: 50% 50%;
 }
 
 .ui-datepicker-next > .ui-icon {
   // background-image: url('../images/icons/chevron_right-24px.svg');
-  background-image: url('/static/std/assets/toolkit/images/icons1/chevron_right-24px.svg');
+  background-image: url('/static/std/assets/toolkit/images/icons1/chevron_right-24px.svg') !important;
   background-position: 50% 50%;
-  // margin: 0;
-  // width: 100%;
-  // height: 100%;
-  // left: auto;
-  // top: auto;
 }
 .ui-datepicker .ui-datepicker-prev-hover,
 .ui-datepicker .ui-datepicker-next-hover {
