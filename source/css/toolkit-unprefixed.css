@@ -14695,14 +14695,14 @@ quickfix for images causing gap in grid
 }
 .mdl-shop-product .mdl-shop-product__content .mdl-shop-product__price {
   margin: 0;
-  grid-row: 1/1;
-  grid-column: 2/2;
+  /*grid-row: 1/1;
+  grid-column: 2/2;*/
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 25px;
-  text-align: right;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  /*text-align: right;*/
+  /*letter-spacing: 0.2em;*/
+  /*text-transform: uppercase;*/
   font-feature-settings: "pnum" on, "lnum" on;
   margin-top: 4px;
   padding-right: 12px;
@@ -14820,14 +14820,14 @@ quickfix for images causing gap in grid
 }
 .mdl-shop-product[data-variant=ar-portrait] .mdl-shop-product__content .mdl-shop-product__price {
   margin: 0;
-  grid-row: 1/1;
-  grid-column: 2/2;
+  /*grid-row: 1/1;
+  grid-column: 2/2;*/
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 25px;
-  text-align: right;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  /*text-align: right;*/
+  /*letter-spacing: 0.2em;*/
+  /*text-transform: uppercase;*/
   font-feature-settings: "pnum" on, "lnum" on;
   margin-top: 4px;
   padding-right: 12px;
