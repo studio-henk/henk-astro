@@ -1,16 +1,15 @@
 ---
-import NavBar from '../components/NavBar3.astro';
-import '../../source/scss/components/organisms/_navbar.css'
+import NavBarDesktop from '../components/NavBar3Desktop.astro';
+// import '../../source/scss/components/organisms/_navbar.css'
 import Icon from "./Icon.astro";
 ---
-
 <header class="masthead wf-greyscale" id="masthead">
     <div class="tmp-level1">
         <a href="/" class="tmp-logo">
             <Icon
                 icon="henk-logo"
-                width="174"
-                height="16"
+                width="163"
+                height="14"
             />
         </a>
         <span class="tmp-badge">10</span>
@@ -36,5 +35,5 @@ import Icon from "./Icon.astro";
             />
         </button>
     </div>
-    <NavBar />
+    <NavBarDesktop />
 </header>
