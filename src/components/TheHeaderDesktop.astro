@@ -3,37 +3,582 @@ import NavBarDesktop from '../components/NavBar3Desktop.astro';
 // import '../../source/scss/components/organisms/_navbar.css'
 import Icon from "./Icon.astro";
 ---
-<header class="masthead wf-greyscale" id="masthead">
-    <div class="tmp-level1">
-        <a href="/" class="tmp-logo">
+<header class="masthead" wf-greyscale" id="masthead">
+    <div class="primary-nav-container">
+        <a href="/" class="logo">
             <Icon
                 icon="henk-logo"
-                width="163"
-                height="14"
+                width="174"
+                height="16"
             />
         </a>
-        <span class="tmp-badge">10</span>
-        <button
-            class="sh-atom-button"
-            id="menu-btn"
-            data-style="plain"
-            aria-expanded="false"
-            aria-label="Open mobile navigation"
-            data-hide="desktop"
-        >
-            <Icon
-                icon="icon-hamburger"
-                class="icon-hamburger"
-                width="24"
-                height="24"
-            />
-            <Icon
-                icon="icon-close"
-                class="icon-close"
-                width="24"
-                height="24"
-            />
-        </button>
+        <nav class="primary-nav">
+            <a class="hoverlink" href="#shop">Shop</a>
+            <a href="/en/configurator">Configurator</a>
+            <a href="/en/samples">Samples</a>
+            <a class="hoverlink" href="#visit">Visit</a>
+            <a class="hoverlink" href="#inspiration">Inspiration</a>
+            <a href="/en/about-us">About</a>
+        </nav>
+        <nav class="utilities-nav">
+            <a href="#search">Search</a>
+            <a href="#language">Language</a>
+            <span class="tmp-badge">10</span>
+        </nav>
     </div>
-    <NavBarDesktop />
+    <!-- submenu shop -->
+    <div class="submenu" id="mn-shop" style="xopacity: 1;">
+        <div class="submenu__grid">
+            <div class="submenu__grid-item">
+                <small style="line-height: 14px; letter-spacing: normal;">Products</small>
+                <ul class="submenu__ul">
+                    <li><a class="submenu__link" href="#tables">Tables</a></li>
+                    <li><a class="submenu__link" href="#chairs">Chairs</a></li>
+                    <li><a class="submenu__link" href="#sofas">Sofas</a></li>
+                    <li><a class="submenu__link" href="#cabinets">Cabinets</a></li>
+                    <li><a class="submenu__link" href="#accessories">Accessories</a></li>
+                    <li><a class="submenu__link" href="#outdoor">Outdoor</a></li>
+                </ul>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://picsum.photos/id/238/556/722"
+                            class="submenu__item-image"
+                            alt=""
+                            width="278"
+                            height="361"
+                        >
+                        <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
+                        <!--<img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >-->
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="submenu" id="mn-visit">
+        <div class="submenu__grid">
+            <div class="submenu__grid-item">
+                <small style="line-height: 14px; letter-spacing: normal;">Visit</small>
+                <ul class="submenu__ul">
+                    <li><a class="submenu__link" href="#stores">Our stores</a></li>
+                    <li><a class="submenu__link" href="#etc">Interior advice</a></li>
+                </ul>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://picsum.photos/id/230/556/722"
+                            class="submenu__item-image"
+                            alt=""
+                            width="278"
+                            height="361"
+                        >
+                        <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
+                        <!--<img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >-->
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="submenu" id="mn-inspiration">
+        <div class="submenu__grid">
+            <div class="submenu__grid-item">
+                <small style="line-height: 14px; letter-spacing: normal;">Inspiration</small>
+                <ul class="submenu__ul">
+                    <li><a class="submenu__link" href="/en/blogs">Stories</a></li>
+                    <li><a class="submenu__link" href="/en/projects">Projects</a></li>
+                </ul>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://picsum.photos/id/222/556/722"
+                            class="submenu__item-image"
+                            alt=""
+                            width="278"
+                            height="361"
+                        >
+                        <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
+                        <!--<img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >-->
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+            <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                    <div class="submenu__item-images">
+                        <img
+                            src="https://placehold.co/556x722"
+                            class="submenu__item-image"
+                            alt="placeholder image"
+                            width="278"
+                            height="361"
+                        >
+                    </div>
+                    <p class="submenu__item-title">Title here</p>
+                </a>
+            </div>
+        </div>
+    </div>
 </header>
+<style>
+    .tmp-badge {
+        background-color: var(--color-white);
+        border-radius: 100%;
+        font-size: 15px;
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+            background-color: transparent;
+        }
+        100% {
+            opacity: 1;
+            /*background-color: var(--color-accent1);*/
+            background-color: #ccc;
+        }
+    }
+
+    @keyframes fade-out {
+        0% {
+            opacity: 1;
+            background-color: #ccc;
+            /*background-color: var(--color-accent1);*/
+        }
+        100% {
+            opacity: 0;
+            background-color: transparent;
+        }
+    }
+
+    .masthead * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .masthead {
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        padding: 35px 28px;
+    }
+
+    .primary-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 9;
+        position: relative;
+        mix-blend-mode: difference;
+    }
+
+    .primary-nav-container .primary-nav {
+        display: flex;
+        gap: 42px;
+    }
+
+    .utilities-nav {
+        display: flex;
+        gap: 42px;
+    }
+
+    .masthead .logo {
+        /* margin: 0 auto 0 0; */
+        justify-self: flex-start;
+        color: white;
+    }
+
+    .masthead nav a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .masthead nav a:hover {
+        text-decoration: underline;
+    }
+
+    .masthead .submenu {
+        background-color: #ccc;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 4;
+        pointer-events: none;
+        /*transition: opacity 0.3s ease-in-out;*/
+        width: 100%;
+        padding: 121px 28px 42px;
+    }
+
+    .masthead .submenu.--submenu-open {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    .masthead .submenu.--submenu-open.--submenu-fade-in {
+        animation-name: fade-in;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    }
+
+    .masthead .submenu.--submenu-open.--submenu-fade-out {
+        animation-name: fade-out;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-duration: 600ms;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    }
+
+    .submenu__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 401px;
+        gap: 17px;
+        /*background-color: aliceblue;*/
+    }
+
+    .submenu__grid-item {
+        /*background-color: pink;*/
+    }
+
+    .submenu__ul {
+        list-style: none;
+    }
+
+    .submenu__link {
+        line-height: 40px;
+        text-decoration: none;
+    }
+
+    .submenu__item-link {
+        display: flex;
+        flex-direction: column;
+        /*background: blueviolet;*/
+        height: 100%;
+    }
+
+    .submenu__item-images {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .submenu__item-image {
+        transition: all .3s ease-in-out;
+        object-fit: cover;
+    }
+
+    .submenu__item-link:hover .submenu__item-image {
+        transform: scale(1.025);
+        border-radius: 5px;
+    }
+
+    /*.submenu__item-image + .submenu__item-image-hover {
+        opacity: 0;
+        z-index: 9;
+        position: relative;
+    }
+
+    .submenu__item-link:hover .submenu__item-image + .submenu__item-image-hover {
+        opacity: 1;
+        z-index: 9;
+    }*/
+
+    .submenu__item-title {
+        line-height: 40px;
+    }
+
+</style>
+<script>
+    // elements
+    const masthead = document.querySelector(".masthead");
+    const primaryNavLinks = document.querySelectorAll(".primary-nav .hoverlink");
+    // console.log(primaryNavLinks);
+
+    // eventHandlers
+
+    // when mouse enters masthead
+    masthead.addEventListener("mouseenter", function (e) {
+        // console.log("mouse entered the masthead");
+    });
+
+    // when mouse leaves masthead
+    masthead.addEventListener("mouseleave", function (e) {
+        // console.log("mouse left the masthead");
+        // deactivate any open active link
+        unsetActiveLinks();
+        fadeOutSubmenu();
+    });
+
+    // primary nav links that have a submenu
+    primaryNavLinks.forEach(function (currentElement, currentIndex, listObj) {
+        currentElement.addEventListener("mouseover", function (event) {
+            handlePrimaryLinks(currentElement, event);
+        });
+    });
+
+    // functions
+    function handlePrimaryLinks(currentElement, event) {
+        // check if already open ie has class --hoverlink-active
+        if (currentElement.classList.contains("--hoverlink-active")) {
+            return;
+        } else {
+            event.preventDefault();
+            const thisHash = currentElement.hash;
+            // strip # char
+            const submenuID = thisHash.substring(1);
+            console.log("menu to open: " + submenuID);
+
+            // deactivate any open active link
+            unsetActiveLinks();
+
+            // add class active to current hovered one
+            currentElement.classList.add("--hoverlink-active");
+
+            // show corresponding submenu
+            // if any other submenu is already open then no fade in, else fade in
+            // console.log(masthead.querySelector(".--submenu-open"));
+            const anyOpenSubmenus = masthead.querySelector(".--submenu-open")
+            if (anyOpenSubmenus === null) {
+                console.log("its null !!!! we should fade in");
+                fadeInSubmenu(submenuID);
+                masthead
+                    .querySelector("#mn-" + submenuID)
+                    .classList.add("--submenu-open");
+            } else {
+                // close any other open submenu
+                closeAllSubmenus();
+            }
+
+            // masthead
+            //     .querySelector("#mn-" + submenuID)
+            //     .classList.add("--submenu-open");
+        }
+    }
+
+    function unsetActiveLinks() {
+        const activeLinks = masthead.querySelectorAll(".--hoverlink-active");
+
+        if (activeLinks.length > 0) {
+            // console.log("there are activeLinks, deactivation them");
+            masthead
+                .querySelectorAll(".--hoverlink-active")
+                .forEach(function (currentElement, currentIndex, listObj) {
+                    currentElement.classList.remove("--hoverlink-active");
+                });
+            // closeAllSubmenus();
+        }
+    }
+
+    function closeAllSubmenus() {
+        const openSubs = masthead.querySelectorAll(".--submenu-open");
+
+        if (openSubs.length > 0) {
+            // console.log("closeAllSubmenus triggered");
+            masthead
+                .querySelectorAll(".--submenu-open")
+                .forEach(function (currentElement, currentIndex, listObj) {
+                    currentElement.classList.remove("--submenu-open");
+                });
+        }
+    }
+
+
+    function fadeInSubmenu(ID) {
+        console.log("fading in submenu with ID: " + ID);
+        masthead.querySelector("#mn-" + ID).classList.add("--submenu-fade-in");
+        // masthead.querySelector("#mn-" + ID).classList.add("--submenu-open");
+        masthead.querySelector("#mn-" + ID).addEventListener("animationend", function (e) {
+            console.log(e);
+            let animationName = e.animationName;
+            if (animationName === "fade-in") {
+                // alert("fade in ended");
+                masthead.querySelector("#mn-" + ID).classList.remove("--submenu-fade-in");
+            } else {
+                return;
+            }
+        })
+    }
+
+    function fadeOutSubmenu() {
+        const openSubmenu = masthead.querySelector(".--submenu-open");
+        // console.log(openSubmenu);
+        if (openSubmenu !== null) {
+            console.log("fadeOutSubmenu triggered");
+            openSubmenu.classList.add("--submenu-fade-out");
+            openSubmenu.classList.remove("--submenu-fade-in");
+            const once = {
+                once: true,
+            };
+            openSubmenu.addEventListener("animationend", onceHandler, once);
+            // openSubmenu.addEventListener("animationend", function (e) {
+            //     console.log(e);
+            //     let animationName = e.animationName;
+            //     if (animationName === "fade-out") {
+            //         openSubmenu.classList.remove("--submenu-fade-out");
+            //         // openSubmenu.classList.remove("--submenu-open");
+            //     }
+            // }, once)
+            // closeAllSubmenus();
+        }
+    }
+
+    function onceHandler(event) {
+        // alert("outer, once");
+        console.log(event);
+        closeAllSubmenus();
+    }
+</script>
