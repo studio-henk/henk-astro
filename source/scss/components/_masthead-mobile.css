@@ -1,0 +1,88 @@
+@media only screen and (max-width: 1511px) {
+
+@keyframes masthead-mobile-fade-in {
+    0% {
+        opacity: 0;
+        background-color: transparent;
+    }
+    100% {
+        opacity: 1;
+        background-color: var(--color-accent1);
+    }
+}
+
+.masthead-mobile {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    height: 100px;
+    left: 0;
+    width: 100%;
+    mix-blend-mode: difference;
+    --color-background-badge: var(--color-white);
+}
+
+.--menu-open body {
+    overflow: hidden;
+}
+
+.--menu-open .masthead-mobile {
+    background-color: var(--color-accent1, transparent);
+    height: 100vh;
+    mix-blend-mode: unset;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: masthead-mobile-fade-in;
+    animation-timing-function: ease-out;
+}
+
+.primary-nav-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 53px 20px 15px 24px;
+    gap: 1rem;
+}
+
+.--menu-open .primary-nav-container {
+    border-bottom: 1px solid var(--color-henk-black, #000);
+}
+
+.masthead-mobile .atom-logo {
+    margin: 0 auto 0 0;
+    color: var(--color-white);
+}
+
+.--menu-open .masthead-mobile .atom-logo {
+    color: var(--color-black);
+}
+
+html:not(.--menu-open) .primary-nav-container #menu-btn {
+    color: var(--color-henk-white, #fff);
+}
+
+html:not(.--menu-open) .primary-nav-container .icon-close {
+    display: none;
+}
+
+.--menu-open .primary-nav-container .icon-hamburger {
+    display: none;
+}
+
+}
+
+@media (min-resolution: 2dppx) {
+    .--menu-open .primary-nav-container {
+        border-width: 0.5px;
+    }
+}
+
+/* hide at 1512 px screen */
+@media only screen and (min-width: 1512px) {
+    .masthead-mobile {
+        display: none;
+    }
+}

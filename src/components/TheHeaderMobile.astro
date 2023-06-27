@@ -1,0 +1,120 @@
+---
+import NavBarMobile from '../components/NavBarMobile.astro';
+import Icon from "./Icon.astro";
+import AtomLogo from "./Atoms/AtomLogo.astro";
+import AtomBadge from "./Atoms/AtomBadge.astro";
+---
+
+<header class="masthead-mobile" id="masthead-mobile">
+    <div class="primary-nav-container">
+        <AtomLogo
+            url="/"
+            icon="henk-logo"
+            width="174"
+            height="16"
+        />
+        <AtomBadge badgeNumber="6" />
+        <button
+            class="sh-atom-button"
+            id="menu-btn"
+            data-style="plain"
+            aria-expanded="false"
+            aria-label="Toggle mobile navigation"
+        >
+            <Icon
+                icon="icon-hamburger"
+                class="icon-hamburger"
+                width="24"
+                height="24"
+            />
+            <Icon
+                icon="icon-close"
+                class="icon-close"
+                width="24"
+                height="24"
+            />
+        </button>
+    </div>
+    <NavBarMobile />
+</header>
+<script is:inline>
+    // elements
+    const rootElement = document.documentElement;
+    const masthead = document.querySelector('#masthead-mobile');
+    const navBtn = document.querySelector('#menu-btn');
+    const backLinks = document.querySelectorAll('.--back');
+    const level1SubviewLinks = document.querySelectorAll('.--nav-level1 > .--has-submenu > .subview-link');
+    const level2SubviewLinks = document.querySelectorAll('.--nav-level2 > .--has-submenu > .subview-link');
+
+    // event-handlers
+    // menu button
+    navBtn.addEventListener('click', () => {
+        navBtn.setAttribute('aria-expanded', navBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false')
+        // toggle class on html?
+        rootElement.classList.toggle('--menu-open');
+        if (masthead.classList.contains('--moveToLevel2')) {
+            masthead.classList.remove('--moveToLevel2');
+        } else if (masthead.classList.contains('--moveToLevel3')) {
+            masthead.classList.remove('--moveToLevel3');
+        }
+    })
+
+    // level 1
+    level1SubviewLinks.forEach(function (currentElement, currentIndex, listObj) {
+        currentElement.addEventListener("click", function (e) {
+            handleLevel1Links(currentElement);
+        });
+    });
+
+    // level 2
+    level2SubviewLinks.forEach(function (currentElement, currentIndex, listObj) {
+        currentElement.addEventListener("click", function (e) {
+            handleLevel2Links(currentElement);
+        });
+    });
+
+    // back links
+    backLinks.forEach(function (currentElement, currentIndex, listObj) {
+        currentElement.addEventListener("click", function (e) {
+            handleBackLinks(currentElement);
+        });
+    });
+
+    function handleLevel1Links (currentElement) {
+        event.preventDefault();
+        // remove class --active everywhere?
+        masthead.querySelectorAll('.--active').forEach(function (currentElement, currentIndex, listObj) {
+            currentElement.classList.remove('--active');
+        });
+
+        // add --active
+        currentElement.classList.add('--active');
+
+        // tell parent to move?
+        masthead.classList.add('--moveToLevel2');
+    }
+
+    function handleLevel2Links (currentElement) {
+        event.preventDefault();
+
+        // add --active
+        currentElement.classList.add('--active');
+
+        // tell parent to move?
+        masthead.classList.remove('--moveToLevel2');
+        masthead.classList.add('--moveToLevel3');
+    }
+
+    function handleBackLinks (currentElement) {
+        event.preventDefault();
+        // TODO: make general? get level number by active class ?
+        if (masthead.classList.contains('--moveToLevel2')) {
+            masthead.classList.remove('--moveToLevel2');
+        } else if (masthead.classList.contains('--moveToLevel3')) {
+            masthead.classList.remove('--moveToLevel3');
+            masthead.classList.add('--moveToLevel2');
+        }
+        // only remove active from current level
+        currentElement.parentElement.parentElement.parentElement.querySelector('.--active').classList.remove('--active');
+    }
+</script>
