@@ -230,3 +230,17 @@
     margin-top: 1rem;
   }
 }
+
+// added 27 june 2023
+.selector__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .selector__link {
+    margin-left: 1rem;
+  }
+}

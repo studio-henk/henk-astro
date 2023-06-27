@@ -3197,6 +3197,18 @@ main.sh-l-page-main section + section {
   margin-top: 1rem;
 }
 
+.selector__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .selector__link {
+    margin-left: 1rem;
+  }
+}
 .toggle__label {
   margin: 2rem 0 0 0 !important;
 }
@@ -4882,7 +4894,8 @@ dl[data-direction=horizontal],
   padding: 4px 16px;
   align-content: flex-start;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  gap: 8px;
   margin-top: 18px;
 }
 .shopping-cart-product__details--description .sh-atom-tag {
@@ -14685,14 +14698,14 @@ quickfix for images causing gap in grid
 }
 .mdl-shop-product .mdl-shop-product__content .mdl-shop-product__price {
   margin: 0;
-  grid-row: 1/1;
-  grid-column: 2/2;
+  /*grid-row: 1/1;
+  grid-column: 2/2;*/
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 25px;
-  text-align: right;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  /*text-align: right;*/
+  /*letter-spacing: 0.2em;*/
+  /*text-transform: uppercase;*/
   font-feature-settings: "pnum" on, "lnum" on;
   margin-top: 4px;
   padding-right: 12px;
@@ -14810,14 +14823,14 @@ quickfix for images causing gap in grid
 }
 .mdl-shop-product[data-variant=ar-portrait] .mdl-shop-product__content .mdl-shop-product__price {
   margin: 0;
-  grid-row: 1/1;
-  grid-column: 2/2;
+  /*grid-row: 1/1;
+  grid-column: 2/2;*/
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 25px;
-  text-align: right;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  /*text-align: right;*/
+  /*letter-spacing: 0.2em;*/
+  /*text-transform: uppercase;*/
   font-feature-settings: "pnum" on, "lnum" on;
   margin-top: 4px;
   padding-right: 12px;
