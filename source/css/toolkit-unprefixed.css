@@ -7210,6 +7210,16 @@ Icons for facebook etc, used in footer
 .org-footer__rating {
   grid-area: org-footer-rating;
 }
+.org-footer__rating .section-certifications {
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.org-footer__rating .section-certifications__image.--cng {
+  width: 88px;
+  height: auto;
+}
 .org-footer__social {
   grid-area: org-footer-social;
 }
@@ -7733,8 +7743,11 @@ img.sh-atom-sample {
 }
 
 .sample__quickshop {
-  background-color: var(--color-henk-white, #f00);
+  background-color: var(--color-henk-white, #fff);
   max-width: 898px;
+  /* re-visit */
+  /* TODO: check pos fixed for ios? to prevent scrolling page while modal open */
+  max-height: 90vh;
   margin: 0 auto;
   border-radius: 8px;
 }
@@ -7789,8 +7802,12 @@ img.sh-atom-sample {
 }
 @media only screen and (min-width: 768px) {
   .sample__quickshop .sh-l-grid .sh-l-grid__item .sample__modal-image {
-    max-height: 643px;
+    /*max-height: 643px;*/
+    width: 100%;
   }
+}
+.sample__quickshop .sh-l-grid .sh-l-grid__item:last-child {
+  overflow: auto;
 }
 
 @media only screen and (max-width: 767px) {
@@ -14698,14 +14715,9 @@ quickfix for images causing gap in grid
 }
 .mdl-shop-product .mdl-shop-product__content .mdl-shop-product__price {
   margin: 0;
-  /*grid-row: 1/1;
-  grid-column: 2/2;*/
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 25px;
-  /*text-align: right;*/
-  /*letter-spacing: 0.2em;*/
-  /*text-transform: uppercase;*/
   font-feature-settings: "pnum" on, "lnum" on;
   margin-top: 4px;
   padding-right: 12px;
@@ -14767,6 +14779,9 @@ quickfix for images causing gap in grid
   .mdl-shop-product .mdl-shop-product__desc {
     padding-left: 0;
   }
+}
+.mdl-shop-product .mdl-shop-product__price {
+  margin: 4px 0 0 0;
 }
 .mdl-shop-product[data-variant=ar-portrait] {
   height: 100%;
