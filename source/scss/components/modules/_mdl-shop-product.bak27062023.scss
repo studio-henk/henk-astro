@@ -35,9 +35,14 @@
 
     .mdl-shop-product__price {
       margin: 0;
+      grid-row: 1/1;
+      grid-column: 2/2;
       font-size: 0.875rem; // 14px
       font-weight: 300;
       line-height: 25px;
+      text-align: right;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       font-feature-settings: "pnum" on, "lnum" on;
       margin-top: 4px;
       padding-right: 12px;
@@ -119,10 +124,6 @@
     }
   }
 
-  .mdl-shop-product__price {
-    margin: 4px 0 0 0;
-  }
-
   // variant portrait aspect ratio with square images
   &[data-variant="ar-portrait"] {
     height: 100%;
@@ -185,14 +186,14 @@
 
       .mdl-shop-product__price {
         margin: 0;
-        /*grid-row: 1/1;
-        grid-column: 2/2;*/
+        grid-row: 1/1;
+        grid-column: 2/2;
         font-size: 0.875rem; // 14px
         font-weight: 300;
         line-height: 25px;
-        /*text-align: right;*/
-        /*letter-spacing: 0.2em;*/
-        /*text-transform: uppercase;*/
+        text-align: right;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
         font-feature-settings: "pnum" on, "lnum" on;
         margin-top: 4px;
         padding-right: 12px;
