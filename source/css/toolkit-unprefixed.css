@@ -3057,6 +3057,7 @@ main.sh-l-page-main section + section {
 .steps .selector__label span:first-child + span {
   letter-spacing: 1.2px;
   font-weight: 300;
+  padding-right: 0.75em;
 }
 @media only screen and (min-width: 768px) {
   .steps .selector__label span:first-child {
@@ -3064,13 +3065,15 @@ main.sh-l-page-main section + section {
   }
   .steps .selector__label span:first-child::after {
     content: "—";
-    margin: 0 6px;
+    margin: 0 0 0 6px;
   }
 }
 @media only screen and (min-width: 768px) {
   .steps .selector__label {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4px;
   }
 }
 .selector__sublabel {
@@ -3204,11 +3207,6 @@ main.sh-l-page-main section + section {
   text-decoration: none;
 }
 
-@media only screen and (min-width: 992px) {
-  .selector__link {
-    margin-left: 1rem;
-  }
-}
 .toggle__label {
   margin: 2rem 0 0 0 !important;
 }
@@ -3831,7 +3829,6 @@ ul.breadcrumbs {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  /*background: transparent url("../../toolkit/svg-standalone/icon-checkmark.svg") no-repeat center center;*/
   background: transparent url("/static/std/assets/toolkit/svg-standalone/icon-checkmark.svg") no-repeat center center;
   z-index: 2;
   border-radius: 100%;
