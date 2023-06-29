@@ -37,6 +37,7 @@ const { title } = Astro.props;
 <div class="wrapper">
     <MsgBar />
     <TheNav />
+    <slot name="pre-main" />
     <main>
         <slot />
     </main>
