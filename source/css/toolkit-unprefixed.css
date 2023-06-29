@@ -13632,6 +13632,17 @@ section.checkout-steps {
   font-size: 0.875rem;
   font-weight: 400;
   text-align: center;
+  padding: 0 1rem;
+}
+@supports (text-wrap: balance) {
+  .maintenance.grid .column a .sh-fabric-name {
+    text-wrap: balance;
+  }
+}
+@media only screen and (max-width: 413px) {
+  .maintenance.grid .column a .sh-fabric-name {
+    font-size: 12px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .maintenance.grid .column a .sh-fabric-name {
