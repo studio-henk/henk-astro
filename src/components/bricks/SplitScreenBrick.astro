@@ -1,0 +1,44 @@
+---
+const { title = "Title here!", intro = "Intro text here!", buttonText = "Button text" } = Astro.props;
+---
+<section id="blob">
+    <div class="sh-org-splitscreen" data-order="reverse" style="
+                            --var-local-button-hover-override: var(--var-global-color-HENK-Black, #f00);
+                                        --var-local-button-text-color-override: var(--var-global-color-HENK-White, #000);
+            ">
+        <div class="sh-l-grid">
+            <div class="sh-l-grid__item">
+                <a class="sh-media-block__image__link" href="https://www.studio-henk.nl/en/products/coffee-tables">
+                    <figure class="sh-media-block__item sh-atom__figure">
+                        <img sizes="(min-width: 780px) 50vw, calc(100vw - 48px)" width="960" height="1090" alt="" title="" loading="lazy" src="https://www.studio-henk.nl/_default_upload_bucket/706003/image-thumb__706003__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-74_2.jpg" srcset="https://www.studio-henk.nl/_default_upload_bucket/706003/image-thumb__706003__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-74_2~-~media--3d7ba3b4--query.jpg 256w,
+                                 https://www.studio-henk.nl/_default_upload_bucket/706003/image-thumb__706003__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-74_2~-~media--803de2ab--query.jpg 700w,
+                                 https://www.studio-henk.nl/_default_upload_bucket/706003/image-thumb__706003__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-74_2~-~media--fd3f6f7c--query.jpg 1170w,
+                                 https://www.studio-henk.nl/_default_upload_bucket/706003/image-thumb__706003__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-74_2~-~media--f757b4a7--query.jpg 1340w,
+                                 https://www.studio-henk.nl/_default_upload_bucket/706003/image-thumb__706003__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-74_2~-~media--d48ef17a--query.jpg 1500w,
+                                 https://www.studio-henk.nl/_default_upload_bucket/706003/image-thumb__706003__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-74_2~-~media--99465071--query.jpg 1700w,
+                                 https://www.studio-henk.nl/_default_upload_bucket/706003/image-thumb__706003__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-74_2~-~media--5860a965--query.jpg 1880w,
+                                ">
+                    </figure>
+                </a>
+            </div>
+            <div class="sh-l-grid__item">
+
+                <header class="sh-molecule-section-header --reverse-order">
+                    <h1 class="sh-molecule-section-header__title">{title}</h1>
+                </header>
+                <div class="sh-section__content">
+                    <p class="sh-section__intro">{intro}</p>
+
+                    <!--<a href="https://www.studio-henk.nl/en/products/coffee-tables" class="sh-atom-button &#45;&#45;variant-soft">SHOP NOW</a>-->
+                    <a
+                        href="#"
+                        class="sh-atom-button"
+                        data-style="soft"
+                    >
+                        {buttonText}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
