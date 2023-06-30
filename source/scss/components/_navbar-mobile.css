@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1511px) {
+@media only screen and (max-width: 1279px) {
     .nav-bar-mobile {}
 
     .nav-bar-mobile .nav-bar-mobile__link-list {
@@ -90,7 +90,7 @@
     }
 }
 
-@media only screen and (min-width: 1512px) {
+@media only screen and (min-width: 1280px) {
     .nav-bar-mobile {
         display: none;
     }

@@ -81,7 +81,7 @@
 @use "components/choose-card";
 @use "components/radio-menu";
 @use "components/product-order";
-@use "components/product-specificaties";
+@use "components/product-specificaties"; 
 @use "components/sub-menu";
 @use "components/post";
 @use "components/quote";
@@ -94,6 +94,7 @@
 @use "components/molecules/__molecules";
 @use "components/_masthead-mobile.css";
 @use "components/_navbar-mobile.css";
+@use "components/_masthead-desktop.css"; 
 
 /// molecules
 

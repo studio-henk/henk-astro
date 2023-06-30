@@ -1,74 +1,71 @@
 ---
-import {getLangFromUrl} from '../../i18n/utils';
+import { getLangFromUrl } from "../../i18n/utils";
 // import BaseLayout from "../../layouts/BaseLayout.astro";
 import NewNavLayout from "../../layouts/NewNavLayout.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
 
 <NewNavLayout title="About">
-    <style>
-        .hero-block .hero__image {
-            height: auto;
-            max-height: 58%;
-        }
+  <style>
+    .hero-block .hero__image {
+      height: auto;
+      max-height: 58%;
+    }
 
-        @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 300px) {
+      .hero-block .hero__image {
+        display: none;
+      }
+    }
 
-            .hero-block .hero__image {
-                display: none;
-            }
-        }
+    @media only screen and (max-height: 425px) and (max-width: 465px) {
+      .hero-block .hero__image {
+        display: none;
+      }
+    }
 
-        @media only screen and (max-height: 425px) and (max-width: 465px) {
+    @media only screen and (max-height: 400px) and (min-width: 992px) {
+      .hero-block .hero__image {
+        display: none;
+      }
+    }
+  </style>
+  <!-- hero -->
+  <div class="hero-block">
+    <img
+      alt="founders of Studio Henk"
+      class="hero__image"
+      height="607"
+      src="https://assets.studio-henk.nl/assets/Images/about-us/hero@2x.jpg"
+      width="933"
+    />
+    <div class="hero__content">
+      <div data-hide="mobile"><!-- empty --></div>
 
-            .hero-block .hero__image {
-                display: none;
-            }
-        }
+      <div class="col2">
+        <h1 class="h4">Studio Henk</h1>
 
-        @media only screen and (max-height: 400px) and (min-width: 992px) {
-
-            .hero-block .hero__image {
-                display: none;
-            }
-        }
-    </style>
-    <!-- hero -->
-    <div class="hero-block">
+        <h2 class="ts-xxlarge">
+          We are a conscious Dutch design brand that makes beautiful and
+          functional furniture to last a lifetime.
+        </h2>
         <img
-            alt="founders of Studio Henk"
-            class="hero__image"
-            height="607"
-            src="https://assets.studio-henk.nl/assets/Images/about-us/hero@2x.jpg"
-            width="933"
+          alt="swirl"
+          class="hero__swirl"
+          data-hide="mobile|tablet"
+          height="51"
+          src="https://assets.studio-henk.nl/assets/Images/about-us/swirl.svg"
+          width="197"
         />
-        <div class="hero__content">
-            <div data-hide="mobile"><!-- empty --></div>
-
-            <div class="col2">
-                <h1 class="h4">Studio Henk</h1>
-
-                <h2 class="ts-xxlarge">
-                    We are a conscious Dutch design brand that makes beautiful and
-                    functional furniture to last a lifetime.
-                </h2>
-                <img
-                    alt="swirl"
-                    class="hero__swirl"
-                    data-hide="mobile|tablet"
-                    height="51"
-                    src="https://assets.studio-henk.nl/assets/Images/about-us/swirl.svg"
-                    width="197"
-                />
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- end: hero -->
-    <!-- intro -->
-    <div class="content-block" style="background-color: var(--color-accent1);">
-        <div
-            class="content-block__container"
-            style="
+  </div>
+  <!-- end: hero -->
+  <!-- intro -->
+  <div class="content-block" style="background-color: var(--color-accent1);">
+    <div
+      class="content-block__container"
+      style="
       --size-spacing-units-top:10;
       --size-spacing-units-right:0;
       --size-spacing-units-bottom:0;
@@ -78,29 +75,29 @@ const lang = getLangFromUrl(Astro.url);
       --size-spacing-units-bottom-desktop:0;
       --size-spacing-units-left-desktop:0;
       "
-        >
-            <div class="content-block__layout">
-                <div class="content-block__header">
-                    <!-- empty div needed for grid -->
-                </div>
-
-                <div class="content-block__content">
-                    <p class="content-block__body-text ts-xxlarge">
-                        By taking circular design to heart, our customisable and
-                        made-to-order pieces are designed in-house and produced in Europe.
-                        We have ambitious plans to revolutionise the furniture industry from
-                        within to become fully zero waste.
-                    </p>
-                </div>
-            </div>
+    >
+      <div class="content-block__layout">
+        <div class="content-block__header">
+          <!-- empty div needed for grid -->
         </div>
+
+        <div class="content-block__content">
+          <p class="content-block__body-text ts-xxlarge">
+            By taking circular design to heart, our customisable and
+            made-to-order pieces are designed in-house and produced in Europe.
+            We have ambitious plans to revolutionise the furniture industry from
+            within to become fully zero waste.
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- end intro -->
-    <!-- how it started -->
-    <div class="content-block" style="background-color: var(--color-accent1);">
-        <div
-            class="content-block__container"
-            style="
+  </div>
+  <!-- end intro -->
+  <!-- how it started -->
+  <div class="content-block" style="background-color: var(--color-accent1);">
+    <div
+      class="content-block__container"
+      style="
       --size-spacing-units-top:10;
       --size-spacing-units-right:0;
       --size-spacing-units-bottom:4;
@@ -110,44 +107,47 @@ const lang = getLangFromUrl(Astro.url);
       --size-spacing-units-bottom-desktop:24;
       --size-spacing-units-left-desktop:0;
 "
-        >
-            <div class="content-block__layout">
-                <div class="content-block__header">
-                    <h2 class="content-block__heading">How it all started</h2>
-                </div>
-
-                <div class="content-block__content">
-                    <p class="content-block__body-text">
-                        We started our journey ten years ago: Two brothers Okke and Xander
-                        Albers who had a love for furniture and an eye for sustainable
-                        design. What started with a dining table made of reclaimed wood
-                        became a furniture business that boomed during the coronavirus
-                        pandemic. Design after design, the company crafted their signature
-                        style, counting bestsellers like the Butterfly Dining Table, Ode
-                        Dining Chairs, and Cosy Sofa.
-                    </p>
-
-                    <p>
-                        As the company grew, so did the realisation that the furniture
-                        industry has an uglier side, one of immense waste production and
-                        record CO2 emissions. We weren’t proud to be contributing to this,
-                        thereby negatively impacting the planet and our children’s future.
-                        Inspired by companies around the world using business to benefit
-                        people, communities, and the planet, Corine de Bruijne (Head of
-                        Sustainability) set out to make a change in our company, hoping to
-                        inspire the entire furniture industry to do the same. Since then,
-                        we’ve taken steps – big and small – to use our business as a force
-                        for good and work towards a zero-waste furniture industry.
-                    </p>
-                </div>
-            </div>
+    >
+      <div class="content-block__layout">
+        <div class="content-block__header">
+          <h2 class="content-block__heading">How it all started</h2>
         </div>
+
+        <div class="content-block__content">
+          <p class="content-block__body-text">
+            We started our journey ten years ago: Two brothers Okke and Xander
+            Albers who had a love for furniture and an eye for sustainable
+            design. What started with a dining table made of reclaimed wood
+            became a furniture business that boomed during the coronavirus
+            pandemic. Design after design, the company crafted their signature
+            style, counting bestsellers like the Butterfly Dining Table, Ode
+            Dining Chairs, and Cosy Sofa.
+          </p>
+
+          <p>
+            As the company grew, so did the realisation that the furniture
+            industry has an uglier side, one of immense waste production and
+            record CO2 emissions. We weren’t proud to be contributing to this,
+            thereby negatively impacting the planet and our children’s future.
+            Inspired by companies around the world using business to benefit
+            people, communities, and the planet, Corine de Bruijne (Head of
+            Sustainability) set out to make a change in our company, hoping to
+            inspire the entire furniture industry to do the same. Since then,
+            we’ve taken steps – big and small – to use our business as a force
+            for good and work towards a zero-waste furniture industry.
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- end how it started -->
-    <!-- image + text block -->
-    <div class="image-text-block" style="background-color: var(--color-accent1);">
-        <div class="image-text-block__container">
-            <div class="image-text-block__layout" data-grid-columns="2" style="
+  </div>
+  <!-- end how it started -->
+  <!-- image + text block -->
+  <div class="image-text-block" style="background-color: var(--color-accent1);">
+    <div class="image-text-block__container">
+      <div
+        class="image-text-block__layout"
+        data-grid-columns="2"
+        style="
 --size-spacing-units-top: 4;
 --size-spacing-units-right: 0;
 --size-spacing-units-bottom: 4;
@@ -156,55 +156,74 @@ const lang = getLangFromUrl(Astro.url);
 --size-spacing-units-right-desktop: 0;
 --size-spacing-units-bottom-desktop: 4;
 --size-spacing-units-left-desktop: 0;
-"><img alt="window" class="image-text-block__image" height="1170"
-       sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
-       src="https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg" srcset="
+"
+      >
+        <img
+          alt="window"
+          class="image-text-block__image"
+          height="1170"
+          sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
+          src="https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg"
+          srcset="
 https://assets.studio-henk.nl/assets/Images/about-us/window_p_468x585.jpg 468w,
 https://assets.studio-henk.nl/assets/Images/about-us/window_p_740x925.jpg 740w,
-https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg 936w" width="936"/>
-                <div class="image-text-block__content">
-                    <p>Our vision for the future</p>
+https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg 936w"
+          width="936"
+        />
+        <div class="image-text-block__content">
+          <p>Our vision for the future</p>
 
-                    <p class="ts-xxlarge">“We borrow the planet from future generations, so it is our responsibility to
-                        maintain it and heal where necessary.”</p>
-                </div>
-            </div>
+          <p class="ts-xxlarge">
+            “We borrow the planet from future generations, so it is our
+            responsibility to maintain it and heal where necessary.”
+          </p>
         </div>
-        <!-- end image + text block --></div>
-    <!-- our journey -->
-    <div class="content-block" style="background-color: var(--color-accent1);">
-        <div class="content-block__container" style="
+      </div>
+    </div>
+    <!-- end image + text block -->
+  </div>
+  <!-- our journey -->
+  <div class="content-block" style="background-color: var(--color-accent1);">
+    <div
+      class="content-block__container"
+      style="
   --size-spacing-units-top: 4;
   --size-spacing-units-bottom: 4;
   --size-spacing-units-top-desktop: 20;
   --size-spacing-units-bottom-desktop: 20;
-  ">
-            <div class="content-block__layout">
-                <div class="content-block__header">
-                    <h2 class="content-block__heading">Our Journey</h2>
-                </div>
-                <div class="content-block__content">
-                    <img alt="timeline" class="timeline-svg" data-hide="tablet|desktop"
-                         src="https://assets.studio-henk.nl/assets/Images/about-us/about-us-images/timeline-mobile-aboutus.svg"
-                         width="371"
-                         height="652"
-                    />
-                    <img
-                        alt="timeline"
-                        class="timeline-svg"
-                        data-hide="mobile"
-                        src="https://assets.studio-henk.nl/assets/Images/about-us/about-us-images/timeline-mobile-aboutus.svg"
-                        width="371"
-                        height="652"
-                    />
-                </div>
-            </div>
+  "
+    >
+      <div class="content-block__layout">
+        <div class="content-block__header">
+          <h2 class="content-block__heading">Our Journey</h2>
         </div>
+        <div class="content-block__content">
+          <img
+            alt="timeline"
+            class="timeline-svg"
+            data-hide="tablet|desktop"
+            src="https://assets.studio-henk.nl/assets/Images/about-us/about-us-images/timeline-mobile-aboutus.svg"
+            width="371"
+            height="652"
+          />
+          <img
+            alt="timeline"
+            class="timeline-svg"
+            data-hide="mobile"
+            src="https://assets.studio-henk.nl/assets/Images/about-us/about-us-images/timeline-mobile-aboutus.svg"
+            width="371"
+            height="652"
+          />
+        </div>
+      </div>
     </div>
-    <!-- end: our journey -->
-    <!-- how it started -->
-    <div class="content-block" style="background-color: var(--color-accent1);">
-        <div class="content-block__container" style="
+  </div>
+  <!-- end: our journey -->
+  <!-- how it started -->
+  <div class="content-block" style="background-color: var(--color-accent1);">
+    <div
+      class="content-block__container"
+      style="
 --size-spacing-units-top: 4;
 --size-spacing-units-right: 0;
 --size-spacing-units-bottom: 4;
@@ -213,288 +232,476 @@ https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg 936w"
 --size-spacing-units-right-desktop: 0;
 --size-spacing-units-bottom-desktop: 20;
 --size-spacing-units-left-desktop: 0;
-">
-            <div class="content-block__layout">
-                <div class="content-block__header">
-                    <h2 class="content-block__heading">What’s next</h2>
-                </div>
-
-                <div class="content-block__content">
-                    <p class="content-block__body-text">We will continue to use our business as a force for good. We
-                        look forward to receiving the Climate Neutral certificate for our stores and office, measuring,
-                        reducing and compensating the CO2 emissions of our products, and rolling out our endless life
-                        service package further to extend the lifetime of our products by the end of this year.</p>
-
-                    <p><a href="https://assets.studio-henk.nl/assets/Docs/studio-henk–impact-report-2021b.pdf"
-                          target="_blank">Download</a> our latest impact report to find out more about our progress.</p>
-                </div>
-            </div>
+"
+    >
+      <div class="content-block__layout">
+        <div class="content-block__header">
+          <h2 class="content-block__heading">What’s next</h2>
         </div>
+
+        <div class="content-block__content">
+          <p class="content-block__body-text">
+            We will continue to use our business as a force for good. We look
+            forward to receiving the Climate Neutral certificate for our stores
+            and office, measuring, reducing and compensating the CO2 emissions
+            of our products, and rolling out our endless life service package
+            further to extend the lifetime of our products by the end of this
+            year.
+          </p>
+
+          <p>
+            <a
+              href="https://assets.studio-henk.nl/assets/Docs/studio-henk–impact-report-2021b.pdf"
+              target="_blank">Download</a
+            > our latest impact report to find out more about our progress.
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- end how it started -->
-    <!-- image block -->
-    <div class="content-block image-block" style="background-color: var(--color-accent1);">
-        <div class="content-block__container" style="
+  </div>
+  <!-- end how it started -->
+  <!-- image block -->
+  <div
+    class="content-block image-block"
+    style="background-color: var(--color-accent1);"
+  >
+    <div
+      class="content-block__container"
+      style="
   --size-spacing-units-top-desktop: 0;
   --size-spacing-units-bottom-desktop: 0;
-  ">
-            <div class="image-block__layout">
-                <picture>
-                    <source media="(max-width: 991px)" sizes="(max-width: 991px) 100vw, 828px" srcset="
+  "
+    >
+      <div class="image-block__layout">
+        <picture>
+          <source
+            media="(max-width: 991px)"
+            sizes="(max-width: 991px) 100vw, 828px"
+            srcset="
     https://assets.studio-henk.nl/assets/Images/about-us/kids_p_414.jpg 414w,
     https://assets.studio-henk.nl/assets/Images/about-us/kids_p_828.jpg 828w,
     https://assets.studio-henk.nl/assets/Images/about-us/kids_p_1656.jpg 1656w
-    "/>
-                    <img alt="kids on sofa" class="image-block__image" height="1173"
-                         sizes="(min-width: 1020px) 968px, 95.43vw"
-                         src="https://assets.studio-henk.nl/assets/Images/about-us/kids_l_1936.jpg" srcset="
+    "
+          />
+          <img
+            alt="kids on sofa"
+            class="image-block__image"
+            height="1173"
+            sizes="(min-width: 1020px) 968px, 95.43vw"
+            src="https://assets.studio-henk.nl/assets/Images/about-us/kids_l_1936.jpg"
+            srcset="
     https://assets.studio-henk.nl/assets/Images/about-us/kids_l_968.jpg 968w,
-    https://assets.studio-henk.nl/assets/Images/about-us/kids_l_1936.jpg 1936w" width="1936"/></picture>
-            </div>
-        </div>
+    https://assets.studio-henk.nl/assets/Images/about-us/kids_l_1936.jpg 1936w"
+            width="1936"
+          /></picture
+        >
+      </div>
     </div>
-    <!-- end: image block -->
-    <!-- B corp -->
-    <div class="content-block" style="background-color: var(--color-accent1);">
-        <div class="content-block__container" style="
+  </div>
+  <!-- end: image block -->
+  <!-- B corp -->
+  <div class="content-block" style="background-color: var(--color-accent1);">
+    <div
+      class="content-block__container"
+      style="
   --size-spacing-units-top: 4;
   --size-spacing-units-bottom: 4;
   --size-spacing-units-top-desktop: 20;
   --size-spacing-units-bottom-desktop: 20;
-  ">
-            <div class="content-block__layout">
-                <div class="content-block__header">
-                    <h2 class="content-block__heading">B-corp</h2>
-                    <!--<p class="content-block__subheading" data-hide="mobile|tablet">‘We’re proud to be part of the B Corp community.’</p>-->
-                </div>
-
-                <div class="content-block__content">
-                    <p class="content-block__body-text">2023 is an exciting year for Studio HENK - we celebrate our 10th
-                        anniversary and B Corp Certification. As a B Corp, we’re part of a global community of
-                        businesses that meet high standards of social and environmental impact. We are proud to be part
-                        of a movement that uses business as a force for good.</p>
-                </div>
-            </div>
+  "
+    >
+      <div class="content-block__layout">
+        <div class="content-block__header">
+          <h2 class="content-block__heading">B-corp</h2>
+          <!--<p class="content-block__subheading" data-hide="mobile|tablet">‘We’re proud to be part of the B Corp community.’</p>-->
         </div>
+
+        <div class="content-block__content">
+          <p class="content-block__body-text">
+            2023 is an exciting year for Studio HENK - we celebrate our 10th
+            anniversary and B Corp Certification. As a B Corp, we’re part of a
+            global community of businesses that meet high standards of social
+            and environmental impact. We are proud to be part of a movement that
+            uses business as a force for good.
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- end: B corp -->
-    <!-- image + text block: philosophy -->
-    <div class="image-text-block" style="background-color: var(--color-accent1);">
-        <div class="image-text-block__container">
-            <div class="image-text-block__layout" data-grid-columns="2" style="
+  </div>
+  <!-- end: B corp -->
+  <!-- image + text block: philosophy -->
+  <div class="image-text-block" style="background-color: var(--color-accent1);">
+    <div class="image-text-block__container">
+      <div
+        class="image-text-block__layout"
+        data-grid-columns="2"
+        style="
     --size-spacing-units-top: 4;
     --size-spacing-units-bottom: 4;
     --size-spacing-units-top-desktop: 4;
     --size-spacing-units-bottom-desktop: 4;
-    "><img alt="window" class="image-text-block__image" height="1170"
-           sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
-           src="https://assets.studio-henk.nl/assets/Images/about-us/phil_936.jpg" srcset="
+    "
+      >
+        <img
+          alt="window"
+          class="image-text-block__image"
+          height="1170"
+          sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
+          src="https://assets.studio-henk.nl/assets/Images/about-us/phil_936.jpg"
+          srcset="
     https://assets.studio-henk.nl/assets/Images/about-us/phil_468.jpg 468w,
     https://assets.studio-henk.nl/assets/Images/about-us/phil_740.jpg 740w,
-    https://assets.studio-henk.nl/assets/Images/about-us/phil_936.jpg 936w" width="936"/>
-                <div class="image-text-block__content">
-                    <p>Our design philosophy</p>
+    https://assets.studio-henk.nl/assets/Images/about-us/phil_936.jpg 936w"
+          width="936"
+        />
+        <div class="image-text-block__content">
+          <p>Our design philosophy</p>
 
-                    <p class="ts-xxlarge">We believe that furniture can be beautiful, functional, and made
-                        sustainably.</p>
-                </div>
-            </div>
+          <p class="ts-xxlarge">
+            We believe that furniture can be beautiful, functional, and made
+            sustainably.
+          </p>
         </div>
-        <!-- end image + text block --></div>
+      </div>
+    </div>
+    <!-- end image + text block -->
+  </div>
 
-    <!-- content block -->
-    <div class="content-block" style="background-color: var(--color-accent1);">
-        <div class="content-block__container" style="
+  <!-- content block -->
+  <div class="content-block" style="background-color: var(--color-accent1);">
+    <div
+      class="content-block__container"
+      style="
   --size-spacing-units-top: 4;
   --size-spacing-units-bottom: 4;
   --size-spacing-units-top-desktop: 20;
   --size-spacing-units-bottom-desktop: 20;
-  ">
-            <div class="content-block__layout">
-                <div class="content-block__header">
-                    <h2 class="content-block__heading">Design principles</h2>
-                    <!--<p class="content-block__subheading" data-hide="mobile|tablet">‘We’re proud to be part of the B Corp community.’</p>-->
-                </div>
-
-                <div class="content-block__content">
-                    <p class="content-block__body-text">We are passionate about what we design, how we make it, and what
-                        happens to the things we put into the world.</p>
-
-                    <p>Because we are aware of the impact our furniture has on the planet, we make conscious decisions
-                        in every aspect of our design process about how to minimise the environmental impact of our
-                        furniture and extend its lifetime.</p>
-
-                    <p>We craft each piece with care and use responsibly sourced materials such as sustainably certified
-                        wood and recycled fabrics. Our furniture is customisable to suit the customers’ needs, and
-                        made-to-order to avoid excess stock. Our entire collection is produced in Europe, a great deal
-                        of it even in the Netherlands. To ensure our products never end up as waste, we offer various
-                        services including repairs, refurbishment, upgrades and returns.</p>
-                    <a class="sh-atom-button" data-icon-arrow-right="true" data-style="plain-dark"
-                       href="/en/about-us-product">Find out more <span class="icon-frame"> <svg fill="none" height="20"
-                                                                                                viewbox="0 0 20 20"
-                                                                                                width="20"
-                                                                                                xmlns="http://www.w3.org/2000/svg"> <path
-                        d="M0 10H12.5185" id="arrow-right-line" stroke="currentcolor" stroke-width="0.8"></path> <path
-                        d="M8.66667 6L13 10L8.66667 14" id="arrow-right-point" stroke="currentcolor"
-                        stroke-width="0.8"></path> </svg> </span> </a></div>
-            </div>
+  "
+    >
+      <div class="content-block__layout">
+        <div class="content-block__header">
+          <h2 class="content-block__heading">Design principles</h2>
+          <!--<p class="content-block__subheading" data-hide="mobile|tablet">‘We’re proud to be part of the B Corp community.’</p>-->
         </div>
-    </div>
-    <!-- end: content block -->
 
-    <!-- image + text block: philosophy -->
-    <div class="image-text-block" style="background-color: var(--color-accent1);">
-        <div class="image-text-block__container">
-            <div class="image-text-block__layout" data-grid-columns="2" style="
+        <div class="content-block__content">
+          <p class="content-block__body-text">
+            We are passionate about what we design, how we make it, and what
+            happens to the things we put into the world.
+          </p>
+
+          <p>
+            Because we are aware of the impact our furniture has on the planet,
+            we make conscious decisions in every aspect of our design process
+            about how to minimise the environmental impact of our furniture and
+            extend its lifetime.
+          </p>
+
+          <p>
+            We craft each piece with care and use responsibly sourced materials
+            such as sustainably certified wood and recycled fabrics. Our
+            furniture is customisable to suit the customers’ needs, and
+            made-to-order to avoid excess stock. Our entire collection is
+            produced in Europe, a great deal of it even in the Netherlands. To
+            ensure our products never end up as waste, we offer various services
+            including repairs, refurbishment, upgrades and returns.
+          </p>
+          <a
+            class="sh-atom-button"
+            data-icon-arrow-right="true"
+            data-style="plain-dark"
+            href="/en/about-us-product"
+            >Find out more <span class="icon-frame">
+              <svg
+                fill="none"
+                height="20"
+                viewbox="0 0 20 20"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 10H12.5185"
+                  id="arrow-right-line"
+                  stroke="currentcolor"
+                  stroke-width="0.8"></path>
+                <path
+                  d="M8.66667 6L13 10L8.66667 14"
+                  id="arrow-right-point"
+                  stroke="currentcolor"
+                  stroke-width="0.8"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end: content block -->
+
+  <!-- image + text block: philosophy -->
+  <div class="image-text-block" style="background-color: var(--color-accent1);">
+    <div class="image-text-block__container">
+      <div
+        class="image-text-block__layout"
+        data-grid-columns="2"
+        style="
       --size-spacing-units-top: 4;
       --size-spacing-units-bottom: 4;
       --size-spacing-units-top-desktop: 4;
       --size-spacing-units-bottom-desktop: 4;
-      "><img alt="window" class="image-text-block__image" height="1170"
-             sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
-             src="https://assets.studio-henk.nl/assets/Images/about-us/stores_936.jpg" srcset="
+      "
+      >
+        <img
+          alt="window"
+          class="image-text-block__image"
+          height="1170"
+          sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)"
+          src="https://assets.studio-henk.nl/assets/Images/about-us/stores_936.jpg"
+          srcset="
       https://assets.studio-henk.nl/assets/Images/about-us/stores_468.jpg 468w,
       https://assets.studio-henk.nl/assets/Images/about-us/stores_740.jpg 740w,
-      https://assets.studio-henk.nl/assets/Images/about-us/stores_936.jpg 936w" width="936"/>
-                <div class="image-text-block__content">
-                    <p>Discover the story behind our furniture</p>
+      https://assets.studio-henk.nl/assets/Images/about-us/stores_936.jpg 936w"
+          width="936"
+        />
+        <div class="image-text-block__content">
+          <p>Discover the story behind our furniture</p>
 
-                    <p class="ts-xxlarge">Our stores are the heart of our brand that represent who we are and where
-                        we’re going.</p>
-                </div>
-            </div>
+          <p class="ts-xxlarge">
+            Our stores are the heart of our brand that represent who we are and
+            where we’re going.
+          </p>
         </div>
-        <!-- end image + text block --></div>
+      </div>
+    </div>
+    <!-- end image + text block -->
+  </div>
 
-    <!-- B corp -->
-    <div class="content-block" style="background-color: var(--color-accent1);">
-        <div class="content-block__container" style="
+  <!-- B corp -->
+  <div class="content-block" style="background-color: var(--color-accent1);">
+    <div
+      class="content-block__container"
+      style="
     --size-spacing-units-top: 4;
     --size-spacing-units-bottom: 4;
     --size-spacing-units-top-desktop: 20;
     --size-spacing-units-bottom-desktop: 20;
-    ">
-            <div class="content-block__layout">
-                <div class="content-block__header">
-                    <h2 class="content-block__heading">Corporate Social Responsibility</h2>
-                    <!--<p class="content-block__subheading" data-hide="mobile|tablet">‘We’re proud to be part of the B Corp community.’</p>-->
-                </div>
-
-                <div class="content-block__content">
-                    <p class="content-block__body-text">With an office, multiple stores, and a growing number of
-                        employees, we believe it is important to keep track of the environmental and social impact that
-                        our organisation has.</p>
-
-                    <p>Our office and stores are climate neutral, which means that we measure our CO2 emissions,
-                        compensate for them by investing in CO2 reduction projects, and actively work to reduce our
-                        emissions. When opening new stores we aim to reuse as much of the existing building, and work
-                        with building materials that are non-toxic, recycled, renewable or removable as much as
-                        possible.</p>
-
-                    <p>We support the personal development of our employees through an annual training budget, and
-                        stimulate a balanced lifestyle by offering a bike plan, healthy vegetarian lunch and wellness
-                        budget. To ensure good working conditions throughout the supply chain we have a Code of Conduct
-                        that all our suppliers sign.</p>
-                    <a class="sh-atom-button" data-icon-arrow-right="true" data-style="plain-dark"
-                       href="/en/about-us-organisation">Find out more <span class="icon-frame"> <svg fill="none"
-                                                                                                     height="20"
-                                                                                                     viewbox="0 0 20 20"
-                                                                                                     width="20"
-                                                                                                     xmlns="http://www.w3.org/2000/svg"> <path
-                        d="M0 10H12.5185" id="arrow-right-line" stroke="currentcolor" stroke-width="0.8"></path> <path
-                        d="M8.66667 6L13 10L8.66667 14" id="arrow-right-point" stroke="currentcolor"
-                        stroke-width="0.8"></path> </svg> </span> </a></div>
-            </div>
+    "
+    >
+      <div class="content-block__layout">
+        <div class="content-block__header">
+          <h2 class="content-block__heading">
+            Corporate Social Responsibility
+          </h2>
+          <!--<p class="content-block__subheading" data-hide="mobile|tablet">‘We’re proud to be part of the B Corp community.’</p>-->
         </div>
-    </div>
-    <!-- end: B corp -->
 
-    <style type="text/css">@media only screen and (max-width: 991px) {
-        .triptych__content {
-            margin: 0 auto;
-            max-width: 88.4057971014%;
-        }
+        <div class="content-block__content">
+          <p class="content-block__body-text">
+            With an office, multiple stores, and a growing number of employees,
+            we believe it is important to keep track of the environmental and
+            social impact that our organisation has.
+          </p>
+
+          <p>
+            Our office and stores are climate neutral, which means that we
+            measure our CO2 emissions, compensate for them by investing in CO2
+            reduction projects, and actively work to reduce our emissions. When
+            opening new stores we aim to reuse as much of the existing building,
+            and work with building materials that are non-toxic, recycled,
+            renewable or removable as much as possible.
+          </p>
+
+          <p>
+            We support the personal development of our employees through an
+            annual training budget, and stimulate a balanced lifestyle by
+            offering a bike plan, healthy vegetarian lunch and wellness budget.
+            To ensure good working conditions throughout the supply chain we
+            have a Code of Conduct that all our suppliers sign.
+          </p>
+          <a
+            class="sh-atom-button"
+            data-icon-arrow-right="true"
+            data-style="plain-dark"
+            href="/en/about-us-organisation"
+            >Find out more <span class="icon-frame">
+              <svg
+                fill="none"
+                height="20"
+                viewbox="0 0 20 20"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 10H12.5185"
+                  id="arrow-right-line"
+                  stroke="currentcolor"
+                  stroke-width="0.8"></path>
+                <path
+                  d="M8.66667 6L13 10L8.66667 14"
+                  id="arrow-right-point"
+                  stroke="currentcolor"
+                  stroke-width="0.8"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end: B corp -->
+
+  <style type="text/css">
+    @media only screen and (max-width: 991px) {
+      .triptych__content {
+        margin: 0 auto;
+        max-width: 88.4057971014%;
+      }
     }
-    </style>
-    <!-- triptych -->
-    <div class="triptych" style="background-color: var(--color-accent1);">
-        <div class="triptych__container" style="
+  </style>
+  <!-- triptych -->
+  <div class="triptych" style="background-color: var(--color-accent1);">
+    <div
+      class="triptych__container"
+      style="
 --size-spacing-units-top: 4;
 --size-spacing-units-right: 6;
 --size-spacing-units-bottom: 15;
 --size-spacing-units-left: 6;
 --size-spacing-units-top-desktop: 4;
 --size-spacing-units-bottom-desktop: 15;
-">
-            <div class="triptych__layout" data-grid-columns="3">
-                <div class="triptych__item"><a class="triptych__image-link" href="#"><img alt="window"
-                                                                                          class="triptych__image"
-                                                                                          height="2510"
-                                                                                          sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
-                                                                                          src="https://assets.studio-henk.nl/assets/Images/about-us/xander_1886.jpg"
-                                                                                          srcset="
+"
+    >
+      <div class="triptych__layout" data-grid-columns="3">
+        <div class="triptych__item">
+          <a class="triptych__image-link" href="#"
+            ><img
+              alt="window"
+              class="triptych__image"
+              height="2510"
+              sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
+              src="https://assets.studio-henk.nl/assets/Images/about-us/xander_1886.jpg"
+              srcset="
                 https://assets.studio-henk.nl/assets/Images/about-us/xander_280.jpg 280w,
                 https://assets.studio-henk.nl/assets/Images/about-us/xander_592.jpg 592w,
                 https://assets.studio-henk.nl/assets/Images/about-us/xander_943.jpg 943w,
                 https://assets.studio-henk.nl/assets/Images/about-us/xander_1886.jpg 1886w
-                " width="1886"/> <img alt="window" class="triptych__image-hover" height="788"
-                                      src="https://assets.studio-henk.nl/assets/Images/about-us/xander-hover_592.jpg"
-                                      width="592"/> </a>
-                    <div class="triptych__content">
-                        <p>Xander Albers</p>
+                "
+              width="1886"
+            />
+            <img
+              alt="window"
+              class="triptych__image-hover"
+              height="788"
+              src="https://assets.studio-henk.nl/assets/Images/about-us/xander-hover_592.jpg"
+              width="592"
+            />
+          </a>
+          <div class="triptych__content">
+            <p>Xander Albers</p>
 
-                        <p class="triptych__quote">Xander (1987), Creative director and architect, has a passion for
-                            architecture. This is reflected in the stylish and functional designs of Studio HENK.</p>
-                    </div>
-                </div>
+            <p class="triptych__quote">
+              Xander (1987), Creative director and architect, has a passion for
+              architecture. This is reflected in the stylish and functional
+              designs of Studio HENK.
+            </p>
+          </div>
+        </div>
 
-                <div class="triptych__item"><a class="triptych__image-link" href="#"><img alt="window"
-                                                                                          class="triptych__image"
-                                                                                          height="2510"
-                                                                                          sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
-                                                                                          src="https://assets.studio-henk.nl/assets/Images/about-us/okke_1886.jpg"
-                                                                                          srcset="
+        <div class="triptych__item">
+          <a class="triptych__image-link" href="#"
+            ><img
+              alt="window"
+              class="triptych__image"
+              height="2510"
+              sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
+              src="https://assets.studio-henk.nl/assets/Images/about-us/okke_1886.jpg"
+              srcset="
                 https://assets.studio-henk.nl/assets/Images/about-us/okke_280.jpg 280w,
                 https://assets.studio-henk.nl/assets/Images/about-us/okke_592.jpg 592w,
                 https://assets.studio-henk.nl/assets/Images/about-us/okke_943.jpg 943w,
                 https://assets.studio-henk.nl/assets/Images/about-us/okke_1886.jpg 1886w
-                " width="1886"/> <img alt="window" class="triptych__image-hover" height="788"
-                                      src="https://assets.studio-henk.nl/assets/Images/about-us/okke-hover_592.jpg"
-                                      width="592"/> </a>
+                "
+              width="1886"
+            />
+            <img
+              alt="window"
+              class="triptych__image-hover"
+              height="788"
+              src="https://assets.studio-henk.nl/assets/Images/about-us/okke-hover_592.jpg"
+              width="592"
+            />
+          </a>
 
-                    <div class="triptych__content">
-                        <p>Okke Albers</p>
+          <div class="triptych__content">
+            <p>Okke Albers</p>
 
-                        <p class="triptych__quote">Okke (1985), Commercial Director and entrepreneur, knows like no
-                            other how to empower and connect people. Step by step he brings Studio HENK closer to
-                            meeting its goal.</p>
-                    </div>
-                </div>
+            <p class="triptych__quote">
+              Okke (1985), Commercial Director and entrepreneur, knows like no
+              other how to empower and connect people. Step by step he brings
+              Studio HENK closer to meeting its goal.
+            </p>
+          </div>
+        </div>
 
-                <div class="triptych__item"><a class="triptych__image-link" href="#"><img alt="window"
-                                                                                          class="triptych__image"
-                                                                                          height="2510"
-                                                                                          sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
-                                                                                          src="https://assets.studio-henk.nl/assets/Images/about-us/corine_1886.jpg"
-                                                                                          srcset="
+        <div class="triptych__item">
+          <a class="triptych__image-link" href="#"
+            ><img
+              alt="window"
+              class="triptych__image"
+              height="2510"
+              sizes="(min-width: 1000px) 280px, calc(100vw - 48px)"
+              src="https://assets.studio-henk.nl/assets/Images/about-us/corine_1886.jpg"
+              srcset="
                 https://assets.studio-henk.nl/assets/Images/about-us/corine_280.jpg 280w,
                 https://assets.studio-henk.nl/assets/Images/about-us/corine_592.jpg 592w,
                 https://assets.studio-henk.nl/assets/Images/about-us/corine_943.jpg 943w,
                 https://assets.studio-henk.nl/assets/Images/about-us/corine_1886.jpg 1886w
-                " width="1886"/> <img alt="window" class="triptych__image-hover" height="788"
-                                      src="https://assets.studio-henk.nl/assets/Images/about-us/corine-hover_592.jpg"
-                                      width="592"/> </a>
+                "
+              width="1886"
+            />
+            <img
+              alt="window"
+              class="triptych__image-hover"
+              height="788"
+              src="https://assets.studio-henk.nl/assets/Images/about-us/corine-hover_592.jpg"
+              width="592"
+            />
+          </a>
 
-                    <div class="triptych__content">
-                        <p>Corine de Bruijne</p>
+          <div class="triptych__content">
+            <p>Corine de Bruijne</p>
 
-                        <p class="triptych__quote">Corine (1985), Head of Sustainability, has a great sense of justice
-                            and knowledge of sustainability. She is the driving force behind Studio HENK’s sustainable
-                            mission.</p>
-                    </div>
-                </div>
-            </div>
+            <p class="triptych__quote">
+              Corine (1985), Head of Sustainability, has a great sense of
+              justice and knowledge of sustainability. She is the driving force
+              behind Studio HENK’s sustainable mission.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- end: triptych -->
+  </div>
+  <!-- end: triptych -->
+  <script is:inline slot="head-scripts" type="module">
+    import { NavBarDesktop } from "/static/std/assets/toolkit/scripts/components/_navigation-desktop.js";
+    // Create the query list.
+    const mediaQueryList = window.matchMedia("(min-width: 1280px)");
+
+    // Define a callback function for the event listener.
+    function handleWindowResizeChange(mql) {
+      console.log("hello");
+      if (mql.matches) {
+        /* The viewport is currently 1280 or larger */
+        console.log("The viewport is currently 1280 or larger");
+        // load and run desktop scripts
+        NavBarDesktop.init();
+      }
+    }
+
+    // Run the orientation change handler once.
+    handleWindowResizeChange(mediaQueryList);
+
+    // Add the callback function as a listener to the query list.
+    mediaQueryList.addEventListener("change", handleWindowResizeChange);
+  </script>
 </NewNavLayout>

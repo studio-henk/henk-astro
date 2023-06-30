@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1511px) {
+@media only screen and (max-width: 1279px) {
 
 @keyframes masthead-mobile-fade-in {
     0% {
@@ -45,6 +45,7 @@
     align-items: center;
     padding: 53px 20px 15px 24px;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .--menu-open .primary-nav-container {
@@ -80,8 +81,8 @@ html:not(.--menu-open) .primary-nav-container .icon-close {
     }
 }
 
-/* hide at 1512 px screen */
-@media only screen and (min-width: 1512px) {
+/* hide at 1024 px screen */
+@media only screen and (min-width: 1280px) {
     .masthead-mobile {
         display: none;
     }
