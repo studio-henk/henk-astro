@@ -1,6 +1,5 @@
 ---
 import { getLangFromUrl } from "../../i18n/utils";
-// import BaseLayout from "../../layouts/BaseLayout.astro";
 import NewNavLayout from "../../layouts/NewNavLayout.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -682,7 +681,7 @@ https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg 936w"
     </div>
   </div>
   <!-- end: triptych -->
-  <script is:inline slot="head-scripts" type="module">
+  <!--<script is:inline slot="head-scripts" type="module">
     import { NavBarDesktop } from "/static/std/assets/toolkit/scripts/components/_navigation-desktop.js";
     // Create the query list.
     const mediaQueryList = window.matchMedia("(min-width: 1280px)");
@@ -703,5 +702,5 @@ https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg 936w"
 
     // Add the callback function as a listener to the query list.
     mediaQueryList.addEventListener("change", handleWindowResizeChange);
-  </script>
+  </script>-->
 </NewNavLayout>

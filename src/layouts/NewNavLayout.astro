@@ -32,6 +32,28 @@ const { title, mainID, mainClass, pageClass } = Astro.props;
     />
     <slot name="head-styles" />
     <script is:inline src="/static/std/assets/toolkit/scripts/libs.js"></script>
+    <script is:inline type="module">
+      import { NavBarDesktop } from "/static/std/assets/toolkit/scripts/components/_navigation-desktop.js";
+      // Create the query list.
+      const mediaQueryList = window.matchMedia("(min-width: 1280px)");
+
+      // Define a callback function for the event listener.
+      function handleWindowResizeChange(mql) {
+        console.log("hello");
+        if (mql.matches) {
+          /* The viewport is currently 1280 or larger */
+          console.log("The viewport is currently 1280 or larger");
+          // load and run desktop scripts
+          NavBarDesktop.init();
+        }
+      }
+
+      // Run the orientation change handler once.
+      handleWindowResizeChange(mediaQueryList);
+
+      // Add the callback function as a listener to the query list.
+      mediaQueryList.addEventListener("change", handleWindowResizeChange);
+    </script>
     <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>-->
     <slot name="head-scripts" />
   </head>

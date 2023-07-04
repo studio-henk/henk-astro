@@ -164,6 +164,7 @@
     .submenu__item-image {
         transition: all 0.3s ease-in-out;
         object-fit: cover;
+        height: auto;
     }
 
     .submenu__item-link:hover .submenu__item-image {

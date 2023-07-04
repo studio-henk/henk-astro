@@ -5,7 +5,34 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <link slot="head-styles" rel="stylesheet" href="/static/std/assets/toolkit/scripts/intlTelInput/css/intlTelInput.css">
     <script slot="head-scripts" src="/static/std/assets/toolkit/scripts/intlTelInput/js/intlTelInput.min.js"></script>
     <script slot="head-scripts" src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <div class="section-header__container" id="shb_0">
+        <div class="sh-molecule-bg-box" style="
+                    --color-background-component-bgbox: var(--color-accent3, #f00);
+
+                    --color-text-component-bgbox: var(--color-henk-black, #000);
+                    ">
+            <div class="sh-molecule-padding-box" style="
+                            --size-spacing-units-top: 11;
+                                        --size-spacing-units-right: 5;
+                                        --size-spacing-units-bottom: 11;
+                                        --size-spacing-units-left: 5;
+                                        --size-spacing-units-top-desktop: 11;
+                                        --size-spacing-units-right-desktop: 5;
+                                        --size-spacing-units-bottom-desktop: 11;
+                                        --size-spacing-units-left-desktop: 5;
+                            ">
+                <div class="section-header">
+
+                    <p class="section-header__section-heading">
+                        neem contact op
+                    </p>
+                    <p class="section-header__section-description">
+                        Wij helpen je graag
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="sh-molecule-padding-box" style="
                     --size-spacing-units-top: 4;
                     --size-spacing-units-right: 4;
@@ -16,10 +43,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                     --size-spacing-units-bottom-desktop: 0;
                     --size-spacing-units-left-desktop: 6;
                     max-width: 652px;
+                    margin: 0 auto;
                 ">
-        <div id="page-title">
-            <h1 class="h2">Contact</h1>
-        </div>
+        <!--<div id="page-title">-->
+        <!--    <h1 class="h2">Contact</h1>-->
+        <!--</div>-->
         <div
             class="org-form"
             data-show-required-fields="true"
