@@ -4861,7 +4861,7 @@ dl[data-direction=horizontal],
   }
 }
 /* see base.scss for h1 - h6 base styles */
-#page-title {
+#mc_embed_signup #page-title {
   margin-bottom: 1.75rem;
 }
 
