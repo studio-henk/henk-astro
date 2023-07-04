@@ -38,8 +38,8 @@ const {title, mainID, mainClass} = Astro.props;
 <div class="wrapper">
     <MsgBar />
     <TheNav />
-    <main class={mainClass} id={mainID}>
-        <!--<LanguagePicker/>-->
+    <slot name="pre-main" />
+    <main id={mainID} class={mainClass}>
         <slot />
     </main>
     <TheFooter />

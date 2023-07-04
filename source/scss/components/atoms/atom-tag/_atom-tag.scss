@@ -10,13 +10,8 @@
   padding: 0.25em 0.83333333em;
   justify-content: flex-start;
   align-items: center;
-  /*margin: 1.75em 0;*/
-  vertical-align: middle;
+  margin-top: 18px;
 }
-
-/* with a link
-padding must be moved from tag to inner link element
-*/
 
 .sh-atom-tag__link,
 .sh-atom-tag[data-haslink] > a {
