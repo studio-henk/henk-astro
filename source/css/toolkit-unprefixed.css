@@ -14933,7 +14933,6 @@ quickfix for images causing gap in grid
   color: var(--color-white, #f00);
   margin-top: 0;
   font-size: 2.0625rem;
-  text-transform: capitalize;
   font-weight: 300;
   letter-spacing: 0.07em;
   line-height: 50px;
