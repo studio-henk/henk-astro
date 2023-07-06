@@ -32,14 +32,14 @@
 .sh-atom-button[data-style="outline-dark"] {
   --color-background-button: var(--color-transparent);
   --color-text-button: var(--color-henk-black);
-  --color-border-button: var(--color-henk-black);
-  border-width: 1px;
+  --color-border-button: var(--color-henk-black)
 }
 
 .sh-atom-button:hover {
   --color-background-button: var(--color-henk-black);
   --color-text-button: var(--color-henk-white);
   --color-border-button: var(--color-henk-black);
+  opacity: 0.85;
 }
 
 .sh-atom-button[data-style="filled"]:hover,
@@ -141,6 +141,9 @@
 .sh-atom-button:disabled:hover,
 .sh-atom-button[data-disabled="true"]:hover {
   cursor: not-allowed;
+  background-color: transparent;
+  color: currentColor;
+  opacity: 0.5;
 }
 
 .sh-atom-button[data-expand="true"] {

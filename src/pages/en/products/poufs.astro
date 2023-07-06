@@ -40,8 +40,11 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
                         --size-spacing-units-left-desktop: 10;
                     ">
                 <div class="sh-molecule-l-button-group" data-alignment-mobile="end" data-alignment-desktop="start">
-                    <button type="button" class="sh-atom-button" data-variant="primary" onclick="orgModal.openModal()"
-                            style="--color-background-button: var(--color-accent7);--var-global-button-bgc: var(--color-accent7); --var-global-button-bgc-hover: var(--color-accent7); --color-text-button: var(--color-henk-white);--var-global-button-text-color: var(--color-henk-white); --var-global-button-text-color-hover: var(--color-henk-white); --color-border-button: var(--color-accent7);--var-global-button-border-color: var(--color-accent7); --var-global-button-border-color-hover: var(--color-accent7);">
+                    <button
+                        type="button"
+                        class="sh-atom-button"
+                        onclick="orgModal.openModal()"
+                        style="--color-background-button: var(--color-accent7); --color-text-button: var(--color-henk-white); --color-border-button: var(--color-accent7);">
                         filter
                     </button>
                 </div>
@@ -166,9 +169,15 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
                                         <div class="sh-molecule-l-button-group" data-alignment="between">
 
 
-                                            <button type="button" class="sh-atom-button" disabled="disabled"
-                                                    data-expand="true" onclick="orgFilter.clearAllCheckedFilters()"
-                                                    data-function="#" id="clearfilters">
+                                            <button
+                                                type="button"
+                                                class="sh-atom-button"
+                                                data-style="outline-dark"
+                                                disabled="disabled"
+                                                data-expand="true"
+                                                onclick="orgFilter.clearAllCheckedFilters()"
+                                                data-function="#"
+                                                id="clearfilters">
                                                 clear all
                                             </button>
 
