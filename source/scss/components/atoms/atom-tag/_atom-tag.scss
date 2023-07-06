@@ -12,6 +12,12 @@
   align-items: center;
   /*margin: 1.75em 0;*/
   vertical-align: middle;
+
+  // exceptions !
+  // in shopping cart
+  .shopping-cart-product__details--description & {
+    margin-top: 14px;
+  }
 }
 
 /* with a link

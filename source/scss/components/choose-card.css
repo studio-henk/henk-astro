@@ -1,515 +1,197 @@
-.normal {
-  font-weight: normal;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-.lowercase {
-  text-transform: lowercase;
-}
-
-.bold {
-  font-family: "ff-scala-sans-pro", sans-serif;
-  font-weight: 400;
-  text-transform: none;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right !important;
-}
-
-.text-left {
-  text-align: left !important;
-}
-
-.text-shadow {
-  text-shadow: 0.5px 0.5px 0.5px #000;
-}
-
-.xs-right {
-  float: right !important;
-}
-
-@media (min-width: 544px) {
-  .sm-right {
-    float: right !important;
-  }
-}
-@media (min-width: 768px) {
-  .md-right {
-    float: right !important;
-  }
-}
-@media (min-width: 992px) {
-  .lg-right {
-    float: right !important;
-  }
-}
-@media (min-width: 1366px) {
-  .xl-right {
-    float: right !important;
-  }
-}
-.flex-fix-ie {
-  display: flex;
-  flex-direction: row;
-}
-
-.rotate {
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.cursorpointer {
-  cursor: pointer;
-}
-
-a.cursorpointer {
-  text-decoration: underline;
-}
-
-.flex {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.hidden {
-  display: none !important;
-}
-
-.show-block {
-  display: block !important;
-}
-
-.show-inline-block {
-  display: inline-block !important;
-}
-
-.show-inline {
-  display: inline !important;
-}
-
-/*
- * Hide input without blocking validation
- */
-span.hidden-input + input {
-  opacity: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border-width: 0 !important;
-  position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-}
-
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-  white-space: inherit;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-.invisible {
-  visibility: hidden;
-}
-
-.no-select {
-  user-select: none;
-}
-
-.img-responsive {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
-.img-responsive img {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
-
-/*********************/
-/* SHOW HIDE HELPERS */
-/*********************/
-.hidden-xs {
-  display: none !important;
-}
-
-/* SM hide */
-@media (min-width: 544px) {
-  .hidden-sm {
-    display: none !important;
-  }
-}
-/* MD hide */
-@media (min-width: 768px) {
-  .hidden-md {
-    display: none !important;
-  }
-}
-/* LG hide */
-@media (min-width: 992px) {
-  .hidden-lg {
-    display: none !important;
-  }
-}
-/* XL hide */
-@media (min-width: 1366px) {
-  .hidden-xl {
-    display: none !important;
-  }
-}
-/* SM show */
-@media (min-width: 544px) {
-  .visible-sm-block {
-    display: block !important;
-  }
-  .visible-sm-inline {
-    display: inline !important;
-  }
-  .visible-sm-inline-block {
-    display: inline-block !important;
-  }
-}
-/* MD show */
-@media (min-width: 768px) {
-  .visible-md-block {
-    display: block !important;
-  }
-  .visible-md-inline {
-    display: inline !important;
-  }
-  .visible-md-inline-block {
-    display: inline-block !important;
-  }
-}
-/* lg show */
-@media (min-width: 992px) {
-  .visible-lg-block {
-    display: block !important;
-  }
-  .visible-lg-inline {
-    display: inline !important;
-  }
-  .visible-lg-inline-block {
-    display: inline-block !important;
-  }
-}
-/* xl show */
-@media (min-width: 1366px) {
-  .visible-xl-block {
-    display: block !important;
-  }
-  .visible-xl-inline {
-    display: inline !important;
-  }
-  .visible-xl-inline-block {
-    display: inline-block !important;
-  }
-}
-.visible-print {
-  display: none !important;
-}
-
-@media print {
-  .visible-print {
-    display: block !important;
-  }
-}
-.visible-print-block {
-  display: none !important;
-}
-
-@media print {
-  .visible-print-block {
-    display: block !important;
-  }
-}
-.visible-print-inline {
-  display: none !important;
-}
-
-@media print {
-  .visible-print-inline {
-    display: inline !important;
-  }
-}
-.visible-print-inline-block {
-  display: none !important;
-}
-
-@media print {
-  .visible-print-inline-block {
-    display: inline-block !important;
-  }
-}
-@media print {
-  .hidden-print {
-    display: none !important;
-  }
-}
-/* Border radius */
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.quote {
-  font-size: 1.25rem;
-  line-height: 1.6875rem;
-}
-
-.pull-over-small {
-  position: relative;
-  top: -1.875rem;
-  margin-bottom: -1.875rem;
-}
-
-.pull-over-medium {
-  position: relative;
-  top: -5rem;
-  margin-bottom: -5rem;
-}
-
-.ratio16-9:before {
-  padding-top: 56.25%;
-}
-
-.ratio {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
 .choose-cards * + * {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .choose-cards {
-  list-style: none;
-  margin: 0 -0.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
+    list-style: none;
+    margin: 0 -0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 }
+
 @media (min-width: 992px) {
-  .choose-cards {
-    margin: 0 -0.5rem;
-  }
+    .choose-cards {
+        margin: 0 -0.5rem;
+    }
 }
+
 .choose-cards *[class^=" col-"], .choose-cards *[class^=col-] {
-  padding: 0;
+    padding: 0;
 }
+
 .choose-cards__fabric .choose-cards__item--image:before {
-  left: 2px;
-  bottom: 2px;
+    left: 2px;
+    bottom: 2px;
 }
+
 .choose-cards__fabric .choose-cards__item--image:after {
-  left: 0;
-  bottom: 0;
+    left: 0;
+    bottom: 0;
 }
+
 .choose-cards__fabric .choose-cards__item--label {
-  margin-top: 0.375rem;
-  padding-bottom: 0.25rem;
+    margin-top: 0.375rem;
+    padding-bottom: 0.25rem;
 }
+
 @media (min-width: 768px) {
-  .choose-cards__fabric .choose-cards__item--label {
-    margin-top: 0.25rem;
-  }
+    .choose-cards__fabric .choose-cards__item--label {
+        margin-top: 0.25rem;
+    }
 }
+
 .choose-cards__item {
-  border: 0;
-  zoom: 1;
-  padding: 0 0.25rem;
-  align-content: space-between;
-  height: auto;
-  float: left;
-  align-items: center;
-  display: inline-block;
-  width: 25%;
-  margin-bottom: 0.5rem;
-  justify-content: space-between;
-  position: relative;
-}
-@media (min-width: 992px) {
-  .choose-cards__item {
-    padding: 0 0.5rem;
-  }
-}
-@media (min-width: 544px) {
-  .choose-cards__item {
-    width: 20%;
-  }
-}
-@media (min-width: 768px) {
-  .choose-cards__item {
-    width: 33.3333333333%;
-  }
-}
-@media (min-width: 992px) {
-  .choose-cards__item {
+    border: 0;
+    zoom: 1;
+    padding: 0 0.25rem;
+    align-content: space-between;
+    height: auto;
+    float: left;
+    align-items: center;
+    display: inline-block;
     width: 25%;
-  }
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    position: relative;
 }
+
+@media (min-width: 992px) {
+    .choose-cards__item {
+        padding: 0 0.5rem;
+    }
+}
+
+@media (min-width: 544px) {
+    .choose-cards__item {
+        width: 20%;
+    }
+}
+
+@media (min-width: 768px) {
+    .choose-cards__item {
+        width: 33.3333333333%;
+    }
+}
+
+@media (min-width: 992px) {
+    .choose-cards__item {
+        width: 25%;
+    }
+}
+
 @media (min-width: 1366px) {
-  .choose-cards__item {
-    width: 16.6666666667%;
-  }
+    .choose-cards__item {
+        width: 16.6666666667%;
+    }
 }
+
 .no-touchevents .choose-cards__item:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .no-touchevents .choose-cards__item:hover .choose-cards__item--favorite {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .choose-cards__item--more {
-  position: absolute;
-  right: 0;
-  top: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
+
 .choose-cards__item--more .icon {
-  width: 1rem;
-  height: 1rem;
+    width: 1rem;
+    height: 1rem;
 }
+
 .choose-cards__item--show-more {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
 }
+
 .choose-cards__item--image {
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  margin-bottom: 0.25rem;
-  position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    margin-bottom: 0.25rem;
+    position: relative;
 }
+
 .choose-cards__item--image img:not(.texture) {
-  opacity: 0.32;
+    opacity: 0.32;
 }
+
 .choose-cards__item--image:before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  background: transparent url("../../toolkit/svg-standalone/icon-checkmark.svg") no-repeat center center;
-  z-index: 2;
-  border-radius: 100%;
-  padding: 1px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: transparent url("/static/std/assets/toolkit/svg-standalone/icon-checkmark.svg") no-repeat center center;
+    z-index: 2;
+    border-radius: 100%;
+    padding: 1px;
 }
+
 .choose-cards__item--image:after {
-  z-index: 1;
-  content: "";
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  right: 3px;
-  bottom: 3px;
-  background: #fff;
-  border-radius: 100%;
+    z-index: 1;
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 100%;
 }
+
 .choose-cards__item--image:after, .choose-cards__item--image:before {
-  display: none;
+    display: none;
 }
+
 .choose-cards__item--label {
-  display: block;
-  font-size: 0.625rem;
-  position: relative;
-  margin: 0;
-  padding-left: 0;
-  padding-right: 1rem;
+    display: block;
+    font-size: 0.625rem;
+    position: relative;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 1rem;
 }
+
 .choose-cards__item--favorite {
-  background: rgba(0, 0, 0, 0.88);
-  color: #fff;
-  position: absolute;
-  width: 100%;
-  height: 16px;
-  top: 0;
-  bottom: 0;
-  text-align: center;
-  font-size: 9px;
-  font-size: 0.5625rem;
-  vertical-align: middle;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  z-index: 199;
+    background: rgba(0, 0, 0, 0.88);
+    color: var(--color-white, #fff);
+    position: absolute;
+    width: 100%;
+    height: 16px;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    vertical-align: middle;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 199;
 }
+
 .touchevents .choose-cards__active .choose-cards__item--favorite {
-  opacity: 1;
+    opacity: 1;
 }
 
 .choose-cards__active .choose-cards__item--image img {
-  opacity: 1;
+    opacity: 1;
 }
+
 .choose-cards__active .choose-cards__item--image:before,
 .choose-cards__active .choose-cards__item--image:after {
-  display: block;
+    display: block;
 }
 
 .defaultHide {
-  display: none;
+    display: none;
 }

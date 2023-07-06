@@ -2,7 +2,6 @@
 import {getLangFromUrl} from '../i18n/utils';
 import MsgBar from "../components/MsgBar.astro";
 import TheNav from "../components/TheNav.astro";
-// import LanguagePicker from '../components/LanguagePicker.astro';
 import TheFooter from "../components/TheFooter.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -37,10 +36,14 @@ const {title, mainID, mainClass} = Astro.props;
 </head>
 <body>
 <div class="wrapper">
+    <!--value comes from head <title> tag....usually, which is set in title field on SEO tab in pimcore-->
+    <div id="page-title">
+        <h1 class="sr-only">{title}</h1>
+    </div>
     <MsgBar />
     <TheNav />
-    <main class={mainClass} id={mainID}>
-        <!--<LanguagePicker/>-->
+    <slot name="pre-main" />
+    <main id={mainID} class={mainClass}>
         <slot />
     </main>
     <TheFooter />
