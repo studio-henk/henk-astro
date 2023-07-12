@@ -73,6 +73,7 @@
 
 .sh-atom-button-icon[data-shape="circle"] {
     border-radius: 50%;
+    text-indent: -9999em;
 }
 
 @media (min-resolution: 2dppx) {

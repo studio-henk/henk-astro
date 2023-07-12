@@ -32,14 +32,14 @@
 .sh-atom-button[data-style="outline-dark"] {
   --color-background-button: var(--color-transparent);
   --color-text-button: var(--color-henk-black);
-  --color-border-button: var(--color-henk-black);
-  border-width: 1px;
+  --color-border-button: var(--color-henk-black)
 }
 
 .sh-atom-button:hover {
   --color-background-button: var(--color-henk-black);
   --color-text-button: var(--color-henk-white);
   --color-border-button: var(--color-henk-black);
+  opacity: 0.85;
 }
 
 .sh-atom-button[data-style="filled"]:hover,
@@ -94,7 +94,8 @@
   position: absolute;
   bottom: 0;
   height: 1px;
-  background: rgba(0 0 0 / 96%);
+  /*background: rgba(0 0 0 / 96%);*/
+  background-color: currentColor;
   display: block;
   left: 0;
   pointer-events: none;
@@ -141,6 +142,9 @@
 .sh-atom-button:disabled:hover,
 .sh-atom-button[data-disabled="true"]:hover {
   cursor: not-allowed;
+  background-color: transparent;
+  color: currentColor;
+  opacity: 0.5;
 }
 
 .sh-atom-button[data-expand="true"] {
@@ -171,6 +175,14 @@
   /*padding: 2px 0 0 0;*/
   padding: 0;
   width: 20px;
+}
+
+.sh-atom-button[data-icon-arrow-left="true"] .icon-frame svg,
+.sh-atom-button[data-icon-arrow-right="true"] .icon-frame svg,
+.sh-atom-button[data-icon-arrow-left="true"] svg,
+.sh-atom-button[data-icon-arrow-right="true"] svg{
+  top: 1px;
+  position: relative;
 }
 
 .sh-atom-button[data-icon-arrow-left="true"] path,
@@ -243,12 +255,20 @@ sh-atom-button[data-state="unmuted"] .muted {
   display: none;
 }*/
 
-.sh-atom-button[data-state="muted"] .sound-on {
+.sh-atom-button-icon[data-state="muted"] .sound-on {
   display: none !important;
 }
 
-.sh-atom-button[data-state="unmuted"] .sound-muted {
+.sh-atom-button-icon[data-state="unmuted"] .sound-muted {
   display: none !important;
+}
+
+/* if in video block */
+[data-hasvideo] .sh-atom-button-icon[data-state="muted"],
+[data-hasvideo] .sh-atom-button-icon[data-state="unmuted"]{
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
 }
 
 /* alignment */
@@ -274,4 +294,9 @@ sh-atom-button[data-state="unmuted"] .muted {
 
 .sh-atom-button[data-alignment*="separator"] {
   grid-template-columns: repeat(3, auto);
+}
+
+/* other icons */
+.sh-atom-button .icon-frame {
+  margin-left: 0.47058824em;
 }

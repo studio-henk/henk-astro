@@ -10,7 +10,14 @@
   padding: 0.25em 0.83333333em;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 18px;
+  /*margin: 1.75em 0;*/
+  vertical-align: middle;
+
+  // exceptions !
+  // in shopping cart
+  .shopping-cart-product__details--description & {
+    margin-top: 14px;
+  }
 }
 
 .sh-atom-tag__link,
