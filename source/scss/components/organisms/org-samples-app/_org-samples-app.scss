@@ -888,8 +888,7 @@ main.sh-l-page-main .sample__quickshop__content ul,
   }
 
   // close button
-  .sh-atom-button {
-    &.--sh-vue-modal__close {
+  .--sh-vue-modal__close {
       margin: 0;
       display: flex;
       justify-content: center;
@@ -911,7 +910,6 @@ main.sh-l-page-main .sample__quickshop__content ul,
         color: #fff;
       }
     }
-  }
 }
 
 /// nprogress loading bar and spinner

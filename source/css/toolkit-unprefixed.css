@@ -4632,7 +4632,8 @@ dl[data-direction=horizontal],
   position: absolute;
   bottom: 0;
   height: 1px;
-  background: rgba(0 0 0/96%);
+  /*background: rgba(0 0 0 / 96%);*/
+  background-color: currentColor;
   display: block;
   left: 0;
   pointer-events: none;
@@ -4713,6 +4714,14 @@ dl[data-direction=horizontal],
   width: 20px;
 }
 
+.sh-atom-button[data-icon-arrow-left=true] .icon-frame svg,
+.sh-atom-button[data-icon-arrow-right=true] .icon-frame svg,
+.sh-atom-button[data-icon-arrow-left=true] svg,
+.sh-atom-button[data-icon-arrow-right=true] svg {
+  top: 1px;
+  position: relative;
+}
+
 .sh-atom-button[data-icon-arrow-left=true] path,
 .sh-atom-button[data-icon-arrow-right=true] path {
   transition: all 0.3s ease;
@@ -4778,12 +4787,20 @@ dl[data-direction=horizontal],
 sh-atom-button[data-state="unmuted"] .muted {
   display: none;
 }*/
-.sh-atom-button[data-state=muted] .sound-on {
+.sh-atom-button-icon[data-state=muted] .sound-on {
   display: none !important;
 }
 
-.sh-atom-button[data-state=unmuted] .sound-muted {
+.sh-atom-button-icon[data-state=unmuted] .sound-muted {
   display: none !important;
+}
+
+/* if in video block */
+[data-hasvideo] .sh-atom-button-icon[data-state=muted],
+[data-hasvideo] .sh-atom-button-icon[data-state=unmuted] {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
 }
 
 /* alignment */
@@ -4808,6 +4825,11 @@ sh-atom-button[data-state="unmuted"] .muted {
 
 .sh-atom-button[data-alignment*=separator] {
   grid-template-columns: repeat(3, auto);
+}
+
+/* other icons */
+.sh-atom-button .icon-frame {
+  margin-left: 0.47058824em;
 }
 
 .icon-frame {
@@ -4885,6 +4907,7 @@ sh-atom-button[data-state="unmuted"] .muted {
 
 .sh-atom-button-icon[data-shape=circle] {
   border-radius: 50%;
+  text-indent: -9999em;
 }
 
 @media (min-resolution: 2dppx) {
@@ -8437,7 +8460,7 @@ main.sh-l-page-main .sample__quickshop__content ul,
   position: relative;
   margin: 1rem;
 }
-.sh-vue-modal .sh-atom-button.--sh-vue-modal__close {
+.sh-vue-modal .--sh-vue-modal__close {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -8446,12 +8469,12 @@ main.sh-l-page-main .sample__quickshop__content ul,
   top: 1rem;
   right: 1rem;
 }
-.sh-vue-modal .sh-atom-button.--sh-vue-modal__close svg {
+.sh-vue-modal .--sh-vue-modal__close svg {
   width: 20px;
   height: 20px;
 }
 @media only screen and (max-width: 767px) {
-  .sh-vue-modal .sh-atom-button.--sh-vue-modal__close {
+  .sh-vue-modal .--sh-vue-modal__close {
     background-color: rgba(6, 6, 6, 0.33);
     border-radius: 50px;
     width: 40px;
@@ -9119,6 +9142,9 @@ main.sh-l-page-main .sample__quickshop__content ul,
   width: 100vw;
   object-fit: cover;
   height: inherit;
+}
+.sh-org-block[data-fullscreen][data-hasimage][data-variant=fullwidthvideo-brick2], .sh-org-block[data-fullscreen][data-hasvideo][data-variant=fullwidthvideo-brick2] {
+  /* TODO: remove soon */
 }
 .sh-org-block[data-fullscreen][data-hasimage][data-variant=fullwidthvideo-brick2] .sh-org-block__layer1, .sh-org-block[data-fullscreen][data-hasvideo][data-variant=fullwidthvideo-brick2] .sh-org-block__layer1 {
   justify-content: center;
@@ -15005,7 +15031,6 @@ quickfix for images causing gap in grid
   color: var(--color-white, #f00);
   margin-top: 0;
   font-size: 2.0625rem;
-  text-transform: capitalize;
   font-weight: 300;
   letter-spacing: 0.07em;
   line-height: 50px;
@@ -15024,7 +15049,7 @@ quickfix for images causing gap in grid
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: 16px;
-  row-gap: 30px;
+  row-gap: 1rem;
 }
 [data-grid=shop-product]:not(:first-child) {
   padding-top: 8px;
@@ -15086,12 +15111,20 @@ quickfix for images causing gap in grid
   height: 100%;
   object-fit: fill;
 }
-[data-grid=shop-product][data-variant~=settingImage] .sh-l-grid__item:first-child .mdl-shop-product__container .mdl-shop-product__title {
+[data-grid=shop-product][data-variant~=settingImage] .sh-l-grid__item:first-child .mdl-shop-product__container .mdl-shop-product__content {
   position: absolute;
   bottom: 14px;
   left: 24px;
-  color: var(--color-white, #f00);
+}
+[data-grid=shop-product][data-variant~=settingImage] .sh-l-grid__item:first-child .mdl-shop-product__container .mdl-shop-product__title,
+[data-grid=shop-product][data-variant~=settingImage] .sh-l-grid__item:first-child .mdl-shop-product__title {
+  color: var(--color-white, #fff);
   margin-top: 0;
+  font-size: 2.0625rem;
+  font-weight: 300;
+  letter-spacing: 0.07em;
+  line-height: 50px;
+  padding-left: 0;
 }
 @media only screen and (min-width: 1280px) {
   [data-grid=shop-product][data-variant*="settingImage --flipped"] .sh-l-grid__item:first-child {
@@ -15209,7 +15242,8 @@ quickfix for images causing gap in grid
 
 .hero-video-brick video {
   width: 100%;
-  height: 100vh;
+  /*height: 100vh;*/
+  height: calc(100svh - var(--size-height-for-hero));
   object-fit: cover;
   object-position: center center;
 }
@@ -15309,7 +15343,8 @@ quickfix for images causing gap in grid
 
 .hero-brick video {
   width: 100%;
-  height: 100vh;
+  /*height: 100vh;*/
+  height: calc(100svh - var(--size-height-for-hero));
   object-fit: cover;
   object-position: center center;
 }
@@ -15367,6 +15402,15 @@ quickfix for images causing gap in grid
   position: absolute;
   bottom: 20px;
   left: 50%;
+  transform: translateX(-50%);
+  transition: none;
+}
+
+.hero-brick .hero-brick__footer .sh-atom-button[data-icon-arrow-down],
+.hero-video-brick .hero-video-brick__footer .sh-atom-button[data-icon-arrow-down] {
+  bottom: 20px;
+  left: 50%;
+  position: absolute;
   transform: translateX(-50%);
   transition: none;
 }
