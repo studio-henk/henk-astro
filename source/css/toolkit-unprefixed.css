@@ -4800,11 +4800,17 @@ dl[data-direction=horizontal],
   padding-right: 14px;
 }
 
+/* other icons */
+.sh-atom-button .icon-frame {
+  margin-left: 0.47058824em;
+}
+
 .sh-atom-button[data-icon-arrow-left=true] .icon-frame,
 .sh-atom-button[data-icon-arrow-right=true] .icon-frame {
   /*padding: 2px 0 0 0;*/
   padding: 0;
   width: 20px;
+  margin: 0;
 }
 
 .sh-atom-button[data-icon-arrow-left=true] .icon-frame svg,
@@ -4918,11 +4924,6 @@ sh-atom-button[data-state="unmuted"] .muted {
 
 .sh-atom-button[data-alignment*=separator] {
   grid-template-columns: repeat(3, auto);
-}
-
-/* other icons */
-.sh-atom-button .icon-frame {
-  margin-left: 0.47058824em;
 }
 
 .icon-frame {
