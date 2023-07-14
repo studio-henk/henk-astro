@@ -5,7 +5,7 @@ import TheHeaderMobile from "../components/TheHeaderMobile.astro";
 import TheHeaderDesktop from "../components/TheHeaderDesktop.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const { title, mainID, mainClass, pageClass } = Astro.props;
+const { title, mainID, mainClass, pageClass, NavFont = "new" } = Astro.props;
 ---
 
 <html lang={lang} class={pageClass}>
@@ -22,8 +22,9 @@ const { title, mainID, mainClass, pageClass } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- old font -->
+     <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css" />
     <!-- henk styles -->
-    <!-- <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css" /> -->
     <link
       href="/static/std/assets/toolkit/styles/toolkit.css"
       media="screen"
@@ -32,7 +33,7 @@ const { title, mainID, mainClass, pageClass } = Astro.props;
     />
     <slot name="head-styles" />
     <script is:inline src="/static/std/assets/toolkit/scripts/libs.js"></script>
-    <script is:inline type="module">
+    <!--<script is:inline type="module">
       import { NavBarDesktop } from "/static/std/assets/toolkit/scripts/components/_navigation-desktop.js";
       // Create the query list.
       const mediaQueryList = window.matchMedia("(min-width: 1280px)");
@@ -53,14 +54,14 @@ const { title, mainID, mainClass, pageClass } = Astro.props;
 
       // Add the callback function as a listener to the query list.
       mediaQueryList.addEventListener("change", handleWindowResizeChange);
-    </script>
+    </script>-->
     <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>-->
     <slot name="head-scripts" />
   </head>
   <body>
     <div class="wrapper">
-      <TheHeaderMobile />
-      <TheHeaderDesktop />
+      <TheHeaderMobile NavFont={NavFont} />
+      <TheHeaderDesktop NavFont={NavFont} />
       <main class={mainClass} id={mainID}>
         <slot />
       </main>

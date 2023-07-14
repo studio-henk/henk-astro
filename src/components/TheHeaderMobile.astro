@@ -3,9 +3,11 @@ import NavBarMobile from '../components/NavBarMobile.astro';
 import Icon from "./Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
+
+const { NavFont = "new" } = Astro.props;
 ---
 
-<header class="masthead-mobile" id="masthead-mobile">
+<header class="masthead masthead-mobile" id="masthead-mobile" data-font={NavFont}>
     <div class="primary-nav-container">
         <AtomLogo
             url="/"

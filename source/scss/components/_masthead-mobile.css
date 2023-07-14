@@ -11,6 +11,10 @@
     }
 }
 
+.masthead[data-font="old"] {
+    font-family: ff-scala-sans-pro,sans-serif;
+}
+
 .masthead-mobile {
     position: fixed;
     top: 0;

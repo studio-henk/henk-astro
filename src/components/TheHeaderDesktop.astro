@@ -3,9 +3,10 @@
 import Icon from "./Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
+const { NavFont = "new" } = Astro.props;
 ---
 
-<header class="masthead-desktop nav-down" id="masthead-desktop">
+<header class="masthead masthead-desktop nav-down" id="masthead-desktop" data-font={NavFont}>
   <div class="primary-nav-container">
     <AtomLogo url="/" icon="henk-logo" width="163" height="14" />
     <nav class="primary-nav">
@@ -32,14 +33,65 @@ import AtomBadge from "./Atoms/AtomBadge.astro";
     </nav>
   </div>
   <!-- submenu shop -->
-  <div class="submenu" id="mn-shop" style="xopacity: 1;">
+  <div class="submenu" id="mn-shop">
     <div class="submenu__grid">
       <div class="submenu__grid-item">
         <small style="line-height: 14px; letter-spacing: normal;"
           >Products</small
         >
         <ul class="submenu__ul">
-          <li><a class="submenu__link" href="#tables">Tables</a></li>
+          <li>
+            <a class="submenu__link" href="#tables">Tables</a>
+            <div>
+              All Tables?
+              <div class="submenu__grid">
+              <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                  <div class="submenu__item-images">
+                    <img
+                        src="https://picsum.photos/id/238/556/722"
+                        class="submenu__item-image"
+                        alt=""
+                        width="278"
+                        height="361"
+                    />
+                    <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
+                    <!--<img
+                                    src="https://placehold.co/556x722"
+                                    class="submenu__item-image"
+                                    alt="placeholder image"
+                                    width="278"
+                                    height="361"
+                                >-->
+                  </div>
+                  <p class="submenu__item-title">Title here</p>
+                </a>
+              </div>
+              <div class="submenu__grid-item">
+                <a class="submenu__item-link" href="#">
+                  <div class="submenu__item-images">
+                    <img
+                        src="https://picsum.photos/id/238/556/722"
+                        class="submenu__item-image"
+                        alt=""
+                        width="278"
+                        height="361"
+                    />
+                    <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
+                    <!--<img
+                                    src="https://placehold.co/556x722"
+                                    class="submenu__item-image"
+                                    alt="placeholder image"
+                                    width="278"
+                                    height="361"
+                                >-->
+                  </div>
+                  <p class="submenu__item-title">Title here</p>
+                </a>
+              </div>
+              </div>
+            </div>
+          </li>
           <li><a class="submenu__link" href="#chairs">Chairs</a></li>
           <li><a class="submenu__link" href="#sofas">Sofas</a></li>
           <li><a class="submenu__link" href="#cabinets">Cabinets</a></li>
