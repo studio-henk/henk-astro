@@ -6,7 +6,11 @@ import AtomBadge from "./Atoms/AtomBadge.astro";
 const { NavFont = "new" } = Astro.props;
 ---
 
-<header class="masthead masthead-desktop nav-down" id="masthead-desktop" data-font={NavFont}>
+<header
+  class="masthead masthead-desktop nav-down"
+  id="masthead-desktop"
+  data-font={NavFont}
+>
   <div class="primary-nav-container">
     <AtomLogo url="/" icon="henk-logo" width="163" height="14" />
     <nav class="primary-nav">
@@ -33,142 +37,210 @@ const { NavFont = "new" } = Astro.props;
     </nav>
   </div>
   <!-- submenu shop -->
-  <div class="submenu" id="mn-shop">
-    <div class="submenu__grid">
-      <div class="submenu__grid-item">
+  <script is:inline defer>
+    function openCategory (event) {
+      event.preventDefault();
+      // show category__list
+      const thisElem = event.target;
+      const catList = thisElem.nextElementSibling;
+      // console.log(thisElem.closest(".submenu-main-grid__item").nextElementSibling.firstElementChild);
+      const catGallery = thisElem.closest(".submenu-main-grid__item").nextElementSibling.firstElementChild;
+      // show corresponding grid with images
+      catGallery.style.transform = "translateY(-50%)";
+      // console.log(catList);
+      catList.style.display = "block";
+      // hide clicked link
+      thisElem.style.display = "none";
+    }
+  </script>
+  <style>
+    .category__link {}
+
+    .category__list-container {
+      display: none;
+    }
+
+    .category__header-link,
+    .category__list-link {
+      text-decoration: none;
+    }
+
+    .category__list {
+      margin-left: 1rem;list-style: none;
+    }
+
+    .category__gallery {
+      transition: transform .3s ease-in-out;
+    }
+
+    .submenu-main-grid {
+      display: grid; grid-template-columns: 285px 4fr;
+    }
+  </style>
+  <div class="submenu" id="mn-shop" xstyle="opacity: 1;pointer-events: all;">
+    <div class="submenu-main-grid" xstyle="display: grid; grid-template-columns: 285px 4fr;">
+      <div class="submenu-main-grid__item">
         <small style="line-height: 14px; letter-spacing: normal;"
           >Products</small
         >
         <ul class="submenu__ul">
           <li>
-            <a class="submenu__link" href="#tables">Tables</a>
-            <div>
-              All Tables?
-              <div class="submenu__grid">
-              <div class="submenu__grid-item">
-                <a class="submenu__item-link" href="#">
-                  <div class="submenu__item-images">
-                    <img
-                        src="https://picsum.photos/id/238/556/722"
-                        class="submenu__item-image"
-                        alt=""
-                        width="278"
-                        height="361"
-                    />
-                    <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
-                    <!--<img
-                                    src="https://placehold.co/556x722"
-                                    class="submenu__item-image"
-                                    alt="placeholder image"
-                                    width="278"
-                                    height="361"
-                                >-->
-                  </div>
-                  <p class="submenu__item-title">Title here</p>
-                </a>
-              </div>
-              <div class="submenu__grid-item">
-                <a class="submenu__item-link" href="#">
-                  <div class="submenu__item-images">
-                    <img
-                        src="https://picsum.photos/id/238/556/722"
-                        class="submenu__item-image"
-                        alt=""
-                        width="278"
-                        height="361"
-                    />
-                    <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
-                    <!--<img
-                                    src="https://placehold.co/556x722"
-                                    class="submenu__item-image"
-                                    alt="placeholder image"
-                                    width="278"
-                                    height="361"
-                                >-->
-                  </div>
-                  <p class="submenu__item-title">Title here</p>
-                </a>
-              </div>
-              </div>
+            <a onclick="openCategory(event);" class="category__link submenu__link" href="#tables">Tables</a>
+            <div class="category__list-container">
+              <a class="category__header-link" href="/en/products/tables">All Tables</a>
+              <ul class="category__list">
+                <li><a class="category__list-link" href="/en/products/dining-tables">Dining Tables</a></li>
+                <li><a class="category__list-link" href="/en/products/coffee-tables">Coffee Tables</a></li>
+                <li><a class="category__list-link" href="/en/products/home-desks">Home Desks</a></li>
+                <li><a class="category__list-link" href="/en/products/bistro-tables">Bistro Tables</a></li>
+              </ul>
             </div>
           </li>
-          <li><a class="submenu__link" href="#chairs">Chairs</a></li>
-          <li><a class="submenu__link" href="#sofas">Sofas</a></li>
+          <li>
+            <a onclick="openCategory(event);" class="category__link submenu__link" href="#chairs">Chairs</a>
+            <div class="category__list-container">
+              <a class="category__header-link" href="/en/products/chairs">All Chairs</a>
+              <ul class="category__list">
+                <li><a class="category__list-link" href="/en/products/dining-chairs">Dining Chairs</a></li>
+                <li><a class="category__list-link" href="/en/products/lounge-chairs">Lounge Chairs</a></li>
+                <li><a class="category__list-link" href="/en/products/dining-benches">Dining Benches</a></li>
+                <li><a class="category__list-link" href="/en/products/stools">Stools</a></li>
+                <li><a class="category__list-link" href="/en/products/poufs">Poufs</a></li>
+              </ul>
+            </div>
+          </li>
+          <style>
+            .category__widget {
+
+            }
+
+            .category__widget summary {
+              list-style: none;
+              cursor: pointer;
+            }
+
+            .category__widget summary span {
+              display: none;
+            }
+
+            .category__widget[open] summary span {
+              display: inline-block;
+            }
+          </style>
+          <li>
+            <a class="submenu__link" href="#sofas">Sofas</a>
+            <details class="category__widget">
+              <summary><span>All</span> Sofas</summary>
+              <div>
+                <ul class="category__list">
+                  <li><a class="category__list-link" href="#">sofa 1</a></li>
+                  <li><a class="category__list-link" href="#">sofa 2</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
           <li><a class="submenu__link" href="#cabinets">Cabinets</a></li>
           <li><a class="submenu__link" href="#accessories">Accessories</a></li>
           <li><a class="submenu__link" href="#outdoor">Outdoor</a></li>
         </ul>
       </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-              src="https://picsum.photos/id/238/556/722"
-              class="submenu__item-image"
-              alt=""
-              width="278"
-              height="361"
-            />
-            <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
-            <!--<img
-                            src="https://placehold.co/556x722"
-                            class="submenu__item-image"
-                            alt="placeholder image"
-                            width="278"
-                            height="361"
-                        >-->
+      <div class="category-grid-container" style="height: 401px;overflow: hidden;">
+        <div class="submenu__grid category__gallery" style="opacity: 1;grid-template-columns: repeat(4,1fr);">
+          <div class="submenu__grid-item">
+            <a class="submenu__item-link" href="#">
+              <div class="submenu__item-images">
+                <img
+                  src="https://picsum.photos/id/238/556/722"
+                  class="submenu__item-image"
+                  alt=""
+                  width="278"
+                  height="361"
+                />
+                <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
+                <!--<img
+                                                src="https://placehold.co/556x722"
+                                                class="submenu__item-image"
+                                                alt="placeholder image"
+                                                width="278"
+                                                height="361"
+                                            >-->
+              </div>
+              <p class="submenu__item-title">Title here</p>
+            </a>
           </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
+          <div class="submenu__grid-item">
+            <a class="submenu__item-link" href="#">
+              <div class="submenu__item-images">
+                <img
+                  src="https://placehold.co/556x722"
+                  class="submenu__item-image"
+                  alt="placeholder image"
+                  width="278"
+                  height="361"
+                />
+              </div>
+              <p class="submenu__item-title">Title here</p>
+            </a>
           </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
+          <div class="submenu__grid-item">
+            <a class="submenu__item-link" href="#">
+              <div class="submenu__item-images">
+                <img
+                  src="https://placehold.co/556x722"
+                  class="submenu__item-image"
+                  alt="placeholder image"
+                  width="278"
+                  height="361"
+                />
+              </div>
+              <p class="submenu__item-title">Title here</p>
+            </a>
           </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
+          <div class="submenu__grid-item">
+            <a class="submenu__item-link" href="#">
+              <div class="submenu__item-images">
+                <img
+                  src="https://placehold.co/556x722"
+                  class="submenu__item-image"
+                  alt="placeholder image"
+                  width="278"
+                  height="361"
+                />
+              </div>
+              <p class="submenu__item-title">Title here</p>
+            </a>
           </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
+          <div class="submenu__grid-item">
+            <a class="submenu__item-link" href="#">
+              <div class="submenu__item-images">
+                <img
+                    src="https://picsum.photos/id/238/556/722"
+                    class="submenu__item-image"
+                    alt=""
+                    width="278"
+                    height="361"
+                />
+                <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
+                <!--<img
+                                                src="https://placehold.co/556x722"
+                                                class="submenu__item-image"
+                                                alt="placeholder image"
+                                                width="278"
+                                                height="361"
+                                            >-->
+              </div>
+              <p class="submenu__item-title">Title here</p>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="submenu" id="mn-visit">
     <div class="submenu__grid">
       <div class="submenu__grid-item">
-        <small style="line-height: 14px; letter-spacing: normal;">Visit</small>
+        <small style="line-height: 14px; letter-spacing: normal;">Visit</small
+        >
         <ul class="submenu__ul">
           <li><a class="submenu__link" href="#stores">Our stores</a></li>
           <li><a class="submenu__link" href="#etc">Interior advice</a></li>
@@ -178,20 +250,20 @@ const { NavFont = "new" } = Astro.props;
         <a class="submenu__item-link" href="#">
           <div class="submenu__item-images">
             <img
-              src="https://picsum.photos/id/230/556/722"
-              class="submenu__item-image"
-              alt=""
-              width="278"
-              height="361"
+                src="https://picsum.photos/id/230/556/722"
+                class="submenu__item-image"
+                alt=""
+                width="278"
+                height="361"
             />
             <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
             <!--<img
-                            src="https://placehold.co/556x722"
-                            class="submenu__item-image"
-                            alt="placeholder image"
-                            width="278"
-                            height="361"
-                        >-->
+                                          src="https://placehold.co/556x722"
+                                          class="submenu__item-image"
+                                          alt="placeholder image"
+                                          width="278"
+                                          height="361"
+                                      >-->
           </div>
           <p class="submenu__item-title">Title here</p>
         </a>
@@ -200,11 +272,11 @@ const { NavFont = "new" } = Astro.props;
         <a class="submenu__item-link" href="#">
           <div class="submenu__item-images">
             <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
+                src="https://placehold.co/556x722"
+                class="submenu__item-image"
+                alt="placeholder image"
+                width="278"
+                height="361"
             />
           </div>
           <p class="submenu__item-title">Title here</p>
@@ -214,11 +286,11 @@ const { NavFont = "new" } = Astro.props;
         <a class="submenu__item-link" href="#">
           <div class="submenu__item-images">
             <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
+                src="https://placehold.co/556x722"
+                class="submenu__item-image"
+                alt="placeholder image"
+                width="278"
+                height="361"
             />
           </div>
           <p class="submenu__item-title">Title here</p>
@@ -228,11 +300,11 @@ const { NavFont = "new" } = Astro.props;
         <a class="submenu__item-link" href="#">
           <div class="submenu__item-images">
             <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
+                src="https://placehold.co/556x722"
+                class="submenu__item-image"
+                alt="placeholder image"
+                width="278"
+                height="361"
             />
           </div>
           <p class="submenu__item-title">Title here</p>
@@ -244,7 +316,7 @@ const { NavFont = "new" } = Astro.props;
     <div class="submenu__grid">
       <div class="submenu__grid-item">
         <small style="line-height: 14px; letter-spacing: normal;"
-          >Inspiration</small
+        >Inspiration</small
         >
         <ul class="submenu__ul">
           <li><a class="submenu__link" href="/en/blogs">Stories</a></li>
@@ -255,20 +327,20 @@ const { NavFont = "new" } = Astro.props;
         <a class="submenu__item-link" href="#">
           <div class="submenu__item-images">
             <img
-              src="https://picsum.photos/id/222/556/722"
-              class="submenu__item-image"
-              alt=""
-              width="278"
-              height="361"
+                src="https://picsum.photos/id/222/556/722"
+                class="submenu__item-image"
+                alt=""
+                width="278"
+                height="361"
             />
             <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
             <!--<img
-                            src="https://placehold.co/556x722"
-                            class="submenu__item-image"
-                            alt="placeholder image"
-                            width="278"
-                            height="361"
-                        >-->
+                                          src="https://placehold.co/556x722"
+                                          class="submenu__item-image"
+                                          alt="placeholder image"
+                                          width="278"
+                                          height="361"
+                                      >-->
           </div>
           <p class="submenu__item-title">Title here</p>
         </a>
@@ -277,11 +349,11 @@ const { NavFont = "new" } = Astro.props;
         <a class="submenu__item-link" href="#">
           <div class="submenu__item-images">
             <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
+                src="https://placehold.co/556x722"
+                class="submenu__item-image"
+                alt="placeholder image"
+                width="278"
+                height="361"
             />
           </div>
           <p class="submenu__item-title">Title here</p>
@@ -291,11 +363,11 @@ const { NavFont = "new" } = Astro.props;
         <a class="submenu__item-link" href="#">
           <div class="submenu__item-images">
             <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
+                src="https://placehold.co/556x722"
+                class="submenu__item-image"
+                alt="placeholder image"
+                width="278"
+                height="361"
             />
           </div>
           <p class="submenu__item-title">Title here</p>
@@ -305,11 +377,11 @@ const { NavFont = "new" } = Astro.props;
         <a class="submenu__item-link" href="#">
           <div class="submenu__item-images">
             <img
-              src="https://placehold.co/556x722"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
+                src="https://placehold.co/556x722"
+                class="submenu__item-image"
+                alt="placeholder image"
+                width="278"
+                height="361"
             />
           </div>
           <p class="submenu__item-title">Title here</p>
@@ -318,12 +390,14 @@ const { NavFont = "new" } = Astro.props;
     </div>
   </div>
 </header>
-
+<!-- <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
 <script>
   // elements
   const rootElement = document.documentElement;
   const masthead = document.querySelector(".masthead-desktop");
-  const primaryNavLinks = document.querySelectorAll(".primary-nav .hoverlink");
+  const primaryNavLinks = document.querySelectorAll(
+      ".primary-nav .hoverlink"
+  );
 
   // LISTENERS
 
@@ -378,8 +452,8 @@ const { NavFont = "new" } = Astro.props;
       }
 
       masthead
-        .querySelector("#mn-" + targetSubmenu)
-        .classList.add("--submenu-open");
+          .querySelector("#mn-" + targetSubmenu)
+          .classList.add("--submenu-open");
     }
   }
 
@@ -388,19 +462,19 @@ const { NavFont = "new" } = Astro.props;
     // add --desktop-menu-open to html element
     masthead.querySelector("#mn-" + ID).classList.add("--submenu-fade-in");
     masthead
-      .querySelector("#mn-" + ID)
-      .addEventListener("animationend", fadeInEnded, false);
+        .querySelector("#mn-" + ID)
+        .addEventListener("animationend", fadeInEnded, false);
     rootElement.classList.add("--desktop-menu-open");
   }
 
   function fadeInEnded() {
     // console.log("fade in ended");
     masthead
-      .querySelector(".--submenu-fade-in")
-      .removeEventListener("animationend", fadeInEnded, false);
+        .querySelector(".--submenu-fade-in")
+        .removeEventListener("animationend", fadeInEnded, false);
     masthead
-      .querySelector(".--submenu-fade-in")
-      .classList.remove("--submenu-fade-in");
+        .querySelector(".--submenu-fade-in")
+        .classList.remove("--submenu-fade-in");
   }
 
   function fadeOutSubmenu() {
@@ -408,11 +482,11 @@ const { NavFont = "new" } = Astro.props;
     if (currentlyOpenSubmenu != null) {
       // console.log("fading submenu out");
       masthead
-        .querySelector(".--submenu-open")
-        .classList.add("--submenu-fade-out");
+          .querySelector(".--submenu-open")
+          .classList.add("--submenu-fade-out");
       masthead
-        .querySelector(".--submenu-open.--submenu-fade-out")
-        .addEventListener("animationend", fadeOutEnded, false);
+          .querySelector(".--submenu-open.--submenu-fade-out")
+          .addEventListener("animationend", fadeOutEnded, false);
     } else {
       // console.log("nothing to fade out, no submenu is open.");
       return;
@@ -422,18 +496,17 @@ const { NavFont = "new" } = Astro.props;
   function fadeOutEnded() {
     // console.log("fade out ended");
     masthead
-      .querySelector(".--submenu-fade-out")
-      .removeEventListener("animationend", fadeOutEnded, false);
+        .querySelector(".--submenu-fade-out")
+        .removeEventListener("animationend", fadeOutEnded, false);
     masthead
-      .querySelector(".--submenu-fade-out")
-      .classList.remove("--submenu-fade-out");
+        .querySelector(".--submenu-fade-out")
+        .classList.remove("--submenu-fade-out");
     masthead
-      .querySelector(".--submenu-open")
-      .classList.remove("--submenu-open");
+        .querySelector(".--submenu-open")
+        .classList.remove("--submenu-open");
     masthead
-      .querySelector(".--hoverlink-active")
-      .classList.remove("--hoverlink-active");
+        .querySelector(".--hoverlink-active")
+        .classList.remove("--hoverlink-active");
     rootElement.classList.remove("--desktop-menu-open");
   }
 </script>
-<!-- <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
