@@ -7610,11 +7610,11 @@ main ~ .org-footer {
   min-width: 62px;
 }
 
-@media only screen and (max-width: 767px) {
+/*@media only screen and (max-width: 767px) {
   .org-addtocart-console .sh-atom-button {
     background-color: #f3f1ed;
   }
-}
+}*/
 @media only screen and (min-width: 768px) {
   .mcl-order-switcher {
     display: grid;
