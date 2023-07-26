@@ -1,0 +1,104 @@
+<div id="sh-nav-icon3">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<style>
+
+    #nav-icon1, #nav-icon2, #sh-nav-icon3, #nav-icon4 {
+        width: 60px;
+        height: 45px;
+        position: relative;
+        margin: 50px auto;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    #nav-icon1 span, #sh-nav-icon3 span, #nav-icon4 span {
+        pointer-events: none;
+        display: block;
+        position: absolute;
+        height: 6px;
+        width: 100%;
+        background: #000;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+    /* Icon 3 */
+
+    #sh-nav-icon3 span:nth-child(1) {
+        top: 0px;
+    }
+
+    #sh-nav-icon3 span:nth-child(2),#sh-nav-icon3 span:nth-child(3) {
+        top: 18px;
+    }
+
+    #sh-nav-icon3 span:nth-child(4) {
+        top: 36px;
+    }
+
+    #sh-nav-icon3.open span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+
+    #sh-nav-icon3.open span:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #sh-nav-icon3.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    #sh-nav-icon3.open span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+
+</style>
+<script is:inline>
+        /*$('#nav-icon1,#nav-icon2,#sh-nav-icon3,#nav-icon4').click(function(){
+            $(this).toggleClass('open');
+        });*/
+        // Alternative to DOMContentLoaded event
+        document.onreadystatechange = function() {
+            if (document.readyState === "interactive") {
+                MobileNavHandler();
+            }
+        };
+        function MobileNavHandler () {
+            const MNButton = document.getElementById("sh-nav-icon3");
+            // console.log(event);
+            // event.target.toggleClass('open');
+            MNButton.addEventListener('click', function(event) {
+                console.log(event);
+                event.target.classList.toggle('open');
+            });
+        }
+</script>

@@ -16,7 +16,11 @@ const { NavFont = "new" } = Astro.props;
             height="16"
         />
         <AtomBadge badgeNumber="6" />
-        <button
+        <div class="hamburger">
+            <span>hello</span>
+            <span></span>
+        </div>
+        <!--<button
             class="sh-atom-button"
             id="menu-btn"
             data-style="plain"
@@ -35,10 +39,11 @@ const { NavFont = "new" } = Astro.props;
                 width="24"
                 height="24"
             />
-        </button>
+        </button>-->
     </div>
     <NavBarMobile />
 </header>
+
 <script is:inline>
     // elements
     const rootElement = document.documentElement;
