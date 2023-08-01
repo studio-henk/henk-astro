@@ -15558,6 +15558,9 @@ quickfix for images causing gap in grid
   max-width: 50%;
   padding-left: 0;
 }
+.mdl-shop-product[data-variant=category-setting] .sh-atom-button {
+  margin-top: 28px;
+}
 
 [data-grid=shop-product] {
   padding: 16px;
