@@ -1289,6 +1289,29 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                                     </div>
                                 </div>
                             </div>
+                            <div class="sh-molecule-l-button-group" data-alignment="left">
+                                            <span
+                                                class="sh-atom-button js-collapser-trigger"
+                                                id="showMoreTopFinish"
+                                                data-moreTopFinish=[]
+                                                data-style="plain-dark"
+                                            >Show more finishes
+                                                <span class="icon-frame">
+                                                icon
+                                                </span>
+                                            </span>
+                                <span
+                                    class="sh-atom-button js-collapser-trigger"
+                                    id="hideLessTopFinishes"
+                                    data-hideTopFinish=[]
+                                    hidden
+                                    data-style="plain-dark"
+                                >Show less finishes
+                                    <span class="icon-frame">
+                                                icon
+                                                </span>
+                                            </span>
+                            </div>
 
                             <span class="sh-org-tooltip --with-text" tabindex="0" data-content="Displayed are all compatible options for your chosen table. Are you curious about other finishes in our collection? These may be available with a different tabletop or frame type." data-placement="top-down" data-direction="ltr">
 
@@ -1950,3 +1973,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </div>
     </section>
 </BaseLayout>
+<script is:inline slot="footer-scripts" defer>
+    $('#hideLessTopFinishes').click(function () {
+        $.each(hiddenTopFinish, function (indexes, values) {
+            $("#" + values).hide();
+        });
+        //$("#showMoreTopFinish").attr('data-hideTopFinish', hideLessTopFinish);
+        $("#showMoreTopFinish").show();
+        $("#hideLessTopFinishes").hide();
+    });
+
+    $('#showMoreTopFinish').click(function () {
+        $.each(hiddenTopFinish, function (indexes, values) {
+            $("#" + values).show();
+        });
+        //$("#hideLessTopFinishes").attr('data-hideTopFinish', showHiddenTopFinish);
+        $("#showMoreTopFinish").hide();
+        $("#hideLessTopFinishes").show();
+    });
+</script>
