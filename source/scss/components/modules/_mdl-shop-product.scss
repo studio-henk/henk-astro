@@ -244,7 +244,6 @@
       color: var(--color-white, #f00);
       margin-top: 0;
       font-size: 2.0625rem; // 33px
-      text-transform: capitalize;
       font-weight: 300;
       letter-spacing: 0.07em;
       line-height: 50px;
@@ -257,6 +256,10 @@
       color: #fff;
       max-width: 50%;
       padding-left: 0;
+    }
+
+    .sh-atom-button {
+      margin-top: 28px;
     }
   }
 }
@@ -279,7 +282,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: 16px;
-  row-gap: 30px;
+  row-gap: 1rem;
 
   @media only screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -344,12 +347,21 @@
           object-fit: fill;
         }
 
-        .mdl-shop-product__container .mdl-shop-product__title {
+        .mdl-shop-product__container .mdl-shop-product__content {
           position: absolute;
           bottom: 14px;
           left: 24px;
-          color: var(--color-white, #f00);
+        }
+
+        .mdl-shop-product__container .mdl-shop-product__title,
+        .mdl-shop-product__title {
+          color: var(--color-white, #fff);
           margin-top: 0;
+          font-size: 2.0625rem; // 33px
+          font-weight: 300;
+          letter-spacing: 0.07em;
+          line-height: 50px;
+          padding-left: 0;
         }
       }
     }

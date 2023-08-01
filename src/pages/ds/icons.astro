@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Icon from "../../components/Icon.astro";
+---
+<BaseLayout title="Icons">
+    <h1>Icons</h1>
+    <Icon icon="arrow-right" />
+    <p>test button icon</p>
+    <a
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-icon-arrow-right="true"
+    >button text
+        <Icon icon="arrow-right" />
+    </a>
+    <h3>test Icon component</h3>
+    <p>Default is 24px by 24px</p>
+    <Icon
+        icon="search"
+        class="sh-atom-icon"
+    />
+    <p>large: 48px by 48px</p>
+    <Icon
+        icon="search"
+        class="sh-atom-icon"
+        data-size="large"
+        aria-hidden="false"
+    />
+    <p>small: 16px by 16px</p>
+    <Icon
+        icon="search"
+        class="sh-atom-icon"
+        data-size="small"
+    />
+    <!--<Icon
+        icon="search"
+        width="44"
+        height="44"
+    />-->
+    <h2>Arrow Right</h2>
+</BaseLayout>
