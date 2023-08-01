@@ -33,7 +33,7 @@ const { title, mainID, mainClass, pageClass, NavFont = "new" } = Astro.props;
     />
     <slot name="head-styles" />
     <script is:inline src="/static/std/assets/toolkit/scripts/libs.js"></script>
-    <!--<script is:inline type="module">
+    <script is:inline type="module">
       import { NavBarDesktop } from "/static/std/assets/toolkit/scripts/components/_navigation-desktop.js";
       // Create the query list.
       const mediaQueryList = window.matchMedia("(min-width: 1280px)");
@@ -54,12 +54,12 @@ const { title, mainID, mainClass, pageClass, NavFont = "new" } = Astro.props;
 
       // Add the callback function as a listener to the query list.
       mediaQueryList.addEventListener("change", handleWindowResizeChange);
-    </script>-->
+    </script>
     <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>-->
     <slot name="head-scripts" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" data-scroller>
       <TheHeaderMobile NavFont={NavFont} />
       <TheHeaderDesktop NavFont={NavFont} />
       <main class={mainClass} id={mainID}>
@@ -68,5 +68,83 @@ const { title, mainID, mainClass, pageClass, NavFont = "new" } = Astro.props;
       <TheFooter />
     </div>
     <slot name="footer-scripts" />
+    <script is:inline defer>
+      const header = document.querySelector("[data-header]");
+      const sections = [...document.querySelectorAll("[data-section]")];
+      const scrollRoot = document.querySelector("[data-scroller]");
+
+      const options = {
+        // root: scrollRoot,
+        rootMargin: `${header.offsetHeight * -1}px`,
+        // threshold: 0
+        // rootMargin: "0px",
+        // rootMargin: "-120px",
+        threshold: 0
+      };
+
+      let direction = "up";
+      let prevYPosition = 0;
+
+      const setScrollDirection = () => {
+        if (scrollRoot.scrollTop > prevYPosition) {
+          direction = "down";
+        } else {
+          direction = "up";
+        }
+
+        prevYPosition = scrollRoot.scrollTop;
+      };
+
+      const updateColors = (target) => {
+        const theme = target.dataset.section;
+        header.setAttribute("data-theme", theme);
+      };
+
+      const getTargetSection = (target) => {
+        if (direction === "up") return target;
+
+        if (target.nextElementSibling) {
+          return target.nextElementSibling;
+        } else {
+          return target;
+        }
+      };
+
+      const shouldUpdate = (entry) => {
+        if (direction === "down" && !entry.isIntersecting) {
+          return true;
+        }
+
+        if (direction === "up" && entry.isIntersecting) {
+          return true;
+        }
+
+        return false;
+      };
+
+      /* The callback that will fire on intersection */
+      const onIntersect = (entries) => {
+        entries.forEach((entry) => {
+          setScrollDirection();
+
+          /* Do nothing if no need to update */
+          if (!shouldUpdate(entry)) return;
+
+          const target = getTargetSection(entry.target);
+          updateColors(target);
+          // updateColors(entry.target);
+          // const theme = entry.target.dataset.section;
+          // header.setAttribute("data-theme", theme);
+        });
+      };
+
+      /* Create the observer */
+      const observer = new IntersectionObserver(onIntersect, options);
+
+      /* Set our observer to observe each section */
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    </script>
   </body>
 </html>

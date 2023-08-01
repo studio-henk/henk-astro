@@ -1,3 +1,14 @@
+/*[data-header] {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: black;
+}*/
+
+[data-header][data-theme="invert"] {
+    color: #fff;
+}
+
 @media only screen and (min-width: 1280px) {
     @keyframes fade-in {
         0% {
@@ -37,17 +48,24 @@
         z-index: 999;
         width: 100%;
         padding: 35px 28px;
-        /*mix-blend-mode: difference;*/
-        transition: opacity 0.3s ease-out;
+        background-color: var(--color-transparent, transparent);
+        /*color: var(--color-white);*/
+        color: var(--color-black);
+        transition: opacity 0.5s ease-out, background-color 0.4s ease-out, transform 0.3s ease;
     }
 
     .masthead[data-font="old"] {
         font-family: ff-scala-sans-pro,sans-serif;
     }
 
-    .--desktop-menu-open .masthead-desktop {
+    /*.--desktop-menu-open .masthead-desktop {
         mix-blend-mode: unset;
+    }*/
+    .masthead-desktop.--masthead-desktop-hovered {
+        background-color: var(--color-white);
+        color: var(--color-black);
     }
+
 
     .primary-nav-container {
         display: flex;
@@ -74,7 +92,8 @@
         /* margin: 0 auto 0 0; */
         justify-self: flex-start;
         /*--color-text-logo: var(--color-white);*/
-        --color-text-logo: var(--color-black);
+        /*--color-text-logo: var(--color-black);*/
+        --color-text-logo: currentcolor;
     }
 
     .masthead-desktop .atom-badge {
@@ -85,7 +104,7 @@
 
     .masthead-desktop .primary-nav a,
     .masthead-desktop .utilities-nav a:not(.atom-badge) {
-        /*color: #fff;*/
+        color: currentColor;
         text-decoration: none;
     }
 
@@ -217,4 +236,5 @@
 .nav-up {
     /*top: -102px;*/
     opacity: 0;
+    transform: translateY(-102px);
 }

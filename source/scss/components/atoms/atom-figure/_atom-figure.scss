@@ -1,6 +1,41 @@
-.sh-atom__figure {
+.sh-atom__figure,
+.sh-atom-figure {
   img {
     width: 100%;
     height: auto;
   }
+}
+
+.sh-atom-figure {
+  --border-radius-image-figure: 5px;
+  background-color: var(--color-background-figure, transparent);
+  color: var(--color-text-figure, #000);
+}
+
+.sh-atom__figure figcaption,
+.sh-atom-figure figcaption {
+  margin: 0;
+  line-height: 40px;
+  text-align: left;
+}
+
+.sh-atom-figure .sh-atom-figure__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+}
+
+.sh-atom-figure .sh-atom-figure__image-mask {
+  border-radius: var(--border-radius-image-figure, 5px);
+  overflow: hidden;}
+
+.sh-atom-figure .sh-atom-figure__image {
+  border-radius: var(--border-radius-image-figure, 5px);
+  object-fit: cover;
+  transition: all .3s ease-in-out;
+}
+
+.sh-atom-figure .sh-atom-figure__link:hover .sh-atom-figure__image {
+  transform: scale(1.025);
 }

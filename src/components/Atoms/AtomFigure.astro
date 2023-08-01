@@ -1,0 +1,64 @@
+---
+import {parse} from "node-html-parser";
+const {
+    caption = "Here should be a caption text",
+    hasLink = false,
+    linkTitle,
+    imgUrl,
+    imgWidth,
+    imgHeight,
+    altText,
+    borderRadius,
+    foregroundColor = "currentcolor",
+    backgroundColor = "transparent"
+} = Astro.props;
+---
+<figure
+    class="sh-atom-figure"
+>
+    { hasLink ?
+        <a
+            href={hasLink}
+            class="sh-atom-figure__link"
+            title={linkTitle}
+        >
+            { imgUrl ?
+            <div class="sh-atom-figure__image-mask">
+                <img
+                src={imgUrl}
+                class="sh-atom-figure__image"
+                alt={altText}
+                width={imgWidth}
+                height={imgHeight}
+            />
+            </div>
+            :
+            <p>No image assigned</p>
+            }
+            <figcaption class="sh-atom-figure__caption">{caption}</figcaption>
+        </a>
+    : imgUrl ?
+        <div class="sh-atom-figure__image-mask">
+            <img
+            src={imgUrl}
+            class="sh-atom-figure__image"
+            alt={altText}
+            width={imgWidth}
+            height={imgHeight}
+        />
+        </div>
+        :
+        <p>No image assigned</p>
+        <figcaption class="sh-atom-figure__caption">{caption}</figcaption>
+    }
+</figure>
+<style define:vars={{ foregroundColor, backgroundColor, borderRadius }}>
+    .sh-atom-figure {
+        --color-background-figure: var(--backgroundColor);
+        --color-text-figure: var(--foregroundColor);
+    }
+
+    .sh-atom-figure__image {
+        --border-radius-image-figure: var(--borderRadius);
+    }
+</style>

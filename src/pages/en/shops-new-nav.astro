@@ -7,7 +7,7 @@ const lang = getLangFromUrl(Astro.url);
 
 <NewNavLayout title="Shops">
     {/* intro block */}
-    <div class="sh-molecule-bg-box" style="--color-background-component-bgbox:var(--color-white);">
+    <div class="sh-molecule-bg-box" data-section="content" style="--color-background-component-bgbox:var(--color-white);">
         <div class="sh-molecule-padding-box" style="
                 --size-spacing-units-top: 24;
                 --size-spacing-units-right: 11;
@@ -28,7 +28,7 @@ const lang = getLangFromUrl(Astro.url);
 
     {/* store grid */}
 
-    <div class="sh-molecule-bg-box" style="--color-background-component-bgbox:var(--color-white);">
+    <div data-section="invert" class="sh-molecule-bg-box" style="--color-background-component-bgbox:var(--color-white);">
         <div class="sh-molecule-padding-box sh-stores" style="
                         --size-spacing-units-top: 0;
                         --size-spacing-units-right: 5;
