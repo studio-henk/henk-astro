@@ -4,14 +4,14 @@ import Icon from "./Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
 import AtomFigure from "./Atoms/AtomFigure.astro";
-const { NavFont = "new" } = Astro.props;
+const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 ---
-
 <header
-  class="masthead masthead-desktop nav-down"
+  class="masthead masthead-desktop"
   id="masthead-desktop"
   data-font={NavFont}
-  data-header
+  data-theme={NavTheme}
+  data-hasHero={NavOnHero}
 >
   <div class="primary-nav-container">
     <AtomLogo url="/" icon="henk-logo" width="163" height="14" />
@@ -30,12 +30,58 @@ const { NavFont = "new" } = Astro.props;
       >
       <a href="/en/about-us-new-nav">About</a>
     </nav>
-    <nav class="utilities-nav">
-      <a href="#search">Search</a>
-      <a href="#language">Language</a>
-      <!--<span class="tmp-badge">10</span>-->
-      <AtomBadge isLink={true} badgeNumber="6" />
-    </nav>
+    <style is:global>
+      .LangMenu {
+        display: flex;
+        opacity: 0;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .LangMenu.--status-open {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .LangMenu__list {
+        list-style: none;
+        margin: 0;
+      }
+
+      .LangMenu__list-item {
+        opacity: 0;
+      }
+
+      .LangMenu__list-item:first-child {
+        transition: opacity .3s ease .3s;
+      }
+
+      .LangMenu__list-item:last-child {
+        transition: opacity .3s ease .6s;
+      }
+
+      .LangMenu.--status-open .LangMenu__list-item {
+        opacity: 1;
+      }
+    </style>
+    <div class="utilities-nav">
+      <ul class="utilities-nav__list">
+        <li class="utilities-nav__item" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this);">Search</a></li>
+        <li class="utilities-nav__item" id="utilities-nav__language" onmouseleave="HideLangMenu(this)"><a href="#language" onmouseenter="ShowLangMenu(this)" >Language</a>
+          <!-- lang menu -->
+          <!--ShowLangMenu-->
+          <div class="LangMenu">
+            <ol class="LangMenu__list">
+              <li class="LangMenu__list-item"><a class="LangMenu__link" href="#">English</a></li>
+              <li class="LangMenu__list-item"><a class="LangMenu__link" href="#NL">Nederlands</a></li>
+            </ol>
+          </div>
+        </li>
+        <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} badgeNumber="6" /></li>
+      </ul>
+    </div>
   </div>
   <!-- submenu shop -->
   <div class="submenu" id="mn-shop">
@@ -113,8 +159,6 @@ const { NavFont = "new" } = Astro.props;
                     >Poufs</a>
                 </li>
               </ul>
-              <!-- chairs gallery here?-->
-              <!--<div style="background-color:red;">hello chairs</div>-->
             </div>
           </li>
           <li>
@@ -152,7 +196,48 @@ const { NavFont = "new" } = Astro.props;
         class="category-grid-container"
       >
         <div
-          class="submenu__grid category__gallery --category-gallery-active"
+            class="submenu__grid category__gallery --category-gallery-active"
+        >
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/100/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/101/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/102/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/103/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- gallery Tables -->
+        <div
+          class="submenu__grid category__gallery"
         >
           <AtomFigure
               hasLink="https://disney.com"
@@ -230,87 +315,105 @@ const { NavFont = "new" } = Astro.props;
               caption="Photo of chairs"
           />
         </div>
+        <!-- gallery Sofas -->
+        <div class="submenu__grid category__gallery">
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/500/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Photo of chairs"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/501/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Photo of chairs"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/502/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Photo of chairs"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/503/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Photo of chairs"
+          />
+        </div>
       </div>
     </div>
   </div>
   <div class="submenu" id="mn-visit">
-    <div class="submenu__grid">
-      <div class="submenu__grid-item">
+    <div class="submenu-main-grid">
+      <div class="submenu-main-grid__item">
         <small style="line-height: 14px; letter-spacing: normal;">Visit</small>
         <ul class="submenu__ul">
           <li><a class="submenu__link" href="#stores">Our stores</a></li>
           <li><a class="submenu__link" href="#etc">Interior advice</a></li>
         </ul>
       </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-              src="https://picsum.photos/id/100/556/722.webp"
-              class="submenu__item-image"
-              alt=""
-              width="278"
-              height="361"
-            />
-            <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
-            <!--<img
-                                          src="https://placehold.co/556x722"
-                                          class="submenu__item-image"
-                                          alt="placeholder image"
-                                          width="278"
-                                          height="361"
-                                      >-->
-          </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-                src="https://picsum.photos/id/101/556/722.webp"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
-          </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-                src="https://picsum.photos/id/102/556/722.webp"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
-          </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-                src="https://picsum.photos/id/103/556/722.webp"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
-          </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
+      <div class="category-grid-container">
+        <div
+            class="submenu__grid category__gallery --category-gallery-active"
+        >
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/800/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/804/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/802/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/803/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+
       </div>
     </div>
   </div>
   <div class="submenu" id="mn-inspiration">
-    <div class="submenu__grid">
-      <div class="submenu__grid-item">
+    <div class="submenu-main-grid">
+      <div class="submenu-main-grid__item">
         <small style="line-height: 14px; letter-spacing: normal;"
           >Inspiration</small
         >
@@ -319,73 +422,54 @@ const { NavFont = "new" } = Astro.props;
           <li><a class="submenu__link" href="/en/projects">Projects</a></li>
         </ul>
       </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-                src="https://picsum.photos/id/200/556/722.webp"
-              class="submenu__item-image"
-              alt=""
-              width="278"
-              height="361"
-            />
-            <!--<img src="https://picsum.photos/id/239/556/722" class="submenu__item-image-hover" alt="">-->
-            <!--<img
-                                          src="https://placehold.co/556x722"
-                                          class="submenu__item-image"
-                                          alt="placeholder image"
-                                          width="278"
-                                          height="361"
-                                      >-->
-          </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
+      <div class="category-grid-container">
+        <div
+            class="submenu__grid category__gallery --category-gallery-active"
+        >
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/900/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/901/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/902/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="https://picsum.photos/id/903/556/722.webp"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+
       </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-                src="https://picsum.photos/id/201/556/722.webp"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
-          </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-                src="https://picsum.photos/id/202/556/722.webp"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
-          </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
-      <div class="submenu__grid-item">
-        <a class="submenu__item-link" href="#">
-          <div class="submenu__item-images">
-            <img
-                src="https://picsum.photos/id/203/556/722.webp"
-              class="submenu__item-image"
-              alt="placeholder image"
-              width="278"
-              height="361"
-            />
-          </div>
-          <p class="submenu__item-title">Title here</p>
-        </a>
-      </div>
+
     </div>
   </div>
 </header>
+<div id="pixel-to-watch"></div>
 <script is:inline defer>
   // elements
   const rootElementDesktop = document.documentElement;
@@ -396,23 +480,44 @@ const { NavFont = "new" } = Astro.props;
   // console.log(categoryGallery);
   let menuOpen = false;
 
+  // check if navbar is theme dark
+  // console.log(mastheadDesktop.getAttribute('data-hasHero'));
+  const NavBarHero = mastheadDesktop.getAttribute('data-hasHero');
+  if (NavBarHero === false || NavBarHero === null) {
+    // padding-top 102 on body
+    document.body.style.paddingTop = "102px";
+  }
+
+  // checking if doc has scrolled
+  let observer = new IntersectionObserver(entries => {
+    // console.log(entries);
+    if (entries[0].boundingClientRect.y < 0) {
+      // console.log("Past 102px!");
+      mastheadDesktop.classList.add("--status-scrolled");
+    } else {
+      // console.log("Not past 102px");
+      mastheadDesktop.classList.remove("--status-scrolled");
+    }
+  });
+  observer.observe(document.querySelector("#pixel-to-watch"));
+
   // LISTENERS
 
   // when mouse enters masthead-desktop
   mastheadDesktop.addEventListener("mouseenter", function (e) {
     console.log("mouse entered the masthead-desktop");
     if (!menuOpen) {
-      console.log("menu is not open");
+      // console.log("menu is not open");
       invertMainNav();
     }
   });
 
   // when mouse leaves masthead-desktop
   mastheadDesktop.addEventListener("mouseleave", function (e) {
-    console.log("mouse left the masthead-desktop");
+    // console.log("mouse left the masthead-desktop");
     mastheadDesktop.classList.remove("--masthead-desktop-hovered");
     if (menuOpen) {
-      console.log("fading out menu");
+      // console.log("fading out menu");
       fadeOutSubmenu();
     }
   });
@@ -516,9 +621,6 @@ const { NavFont = "new" } = Astro.props;
       mastheadDesktop
         .querySelector(".--submenu-open.--submenu-fade-out")
         .addEventListener("animationend", fadeOutEnded, false);
-    } else {
-      // console.log("nothing to fade out, no submenu is open.");
-      return;
     }
   }
 
@@ -540,11 +642,6 @@ const { NavFont = "new" } = Astro.props;
     menuOpen = false;
   }
 
-  /*function showCorrespondingGallery(currentIndex, currentElement) {
-    console.log(currentIndex);
-    console.log(currentElement);
-  }*/
-
   function handleCategoryLinks(currentIndex, currentElement) {
     if (document.querySelector(".--category-open") != null) {
       console.log("not null");
@@ -564,15 +661,34 @@ const { NavFont = "new" } = Astro.props;
     // console.log(categoryGallery);
     // console.log(categoryGallery[1]);
     if (document.querySelector(".--category-gallery-active") != null) {
-      console.log("not null");
-      console.log(document.querySelector(".--category-gallery-active").classList);
+      // console.log("not null");
+      // console.log(document.querySelector(".--category-gallery-active").classList);
       document
           .querySelector(".--category-gallery-active")
           .classList.remove("--category-gallery-active");
     } else {
       console.log("null");
     }
-    categoryGallery[currentIndex].classList.add("--category-gallery-active");
+    let galleryIndex = currentIndex + 1;
+    console.log(galleryIndex);
+    categoryGallery[galleryIndex].classList.add("--category-gallery-active");
+  }
+
+  function OpenSearchModal (ClickedElement) {
+    alert("search activated !");
+    console.log(ClickedElement);
+  }
+
+  function ShowLangMenu (HoveredElement) {
+    // alert("LangMenu activated !");
+    // console.log(HoveredElement);
+    HoveredElement.nextElementSibling.classList.add("--status-open");
+  }
+
+  function HideLangMenu (HoveredElement) {
+    // HoveredElement.nextElementSibling.classList.remove("--status-open");
+    console.log(HoveredElement.querySelector(".--status-open"));
+    HoveredElement.querySelector(".--status-open").classList.remove("--status-open");
   }
 
 </script>

@@ -5688,7 +5688,7 @@ input.atom-radio[type=radio] + .atom-label {
 }
 
 .atom-badge {
-  background-color: var(--color-background-badge, var(--color-accent1));
+  background-color: var(--color-background-badge, var(--color-white));
   color: var(--color-text-badge, currentcolor);
   border-radius: 100%;
   /* TODO: make relative to ? */
@@ -6468,16 +6468,6 @@ so calc is unit size * unit num
     display: none;
   }
 }
-/*[data-header] {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    color: black;
-}*/
-[data-header][data-theme=invert] {
-  color: #fff;
-}
-
 @media only screen and (min-width: 1280px) {
   @keyframes fade-in {
     0% {
@@ -6512,20 +6502,49 @@ so calc is unit size * unit num
     z-index: 999;
     width: 100%;
     padding: 35px 28px;
-    background-color: var(--color-transparent, transparent);
-    /*color: var(--color-white);*/
-    color: var(--color-black);
-    transition: opacity 0.5s ease-out, background-color 0.4s ease-out, transform 0.3s ease;
+    background-color: var(--color-background-masthead, transparent);
+    color: var(--color-text-masthead, #fff);
+    transition: opacity 0.3s ease-out, background-color 0.3s ease-out, transform 0.3s ease;
+    --color-text-badge: var(--color-henk-black);
   }
   .masthead[data-font=old] {
     font-family: ff-scala-sans-pro, sans-serif;
   }
-  /*.--desktop-menu-open .masthead-desktop {
-      mix-blend-mode: unset;
-  }*/
+  .masthead[data-theme=dark] {
+    --color-text-masthead: var(--color-black);
+    --color-background-masthead: var(--color-white);
+    --color-background-badge: var(--color-black);
+    --color-text-badge: var(--color-white);
+  }
+  .masthead[data-theme=dark][data-hashero=true]:not(.--status-scrolled) {
+    --color-text-masthead: var(--color-black);
+    --color-background-masthead: var(--color-transparent);
+    --color-background-badge: var(--color-black);
+    --color-text-badge: var(--color-white);
+  }
+  #pixel-to-watch {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 102px;
+    left: 0;
+  }
+  /* show background when scrolled down 102 px */
+  .masthead-desktop.--status-scrolled {
+    --color-background-masthead: var(--color-white);
+    --color-text-masthead: var(--color-black);
+    --color-background-badge: var(--color-black);
+    --color-text-badge: var(--color-white);
+  }
   .masthead-desktop.--masthead-desktop-hovered {
-    background-color: var(--color-white);
-    color: var(--color-black);
+    --color-background-masthead: var(--color-white);
+    --color-text-masthead: var(--color-black);
+    --color-background-badge: var(--color-black);
+    --color-text-badge: var(--color-white);
+  }
+  .--desktop-menu-open .masthead-desktop {
+    --color-background-badge: var(--color-white);
+    --color-text-badge: var(--color-black);
   }
   .primary-nav-container {
     display: flex;
@@ -6539,23 +6558,20 @@ so calc is unit size * unit num
     display: flex;
     gap: 42px;
   }
-  .masthead-desktop .utilities-nav {
+  .masthead-desktop .utilities-nav__list {
     display: flex;
     gap: 42px;
     position: relative;
     top: 2px;
+    list-style: none;
+    margin: 0;
+  }
+  #utilities-nav__language {
+    position: relative;
   }
   .masthead-desktop .atom-logo {
-    /* margin: 0 auto 0 0; */
     justify-self: flex-start;
-    /*--color-text-logo: var(--color-white);*/
-    /*--color-text-logo: var(--color-black);*/
     --color-text-logo: currentcolor;
-  }
-  .masthead-desktop .atom-badge {
-    /*--color-background-badge: var(--color-white);
-    --color-text-badge: var(--color-henk-black);*/
-    --color-text-badge: var(--color-henk-black);
   }
   .masthead-desktop .primary-nav a,
   .masthead-desktop .utilities-nav a:not(.atom-badge) {
@@ -6669,12 +6685,6 @@ so calc is unit size * unit num
     display: none;
   }
 }
-.nav-up {
-  /*top: -102px;*/
-  opacity: 0;
-  transform: translateY(-102px);
-}
-
 .org-breadcrumbs * + * {
   margin-top: 0;
 }

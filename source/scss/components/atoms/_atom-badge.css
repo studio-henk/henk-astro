@@ -1,5 +1,5 @@
 .atom-badge {
-    background-color: var(--color-background-badge, var(--color-accent1));
+    background-color: var(--color-background-badge, var(--color-white));
     color: var(--color-text-badge, currentcolor);
     border-radius: 100%;
     /* TODO: make relative to ? */

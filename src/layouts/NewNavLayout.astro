@@ -5,7 +5,7 @@ import TheHeaderMobile from "../components/TheHeaderMobile.astro";
 import TheHeaderDesktop from "../components/TheHeaderDesktop.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const { title, mainID, mainClass, pageClass, NavFont = "new" } = Astro.props;
+const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 ---
 
 <html lang={lang} class={pageClass}>
@@ -33,7 +33,7 @@ const { title, mainID, mainClass, pageClass, NavFont = "new" } = Astro.props;
     />
     <slot name="head-styles" />
     <script is:inline src="/static/std/assets/toolkit/scripts/libs.js"></script>
-    <script is:inline type="module">
+    <!--<script is:inline type="module">
       import { NavBarDesktop } from "/static/std/assets/toolkit/scripts/components/_navigation-desktop.js";
       // Create the query list.
       const mediaQueryList = window.matchMedia("(min-width: 1280px)");
@@ -54,21 +54,21 @@ const { title, mainID, mainClass, pageClass, NavFont = "new" } = Astro.props;
 
       // Add the callback function as a listener to the query list.
       mediaQueryList.addEventListener("change", handleWindowResizeChange);
-    </script>
+    </script>-->
     <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>-->
     <slot name="head-scripts" />
   </head>
   <body>
     <div class="wrapper" data-scroller>
       <TheHeaderMobile NavFont={NavFont} />
-      <TheHeaderDesktop NavFont={NavFont} />
+      <TheHeaderDesktop NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
       <main class={mainClass} id={mainID}>
         <slot />
       </main>
       <TheFooter />
     </div>
     <slot name="footer-scripts" />
-    <script is:inline defer>
+    <!--<script is:inline defer>
       const header = document.querySelector("[data-header]");
       const sections = [...document.querySelectorAll("[data-section]")];
       const scrollRoot = document.querySelector("[data-scroller]");
@@ -145,6 +145,6 @@ const { title, mainID, mainClass, pageClass, NavFont = "new" } = Astro.props;
       sections.forEach((section) => {
         observer.observe(section);
       });
-    </script>
+    </script>-->
   </body>
 </html>
