@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture.">
     <meta name="generator" content="Astro v2.1.4">
-    <title>Hero Block 2</title>
+    <title>Salesforce</title>
     <!-- henk styles -->
     <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css">
     <link href="/static/std/assets/toolkit/styles/toolkit.css" media="screen" rel="stylesheet" type="text/css">
     
     <script src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script type="module">
 </script></head>
 <body>
@@ -211,7 +211,7 @@
             </li>
 
             <li class="main-nav__item main-nav__cart hidden-xs visible-lg-block">
-              <a class="quick-cart__launch" href="/en/cart/list">
+              <a class="quick-cart__launch" href="/nl/cart/list">
                 <svg class="icon" icon-cart-empty="">
                   <use xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-cart-empty"></use>
                 </svg>
@@ -282,50 +282,232 @@
 </section>
     <main>
         <!--<LanguagePicker/>-->
-        <div class="hero-block">
-    <img class="hero__image" src="/images/squashed/hero@2x.jpg" alt="founders of Studio Henk" width="933" height="607">
-    <img class="hero__swirl" src="/images/swirl.svg" alt="swirl" width="197" height="51">
-    <div class="hero__content">
-      <div></div>
-      <div class="col2">
-        <h1 class="h4">About Us</h1>
-        <h2 class="h3">
-          We are a conscious Dutch design brand that makes beautiful and
-          functional furniture to last a lifetime.
-        </h2>
-      </div>
-    </div>
-  </div><section>
-    <div class="content-block" style="background-color: var(--color-accent1);">
-      <div class="content-block__container">
-        <div class="content-block__layout">
-          <div class="content-block__header">
-            <h2 class="content-block__heading">B-corp certified</h2>
-            <p class="content-block__subheading" data-hide="mobile|tablet">
-              ‘We’re proud to be part of the B Corp community.’
-            </p>
-          </div>
-          <div class="content-block__content">
-            <p class="content-block__body-text">
-              2023 is an exciting year for Studio HENK - we celebrate our 10th
-              anniversary and obtaining our B Corp Certification. As a B Corp,
-              we’re part of a global community of businesses that meet high
-              standards of social and environmental impact. We are proud to be
-              part of a movement that uses business as a force for good.
-            </p>
-            <p>
-              2023 is an exciting year for Studio HENK - we celebrate our 10th
-              anniversary and obtaining our B Corp Certification. As a B Corp,
-              we’re part of a global community of businesses that meet high
-              standards of social and environmental impact. We are proud to be
-              part of a movement that uses business as a force for good.
-            </p>
-            <a class="sh-atom-button" data-style="filled" href="#somewhereovertherainbow">Found out more</a>
-          </div>
+        <script src="//www.google.com/recaptcha/api.js"></script><meta http-equiv="Content-type" content="text/html; charset=UTF-8"><div class="sh-molecule-padding-box" style="
+                    --size-spacing-units-top: 4;
+                    --size-spacing-units-right: 4;
+                    --size-spacing-units-bottom: 0;
+                    --size-spacing-units-left: 4;
+                    --size-spacing-units-top-desktop: 6;
+                    --size-spacing-units-right-desktop: 6;
+                    --size-spacing-units-bottom-desktop: 0;
+                    --size-spacing-units-left-desktop: 6;
+                    max-width: 652px;
+                    margin: 0 auto;
+                ">
+        <div id="page-title">
+            <h1 class="h2">Stel hier je vraag</h1>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="org-form" data-show-required-fields="true" id="app-vue-contact-form">
+            <form class="org-form__form" action="https://studio-henk--train.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" ref="sf_form" v-on:submit="onSubmit">
+                <input name="orgid" type="hidden" value="00D68000000bpfr">
+                <input name="retURL" type="hidden" value="https://www.studio-henk.nl/nl/contact_bedankt">
+                <input name="subject" type="hidden" v-model="subject">
+                <div class="molecule-input-label layout-container-input-label" data-style="is-stacked">
+                    <input class="atom-input-txt" type="text" name="company" id="company" autocomplete="organization" inputmode="text" placeholder=" ">
+                    <label class="atom-label" for="company" data-style="labels-as-placeholders">
+                        Bedrijfsnaam
+                    </label>
+                </div>
+                <div class="molecule-input-label layout-container-input-label" data-style="is-stacked">
+                    <input class="atom-input-txt" type="text" name="name" id="name" autocomplete="name" inputmode="text" placeholder=" " required="">
+                    <label class="atom-label" for="name" data-style="labels-as-placeholders">
+                        Voor- en Achternaam
+                    </label>
+                </div>
+                <div class="molecule-input-label layout-container-input-label" data-style="is-stacked">
+                    <input class="atom-input-txt" type="email" name="email" id="email" autocomplete="email" inputmode="text" placeholder=" " required="" pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*" title="Please enter a valid email address." v-on:input="emailInput" ref="email" minlength="4">
+                    <label class="atom-label" for="email" data-style="labels-as-placeholders" title="Please enter a valid email address.">
+                        E-mailadres
+                    </label>
+                    <span class="molecule-input-label__message-invalid" ref="error_email">[[ emailFieldErrorMessage ]]</span>
+                </div>
+                <div class="org-form__grid-container">
+                    <div class="molecule-label-select layout-container-input-label org-form__grid-item">
+                        <div class="atom-select" data-required="true">
+                            <div class="atom-select__field">
+                                <select class="atom-select__select-element" autocomplete="off" id="00N68000004Vpzh" name="00N68000004Vpzh" title="Case Category" v-model="selectedCategory" required v-on:change="categoryChanged">
+                                    <option value="">--Geen--</option>
+                                    <option value="Producten">Producten</option>
+                                    <option value="Montage & Onderhoud">Montage &amp; Onderhoud</option>
+                                    <option value="Levertijd & Bezorging">Levertijd &amp; Bezorging</option>
+                                    <option value="Betalingen">Betalingen</option>
+                                    <option value="Verkooppunten">Verkooppunten</option>
+                                </select>
+                            </div>
+                            <span class="sh-atom-icon">
+            <svg class="sh-atom-icon__svg" width="15" height="8" viewBox="0 0 15 8" fill="none" aria-labelledby="iconDisclosureCollapsed" id="iconDisclosureCollapsed" xmlns="http://www.w3.org/2000/svg">
+                <title>iconDisclosureCollapsed</title>
+                <desc>Arrow icon pointing down</desc>
+                <path d="M14 1L7.5 7L1 1" stroke="currentcolor" stroke-width="0.7" stroke-linecap="round"></path>
+            </svg>
+        </span>
+                        </div>
+                        <label class="atom-label" for="00N68000004Vpzh" data-style="labels-as-placeholders">
+                            Onderwerp
+                        </label>
+                    </div>
+                    <!-- col 2 -->
+                    <div class="molecule-label-select layout-container-input-label org-form__grid-item">
+                        <div class="atom-select" data-required="true">
+                            <div class="atom-select__field">
+                                <select class="atom-select__select-element" autocomplete="off" id="00N68000004Vq1c" name="00N68000004Vq1c" title="Case Reason" required v-on:change="reasonChanged" v-model="selectedReason">
+                                    <option value="" disabled>--Geen--</option>
+                                    <option value="Vraag over het gebruik van een product" v-if="selectedCategory === 'Producten'">Vraag over het gebruik van
+                                        een product
+                                    </option>
+                                    <option value="Vraag over specifieke afwerkingen" v-if="selectedCategory === 'Producten'">Vraag over specifieke
+                                        afwerkingen
+                                    </option>
+                                    <option value="Vraag over impregneren stof" v-if="selectedCategory === 'Producten'">
+                                        Vraag over impregneren stof
+                                    </option>
+                                    <option value="Vraag over het bestellen van losse onderdelen" v-if="selectedCategory === 'Producten'">Vraag over het
+                                        bestellen van losse onderdelen
+                                    </option>
+                                    <option value="Vraag over levering in het buitenland" v-if="selectedCategory === 'Levertijd & Bezorging'">Vraag over levering
+                                        in het
+                                        buitenland
+                                    </option>
+                                    <option value="Vraag over levertijd" v-if="selectedCategory === 'Levertijd & Bezorging'">Vraag over levertijd
+                                    </option>
+                                    <option value="Afspraak maken interieuradvies" v-if="selectedCategory === 'Verkooppunten'">Afspraak maken interieuradvies
+                                    </option>
+                                    <option value="Vraag over fysiek bekijken producten in eigen winkel" v-if="selectedCategory === 'Verkooppunten'">Vraag over
+                                        fysiek bekijken producten in eigen winkel
+                                    </option>
+                                    <option value="Vraag over fysiek bekijken producten bij retailer" v-if="selectedCategory === 'Verkooppunten'">Vraag over fysiek
+                                        bekijken producten bij retailer
+                                    </option>
+                                    <option value="Vraag over locatie verkooppunt" v-if="selectedCategory === 'Verkooppunten'">Vraag over locatie verkooppunt
+                                    </option>
+                                    <option value="Vraag over verschil bij kopen Studio HENK vs kopen bij retailer" v-if="selectedCategory === 'Verkooppunten'">
+                                        Vraag over verschil bij kopen Studio HENK vs kopen bij retailer
+                                    </option>
+                                    <option value="Leverdatum wijzigen" v-if="selectedCategory === 'Levertijd & Bezorging'">Leverdatum wijzigen
+                                    </option>
+                                    <option value="Is mijn betaling ontvangen" v-if="selectedCategory === 'Betalingen'">
+                                        Is mijn betaling ontvangen
+                                    </option>
+                                    <option value="Vraag over betaling slot-termijn" v-if="selectedCategory === 'Betalingen'">Vraag over betaling slot-termijn
+                                    </option>
+                                    <option value="Verleggen BTW" v-if="selectedCategory === 'Betalingen'">Verleggen
+                                        BTW
+                                    </option>
+                                    <option value="Vervangen viltdoppen" v-if="selectedCategory === 'Montage & Onderhoud'">Vervangen viltdoppen
+                                    </option>
+                                    <option value="Vragen over montage" v-if="selectedCategory === 'Montage & Onderhoud'">Vragen over montage
+                                    </option>
+                                    <option value="Vragen over schoonmaak en vlekverwijdering" v-if="selectedCategory === 'Montage & Onderhoud'">Vragen over schoonmaak
+                                        en
+                                        vlekverwijdering
+                                    </option>
+                                    <option value="Vragen over behandelen product" v-if="selectedCategory === 'Montage & Onderhoud'">Vragen over behandelen
+                                        product
+                                    </option>
+                                </select>
+                            </div>
+                            <span class="sh-atom-icon">
+            <svg class="sh-atom-icon__svg" width="15" height="8" viewBox="0 0 15 8" fill="none" aria-labelledby="iconDisclosureCollapsed" id="iconDisclosureCollapsed" xmlns="http://www.w3.org/2000/svg">
+                <title>iconDisclosureCollapsed</title>
+                <desc>Arrow icon pointing down</desc>
+                <path d="M14 1L7.5 7L1 1" stroke="currentcolor" stroke-width="0.7" stroke-linecap="round"></path>
+            </svg>
+        </span>
+                        </div>
+                        <label class="atom-label" for="00N68000004Vq1c" data-style="labels-as-placeholders">
+                            Reden
+                        </label>
+                    </div>
+                </div>
+                <div class="molecule-label-textarea layout-container-input-label">
+                    <textarea class="atom-textarea" name="description" id="description" autocomplete="off"></textarea>
+                    <label class="atom-label" for="description">Jouw vraag of opmerking</label>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LcZpZgUAAAAAJuKyBtwuhMaWmR3Ab5K5R-qPlvB" data-callback="recaptchaCallback"></div>
+                <input id="captcha" type="hidden" name="captcha" data-parsley-required-message="Vergeet niet om de reCaptcha te controleren!">
+                <button type="submit" class="sh-atom-button" style="margin-top: 0;">Verzend</button>
+            </form>
+        </div>
+    </div><script>
+        const app = new Vue({
+            delimiters: ["[[", "]]"],
+            el: "#app-vue-contact-form",
+            data: {
+                appName: "appContactFormVue",
+                loading: true,
+                errored: false,
+                debug: "...",
+                selectedCategory: "Producten",
+                selectedReason: "Geen reden",
+                subject: "Geen reden",
+                emailFieldErrorMessage: "",
+                emailValid: null
+            },
+            methods: {
+                categoryChanged() {
+                    this.selectedReason = "Geen reden";
+                    this.reasonChanged();
+                },
+                reasonChanged() {
+                    // update subject
+                    this.subject = this.selectedReason;
+                },
+                onSubmit() {
+                    // if the email field is valid, we let the form submit
+                    if (!this.$refs.email.validity.valid) {
+                        // If it isn't, we display an appropriate error message
+                        this.showError()
+                        // Then we prevent the form from being sent by canceling the event
+                        event.preventDefault();
+                    }
+                },
+                emailInput() {
+
+                    if (this.$refs.email.validity.valid) {
+                        // if valid, hide error
+                        this.hideError()
+                    } else {
+                        this.showError()
+                    }
+
+                    this.emailValid = this.$refs.email.validity.valid
+                },
+                showError() {
+                    if (this.$refs.email.validity.valueMissing) {
+                        // If the field is empty,
+                        // display the following error message.
+                        this.emailFieldErrorMessage = "You need to enter an email address."
+                        this.$refs.error_email.style.display = "block"
+                    } else if (this.$refs.email.validity.typeMismatch) {
+                        // If the field doesn't contain an email address,
+                        // display the following error message.
+                        this.emailFieldErrorMessage = "Entered value needs to be an email address."
+                    } else if (this.$refs.email.validity.tooShort) {
+                        // If the data is too short,
+                        // display the following error message.
+                        this.emailFieldErrorMessage = `Email should be at least ${this.$refs.email.minLength} characters; you entered ${this.$refs.email.value.length}.`;
+                    }
+                },
+                hideError() {
+                    this.emailFieldErrorMessage = ""
+                }
+            },
+            computed: {},
+            created() {
+                console.log(this.appName + " created");
+            },
+            mounted() {
+                console.log(this.appName + " mounted");
+                this.$refs.sf_form.setAttribute("novalidate", "novalidate")
+                this.$refs.email.removeAttribute("pattern")
+                this.$nextTick(function () {
+                    // Code that will run only after the
+                    // entire view has been rendered
+                    this.loading = false;
+                });
+            }
+        });
+    </script>
     </main>
     <footer class="org-footer">
   <section class="org-footer__newsletter">
@@ -466,10 +648,10 @@
       <a href="/en/faq">FAQ</a>
       <a href="/en/maintenance">Maintenance</a>
       <a href="/en/endless-life-services">Endless Life Service</a>
-      <p>EN link</p>
+      <p>NL link</p>
       <a href="/en/planning">Delivery times</a>
       <a href="/en/stock">Stock</a>
-      
+      <p>Show me!</p><p>Show me!</p><p>Show me!</p><p>Show me!</p><p>Show me!</p><p>Show me!</p>
       <a href="https://studio-henk-live.s3.eu-west-1.amazonaws.com/assets/Pricelists/STUDIOHENK_Pricelist_2023_DIGITAL.pdf">Price list</a>
       <a href="/en/manuals">Manuals</a>
     </nav>

@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture.">
     <meta name="generator" content="Astro v2.1.4">
-    <title>Hero Block 2</title>
+    <title>Cart list</title>
     <!-- henk styles -->
     <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css">
     <link href="/static/std/assets/toolkit/styles/toolkit.css" media="screen" rel="stylesheet" type="text/css">
     
     <script src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
-    
+    <script src="/static/std/assets/toolkit/scripts/vue/vue.global.js" defer></script>
 <script type="module">
 </script></head>
 <body>
@@ -282,50 +282,303 @@
 </section>
     <main>
         <!--<LanguagePicker/>-->
-        <div class="hero-block">
-    <img class="hero__image" src="/images/squashed/hero@2x.jpg" alt="founders of Studio Henk" width="933" height="607">
-    <img class="hero__swirl" src="/images/swirl.svg" alt="swirl" width="197" height="51">
-    <div class="hero__content">
-      <div></div>
-      <div class="col2">
-        <h1 class="h4">About Us</h1>
-        <h2 class="h3">
-          We are a conscious Dutch design brand that makes beautiful and
-          functional furniture to last a lifetime.
-        </h2>
-      </div>
+        <div class="cart-page-layout-container" id="app">
+        <div id="heading-badge" class="cart-page__grid-item" data-hide="">
+          <!-- heading badge -->
+          <div class="molecule-heading-badge">
+  <div class="sh-molecule-padding-box" style="--size-spacing-units-top:4; --size-spacing-units-right:4; --size-spacing-units-bottom:4; --size-spacing-units-left:4;--size-spacing-units-top-desktop:6; --size-spacing-units-right-desktop:6; --size-spacing-units-bottom-desktop:6; --size-spacing-units-left-desktop:6;">
+    <div class="molecule-heading-badge__layout-container component-layout-container">
+      <h1 class="h2">Shopping Cart</h1>
+      <!-- <span class="atom-badge">1</span> -->
     </div>
-  </div><section>
-    <div class="content-block" style="background-color: var(--color-accent1);">
-      <div class="content-block__container">
-        <div class="content-block__layout">
-          <div class="content-block__header">
-            <h2 class="content-block__heading">B-corp certified</h2>
-            <p class="content-block__subheading" data-hide="mobile|tablet">
-              ‘We’re proud to be part of the B Corp community.’
-            </p>
+  </div>
+</div>
+        </div>
+        <div id="continue-shopping" class="cart-page__grid-item" data-hide="">
+          <div class="sh-molecule-padding-box" style="
+                    --size-spacing-units-top: 5;
+                    --size-spacing-units-right: 6;
+                    --size-spacing-units-bottom: 5;
+                    --size-spacing-units-left: 6;
+                    --size-spacing-units-top-desktop: 5;
+                    --size-spacing-units-right-desktop: 6;
+                    --size-spacing-units-bottom-desktop: 5;
+                    --size-spacing-units-left-desktop: 6;
+                ">
+            <a href="/en/" class="sh-atom-button" data-style="plain-dark" data-icon-arrow-left="true">
+                          <span class="icon-frame">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path id="arrow-left-line" d="M20 10L7.48148 10" stroke="currentcolor" stroke-width="0.8"></path>
+                              <path id="arrow-left-point" d="M11.3333 14L7 10L11.3333 6" stroke="currentcolor" stroke-width="0.8"></path>
+                            </svg>
+                          </span>
+              Continue shopping
+            </a>
           </div>
-          <div class="content-block__content">
-            <p class="content-block__body-text">
-              2023 is an exciting year for Studio HENK - we celebrate our 10th
-              anniversary and obtaining our B Corp Certification. As a B Corp,
-              we’re part of a global community of businesses that meet high
-              standards of social and environmental impact. We are proud to be
-              part of a movement that uses business as a force for good.
-            </p>
-            <p>
-              2023 is an exciting year for Studio HENK - we celebrate our 10th
-              anniversary and obtaining our B Corp Certification. As a B Corp,
-              we’re part of a global community of businesses that meet high
-              standards of social and environmental impact. We are proud to be
-              part of a movement that uses business as a force for good.
-            </p>
-            <a class="sh-atom-button" data-style="filled" href="#somewhereovertherainbow">Found out more</a>
+        </div>
+        <div class="cart-page__grid-item" id="cart-list" data-count="1">
+          <!-- cart-list -->
+          <!-- contains modal for desktop -->
+          <div class="cart-list">
+  <form method="post" id="cart_form" action="/en/cart/update">
+    <ul class="cart-list__list">
+      <li class="cart-list__list-item">
+        <img src="https://www.studio-henk.nl/Images/emersya/poof-without-background/702040/image-thumb__702040__TransparentSquare/OT-OTTOS-3062-steelcut2-135.png" alt="Otto S" width="1240" height="1240" class="cart-list__list-item-image">
+        <p class="cart-list__list-item-content-title">T-shirt</p>
+        <!-- MOBILE Button for SHEET -->
+        <a href="#" class="cart-list__list-item-content-link sh-atom-button" data-function="openSheet" data-hide="tablet|desktop" data-style="plain" data-text-underline="true" data-size="small">Product info
+        </a>
+        <!-- DESKTOP -->
+        <!-- new SideModal here -->
+        <Side-Modal button-type="button" button-id="sideModalButton1" button-text="Product info" modal-max-width="470" data-hide="mobile" overlay-opacity="0.1">
+          <template #header>
+            <!-- <p class="modal__heading"></p> -->
+          </template>
+          <template #body>
+            
+              <div class="org-media">
+  <!-- non transparent example -->
+  <!-- <img
+    id=""
+    width="1240"
+    height="1240"
+    class="org-media__image"
+    src="https://assets.studio-henk.nl/assets/Images/2021_Products/merchandise/MERCH-TSHIRT-BLACK__Setting6.jpg"
+    alt="T-shirt"
+  /> -->
+  <!-- transparent example -->
+  <img src="https://www.studio-henk.nl/Images/emersya/poof-without-background/702040/image-thumb__702040__TransparentSquare/OT-OTTOS-3062-steelcut2-135.png" alt="Otto S" width="1240" height="1240" class="org-media__image">
+  <div class="org-media__content">
+    <h2 class="org-media__content-heading">T-shirt</h2>
+    <div class="pimcore__product-group-description">
+      <p>
+        The HENK T-shirt is a simple, timeless and unisex T-shirt. The T-shirt
+        is both beautiful and comfortable and you can easily combine it with
+        other pieces from your wardrobe. On the right pocket we’ve embroidered a
+        small HENK-logo, to give it a unique touch. The T-shirt is made from
+        100% organic cotton and available in four colours. Note: the T-shirt
+        runs small.
+      </p>
+      <p>Note: runs small</p>
+      <p><strong>Materials</strong></p>
+      <ul class="styled-checklist">
+        <li>100% organic cotton</li>
+        <li>One style, four colours</li>
+        <li>Unisex</li>
+      </ul>
+    </div>
+  </div>
+</div>
+              <div class="prod-specs">
+  <p><strong>Dimensions</strong></p>
+  <ul class="--no-bullets">
+    <li data-alignment="space-between">
+      Length <span>240<abbr title="centimeter">cm</abbr></span>
+    </li>
+    <li data-alignment="space-between">
+      Width <span>90<abbr title="centimeter">cm</abbr></span>
+    </li>
+    <li data-alignment="space-between">
+      Thickness <span>4<abbr title="centimeter">cm</abbr></span>
+    </li>
+  </ul>
+</div>
+            
+          </template>
+        </Side-Modal>
+        <!-- <hr /> -->
+        <!-- <div>
+          <OrgMedia />
+        </div>         -->
+        <!-- wc stepper here -->
+        <div class="wc-stepper-quantity">
+  <button type="button" aria-label="button to decrease item quantity" class="wc-stepper-quantity__button wc-stepper-quantity__button-min" disabled="">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11.6667 7H2.33337" stroke="black" stroke-width="0.7" stroke-linecap="round"></path>
+    </svg>
+  </button>
+  <input type="number" name="qty[378093]" aria-label="input field for item quantity" value="1" class="js-quantity form-control wc-stepper-quantity__input" inputmode="numeric" min="1" step="1" minlength="1" maxlength="3" readonly="" style="width: 3ch;">
+  <button type="button" aria-label="button to increase item quantity" class="wc-stepper-quantity__button wc-stepper-quantity__button-plus">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11.6667 7.00016H2.33337M7.00004 2.3335V11.6668" stroke="black" stroke-width="0.7" stroke-linecap="round"></path>
+    </svg>
+  </button>
+</div>
+        <div class="cart-list__list-item-content-grid">
+          <a href="/en/cart/remove/149249" class="sh-atom-button-icon" data-style="outline" data-shape="circle" data-size="35" data-role="destructive"><span class="icon-frame"><svg width="10" height="14" viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg"><title>icon-trashcan</title><path d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z" fill="currentColor"></path><path d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z" fill="currentColor"></path></svg></span></a>
+          <span class="cart-list__list-item-content-price">€49</span>
+        </div>
+        <p class="cart-list__list-item-date">
+          <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.4259 9.90476H1V1H12.3333V9.90476H6.23077" stroke="black" stroke-width="0.5" stroke-linecap="square"></path>
+            <path d="M16.381 9.90485H18V5.85728L16.381 2.61914H12.3334V9.90485H13.1429" stroke="black" stroke-width="0.5" stroke-linecap="square"></path>
+            <path d="M4.23807 11.5237C5.13224 11.5237 5.85711 10.7989 5.85711 9.90469C5.85711 9.01052 5.13224 8.28564 4.23807 8.28564C3.34389 8.28564 2.61902 9.01052 2.61902 9.90469C2.61902 10.7989 3.34389 11.5237 4.23807 11.5237Z" stroke="black" stroke-width="0.5" stroke-linecap="square"></path>
+            <path d="M14.7619 11.5237C15.656 11.5237 16.3809 10.7989 16.3809 9.90469C16.3809 9.01052 15.656 8.28564 14.7619 8.28564C13.8677 8.28564 13.1428 9.01052 13.1428 9.90469C13.1428 10.7989 13.8677 11.5237 14.7619 11.5237Z" stroke="black" stroke-width="0.5" stroke-linecap="square"></path>
+          </svg>
+          Binnen 1 week geleverd
+        </p>
+        <!-- sheet -->
+        <div class="cmp-sheet" data-theme="cmp-sheet-theme-henk">
+  <div class="cmp-sheet__overlay">
+    <div class="cmp-sheet__content">
+      <header class="cmp-sheet__content-header">
+        <div class="cmp-sheet__content-header-touch-target"></div>
+        <button type="button" class="sh-atom-button-icon sh-atom-button--close" id="close-button-sheet">
+          <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.44766 0.810913L15.0795 14.4427" stroke="currentColor" stroke-linecap="round"></path>
+            <path d="M15.0797 0.810913L1.44785 14.4428" stroke="currentColor" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </header>
+      <main class="cmp-sheet__content-body">
+        <div class="org-media">
+  <!-- non transparent example -->
+  <!-- <img
+    id=""
+    width="1240"
+    height="1240"
+    class="org-media__image"
+    src="https://assets.studio-henk.nl/assets/Images/2021_Products/merchandise/MERCH-TSHIRT-BLACK__Setting6.jpg"
+    alt="T-shirt"
+  /> -->
+  <!-- transparent example -->
+  <img src="https://www.studio-henk.nl/Images/emersya/poof-without-background/702040/image-thumb__702040__TransparentSquare/OT-OTTOS-3062-steelcut2-135.png" alt="Otto S" width="1240" height="1240" class="org-media__image">
+  <div class="org-media__content">
+    <h2 class="org-media__content-heading">T-shirt</h2>
+    <div class="pimcore__product-group-description">
+      <p>
+        The HENK T-shirt is a simple, timeless and unisex T-shirt. The T-shirt
+        is both beautiful and comfortable and you can easily combine it with
+        other pieces from your wardrobe. On the right pocket we’ve embroidered a
+        small HENK-logo, to give it a unique touch. The T-shirt is made from
+        100% organic cotton and available in four colours. Note: the T-shirt
+        runs small.
+      </p>
+      <p>Note: runs small</p>
+      <p><strong>Materials</strong></p>
+      <ul class="styled-checklist">
+        <li>100% organic cotton</li>
+        <li>One style, four colours</li>
+        <li>Unisex</li>
+      </ul>
+    </div>
+  </div>
+</div>
+        <!-- specs -->
+        <div class="prod-specs">
+  <p><strong>Dimensions</strong></p>
+  <ul class="--no-bullets">
+    <li data-alignment="space-between">
+      Length <span>240<abbr title="centimeter">cm</abbr></span>
+    </li>
+    <li data-alignment="space-between">
+      Width <span>90<abbr title="centimeter">cm</abbr></span>
+    </li>
+    <li data-alignment="space-between">
+      Thickness <span>4<abbr title="centimeter">cm</abbr></span>
+    </li>
+  </ul>
+</div>
+      </main>
+    </div>
+  </div>
+</div>
+      </li>
+    </ul>
+  </form>
+</div>          
+        </div>
+        <div class="cart-page__grid-item" id="info-boxes">
+          <div class="organism-grid-section-infobox">
+            <div class="molecule-info-box" style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);">
+              <div class="sh-molecule-padding-box" style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;">
+                <div class="component-layout-box">
+                  <span class="sh-atom-icon">
+                    <svg class="sh-atom-icon__svg" width="20" height="20" viewBox="0 0 20 20" aria-labelledby="iconPhone" id="iconPhone" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <title>iconPhone</title>
+                      <desc>icon of a phone</desc>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23887 2L7.7656 7.05663L4.92805 9.89418C5.57414 10.8959 6.3477 11.8478 7.24995 12.7501C8.1522 13.6523 9.10409 14.4259 10.1058 15.072L12.9434 12.2344L18 15.7611L16.6193 17.1418C15.858 17.9031 14.7406 18.1855 13.7091 17.8773C11.0295 17.0769 8.62885 15.6102 6.50932 13.4907C4.38979 11.3712 2.92316 8.97048 2.12266 6.2909C1.8145 5.25939 2.09691 4.14196 2.85815 3.38072L4.23887 2ZM11.0332 15.6259C11.9828 16.1491 12.9747 16.5648 14.0089 16.8738C14.6716 17.0717 15.3896 16.8903 15.8786 16.4012L16.375 15.9048L13.0637 13.5953L11.0332 15.6259ZM4.37414 8.96682L6.40467 6.93629L4.09519 3.62495L3.59879 4.12135C3.1097 4.61044 2.92826 5.32836 3.12625 5.99109C3.43523 7.02535 3.85088 8.01721 4.37414 8.96682Z" fill="currentcolor"></path>
+                    </svg>
+                  </span>
+                  <header class="info-box__header">
+                    <p class="info-box__heading">Waar kunnen we mee helpen?</p>
+                  </header>
+                  <div class="info-box__body">
+                    <a href="tel:+31(0)12345678">+31 (0)12345678</a><br><a href="mailto:info@studio-henk.nl">info@studio-henk.nl</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="molecule-info-box" style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);">
+              <div class="sh-molecule-padding-box" style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;">
+                <div class="component-layout-box">
+                  <span class="sh-atom-icon">
+                    <svg class="sh-atom-icon__svg" width="24" height="24" viewBox="0 0 20 20" aria-labelledby="iconTruck" id="iconTruck" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <title>iconTruck</title>
+                      <desc>icon of a delivery truck</desc>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M2 5H12.8718V13.674H6.73373V13.0586H12.2564V5.61538H2.61538V13.0586H3.84615V13.674H2V5Z" fill="currentcolor"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2564 6.4652H16.4173L18 9.6307V13.674H15.9194V13.0586H17.3846V9.77597L16.0369 7.08059H12.8718V13.0586H13.6044V13.674H12.2564V6.4652Z" fill="currentcolor"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.2381 12.2088C4.59882 12.2088 4.08059 12.727 4.08059 13.3663C4.08059 14.0056 4.59882 14.5238 5.2381 14.5238C5.87737 14.5238 6.3956 14.0056 6.3956 13.3663C6.3956 12.727 5.87737 12.2088 5.2381 12.2088ZM3.4652 13.3663C3.4652 12.3872 4.25895 11.5934 5.2381 11.5934C6.21724 11.5934 7.01099 12.3872 7.01099 13.3663C7.01099 14.3454 6.21724 15.1392 5.2381 15.1392C4.25895 15.1392 3.4652 14.3454 3.4652 13.3663Z" fill="currentcolor"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7619 12.2088C14.1226 12.2088 13.6044 12.727 13.6044 13.3663C13.6044 14.0056 14.1226 14.5238 14.7619 14.5238C15.4012 14.5238 15.9194 14.0056 15.9194 13.3663C15.9194 12.727 15.4012 12.2088 14.7619 12.2088ZM12.989 13.3663C12.989 12.3872 13.7828 11.5934 14.7619 11.5934C15.741 11.5934 16.5348 12.3872 16.5348 13.3663C16.5348 14.3454 15.741 15.1392 14.7619 15.1392C13.7828 15.1392 12.989 14.3454 12.989 13.3663Z" fill="currentcolor"></path>
+                    </svg>
+                  </span>
+                  <header class="info-box__header">
+                    <p class="info-box__heading">Gratis levering</p>
+                  </header>
+                  <div class="info-box__body">
+                    <p>
+                      Lorem ipsum dolor sit amet, ectetur adi piscing elit,
+                      tincidunt tincidunt.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="molecule-info-box" style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);">
+              <div class="sh-molecule-padding-box" style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;">
+                <div class="component-layout-box">
+                  <span class="sh-atom-icon">
+                    <svg class="sh-atom-icon__svg" width="20" height="20" viewBox="0 0 20 20" aria-labelledby="iconCalendar" id="iconCalendar" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <title>iconCalendar</title>
+                      <desc>icon of a calendar</desc>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.99702 2V3.62766H14.0031V2H14.5706V3.62766H18V6.88261V7.42125V18H2V7.42125V6.88261V3.62766H5.42951V2H5.99702ZM17.4325 6.88261V4.1663H2.56751V6.88261H17.4325ZM2.56751 7.42125V17.4614H17.4325V7.42125H2.56751ZM10.2838 12.5787H12.8558V13.1173H10.2838V15.5587H9.71625V13.1173H7.1441V12.5787H9.71625V10.1376H10.2838V12.5787Z" fill="currentcolor"></path>
+                    </svg>
+                  </span>
+                  <header class="info-box__header">
+                    <p class="info-box__heading">Bezorgen op afspraak</p>
+                  </header>
+                  <div class="info-box__body">
+                    <p>
+                      Lorem ipsum dolor sit amet, ectetur adi piscing elit,
+                      tincidunt tincidunt.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="action-console" class="action-console cart-page__grid-item" data-is-sticky="true" data-has-toolbar="true">
+          <div class="action-console__layout-box">
+            <ul class="cost-section__list">
+              <li class="cost-section__list-item">
+                <p class="cost-section__label">Shipping</p>
+                <p class="cost-section__data"><strong>FREE</strong></p>
+              </li>
+              <li class="cost-section__list-item">
+                <p class="cost-section__label">
+                  <small>Total incl VAT</small>
+                </p>
+                <p class="cost-section__data"><small>€49</small></p>
+              </li>
+            </ul>
+            <div class="action-console__toolbar">
+              <a href="/en/checkout/delivery" class="sh-atom-button" data-role="primary" data-style="filled">Naar gegevens
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
     </main>
     <footer class="org-footer">
   <section class="org-footer__newsletter">
@@ -672,5 +925,14 @@
   </section>
 </footer>
 </div>
+<script type="module">
+    const { createApp } = Vue;
+    import SideModal from "/static/std/assets/toolkit/scripts/vue/sideModal.js";
 
+    createApp({
+      components: {
+        SideModal
+      }
+    }).mount("#app");
+  </script><script src="/static/std/assets/toolkit/scripts/org-sheet.js" defer></script>
 </body></html>

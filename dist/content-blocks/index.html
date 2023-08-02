@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture.">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Astro v2.1.4">
     <title>Content Blocks</title>
     <!-- henk styles -->
     <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css">
-<!--      <link -->
-<!--       href="/styles/toolkit.css" -->
-<!--       media="screen" -->
-<!--       rel="stylesheet" -->
-<!--       type="text/css" -->
-<!--     /> -->
-  <link rel="stylesheet" href="/_astro/about.a0926479.css" />
+    <link href="/static/std/assets/toolkit/styles/toolkit.css" media="screen" rel="stylesheet" type="text/css">
+    
+    <script src="/static/std/assets/toolkit/scripts/libs.js"></script>
+    <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
+    
 <link rel="stylesheet" href="/_astro/content-blocks.eb7932a4.css" /><script type="module">
 </script></head>
-  <body>
-    <div class="wrapper">
-      <section class="navigation">
+<body>
+<div class="wrapper">
+    <!-- .sh-org-msg-bar --><div id="msg-covid" class="sh-org-msg-bar">
+    <!-- id is still need for javascript function that calculates height -->
+    <a href="https://www.studio-henk.nl/en/shops">Visit a store near you</a>
+</div>
+<!-- /.sh-org-msg-bar -->
+    <section class="navigation">
   <div class="main-menu">
     <div class="container-fluid">
       <div class="flex-menu">
@@ -210,7 +211,7 @@
             </li>
 
             <li class="main-nav__item main-nav__cart hidden-xs visible-lg-block">
-              <a class="quick-cart__launch" href="#">
+              <a class="quick-cart__launch" href="/en/cart/list">
                 <svg class="icon" icon-cart-empty="">
                   <use xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-cart-empty"></use>
                 </svg>
@@ -265,7 +266,7 @@
             <ul class="main-nav__item main-nav__lang">
               <li class="main-nav__lang--item active"><a href="/nl ">NL</a></li>
               <li class="main-nav__lang--divider">|</li>
-              <li class="main-nav__lang--item"><a href="# ">EN</a></li>
+              <li class="main-nav__lang--item"><a href="/en">EN</a></li>
             </ul>
           </ul>
         </nav>
@@ -279,7 +280,8 @@
     </div>
   </div>
 </section>
-      <main>
+    <main>
+        <!--<LanguagePicker/>-->
         <section class="astro-BZHTSB6E">
     <div class="hero-block astro-BZHTSB6E">
       <picture class="astro-BZHTSB6E">
@@ -287,7 +289,7 @@
 /images/squashed/hero_1982x1688.jpg 1982w
 " class="astro-BZHTSB6E">
         <img class="hero__image astro-BZHTSB6E" sizes="(min-width: 1020px) 968px, 95.43vw" srcset="
-/images/squashed/hero.jpg 3024w" src="/images/squashed/hero.jpg" alt="kids on sofa" width="3024" height="1872">
+/images/squashed/hero@2x.jpg 3024w" src="/images/squashed/hero@2x.jpg" alt="kids on sofa" width="3024" height="1872">
       </picture>
       <div class="hero__content astro-BZHTSB6E">
         <div class="astro-BZHTSB6E"></div>
@@ -522,8 +524,8 @@ https://assets.studio-henk.nl/assets/Images/about-us/sea_p_936x1170.jpg 936w" wi
       </div>
     </div>
   </section>
-      </main>
-      <footer class="org-footer">
+    </main>
+    <footer class="org-footer">
   <section class="org-footer__newsletter">
     
     <div class="org-newsletter-form" id="newsletter_form">
@@ -532,10 +534,10 @@ https://assets.studio-henk.nl/assets/Images/about-us/sea_p_936x1170.jpg 936w" wi
       </p>
       <div class="org-newsletter-form__container">
         <input type="text" name="nl_email" id="nl_email" class="org-newsletter-form__input" placeholder="Enter email address">
-        <a href="javascript:subscribeNewsletter();" class="sh-atom-button --tertiary">Subscribe</a>
+        <a href="javascript:subscribeNewsletter();" class="sh-atom-button" data-style="outline-dark">Subscribe</a>
       </div>
       <div style="display:none;" id="order_place_loader_div1">
-        <img src="/static/std/assets/toolkit/images/order_place_loader.gif">
+        <img alt="loading data" src="/static/std/assets/toolkit/images/order_place_loader.gif">
       </div>
     </div>
     <h3 class="newsletter__title" style="display: none;"></h3>
@@ -643,14 +645,13 @@ https://assets.studio-henk.nl/assets/Images/about-us/sea_p_936x1170.jpg 936w" wi
       </p>
     </address>
 
-    <a href="/en/shops" class="sh-atom-button --variant-alt" style="margin-bottom: 0;">View opening hours</a>
+    <a href="/en/shops" class="sh-atom-button" data-style="plain-dark" data-animated-hover="true" style="margin-bottom: 0;">View opening hours</a>
 
-    <a href="https://my.setmore.com/bookingpage/75b40b8e-862a-4c57-9955-376c5c809251" class="sh-atom-button --variant-alt" id="Setmore_button_iframe" tabindex="-1">Make an appointment</a>
+    <a href="https://my.setmore.com/bookingpage/75b40b8e-862a-4c57-9955-376c5c809251" class="sh-atom-button" data-style="plain-dark" data-animated-hover="true" id="Setmore_button_iframe" tabindex="-1">Make an appointment</a>
   </section>
   <section class="org-footer__shortcuts">
     <nav class="org-nav-list-links">
       <p class="org-footer__heading">About us</p>
-
       <a href="/en/jobs">Jobs</a>
       <a href="/en/contact">Contact</a>
       <a href="/en/about-us">About us</a>
@@ -662,14 +663,18 @@ https://assets.studio-henk.nl/assets/Images/about-us/sea_p_936x1170.jpg 936w" wi
       <p class="org-footer__heading">SERVICES</p>
       <a href="/en/faq">FAQ</a>
       <a href="/en/maintenance">Maintenance</a>
+      <a href="/en/endless-life-services">Endless Life Service</a>
+      <p>EN link</p>
       <a href="/en/planning">Delivery times</a>
       <a href="/en/stock">Stock</a>
+      
       <a href="https://studio-henk-live.s3.eu-west-1.amazonaws.com/assets/Pricelists/STUDIOHENK_Pricelist_2023_DIGITAL.pdf">Price list</a>
       <a href="/en/manuals">Manuals</a>
     </nav>
   </section>
   <section class="org-footer__rating">
-    <div class="org-g-rating-avg" data-rating="4.6" style="--perc:" 40%="">
+    <!--<div class="org-g-rating-avg" data-rating="4.6" style="&#45;&#45;perc:" 40%="">-->
+    <div class="org-g-rating-avg" data-rating="4.6" style="--perc:40%;">
       <ol class="stars">
         <li class="star">
           <svg width="21" height="19" viewBox="0 0 21 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-star sh-atom-icon">
@@ -753,15 +758,10 @@ https://assets.studio-henk.nl/assets/Images/about-us/sea_p_936x1170.jpg 936w" wi
       </div>
     </section>
     <div class="org-footer__payment">
-      <!-- <?php if ($this->language == "nl"): ?>
-                <p class="payment-title">Betaling</p>
-            <?php else: ?>
-                <p class="payment-title">Payment</p>
-            <?php endif; ?> -->
       <div class="payment-logos-container">
         <span><!-- ideal logo svg -->
 
-          <svg version="1.1" id="ideal" class="payment__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 306.1 269.8" style="enable-background: new 0 0 306.1 269.8" xml:space="preserve">
+          <svg id="ideal" class="payment__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 306.1 269.8" xml:space="preserve">
             <style type="text/css">
               #ideal .st0 {
                 fill: #ffffff;
@@ -804,7 +804,7 @@ https://assets.studio-henk.nl/assets/Images/about-us/sea_p_936x1170.jpg 936w" wi
         </span>
         <span>
           <!-- mr cash logo svg -->
-          <svg width="100%" height="100%" class="payment__logo" id="mrcash" viewBox="0 0 2272 1363" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-miterlimit: 2.613">
+          <svg width="100%" height="100%" class="payment__logo" id="mrcash" viewBox="0 0 2272 1363" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule: evenodd; clip-rule: evenodd; stroke-miterlimit: 2.613">
             <g id="Artboard1" transform="matrix(0.986335,0,0,0.975103,0,0)">
               <rect x="0" y="0" width="2303.22" height="1397.71" style="fill: none"></rect>
               <clipPath id="_clip1">
@@ -843,7 +843,7 @@ https://assets.studio-henk.nl/assets/Images/about-us/sea_p_936x1170.jpg 936w" wi
         </span>
         <span>
           <!-- visa logo svg -->
-          <svg class="sh-atom-icon payment__logo" id="visa" enable-background="new 0 0 258.381 161.154" height="323.65302" viewBox="0 0 1000.046 323.653" width="1000.046" xmlns="http://www.w3.org/2000/svg">
+          <svg class="sh-atom-icon payment__logo" id="visa" height="323.65302" viewBox="0 0 1000.046 323.653" width="1000.046" xmlns="http://www.w3.org/2000/svg">
             <g transform="matrix(4.4299631 0 0 4.4299631 -81.165783 -105.04783)">
               <g fill="#00579f">
                 <path d="m116.145 95.719h-18.287l11.438-70.724h18.286z"></path>
@@ -869,5 +869,6 @@ https://assets.studio-henk.nl/assets/Images/about-us/sea_p_936x1170.jpg 936w" wi
     </p>
   </section>
 </footer>
-    </div>
-  </body></html>
+</div>
+
+</body></html>

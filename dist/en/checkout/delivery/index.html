@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture.">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Astro v2.1.4">
-    <title>About</title>
+    <title>Checkout Delivery</title>
     <!-- henk styles -->
     <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css">
-<!--      <link -->
-<!--       href="/styles/toolkit.css" -->
-<!--       media="screen" -->
-<!--       rel="stylesheet" -->
-<!--       type="text/css" -->
-<!--     /> -->
-  <link rel="stylesheet" href="/_astro/about.a0926479.css" /><script type="module">
+    <link href="/static/std/assets/toolkit/styles/toolkit.css" media="screen" rel="stylesheet" type="text/css">
+    
+    <script src="/static/std/assets/toolkit/scripts/libs.js"></script>
+    <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
+    
+<script type="module">
 </script></head>
-  <body>
-    <div class="wrapper">
-      <section class="navigation">
+<body>
+<div class="wrapper">
+    <!-- .sh-org-msg-bar --><div id="msg-covid" class="sh-org-msg-bar">
+    <!-- id is still need for javascript function that calculates height -->
+    <a href="https://www.studio-henk.nl/en/shops">Visit a store near you</a>
+</div>
+<!-- /.sh-org-msg-bar -->
+    <section class="navigation">
   <div class="main-menu">
     <div class="container-fluid">
       <div class="flex-menu">
@@ -209,7 +211,7 @@
             </li>
 
             <li class="main-nav__item main-nav__cart hidden-xs visible-lg-block">
-              <a class="quick-cart__launch" href="#">
+              <a class="quick-cart__launch" href="/en/cart/list">
                 <svg class="icon" icon-cart-empty="">
                   <use xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-cart-empty"></use>
                 </svg>
@@ -264,7 +266,7 @@
             <ul class="main-nav__item main-nav__lang">
               <li class="main-nav__lang--item active"><a href="/nl ">NL</a></li>
               <li class="main-nav__lang--divider">|</li>
-              <li class="main-nav__lang--item"><a href="# ">EN</a></li>
+              <li class="main-nav__lang--item"><a href="/en">EN</a></li>
             </ul>
           </ul>
         </nav>
@@ -278,106 +280,563 @@
     </div>
   </div>
 </section>
-      <main>
-        <div class="content-block" style="background-color: var(--color-accent1);">
-    <div class="content-block__container" style="
-      --size-spacing-units-bottom:0;
-      --size-spacing-units-bottom-desktop:0;
-      ">
-      <div class="content-block__layout">
-        <div class="content-block__header">
-          <!-- empty div needed for grid -->
+    <main>
+        <!--<LanguagePicker/>-->
+        <section class="checkout-steps --delivery" style="padding-bottom: 48px;">
+        <div class="container">
+            <div class="row">
+                <div class="row bs-wizard" style="border-bottom:0;">
+
+                    <div class="col-xs-3 bs-wizard-step active">
+                        <div class="text-center bs-wizard-stepnum">Delivery</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <span class="bs-wizard-dot"></span>
+                    </div>
+
+                    <div class="col-xs-3 bs-wizard-step disabled">
+                        <div class="text-center bs-wizard-stepnum">Confirm</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <span class="bs-wizard-dot"></span>
+                    </div>
+
+                    <div class="col-xs-3 bs-wizard-step disabled">
+                        <div class="text-center bs-wizard-stepnum">Payment</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <span class="bs-wizard-dot"></span>
+                    </div>
+
+                    <div class="col-xs-3 bs-wizard-step disabled">
+                        <div class="text-center bs-wizard-stepnum">Completed</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <span class="bs-wizard-dot"></span>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row checkout" style="margin-top:0">
+
+                <div class="col-md-4 --isSticky">
+                    <div id="checkout-summary-scroll">
+                        <h3 class="checkout-summary__title">Shopping Cart</h3>
+                        <div id="sidebar" class=" sidebar">
+
+                            <div class="panel panel-default">
+                                <div class="panel-body cart-details">
+                                    <table class="table table-condensed">
+                                        <tbody>
+
+                                        <tr>
+                                            <td>Otto S( 1x)</td>
+                                            <td class="text-right">€569.00</td>
+                                        </tr>
+
+                                        <!-- <tr class="active">
+                                            <td><span><?= $this->translate("cart.subtotal") ?></span></td>
+                                            <td class="text-right"><span
+                                                        id="sub_total"><?= $cart->getPriceCalculator()->getSubTotal() ?></span></td>
+                                        </tr> -->
+                                        </tbody>
+                                        <tbody>
+                                        <tr>
+                                            <td>Shipping</td>
+                                            <td class="text-right" id="shipping_amount">€0.00</td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody>
+                                        <tr class="active">
+                                            <td><span>Total incl VAT</span></td>
+                                            <td class="text-right"><span id="grand_total">€569.00</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><span>Down payment</span></td>
+                                            <td class="text-right">
+                                                <span>€500.00</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>Remaining costs at delivery</span></td>
+                                            <td class="text-right">
+                                                <span>€69.00</span></td>
+                                        </tr>
+
+
+                                        <!-- <tr>
+                    <td><?= $this->translate("delivery_time") ?></td>
+                    <td class="text-right">
+                        <?php
+                        $leadDaysWeek = \AppBundle\Helper\CommonHelper::getOrderLeadDaysData($cart)['leadDays'] + 2;
+                        ?>
+                        <?= $leadDaysWeek."-".($leadDaysWeek+1) ?> <?= $this->translate("weeks") ?>
+                    </td>
+                </tr> -->
+
+                                        </tbody>
+                                        <tbody class="cart-extra">
+                                        <tr>
+                                            <td colspan="2">
+                                                <table class="table">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td><strong>Expected delivery</strong></td>
+
+
+                                                        <td>9-10 weeks <br></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-8">
+
+                    <form id="form-one-page" onsubmit="return postalCodeValidate();" action="/en/action/checkout/delivery" method="POST" novalidate="">
+                        <div class="checkoutform-section">
+                            <h3 class="checkoutform-section__title">Invoice details</h3>
+                            <div class="row">
+                                <div class="col-md-10 col-lg-8">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">Company</label>
+                                        <input autocomplete="new-password" type="text" id="form_invoiceAddressCompany" name="company" class="basic-input__input" placeholder="Please enter your company." value="">
+                                        <span class="optional">Optional</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="checkoutform-section__radio">
+                                        <div class="checkoutform-section__radio--label">
+                                            Title
+                                        </div>
+                                        <input type="radio" name="title" id="dhr" value="Mr" checked="&quot;checked&quot;" data-parsley-multiple="title">
+                                        <label class="radio radio-menu__btn" for="dhr">Mr</label>
+                                        <input type="radio" name="title" id="mvr" value="Mrs " data-parsley-multiple="title">
+                                        <label class="radio radio-menu__btn" for="mvr">Mrs</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">First Name</label>
+                                        <input autocomplete="new-password" type="text" id="form_invoiceAddressFirstname" name="firstname" required="required" class="basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your firstname here." data-parsley-required-message="You have forgotten your firstname. This field is required." value="">
+                                    </div>
+                                </div>
+                                <!-- </div>
+
+                                <div class="row"> -->
+                                <div class="col-md-3 col-lg-2">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">Insertion</label>
+                                        <input autocomplete="new-password" class="basic-input__input" type="text" name="insertion" value="">
+                                        <span style="position: relative !important; top : -5px !important; font-size:10px;" class="optional">Optional</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">Last Name</label>
+                                        <input autocomplete="new-password" type="text" id="form_invoiceAddressLastname" name="lastname" required="required" class="basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your surname." data-parsley-required-message="You have forgotten your surname. This field is required." value="">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="row">
+                                    <div class="col-md-8 col-lg-8">
+                                        <div class="basic-input">
+                                            <label class="basic-input__label">
+                                                <?= $this->translate("Full address") ?>
+                                            </label>
+                                            <input class="basic-input__input" id="autoCompleteAddress" type="text" name="streetAddition1" value="" placeholder="<?= $this->translate("Full address") ?>" >
+                                        </div>
+                                    </div>
+                                </div> -->
+                            <div class="row">
+                                <div class="col-md-5 col-lg-4">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">Street </label>
+                                        <input autocomplete="off" type="text" id="form_invoiceAddressStreet" name="street" required="required" class="route basic-input__input pac-target-input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your street " data-parsley-required-message="You have forgotten your street. This field is required." value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">Street Number</label>
+                                        <input autocomplete="new-password" type="text" id="form_invoiceAddressNumber" name="streetNumber" required="required" class="street_number basic-input__input" data-parsley-trigger-after-failure="input focusout" data-parsley-type-message="Please enter a valid number." placeholder="Number" data-parsley-required-message="You have forgotten your house number. This field is required." value="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-lg-2">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">
+                                            Addition
+                                        </label>
+                                        <input autocomplete="new-password" class="basic-input__input" type="text" name="streetAddition" value="">
+                                        <span style="position: relative !important; top : -5px !important; font-size:10px;" class="optional">Optional</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3 col-lg-2">
+                                    <div class="basic-input" id="zipcodeDiv">
+                                        <label class="basic-input__label">Zipcode</label>
+                                        <input autocomplete="new-password" type="text" id="form_invoiceAddressZipcode" name="zip" required="required" class="postal_code basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="1234AA" data-parsley-required-message="You have forgotten your zipcode. This field is required." value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-lg-6">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">City</label>
+                                        <input autocomplete="new-password" type="text" id="form_invoiceAddressCity" name="city" required="required" class="locality basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your city here." data-parsley-required-message="You have forgotten your city. This field is required." value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 col-lg-8">
+                                    <div class="basic-select-container">
+                                        <div class="basic-select">
+                                            <select id="form_invoiceAddressCountry" name="countryCode" required="required" class="country basic-select__select" data-parsley-trigger-after-failure="input focusout" data-parsley-errors-container="#custom-country-error-container" data-parsley-required-message="You have forgotten your country. This field is required.">
+                                                <option value="" selected="selected">Select your country</option>
+                                                <option value="NL">Netherlands</option>
+                                                <option value="AT">Austria (€149)</option>
+                                                <option value="BE">Belgium</option>
+                                                <option value="DE">Germany (€149)</option>
+                                                <option value="FR">France (€149)</option>
+                                                <option value="IT">Italy (€199)</option>
+                                                <option value="LU">Luxembourg (€149)</option>
+                                            </select>
+                                        </div>
+                                        <div id="custom-country-error-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkoutform-section">
+                            <h3 class="checkoutform-section__title">
+                                Contact details
+                            </h3>
+                            <div class="row">
+                                <div class="col-md-10 col-lg-8">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">E-mail</label>
+                                        <input data-parsley-type="email" type="text" id="form_invoiceAddressEmail" name="email" required="required" class="basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your e-mail address here." data-parsley-required-message="You have forgotten your e-mail address. This field is required." data-parsley-type-message="Please enter a valid email address" value="">
+                                        <span class="basic-input__info">We will keep you informed of the progress of the order through this e-mail address.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-lg-8">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">Phone number</label>
+                                        <input type="text" id="form_invoiceAddressPhone" name="phone" required="required" class="basic-input__input" data-parsley-trigger-after-failure="input focusout" data-parsley-pattern="^[0-9- ()+/]+$" data-parsley-pattern-message="Please enter a valid phone number." placeholder="Please enter your phone number here." data-parsley-required-message="You have forgotten your phone number. This field is required." data-parsley-minlength-message="Please enter a valid phone number." data-parsley-minlength="6" value="">
+                                        <span class="basic-input__info">Enter your telephone number where you can be reached during the day. Phone number is used on delivery.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-lg-8">
+                                    <div class="basic-select-container">
+                                        <div class="basic-select">
+                                            <select id="form_invoiceAddressHowDidYouFindUs" name="howDidYouFindUs" required="required" class="basic-select__select" data-parsley-trigger-after-failure="input focusout" data-parsley-errors-container="#custom-found-error-container" data-parsley-required-message="Please let us know how you found us. This field is required.">
+                                                <option value="">How did you find us?</option>
+                                                <option value="Trade fair">Trade fair</option>
+                                                <option value="Internet">Internet</option>
+                                                <option value="Magazine">Magazine</option>
+                                                <option value="Instagram">Instagram</option>
+                                                <option value="Facebook">Facebook</option>
+                                                <option value="Friends/Family">Friends/Family</option>
+                                            </select>
+                                        </div>
+                                        <div id="custom-found-error-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-lg-8">
+                                    <div class="basic-input">
+                                        <label class="basic-input__label">
+                                            Additional information
+                                        </label>
+                                        <p class="additionalinfo">
+
+                                        </p>
+
+                                        <textarea id="form_invoiceAddressComments" name="additionalInfo" class="basic-input__input" rows="5" placeholder=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkoutform-section">
+                            <h3 class="checkoutform-section__title">Delivery Information</h3>
+                            <div class="checkoutform-section__aditionalinfo">
+                                <h5 class="checkoutform-section__aditionalinfo--title">
+                                    Different delivery methods
+                                </h5>
+                                <p class="checkoutform-section__aditionalinfo--text">
+                                    All products are delivered for free in the Netherlands and Belgium. Tables are also
+                                    assembled in the Netherlands and Belgium. Other products are only delivered.
+                                </p>
+                                <p class="checkoutform-section__aditionalinfo--text">
+                                    You can also pick up the product free of charge in Haarlem. Please note that modular
+                                    cabinets are never assembled.
+                                </p>
+                                <p class="checkoutform-section__aditionalinfo--text">
+                                    <a target="_blank" href="/en/delivery-conditions-studio-h-k">
+                                        Click here
+                                    </a>for the exact terms of delivery. The delivery time of our products is 6-12 weeks
+                                    if not in stock.
+                                </p>
+                                <p class="checkoutform-section__aditionalinfo--text">
+                                    * Delivery to ground floor. Supplement other floors: € 29, -. If a product can not
+                                    be brought in and other means of transportation (lifting tackle or platform) have to
+                                    be used, this is entirely at the expense and risk of the customer.
+                                </p>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div id="form_onePageShippingAddressType" class="checkoutform-section__radio">
+                                        <div class="checkoutform-section__radio--label">Delivery Address
+                                        </div>
+
+
+                                        <input type="radio" id="form_onePageShippingAddressType_0" name="selection_address" required="required" value="invoice-address" checked="checked" data-parsley-multiple="formonePageShippingAddressType">
+                                        <label class="radio radio-menu__btn toggle-js" for="form_onePageShippingAddressType_0" data-togglegroup="deliver" data-toggle="deliver-same">At the same address</label>
+
+                                        <input type="radio" id="form_onePageShippingAddressType_1" name="selection_address" required="required" value="shipping-address" data-parsley-multiple="formonePageShippingAddressType">
+                                        <label class="radio radio-menu__btn toggle-js" for="form_onePageShippingAddressType_1" data-togglegroup="deliver" data-toggle="deliver-new">
+                                            Different address
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div id="form_onePageShippingType" class="checkoutform-section__radio">
+                                        <div class="checkoutform-section__radio--label">
+                                            Delivery method
+                                        </div>
+                                        <input type="radio" id="form_onePageShippingType_0" name="deliveryMethod" required="required" value="delivery" checked="checked" data-parsley-multiple="formonePageShippingType">
+                                        <label class="radio radio-menu__btn" for="form_onePageShippingType_0">Delivery</label>
+
+
+                                        <input type="radio" id="form_onePageShippingType_1" name="deliveryMethod" required="required" value="pick-up" data-parsley-multiple="formonePageShippingType">
+                                        <label class="radio radio-menu__btn" for="form_onePageShippingType_1">Pickup
+                                            in
+                                            Haarlem - <a href="#">www.jphaarlem.nl</a></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row toggle-container" data-togglegroup="deliver" data-toggle="deliver-new">
+                                <div class="col-md-12">
+                                    <h3 class="checkoutform-section__title">
+                                        checkout.selection_address</h3>
+                                    <div class="checkoutform-section__aditionalinfo">
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-8">
+                                                <div class="basic-input">
+                                                    <label class="basic-input__label">
+                                                        Company</label>
+                                                    <input autocomplete="new-password" type="text" id="form_shippingAddressCompany" name="company1" class="basic-input__input" placeholder="Please enter your company." value="">
+                                                    <span class="optional">Optional</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="checkoutform-section__radio">
+                                                    <div class="checkoutform-section__radio--label">
+                                                        Title
+                                                    </div>
+                                                    <input type="radio" name="title1" id="ship_dhr" data-parsley-multiple="aanhef" value="Mr" checked="&quot;checked&quot;">
+                                                    <label class="radio radio-menu__btn" for="ship_dhr">
+                                                        Mr
+                                                    </label>
+
+
+                                                    <input type="radio" name="title1" id="ship_mvr" data-parsley-multiple="aanhef" value="Mrs">
+                                                    <label class="radio radio-menu__btn" for="ship_mvr">
+                                                        Mrs
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3 col-lg-3">
+                                                <div class="basic-input">
+                                                    <label class="basic-input__label">
+                                                        First Name
+                                                    </label>
+                                                    <input autocomplete="new-password" type="text" id="form_shippingAddressFirstname" name="firstname1" class="basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your firstname here." data-parsley-required-message="You have forgotten your firstname. This field is required." value="">
+                                                </div>
+                                            </div>
+                                            <!-- </div>
+
+                                            <div class="row"> -->
+                                            <div class="col-md-3 col-lg-2">
+                                                <div class="basic-input">
+                                                    <label class="basic-input__label">Insertion</label>
+                                                    <input autocomplete="new-password" class="basic-input__input" type="text" name="insertion1" value="">
+                                                    <span style="position: relative !important; top : -5px !important; font-size:10px;" class="optional">Optional</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3">
+                                                <div class="basic-input">
+                                                    <label class="basic-input__label">
+                                                        Last Name
+                                                    </label>
+                                                    <input autocomplete="new-password" type="text" id="form_shippingAddressLastname" name="lastname1" class="basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your surname." data-parsley-required-message="You have forgotten your surname. This field is required." value="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-5 col-lg-5">
+                                                <div class="basic-input">
+                                                    <label class="basic-input__label">Street </label>
+
+                                                    <input autocomplete="off" type="text" id="form_shippingAddressStreet" name="street1" class="route basic-input__input form_street pac-target-input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your street " data-parsley-required-message="You have forgotten your street. This field is required." value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="basic-input">
+                                                    <label class="basic-input__label">
+                                                        Street Number
+                                                    </label>
+
+
+                                                    <input autocomplete="new-password" type="text" id="form_shippingAddressNumber" name="streetNumber1" class="street_number basic-input__input form_number" data-parsley-trigger-after-failure="input focusout" data-parsley-type-message="Please enter a valid number." placeholder="Number" data-parsley-required-message="You have forgotten your house number. This field is required." value="">
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="col-md-3 col-lg-2">
+                                                    <div class="basic-input">
+                                                        <label class="basic-input__label">
+                                                            <?= $this->translate("checkout.deliveryaddress.form.addition") ?>
+                                                        </label>
+                                                        <?php $dstreetAddition = isset($deliveryAddress->streetAddition1) ? $deliveryAddress->streetAddition1 : '';?>
+                                                        <input class="basic-input__input" type="text" name="streetAddition1" value="<?php echo $dstreetAddition;?>">
+                                                        <span class="optional"><?= $this->translate("checkout.deliveryaddress.form.optional") ?></span>
+                                                    </div>
+                                                </div> -->
+                                            <!-- </div>
+                                            <div class="row"> -->
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-3 col-lg-2">
+                                                <div class="basic-input" id="shippingZipcodeDiv">
+                                                    <label class="basic-input__label">Zipcode</label>
+
+                                                    <input autocomplete="new-password" type="text" id="form_shippingAddressZipcode" name="zip1" class="postal_code basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="1234AA" data-parsley-required-message="You have forgotten your zipcode. This field is required." value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7 col-lg-6">
+                                                <div class="basic-input">
+                                                    <label class="basic-input__label">City</label>
+
+                                                    <input autocomplete="new-password" type="text" id="form_shippingAddressCity" name="city1" class="locality basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="Please enter your city here." data-parsley-required-message="You have forgotten your city. This field is required." value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--
+                                            <div class="row">
+                                                <div class="col-md-10 col-lg-8">
+                                                    <div class="basic-input">
+                                                        <label class="basic-input__label"><?= $this->translate("checkout.deliveryaddress.form.email") ?></label>
+                                                        <?php $demail = isset($deliveryAddress->email1) ? $deliveryAddress->email1 : '';?>
+                                                        <input data-parsley-type="email" type="text" id="form_shippingAddressEmail" name="email1" class="basic-input__input" data-parsley-trigger-after-failure="input focusout" placeholder="<?= $this->translate("checkout.deliveryaddress.form.email.placeholder") ?>" data-parsley-required-message="<?= $this->translate("checkout.deliveryaddress.form.email.error") ?>" data-parsley-type-message="<?= $this->translate("checkout.deliveryaddress.form.email.valid") ?>" value="<?php echo $demail;?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            --->
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-8">
+                                                <div class="basic-select-container">
+                                                    <div class="basic-select">
+                                                        <select id="form_shippingAddressCountry" name="countryCode1" class="country basic-select__select" data-parsley-trigger-after-failure="input focusout" data-parsley-errors-container="#custom-shipcountry-error-container" data-parsley-required-message="You have forgotten your country. This field is required.">
+                                                            <option value="">Select your country</option>
+                                                            <option value="NL"> Netherlands</option>
+                                                            <option value="AT"> Austria (€149)</option>
+                                                            <option value="BE"> Belgium</option>
+                                                            <option value="DE"> Germany (€149)</option>
+                                                            <option value="FR"> France (€149)</option>
+                                                            <option value="IT"> Italy (€199)</option>
+                                                            <option value="LU"> Luxembourg (€149)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div id="custom-shipcountry-error-container"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-8">
+                                                <div class="basic-input">
+                                                    <label class="basic-input__label">Additional information</label>
+                                                    <textarea id="form_shippingAddressComments" name="additionalInfo1" class="basic-input__input" rows="5" placeholder=""></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh-molecule-l-button-group">
+								  <span id="js-checkout-button">
+								    <a href="/en/cart/list" class="sh-atom-button" data-style="filled" data-icon-arrow-left="true">
+                                        <span class="icon-frame">
+                                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path id="arrow-left-line" d="M20 10L7.48148 10" stroke="currentcolor" stroke-width="0.8"></path>
+                                            <path id="arrow-left-point" d="M11.3333 14L7 10L11.3333 6" stroke="currentcolor" stroke-width="0.8"></path>
+                                          </svg>
+                                        </span>
+                                        Go back
+								    </a>
+								  </span>
+
+                            <a href="javascript:void(0);" onclick="$('#form-one-page').submit();" class="sh-atom-button" data-style="filled" data-icon-arrow-right="true">
+                                Next step
+                                <span class="icon-frame">
+                                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path id="arrow-right-line" d="M0 10H12.5185" stroke="currentcolor" stroke-width="0.8"></path>
+                                            <path id="arrow-right-point" d="M8.66667 6L13 10L8.66667 14" stroke="currentcolor" stroke-width="0.8"></path>
+                                          </svg>
+                                        </span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="content-block__content">
-          <p class="content-block__body-text ts-xxlarge">
-            By taking circular design to heart, our custisable and made-to-order
-            pieces are designed in-house and produced in Europe. We have
-            ambitious plans to revolutionise the furniture industry from within
-            to become fully zero waste.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div><div class="content-block" style="background-color: var(--color-accent1);">
-    <div class="content-block__container">
-      <div class="content-block__layout">
-        <div class="content-block__header">
-          <h2 class="content-block__heading">How it all started</h2>
-        </div>
-        <div class="content-block__content">
-          <p class="content-block__body-text">
-            We started our journey ten years ago: Two brothers Okke and Xander
-            Albers who had a love for furniture and an eye for sustainable
-            design. What started with a dining table made of reclaimed wood
-            became a furniture business that boomed during the coronavirus
-            pandemic. Design after design, the company crafted their signature
-            style, counting bestsellers like the Butterfly Dining Table, Ode
-            Dining Chairs, and Cosy Sofa.
-          </p>
-          <p>
-            As the company grew, so did the realisation that the furniture
-            industry has an uglier side, one of immense waste production and
-            record CO2 emissions. We weren’t proud to be contributing to this,
-            thereby negatively impacting the planet and our children’s future.
-            Inspired by companies around the world using business to benefit
-            people, communities, and the planet, Corine de Bruijne (Head of
-            Sustainability) set out to make a change in our company, hoping to
-            inspire the entire furniture industry to do the same. Since then,
-            we’ve taken the following steps:
-          </p>
-          <a class="sh-atom-button" data-style="filled" href="#somewhereovertherainbow">Found out more</a>
-        </div>
-      </div>
-    </div>
-  </div><div class="image-text-block" style="background-color: var(--color-accent1);">
-    <div class="image-text-block__container">
-      <div class="image-text-block__layout" data-grid-columns="2">
-        <img class="image-text-block__image" sizes="(min-width: 1000px) 468px, calc(93.53vw + 19px)" srcset="
-/images/squashed/window_p_468x585.jpg 468w,
-/images/squashed/window_p_740x925.jpg 740w,
-/images/squashed/window_p_936x1170.jpg 936w" src="/images/squashed/window_p_936x1170.jpg" alt="window" width="936" height="1170">
-        <div class="image-text-block__content">
-          <p>2020</p>
-          <p class="ts-xxlarge">
-            ‘Together with Renewi we created a 100% recycled coniferous wood
-            dining table.’
-          </p>
-          <a href="#" class="sh-atom-button" data-style="filled" data-icon-arrow-right="true">
-            Find out more
-            <span class="icon-frame">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="arrow-right-line" d="M0 10H12.5185" stroke="currentcolor" stroke-width="0.8"></path>
-                <path id="arrow-right-point" d="M8.66667 6L13 10L8.66667 14" stroke="currentcolor" stroke-width="0.8"></path>
-              </svg>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div><div class="content-block" style="background-color: var(--color-accent1);">
-    <div class="content-block__container">
-      <div class="content-block__layout">
-        <div class="content-block__header">
-          <h2 class="content-block__heading">Our journey</h2>
-        </div>
-        <div class="content-block__content">
-          <img data-hide="tablet|desktop" class="timeline-svg" src="/images/timeline-mobile.svg" alt="timeline" width="364" height="310">
-          <img data-hide="mobile" class="timeline-svg" src="/images/timeline.svg" alt="timeline" width="658" height="333">
-          <p class="content-block__body-text">
-            We will continue to use our business as a force for good. We look
-            forward to receiving the Climate Neutral Certificate for all our
-            stores and our office, making visible to our consumers the CO2
-            emissions of all our products to assist in making conscious choices,
-            and rolling out our endless life services to extend the lifetime of
-            our products by the end of the year. Download our latest impact
-            report to find out more about our progress.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-      </main>
-      <footer class="org-footer">
+    </section>
+    </main>
+    <footer class="org-footer">
   <section class="org-footer__newsletter">
     
     <div class="org-newsletter-form" id="newsletter_form">
@@ -386,10 +845,10 @@
       </p>
       <div class="org-newsletter-form__container">
         <input type="text" name="nl_email" id="nl_email" class="org-newsletter-form__input" placeholder="Enter email address">
-        <a href="javascript:subscribeNewsletter();" class="sh-atom-button --tertiary">Subscribe</a>
+        <a href="javascript:subscribeNewsletter();" class="sh-atom-button" data-style="outline-dark">Subscribe</a>
       </div>
       <div style="display:none;" id="order_place_loader_div1">
-        <img src="/static/std/assets/toolkit/images/order_place_loader.gif">
+        <img alt="loading data" src="/static/std/assets/toolkit/images/order_place_loader.gif">
       </div>
     </div>
     <h3 class="newsletter__title" style="display: none;"></h3>
@@ -497,14 +956,13 @@
       </p>
     </address>
 
-    <a href="/en/shops" class="sh-atom-button --variant-alt" style="margin-bottom: 0;">View opening hours</a>
+    <a href="/en/shops" class="sh-atom-button" data-style="plain-dark" data-animated-hover="true" style="margin-bottom: 0;">View opening hours</a>
 
-    <a href="https://my.setmore.com/bookingpage/75b40b8e-862a-4c57-9955-376c5c809251" class="sh-atom-button --variant-alt" id="Setmore_button_iframe" tabindex="-1">Make an appointment</a>
+    <a href="https://my.setmore.com/bookingpage/75b40b8e-862a-4c57-9955-376c5c809251" class="sh-atom-button" data-style="plain-dark" data-animated-hover="true" id="Setmore_button_iframe" tabindex="-1">Make an appointment</a>
   </section>
   <section class="org-footer__shortcuts">
     <nav class="org-nav-list-links">
       <p class="org-footer__heading">About us</p>
-
       <a href="/en/jobs">Jobs</a>
       <a href="/en/contact">Contact</a>
       <a href="/en/about-us">About us</a>
@@ -516,14 +974,18 @@
       <p class="org-footer__heading">SERVICES</p>
       <a href="/en/faq">FAQ</a>
       <a href="/en/maintenance">Maintenance</a>
+      <a href="/en/endless-life-services">Endless Life Service</a>
+      <p>EN link</p>
       <a href="/en/planning">Delivery times</a>
       <a href="/en/stock">Stock</a>
+      
       <a href="https://studio-henk-live.s3.eu-west-1.amazonaws.com/assets/Pricelists/STUDIOHENK_Pricelist_2023_DIGITAL.pdf">Price list</a>
       <a href="/en/manuals">Manuals</a>
     </nav>
   </section>
   <section class="org-footer__rating">
-    <div class="org-g-rating-avg" data-rating="4.6" style="--perc:" 40%="">
+    <!--<div class="org-g-rating-avg" data-rating="4.6" style="&#45;&#45;perc:" 40%="">-->
+    <div class="org-g-rating-avg" data-rating="4.6" style="--perc:40%;">
       <ol class="stars">
         <li class="star">
           <svg width="21" height="19" viewBox="0 0 21 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-star sh-atom-icon">
@@ -607,15 +1069,10 @@
       </div>
     </section>
     <div class="org-footer__payment">
-      <!-- <?php if ($this->language == "nl"): ?>
-                <p class="payment-title">Betaling</p>
-            <?php else: ?>
-                <p class="payment-title">Payment</p>
-            <?php endif; ?> -->
       <div class="payment-logos-container">
         <span><!-- ideal logo svg -->
 
-          <svg version="1.1" id="ideal" class="payment__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 306.1 269.8" style="enable-background: new 0 0 306.1 269.8" xml:space="preserve">
+          <svg id="ideal" class="payment__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 306.1 269.8" xml:space="preserve">
             <style type="text/css">
               #ideal .st0 {
                 fill: #ffffff;
@@ -658,7 +1115,7 @@
         </span>
         <span>
           <!-- mr cash logo svg -->
-          <svg width="100%" height="100%" class="payment__logo" id="mrcash" viewBox="0 0 2272 1363" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-miterlimit: 2.613">
+          <svg width="100%" height="100%" class="payment__logo" id="mrcash" viewBox="0 0 2272 1363" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule: evenodd; clip-rule: evenodd; stroke-miterlimit: 2.613">
             <g id="Artboard1" transform="matrix(0.986335,0,0,0.975103,0,0)">
               <rect x="0" y="0" width="2303.22" height="1397.71" style="fill: none"></rect>
               <clipPath id="_clip1">
@@ -697,7 +1154,7 @@
         </span>
         <span>
           <!-- visa logo svg -->
-          <svg class="sh-atom-icon payment__logo" id="visa" enable-background="new 0 0 258.381 161.154" height="323.65302" viewBox="0 0 1000.046 323.653" width="1000.046" xmlns="http://www.w3.org/2000/svg">
+          <svg class="sh-atom-icon payment__logo" id="visa" height="323.65302" viewBox="0 0 1000.046 323.653" width="1000.046" xmlns="http://www.w3.org/2000/svg">
             <g transform="matrix(4.4299631 0 0 4.4299631 -81.165783 -105.04783)">
               <g fill="#00579f">
                 <path d="m116.145 95.719h-18.287l11.438-70.724h18.286z"></path>
@@ -723,5 +1180,6 @@
     </p>
   </section>
 </footer>
-    </div>
-  </body></html>
+</div>
+
+</body></html>
