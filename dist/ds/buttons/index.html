@@ -14,10 +14,14 @@
     <script src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
     
-<script type="module">
+<link rel="stylesheet" href="/_astro/buttons.f1ed99ae.css" /><script type="module">
 </script></head>
 <body>
 <div class="wrapper">
+    <!--value comes from head <title> tag....usually, which is set in title field on SEO tab in pimcore-->
+    <div id="page-title">
+        <h1 class="sr-only">Buttons</h1>
+    </div>
     <!-- .sh-org-msg-bar --><div id="msg-covid" class="sh-org-msg-bar">
     <!-- id is still need for javascript function that calculates height -->
     <a href="https://www.studio-henk.nl/en/shops">Visit a store near you</a>
@@ -283,27 +287,38 @@
     </div>
   </div>
 </section>
+    
     <main>
-        <!--<LanguagePicker/>-->
-        <div class="frame" style="background-color: var(--color-accent16);">
+        <div class="frame" style="max-width: 960px; margin: 0 auto; padding: 2rem 0 0 0;">
     <h1>Buttons</h1>
-    <div class="example">
-      <button type="button">button text</button>
-    </div>
-    <div class="example" style="background-color: var(--color-accent16);">
+    <!--<div class="example">
+          <button type="button">button text</button>
+        </div>-->
+    <h2>Default (also <em>Outline Light</em>)</h2>
+    <div class="example" style="background-color: var(--color-accent16);padding: 1rem;">
       <button type="button" class="sh-atom-button">button text</button>
+    </div>
+    <h3>Default - small</h3>
+    <div class="example" style="background-color: var(--color-accent16);padding: 1rem;">
       <button type="button" class="sh-atom-button" data-size="small">button text</button>
     </div>
-    <div class="example" style="background-color: var(--color-accent16);">
-      <button type="button" class="sh-atom-button" data-style="outline-dark">button text</button>
+    <h2>Outline Dark</h2>
+    <div class="example" style="padding: 1rem;">
+      <button type="button" class="sh-atom-button" data-style="outline-dark">button text
+      </button>
     </div>
-    <div class="example" style="background-color: var(--color-accent16);">
-      <button type="button" class="sh-atom-button" data-style="filled">button text</button>
+    <h2>Filled</h2>
+    <div class="example" style="padding: 1rem;">
+      <button type="button" class="sh-atom-button" data-style="filled">button text
+      </button>
     </div>
-    <div class="example" style="background-color: var(--color-accent16);">
-      <button type="button" class="sh-atom-button" data-style="soft">button text</button>
+    <h2>Soft</h2>
+    <div class="example" style="padding: 1rem;">
+      <button type="button" class="sh-atom-button" data-style="soft">button text
+      </button>
     </div>
-    <div class="example" style="background-color: var(--color-accent16);">
+    <h2>Arrow right (<em>animated</em>)</h2>
+    <div class="example" style="padding: 1rem;">
       <a href="#" class="sh-atom-button" data-style="filled" data-icon-arrow-right="true">button text
         <svg width="20" height="8" viewBox="0 0 20 8" fill="none" aria-labelledby="iconArrowRight" id="iconArrowRight" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
 
@@ -313,154 +328,227 @@
     <path id="arrow-right-point" d="M8.66667 0L13 4L8.66667 8" stroke="currentcolor" stroke-width="0.8"></path>
 </svg>
       </a>
-      <!--<a
-        href="#"
-        class="sh-atom-button"
-        data-style="filled"
-        data-icon-arrow-right="true"
-      >
-        icon right
-        <span class="icon-frame">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              id="arrow-right-line"
-              d="M0 10H12.5185"
-              stroke="currentcolor"
-              stroke-width="0.8"></path>
-            <path
-              id="arrow-right-point"
-              d="M8.66667 6L13 10L8.66667 14"
-              stroke="currentcolor"
-              stroke-width="0.8"></path>
-          </svg>
-        </span>
-      </a>-->
-      <hr>
-      <p>new arrow right</p>
-      <a href="#" class="sh-atom-button" data-style="filled" data-icon-arrow-right="true">
-        icon right
-        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path id="arrow-right-line" d="M0 4H12.5185" stroke="currentcolor" stroke-width="0.8"></path>
-          <path id="arrow-right-point" d="M8.66667 0L13 4L8.66667 8" stroke="currentcolor" stroke-width="0.8"></path>
-        </svg>
-      </a>
+      <!--<p>new arrow right</p>
+            <a
+                href="#"
+                class="sh-atom-button"
+                data-style="filled"
+                data-icon-arrow-right="true"
+            >
+              icon right
+              <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="arrow-right-line" d="M0 4H12.5185" stroke="currentcolor" stroke-width="0.8"/>
+                <path id="arrow-right-point" d="M8.66667 0L13 4L8.66667 8" stroke="currentcolor" stroke-width="0.8"/>
+              </svg>
+            </a>-->
     </div>
-    <div class="example" style="background-color: var(--color-accent16);">
+    <h2>Arrow left (<em>animated</em>)</h2>
+    <div class="example" style="padding: 1rem;">
       <a href="#" class="sh-atom-button" data-style="filled" data-icon-arrow-left="true">
-        <span class="icon-frame">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="arrow-left-line" d="M20 10L7.48148 10" stroke="currentcolor" stroke-width="0.8"></path>
-            <path id="arrow-left-point" d="M11.3333 14L7 10L11.3333 6" stroke="currentcolor" stroke-width="0.8"></path>
-          </svg>
-        </span>
-        icon left
-      </a>
-    </div>
-    <div class="example" style="background-color: var(--color-accent16);">
-      <a href="#" class="sh-atom-button" data-style="plain-light" data-icon-arrow-right="true">
-        plain + icon right
-        <span class="icon-frame">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="arrow-right-line" d="M0 10H12.5185" stroke="currentcolor" stroke-width="0.8"></path>
-            <path id="arrow-right-point" d="M8.66667 6L13 10L8.66667 14" stroke="currentcolor" stroke-width="0.8"></path>
-          </svg>
-        </span>
-      </a>
-    </div>
-    <div class="example" style="background-color: var(--color-accent16);">
-      <a href="#" class="sh-atom-button" data-style="plain-dark" data-icon-arrow-left="true">
-        <span class="icon-frame">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="arrow-left-line" d="M20 10L7.48148 10" stroke="currentcolor" stroke-width="0.8"></path>
-            <path id="arrow-left-point" d="M11.3333 14L7 10L11.3333 6" stroke="currentcolor" stroke-width="0.8"></path>
-          </svg>
-        </span>
-        icon left
-      </a>
-    </div>
-    <a href="/en/shops" class="sh-atom-button" data-style="plain-dark" data-animated-hover="true">Animated underline</a>
-    <br>
-    <a href="/en/shops" class="sh-atom-button" data-style="plain-light" data-animated-hover="true">Animated underline light</a>
-  </div><br><a href="#anchor" class="sh-atom-button" data-style="plain-dark" data-icon-arrow-down="true">
-    Discover<br>
-    more
-    <svg width="16" height="38" viewBox="0 0 16 38" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon">
-      <path d="M1 29.875L8 36.875L15 29.875" stroke="currentColor" stroke-linecap="square"></path>
-      <path d="M8 1L8 35.7083" stroke="currentColor" stroke-linecap="square"></path>
-    </svg>
-  </a><hr><h2>Circle Icon</h2><div class="example">
-    <a href="/en/cart/remove/378093" class="sh-atom-button-icon" data-style="filled" data-shape="circle">
-    <span class="icon-frame">
-      <svg viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg">
-        <title>icon-trashcan</title>
-        <path d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z" fill="currentColor">
-        </path>
-        <path d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z" fill="currentColor">
-        </path>
-      </svg>
-    </span>
-    </a>
-    <a href="/en/cart/remove/378093" class="sh-atom-button-icon" data-style="filled" data-shape="circle" data-size="small">
-      <span class="icon-frame">
-        <svg viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg">
-          <title>icon-trashcan</title>
-          <path d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z" fill="currentColor">
-          </path>
-          <path d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z" fill="currentColor">
-          </path>
-        </svg>
-      </span>
-    </a>
-    <button type="button" class="sh-atom-button" data-size="small" data-style="filled" data-shape="circle">button text
-      <span class="icon-frame">
-        <svg viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg">
-          <title>icon-trashcan</title>
-          <path d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z" fill="currentColor">
-          </path>
-          <path d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z" fill="currentColor">
-          </path>
-        </svg>
-      </span>
-    </button>
-  </div><hr><h2>Quick delivery page</h2><div class="example">
-    <button class="sh-atom-button --sh-vue-modal__close" data-variant="icon-only" @click.prevent="closeInfoModal()">
-        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.44766 0.810913L15.0795 14.4427" stroke="currentcolor" stroke-linecap="round"></path>
-          <path d="M15.0797 0.810913L1.44785 14.4428" stroke="currentcolor" stroke-linecap="round"></path>
-        </svg>
-    </button>
-    <hr>
-    <button class="sh-atom-button-icon --sh-vue-modal__close" @click.prevent="closeInfoModal()">
-      <span class="icon-frame">
-        <svg viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.44766 0.810913L15.0795 14.4427" stroke="currentcolor" stroke-linecap="round"></path>
-          <path d="M15.0797 0.810913L1.44785 14.4428" stroke="currentcolor" stroke-linecap="round"></path>
-        </svg>
-      </span>
-    </button>
-  </div><hr><h2>Atom-Tag</h2><span class="sh-atom-tag">
-        
-        Made to Order
-        
-      </span><p>From: <a href="https://www.figma.com/file/wppNFHNUP3QZYFNEXzm6qf/PDP-Sticky-Add-to-Cart-%2B-Delivery-times?type=design&node-id=0-1&t=8cUR9uWWEX8p2eRP-0">Figma PDP</a></p><p>with icon left</p><span class="sh-atom-tag">
-        <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-labelledby="iconTruck" id="iconTruck" xmlns="http://www.w3.org/2000/svg" data-size="" aria-hidden="true"><!--<title>{icon}</title>-->
+        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" aria-labelledby="iconArrowLeft" id="iconArrowLeft" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
 
-    <title>iconTruck</title>
-    <desc>An icon of a delivery truck signifying fast delivery</desc>
-    <path         d="M3.73844 0.15979C3.5772 0.160443 3.44663 0.290516 3.44598 0.451277C3.44663 0.611907 3.5772 0.741978 3.73844 0.74263H11.8343V7.40696H8.14075C8.03837 6.70997 7.43862 6.16764 6.71656 6.16764C5.99463 6.16764 5.3949 6.70987 5.29251 7.40683L4.03312 7.40696V6.13915C4.03339 6.06119 4.00245 5.98623 3.94713 5.93111C3.89181 5.876 3.81656 5.84518 3.7383 5.84544C3.66043 5.84571 3.58584 5.87692 3.53104 5.9319C3.47612 5.98701 3.44544 6.06157 3.44583 6.13915V7.70065C3.44649 7.86129 3.57706 7.99136 3.7383 7.99201H5.32632C5.49071 8.60983 6.05151 9.0719 6.71655 9.0719C7.3816 9.0719 7.94237 8.61 8.10678 7.99201H13.4635C13.6279 8.60983 14.1887 9.0719 14.8538 9.0719C15.5188 9.0719 16.0784 8.61 16.2423 7.99201H17.5786C17.7398 7.99136 17.8704 7.86128 17.8711 7.70065V4.98377C17.8711 4.94629 17.8639 4.90894 17.8498 4.87407L16.7504 2.15956V2.15969C16.7059 2.04947 16.5989 1.977 16.4797 1.97621H12.422V0.451411C12.4213 0.290519 12.2904 0.160318 12.1289 0.159924L3.73844 0.15979ZM2.45953 2.01042C2.38166 2.01068 2.30707 2.04189 2.25214 2.09687C2.19735 2.15198 2.16667 2.22655 2.16706 2.30412C2.16759 2.46475 2.29828 2.59482 2.45952 2.59547H6.89003C6.9679 2.59573 7.04262 2.56531 7.09794 2.51059C7.15326 2.456 7.18446 2.38169 7.18472 2.30412C7.18511 2.22615 7.15417 2.15119 7.09872 2.09608C7.0434 2.04097 6.96829 2.01015 6.89002 2.01041L2.45953 2.01042ZM12.4223 2.56128H16.2803L17.1428 4.69243L12.4221 4.6923L12.4223 2.56128ZM1.13528 3.87582C1.05728 3.87556 0.982424 3.90612 0.927104 3.96097C0.871785 4.01569 0.840585 4.09013 0.840454 4.16783C0.840847 4.2454 0.872047 4.31971 0.927235 4.3743C0.982554 4.42902 1.05741 4.45958 1.13528 4.45919H6.89003C6.9679 4.45958 7.04262 4.42902 7.09794 4.3743C7.15326 4.31971 7.18446 4.2454 7.18472 4.16783C7.18459 4.09013 7.15352 4.01569 7.0982 3.96097C7.04288 3.90612 6.96803 3.87556 6.89003 3.87582H1.13528ZM12.4223 5.27736H17.284V7.40681H16.2758C16.1738 6.70982 15.576 6.16762 14.854 6.16762C14.1321 6.16762 13.5329 6.70985 13.4305 7.40681H12.4223L12.4223 5.27736ZM6.69505 6.75254C6.70239 6.75241 6.70947 6.75254 6.71681 6.75254C7.18795 6.75254 7.56851 7.1336 7.56851 7.61813C7.56851 8.10263 7.18795 8.48659 6.71681 8.48659C6.24567 8.48659 5.86511 8.10266 5.86511 7.61813C5.86511 7.14119 6.23413 6.76418 6.69503 6.75254H6.69505ZM14.8322 6.75254C14.8395 6.75241 14.8466 6.75254 14.8539 6.75254C15.3251 6.75254 15.7062 7.1336 15.7062 7.61813C15.7062 8.10263 15.3251 8.48659 14.8539 8.48659C14.3828 8.48659 14.0022 8.10266 14.0022 7.61813C14.0022 7.14119 14.3713 6.76418 14.8322 6.75254H14.8322Z"
-        fill="currentColor"
+    <title>iconArrowLeft</title>
+    <desc>icon Arrow Left</desc>
+    <path id="arrow-left-line" d="M20 4L7.48148 4" stroke="currentcolor" stroke-width="0.8"></path>
+    <path id="arrow-left-point" d="M11.3333 8L7 4L11.3333 0" stroke="currentcolor" stroke-width="0.8"></path>
+</svg>
+        icon left
+      </a>
+    </div>
+    <h2>Plain Light</h2>
+    <div class="example" style="background-color: var(--color-accent16);padding: 1rem;">
+      <a href="#" class="sh-atom-button" data-style="plain-light">plain light
+      </a>
+    </div>
+    <h2>Plain Light Animated Underline</h2>
+    <div class="example" style="background-color: var(--color-accent16);padding: 1rem;">
+      <a href="/en/shops" class="sh-atom-button" data-style="plain-light" data-animated-hover="true">Animated underline light</a>
+    </div>
+    <h3>Plain Dark Animated Underline</h3>
+    <div class="example" style="padding: 1rem;">
+      <a href="/en/shops" class="sh-atom-button" data-style="plain-dark" data-animated-hover="true">Animated underline</a>
+    </div>
+    <h2>Plain Light Arrow Right</h2>
+    <div class="example" style="background-color: var(--color-accent16);padding: 1rem;">
+      <a href="#" class="sh-atom-button" data-style="plain-light" data-icon-arrow-right="true">
+        plain + arrow right
+        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" aria-labelledby="iconArrowRight" id="iconArrowRight" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <title>iconArrowRight</title>
+    <desc>icon Arrow Right</desc>
+    <path id="arrow-right-line" d="M0 4H12.5185" stroke="currentcolor" stroke-width="0.8"></path>
+    <path id="arrow-right-point" d="M8.66667 0L13 4L8.66667 8" stroke="currentcolor" stroke-width="0.8"></path>
+</svg>
+      </a>
+    </div>
+    <h2>Plain Dark + Arrow Left</h2>
+    <div class="example" style="padding: 1rem;">
+      <a href="#" class="sh-atom-button" data-style="plain-dark" data-icon-arrow-left="true">
+        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" aria-labelledby="iconArrowLeft" id="iconArrowLeft" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <title>iconArrowLeft</title>
+    <desc>icon Arrow Left</desc>
+    <path id="arrow-left-line" d="M20 4L7.48148 4" stroke="currentcolor" stroke-width="0.8"></path>
+    <path id="arrow-left-point" d="M11.3333 8L7 4L11.3333 0" stroke="currentcolor" stroke-width="0.8"></path>
+</svg>
+        Arrow left
+      </a>
+    </div>
+    <h2>Arrow down Anchor-link</h2>
+    <div class="example" style="padding: 1rem;">
+      <a href="#anchor" class="sh-atom-button" data-style="plain-dark" data-icon-arrow-down="true">
+        Discover<br>
+        more
+        <svg width="16" height="38" viewBox="0 0 16 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <path         d="M1 29.875L8 36.875L15 29.875"
+        stroke="currentColor"
+        stroke-linecap="square"
+    >
+    </path>
+    <path         d="M8 1L8 35.7083"
+        stroke="currentColor"
+        stroke-linecap="square"
     >
     </path>
 </svg>
-        fast delivery
-        
-      </span><hr><p>with icon right</p><span class="sh-atom-tag">
+      </a>
+    </div>
+    <h2>Circle Icon Button</h2>
+    <div class="example" style="padding: 1rem;">
+      <a href="/en/cart/remove/378093" class="sh-atom-button-icon" data-style="filled" data-shape="circle">
+        <span class="icon-frame">
+          <svg viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <title>icon-trashcan</title>
+    <path             d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z"
+            fill="currentColor"
+    >
+    </path>
+    <path             d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z"
+            fill="currentColor"
+    >
+    </path>
+</svg>
+        </span>
+      </a>
+    </div>
+    <h3>Circle Icon Button - Small</h3>
+    <div class="example" style="padding: 1rem;">
+      <a href="/en/cart/remove/378093" class="sh-atom-button-icon" data-style="filled" data-shape="circle" data-size="small">
+        <span class="icon-frame">
+          <svg viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <title>icon-trashcan</title>
+    <path             d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z"
+            fill="currentColor"
+    >
+    </path>
+    <path             d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z"
+            fill="currentColor"
+    >
+    </path>
+</svg>
+        </span>
+      </a>
+    </div>
+    <h2>Icon Button - Plain</h2>
+    <div class="example" style="padding: 1rem;">
+      <a href="/en/cart/remove/378093" class="sh-atom-button-icon" data-style="plain-dark">
+        <span class="icon-frame">
+          <svg viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <title>icon-trashcan</title>
+    <path             d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z"
+            fill="currentColor"
+    >
+    </path>
+    <path             d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z"
+            fill="currentColor"
+    >
+    </path>
+</svg>
+        </span>
+      </a>
+    </div>
+    <h2>Work-In-Progress</h2>
+    <h3>Button + icon</h3>
+    <p>Icon too big.</p>
+    <div class="example">
+      <a href="#" class="sh-atom-button" data-style="filled">button text
+        <span class="icon-frame">
+          <svg viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <title>icon-trashcan</title>
+    <path             d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z"
+            fill="currentColor"
+    >
+    </path>
+    <path             d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z"
+            fill="currentColor"
+    >
+    </path>
+</svg>
+        </span>
+      </a>
+    </div>
+    <h2>Chevron Down</h2>
+    <div class="example" style="padding: 1rem;">
+      <a href="#anchor" class="sh-atom-button" data-style="soft" data-animated-hover="true">
+        Show
+        <span class="icon-frame">
+          <svg width="14" height="8" viewBox="0 0 14 8" fill="none" class="sh-atom-icon" id="sh-icon-chevron-down" style="position:relative;top:1px;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <path d="M6.10997 7.04811L6.95189 7.93814L14 0.890035L13.134 0L6.95189 6.18213L0.865979 0.0962198L0 0.938144L3.53608 4.45017L6.10997 7.04811Z"
+          fill="currentcolor"></path>
+</svg>
+        </span>
+      </a>
+    </div>
+    <h2>Chevron Up</h2>
+    <div class="example" style="padding: 1rem;">
+      <a href="#anchor" class="sh-atom-button" data-style="soft" data-animated-hover="true">
+        Hide
+        <span class="icon-frame">
+          <svg width="14" height="8" viewBox="0 0 14 8" fill="none" class="sh-atom-icon" id="sh-icon-chevron-up" style="position:relative;top:1px;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
+
+    <path d="M6.10997 0.890034L6.95189 -2.83122e-07L14 7.04811L13.134 7.93814L6.95189 1.75601L0.865979 7.84192L0 7L3.53608 3.48797L6.10997 0.890034Z"
+          fill="currentcolor"></path>
+</svg>
+        </span>
+      </a>
+    </div>
+    <!-- playground -->
+    <div id="sh-nav-icon3" class="astro-T6LYESUJ">
+    <span class="astro-T6LYESUJ"></span>
+    <span class="astro-T6LYESUJ"></span>
+    <span class="astro-T6LYESUJ"></span>
+    <span class="astro-T6LYESUJ"></span>
+</div>
+
+<script>
+        /*$('#nav-icon1,#nav-icon2,#sh-nav-icon3,#nav-icon4').click(function(){
+            $(this).toggleClass('open');
+        });*/
+        // Alternative to DOMContentLoaded event
+        document.onreadystatechange = function() {
+            if (document.readyState === "interactive") {
+                MobileNavHandler();
+            }
+        };
+        function MobileNavHandler () {
+            const MNButton = document.getElementById("sh-nav-icon3");
+            // console.log(event);
+            // event.target.toggleClass('open');
+            MNButton.addEventListener('click', function(event) {
+                console.log(event);
+                event.target.classList.toggle('open');
+            });
+        }
+</script>
+
+    <!-- end container -->
+  </div><p>with icon right</p><span class="sh-atom-tag">
         
         fast delivery
         <svg width="18" height="10" viewBox="0 0 18 10" fill="none" aria-labelledby="iconTruck" id="iconTruck" xmlns="http://www.w3.org/2000/svg" data-size="" aria-hidden="true"><!--<title>{icon}</title>-->
@@ -612,7 +700,7 @@
       <p class="org-footer__heading">SERVICES</p>
       <a href="/en/faq">FAQ</a>
       <a href="/en/maintenance">Maintenance</a>
-      <a href="/en/endless-life-services">Endless Life Service</a>
+      <a href="/en/endless-life-services">Services</a>
       <a href="/en/planning">Delivery times</a>
       <a href="/en/stock">Stock</a>
       <a href="https://studio-henk-live.s3.eu-west-1.amazonaws.com/assets/Pricelists/STUDIOHENK_Pricelist_2023_DIGITAL.pdf">Price list</a>
@@ -649,7 +737,7 @@
         <path d="M45.6832 79.4188H46.8841V80.0653H46.9099C47.2308 79.5439 47.7795 79.2936 48.3178 79.2936C49.6584 79.2936 50 80.0549 50 81.202V84.0489H48.7371V81.4314C48.7371 80.6702 48.5145 80.2947 47.9296 80.2947C47.2412 80.2947 46.9513 80.6806 46.9513 81.6243V84.0541H45.6884V79.4188H45.6832Z" fill="black"></path>
       </svg>
       </a>
-      <a href="http://www.cn-cert.com/" target="_blank">
+      <a href="https://www.climateneutralcertification.com/" target="_blank">
       <img src="/static/std/assets/toolkit/images/cng.png" width="176" height="176" class="section-certifications__image --cng" alt="logo of climate neutral group">
       </a>
     </div>
