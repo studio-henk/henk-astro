@@ -69,16 +69,20 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     <div class="utilities-nav">
       <ul class="utilities-nav__list">
         <li class="utilities-nav__item" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this);">Search</a></li>
-        <li class="utilities-nav__item" id="utilities-nav__language" onmouseleave="HideLangMenu(this)"><a href="#language" onmouseenter="ShowLangMenu(this)" >Language</a>
-          <!-- lang menu -->
-          <!--ShowLangMenu-->
+        <li class="utilities-nav__item" id="utilities-nav__language">
+          <a href="/en">EN</a>
+          <span> | </span>
+          <a href="/nl">NL</a>
+        <!--<li class="utilities-nav__item" id="utilities-nav__language" onmouseleave="HideLangMenu(this)"><a href="#language" onmouseenter="ShowLangMenu(this)" >Language</a>
+          &lt;!&ndash; lang menu &ndash;&gt;
+          &lt;!&ndash;ShowLangMenu&ndash;&gt;
           <div class="LangMenu">
             <ol class="LangMenu__list">
               <li class="LangMenu__list-item"><a class="LangMenu__link" href="#">English</a></li>
               <li class="LangMenu__list-item"><a class="LangMenu__link" href="#NL">Nederlands</a></li>
             </ol>
           </div>
-        </li>
+        </li>-->
         <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} badgeNumber="6" /></li>
       </ul>
     </div>
