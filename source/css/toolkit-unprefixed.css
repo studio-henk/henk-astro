@@ -6536,7 +6536,8 @@ so calc is unit size * unit num
     --color-background-badge: var(--color-black);
     --color-text-badge: var(--color-white);
   }
-  .masthead-desktop.--masthead-desktop-hovered {
+  .masthead-desktop.--masthead-desktop-hovered,
+  .masthead-desktop.--masthead-desktop-hovered[data-theme=dark][data-hashero=true] {
     --color-background-masthead: var(--color-white);
     --color-text-masthead: var(--color-black);
     --color-background-badge: var(--color-black);
@@ -6685,6 +6686,71 @@ so calc is unit size * unit num
     display: none;
   }
 }
+.LangSwitch2 {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  position: relative;
+}
+
+.LangSwitch2 input[type=checkbox] {
+  display: block;
+  opacity: 1;
+  width: 23px;
+  position: absolute;
+  left: 28px;
+  top: 7px;
+  appearance: none;
+  height: 13px;
+  background: transparent;
+  border: 0;
+}
+
+.LangSwitch2 input[type=checkbox]:focus-visible,
+.LangSwitch2 input[type=checkbox]:focus-visible {
+  outline-color: #00bfff;
+  outline-offset: 3px;
+  outline-style: solid;
+  outline-width: 1px;
+}
+
+.LangSwitch2 .LangSwitch2__label {
+  /*background-color: rgba(255, 255, 255, 0.2);*/
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 23px;
+  height: 11px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme=dark] .LangSwitch2 .LangSwitch2__label,
+.--masthead-desktop-hovered .LangSwitch2 .LangSwitch2__label {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*.LangSwitch2 .LangSwitch2__language:focus,
+.LangSwitch2 .LangSwitch2__language:focus-visible {
+    outline: 1px solid blue;
+    outline-offset: 4px;
+}*/
+/*.LangSwitch2 .LangSwitch2__label:focus,
+.LangSwitch2 .LangSwitch2__label:focus-visible {
+    outline: 1px solid blue;
+    outline-offset: 4px;
+}*/
+.LangSwitch2 .LangSwitch2__label .slider {
+  height: 11px;
+  width: 11px;
+  background-color: var(--color-accent19);
+  border-radius: 30px;
+  margin: 0;
+}
+
+.LangSwitch2 input:checked + .LangSwitch2__label > .slider {
+  align-self: flex-end;
+}
+
 .org-breadcrumbs * + * {
   margin-top: 0;
 }

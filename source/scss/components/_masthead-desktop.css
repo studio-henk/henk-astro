@@ -78,7 +78,8 @@
         --color-text-badge: var(--color-white);
     }
 
-    .masthead-desktop.--masthead-desktop-hovered {
+    .masthead-desktop.--masthead-desktop-hovered,
+    .masthead-desktop.--masthead-desktop-hovered[data-theme="dark"][data-hashero="true"] {
         --color-background-masthead: var(--color-white);
         --color-text-masthead: var(--color-black);
         --color-background-badge: var(--color-black);

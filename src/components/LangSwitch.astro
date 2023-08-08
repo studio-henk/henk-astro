@@ -1,0 +1,91 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+---
+<div class="langSwitch">
+    {
+        lang == "nl" ? <span class="langSwitch__link --status-active">NL
+                <span class="track-left"></span>
+            </span>
+        <a class="langSwitch__link" href={'/en/' + Astro.url.pathname.substring(4)}>
+            <span class="track-right"></span>
+            EN
+        </a>
+        :
+            <a class="langSwitch__link" href={'/nl/' + Astro.url.pathname.substring(4)}>NL
+                <span class="track-left"></span>
+            </a>
+            <span class="langSwitch__link --status-active">
+                <span class="track-right"></span>
+                EN
+            </span>
+    }
+</div>
+<style>
+    .langSwitch {
+        display: flex;
+    }
+
+    .langSwitch a {
+        text-decoration: none;
+    }
+
+    .langSwitch a:hover,
+    .langSwitch a:focus {
+        text-decoration: underline;
+        text-decoration-color: red;
+    }
+
+    .langSwitch__link {
+        display: flex;
+        gap: 4px;
+    }
+
+    .langSwitch__link.--status-active span::after {
+        content: "";
+        background-color: darkgrey;
+        display: block;
+        width: 28px;
+        height: 28px;
+        border-radius: 50px;
+    }
+
+    .track-left {
+        width: 28px;
+        height: 28px;
+        background: lightgrey;
+        border-radius: 20px 0 0 20px;
+    }
+
+    .track-right {
+        width: 28px;
+        height: 28px;
+        background: lightgrey;
+        border-radius: 0 20px 20px 0;
+    }
+
+    span.right::after {
+        transform: translateX(100%);
+    }
+</style>
+
+<!-- PIMCORE version
+<div class="langSwitch3">
+    {% if app.request.locale == "nl" %}
+    <span class="langSwitch3__link &#45;&#45;status-active">NL
+                <span class="track-left"></span>
+            </span>
+    <a class="langSwitch3__link" href="{{_context.enURLPath}}">
+        <span class="track-right"></span>
+        EN
+    </a>
+    {% else %}
+    <a class="langSwitch3__link" href="{{_context.nlURLPath}}">NL
+        <span class="track-left"></span>
+    </a>
+    <span class="langSwitch3__link &#45;&#45;status-active">
+                <span class="track-right"></span>
+                EN
+            </span>
+    {% endif %}
+</div>-->
