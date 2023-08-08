@@ -22,6 +22,8 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.0625em;
+    line-height: normal;
     transition: all 0.6s ease;
     background-color: var(--color-background-button-icon, transparent);
     color: var(--color-text-button-icon, #000);
@@ -38,8 +40,9 @@
     --color-text-button-icon: var(--color-henk-white);
     --color-border-button-icon: var(--color-henk-black);
     border-width: 1px;
-    padding: 12px;
-    line-height: 34px;
+    /*padding: 12px;*/
+    padding: calc(12 / 17 * 1em);
+    /*line-height: 34px;*/
     aspect-ratio: 1 / 1;
 }
 
@@ -47,6 +50,10 @@
 .sh-atom-button-icon[data-size="35"][data-style="filled"],
 .sh-atom-button-icon[data-size="35"][data-style="outline"] {
     padding: 7px;
+}
+
+.sh-atom-button-icon[data-size="small"] {
+    font-size: 12px;
 }
 
 .sh-atom-button-icon[data-style="filled"]:hover,
@@ -66,6 +73,7 @@
 
 .sh-atom-button-icon[data-shape="circle"] {
     border-radius: 50%;
+    text-indent: -9999em;
 }
 
 @media (min-resolution: 2dppx) {

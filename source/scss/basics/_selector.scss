@@ -40,6 +40,7 @@
         + span {
           letter-spacing: 1.2px;
           font-weight: 300;
+          padding-right: 0.75em;
         }
 
         @media only screen and (min-width: 768px) {
@@ -52,7 +53,7 @@
           /// @date: 19 Jan 2022 16:43:11
           &::after {
             content: "—";
-            margin: 0 6px;
+            margin: 0 0 0 6px;
           }
         }
       }
@@ -63,6 +64,8 @@
       @media only screen and (min-width: 768px) {
         display: flex;
         justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 4px;
       }
     }
   }
@@ -229,4 +232,12 @@
   + .sh-atom-button {
     margin-top: 1rem;
   }
+}
+
+// added 27 june 2023
+.selector__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
 }

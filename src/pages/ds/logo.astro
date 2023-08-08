@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Logo">
+  <h1>HENK Logo</h1>
+  <img
+      src="/images/henk-logo.svg"
+  >
+  <hr>
+  <p>img tag with SVG and width 200</p>
+  <img
+      src="/images/henk-logo.svg"
+      width="200"
+  >
+  <p>img tag with PNG at 2x resolution: 400px, shown at 200px</p>
+  <img
+      src="/images/henk-logo_200w@2x.png"
+      width="200"
+  >
+</BaseLayout>

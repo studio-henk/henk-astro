@@ -1,7 +1,5 @@
 /// samples app
 // todo-nils element naming
-// @use "../../../vars" as *;
-/*@use "../../../_v2/text-styles/text-styles" as *;*/
 @use "../../../mixins/mixins" as *;
 
 // hide until loaded
@@ -135,7 +133,7 @@ img.sh-atom-sample {
     font-weight: 400;
     line-height: 21px;
     color: var(--color-henk-black);
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     display: grid;
     grid-template-columns: 37px 1fr;
     gap: 0 22px;
@@ -187,9 +185,13 @@ img.sh-atom-sample {
   place-content: center;
 }
 
+
 .sample__quickshop {
-  background-color: var(--color-henk-white, #f00);
+  background-color: var(--color-henk-white, #fff);
   max-width: 898px;
+  /* re-visit */
+  /* TODO: check pos fixed for ios? to prevent scrolling page while modal open */
+  max-height: 90vh;
   margin: 0 auto;
   border-radius: 8px;
 
@@ -249,9 +251,14 @@ img.sh-atom-sample {
       }
 
       @media only screen and (min-width: 768px) {
-        max-height: 643px;
+        /*max-height: 643px;*/
+        width: 100%;
       }
     }
+  }
+
+  .sh-l-grid__item:last-child {
+    overflow: auto;
   }
 }
 
@@ -881,8 +888,7 @@ main.sh-l-page-main .sample__quickshop__content ul,
   }
 
   // close button
-  .sh-atom-button {
-    &.--sh-vue-modal__close {
+  .--sh-vue-modal__close {
       margin: 0;
       display: flex;
       justify-content: center;
@@ -904,7 +910,6 @@ main.sh-l-page-main .sample__quickshop__content ul,
         color: #fff;
       }
     }
-  }
 }
 
 /// nprogress loading bar and spinner

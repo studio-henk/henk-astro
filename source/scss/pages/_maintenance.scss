@@ -42,6 +42,16 @@
     font-size: 0.875rem; // 14px
     font-weight: 400;
     text-align: center;
+    padding: 0 1rem;
+
+    //noinspection CssInvalidPropertyValue
+    @supports (text-wrap: balance) {
+      text-wrap: balance;
+    }
+
+    @media only screen and (max-width: 413px) {
+      font-size: 12px;
+    }
 
     @media only screen and (min-width: 768px) {
       // font-size: (20/10) + rem;
@@ -70,4 +80,20 @@
 
 p.sitemap-list__title {
   margin-top: 0;
+}
+
+// quick fix padding bottom mobile
+// 2023-06-28 • 16:29 - CEST
+// nils
+@media only screen and (max-width: 767px) {
+  .maintenance.grid {
+    padding-bottom: 20px;
+  }
+}
+
+// if inside main element and desktop
+@media only screen and (min-width: 768px) {
+  main .maintenance.grid {
+    padding-bottom: 48px;
+  }
 }

@@ -1,0 +1,411 @@
+<!-- if en -->
+<!--{#        {% set instockpageData %}#}
+{#            {% include "StdContent/includes/instockpageData_en.json" %}#}
+{#        {% endset %}#}-->
+<!--{#{% set instockpageData %}
+    {% include "https://assets.studio-henk.nl/assets/json/instockpageData_en.json" %}
+    {% endset %}#}
+{#{% set instockpageData = render(controller('App\\AppBundle\\Controller\\TwigBaseController:getJsonFileContentAction', {
+  'assetId': 773926
+})) %}#}
+{% set instockpageData = render(controller('App\\AppBundle\\Controller\\TwigBaseController:getJsonFileContentAction', {
+  'assetId': 636198
+})) %}
+{#{% set instockpageData = render(controller('App\\AppBundle\\Controller\\TwigBaseController:getJsonFileContentByNameAction', {
+  'assetName': "https://assets.studio-henk.nl/assets/json/instockpageData_en.json"
+})) %}#}-->
+<!--{% set instockpageDataJSON = instockpageData|json_decode() %}
+{% elseif app.request.locale == 'nl' %}
+{#        {% set instockpageData %}#}
+{#            {% include "StdContent/includes/instockpageData_nl.json" %}#}
+{#        {% endset %}#}
+{#{% set instockpageData = render(controller('App\\AppBundle\\Controller\\TwigBaseController:getJsonFileContentAction', {
+  'assetId': 773927
+})) %}#}
+{% set instockpageData = render(controller('App\\AppBundle\\Controller\\TwigBaseController:getJsonFileContentByNameAction', {
+  'assetName': "/json/instockpageData_nl.json"
+})) %}
+{% set instockpageDataJSON = instockpageData|json_decode() %}
+{% endif %}-->
+
+<!-- development version, includes helpful console warnings -->
+<script src="/static/std/assets/toolkit/scripts/vue.dev.js"></script>
+<!--<script src="/static/std/assets/toolkit/scripts/vue.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+<main>
+    <!--{%- set vars = {'areaBrickName' : 'myAreablock1' } -%}
+    {%- include 'Areas/_inc-sh-areabrick.html.twig' with vars -%}-->
+    <!-- bricks -->
+
+    <div
+        class="sh-molecule-padding-box"
+        style="
+                --size-spacing-units-top: 24;
+                --size-spacing-units-right: 11;
+                --size-spacing-units-bottom: 26;
+                --size-spacing-units-left: 5;
+                --size-spacing-units-top-desktop: 24;
+                --size-spacing-units-right-desktop: 5;
+                --size-spacing-units-bottom-desktop: 24;
+                --size-spacing-units-left-desktop: 5;
+            "
+    >
+        <!--{% set headerBlock = instockpageData|json_decode().header %}-->
+        <!-- title and intro -->
+        <!--<div class="page-header">
+          <p class="page-header__page-title">{{ headerBlock.title|raw }}</p>
+          <p class="page-header__page-description">{{ headerBlock.description|raw }}</p>
+        </div>-->
+    </div>
+
+    <!--{% set instockproducts = instockpageData|json_decode().inStockProducts %}-->
+    <div
+        class="sh-molecule-padding-box"
+        style="
+                --size-spacing-units-top: 0;
+                --size-spacing-units-right: 2;
+                --size-spacing-units-bottom: 5;
+                --size-spacing-units-left: 2;
+                --size-spacing-units-top-desktop: 0;
+                --size-spacing-units-right-desktop: 6;
+                --size-spacing-units-bottom-desktop: 5;
+                --size-spacing-units-left-desktop: 6;
+            "
+        id="instockapp"
+        v-cloak
+    >
+        <div v-show="errored">
+            <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+        </div>
+        <!-- loader -->
+        <!--include 'Components/organisms/org-loader/_org-loader.html.twig'-->
+        <!-- END loader -->
+        <ol class="org-grid-lister">
+            <li class="org-grid-lister__row" data-columns="1-2-4">
+                <!--for product in instockproducts-->
+                <!--set transDelay = loop.index * 0.15-->
+                <div class="org-grid-lister__item">
+                    <!--style="-->
+                    <!--                  animation-delay: {{ transDelay }}s;-->
+                    <!--                  "-->
+                    <div
+                        class="mdl-shop-product"
+                        data-variant="ar-portrait"
+                        {% if product.hoverImage|default is not empty %}
+                        data-hover="dissolve"
+                        {% endif %}
+                    >
+                        <a class="mdl-shop-product__link" @click="showInfoModal({{ loop.index0 }})">
+                            {% if product.transSquareImage|default %}
+                            <div class="mdl-shop-product__image-mask">
+                                <img class="mdl-shop-product__image"
+                                     src="{{ product.transSquareImage|default }}"
+                                     width="1417" height="1417"
+                                     alt="text">
+                            </div>
+                            {% endif %}
+                            <!-- optional 2nd image for dissolve hover here-->
+                            {% if product.hoverImage|default is not empty %}
+                            <div class="mdl-shop-product__image-mask">
+                                <img
+                                    class="mdl-shop-product__image-hover"
+                                    src="{{ product.hoverImage }}"
+                                    alt="test hover"
+                                >
+                            </div>
+                            {% endif %}
+                            <div class="mdl-shop-product__content">
+                                <p class="mdl-shop-product__title">{{ product.title }}</p>
+                                {% if product.description is not empty %}
+                                <p class="mdl-shop-product__desc">{{ product.description }}</p>
+                                {% endif %}
+                                <p class="mdl-shop-product__price">{{ product.currency }}{{ product.price }}</p>
+                            </div>
+                            <div class="sh-molecule-l-button-group">
+                                {% if product.hasFastDelivery %}
+                                {#{% include 'Components/Atoms/atom-button/_atom-button.html.twig' with {
+                                'buttonElement': 'span',
+                                'buttonType': '',
+                                'buttonText': product.fastDeliveryLabel,
+                                'buttonTextUppercase': 'no',
+                                'buttonVariant': '',
+                                'buttonSize': 'xsmall',
+                                'buttonExpand': false,
+                                'buttonOnClick': "",
+                                'buttonBgColor': '--color-accent2',
+                                'buttonTextColor': '',
+                                'buttonBorderColor': '--color-accent2',
+                                'iconName': 'icon-truck-fast',
+                                'iconPlacement': 'left'
+                                } %}#}
+                                <span
+                                    class="sh-atom-tag"
+                                    style="margin: 0;"
+                                >
+                                                <svg
+                                                    width="18"
+                                                    height="10"
+                                                    viewBox="0 0 18 10"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M3.73844 0.15979C3.5772 0.160443 3.44663 0.290516 3.44598 0.451277C3.44663 0.611907 3.5772 0.741978 3.73844 0.74263H11.8343V7.40696H8.14075C8.03837 6.70997 7.43862 6.16764 6.71656 6.16764C5.99463 6.16764 5.3949 6.70987 5.29251 7.40683L4.03312 7.40696V6.13915C4.03339 6.06119 4.00245 5.98623 3.94713 5.93111C3.89181 5.876 3.81656 5.84518 3.7383 5.84544C3.66043 5.84571 3.58584 5.87692 3.53104 5.9319C3.47612 5.98701 3.44544 6.06157 3.44583 6.13915V7.70065C3.44649 7.86129 3.57706 7.99136 3.7383 7.99201H5.32632C5.49071 8.60983 6.05151 9.0719 6.71655 9.0719C7.3816 9.0719 7.94237 8.61 8.10678 7.99201H13.4635C13.6279 8.60983 14.1887 9.0719 14.8538 9.0719C15.5188 9.0719 16.0784 8.61 16.2423 7.99201H17.5786C17.7398 7.99136 17.8704 7.86128 17.8711 7.70065V4.98377C17.8711 4.94629 17.8639 4.90894 17.8498 4.87407L16.7504 2.15956V2.15969C16.7059 2.04947 16.5989 1.977 16.4797 1.97621H12.422V0.451411C12.4213 0.290519 12.2904 0.160318 12.1289 0.159924L3.73844 0.15979ZM2.45953 2.01042C2.38166 2.01068 2.30707 2.04189 2.25214 2.09687C2.19735 2.15198 2.16667 2.22655 2.16706 2.30412C2.16759 2.46475 2.29828 2.59482 2.45952 2.59547H6.89003C6.9679 2.59573 7.04262 2.56531 7.09794 2.51059C7.15326 2.456 7.18446 2.38169 7.18472 2.30412C7.18511 2.22615 7.15417 2.15119 7.09872 2.09608C7.0434 2.04097 6.96829 2.01015 6.89002 2.01041L2.45953 2.01042ZM12.4223 2.56128H16.2803L17.1428 4.69243L12.4221 4.6923L12.4223 2.56128ZM1.13528 3.87582C1.05728 3.87556 0.982424 3.90612 0.927104 3.96097C0.871785 4.01569 0.840585 4.09013 0.840454 4.16783C0.840847 4.2454 0.872047 4.31971 0.927235 4.3743C0.982554 4.42902 1.05741 4.45958 1.13528 4.45919H6.89003C6.9679 4.45958 7.04262 4.42902 7.09794 4.3743C7.15326 4.31971 7.18446 4.2454 7.18472 4.16783C7.18459 4.09013 7.15352 4.01569 7.0982 3.96097C7.04288 3.90612 6.96803 3.87556 6.89003 3.87582H1.13528ZM12.4223 5.27736H17.284V7.40681H16.2758C16.1738 6.70982 15.576 6.16762 14.854 6.16762C14.1321 6.16762 13.5329 6.70985 13.4305 7.40681H12.4223L12.4223 5.27736ZM6.69505 6.75254C6.70239 6.75241 6.70947 6.75254 6.71681 6.75254C7.18795 6.75254 7.56851 7.1336 7.56851 7.61813C7.56851 8.10263 7.18795 8.48659 6.71681 8.48659C6.24567 8.48659 5.86511 8.10266 5.86511 7.61813C5.86511 7.14119 6.23413 6.76418 6.69503 6.75254H6.69505ZM14.8322 6.75254C14.8395 6.75241 14.8466 6.75254 14.8539 6.75254C15.3251 6.75254 15.7062 7.1336 15.7062 7.61813C15.7062 8.10263 15.3251 8.48659 14.8539 8.48659C14.3828 8.48659 14.0022 8.10266 14.0022 7.61813C14.0022 7.14119 14.3713 6.76418 14.8322 6.75254H14.8322Z"
+                                                        fill="currentColor">
+                                                    </path>
+                                                </svg>
+                    {{ product.fastDeliveryLabel }}
+                                            </span>
+                                {% endif %}
+                                {#{% include 'Components/Atoms/atom-button/_atom-button.html.twig' with {
+                                'buttonElement': 'span',
+                                'buttonType': '',
+                                'buttonText': '',
+                                'buttonVariant': 'circle',
+                                'buttonSize': 'xsmall',
+                                'buttonExpand': false,
+                                'buttonOnClick': "",
+                                'buttonBgColor': '--color-accent2',
+                                'buttonTextColor': '',
+                                'buttonBorderColor': '--color-accent2',
+                                'iconName': 'icon-bag',
+                                'iconPlacement': 'left'
+                                } %}#}
+                                <span
+                                    data-variant="circle"
+                                    data-size="xsmall"
+                                    data-icon="icon-bag"
+                                    class="sh-atom-button"
+                                    style="--color-background-button: var(--color-accent2); --color-border-button: var(--color-accent2); padding: 6px 7px;">
+                                            <svg
+                                                width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"><path
+                                                d="M11.1844 3.46582H0.595398V13.5714H11.1844V3.46582Z" stroke="black"
+                                                stroke-width="0.5" stroke-linecap="square"></path> <path
+                                                d="M2.8645 3.4656C2.8645 2.66626 3.18325 1.89965 3.75063 1.33442C4.31801 0.7692 5.08753 0.45166 5.88993 0.45166C6.69232 0.45166 7.46185 0.7692 8.02923 1.33442C8.5966 1.89965 8.91535 2.66626 8.91535 3.4656"
+                                                stroke="black" stroke-width="0.5" stroke-linecap="square"></path> <path
+                                                d="M8.38137 8.29677H3.39832M5.88984 5.8147V10.7788" stroke="black"
+                                                stroke-width="0.5" stroke-linecap="square"></path>
+                                            </svg>
+                                        </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </li>
+        </ol>
+        <transition name="qsm-fade" mode="out-in">
+            <div class="sample__quickshop__container sh-vue-modal" @click.self.prevent="closeInfoModal()" v-if="infoModalVisible">
+                <div class="sample__quickshop sh-vue-modal-dialog">
+                    <button
+                        class="sh-atom-button --sh-vue-modal__close"
+                        data-style="plain"
+                        @click.prevent="closeInfoModal()"
+                        aria-label="Close this modal"
+                    >
+                        <svg
+                            width="16"
+                            height="15"
+                            viewBox="0 0 16 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path d="M1.44766 0.810913L15.0795 14.4427" stroke="currentcolor"
+                                  stroke-linecap="round" />
+                            <path d="M15.0797 0.810913L1.44785 14.4428" stroke="currentcolor"
+                                  stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    <div class="sh-l-grid">
+                        <div class="sh-l-grid__item">
+                            <img :src="products[currentProductIndex].modal.productImage" alt="a preview of a sample" class="sample__modal-image" v-if="products[currentProductIndex].modal.productImage">
+                            <span v-else class="fail-whale">🤦️</span>
+                        </div>
+                        <div class="sh-l-grid__item">
+                            <div class="sample__quickshop__content">
+                                <p class="sample__name">[[ products[currentProductIndex].title ]]</p>
+                                <p class="sample__desc">[[ products[currentProductIndex].modal.description ]]</p>
+                                <p v-if="locale == 'nl' " class="sample__modal-heading-level2">
+                                    <strong>Materialen</strong></p>
+                                <p v-else class="sample__modal-heading-level2"><strong>Materials</strong></p>
+                                <ul v-if="products[currentProductIndex].modal.materials" class="sample__usps">
+                                    <li v-for="(value, key) in products[currentProductIndex].modal.materials">
+                                        <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.5 4L3.5 6.5L8.5 1" stroke="#1f1f1f" stroke-linecap="round"></path>
+                                        </svg>
+                                        [[ value ]]
+                                    </li>
+                                </ul>
+                                <p v-if="locale == 'nl' " class="sample__modal-heading-level2">
+                                    <strong>Afmetingen</strong></p>
+                                <p v-else class="sample__modal-heading-level2"><strong>Dimensions</strong></p>
+                                <ul v-if="products[currentProductIndex].modal.dimensions" class="product-dimensions">
+                                    <li v-for="(value, key) in products[currentProductIndex].modal.dimensions" :key="key">
+                                        <span>[[key]]</span><span>[[ value ]]</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="sample__quickshop__addtocart-container">
+                                <p class="cart__delivery" v-if="locale == 'nl' ">
+                                        <span class="sh-atom-tag" style="margin: 0;">
+                                            <svg
+                                                width="18"
+                                                height="10"
+                                                viewBox="0 0 18 10"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.73844 0.15979C3.5772 0.160443 3.44663 0.290516 3.44598 0.451277C3.44663 0.611907 3.5772 0.741978 3.73844 0.74263H11.8343V7.40696H8.14075C8.03837 6.70997 7.43862 6.16764 6.71656 6.16764C5.99463 6.16764 5.3949 6.70987 5.29251 7.40683L4.03312 7.40696V6.13915C4.03339 6.06119 4.00245 5.98623 3.94713 5.93111C3.89181 5.876 3.81656 5.84518 3.7383 5.84544C3.66043 5.84571 3.58584 5.87692 3.53104 5.9319C3.47612 5.98701 3.44544 6.06157 3.44583 6.13915V7.70065C3.44649 7.86129 3.57706 7.99136 3.7383 7.99201H5.32632C5.49071 8.60983 6.05151 9.0719 6.71655 9.0719C7.3816 9.0719 7.94237 8.61 8.10678 7.99201H13.4635C13.6279 8.60983 14.1887 9.0719 14.8538 9.0719C15.5188 9.0719 16.0784 8.61 16.2423 7.99201H17.5786C17.7398 7.99136 17.8704 7.86128 17.8711 7.70065V4.98377C17.8711 4.94629 17.8639 4.90894 17.8498 4.87407L16.7504 2.15956V2.15969C16.7059 2.04947 16.5989 1.977 16.4797 1.97621H12.422V0.451411C12.4213 0.290519 12.2904 0.160318 12.1289 0.159924L3.73844 0.15979ZM2.45953 2.01042C2.38166 2.01068 2.30707 2.04189 2.25214 2.09687C2.19735 2.15198 2.16667 2.22655 2.16706 2.30412C2.16759 2.46475 2.29828 2.59482 2.45952 2.59547H6.89003C6.9679 2.59573 7.04262 2.56531 7.09794 2.51059C7.15326 2.456 7.18446 2.38169 7.18472 2.30412C7.18511 2.22615 7.15417 2.15119 7.09872 2.09608C7.0434 2.04097 6.96829 2.01015 6.89002 2.01041L2.45953 2.01042ZM12.4223 2.56128H16.2803L17.1428 4.69243L12.4221 4.6923L12.4223 2.56128ZM1.13528 3.87582C1.05728 3.87556 0.982424 3.90612 0.927104 3.96097C0.871785 4.01569 0.840585 4.09013 0.840454 4.16783C0.840847 4.2454 0.872047 4.31971 0.927235 4.3743C0.982554 4.42902 1.05741 4.45958 1.13528 4.45919H6.89003C6.9679 4.45958 7.04262 4.42902 7.09794 4.3743C7.15326 4.31971 7.18446 4.2454 7.18472 4.16783C7.18459 4.09013 7.15352 4.01569 7.0982 3.96097C7.04288 3.90612 6.96803 3.87556 6.89003 3.87582H1.13528ZM12.4223 5.27736H17.284V7.40681H16.2758C16.1738 6.70982 15.576 6.16762 14.854 6.16762C14.1321 6.16762 13.5329 6.70985 13.4305 7.40681H12.4223L12.4223 5.27736ZM6.69505 6.75254C6.70239 6.75241 6.70947 6.75254 6.71681 6.75254C7.18795 6.75254 7.56851 7.1336 7.56851 7.61813C7.56851 8.10263 7.18795 8.48659 6.71681 8.48659C6.24567 8.48659 5.86511 8.10266 5.86511 7.61813C5.86511 7.14119 6.23413 6.76418 6.69503 6.75254H6.69505ZM14.8322 6.75254C14.8395 6.75241 14.8466 6.75254 14.8539 6.75254C15.3251 6.75254 15.7062 7.1336 15.7062 7.61813C15.7062 8.10263 15.3251 8.48659 14.8539 8.48659C14.3828 8.48659 14.0022 8.10266 14.0022 7.61813C14.0022 7.14119 14.3713 6.76418 14.8322 6.75254H14.8322Z"
+                                                    fill="currentColor">
+                                                </path>
+                                            </svg>
+                                            snel en gratis bezorging
+                                        </span>
+                                </p>
+                                <p v-else class="cart__delivery">
+                                        <span class="sh-atom-tag" style="margin: 0;">
+                                            <svg
+                                                width="18"
+                                                height="10"
+                                                viewBox="0 0 18 10"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.73844 0.15979C3.5772 0.160443 3.44663 0.290516 3.44598 0.451277C3.44663 0.611907 3.5772 0.741978 3.73844 0.74263H11.8343V7.40696H8.14075C8.03837 6.70997 7.43862 6.16764 6.71656 6.16764C5.99463 6.16764 5.3949 6.70987 5.29251 7.40683L4.03312 7.40696V6.13915C4.03339 6.06119 4.00245 5.98623 3.94713 5.93111C3.89181 5.876 3.81656 5.84518 3.7383 5.84544C3.66043 5.84571 3.58584 5.87692 3.53104 5.9319C3.47612 5.98701 3.44544 6.06157 3.44583 6.13915V7.70065C3.44649 7.86129 3.57706 7.99136 3.7383 7.99201H5.32632C5.49071 8.60983 6.05151 9.0719 6.71655 9.0719C7.3816 9.0719 7.94237 8.61 8.10678 7.99201H13.4635C13.6279 8.60983 14.1887 9.0719 14.8538 9.0719C15.5188 9.0719 16.0784 8.61 16.2423 7.99201H17.5786C17.7398 7.99136 17.8704 7.86128 17.8711 7.70065V4.98377C17.8711 4.94629 17.8639 4.90894 17.8498 4.87407L16.7504 2.15956V2.15969C16.7059 2.04947 16.5989 1.977 16.4797 1.97621H12.422V0.451411C12.4213 0.290519 12.2904 0.160318 12.1289 0.159924L3.73844 0.15979ZM2.45953 2.01042C2.38166 2.01068 2.30707 2.04189 2.25214 2.09687C2.19735 2.15198 2.16667 2.22655 2.16706 2.30412C2.16759 2.46475 2.29828 2.59482 2.45952 2.59547H6.89003C6.9679 2.59573 7.04262 2.56531 7.09794 2.51059C7.15326 2.456 7.18446 2.38169 7.18472 2.30412C7.18511 2.22615 7.15417 2.15119 7.09872 2.09608C7.0434 2.04097 6.96829 2.01015 6.89002 2.01041L2.45953 2.01042ZM12.4223 2.56128H16.2803L17.1428 4.69243L12.4221 4.6923L12.4223 2.56128ZM1.13528 3.87582C1.05728 3.87556 0.982424 3.90612 0.927104 3.96097C0.871785 4.01569 0.840585 4.09013 0.840454 4.16783C0.840847 4.2454 0.872047 4.31971 0.927235 4.3743C0.982554 4.42902 1.05741 4.45958 1.13528 4.45919H6.89003C6.9679 4.45958 7.04262 4.42902 7.09794 4.3743C7.15326 4.31971 7.18446 4.2454 7.18472 4.16783C7.18459 4.09013 7.15352 4.01569 7.0982 3.96097C7.04288 3.90612 6.96803 3.87556 6.89003 3.87582H1.13528ZM12.4223 5.27736H17.284V7.40681H16.2758C16.1738 6.70982 15.576 6.16762 14.854 6.16762C14.1321 6.16762 13.5329 6.70985 13.4305 7.40681H12.4223L12.4223 5.27736ZM6.69505 6.75254C6.70239 6.75241 6.70947 6.75254 6.71681 6.75254C7.18795 6.75254 7.56851 7.1336 7.56851 7.61813C7.56851 8.10263 7.18795 8.48659 6.71681 8.48659C6.24567 8.48659 5.86511 8.10266 5.86511 7.61813C5.86511 7.14119 6.23413 6.76418 6.69503 6.75254H6.69505ZM14.8322 6.75254C14.8395 6.75241 14.8466 6.75254 14.8539 6.75254C15.3251 6.75254 15.7062 7.1336 15.7062 7.61813C15.7062 8.10263 15.3251 8.48659 14.8539 8.48659C14.3828 8.48659 14.0022 8.10266 14.0022 7.61813C14.0022 7.14119 14.3713 6.76418 14.8322 6.75254H14.8322Z"
+                                                    fill="currentColor">
+                                                </path>
+                                            </svg>
+                                            fast and free delivery
+                                        </span>
+                                </p>
+                                <a
+                                    class="sh-atom-button"
+                                    href="#"
+                                    data-style="outline-dark"
+                                    data-alignment="price-separator"
+                                    data-expand="true"
+                                    @click.prevent="sendToOrderCart(products[currentProductIndex].id);"
+                                >
+                                    <span v-if="locale == 'nl' ">In winkelwagen</span>
+                                    <span v-else>Add to cart</span>
+                                    <span class="separator">•</span>
+                                    <span>[[ products[currentProductIndex].currency ]] [[ products[currentProductIndex].price ]]</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </div>
+
+    <!-- bricks in twig -->
+</main>
+</BaseLayout>
+<style>
+    .org-grid-lister__item {
+        opacity: 0;
+        animation: 1s linear 0.3s forwards fadeIn;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+<script>
+    // app
+    /*var instockproductsArr = JSON.parse('{{ instockpageDataJSON.inStockProducts|json_encode|e('js') }}');
+    var locale = JSON.parse('{{ app.request.locale|json_encode|e('js') }}');*/
+    var app = new Vue({
+        delimiters: ['[[', ']]'],
+        el: "#instockapp",
+        data: {
+            loading: true,
+            errored: false,
+            locale: locale,
+            infoModalVisible: false,
+            currentProductIndex: null,
+            products: instockproductsArr
+        },
+        methods: {
+            showInfoModal(prodIndex) {
+                this.infoModalVisible = true;
+                // connect to data
+                this.currentProductIndex = prodIndex;
+                // prevent page from scrolling
+                document.querySelector("body").style.overflow = "hidden";
+                document.querySelector("body").style.touchAction = "none";
+            },
+            closeInfoModal() {
+                this.infoModalVisible = false;
+                // allow page to scroll again
+                document.querySelector("body").style.overflow = "unset";
+                document.querySelector("body").style.touchAction = "unset";
+            },
+            sendToOrderCart(prodID) {
+                let url = "/" + this.locale + "/cart/add?item=" + prodID;
+                url = url += "&qty=1&doNotRedirect=true";
+
+                axios.get(url)
+                    .then(function (response) {
+                        console.log(response);
+                        // clear quickCart localstorage if response success
+                        if (response.data.success) {
+                            // show the redirected response
+                            console.log('response ok');
+                            this.closeInfoModal();
+                            // send to cart list page
+                            location.assign('/' + this.locale + '/cart/list/');
+                        }
+                        if (response.status === 200) {
+                            console.log('response 200, success');
+                        }
+                        if (response.status === 404) {
+                            console.log('response 404');
+                        }
+                        if (response.status === 301 || response.status === 302) {
+                            // show the redirecting response
+                            console.log('response NOT ok: 301 or 302');
+                        }
+                    }.bind(this))
+                    .catch(function (error) {
+                        // console.log(error);
+                        if (error.response) {
+                            // The request was made and the server responded with a status code
+                            // that falls out of the range of 2xx
+                            console.log(error.response.data);
+                            console.log(error.response.status);
+                            console.log(error.response.headers);
+                        } else if (error.request) {
+                            // The request was made but no response was received
+                            // console.log(error.request);
+                            console.log('no response received');
+                        } else {
+                            // Something happened in setting up the request that triggered an Error
+                            console.log('Error', error.message);
+                        }
+                        // console.log(error.config);
+                        console.log(error.toJSON());
+                    });
+                // }
+            }
+        },
+        created() {
+            console.log('app created');
+        },
+        mounted() {
+            this.$nextTick(function () {
+                // Code that will run only after the
+                // entire view has been rendered
+                this.loading = false;
+            });
+        }
+    });
+</script>

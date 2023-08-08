@@ -15,3 +15,5 @@
 - still in usp brick
 
 ## --var-global-font?
+
+- @TODO: CSS img height auto?

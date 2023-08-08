@@ -15,7 +15,8 @@
 
 .hero-video-brick video {
   width: 100%;
-  height: 100vh;
+  /*height: 100vh;*/
+  height: calc(100svh - var(--size-height-for-hero));
   object-fit: cover;
   object-position: center center;
 }

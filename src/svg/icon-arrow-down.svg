@@ -1,0 +1,20 @@
+<svg
+        width="16"
+        height="38"
+        viewBox="0 0 16 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+>
+    <path
+        d="M1 29.875L8 36.875L15 29.875"
+        stroke="currentColor"
+        stroke-linecap="square"
+    >
+    </path>
+    <path
+        d="M8 1L8 35.7083"
+        stroke="currentColor"
+        stroke-linecap="square"
+    >
+    </path>
+</svg>

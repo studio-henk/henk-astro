@@ -23,6 +23,8 @@
     appearance: none;
     border: 0;
     cursor: pointer;
+    /* fix for issue on PDP Brick Sofa */
+    padding: 0;
 }
 
 [data-custom-checkbox="true"] .atom-checkbox + .atom-label::after {

@@ -1,0 +1,429 @@
+.mdl-shop-product {
+  display: inline-flex;
+
+  // reset margins etc on children
+  > * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  img {
+    height: auto;
+  }
+
+  .mdl-shop-product__image,
+  .mdl-shop-product__image-hover {
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  .mdl-shop-product__image-hover {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  /* with price */
+  .mdl-shop-product__content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    .mdl-shop-product__desc {
+      grid-column: 1/3;
+    }
+
+    .mdl-shop-product__price {
+      margin: 0;
+      grid-row: 1/1;
+      grid-column: 2/2;
+      font-size: 0.875rem; // 14px
+      font-weight: 300;
+      line-height: 25px;
+      text-align: right;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-feature-settings: "pnum" on, "lnum" on;
+      margin-top: 4px;
+      padding-right: 12px;
+    }
+  }
+
+  &:not([data-hover="dissolve"]) {
+    .mdl-shop-product__link,
+    .mdl-shop-product__container {
+      display: grid;
+
+      @media (hover: hover) {
+        &:hover {
+          .mdl-shop-product__image {
+            transform: scale(1.01);
+          }
+        }
+      }
+    }
+  }
+
+  &[data-hover="dissolve"] {
+    .mdl-shop-product__link,
+    .mdl-shop-product__container {
+      position: relative;
+
+      @media (hover: hover) {
+        &:hover {
+          .mdl-shop-product__image-hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .mdl-shop-product__image-mask {
+    overflow: hidden;
+
+    // also rounded corners when zoom in on hover
+    border-radius: 5px;
+
+    // fix image height when hovered
+    // issue on safari mac os
+    display: flex;
+
+    + .mdl-shop-product__image-mask {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .mdl-shop-product__title {
+    line-height: 28px;
+    margin-top: 4px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0.04em;
+    padding-left: 0;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: none;
+      letter-spacing: 0.04em;
+      padding-left: 0;
+    }
+  }
+
+  .mdl-shop-product__desc {
+    font-size: 0.75rem;
+    margin: 0;
+    padding-left: 0;
+
+    @media only screen and (max-width: 767px) {
+      padding-left: 0;
+    }
+  }
+
+  // variant portrait aspect ratio with square images
+  &[data-variant="ar-portrait"] {
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    .mdl-shop-product__link {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      color: currentcolor;
+    }
+
+    .mdl-shop-product__image-mask {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .mdl-shop-product__image-mask:first-child {
+      /*background-color: var(--color-background-card-product, var(--color-accent2));*/
+      background-color: var(--color-background-card-product, #f9f8f6);
+      flex: 1 1 auto;
+    }
+
+    .mdl-shop-product__image,
+    .mdl-shop-product__image-hover {
+      object-fit: cover;
+      height: 100%;
+      transition: all 0.3s ease;
+      width: auto;
+    }
+
+    @supports (aspect-ratio: 0.8) {
+      .mdl-shop-product__image,
+      .mdl-shop-product__image-hover {
+        aspect-ratio: 0.8;
+      }
+    }
+
+    @supports not (aspect-ratio: 0.8) {
+      .mdl-shop-product__image,
+      .mdl-shop-product__image-hover {
+        max-height: 62vw;
+
+        @media only screen and (min-width: 992px) {
+          max-height: 31vw;
+        }
+      }
+    }
+
+    // exactly the same? as above....
+    .mdl-shop-product__content {
+      display: grid;
+      grid-template-columns: 1fr auto;
+
+      .mdl-shop-product__desc {
+        grid-column: 1/3;
+      }
+
+      .mdl-shop-product__price {
+        margin: 0;
+        grid-row: 1/1;
+        grid-column: 2/2;
+        font-size: 0.875rem; // 14px
+        font-weight: 300;
+        line-height: 25px;
+        text-align: right;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-feature-settings: "pnum" on, "lnum" on;
+        margin-top: 4px;
+        padding-right: 12px;
+      }
+    }
+  }
+
+  // variant large category image
+  &[data-variant="category-setting"] {
+    height: 100%;
+
+    .mdl-shop-product__link,
+    .mdl-shop-product__container {
+      position: relative;
+    }
+
+    .mdl-shop-product__image-mask {
+      @media only screen and (max-width: 991px) {
+        border-radius: 0;
+
+        .mdl-shop-product__image {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .mdl-shop-product__image {
+      height: 100%;
+      aspect-ratio: 0.8;
+      object-fit: cover;
+
+      @media only screen and (min-width: 1920px) {
+        width: auto;
+      }
+    }
+
+    .mdl-shop-product__content {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 0 clamp(32px, 7.24637681vw, 48px) 3rem;
+    }
+
+    .mdl-shop-product__title {
+      color: var(--color-white, #f00);
+      margin-top: 0;
+      font-size: 2.0625rem; // 33px
+      text-transform: capitalize;
+      font-weight: 300;
+      letter-spacing: 0.07em;
+      line-height: 50px;
+      padding-left: 0;
+    }
+
+    .mdl-shop-product__desc {
+      font-size: 1rem;
+      line-height: 28px;
+      color: #fff;
+      max-width: 50%;
+      padding-left: 0;
+    }
+  }
+}
+
+// grid
+// used on customer favorites page
+[data-grid="shop-product"] {
+  // padding top and bottom tricky
+  // design wants 16 on top, 30 between this and next block
+  // next block has its own (same) padding ie on top
+  // with two shop-product blocks the space between with padding 16 is 38px
+  // 8 / 2 = 4, 16 -4 = 12
+  // if not first-child then do 12px?
+  padding: 16px;
+
+  &:not(:first-child) {
+    padding-top: 8px;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 16px;
+  row-gap: 30px;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media only screen and (min-width: 1440px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  // variant settingImage
+  &[data-variant~="settingImage"] {
+    align-items: stretch;
+
+    @media only screen and (min-width: 1280px) {
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: center;
+      align-items: stretch;
+
+      .sh-l-grid__item {
+        &:first-child {
+          grid-column: 1/3;
+          grid-row: 1/3;
+        }
+      }
+    }
+
+    .sh-l-grid__item {
+      &:first-child {
+        .mdl-shop-product__image-mask {
+          @media only screen and (max-width: 767px) {
+            border-radius: 0;
+
+            .mdl-shop-product__image {
+              border-radius: 0;
+            }
+          }
+        }
+
+        .mdl-shop-product {
+          display: block;
+          height: 100%;
+          margin: 0 -16px;
+
+          @media only screen and (min-width: 768px) {
+            margin: revert;
+          }
+        }
+
+        .mdl-shop-product__link,
+        .mdl-shop-product__container {
+          position: relative;
+          height: 100%;
+        }
+
+        .mdl-shop-product__image {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+        }
+
+        .mdl-shop-product__container .mdl-shop-product__title {
+          position: absolute;
+          bottom: 14px;
+          left: 24px;
+          color: var(--color-white, #f00);
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  // flipped version
+  &[data-variant*="settingImage --flipped"] {
+    @media only screen and (min-width: 1280px) {
+      .sh-l-grid__item {
+        &:first-child {
+          grid-column: 3/5;
+        }
+      }
+    }
+  }
+
+  &[data-variant="square"] {
+    .mdl-shop-product:not([data-hover="dissolve"]) .mdl-shop-product__link {
+      background: #fff;
+      grid-template-rows: 1fr auto auto;
+    }
+
+    /* @todo: where is this used??? */
+    .mdl-shop-product__image-mask {
+      background-color: #f9f8f6;
+    }
+
+    .mdl-shop-product__image-mask + .mdl-shop-product__image-mask {
+      background-color: transparent;
+    }
+
+    .mdl-shop-product .mdl-shop-product__image,
+    .mdl-shop-product .mdl-shop-product__image-hover {
+      width: 100%;
+      aspect-ratio: 340/425;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    &[data-orientation="landscape"] {
+      .mdl-shop-product .mdl-shop-product__image,
+      .mdl-shop-product .mdl-shop-product__image-hover {
+        aspect-ratio: 425/340;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// inside paddingBox
+.sh-molecule-padding-box .sh-l-grid[data-variant~="settingImage"] {
+  padding: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .sh-molecule-padding-box .sh-l-grid[data-variant~="settingImage"] > .sh-l-grid__item:first-child {
+    --spacing-margin-right-setting-image: calc(var(--size-spacing-units-right) * var(--size-spacing-unit-base) * -1);
+    --spacing-margin-left-setting-image: calc(var(--size-spacing-units-left) * var(--size-spacing-unit-base) * -1);
+    margin: 0 var(--spacing-margin-right-setting-image, -16px) 0 var(--spacing-margin-left-setting-image, -16px);
+  }
+
+  .sh-molecule-padding-box .sh-l-grid[data-variant~="settingImage"] .sh-l-grid__item:first-child .mdl-shop-product {
+    margin: 0;
+  }
+}
+
+[data-variant~="settingImage"] .sh-l-grid__item:first-child .mdl-shop-product[data-variant="ar-portrait"] .mdl-shop-product__link .mdl-shop-product__content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 clamp(32px, 7.24637681vw, 48px) 3rem;
+}

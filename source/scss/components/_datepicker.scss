@@ -1,8 +1,7 @@
-/// @todo check if used
+// used by jquery date picker on checkout page when product is in stock.
 
 .ui-datepicker.ui-widget {
   font-family: "ff-scala-sans-pro", sans-serif;
-  // width: 100%;
 }
 
 .ui-widget-header {
@@ -44,20 +43,13 @@ td[data-handler="selectDay"] .ui-state-default {
 }
 
 .ui-datepicker-prev > .ui-icon {
-  // background-image: url('../images/icons/chevron_left-24px.svg');
-  background-image: url('/static/std/assets/toolkit/images/icons1/chevron_left-24px.svg');
+  background-image: url('/static/std/assets/toolkit/images/icons1/chevron_left-24px.svg') !important;
   background-position: 50% 50%;
 }
 
 .ui-datepicker-next > .ui-icon {
-  // background-image: url('../images/icons/chevron_right-24px.svg');
-  background-image: url('/static/std/assets/toolkit/images/icons1/chevron_right-24px.svg');
+  background-image: url('/static/std/assets/toolkit/images/icons1/chevron_right-24px.svg') !important;
   background-position: 50% 50%;
-  // margin: 0;
-  // width: 100%;
-  // height: 100%;
-  // left: auto;
-  // top: auto;
 }
 .ui-datepicker .ui-datepicker-prev-hover,
 .ui-datepicker .ui-datepicker-next-hover {
@@ -65,10 +57,8 @@ td[data-handler="selectDay"] .ui-state-default {
   background-image: none;
   border-color: #000;
   border-radius: 100%;
-  // transition: border-color .3s ease-in-out;
 }
 .ui-datepicker .ui-datepicker-prev-hover > .ui-icon,
 .ui-datepicker .ui-datepicker-next-hover > .ui-icon {
-  // background-image: none;
   background-color: transparent;
 }

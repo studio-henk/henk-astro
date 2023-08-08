@@ -1,0 +1,14 @@
+<svg
+    width="20"
+    height="8"
+    viewBox="0 0 20 8"
+    fill="none"
+    aria-labelledby="iconArrowLeft"
+    id="iconArrowLeft"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title>iconArrowLeft</title>
+    <desc>icon Arrow Left</desc>
+    <path id="arrow-left-line" d="M20 4L7.48148 4" stroke="currentcolor" stroke-width="0.8"/>
+    <path id="arrow-left-point" d="M11.3333 8L7 4L11.3333 0" stroke="currentcolor" stroke-width="0.8"/>
+</svg>
