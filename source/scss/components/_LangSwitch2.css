@@ -3,6 +3,7 @@
     align-items: baseline;
     gap: 4px;
     position: relative;
+    cursor: pointer;
 }
 
 .LangSwitch2 input[type="checkbox"] {
