@@ -39,7 +39,7 @@
     
   <link rel="stylesheet" href="/_astro/new-nav-mobile.bde46983.css" />
 <link rel="stylesheet" href="/_astro/new-nav.27683366.css" />
-<link rel="stylesheet" href="/_astro/new-nav.070314de.css" /><script type="module">
+<link rel="stylesheet" href="/_astro/new-nav.f846cbce.css" /><script type="module">
 </script></head>
   <body>
     <div class="wrapper" data-scroller>
@@ -459,20 +459,58 @@
       <a id="pn-inspiration" class="hoverlink astro-SKXPPVVM" href="#inspiration" data-target="inspiration">Inspiration</a>
       <a href="/en/about-us-new-nav" class="astro-SKXPPVVM">About</a>
     </nav>
-    
     <div class="utilities-nav astro-SKXPPVVM">
       <ul class="utilities-nav__list astro-SKXPPVVM">
         <li class="utilities-nav__item astro-SKXPPVVM" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this);" class="astro-SKXPPVVM">Search</a></li>
-        <li class="utilities-nav__item astro-SKXPPVVM" id="utilities-nav__language" onmouseleave="HideLangMenu(this)"><a href="#language" onmouseenter="ShowLangMenu(this)" class="astro-SKXPPVVM">Language</a>
-          <!-- lang menu -->
-          <!--ShowLangMenu-->
-          <div class="LangMenu astro-SKXPPVVM">
-            <ol class="LangMenu__list astro-SKXPPVVM">
-              <li class="LangMenu__list-item astro-SKXPPVVM"><a class="LangMenu__link astro-SKXPPVVM" href="#">English</a></li>
-              <li class="LangMenu__list-item astro-SKXPPVVM"><a class="LangMenu__link astro-SKXPPVVM" href="#NL">Nederlands</a></li>
-            </ol>
-          </div>
-        </li>
+        <!--<li class="utilities-nav__item" id="utilities-nav__language">
+          <a href="/nl">NL</a>
+          <span> | </span>
+          <a href="/en">EN</a>
+        </li>-->
+        <!--<LangSwitch />-->
+        <div class="LangSwitch2" data-url="new-nav-mobile/" id="LangSwitch2">
+    <span class="LangSwitch2__pseudo-label">NL</span>
+    <input type="checkbox" id="LangSwitch2__language" class="LangSwitch2__checkbox" checked="true">
+    <label for="LangSwitch2__language" class="LangSwitch2__label">
+        <span class="slider"></span>
+    </label>
+    <span class="LangSwitch2__pseudo-label">EN</span>
+</div>
+<script defer>(function(){const lang = "en";
+
+    const LangSwitch2Element = document.getElementById("LangSwitch2");
+    const LangSwitch2__input = document.getElementById("LangSwitch2__language");
+    const isCheckedDisplay = document.getElementById("isCheckedDisplay");
+    const LangSwitch2__url = LangSwitch2Element.dataset.url;
+    console.log("status on load: " + LangSwitch2__input.checked);
+    console.log(lang);
+
+    function isChecked () {
+        isCheckedDisplay.innerHTML = LangSwitch2__input.checked;
+    }
+
+    function updateChecked () {
+        console.log("status on change: " + LangSwitch2__input.checked);
+        isCheckedDisplay.innerHTML = LangSwitch2__input.checked;
+    }
+
+    // isChecked();
+
+    function handleChangeEvent() {
+        // console.log("hello, change: " + this.checked);
+        // updateChecked();
+        let otherLang;
+        if (lang =="nl") {
+            otherLang = "en"
+        } else {
+            otherLang = "nl"
+        }
+        document.location.assign("/" + otherLang + "/" + LangSwitch2__url);
+    }
+
+    // change listener
+    LangSwitch2__input.addEventListener("change", handleChangeEvent, false);
+})();</script>
         <li class="utilities-nav__item astro-SKXPPVVM" id="utilities-nav__cart"><a href="#" class="atom-badge">6</a></li>
       </ul>
     </div>
