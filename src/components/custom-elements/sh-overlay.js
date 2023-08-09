@@ -1,10 +1,15 @@
 const template = document.createElement("template");
 template.innerHTML = `
   <style>
-     .hello-world h1 {
-      font-weight: bold;
-      font-family: sans-serif;
-      color: red;
+    :host {
+        display: inline-block;
+        /*background-color: pink;
+        width: 100%;
+        height: 100px;*/
+    }
+
+    :host([open]) {
+        background-color: purple;
     }
     
     .sh-overlay {
@@ -20,10 +25,10 @@ template.innerHTML = `
     --color-text-button-icon: currentcolor;
   }
 
-  [open] .sh-overlay {
+  :host([open]) .sh-overlay {
     opacity: 1;
     pointer-events: all;
-    z-index: 999;
+    z-index: 99999;
   }
 
   .sh-overlay__inner {
@@ -36,13 +41,19 @@ template.innerHTML = `
     transition-timing-function: ease;
   }
 
-  [open] .sh-overlay__inner {
+  :host([open]) .sh-overlay__inner {
     opacity: 1;
   }
   
   sh-overlay[open] {
     background-color: red;
     opacity: 1;
+  }
+  
+  .search-modal__close-button {
+    position: absolute;
+    top: 28px;
+    right: 28px;
   }
   </style>
   <div class="sh-overlay" id="search-modal">
@@ -59,68 +70,92 @@ template.innerHTML = `
       </span>
     </button>
         <span id="name"></span>
-        <slot>content here</slot>
+        <slot />
     </div>
   </div>  
 `;
 
 class ShOverlay extends HTMLElement {
+  // A getter/setter for an open property.
+  get open() {
+    return this.hasAttribute("open");
+  }
+    /*get open() {
+        return this.getAttribute("open");
+    }*/
 
-    // A getter/setter for an open property.
-    get open() {
-        return this.hasAttribute('open');
+  set open(val) {
+    // Reflect the value of the open property as an HTML attribute.
+    if (val) {
+      this.setAttribute("open", val);
+    } else {
+      this.removeAttribute("open");
     }
+    // this.toggleDrawer();
+    this.showOverlay();
+  }
 
-    set open(val) {
-        // Reflect the value of the open property as an HTML attribute.
-        if (val) {
-            this.setAttribute('open', '');
-        } else {
-            this.removeAttribute('open');
-        }
-        // this.toggleDrawer();
-        this.showOverlay();
-    }
+  constructor() {
+    super();
+    this.shadow = this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    // this.shadowRoot.querySelector("#name").innerText = "World";
+    /*this.overlaytrigger = this.getAttribute("overlaytrigger");*/
+    //  console.log(this.getAttribute("overlaytrigger"));
+  }
 
-    constructor() {
-        super();
-        this.shadow = this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-        //this.shadowRoot.querySelector("#name").innerText = "World";
+  showOverlay() {
+    console.log("showing overlay");
+        // this._open = true;
+      // this.open = true;
+      // this.setAttribute("open", "");
+  }
 
-        // set listener on close button
-        const closeButton = this.shadowRoot.querySelector(".search-modal__close-button");
-        //console.log(closeButton);
-        closeButton.addEventListener("click", this.hideOverlay, false);
-    }
+  hideOverlay() {
+    console.log("hiding overlay");
+    // this.open = false;
+  }
 
-    showOverlay() {
-        console.log("showing overlay");
-    }
+  static get observedAttributes() {
+    return ["name", "open"];
+  }
 
-    hideOverlay() {
-        console.log("hiding overlay");
-    }
-
-    static get observedAttributes() {
-        return ["name", "overlayTrigger", "open"];
-    }
-
-    /*attributeChangedCallback(property, oldValue, newValue) {
+  /*attributeChangedCallback(property, oldValue, newValue) {
         if (oldValue === newValue) return;
         this[property] = newValue;
     }*/
-    attributeChangedCallback(name, oldValue, newValue) {
-        // do stuff when attributes change
-        if (this.open) {
-            console.log("opened");
-        } else {
-            console.log("closed");
-        }
+  attributeChangedCallback(name, oldValue, newValue) {
+    // do stuff when attributes change
+    if (this.open) {
+      console.log("opened");
+    } else {
+      console.log("closed");
     }
+    // this.open = newValue;
+      console.log("old: " + oldValue + ", new: " + newValue);
+  }
 
-    connectedCallback() {
-        this.shadowRoot.querySelector("#name").innerText = this.name;
+  connectedCallback() {
+    // this.shadowRoot.querySelector("#name").innerText = this.name;
+    // set listener on element to open this overlay
+    // target element is its ID which is a attribute on the component
+      this.overlaytrigger = this.getAttribute("overlaytrigger");
+      const openButton = document.getElementById(this.overlaytrigger);
+      console.log(openButton);
+      openButton.addEventListener("click", this.showOverlay, false);
+
+    // set listener on close button
+    const closeButton = this.shadowRoot.querySelector(
+      ".search-modal__close-button"
+    );
+    //console.log(closeButton);
+    closeButton.addEventListener("click", this.hideOverlay, false);
+  }
+
+    disconnectedCallback() {
+      console.log("disconnectedCallback called");
+        /*this.removeEventListener('click', this._onClick);*/
+        this.removeEventListener('click', this.hideOverlay, false);
     }
 }
 
