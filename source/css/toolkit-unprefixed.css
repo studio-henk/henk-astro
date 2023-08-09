@@ -552,7 +552,8 @@ templates/Areas/reviews-brick/view.html.twig
 ::after,
 ::selection {
   /* font */
-  --font-body: "Haas Grot Text R Web";
+  /*--font-body: "Haas Grot Text R Web";*/
+  --font-body: "ff-scala-sans-pro";
   /* colors */
   --color-background-page-primary-base: var(--color-white, #fff);
   --color-background-page: var(--color-white, #fff);
@@ -714,7 +715,8 @@ body {
   margin: 0;
   /*font-family: "Haas Grot Text R Web", sans-serif;*/
   font-family: var(--font-body, sans-serif), sans-serif;
-  font-weight: 400;
+  /*font-weight:  400;*/
+  font-weight: 300;
   font-size: 1rem;
 }
 

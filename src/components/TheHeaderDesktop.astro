@@ -6,6 +6,8 @@ import AtomBadge from "./Atoms/AtomBadge.astro";
 import AtomFigure from "./Atoms/AtomFigure.astro";
 import LangSwitch from "./LangSwitch.astro";
 import LangSwitch2 from "./LangSwitch2.astro";
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
 const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 ---
 <header
@@ -39,9 +41,10 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     </nav>
     <div class="utilities-nav">
       <ul class="utilities-nav__list">
-        <li class="utilities-nav__item" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this, event);">Search</a></li>
+        <!--<li class="utilities-nav__item" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this, event);">Search</a></li>-->
+        <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"}>Search</a></li>
         <LangSwitch2 />
-        <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} badgeNumber="6" /></li>
+        <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" /></li>
       </ul>
     </div>
   </div>
