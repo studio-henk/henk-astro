@@ -28,13 +28,18 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
         id="pn-inspiration"
         class="hoverlink"
         href="#inspiration"
-        data-target="inspiration">Inspiration</a
-      >
-      <a href="/en/about-us-new-nav">About</a>
+        data-target="inspiration">Inspiration
+      </a>
+      <a
+          id="pn-about"
+          class="hoverlink"
+          href="#about"
+          data-target="about">About
+      </a>
     </nav>
     <div class="utilities-nav">
       <ul class="utilities-nav__list">
-        <li class="utilities-nav__item" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this);">Search</a></li>
+        <li class="utilities-nav__item" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this, event);">Search</a></li>
         <LangSwitch2 />
         <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} badgeNumber="6" /></li>
       </ul>
@@ -144,9 +149,101 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
               </ul>
             </div>
           </li>
-          <li><a class="submenu__link" href="#cabinets">Cabinets</a></li>
-          <li><a class="submenu__link" href="#accessories">Accessories</a></li>
-          <li><a class="submenu__link" href="#outdoor">Outdoor</a></li>
+          <li>
+            <a
+                class="category__link submenu__link"
+                href="#cabinets">Cabinets</a
+            >
+            <div class="category__list-container">
+              <a class="category__header-link" href="/en/products/cabinets">All Cabinets</a>
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/modular-cabinets">Modular Cabinets</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/column-cabinets">Column Cabinets</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/collect-cabinets">Collect Cabinets</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/dressers">Dressers</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+                class="category__link submenu__link"
+                href="#accessories">Accessories</a
+            >
+            <div class="category__list-container">
+              <a class="category__header-link" href="/en/products/cabinets">All Accessories</a>
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/lightning">Lightning</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/shelves">Shelves</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/the-blob-vase">The Blob Vase</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+                class="category__link submenu__link"
+                href="#outdoor">Outdoor</a
+            >
+            <div class="category__list-container">
+              <a class="category__header-link" href="/en/products/all-outdoor">All Outdoor</a>
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-tables">Outdoor Tables</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-benches">Outdoor Benches</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-sofas">Outdoor Sofas</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-coffee-table">Outdoor Coffee Table</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-chairs">Outdoor Chairs</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!--<li><a class="submenu__link" href="#accessories">Accessories</a></li>-->
+          <!--<li><a class="submenu__link" href="#outdoor">Outdoor</a></li>-->
         </ul>
       </div>
       <div
@@ -158,7 +255,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/100/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_01.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -167,7 +264,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/101/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_02.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -176,7 +273,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/102/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_03.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -185,7 +282,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/103/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_04.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -199,7 +296,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/318/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/tables_01.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -208,7 +305,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/319/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/tables_02.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -217,7 +314,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/320/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/tables_03.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -226,7 +323,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/321/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/tables_04.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -238,38 +335,38 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/400/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/chairs_01.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Photo of chairs"
+              caption="Title here"
           />
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/401/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/chairs_02.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Photo of chairs"
+              caption="Title here"
           />
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/402/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/chairs_03.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Photo of chairs"
+              caption="Title here"
           />
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/403/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/chairs_04.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Photo of chairs"
+              caption="Title here"
           />
         </div>
         <!-- gallery Sofas -->
@@ -277,40 +374,161 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/500/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_01.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Photo of chairs"
+              caption="Title here"
           />
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/501/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_02.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Photo of chairs"
+              caption="Title here"
           />
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/502/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_03.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Photo of chairs"
+              caption="Title here"
           />
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/503/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_04.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Photo of chairs"
+              caption="Title here"
           />
         </div>
+        <!-- end gallery -->
+        <!-- gallery cabinets -->
+        <div class="submenu__grid category__gallery">
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- end gallery -->
+        <!-- gallery accessories -->
+        <div class="submenu__grid category__gallery">
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/accessories_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/accessories_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/accessories_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/accessories_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- end gallery -->
+        <!-- gallery outdoor -->
+        <div class="submenu__grid category__gallery">
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- end gallery -->
       </div>
     </div>
   </div>
@@ -330,7 +548,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/800/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/studio-henk-store-amsterdam.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -339,7 +557,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/804/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/studio-henk-store-antwerpen.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -348,7 +566,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/802/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/studio-henk-store-rotterdam.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -357,7 +575,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/803/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/studio-henk-store-utrecht.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -386,7 +604,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/900/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_01.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -395,7 +613,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/901/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_02.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -404,7 +622,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/902/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_03.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -413,7 +631,64 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="https://picsum.photos/id/903/556/722.webp"
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="submenu" id="mn-about">
+    <div class="submenu-main-grid">
+      <div class="submenu-main-grid__item">
+        <small style="line-height: 14px; letter-spacing: normal;"
+        >About</small
+        >
+        <ul class="submenu__ul">
+          <li><a class="submenu__link" href="/en/blogs">About 1</a></li>
+          <li><a class="submenu__link" href="/en/projects">About 2</a></li>
+        </ul>
+      </div>
+      <div class="category-grid-container">
+        <div
+            class="submenu__grid category__gallery --category-gallery-active"
+        >
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <AtomFigure
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_04.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -597,6 +872,8 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
       .classList.remove("--hoverlink-active");
     rootElementDesktop.classList.remove("--desktop-menu-open");
     menuOpen = false;
+    // close any open submenu under Shop
+    closeShopSubmenu();
   }
 
   function handleCategoryLinks(currentIndex, currentElement) {
@@ -631,10 +908,29 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     categoryGallery[galleryIndex].classList.add("--category-gallery-active");
   }
 
-  function OpenSearchModal (ClickedElement) {
-    alert("search activated !");
-    console.log(ClickedElement);
+  function closeShopSubmenu () {
+    // --category-open
+      // --category-active
+    // --category-gallery-active
+    if (document.querySelector(".--category-open") != null) {
+      document
+          .querySelector(".--category-open")
+          .classList.remove("--category-open");
+      document
+          .querySelector(".--category-active")
+          .classList.remove("--category-active");
+      document
+          .querySelector(".--category-gallery-active")
+          .classList.remove("--category-gallery-active");
+      categoryGallery[0].classList.add("--category-gallery-active");
+    }
   }
+
+  /*function OpenSearchModal (ClickedElement, event) {
+    event.preventDefault();
+    const SearchModal = document.getElementById("search-modal");
+    SearchModal.setAttribute("data-modal-open", true);
+  }*/
 
   function ShowLangMenu (HoveredElement) {
     // alert("LangMenu activated !");

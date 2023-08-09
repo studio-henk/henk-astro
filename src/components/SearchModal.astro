@@ -1,0 +1,132 @@
+---
+import Icon from "./Icon.astro";
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+---
+
+<div class="search-modal" id="search-modal">
+  <div class="search-modal__inner">
+    <button
+      type="button"
+      data-style="plain-dark"
+      class="sh-atom-button-icon search-modal__close-button"
+      onclick="closeModal(this)"
+    >
+      <span class="icon-frame">
+        <Icon icon="icon-close" class="sh-atom-icon" />
+      </span>
+    </button>
+    <form method="post" action={"/"+lang+"/search-results"} class="search-modal__form">
+      <label class="search-modal__label" for="txt_search"
+      >What are you looking for?</label
+      >
+      <input
+          class="search-modal__input-text"
+          type="text"
+          name="txt_search"
+          id="txt_search"
+          autocomplete="off"
+          inputmode="text"
+      />
+      <div class="sh-molecule-l-button-group" data-alignment="center">
+        <button class="sh-atom-button" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<style>
+  .search-modal {
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    color: var(--color-white);
+    --color-text-button-icon: currentcolor;
+  }
+
+  .search-modal[data-modal-open] {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 999;
+  }
+
+  .search-modal__inner {
+    background-color: rgba(0, 0, 0, 0.94);
+    height: 100%;
+    opacity: 0;
+    transition-delay: 0.1s;
+    transition-duration: 0.3s;
+    transition-property: opacity;
+    transition-timing-function: ease;
+  }
+
+  .search-modal[data-modal-open] .search-modal__inner {
+    opacity: 1;
+  }
+
+  .search-modal__form {
+    max-width: 733px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    transform: translateY(-50%);
+    top: 50%;
+    position: relative;
+  }
+
+  .search-modal .search-modal__label {
+    color: var(--color-white);
+    text-align: center;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .search-modal__input-text {
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    color: currentColor;
+    font-size: 24px;
+  }
+
+  .search-modal__close-button {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+  }
+</style>
+<script is:inline defer>
+  // search-modal__close-button
+
+  // listeners
+
+
+  function OpenSearchModal(ClickedElement, event) {
+    event.preventDefault();
+    const SearchModal = document.getElementById("search-modal");
+    SearchModal.setAttribute("data-modal-open", "");
+    // set listener for ESC key
+      document.addEventListener("keydown", closeModalOnESC, false);
+  }
+  function closeModal(thisElem) {
+    const openModal = thisElem.closest("[data-modal-open]");
+    openModal.removeAttribute("data-modal-open");
+      document.removeEventListener("keydown", closeModalOnESC, false);
+  }
+
+  function closeModalOnESC(e) {
+      console.log(e.keyCode);
+      if (e.keyCode === 27) {
+          const openModal = document.querySelector("[data-modal-open]");
+          openModal.removeAttribute("data-modal-open");
+      }
+      document.removeEventListener("keydown", closeModalOnESC, false);
+  }
+</script>

@@ -6501,7 +6501,7 @@ so calc is unit size * unit num
     left: 0;
     z-index: 999;
     width: 100%;
-    padding: 35px 28px;
+    padding: 20px 28px;
     background-color: var(--color-background-masthead, transparent);
     color: var(--color-text-masthead, #fff);
     transition: opacity 0.3s ease-out, background-color 0.3s ease-out, transform 0.3s ease;
