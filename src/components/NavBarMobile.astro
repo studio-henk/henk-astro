@@ -1,151 +1,583 @@
 ---
 import Icon from "./Icon.astro";
+import LangSwitch2 from "./LangSwitch2.astro";
 const navLinks = [
-    {
-        name: 'Shop',
-        url: '#Shop',
-        style: 'transparent',
+  {
+    name: "Shop",
+    url: "#Shop",
+    style: "transparent",
+    submenu: [
+      {
+        name: "Tables",
+        url: "#tables",
         submenu: [
-            {
-                name: 'Tables',
-                url: '#tables',
-                submenu: [
-                    {
-                        name: 'All Tables',
-                        url: '#tables',
-                    },
-                    {
-                        name: 'Dining Tables',
-                        url: '#dining-tables',
-                    },
-                    {
-                        name: 'Coffee Tables',
-                        url: '#coffee-tables',
-                    },
-                    {
-                        name: 'Home Desks',
-                        url: '#home-desks',
-                    },
-                    {
-                        name: 'Bistro Tables',
-                        url: '#bistro-tables',
-                    }
-                ]
-            },
-            {
-                name: 'Chairs',
-                url: '#chairs',
-                submenu: [
-                    {
-                        name: 'All Chairs',
-                        url: '#all-chairs',
-                    },
-                    {
-                        name: 'Dining Chairs',
-                        url: '#dining-chairs',
-                    }
-                ]
-            },
-            {
-                name: 'Sofas',
-                url: '#sofas',
-                submenu: [
-                    {
-                        name: 'All Sofas',
-                        url: '#all-sofas',
-                    },
-                    {
-                        name: 'Sofas',
-                        url: '#sofas',
-                    },
-                    {
-                        name: 'Poufs',
-                        url: '#poufs',
-                    }
-                ]
-            },
-            {
-                name: 'Cabinets',
-                url: '#cabinets',
-            },
-            {
-                name: 'Accessories',
-                url: '#accessories',
-            },
-            {
-                name: 'Outdoor',
-                url: '/en/outdoor',
-            }
-        ]
-    },
-    {
-        name: 'Configurator',
-        url: '#Configurator',
-        style: 'transparent',
-        submenu: null,
-    },
-    {
-        name: 'Samples',
-        url: '#Samples',
-        style: 'transparent',
-        submenu: null,
-    },
-    {
-        name: 'Visit',
-        url: '#Visit',
-        style: 'transparent',
+          {
+            name: "All Tables",
+            url: "#tables",
+          },
+          {
+            name: "Dining Tables",
+            url: "#dining-tables",
+          },
+          {
+            name: "Coffee Tables",
+            url: "#coffee-tables",
+          },
+          {
+            name: "Home Desks",
+            url: "#home-desks",
+          },
+          {
+            name: "Bistro Tables",
+            url: "#bistro-tables",
+          },
+        ],
+      },
+      {
+        name: "Chairs",
+        url: "#chairs",
         submenu: [
-            {
-                name: 'Our Stores',
-                url: '/en/shops',
-            },
-            {
-                name: 'Interior advice',
-                url: '/en/advice',
-            }
-        ]
-    },
-    {
-        name: 'Inspiration',
-        url: '#',
-        style: 'transparent',
+          {
+            name: "All Chairs",
+            url: "#all-chairs",
+          },
+          {
+            name: "Dining Chairs",
+            url: "#dining-chairs",
+          },
+        ],
+      },
+      {
+        name: "Sofas",
+        url: "#sofas",
         submenu: [
-            {
-                name: 'Stories',
-                url: '/en/blogs',
-            },
-            {
-                name: 'Projects',
-                url: '/en/projects',
-            }
-        ]
-
-    },
-    {
-        name: 'About',
-        url: '/en/about-us',
-        style: 'transparent',
-        submenu: null,
-    },
-    {
-        name: 'Search',
-        url: '#',
-        style: 'transparent',
-        submenu: null,
-    },
-    {
-        name: 'Language',
-        url: '#',
-        style: 'transparent',
-        submenu: null,
-    }
-]
+          {
+            name: "All Sofas",
+            url: "#all-sofas",
+          },
+          {
+            name: "Sofas",
+            url: "#sofas",
+          },
+          {
+            name: "Poufs",
+            url: "#poufs",
+          },
+        ],
+      },
+      {
+        name: "Cabinets",
+        url: "#cabinets",
+      },
+      {
+        name: "Accessories",
+        url: "#accessories",
+      },
+      {
+        name: "Outdoor",
+        url: "/en/outdoor",
+      },
+    ],
+  },
+  {
+    name: "Configurator",
+    url: "#Configurator",
+    style: "transparent",
+    submenu: null,
+  },
+  {
+    name: "Samples",
+    url: "#Samples",
+    style: "transparent",
+    submenu: null,
+  },
+  {
+    name: "Visit",
+    url: "#Visit",
+    style: "transparent",
+    submenu: [
+      {
+        name: "Our Stores",
+        url: "/en/shops",
+      },
+      {
+        name: "Interior advice",
+        url: "/en/advice",
+      },
+    ],
+  },
+  {
+    name: "Inspiration",
+    url: "#",
+    style: "transparent",
+    submenu: [
+      {
+        name: "Stories",
+        url: "/en/blogs",
+      },
+      {
+        name: "Projects",
+        url: "/en/projects",
+      },
+    ],
+  },
+  {
+    name: "About",
+    url: "/en/about-us",
+    style: "transparent",
+    submenu: null,
+  },
+  {
+    name: "Search",
+    url: "#",
+    style: "transparent",
+    submenu: null,
+  },
+  {
+    name: "Language",
+    url: "#",
+    style: "transparent",
+    submenu: null,
+  },
+];
 ---
+
 <nav class="nav-bar-mobile" id="nav-bar-mobile">
-    <ul class="nav-bar-mobile__link-list --nav-level1">
+  <ul class="nav-bar-mobile__link-list --nav-level1">
+    <li role="none" class="--has-submenu">
+      <a class="subview-link" href="#Shop"
+        >Shop <svg
+          width="20"
+          height="16"
+          viewBox="0 0 22 18"
+          fill="none"
+          aria-labelledby="iconArrowRightNavBar"
+          id="iconArrowRightNavBar"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-arrow-navbar"
+          aria-hidden="true"
+          ><!--<title>{icon}</title>-->
+
+          <title>iconArrowRightNavBar</title>
+          <desc>icon Arrow Right for nav bar</desc>
+          <path
+            d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+            fill="currentcolor"></path>
+          <path
+            d="M12.5 1L20.5 9L12.5 17"
+            stroke="currentcolor"
+            stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <ul class="submenu --nav-level2" id="Shop">
+        <li>
+          <a href="#back" class="--back">
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowLeftNavBar"
+              id="iconArrowLeftNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowLeftNavBar</title>
+              <desc>icon Arrow Left for nav bar</desc>
+              <path
+                d="M21.5 9L1.5 9"
+                stroke="currentcolor"
+                stroke-linecap="square"></path>
+              <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+            </svg>
+            Back
+          </a>
+        </li>
+        <li class="--has-submenu">
+          <a href="#tables" class="subview-link"
+            >Tables <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowRightNavBar"
+              id="iconArrowRightNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowRightNavBar</title>
+              <desc>icon Arrow Right for nav bar</desc>
+              <path
+                d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+                fill="currentcolor"></path>
+              <path
+                d="M12.5 1L20.5 9L12.5 17"
+                stroke="currentcolor"
+                stroke-width="1.5"></path>
+            </svg>
+          </a>
+          <ul class="submenu --nav-level3">
+            <li>
+              <a href="#back" class="--back">
+                <svg
+                  width="20"
+                  height="16"
+                  viewBox="0 0 22 18"
+                  fill="none"
+                  aria-labelledby="iconArrowLeftNavBar"
+                  id="iconArrowLeftNavBar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon-arrow-navbar"
+                  aria-hidden="true"
+                  ><!--<title>{icon}</title>-->
+
+                  <title>iconArrowLeftNavBar</title>
+                  <desc>icon Arrow Left for nav bar</desc>
+                  <path
+                    d="M21.5 9L1.5 9"
+                    stroke="currentcolor"
+                    stroke-linecap="square"></path>
+                  <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+                </svg>
+                Back
+              </a>
+            </li>
+            <li>
+              <a href="#tables"> All Tables</a>
+            </li><li>
+              <a href="#dining-tables"> Dining Tables</a>
+            </li><li>
+              <a href="#coffee-tables"> Coffee Tables</a>
+            </li><li>
+              <a href="#home-desks"> Home Desks</a>
+            </li><li>
+              <a href="#bistro-tables"> Bistro Tables</a>
+            </li>
+          </ul>
+        </li><li class="--has-submenu">
+          <a href="#chairs" class="subview-link"
+            >Chairs <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowRightNavBar"
+              id="iconArrowRightNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowRightNavBar</title>
+              <desc>icon Arrow Right for nav bar</desc>
+              <path
+                d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+                fill="currentcolor"></path>
+              <path
+                d="M12.5 1L20.5 9L12.5 17"
+                stroke="currentcolor"
+                stroke-width="1.5"></path>
+            </svg>
+          </a>
+          <ul class="submenu --nav-level3">
+            <li>
+              <a href="#back" class="--back">
+                <svg
+                  width="20"
+                  height="16"
+                  viewBox="0 0 22 18"
+                  fill="none"
+                  aria-labelledby="iconArrowLeftNavBar"
+                  id="iconArrowLeftNavBar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon-arrow-navbar"
+                  aria-hidden="true"
+                  ><!--<title>{icon}</title>-->
+
+                  <title>iconArrowLeftNavBar</title>
+                  <desc>icon Arrow Left for nav bar</desc>
+                  <path
+                    d="M21.5 9L1.5 9"
+                    stroke="currentcolor"
+                    stroke-linecap="square"></path>
+                  <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+                </svg>
+                Back
+              </a>
+            </li>
+            <li>
+              <a href="#all-chairs"> All Chairs</a>
+            </li><li>
+              <a href="#dining-chairs"> Dining Chairs</a>
+            </li>
+          </ul>
+        </li><li class="--has-submenu">
+          <a href="#sofas" class="subview-link"
+            >Sofas <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowRightNavBar"
+              id="iconArrowRightNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowRightNavBar</title>
+              <desc>icon Arrow Right for nav bar</desc>
+              <path
+                d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+                fill="currentcolor"></path>
+              <path
+                d="M12.5 1L20.5 9L12.5 17"
+                stroke="currentcolor"
+                stroke-width="1.5"></path>
+            </svg>
+          </a>
+          <ul class="submenu --nav-level3">
+            <li>
+              <a href="#back" class="--back">
+                <svg
+                  width="20"
+                  height="16"
+                  viewBox="0 0 22 18"
+                  fill="none"
+                  aria-labelledby="iconArrowLeftNavBar"
+                  id="iconArrowLeftNavBar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon-arrow-navbar"
+                  aria-hidden="true"
+                  ><!--<title>{icon}</title>-->
+
+                  <title>iconArrowLeftNavBar</title>
+                  <desc>icon Arrow Left for nav bar</desc>
+                  <path
+                    d="M21.5 9L1.5 9"
+                    stroke="currentcolor"
+                    stroke-linecap="square"></path>
+                  <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+                </svg>
+                Back
+              </a>
+            </li>
+            <li>
+              <a href="#all-sofas"> All Sofas</a>
+            </li><li>
+              <a href="#sofas"> Sofas</a>
+            </li><li>
+              <a href="#poufs"> Poufs</a>
+            </li>
+          </ul>
+        </li><li class="">
+          <a href="#cabinets" class="">Cabinets</a>
+        </li><li class="">
+          <a href="#accessories" class="">Accessories</a>
+        </li><li class="">
+          <a href="/en/outdoor" class="">Outdoor</a>
+        </li>
+      </ul>
+    </li><li role="none" class="">
+      <a class="" href="#Configurator">Configurator</a>
+    </li><li role="none" class="">
+      <a class="" href="#Samples">Samples</a>
+    </li><li role="none" class="--has-submenu">
+      <a class="subview-link" href="#Visit"
+        >Visit <svg
+          width="20"
+          height="16"
+          viewBox="0 0 22 18"
+          fill="none"
+          aria-labelledby="iconArrowRightNavBar"
+          id="iconArrowRightNavBar"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-arrow-navbar"
+          aria-hidden="true"
+          ><!--<title>{icon}</title>-->
+
+          <title>iconArrowRightNavBar</title>
+          <desc>icon Arrow Right for nav bar</desc>
+          <path
+            d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+            fill="currentcolor"></path>
+          <path
+            d="M12.5 1L20.5 9L12.5 17"
+            stroke="currentcolor"
+            stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <ul class="submenu --nav-level2" id="Visit">
+        <li>
+          <a href="#back" class="--back">
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowLeftNavBar"
+              id="iconArrowLeftNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowLeftNavBar</title>
+              <desc>icon Arrow Left for nav bar</desc>
+              <path
+                d="M21.5 9L1.5 9"
+                stroke="currentcolor"
+                stroke-linecap="square"></path>
+              <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+            </svg>
+            Back
+          </a>
+        </li>
+        <li class="">
+          <a href="/en/shops" class="">Our Stores</a>
+        </li><li class="">
+          <a href="/en/advice" class="">Interior advice</a>
+        </li>
+      </ul>
+    </li><li role="none" class="--has-submenu">
+      <a class="subview-link" href="#"
+        >Inspiration <svg
+          width="20"
+          height="16"
+          viewBox="0 0 22 18"
+          fill="none"
+          aria-labelledby="iconArrowRightNavBar"
+          id="iconArrowRightNavBar"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-arrow-navbar"
+          aria-hidden="true"
+          ><!--<title>{icon}</title>-->
+
+          <title>iconArrowRightNavBar</title>
+          <desc>icon Arrow Right for nav bar</desc>
+          <path
+            d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+            fill="currentcolor"></path>
+          <path
+            d="M12.5 1L20.5 9L12.5 17"
+            stroke="currentcolor"
+            stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <ul class="submenu --nav-level2" id="Inspiration">
+        <li>
+          <a href="#back" class="--back">
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowLeftNavBar"
+              id="iconArrowLeftNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowLeftNavBar</title>
+              <desc>icon Arrow Left for nav bar</desc>
+              <path
+                d="M21.5 9L1.5 9"
+                stroke="currentcolor"
+                stroke-linecap="square"></path>
+              <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+            </svg>
+            Back
+          </a>
+        </li>
+        <li class="">
+          <a href="/en/blogs" class="">Stories</a>
+        </li><li class="">
+          <a href="/en/projects" class="">Projects</a>
+        </li>
+      </ul>
+    </li>
+      <li role="none" class="--has-submenu">
+          <a class="subview-link" href="#"
+          >About <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowRightNavBar"
+              id="iconArrowRightNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+          ><!--<title>{icon}</title>-->
+
+              <title>iconArrowRightNavBar</title>
+              <desc>icon Arrow Right for nav bar</desc>
+              <path
+                  d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+                  fill="currentcolor"></path>
+              <path
+                  d="M12.5 1L20.5 9L12.5 17"
+                  stroke="currentcolor"
+                  stroke-width="1.5"></path>
+          </svg>
+          </a>
+          <ul class="submenu --nav-level2" id="About">
+              <li>
+                  <a href="#back" class="--back">
+                      <svg
+                          width="20"
+                          height="16"
+                          viewBox="0 0 22 18"
+                          fill="none"
+                          aria-labelledby="iconArrowLeftNavBar"
+                          id="iconArrowLeftNavBar"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="icon-arrow-navbar"
+                          aria-hidden="true"
+                      ><!--<title>{icon}</title>-->
+
+                          <title>iconArrowLeftNavBar</title>
+                          <desc>icon Arrow Left for nav bar</desc>
+                          <path
+                              d="M21.5 9L1.5 9"
+                              stroke="currentcolor"
+                              stroke-linecap="square"></path>
+                          <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+                      </svg>
+                      Back
+                  </a>
+              </li>
+              <li class="">
+                  <a href="/en/about1" class="">About 1</a>
+              </li><li class="">
+              <a href="/en/about2" class="">About 2</a>
+          </li>
+          </ul>
+      </li>
+    <!--<li role="none" class="">
+      <a class="" href="/en/about-us">About</a>
+    </li>-->
+    <li role="none" class="">
+      <a class="" href="/en/search-results">Search</a>
+    </li>
+      <li role="none" class="">
+      <span class="label">Language <LangSwitch2 /></span>
+    </li>
+  </ul>
+</nav>
+<!--<nav class="nav-bar-mobile" id="nav-bar-mobile">
+    <ul class="nav-bar-mobile__link-list &#45;&#45;nav-level1">
         {
             navLinks.map((link, index) => (
-                <li role="none" class={ link.submenu ? '--has-submenu' : '' }>
+                <li
+                    role="none"
+                    class={link.submenu ? '&#45;&#45;has-submenu' : ''}
+                >
                     <a
                         class={link.submenu ? 'subview-link' : ''}
                         href={link.url}
@@ -161,9 +593,9 @@ const navLinks = [
                     </a>
                     {
                         (link.submenu != null) &&
-                        <ul class="submenu --nav-level2" id={link.name}>
+                        <ul class="submenu &#45;&#45;nav-level2" id={link.name}>
                             <li>
-                                <a href="#back" class="--back">
+                                <a href="#back" class="&#45;&#45;back">
                                     <Icon
                                         icon="arrow-nav-bar-back"
                                         class="icon-arrow-navbar"
@@ -175,11 +607,11 @@ const navLinks = [
                             </li>
                             {
                                 link.submenu.map(subitem => (
-                                    <li class={ subitem.submenu ? '--has-submenu' : '' }>
+                                    <li class={subitem.submenu ? '&#45;&#45;has-submenu' : ''}>
                                         <a
                                             href={subitem.url}
                                             class={subitem.submenu ? 'subview-link' : ''}
-                                        >{subitem.name} { subitem.submenu ?
+                                        >{subitem.name} {subitem.submenu ?
                                             <Icon
                                                 icon="arrow-nav-bar"
                                                 class="icon-arrow-navbar"
@@ -190,9 +622,9 @@ const navLinks = [
                                         </a>
                                         {
                                             (subitem.submenu != null) &&
-                                            <ul class="submenu --nav-level3">
+                                            <ul class="submenu &#45;&#45;nav-level3">
                                                 <li>
-                                                    <a href="#back" class="--back">
+                                                    <a href="#back" class="&#45;&#45;back">
                                                         <Icon
                                                             icon="arrow-nav-bar-back"
                                                             class="icon-arrow-navbar"
@@ -222,4 +654,8 @@ const navLinks = [
             ))
         }
     </ul>
-</nav>
+</nav>-->
+<!--
+<script is:inline slot="head-scripts">
+// get list items and set opacity to 1 to index * 0.3s when menu is open ie &#45;&#45;menu-open
+</script>-->

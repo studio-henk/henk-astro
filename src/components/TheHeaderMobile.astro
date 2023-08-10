@@ -3,11 +3,21 @@ import NavBarMobile from '../components/NavBarMobile.astro';
 import Icon from "./Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
+import MobileNavButton from "./MobileNavButton.astro";
+import LangSwitch2 from "./LangSwitch2.astro";
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
 
-const { NavFont = "new" } = Astro.props;
+const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 ---
 
-<header class="masthead masthead-mobile" id="masthead-mobile" data-font={NavFont}>
+<header
+    class="masthead masthead-mobile"
+    id="masthead-mobile"
+    data-font={NavFont}
+    data-theme={NavTheme}
+    data-hasHero={NavOnHero}
+>
     <div class="primary-nav-container">
         <AtomLogo
             url="/"
@@ -15,48 +25,28 @@ const { NavFont = "new" } = Astro.props;
             width="174"
             height="16"
         />
-        <AtomBadge badgeNumber="6" />
-        <div class="hamburger">
-            <span>hello</span>
-            <span></span>
-        </div>
-        <button
-            class="sh-atom-button"
-            id="menu-btn"
-            data-style="plain"
-            aria-expanded="false"
-            aria-label="Toggle mobile navigation"
-        >
-            <Icon
-                icon="icon-hamburger"
-                class="icon-hamburger"
-                width="24"
-                height="24"
-            />
-            <Icon
-                icon="icon-close"
-                class="icon-close"
-                width="24"
-                height="24"
-            />
-        </button>
+        <AtomBadge badgeNumber="6"/>
+        <MobileNavButton/>
     </div>
-    <NavBarMobile />
+    <!-- how to do this with stacked animation? -->
+    <NavBarMobile/>
 </header>
 
 <script is:inline>
     // elements
     const rootElement = document.documentElement;
     const masthead = document.querySelector('#masthead-mobile');
-    const navBtn = document.querySelector('#menu-btn');
+    /*const navBtn = document.querySelector('#menu-btn');*/
+    const navBtn = document.querySelector('#MobileNavButton');
     const backLinks = document.querySelectorAll('.--back');
     const level1SubviewLinks = document.querySelectorAll('.--nav-level1 > .--has-submenu > .subview-link');
     const level2SubviewLinks = document.querySelectorAll('.--nav-level2 > .--has-submenu > .subview-link');
 
     // event-handlers
+
     // menu button
     navBtn.addEventListener('click', () => {
-        navBtn.setAttribute('aria-expanded', navBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false')
+        // navBtn.setAttribute('aria-expanded', navBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false')
         // toggle class on html?
         rootElement.classList.toggle('--menu-open');
         if (masthead.classList.contains('--moveToLevel2')) {
@@ -64,6 +54,15 @@ const { NavFont = "new" } = Astro.props;
         } else if (masthead.classList.contains('--moveToLevel3')) {
             masthead.classList.remove('--moveToLevel3');
         }
+
+        if (rootElement.classList.contains('--menu-open')) {
+            // run list items thingy
+            ListItemsAnimateIn();
+        } else {
+            console.log("no way");
+            ListItemsReset();
+        }
+
     })
 
     // level 1
@@ -86,6 +85,25 @@ const { NavFont = "new" } = Astro.props;
             handleBackLinks(currentElement);
         });
     });
+
+    function ListItemsAnimateIn() {
+        const MainListItems = document.querySelectorAll(".nav-bar-mobile__link-list.--nav-level1 > li");
+        // nodelist
+        MainListItems.forEach(function (currentElement, currentIndex, listObj) {
+            // console.log(currentElement);
+            // console.log(currentIndex);
+            currentElement.style.opacity = 1;
+            currentElement.style.transitionDelay = (currentIndex + 1) * 0.15 + "s";
+        });
+    }
+
+    function ListItemsReset() {
+        const MainListItems = document.querySelectorAll(".nav-bar-mobile__link-list.--nav-level1 > li");
+
+        MainListItems.forEach(function (currentElement, currentIndex, listObj) {
+            currentElement.removeAttribute('style');
+        });
+    }
 
     function handleLevel1Links (currentElement) {
         event.preventDefault();

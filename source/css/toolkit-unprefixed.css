@@ -5703,6 +5703,12 @@ input.atom-radio[type=radio] + .atom-label {
   line-height: 1;
   text-decoration: none;
   aspect-ratio: 1/1;
+  transition: all 0.3s ease;
+}
+
+.atom-badge:hover {
+  --color-background-badge: var(--color-black);
+  --color-text-badge: var(--color-white);
 }
 
 .atom-logo {
@@ -6322,24 +6328,54 @@ so calc is unit size * unit num
       background-color: var(--color-accent1);
     }
   }
-  .masthead[data-font=old] {
+  .masthead-mobile[data-font=old] {
     font-family: ff-scala-sans-pro, sans-serif;
   }
   .masthead-mobile {
+    --color-background-badge: var(--color-white);
+    --color-text-badge: var(--color-black);
+    --color-background-button-nav-mobile: var(--color-white);
     position: fixed;
     top: 0;
     z-index: 9;
-    height: 100px;
     left: 0;
     width: 100%;
-    /*mix-blend-mode: difference;*/
-    --color-background-badge: var(--color-white);
+    background-color: var(--color-background-masthead, transparent);
+    color: var(--color-text-masthead, #fff);
+    transition: opacity 0.3s ease-out, background-color 0.3s ease-out, transform 0.3s ease;
+  }
+  .masthead-mobile[data-theme=dark] {
+    --color-text-masthead: var(--color-black);
+    --color-background-masthead: var(--color-white);
+    --color-background-badge: var(--color-black);
+    --color-text-badge: var(--color-white);
+    --color-background-button-nav-mobile: var(--color-black);
+  }
+  .masthead-mobile[data-theme=dark][data-hashero=true]:not(.--status-scrolled) {
+    --color-text-masthead: var(--color-black);
+    --color-background-masthead: var(--color-transparent);
+    --color-background-badge: var(--color-black);
+    --color-text-badge: var(--color-white);
+    --color-background-button-nav-mobile: var(--color-black);
+  }
+  /* show background when scrolled down 72 px */
+  .masthead-mobile.--status-scrolled {
+    --color-background-masthead: var(--color-white);
+    --color-text-masthead: var(--color-black);
+    --color-background-badge: var(--color-black);
+    --color-text-badge: var(--color-white);
+    --color-background-button-nav-mobile: var(--color-black);
   }
   .--menu-open body {
     overflow: hidden;
   }
-  .--menu-open .masthead-mobile {
-    background-color: var(--color-accent1, transparent);
+  .--menu-open .masthead-mobile:not(.--status-scrolled) {
+    /*background-color: var(--color-accent1, transparent);*/
+    --color-background-masthead: var(--color-accent1);
+    --color-text-masthead: var(--color-black);
+    --color-background-badge: var(--color-white);
+    --color-text-badge: var(--color-black);
+    --color-background-button-nav-mobile: var(--color-black);
     height: 100vh;
     mix-blend-mode: unset;
     animation-delay: 0s;
@@ -6350,20 +6386,27 @@ so calc is unit size * unit num
     animation-name: masthead-mobile-fade-in;
     animation-timing-function: ease-out;
   }
-  .primary-nav-container {
+  .--menu-open .masthead-mobile.--status-scrolled {
+    --color-background-masthead: var(--color-accent1);
+    --color-text-masthead: var(--color-black);
+    --color-background-badge: var(--color-white);
+    --color-text-badge: var(--color-black);
+    height: 100vh;
+  }
+  .masthead-mobile .primary-nav-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 53px 20px 15px 24px;
+    padding: 20px 20px 20px 24px;
     gap: 1rem;
     flex-wrap: wrap;
   }
-  .--menu-open .primary-nav-container {
+  .--menu-open .masthead-mobile .primary-nav-container {
     border-bottom: 1px solid var(--color-henk-black, #000);
   }
   .masthead-mobile .atom-logo {
     margin: 0 auto 0 0;
-    color: var(--color-white);
+    /*color: var(--color-white);*/
   }
   .--menu-open .masthead-mobile .atom-logo {
     color: var(--color-black);
@@ -6399,6 +6442,12 @@ so calc is unit size * unit num
     height: 0;
     pointer-events: none;
   }
+  .nav-bar-mobile__link-list > li {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+  }
   .--menu-open .nav-bar-mobile .nav-bar-mobile__link-list {
     display: block;
     opacity: 1;
@@ -6410,14 +6459,22 @@ so calc is unit size * unit num
   .--menu-open .nav-bar-mobile .nav-bar-mobile__link-list {
     overflow-y: auto;
   }
-  .nav-bar-mobile .nav-bar-mobile__link-list a {
+  .nav-bar-mobile .nav-bar-mobile__link-list a,
+  .nav-bar-mobile .nav-bar-mobile__link-list .label {
     font-size: 27px;
     line-height: 32px;
     text-decoration: none;
     display: block;
     padding: 17px 24px 18px 22px;
   }
-  .nav-bar-mobile .nav-bar-mobile__link-list > li > a {
+  .nav-bar-mobile .nav-bar-mobile__link-list .label {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+  }
+  .nav-bar-mobile .nav-bar-mobile__link-list > li > a,
+  .nav-bar-mobile .nav-bar-mobile__link-list > li > .label {
     border-bottom: 1px solid var(--color-henk-black, #000);
   }
   .nav-bar-mobile .nav-bar-mobile__link-list .subview-link {
@@ -6509,16 +6566,16 @@ so calc is unit size * unit num
     transition: opacity 0.3s ease-out, background-color 0.3s ease-out, transform 0.3s ease;
     --color-text-badge: var(--color-henk-black);
   }
-  .masthead[data-font=old] {
+  .masthead-desktop[data-font=old] {
     font-family: ff-scala-sans-pro, sans-serif;
   }
-  .masthead[data-theme=dark] {
+  .masthead-desktop[data-theme=dark] {
     --color-text-masthead: var(--color-black);
     --color-background-masthead: var(--color-white);
     --color-background-badge: var(--color-black);
     --color-text-badge: var(--color-white);
   }
-  .masthead[data-theme=dark][data-hashero=true]:not(.--status-scrolled) {
+  .masthead-desktop[data-theme=dark][data-hashero=true]:not(.--status-scrolled) {
     --color-text-masthead: var(--color-black);
     --color-background-masthead: var(--color-transparent);
     --color-background-badge: var(--color-black);
@@ -6528,7 +6585,7 @@ so calc is unit size * unit num
     position: absolute;
     width: 1px;
     height: 1px;
-    top: 102px;
+    top: 72px;
     left: 0;
   }
   /* show background when scrolled down 102 px */
@@ -6545,11 +6602,11 @@ so calc is unit size * unit num
     --color-background-badge: var(--color-black);
     --color-text-badge: var(--color-white);
   }
-  .--desktop-menu-open .masthead-desktop {
+  .--desktop-menu-open .masthead-desktop.--masthead-desktop-hovered:not(.--status-scrolled) {
     --color-background-badge: var(--color-white);
     --color-text-badge: var(--color-black);
   }
-  .primary-nav-container {
+  .masthead-desktop .primary-nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6557,7 +6614,7 @@ so calc is unit size * unit num
     position: relative;
     /*mix-blend-mode: difference;*/
   }
-  .primary-nav-container .primary-nav {
+  .masthead-desktop .primary-nav-container .primary-nav {
     display: flex;
     gap: 42px;
   }
@@ -6583,6 +6640,7 @@ so calc is unit size * unit num
   }
   .masthead-desktop .primary-nav .--hoverlink-active {
     text-decoration-line: underline;
+    text-decoration-thickness: 1px;
   }
   .masthead-desktop .submenu {
     background-color: var(--color-accent1);
@@ -6688,9 +6746,68 @@ so calc is unit size * unit num
     display: none;
   }
 }
+.category__list-container {
+  display: none;
+}
+
+.category__header-link,
+.category__list-link {
+  text-decoration: none;
+}
+
+.category__header-link {
+  line-height: 40px;
+}
+
+.category__list {
+  margin-left: 1rem;
+  list-style: none;
+}
+
+.category__gallery {
+  display: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.submenu__grid.category__gallery {
+  opacity: 1;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.submenu-main-grid {
+  display: grid;
+  grid-template-columns: 285px 4fr;
+  max-width: 1467px;
+  margin: 0 auto;
+}
+
+.--category-active {
+  display: none;
+}
+
+.--category-active + .category__list-container {
+  display: block;
+  /*background-color: yellow;*/
+}
+
+.--category-gallery-active {
+  display: grid;
+  /*transform: translateY(-50%);*/
+}
+
+.category-grid-container {
+  max-height: 401px;
+  overflow: hidden;
+}
+
+.sh-atom-figure .hover-interaction-c-2 .hover-interaction-c-2-target::after,
+.sh-atom-figure .hover-interaction-c-2 .hover-interaction-c-2-target::before {
+  bottom: 8px;
+}
+
 .LangSwitch2 {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 4px;
   position: relative;
   cursor: pointer;
@@ -15420,6 +15537,117 @@ quickfix for images causing gap in grid
     opacity: 1;
   }
 }
+.hover-interaction-a {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover-interaction-a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-interaction-a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/*interaction C*/
+.hover-interaction-c {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  /*width: fit-content; */
+  display: inline-block;
+}
+
+.hover-interaction-c::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  /*transform: scaleX(0);*/
+  height: 1px;
+  bottom: 0;
+  left: -110%;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-interaction-c::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0%;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-interaction-c:hover::before {
+  transform: translateX(110%);
+}
+
+.hover-interaction-c:hover::after {
+  transform: translateX(110%);
+  transform-origin: bottom left;
+}
+
+.hover-interaction-c-2 .hover-interaction-c-2-target {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  width: fit-content;
+  display: inline-block;
+}
+
+/* start */
+/* line showing on load */
+.hover-interaction-c-2 .hover-interaction-c-2-target::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0px;
+  left: 0%;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+/* line showing on hover, moving in ltr */
+.hover-interaction-c-2 .hover-interaction-c-2-target::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  /*transform: scaleX(0);*/
+  height: 1px;
+  bottom: 0;
+  left: -110%;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-interaction-c-2:hover .hover-interaction-c-2-target::before {
+  transform: translateX(110%);
+}
+
+.hover-interaction-c-2:hover .hover-interaction-c-2-target::after {
+  transform: translateX(110%);
+  transform-origin: bottom left;
+}
+
 .mdl-shop-product {
   display: inline-flex;
   /* with price */

@@ -21,8 +21,8 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     <AtomLogo url="/" icon="henk-logo" width="163" height="14" />
     <nav class="primary-nav">
       <a id="pn-shop" class="hoverlink" href="#shop" data-target="shop">Shop</a>
-      <a href="/en/configurator-new-nav">Configurator</a>
-      <a href="/en/samples">Samples</a>
+      <a href="/en/configurator-new-nav" class="hover-interaction-a">Configurator</a>
+      <a href="/en/samples" class="hover-interaction-a">Samples</a>
       <a id="pn-visit" class="hoverlink" href="#visit" data-target="visit"
         >Visit</a
       >
@@ -42,8 +42,8 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     <div class="utilities-nav">
       <ul class="utilities-nav__list">
         <!--<li class="utilities-nav__item" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this, event);">Search</a></li>-->
-        <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"}>Search</a></li>
-        <LangSwitch2 />
+        <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"} class="hover-interaction-a">Search</a></li>
+        <li class="utilities-nav__item" id="utilities-nav__lang"><LangSwitch2 /></li>
         <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" /></li>
       </ul>
     </div>
@@ -707,34 +707,18 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 <div id="pixel-to-watch"></div>
 <script is:inline defer>
   // elements
+  const htmlElement = document.documentElement;
   const rootElementDesktop = document.documentElement;
   const mastheadDesktop = document.querySelector(".masthead-desktop");
+  const isTouchDevice = htmlElement.classList.contains("touchevents");
+  console.log("touchevents: " + isTouchDevice);
   const primaryNavLinks = document.querySelectorAll(".primary-nav .hoverlink");
   const categoryLinks = document.querySelectorAll(".category__link");
   const categoryGallery = document.querySelectorAll(".category__gallery");
   // console.log(categoryGallery);
   let menuOpen = false;
 
-  // check if navbar is theme dark
-  // console.log(mastheadDesktop.getAttribute('data-hasHero'));
-  const NavBarHero = mastheadDesktop.getAttribute('data-hasHero');
-  if (NavBarHero === false || NavBarHero === null) {
-    // padding-top 102 on body
-    document.body.style.paddingTop = "102px";
-  }
 
-  // checking if doc has scrolled
-  let observer = new IntersectionObserver(entries => {
-    // console.log(entries);
-    if (entries[0].boundingClientRect.y < 0) {
-      // console.log("Past 102px!");
-      mastheadDesktop.classList.add("--status-scrolled");
-    } else {
-      // console.log("Not past 102px");
-      mastheadDesktop.classList.remove("--status-scrolled");
-    }
-  });
-  observer.observe(document.querySelector("#pixel-to-watch"));
 
   // LISTENERS
 
@@ -742,17 +726,14 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
   mastheadDesktop.addEventListener("mouseenter", function (e) {
     console.log("mouse entered the masthead-desktop");
     if (!menuOpen) {
-      // console.log("menu is not open");
       invertMainNav();
     }
   });
 
   // when mouse leaves masthead-desktop
   mastheadDesktop.addEventListener("mouseleave", function (e) {
-    // console.log("mouse left the masthead-desktop");
     mastheadDesktop.classList.remove("--masthead-desktop-hovered");
     if (menuOpen) {
-      // console.log("fading out menu");
       fadeOutSubmenu();
     }
   });
@@ -760,16 +741,25 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
   // primary nav links that have a submenu
   primaryNavLinks.forEach(function (currentElement, currentIndex, listObj) {
     // disable clicking on these
-    currentElement.addEventListener("click", function (event) {
-      // handlePrimaryLinks(currentElement, event);
-      event.preventDefault();
-    });
+    // ONLY IF IS NOT A TOUCH DEVICE : HTML CLASS "NO-TOUCHEVENTS"
+    const checkNoTouch = rootElementDesktop.classList.contains("no-touchevents");
+    // console.log(checkNoTouch);
+    if (checkNoTouch) {
+      currentElement.addEventListener("click", function (event) {
+        event.preventDefault();
+      });
 
-    // set mouse over listener
-    currentElement.addEventListener("mouseover", function (event) {
-      // console.log("mouseover called on primaryNavLink with ID: " + currentElement.id);
-      handlePrimaryLinks(currentElement, event);
-    });
+      // set mouse over listener
+      currentElement.addEventListener("mouseover", function (event) {
+        handlePrimaryLinks(currentElement, event);
+      });
+    } else {
+      currentElement.addEventListener("click", function (event) {
+        // event.preventDefault();
+        handlePrimaryLinks(currentElement, event);
+      });
+    }
+
   });
 
   // category links ie: Tbales, Chair, Sofas, to open them
@@ -949,6 +939,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 
 </script>
 
+<!--
 <style>
   .category__link {
   }
@@ -988,20 +979,20 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     margin: 0 auto;
   }
 
-  .submenu__ul .--category-open {
+  .submenu__ul .&#45;&#45;category-open {
 
   }
 
-  .--category-active {
+  .&#45;&#45;category-active {
     display: none;
   }
 
-  .--category-active + .category__list-container {
+  .&#45;&#45;category-active + .category__list-container {
     display: block;
     /*background-color: yellow;*/
   }
 
-  .--category-gallery-active {
+  .&#45;&#45;category-gallery-active {
     display: grid;
 
     /*transform: translateY(-50%);*/
@@ -1011,4 +1002,4 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     max-height: 401px;
     overflow: hidden;
   }
-</style>
+</style>-->

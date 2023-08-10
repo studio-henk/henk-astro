@@ -5,6 +5,7 @@ import TheFooter from "../components/TheFooter.astro";
 import TheHeaderMobile from "../components/TheHeaderMobile.astro";
 import TheHeaderDesktop from "../components/TheHeaderDesktop.astro";
 import SearchModal from "../components/SearchModal.astro";
+import TheHeader from "../components/TheHeader.astro";
 
 const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 ---
@@ -61,14 +62,14 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
   </head>
   <body>
     <div class="wrapper" data-scroller>
-      <TheHeaderMobile NavFont={NavFont} />
-      <TheHeaderDesktop NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
+      <TheHeader NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
+      <!--<TheHeaderMobile NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
+      <TheHeaderDesktop NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />-->
       <main class={mainClass} id={mainID}>
         <slot />
       </main>
       <TheFooter />
     </div>
     <slot name="footer-scripts" />
-  <SearchModal />
   </body>
 </html>

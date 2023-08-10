@@ -19,7 +19,7 @@ const {
     { hasLink ?
         <a
             href={hasLink}
-            class="sh-atom-figure__link"
+            class="sh-atom-figure__link hover-interaction-c-2"
             title={linkTitle}
         >
             { imgUrl ?
@@ -35,7 +35,7 @@ const {
             :
             <p>No image assigned</p>
             }
-            <figcaption class="sh-atom-figure__caption">{caption}</figcaption>
+            <figcaption class="sh-atom-figure__caption hover-interaction-c-2-target">{caption}</figcaption>
         </a>
     : imgUrl ?
         <div class="sh-atom-figure__image-mask">

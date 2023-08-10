@@ -1,0 +1,66 @@
+---
+import TheHeaderMobile from "./TheHeaderMobile.astro";
+import TheHeaderDesktop from "./TheHeaderDesktop.astro";
+const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
+---
+
+<TheHeaderMobile NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
+<TheHeaderDesktop NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
+<script>
+    const htmlElement = document.documentElement;
+    const isTouchDevice = htmlElement.classList.contains("touchevents");
+    const mastheadMobile = document.querySelector(".masthead-mobile");
+    const mastheadDesktop = document.querySelector(".masthead-desktop");
+    const masthead = document.querySelector(".masthead");
+
+    const NavBarHeroMobile = mastheadMobile.getAttribute('data-hashero');
+    console.log(NavBarHeroMobile);
+    console.log(mastheadMobile.clientHeight);
+    const NavBarHeroDesktop = mastheadDesktop.getAttribute('data-hashero');
+
+    console.log("touchevents: " + isTouchDevice);
+    // check if navbar is theme dark
+    // console.log(mastheadDesktop.getAttribute('data-hasHero'));
+    if (isTouchDevice) {
+        if (NavBarHeroMobile === false || NavBarHeroMobile === null) {
+            // padding-top 102 on body
+            // set to height of header
+            // document.body.style.paddingTop = "72px";
+            document.body.style.paddingTop = mastheadMobile.clientHeight + "px";
+
+        }
+    } else {
+        if (NavBarHeroDesktop === false || NavBarHeroDesktop === null) {
+            // padding-top 102 on body
+            // set to height of header
+            // document.body.style.paddingTop = "72px";
+            document.body.style.paddingTop = mastheadDesktop.clientHeight + "px";
+        }
+    }
+
+
+
+    // checking if doc has scrolled
+    let observer = new IntersectionObserver(entries => {
+        // console.log(entries);
+        if (entries[0].boundingClientRect.y < 0) {
+            // console.log("Past 102px!");
+            mastheadMobile.classList.add("--status-scrolled");
+            mastheadDesktop.classList.add("--status-scrolled");
+        } else {
+            // console.log("Not past 102px");
+            mastheadMobile.classList.remove("--status-scrolled");
+            mastheadDesktop.classList.remove("--status-scrolled");
+        }
+    });
+    observer.observe(document.querySelector("#pixel-to-watch"));
+</script>
+<style is:global>
+    #pixel-to-watch {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        top: 72px;
+        left: 0;
+    }
+</style>
