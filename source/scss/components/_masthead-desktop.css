@@ -38,6 +38,7 @@
     }
 
     .masthead-desktop {
+        --color-text-masthead: var(--color-black);
         box-sizing: border-box;
         position: fixed;
         top: 0;

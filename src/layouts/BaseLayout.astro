@@ -33,6 +33,23 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
     <slot name="head-styles"/>
     <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>-->
+    <script is:inline>
+        function doTouchDeviceCheck() {
+            var isTouchDevice;
+        if(window.matchMedia("(any-hover: none)").matches) {
+            // do something
+            console.log("touch device");
+            isTouchDevice = true;
+        } else {
+            console.log("no touch device");
+            isTouchDevice = false;
+        }
+        console.log(isTouchDevice);
+        return isTouchDevice;
+        }
+
+        // doTouchDeviceCheck();
+    </script>
     <slot name="head-scripts"/>
 </head>
 <body>

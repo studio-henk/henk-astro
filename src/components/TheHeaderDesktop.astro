@@ -717,16 +717,14 @@ if (!NavTheme) {
   // elements
   const htmlElement = document.documentElement;
   const rootElementDesktop = document.documentElement;
-  const mastheadDesktop = document.querySelector(".masthead-desktop");
-  const isTouchDevice = htmlElement.classList.contains("touchevents");
+  // const isTouchDevice = htmlElement.classList.contains(" touchevents");
   // console.log("touchevents: " + isTouchDevice);
-  const primaryNavLinks = document.querySelectorAll(".primary-nav .hoverlink");
-  const categoryLinks = document.querySelectorAll(".category__link");
-  const categoryGallery = document.querySelectorAll(".category__gallery");
+  const mastheadDesktop = document.querySelector(".masthead-desktop");
+  const primaryNavLinks = document.querySelectorAll(".masthead-desktop .primary-nav .hoverlink");
+  const categoryLinks = document.querySelectorAll(".masthead-desktop .category__link");
+  const categoryGallery = document.querySelectorAll(".masthead-desktop .category__gallery");
   // console.log(categoryGallery);
   let menuOpen = false;
-
-
 
   // LISTENERS
 
@@ -746,13 +744,13 @@ if (!NavTheme) {
     }
   });
 
+  let isTouchDevice = doTouchDeviceCheck();
+
   // primary nav links that have a submenu
   primaryNavLinks.forEach(function (currentElement, currentIndex, listObj) {
     // disable clicking on these
     // ONLY IF IS NOT A TOUCH DEVICE : HTML CLASS "NO-TOUCHEVENTS"
-    // const checkNoTouch = rootElementDesktop.classList.contains("no-touchevents");
-    // const isTouchDevice = htmlElement.classList.contains("touchevents");
-    console.log("isTouchDevice: " + isTouchDevice);
+
     if (isTouchDevice) {
       currentElement.addEventListener("click", function (event) {
         // event.preventDefault();
