@@ -4,17 +4,20 @@ import Icon from "./Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
 import MobileNavButton from "./MobileNavButton.astro";
-import LangSwitch2 from "./LangSwitch2.astro";
 import { getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 
-const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
+const { NavOnHero } = Astro.props;
+let {NavTheme} = Astro.props;
+
+if (!NavTheme) {
+    NavTheme = "dark"
+}
 ---
 
 <header
     class="masthead masthead-mobile"
     id="masthead-mobile"
-    data-font={NavFont}
     data-theme={NavTheme}
     data-hasHero={NavOnHero}
 >
@@ -25,7 +28,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
             width="174"
             height="16"
         />
-        <AtomBadge badgeNumber="6"/>
+        <AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6"/>
         <MobileNavButton/>
     </div>
     <!-- how to do this with stacked animation? -->

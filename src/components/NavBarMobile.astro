@@ -1,6 +1,15 @@
 ---
-import Icon from "./Icon.astro";
-import LangSwitch2 from "./LangSwitch2.astro";
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname.substring(4);
+let otherLang;
+if (lang =="nl") {
+  otherLang = "en"
+} else {
+  otherLang = "nl"
+}
+let otherURL = "/" + otherLang + "/" + currentPath;
+/*
 const navLinks = [
   {
     name: "Shop",
@@ -140,6 +149,7 @@ const navLinks = [
     submenu: null,
   },
 ];
+*/
 ---
 
 <nav class="nav-bar-mobile" id="nav-bar-mobile">
@@ -247,9 +257,9 @@ const navLinks = [
               </a>
             </li>
             <li>
-              <a href="#tables"> All Tables</a>
+              <a href="#all-tables"> All Tables</a>
             </li><li>
-              <a href="#dining-tables"> Dining Tables</a>
+              <a href={"/" + lang + "/products/dining-tables"}>Dining Tables</a>
             </li><li>
               <a href="#coffee-tables"> Coffee Tables</a>
             </li><li>
@@ -383,9 +393,9 @@ const navLinks = [
         </li>
       </ul>
     </li><li role="none" class="">
-      <a class="" href="#Configurator">Configurator</a>
+      <a href={"/" + lang + "/configurator"}>Configurator</a>
     </li><li role="none" class="">
-      <a class="" href="#Samples">Samples</a>
+      <a href={"/" + lang + "/samples"}>Samples</a>
     </li><li role="none" class="--has-submenu">
       <a class="subview-link" href="#Visit"
         >Visit <svg
@@ -438,9 +448,9 @@ const navLinks = [
           </a>
         </li>
         <li class="">
-          <a href="/en/shops" class="">Our Stores</a>
+          <a href={"/" + lang + "/shops"}>Our Stores</a>
         </li><li class="">
-          <a href="/en/advice" class="">Interior advice</a>
+          <a href={"/" + lang + "/interior-advice"}>Interior advice</a>
         </li>
       </ul>
     </li><li role="none" class="--has-submenu">
@@ -553,109 +563,17 @@ const navLinks = [
                   </a>
               </li>
               <li class="">
-                  <a href="/en/about1" class="">About 1</a>
+                <a href={"/" + lang + "/about-us"}>About</a>
               </li><li class="">
-              <a href="/en/about2" class="">About 2</a>
+              <a href={"/" + lang + "/about-us"}>About 2</a>
           </li>
           </ul>
       </li>
-    <!--<li role="none" class="">
-      <a class="" href="/en/about-us">About</a>
-    </li>-->
     <li role="none" class="">
-      <a class="" href="/en/search-results">Search</a>
+      <a href={"/" + lang + "/search-results"}>Search</a>
     </li>
       <li role="none" class="">
-      <span class="label">Language <LangSwitch2 /></span>
+      <span class="label">Language <lang-switch data-url={otherURL}></lang-switch></span>
     </li>
   </ul>
 </nav>
-<!--<nav class="nav-bar-mobile" id="nav-bar-mobile">
-    <ul class="nav-bar-mobile__link-list &#45;&#45;nav-level1">
-        {
-            navLinks.map((link, index) => (
-                <li
-                    role="none"
-                    class={link.submenu ? '&#45;&#45;has-submenu' : ''}
-                >
-                    <a
-                        class={link.submenu ? 'subview-link' : ''}
-                        href={link.url}
-                    >{link.name} {
-                        link.submenu ?
-                            <Icon
-                                icon="arrow-nav-bar"
-                                class="icon-arrow-navbar"
-                                width="20"
-                                height="16"
-                            /> : ''
-                    }
-                    </a>
-                    {
-                        (link.submenu != null) &&
-                        <ul class="submenu &#45;&#45;nav-level2" id={link.name}>
-                            <li>
-                                <a href="#back" class="&#45;&#45;back">
-                                    <Icon
-                                        icon="arrow-nav-bar-back"
-                                        class="icon-arrow-navbar"
-                                        width="20"
-                                        height="16"
-                                    />
-                                    Back
-                                </a>
-                            </li>
-                            {
-                                link.submenu.map(subitem => (
-                                    <li class={subitem.submenu ? '&#45;&#45;has-submenu' : ''}>
-                                        <a
-                                            href={subitem.url}
-                                            class={subitem.submenu ? 'subview-link' : ''}
-                                        >{subitem.name} {subitem.submenu ?
-                                            <Icon
-                                                icon="arrow-nav-bar"
-                                                class="icon-arrow-navbar"
-                                                width="20"
-                                                height="16"
-                                            /> : ''
-                                        }
-                                        </a>
-                                        {
-                                            (subitem.submenu != null) &&
-                                            <ul class="submenu &#45;&#45;nav-level3">
-                                                <li>
-                                                    <a href="#back" class="&#45;&#45;back">
-                                                        <Icon
-                                                            icon="arrow-nav-bar-back"
-                                                            class="icon-arrow-navbar"
-                                                            width="20"
-                                                            height="16"
-                                                        />
-                                                        Back
-                                                    </a>
-                                                </li>
-                                                {
-                                                    subitem.submenu.map(subsubitem => (
-                                                        <li>
-                                                            <a href={subsubitem.url}>
-                                                                {subsubitem.name}
-                                                            </a>
-                                                        </li>
-                                                    ))
-                                                }
-                                            </ul>
-                                        }
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    }
-                </li>
-            ))
-        }
-    </ul>
-</nav>-->
-<!--
-<script is:inline slot="head-scripts">
-// get list items and set opacity to 1 to index * 0.3s when menu is open ie &#45;&#45;menu-open
-</script>-->

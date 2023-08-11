@@ -1,19 +1,26 @@
 ---
-// import NavBarDesktop from '../components/NavBar3Desktop.astro';
-import Icon from "./Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
 import AtomFigure from "./Atoms/AtomFigure.astro";
-import LangSwitch from "./LangSwitch.astro";
-import LangSwitch2 from "./LangSwitch2.astro";
 import { getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
-const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
+const { NavOnHero } = Astro.props;
+let { NavTheme } = Astro.props;
+const currentPath = Astro.url.pathname.substring(4);
+let otherLang;
+if (lang =="nl") {
+  otherLang = "en"
+} else {
+  otherLang = "nl"
+}
+let otherURL = "/" + otherLang + "/" + currentPath;
+if (!NavTheme) {
+  NavTheme = "dark"
+}
 ---
 <header
   class="masthead masthead-desktop"
   id="masthead-desktop"
-  data-font={NavFont}
   data-theme={NavTheme}
   data-hasHero={NavOnHero}
 >
@@ -21,7 +28,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     <AtomLogo url="/" icon="henk-logo" width="163" height="14" />
     <nav class="primary-nav">
       <a id="pn-shop" class="hoverlink" href="#shop" data-target="shop">Shop</a>
-      <a href="/en/configurator-new-nav" class="hover-interaction-a">Configurator</a>
+      <a href="/en/configurator" class="hover-interaction-a">Configurator</a>
       <a href="/en/samples" class="hover-interaction-a">Samples</a>
       <a id="pn-visit" class="hoverlink" href="#visit" data-target="visit"
         >Visit</a
@@ -41,9 +48,10 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     </nav>
     <div class="utilities-nav">
       <ul class="utilities-nav__list">
-        <!--<li class="utilities-nav__item" id="utilities-nav__search"><a href="#search" onclick="OpenSearchModal(this, event);">Search</a></li>-->
         <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"} class="hover-interaction-a">Search</a></li>
-        <li class="utilities-nav__item" id="utilities-nav__lang"><LangSwitch2 /></li>
+        <li class="utilities-nav__item" id="utilities-nav__lang">
+          <lang-switch data-url={otherURL}></lang-switch>
+        </li>
         <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" /></li>
       </ul>
     </div>
@@ -64,14 +72,14 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
                 href="#tables">Tables</a
             >
             <div class="category__list-container">
-              <a class="category__header-link" href="/en/products/tables"
+              <a class="category__header-link" href={"/" + lang + "/products/tables"}
                 >All Tables</a
               >
               <ul class="category__list">
                 <li>
                   <a
                     class="category__list-link"
-                    href="/en/products/dining-tables">Dining Tables</a>
+                    href={"/" + lang + "/products/dining-tables"}>Dining Tables</a>
                 </li>
                 <li>
                   <a
@@ -540,8 +548,8 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
       <div class="submenu-main-grid__item">
         <small style="line-height: 14px; letter-spacing: normal;">Visit</small>
         <ul class="submenu__ul">
-          <li><a class="submenu__link" href="#stores">Our stores</a></li>
-          <li><a class="submenu__link" href="#etc">Interior advice</a></li>
+          <li><a class="submenu__link" href={"/" + lang + "/shops"}>Our stores</a></li>
+          <li><a class="submenu__link" href={"/" + lang + "/interior-advice"}>Interior advice</a></li>
         </ul>
       </div>
       <div class="category-grid-container">
@@ -596,8 +604,8 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
           >Inspiration</small
         >
         <ul class="submenu__ul">
-          <li><a class="submenu__link" href="/en/blogs">Stories</a></li>
-          <li><a class="submenu__link" href="/en/projects">Projects</a></li>
+          <li><a class="submenu__link" href={"/" + lang + "/blogs"}>Stories</a></li>
+          <li><a class="submenu__link" href={"/" + lang + "/projects"}>Projects</a></li>
         </ul>
       </div>
       <div class="category-grid-container">
@@ -653,8 +661,8 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
         >About</small
         >
         <ul class="submenu__ul">
-          <li><a class="submenu__link" href="/en/blogs">About 1</a></li>
-          <li><a class="submenu__link" href="/en/projects">About 2</a></li>
+          <li><a class="submenu__link" href={"/" + lang + "/about-us"}>About 1</a></li>
+          <li><a class="submenu__link" href={"/" + lang + "/about-us"}>About 2</a></li>
         </ul>
       </div>
       <div class="category-grid-container">
@@ -711,7 +719,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
   const rootElementDesktop = document.documentElement;
   const mastheadDesktop = document.querySelector(".masthead-desktop");
   const isTouchDevice = htmlElement.classList.contains("touchevents");
-  console.log("touchevents: " + isTouchDevice);
+  // console.log("touchevents: " + isTouchDevice);
   const primaryNavLinks = document.querySelectorAll(".primary-nav .hoverlink");
   const categoryLinks = document.querySelectorAll(".category__link");
   const categoryGallery = document.querySelectorAll(".category__gallery");
@@ -742,9 +750,15 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
   primaryNavLinks.forEach(function (currentElement, currentIndex, listObj) {
     // disable clicking on these
     // ONLY IF IS NOT A TOUCH DEVICE : HTML CLASS "NO-TOUCHEVENTS"
-    const checkNoTouch = rootElementDesktop.classList.contains("no-touchevents");
-    // console.log(checkNoTouch);
-    if (checkNoTouch) {
+    // const checkNoTouch = rootElementDesktop.classList.contains("no-touchevents");
+    // const isTouchDevice = htmlElement.classList.contains("touchevents");
+    console.log("isTouchDevice: " + isTouchDevice);
+    if (isTouchDevice) {
+      currentElement.addEventListener("click", function (event) {
+        // event.preventDefault();
+        handlePrimaryLinks(currentElement, event);
+      });
+    } else {
       currentElement.addEventListener("click", function (event) {
         event.preventDefault();
       });
@@ -753,13 +767,7 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
       currentElement.addEventListener("mouseover", function (event) {
         handlePrimaryLinks(currentElement, event);
       });
-    } else {
-      currentElement.addEventListener("click", function (event) {
-        // event.preventDefault();
-        handlePrimaryLinks(currentElement, event);
-      });
     }
-
   });
 
   // category links ie: Tbales, Chair, Sofas, to open them
@@ -925,81 +933,14 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     SearchModal.setAttribute("data-modal-open", true);
   }*/
 
-  function ShowLangMenu (HoveredElement) {
-    // alert("LangMenu activated !");
-    // console.log(HoveredElement);
+  /*function ShowLangMenu (HoveredElement) {
     HoveredElement.nextElementSibling.classList.add("--status-open");
   }
 
   function HideLangMenu (HoveredElement) {
-    // HoveredElement.nextElementSibling.classList.remove("--status-open");
     console.log(HoveredElement.querySelector(".--status-open"));
     HoveredElement.querySelector(".--status-open").classList.remove("--status-open");
-  }
+  }*/
 
 </script>
-
-<!--
-<style>
-  .category__link {
-  }
-
-  .category__list-container {
-    display: none;
-  }
-
-  .category__header-link,
-  .category__list-link {
-    text-decoration: none;
-  }
-
-  .category__header-link {
-    line-height: 40px;
-  }
-
-  .category__list {
-    margin-left: 1rem;
-    list-style: none;
-  }
-
-  .category__gallery {
-    display: none;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .submenu__grid.category__gallery {
-    opacity: 1;
-    grid-template-columns: repeat(4,1fr);
-  }
-
-  .submenu-main-grid {
-    display: grid;
-    grid-template-columns: 285px 4fr;
-    max-width: 1467px;
-    margin: 0 auto;
-  }
-
-  .submenu__ul .&#45;&#45;category-open {
-
-  }
-
-  .&#45;&#45;category-active {
-    display: none;
-  }
-
-  .&#45;&#45;category-active + .category__list-container {
-    display: block;
-    /*background-color: yellow;*/
-  }
-
-  .&#45;&#45;category-gallery-active {
-    display: grid;
-
-    /*transform: translateY(-50%);*/
-  }
-
-  .category-grid-container {
-    max-height: 401px;
-    overflow: hidden;
-  }
-</style>-->
+<script slot="head-scripts" src="/src/components/custom-elements/langSwitch.js" type="module"></script>

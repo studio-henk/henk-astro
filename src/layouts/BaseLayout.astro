@@ -1,13 +1,14 @@
 ---
 import {getLangFromUrl} from '../i18n/utils';
-import MsgBar from "../components/MsgBar.astro";
-import TheNav from "../components/TheNav.astro";
+const lang = getLangFromUrl(Astro.url);
+// import MsgBar from "../components/MsgBar.astro";
+// import TheNav from "../components/TheNav.astro";
+import TheHeader from "../components/TheHeader.astro";
 import TheFooter from "../components/TheFooter.astro";
 
-const lang = getLangFromUrl(Astro.url);
-const {title, mainID, mainClass} = Astro.props;
+const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 ---
-<html lang={lang}>
+<html lang={lang} class={pageClass}>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
@@ -31,7 +32,7 @@ const {title, mainID, mainClass} = Astro.props;
     />
     <slot name="head-styles"/>
     <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
-    <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
+    <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>-->
     <slot name="head-scripts"/>
 </head>
 <body>
@@ -40,8 +41,8 @@ const {title, mainID, mainClass} = Astro.props;
     <div id="page-title">
         <h1 class="sr-only">{title}</h1>
     </div>
-    <MsgBar />
-    <TheNav />
+    <!--<MsgBar />-->
+    <TheHeader NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
     <slot name="pre-main" />
     <main id={mainID} class={mainClass}>
         <slot />
