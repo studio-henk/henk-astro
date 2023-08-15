@@ -6767,6 +6767,15 @@ so calc is unit size * unit num
     display: none;
   }
 }
+.category__link.--category-active,
+.category__close-link {
+  display: none;
+}
+
+.category__link.--category-active + .category__close-link {
+  display: block;
+}
+
 .category__list-container {
   display: none;
 }
@@ -6802,15 +6811,17 @@ so calc is unit size * unit num
   margin: 0 auto;
 }
 
-.--category-active {
-  display: none;
-}
-
-.--category-active + .category__list-container {
+/*.--category-active {
+    display: none;
+}*/
+.--category-active + .category__close-link + .category__list-container {
   display: block;
   /*background-color: yellow;*/
 }
 
+/*.--category-open .category__list-container {
+    display: block;
+}*/
 .--category-gallery-active {
   display: grid;
   /*transform: translateY(-50%);*/

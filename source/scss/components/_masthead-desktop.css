@@ -278,6 +278,15 @@
 .category__link {
 }
 
+.category__link.--category-active,
+.category__close-link {
+    display: none;
+}
+
+.category__link.--category-active + .category__close-link {
+    display: block;
+}
+
 .category__list-container {
     display: none;
 }
@@ -317,14 +326,18 @@
 
 }
 
-.--category-active {
+/*.--category-active {
     display: none;
-}
+}*/
 
-.--category-active + .category__list-container {
+.--category-active + .category__close-link + .category__list-container {
     display: block;
     /*background-color: yellow;*/
 }
+
+/*.--category-open .category__list-container {
+    display: block;
+}*/
 
 .--category-gallery-active {
     display: grid;
