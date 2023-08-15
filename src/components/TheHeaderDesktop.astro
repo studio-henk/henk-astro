@@ -715,10 +715,8 @@ if (!NavTheme) {
 <div id="pixel-to-watch"></div>
 <script is:inline defer>
   // elements
-  const htmlElement = document.documentElement;
+  // const htmlElement = document.documentElement;
   const rootElementDesktop = document.documentElement;
-  // const isTouchDevice = htmlElement.classList.contains(" touchevents");
-  // console.log("touchevents: " + isTouchDevice);
   const mastheadDesktop = document.querySelector(".masthead-desktop");
   const primaryNavLinks = document.querySelectorAll(".masthead-desktop .primary-nav .hoverlink");
   const categoryLinks = document.querySelectorAll(".masthead-desktop .category__link");
@@ -744,19 +742,26 @@ if (!NavTheme) {
     }
   });
 
-  let isTouchDevice = doTouchDeviceCheck();
-
   // primary nav links that have a submenu
-  primaryNavLinks.forEach(function (currentElement, currentIndex, listObj) {
+  primaryNavLinks.forEach(function (currentElement, currentIndex, listObj, isTouchDevice) {
     // disable clicking on these
-    // ONLY IF IS NOT A TOUCH DEVICE : HTML CLASS "NO-TOUCHEVENTS"
+    currentElement.addEventListener("click", function (event) {
+      event.preventDefault();
+    });
 
-    if (isTouchDevice) {
+    // set mouse over listener
+    currentElement.addEventListener("mouseover", function (event) {
+      handlePrimaryLinks(currentElement, event);
+    });
+/*
+    if (isTouchDevice === true) {
+      console.log("setting event handler for touch device");
       currentElement.addEventListener("click", function (event) {
         // event.preventDefault();
         handlePrimaryLinks(currentElement, event);
       });
     } else {
+      console.log("setting event handler for NON touch device");
       currentElement.addEventListener("click", function (event) {
         event.preventDefault();
       });
@@ -766,6 +771,7 @@ if (!NavTheme) {
         handlePrimaryLinks(currentElement, event);
       });
     }
+*/
   });
 
   // category links ie: Tbales, Chair, Sofas, to open them
@@ -941,5 +947,3 @@ if (!NavTheme) {
   }*/
 
 </script>
-<!--
-<script slot="head-scripts" src="/src/components/custom-elements/LangSwitch.js" type="module"></script>-->

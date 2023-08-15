@@ -4,11 +4,12 @@ import TheHeaderDesktop from "./TheHeaderDesktop.astro";
 const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 ---
 
-<TheHeaderMobile NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
-<TheHeaderDesktop NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
+<TheHeaderMobile NavTheme={NavTheme} NavOnHero={NavOnHero} />
+<TheHeaderDesktop NavTheme={NavTheme} NavOnHero={NavOnHero} />
 <script>
-    const htmlElement = document.documentElement;
-    const isTouchDevice = htmlElement.classList.contains("touchevents");
+    // const htmlElement = document.documentElement;
+    // const isTouchDevice = htmlElement.classList.contains("touchevents");
+    // console.log(isTouchDevice);
     const mastheadMobile = document.querySelector(".masthead-mobile");
     const mastheadDesktop = document.querySelector(".masthead-desktop");
     const masthead = document.querySelector(".masthead");
@@ -16,26 +17,39 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     const NavBarHeroMobile = mastheadMobile.getAttribute('data-hashero');
     const NavBarHeroDesktop = mastheadDesktop.getAttribute('data-hashero');
 
-    if (isTouchDevice) {
-        if (NavBarHeroMobile === false || NavBarHeroMobile === null) {
-            document.body.style.paddingTop = mastheadMobile.clientHeight + "px";
-        }
-    } else {
-        if (NavBarHeroDesktop === false || NavBarHeroDesktop === null) {
-            document.body.style.paddingTop = mastheadDesktop.clientHeight + "px";
+    // Create a media condition that targets viewports at least 768px wide
+    const mediaQuery = window.matchMedia('(max-width: 1279px)')
+    function handleTabletChange(e) {
+        // Check if the media query is true
+        if (e.matches) {
+            if (!NavBarHeroMobile) {
+                document.body.style.paddingTop = mastheadMobile.clientHeight + "px";
+            }
+        } else {
+            if (!NavBarHeroDesktop) {
+                document.body.style.paddingTop = mastheadDesktop.clientHeight + "px";
+            }
         }
     }
+
+    // Register event listener
+    mediaQuery.addEventListener("change", handleTabletChange);
+
+    // Initial check
+    handleTabletChange(mediaQuery)
+
 
     // checking if doc has scrolled
     let observer = new IntersectionObserver(entries => {
         if (entries[0].boundingClientRect.y < 0) {
-            mastheadMobile.classList.add("--status-scrolled");
+            //mastheadMobile.classList.add("--status-scrolled");
             mastheadDesktop.classList.add("--status-scrolled");
         } else {
-            mastheadMobile.classList.remove("--status-scrolled");
+            //mastheadMobile.classList.remove("--status-scrolled");
             mastheadDesktop.classList.remove("--status-scrolled");
         }
     });
     observer.observe(document.querySelector("#pixel-to-watch"));
 </script>
 <script slot="head-scripts" src="/static/std/assets/js/web-components/LangSwitch.js" type="module"></script>
+<script slot="head-scripts" src="/static/std/assets/js/web-components/HamburgerButton.js" type="module"></script>

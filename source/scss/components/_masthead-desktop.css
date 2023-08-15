@@ -63,6 +63,14 @@
         --color-text-badge: var(--color-white);
     }
 
+    .masthead-desktop[data-theme="light"] {
+        --color-text-masthead: var(--color-white);
+    }
+
+    .--desktop-menu-open .masthead-desktop {
+        --color-text-masthead: var(--color-black);
+    }
+
     .masthead-desktop[data-theme="dark"][data-hashero="true"]:not(.--status-scrolled) {
         --color-text-masthead: var(--color-black);
         --color-background-masthead: var(--color-transparent);

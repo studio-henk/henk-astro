@@ -6568,6 +6568,7 @@ so calc is unit size * unit num
     padding: 0;
   }
   .masthead-desktop {
+    --color-text-masthead: var(--color-black);
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -6588,6 +6589,12 @@ so calc is unit size * unit num
     --color-background-masthead: var(--color-white);
     --color-background-badge: var(--color-black);
     --color-text-badge: var(--color-white);
+  }
+  .masthead-desktop[data-theme=light] {
+    --color-text-masthead: var(--color-white);
+  }
+  .--desktop-menu-open .masthead-desktop {
+    --color-text-masthead: var(--color-black);
   }
   .masthead-desktop[data-theme=dark][data-hashero=true]:not(.--status-scrolled) {
     --color-text-masthead: var(--color-black);
