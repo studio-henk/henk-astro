@@ -15811,7 +15811,7 @@ quickfix for images causing gap in grid
   font-size: 1rem;
   line-height: 28px;
   color: #fff;
-  max-width: 50%;
+  flex: none;
   padding-left: 0;
 }
 .mdl-shop-product[data-variant=category-setting] .sh-atom-button {
