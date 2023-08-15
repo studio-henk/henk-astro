@@ -29,7 +29,7 @@ if (!NavTheme) {
             height="16"
         />
         <AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6"/>
-        <MobileNavButton/>
+        <!--<MobileNavButton/>-->
         <hamburger-button></hamburger-button>
     </div>
     <!-- how to do this with stacked animation? -->
@@ -41,7 +41,8 @@ if (!NavTheme) {
     const rootElement = document.documentElement;
     const masthead = document.querySelector('#masthead-mobile');
     /*const navBtn = document.querySelector('#menu-btn');*/
-    const navBtn = document.querySelector('#MobileNavButton');
+    /*const navBtn = document.querySelector('#MobileNavButton');*/
+    const navBtn = document.querySelector('hamburger-button');
     const backLinks = document.querySelectorAll('.--back');
     const level1SubviewLinks = document.querySelectorAll('.--nav-level1 > .--has-submenu > .subview-link');
     const level2SubviewLinks = document.querySelectorAll('.--nav-level2 > .--has-submenu > .subview-link');

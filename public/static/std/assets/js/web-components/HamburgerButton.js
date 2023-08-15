@@ -19,7 +19,7 @@ template.innerHTML = `
         top: 4px;
     }*/
     :host .HamburgerButton {
-        top: 4px;
+        /*top: 4px;*/
     }
 
     .HamburgerButton span {
@@ -37,28 +37,19 @@ template.innerHTML = `
     }
 
     .HamburgerButton span:nth-child(1) {
-        top: 0;
+        top: 4px;
     }
 
     .HamburgerButton span:nth-child(2),.HamburgerButton span:nth-child(3) {
-        top: 8px;
+        top: 12px;
     }
 
     .HamburgerButton span:nth-child(4) {
         top: 16px;
     }
-
-    /*.HamburgerButton.open span:nth-child(1) {
-        top: 18px;
-        width: 0;
-        left: 50%;
-    }*/
-    /*:host(.open) {
-        background-color: deepskyblue;
-    }*/
     
     :host(.open) .HamburgerButton {
-        top: 0;
+        /*top: 0;*/
     }
     
     :host(.open) .HamburgerButton span:nth-child(1) {
@@ -69,10 +60,12 @@ template.innerHTML = `
 
     :host(.open) .HamburgerButton span:nth-child(2) {
         transform: rotate(45deg);
+        top: 8px;
     }
 
     :host(.open) .HamburgerButton span:nth-child(3) {
         transform: rotate(-45deg);
+        top: 8px;
     }
 
     :host(.open) .HamburgerButton span:nth-child(4) {
