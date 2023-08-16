@@ -15,13 +15,6 @@ template.innerHTML = `
         cursor: pointer;
     }
 
-    /*.HamburgerButton:not(.open) {
-        top: 4px;
-    }*/
-    :host .HamburgerButton {
-        /*top: 4px;*/
-    }
-
     .HamburgerButton span {
         pointer-events: none;
         display: block;
@@ -46,10 +39,6 @@ template.innerHTML = `
 
     .HamburgerButton span:nth-child(4) {
         top: 16px;
-    }
-    
-    :host(.open) .HamburgerButton {
-        /*top: 0;*/
     }
     
     :host(.open) .HamburgerButton span:nth-child(1) {
@@ -83,9 +72,6 @@ template.innerHTML = `
 `;
 
 class HamburgerButton extends HTMLElement {
-  /*static get observedAttributes() {
-    return ['checked', 'data-url'];
-  }*/
 
   constructor() {
     super();
@@ -98,52 +84,19 @@ class HamburgerButton extends HTMLElement {
   }
 
   disconnectedCallback() {
-    console.log("disconnectedCallback called");
+    // console.log("disconnectedCallback called");
     this.removeEventListener("click", this.handleClickEvent);
   }
-
-  // A getter/setter for an open property.
-  /*set checked(isCheckedVal) {
-    const isChecked = Boolean(isCheckedVal);
-    const thisCheckboxElement = this.shadowRoot.querySelector("input[type=checkbox]");
-    if (isChecked) {
-      this.setAttribute('checked', '');
-      thisCheckboxElement.checked = true;
-      thisCheckboxElement.setAttribute('checked', '');
-    } else {
-      this.removeAttribute('checked');
-      thisCheckboxElement.checked = false;
-      thisCheckboxElement.removeAttribute('checked');
-    }
-  }*/
-
-  /*get checked() {
-    return this.hasAttribute('checked');
-  }*/
-
-  /*set otherURL(value) {
-    if (value)
-      this.setAttribute('data-url', value);
-    else
-      this.removeAttribute('data-url');
-  }*/
-
-  /*get otherURL() {
-    return this.getAttribute('data-url');
-  }*/
 
   attributeChangedCallback(attrName, oldValue, newValue) {
     console.log("attributeChangedCallback called");
     // do stuff when attributes change
     if (newValue !== oldValue) {
       this.attrName = newValue;
-      // console.log("prop in attrChangecallback: " + attrName + ", old: " + oldValue + ", new: " + newValue);
     }
   }
 
   handleClickEvent() {
-    // this.checked = !this.checked;
-    // this.redirectPage();
     this.classList.toggle('open');
   }
 }
