@@ -4986,9 +4986,6 @@ sh-atom-button[data-state="unmuted"] .muted {
   /*margin: 1.75em 0;*/
   vertical-align: middle;
 }
-.shopping-cart-product__details--description .sh-atom-tag {
-  margin-top: 14px;
-}
 
 /* with a link
 padding must be moved from tag to inner link element
