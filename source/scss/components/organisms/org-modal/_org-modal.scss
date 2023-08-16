@@ -2,7 +2,8 @@
 /// variant filter
 /// @todo: rewrite, rename this to sh-org-modal and come up with different child names.
 .sh-org-modal {
-  z-index: 91040;
+  /*z-index: 91040;*/
+  z-index: 0;
 
   &.sh-org-modal--status-open {
     z-index: 999999;
