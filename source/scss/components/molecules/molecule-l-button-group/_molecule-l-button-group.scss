@@ -1,4 +1,5 @@
 // reset owl
+.button-group,
 .sh-molecule-l-button-group {
   display: flex;
   align-items: center;
@@ -61,5 +62,9 @@
 /// update: 2022-08-26 • 08:40 - CEST
 /// if button group after a swiper/slider then no margin-top
 .swiper + .sh-molecule-l-button-group {
+  margin-top: 0;
+}
+
+.swiper + .button-group {
   margin-top: 0;
 }
