@@ -19,14 +19,15 @@
   "license": "ISC",
   "dependencies": {
     "astro": "^2.1.4",
+    "node-html-parser": "^6.1.5",
     "sass": "^1.59.3",
     "watch-cli": "^0.2.3"
   },
   "devDependencies": {
-    "prettier-plugin-astro": "^0.8.0",
     "autoprefixer": "^10.3.1",
+    "cssnano": "^5.1.15",
     "postcss": "^8.4.21",
     "postcss-cli": "^9.1.0",
-    "cssnano": "^5.1.15"
+    "prettier-plugin-astro": "^0.8.0"
   }
 }

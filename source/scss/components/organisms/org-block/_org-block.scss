@@ -76,6 +76,7 @@
           align-content: flex-start;
         }
 
+        /* TODO: remove soon */
         button[data-variant="icon-only"] {
           position: absolute;
           left: 20px;
@@ -144,8 +145,10 @@
       &.--is-hero {
         picture {
           img {
-            @media only screen and (min-width: 1440px) {
-              max-height: 680px;
+            @media only screen and (min-width: 768px) {
+              /*max-height: 680px;*/
+              /* update 2023-06-29 • 13:44 - CEST */
+              height: calc(100svh - var(--size-height-for-hero));
             }
           }
         }

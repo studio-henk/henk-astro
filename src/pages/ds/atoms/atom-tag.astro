@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Icon from "../../../components/Icon.astro";
+import AtomTag from "../../../components/Atoms/AtomTag.astro";
+---
+
+<BaseLayout title="Atom Tag">
+  <h1>Atom-Tag</h1>
+  <p>From: <a href="https://www.figma.com/file/wppNFHNUP3QZYFNEXzm6qf/PDP-Sticky-Add-to-Cart-%2B-Delivery-times?type=design&node-id=0-1&t=8cUR9uWWEX8p2eRP-0">Figma PDP</a></p>
+  <AtomTag text="Made to Order" />
+  <p>with icon left</p>
+  <AtomTag
+      text="fast delivery"
+      icon="truck"
+      iconPosition="left"
+  />
+  <hr>
+  <p>with icon right</p>
+  <AtomTag
+      text="fast delivery"
+      icon="truck"
+      iconPosition="right"
+  />
+  <hr>
+  <p>with a link?</p>
+  <span class="sh-atom-tag" data-haslink="https://disney.com">
+    <a class="sh-atom-tag__link" href="#">link inside</a>
+  </span>
+  <hr>
+  <AtomTag
+      text="no link"
+  />
+  <hr>
+  <AtomTag
+      text="no link but icon left"
+      icon="truck"
+      iconPosition="left"
+  />
+  <hr>
+  <AtomTag
+      text="no link but icon right"
+      icon="truck"
+      iconPosition="right"
+  />
+  <hr>
+  <AtomTag
+      text="has link"
+      hasLink="https://disney.com"
+  />
+  <hr>
+  <AtomTag
+      text="has link"
+      hasLink="https://disney.com"
+      icon="truck"
+      iconPosition="left"
+  />
+  <AtomTag
+      text="has link"
+      hasLink="https://disney.com"
+      icon="truck"
+      iconPosition="right"
+  />
+</BaseLayout>
