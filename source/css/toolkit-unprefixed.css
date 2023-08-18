@@ -510,26 +510,6 @@ template {
   --size-vertical-rhythm: calc(var(--size-font-lineheight-body, 28px) / var(--size-font-body, 16px));
 }
 
-/*--size-font-xxlarge*/
-.ts-h3,
-.ts-20-27,
-.ts-xxlarge {
-  font-size: 1.25rem;
-  line-height: 30px;
-  letter-spacing: 1.2px;
-}
-
-/*27 px*/
-/*--size-font-xxlarge*/
-@media only screen and (min-width: 992px) {
-  .ts-h3,
-  .ts-20-27,
-  .ts-xxlarge {
-    font-size: 1.6875rem;
-    line-height: 41px;
-    letter-spacing: 0.03em;
-  }
-}
 /*
 used in:
 templates/Areas/reviews-brick/view.html.twig
