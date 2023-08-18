@@ -6331,6 +6331,39 @@ so calc is unit size * unit num
   top: -4px;
 }
 
+.LangSwitch {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.LangSwitch__track {
+  width: 24px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 12px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.LangSwitch__knob {
+  width: 12px;
+  height: 12px;
+  display: block;
+  background-color: var(--color-accent19, #000);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.LangSwitch__link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.LangSwitch[lang=en] .LangSwitch__knob {
+  transform: translateX(100%);
+}
+
 @media only screen and (max-width: 1279px) {
   @keyframes masthead-mobile-fade-in {
     0% {

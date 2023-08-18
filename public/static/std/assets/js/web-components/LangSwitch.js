@@ -10,75 +10,55 @@ template.innerHTML = `
     
     .LangSwitch {
         display: flex;
-        align-items: center;
         gap: 4px;
-        position: relative;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
     }
 
-    .LangSwitch input[type="checkbox"] {
+    .LangSwitch__track {
+        width: 24px;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 12px;
+        border-radius: 30px;
+    }
+
+    .LangSwitch__knob {
+        width: 12px;
+        height: 12px;
         display: block;
-        opacity: 1;
-        width: 23px;
-        position: absolute;
-        left: 28px;
-        top: 7px;
-        appearance: none;
-        height: 13px;
-        background: transparent;
-        border: 0;
-        cursor: pointer;
-    }
-
-    .LangSwitch input[type="checkbox"]:focus-visible,
-    .LangSwitch input[type="checkbox"]:focus-visible {
-        outline-offset: 3px;
-        outline: #00bfff solid 1px;
-    }
-
-    .LangSwitch .LangSwitch__label {
-        background-color: rgba(0, 0, 0, 0.2);
-        width: 23px;
-        height: 11px;
-        border-radius: 30px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /*[data-theme="dark"] .LangSwitch2 .LangSwitch2__label,
-    .--masthead-desktop-hovered .LangSwitch2 .LangSwitch2__label{
-        background-color: rgba(0, 0, 0, 0.2);
-    }*/
-
-    .LangSwitch .LangSwitch__label .slider {
-        height: 11px;
-        width: 11px;
-        background-color: var(--color-accent19);
-        border-radius: 30px;
-        margin: 0;
-    }
-
-    .LangSwitch input:checked + .LangSwitch__label > .slider {
-        align-self: flex-end;
+        background-color: var(--color-accent19, #000);
+        border-radius: 50%;
+        transition: transform .3s ease;
     }
     
-    .LangSwitch__pseudo-label {
-        
+    .LangSwitch__link {
+        color: currentColor;
+        text-decoration:none;
     }
+    
+    :host([lang="en"]) .LangSwitch__knob {
+        transform: translateX(100%);
+    }
+    
+    :host([lang="nl"]) .LangSwitch__label:first-child,
+    :host([lang="en"]) .LangSwitch__label:last-child{
+        cursor: not-allowed;
+    }
+        
   </style>
-  <div class="LangSwitch" id="">
-    <span class="LangSwitch__pseudo-label">NL</span>
-    <input type="checkbox" id="" class="LangSwitch__checkbox">
-    <label for="LangSwitch__language" class="LangSwitch__label">
-        <span class="slider"></span>
-    </label>
-    <span class="LangSwitch__pseudo-label">EN</span>
+  <div class="LangSwitch">
+    <span class="LangSwitch__label">NL</span>
+    <span class="LangSwitch__track">
+        <span class="LangSwitch__knob"></span>
+    </span>
+    <span class="LangSwitch__label">EN</span>   
   </div>    
 `;
 
 class LangSwitch extends HTMLElement {
   static get observedAttributes() {
-    return ['checked', 'data-url'];
+    return ['lang', 'data-url'];
   }
 
   constructor() {
@@ -88,52 +68,20 @@ class LangSwitch extends HTMLElement {
   }
 
   connectedCallback() {
-    /*if (!this.hasAttribute('role'))
-        this.setAttribute('role', 'checkbox');
-    if (!this.hasAttribute('tabindex'))
-        this.setAttribute('tabindex', 0);*/
-    // get lang from html element
-    const lang = document.documentElement.getAttribute("lang");
-    // check lang and if EN, set checked property
-    if (lang === "en") {
-      this.checked = true;
-    }
-    this.addEventListener("click", this.handleChangeEvent);
+    this.addEventListener("click", this.handleClickEvent);
   }
 
   disconnectedCallback() {
     console.log("disconnectedCallback called");
-    this.removeEventListener("click", this.handleChangeEvent);
+    this.removeEventListener("click", this.handleClickEvent);
   }
 
-  // A getter/setter for an open property.
-  set checked(isCheckedVal) {
-    const isChecked = Boolean(isCheckedVal);
-    const thisCheckboxElement = this.shadowRoot.querySelector("input[type=checkbox]");
-    if (isChecked) {
-      this.setAttribute('checked', '');
-      thisCheckboxElement.checked = true;
-      thisCheckboxElement.setAttribute('checked', '');
-    } else {
-      this.removeAttribute('checked');
-      thisCheckboxElement.checked = false;
-      thisCheckboxElement.removeAttribute('checked');
-    }
+  set lang(value) {
+      this.setAttribute('lang', value);
   }
 
-  get checked() {
-    return this.hasAttribute('checked');
-  }
-
-  set otherURL(value) {
-    if (value)
-      this.setAttribute('data-url', value);
-    else
-      this.removeAttribute('data-url');
-  }
-
-  get otherURL() {
-    return this.getAttribute('data-url');
+  get lang() {
+    return this.getAttribute('lang');
   }
 
   attributeChangedCallback(attrName, oldValue, newValue) {
@@ -141,18 +89,16 @@ class LangSwitch extends HTMLElement {
     // do stuff when attributes change
     if (newValue !== oldValue) {
       this.attrName = newValue;
-      // console.log("prop in attrChangecallback: " + attrName + ", old: " + oldValue + ", new: " + newValue);
     }
   }
 
-  handleChangeEvent() {
-    this.checked = !this.checked;
-    this.redirectPage();
-  }
-
-  redirectPage() {
-    // console.log("redirecting to:" + this.otherURL);
-    document.location.assign(this.otherURL);
+  handleClickEvent(e) {
+    e.preventDefault();
+    if (this.lang === "nl") {
+      this.lang = "en"
+    } else {
+      this.lang = "nl"
+    }
   }
 }
 

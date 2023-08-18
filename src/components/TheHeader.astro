@@ -7,9 +7,6 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 <TheHeaderMobile NavTheme={NavTheme} NavOnHero={NavOnHero} />
 <TheHeaderDesktop NavTheme={NavTheme} NavOnHero={NavOnHero} />
 <script>
-    // const htmlElement = document.documentElement;
-    // const isTouchDevice = htmlElement.classList.contains("touchevents");
-    // console.log(isTouchDevice);
     const mastheadMobile = document.querySelector(".masthead-mobile");
     const mastheadDesktop = document.querySelector(".masthead-desktop");
     const masthead = document.querySelector(".masthead");
@@ -53,3 +50,16 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
 </script>
 <script slot="head-scripts" src="/static/std/assets/js/web-components/LangSwitch.js" type="module"></script>
 <script slot="head-scripts" src="/static/std/assets/js/web-components/HamburgerButton.js" type="module"></script>
+<script is:inline defer>
+    const langSwitches = document.querySelectorAll("lang-switch");
+    langSwitches.forEach(function (currentElement, currentIndex, listObj, isTouchDevice) {
+        const url = currentElement.dataset.url;
+        currentElement.addEventListener("click", function (event) {
+            setTimeout(handleSwitch, 300, url);
+        });
+    });
+
+    function handleSwitch (url) {
+        document.location.assign(url);
+    }
+</script>

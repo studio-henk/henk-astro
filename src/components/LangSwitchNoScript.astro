@@ -1,0 +1,13 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const { url, title } = Astro.props;
+const currentPath = Astro.url.pathname.substring(4);
+---
+<div class="LangSwitch" lang={lang}>
+    <a href={"/" + lang + "/" + currentPath} class="LangSwitch__link">NL</a>
+    <span class="LangSwitch__track">
+        <span class="LangSwitch__knob"></span>
+    </span>
+    <a href={url} class="LangSwitch__link">EN</a>
+</div>

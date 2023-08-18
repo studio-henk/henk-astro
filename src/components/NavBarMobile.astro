@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl } from "../i18n/utils";
+import LangSwitchNoScript from "./LangSwitchNoScript.astro";
 const lang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname.substring(4);
 let otherLang;
@@ -9,147 +10,6 @@ if (lang =="nl") {
   otherLang = "nl"
 }
 let otherURL = "/" + otherLang + "/" + currentPath;
-/*
-const navLinks = [
-  {
-    name: "Shop",
-    url: "#Shop",
-    style: "transparent",
-    submenu: [
-      {
-        name: "Tables",
-        url: "#tables",
-        submenu: [
-          {
-            name: "All Tables",
-            url: "#tables",
-          },
-          {
-            name: "Dining Tables",
-            url: "#dining-tables",
-          },
-          {
-            name: "Coffee Tables",
-            url: "#coffee-tables",
-          },
-          {
-            name: "Home Desks",
-            url: "#home-desks",
-          },
-          {
-            name: "Bistro Tables",
-            url: "#bistro-tables",
-          },
-        ],
-      },
-      {
-        name: "Chairs",
-        url: "#chairs",
-        submenu: [
-          {
-            name: "All Chairs",
-            url: "#all-chairs",
-          },
-          {
-            name: "Dining Chairs",
-            url: "#dining-chairs",
-          },
-        ],
-      },
-      {
-        name: "Sofas",
-        url: "#sofas",
-        submenu: [
-          {
-            name: "All Sofas",
-            url: "#all-sofas",
-          },
-          {
-            name: "Sofas",
-            url: "#sofas",
-          },
-          {
-            name: "Poufs",
-            url: "#poufs",
-          },
-        ],
-      },
-      {
-        name: "Cabinets",
-        url: "#cabinets",
-      },
-      {
-        name: "Accessories",
-        url: "#accessories",
-      },
-      {
-        name: "Outdoor",
-        url: "/en/outdoor",
-      },
-    ],
-  },
-  {
-    name: "Configurator",
-    url: "#Configurator",
-    style: "transparent",
-    submenu: null,
-  },
-  {
-    name: "Samples",
-    url: "#Samples",
-    style: "transparent",
-    submenu: null,
-  },
-  {
-    name: "Visit",
-    url: "#Visit",
-    style: "transparent",
-    submenu: [
-      {
-        name: "Our Stores",
-        url: "/en/shops",
-      },
-      {
-        name: "Interior advice",
-        url: "/en/advice",
-      },
-    ],
-  },
-  {
-    name: "Inspiration",
-    url: "#",
-    style: "transparent",
-    submenu: [
-      {
-        name: "Stories",
-        url: "/en/blogs",
-      },
-      {
-        name: "Projects",
-        url: "/en/projects",
-      },
-    ],
-  },
-  {
-    name: "About",
-    url: "/en/about-us",
-    style: "transparent",
-    submenu: null,
-  },
-  {
-    name: "Search",
-    url: "#",
-    style: "transparent",
-    submenu: null,
-  },
-  {
-    name: "Language",
-    url: "#",
-    style: "transparent",
-    submenu: null,
-  },
-];
-*/
 ---
 
 <nav class="nav-bar-mobile" id="nav-bar-mobile">
@@ -573,7 +433,11 @@ const navLinks = [
       <a href={"/" + lang + "/search-results"}>Search</a>
     </li>
       <li role="none" class="">
-      <span class="label">Language <lang-switch data-url={otherURL}></lang-switch></span>
+      <!--<span class="label">Language <lang-switch data-url={otherURL}></lang-switch></span>-->
+        <span class="label">Language <lang-switch data-url={otherURL} title={otherURL} lang={lang}></lang-switch>
+        <noscript>
+          <LangSwitchNoScript url={otherURL} lang={lang} />
+        </noscript></span>
     </li>
   </ul>
 </nav>

@@ -3,6 +3,8 @@ import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
 import AtomFigure from "./Atoms/AtomFigure.astro";
 import { getLangFromUrl } from "../i18n/utils";
+import LangSwitchNoScript from "./LangSwitchNoScript.astro";
+// import LangSwitch3 from "./LangSwitch3.astro";
 const lang = getLangFromUrl(Astro.url);
 const { NavOnHero } = Astro.props;
 let { NavTheme } = Astro.props;
@@ -50,7 +52,10 @@ if (!NavTheme) {
       <ul class="utilities-nav__list">
         <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"} class="hover-interaction-a">Search</a></li>
         <li class="utilities-nav__item" id="utilities-nav__lang">
-          <lang-switch data-url={otherURL}></lang-switch>
+          <lang-switch data-url={otherURL} title={otherURL} lang={lang}></lang-switch>
+          <noscript>
+            <LangSwitchNoScript url={otherURL} lang={lang} />
+          </noscript>
         </li>
         <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" /></li>
       </ul>
