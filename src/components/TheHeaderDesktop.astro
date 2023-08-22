@@ -785,7 +785,7 @@ if (!NavTheme) {
 
   // when mouse enters masthead-desktop
   mastheadDesktop.addEventListener("mouseenter", function (e) {
-    console.log("mouse entered the masthead-desktop");
+    // console.log("mouse entered the masthead-desktop");
     if (!menuOpen) {
       invertMainNav();
     }
@@ -926,50 +926,34 @@ if (!NavTheme) {
 
   function handleCategoryLinks(currentIndex, currentElement) {
     if (document.querySelector(".--category-open") != null) {
-      console.log("not null: 1 open category");
-      // console.log(document.querySelector(".--category-open").classList);
       document
           .querySelector(".--category-open")
           .classList.remove("--category-open");
-      /*document
-          .querySelector(".--category-active")
-          .classList.remove("--category-active");*/
       currentElement.parentElement.classList.toggle("--category-open");
     } else {
-      console.log("null: no open category");
+      // console.log("null: no open category");
       currentElement.parentElement.classList.toggle("--category-open");
     }
-    // currentElement.classList.toggle("--category-active");
-    /*currentElement.parentElement.classList.toggle("--category-open");*/
-    // .classList.toggle("--category-gallery-active");
-    // console.log(categoryGallery);
-    // console.log(categoryGallery[1]);
+
     if (document.querySelector(".--category-gallery-active") != null) {
-      // console.log("not null");
-      // console.log(document.querySelector(".--category-gallery-active").classList);
       document
           .querySelector(".--category-gallery-active")
           .classList.remove("--category-gallery-active");
-    } else {
-      console.log("null");
     }
+
     let galleryIndex = currentIndex + 1;
-    console.log(galleryIndex);
     categoryGallery[galleryIndex].classList.add("--category-gallery-active");
   }
 
   function openCategorySubmenu (currentIndex, currentElement) {
     resetActiveCategory();
-    console.log("toggled this category");
     currentElement.classList.add("--category-active");
     showCorrespondingGallery(currentIndex);
   }
 
   function closeCategorySubmenu (currentIndex, currentElement) {
     resetActiveCategory();
-    console.log("toggled this category");
     currentElement.classList.remove("--category-active");
-    // showCorrespondingGallery(currentIndex);
   }
 
   function showCorrespondingGallery (currentIndex) {
@@ -983,7 +967,7 @@ if (!NavTheme) {
 
   function resetActiveCategory () {
     const allActiveCategories = document.querySelectorAll(".--category-active");
-    console.log(allActiveCategories);
+    // console.log(allActiveCategories);
     if (allActiveCategories.length > 0 ) {
       allActiveCategories.forEach(function (currentActiveCategory, currentIndex, listObj) {
         currentActiveCategory.classList.remove("--category-active");
@@ -995,11 +979,6 @@ if (!NavTheme) {
   function closeShopSubmenu () {
     resetActiveCategory();
     resetGallery();
-    /*document
-        .querySelector(".--category-gallery-active")
-        .classList.remove("--category-gallery-active");
-    categoryGallery[0].classList.add("--category-gallery-active");*/
-
   }
 
   function resetGallery () {
@@ -1008,38 +987,4 @@ if (!NavTheme) {
         .classList.remove("--category-gallery-active");
     categoryGallery[0].classList.add("--category-gallery-active");
   }
-
-  /*function closeShopSubmenu () {
-    // --category-open
-      // --category-active
-    // --category-gallery-active
-    if (document.querySelector(".--category-open") != null) {
-      document
-          .querySelector(".--category-open")
-          .classList.remove("--category-open");
-      /!*document
-          .querySelector(".--category-active")
-          .classList.remove("--category-active");*!/
-      document
-          .querySelector(".--category-gallery-active")
-          .classList.remove("--category-gallery-active");
-      categoryGallery[0].classList.add("--category-gallery-active");
-    }
-  }*/
-
-  /*function OpenSearchModal (ClickedElement, event) {
-    event.preventDefault();
-    const SearchModal = document.getElementById("search-modal");
-    SearchModal.setAttribute("data-modal-open", true);
-  }*/
-
-  /*function ShowLangMenu (HoveredElement) {
-    HoveredElement.nextElementSibling.classList.add("--status-open");
-  }
-
-  function HideLangMenu (HoveredElement) {
-    console.log(HoveredElement.querySelector(".--status-open"));
-    HoveredElement.querySelector(".--status-open").classList.remove("--status-open");
-  }*/
-
 </script>
