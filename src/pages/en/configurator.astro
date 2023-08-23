@@ -19,11 +19,10 @@ import Icon from "../../components/Icon.astro";
                             <!--<img id="configurator__image" src="/static/std/assets/toolkit/images/T-RC-0008-STD-B-B.jpg" alt="Configurator" class="img-responsive">-->
                             <img id="configurator__image" src="/static/std/assets/toolkit/images/T-RC-0008-STD-B-B-transparent.png" alt="Configurator" class="img-responsive">
                         </div>
-                    </div>
 
-                    <div class="row configurator__controls-row">
-                        <div class="col-xs-12">
-                            <div class="configurator__controls">
+                        <div class="row configurator__controls-row">
+                            <div class="col-xs-12">
+                                <div class="configurator__controls">
                              <span class="configurator__controls--resize icon-left text-center" data-bstoggle="modal" data-bstarget="#config_image">
                                 <svg class="icon icon-resize ">
                                     <use xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-resize"></use>
@@ -31,21 +30,23 @@ import Icon from "../../components/Icon.astro";
                                  Enlarge image
                              </span>
 
-                                <span class="product-slider__controls--threed icon-left text-center" onclick="show3dView();" id="3d_view_link" data-bstoggle="" data-bstarget="#" style="display: block; cursor: pointer;">
+                                    <span class="product-slider__controls--threed icon-left text-center" onclick="show3dView();" id="3d_view_link" data-bstoggle="" data-bstarget="#" style="display: block; cursor: pointer;">
                                 Configure in <img src="/static/std/assets/toolkit/images/icons1/3d_rotation-24px.svg" alt="3d icon">
                             </span>
 
-                                <span class="product-slider__controls--threed icon-left text-center" onclick="show2dView();" id="2d_view_link" data-bstoggle="" data-bstarget="#" style="display: none; cursor: pointer;">
+                                    <span class="product-slider__controls--threed icon-left text-center" onclick="show2dView();" id="2d_view_link" data-bstoggle="" data-bstarget="#" style="display: none; cursor: pointer;">
                                 Configure in <img src="/static/std/assets/toolkit/images/icons1/2d_rotation-24px.svg" alt="2d icon">
                             </span>
+                                </div>
                             </div>
+                            <!--                    <div class="col-xs-4">-->
+                            <!--                        <div class="configurator__price">-->
+                            <!--                            <h2 class="h1" id="configurator__price1"></h2>-->
+                            <!--                        </div>-->
+                            <!--                    </div>-->
                         </div>
-                        <!--                    <div class="col-xs-4">-->
-                        <!--                        <div class="configurator__price">-->
-                        <!--                            <h2 class="h1" id="configurator__price1"></h2>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
                     </div>
+
                     <div class="hidden-xs visible-md-block">
                         <div class="product-specificaties">
                             <div class="product-specificaties">
@@ -1999,7 +2000,7 @@ import Icon from "../../components/Icon.astro";
         });
     </script>
 </BaseLayout>
-<style>
+<style is:global>
     .configurator {
         margin: 0;
     }
@@ -2021,6 +2022,9 @@ import Icon from "../../components/Icon.astro";
         margin: 0;
     }
 
+    .configurator__view {
+        margin: 0;
+    }
 
     .configurator__view--image {
         background-color: var(--color-accent1, #fff);
@@ -2104,7 +2108,36 @@ import Icon from "../../components/Icon.astro";
     }
 
     @media only screen and (max-width: 767px) {
+        .configurator__left-column {
+            position: relative;
+            height: 41.2vh;
+            background-color: pink;
+        }
 
+        .configurator__left-column .configurator__view {
+            position: fixed;
+            top: 56px;
+            z-index: 9;
+        }
+
+        .configurator__controls-row {
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+        }
+
+        .configurator__right-column {
+
+        }
+
+        .configurator__right-column .product-configuration {
+            padding-top: 4em;
+        }
+
+        .org-footer {
+            position: relative;
+            z-index: 99;
+        }
     }
 
     @media only screen and (min-width: 768px) {
