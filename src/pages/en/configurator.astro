@@ -5,9 +5,9 @@ import Icon from "../../components/Icon.astro";
 
 <BaseLayout title="Configurator">
     <section class="configurator" data-fix="qf-nils-until-new-grid">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
+        <div class="container configurator__container">
+            <div class="row configurator__grid">
+                <div class="col-md-6 configurator__grid-item configurator__left-column">
                     <div class="configurator__view">
                         <div id="3d_div" class="configurator__view--image" data-bstoggle="modal" data-bstarget="#config_image" style="display: none;">
                             <div class="resp-container">
@@ -21,7 +21,7 @@ import Icon from "../../components/Icon.astro";
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row configurator__controls-row">
                         <div class="col-xs-12">
                             <div class="configurator__controls">
                              <span class="configurator__controls--resize icon-left text-center" data-bstoggle="modal" data-bstarget="#config_image">
@@ -46,7 +46,7 @@ import Icon from "../../components/Icon.astro";
                         <!--                        </div>-->
                         <!--                    </div>-->
                     </div>
-                    <div class="hidden-xs visible-md-block" style="display: none !important;">
+                    <div class="hidden-xs visible-md-block">
                         <div class="product-specificaties">
                             <div class="product-specificaties">
                                 <h3 class="product-specificaties__title sh-float-left">Specifications of your table</h3>
@@ -131,7 +131,7 @@ import Icon from "../../components/Icon.astro";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 off-grid-large-left-md off-grid-large-left-lg off-grid-large-left-xl off-grid-large-left-xxl">
+                <div class="col-md-6 off-grid-large-left-md off-grid-large-left-lg off-grid-large-left-xl off-grid-large-left-xxl configurator__grid-item configurator__right-column">
                     <div class="product-configuration">
                         <h1 class="product-configuration__title">Configure your table</h1>
 
@@ -2004,66 +2004,23 @@ import Icon from "../../components/Icon.astro";
         margin: 0;
     }
 
-    /*.configurator * {
-        margin: 0;
+    .configurator .configurator__container {
         padding: 0;
-        box-sizing: border-box;
-    }*/
+        margin: 0 auto;
+    }
 
-    .configurator > .container {
+    .configurator .configurator__container > .configurator__grid {
+        margin: 0;
+    }
+
+    .configurator__grid-item {
         padding: 0;
     }
 
-    .configurator > .container > .row {
-        margin: 0;
-        max-height: 772px;
-        overflow-y: scroll;
-    }
-
-    .configurator > .container > .row > .col-md-6 {
-        padding: 0;
-        width: 59%;
-    }
-
-    .configurator > .container > .row > .col-md-6:first-child {
-        position: sticky;
-        top: 0;
-    }
-
-    .configurator > .container > .row > .col-md-6:first-child > .row {
-        margin: 0;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        padding: 1rem;
-    }
-
-    .configurator__view {
+    .configurator__controls-row {
         margin: 0;
     }
 
-    .configurator > .container > .row > .col-md-6 + .col-md-6 {
-        width: 40%;
-    }
-
-    .configurator > .container > .row > .col-md-6 + .col-md-6:last-child {
-        .product-summary {
-            background: black;
-            color: white;
-            width: 100%;
-            position: sticky;
-            bottom: 0;
-            z-index: 99;
-        }
-    }
-
-
-
-    .configurator > .container > .row > .col-md-6 + .col-md-6 .product-configuration {
-        background-color: aliceblue;
-        padding: 56px;
-        margin: 0;
-    }
 
     .configurator__view--image {
         background-color: var(--color-accent1, #fff);
@@ -2074,46 +2031,130 @@ import Icon from "../../components/Icon.astro";
         object-fit: cover;
     }
 
-    .choose-cards {
+    .configurator__right-column .choose-cards {
         margin: 0;
         gap: 24px;
     }
 
-    .choose-cards__item {
+    .configurator__right-column .choose-cards__item {
         width: auto;
-        flex: 0 1 70px;
+        flex: 0 1 90px;
         padding: 0;
     }
 
-    .choose-cards__item--image {
+    .configurator__right-column .choose-cards__item--image {
         border: 0;
     }
 
-    .choose-cards__item--image img.texture {
+    .configurator__right-column .choose-cards__item--image img.texture {
         border-radius: 50%;
         border: 1px solid #d0d0d0;
         box-shadow: 0 3px 4px rgba(0,0,0, 0.14);
     }
 
-    .choose-cards__item--image:after {
+    .configurator__right-column .choose-cards__item--image:after {
         background-color: var(--color-accent16, green);
         top: 5%;
         /*right: 0;*/
     }
 
-    .choose-cards__item--image:before {
+    .configurator__right-column .choose-cards__item--image:before {
         background: transparent url(/static/std/assets/toolkit/svg-standalone/icon-checkmark-white.svg) no-repeat 50%;
         top: 8px;
         right: 6px;
     }
 
-    .choose-cards__item--label {
+    .configurator__right-column .choose-cards__item--label {
         padding: 0;
         text-align: center;
     }
 
-    .product-configuration .selector__label {
+    .configurator__right-column .product-configuration .selector__label {
         margin: 68px 0 48px !important;
+    }
+
+    .configurator__right-column .product-configuration {
+        padding: 1em;
+        margin: 0;
+    }
+
+    .configurator .configurator__right-column .product-summary {
+        background: black;
+        color: white;
+        width: 100%;
+        position: sticky;
+        bottom: 0;
+        z-index: 99;
+    }
+
+    .configurator .configurator__right-column .product-summary__numbers {
+        display: none;
+    }
+
+    .configurator .configurator__right-column .org-addtocart-console__delivery {
+        display: none;
+    }
+
+    .product-specificaties {
+        padding: 1em;
+    }
+
+    .product-specificaties .product-specificaties {
+        padding: 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+
+    }
+
+    @media only screen and (min-width: 768px) {
+        .configurator .configurator__left-column,
+        .configurator .configurator__right-column {
+            width: 50%;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        .configurator .configurator__container > .configurator__grid {
+            margin: 0;
+            max-height: calc(768px - var(--size-height-for-hero));
+            overflow-y: scroll;
+        }
+
+        .configurator .configurator__left-column {
+            padding: 0;
+            width: 47%;
+            position: sticky;
+            top: 0;
+            height: calc(768px - var(--size-height-for-hero));
+            background-color: var(--color-accent1, #fff);
+        }
+
+        .configurator__controls-row {
+            margin: 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .configurator__view {
+            margin: 0;
+        }
+
+        .configurator .configurator__right-column {
+            width: 53%;
+            padding: 0;
+        }
+
+        .configurator .configurator__left-column {
+            width: 47%;
+        }
+
+        .configurator .configurator__right-column {
+            width: 53%;
+        }
     }
 
 </style>
