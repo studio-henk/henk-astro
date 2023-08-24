@@ -2178,6 +2178,11 @@ import Icon from "../../components/Icon.astro";
         margin: 0;
     }
 
+    .configurator__view--image img {
+        /*max-height: 772px;*/
+        object-fit: cover;
+    }
+
     @media only screen and (max-width: 767px) {
 
         /*.configurator__view--image {
@@ -2287,18 +2292,19 @@ import Icon from "../../components/Icon.astro";
     @media only screen and (min-width: 992px) {
         .configurator .configurator__container > .configurator__grid {
             margin: 0;
-            max-height: calc(768px - var(--size-height-for-hero));
-            overflow-y: scroll;
+            /*max-height: calc(768px - var(--size-height-for-hero));*/
+            /*overflow-y: scroll;*/
             gap: 0;
             grid-template-columns: 2fr 1.6fr;
+            height: calc(100svh - 124px);
         }
 
         .configurator .configurator__left-column {
             padding: 0;
-            /*width: 47%;*/
-            position: sticky;
+            /*position: sticky;
             top: 0;
             height: calc(768px - var(--size-height-for-hero));
+            background-color: var(--color-accent1, #fff);*/
             background-color: var(--color-accent1, #fff);
         }
 
@@ -2320,6 +2326,8 @@ import Icon from "../../components/Icon.astro";
 
         .configurator .configurator__right-column {
             padding: 0;
+            height: calc(100svh - 124px);
+            overflow-y: scroll;
         }
 
         .configurator .configurator__right-column .product-configuration,
