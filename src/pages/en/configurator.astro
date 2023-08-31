@@ -30,7 +30,7 @@ import Icon from "../../components/Icon.astro";
               <!--<img id="configurator__image" src="/static/std/assets/toolkit/images/T-RC-0008-STD-B-B.jpg" alt="Configurator" class="img-responsive">-->
               <img
                 id="configurator__image"
-                src="/static/std/assets/toolkit/images/T-RC-0008-STD-B-B-transparent.png"
+                src="/static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b.png"
                 alt="Configurator"
                 class="img-responsive"
               />
@@ -43,122 +43,14 @@ import Icon from "../../components/Icon.astro";
               <span class="sh-atom-button" data-style="outline-dark"
                 >View in 3D</span
               >
-                            <!--<div class="col-xs-12">
-                                <div class="configurator__controls">-->
-                             <!--<span class="configurator__controls&#45;&#45;resize icon-left text-center" data-bstoggle="modal" data-bstarget="#config_image">
-                                <svg class="icon icon-resize ">
-                                    <use xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-resize"></use>
-                                </svg>
-                                 Enlarge image
-                             </span>-->
-
-                                   <!-- <span class="product-slider__controls&#45;&#45;threed icon-left text-center" onclick="show3dView();" id="3d_view_link" data-bstoggle="" data-bstarget="#" style="display: block; cursor: pointer;">
-                                Configure in <img src="/static/std/assets/toolkit/images/icons1/3d_rotation-24px.svg" alt="3d icon">
-                            </span>-->
-
-                                   <!-- <span class="product-slider__controls&#45;&#45;threed icon-left text-center" onclick="show2dView();" id="2d_view_link" data-bstoggle="" data-bstarget="#" style="display: none; cursor: pointer;">
-                                Configure in <img src="/static/std/assets/toolkit/images/icons1/2d_rotation-24px.svg" alt="2d icon">
-                            </span>-->
-            <!--</div>
-          </div>-->
-          <!--                    <div class="col-xs-4">-->
-          <!--                        <div class="configurator__price">-->
-          <!--                            <h2 class="h1" id="configurator__price1"></h2>-->
-          <!--                        </div>-->
-          <!--                    </div>-->
         </div>
       </div>
-
-      <!--<div class="hidden-xs visible-md-block">
-                        <div class="product-specificaties">
-                            <div class="product-specificaties">
-                                <h3 class="product-specificaties__title sh-float-left">Specifications of your table</h3>
-                                <div class="configurator__price sh-float-right">
-                                    <h2 class="h1" id="configurator__price1">€ 2049</h2>
-                                </div>
-                                <h4 id="stock_availability_message_span" style="display: none;margin-bottom: 10px;margin-bottom: 18px;color: green;font-weight: bold;">This is great, your table is in stock!</h4>
-                                <div class="product-specificaties__part">
-                                    <span class="product-specificaties__subtitle">Tabletop</span>
-                                    <ul class="product-specificaties__list">
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Material</span>
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topMaterialSpecLabel">Oak</span>
-                                        </li>
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Shape</span>
-                                            <span class="specs-subcategorie product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topShapeSpecLabel">Rectangular</span>
-                                        </li>
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Edge finish</span>
-                                            <span class="specs-blad-extra-opties product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topEdgeTypeSpecLabel">Chamfered</span>
-                                        </li>
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Finish</span>
-                                            <span class="specs-afwerking-blad product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topFinishSpecLabel">Hardwax oil natural light 3041</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-specificaties__part">
-                                    <span class="product-specificaties__subtitle">Dimensions</span>
-                                    <ul class="product-specificaties__list">
-                                        <li class="specs-diameter-li product-specificaties__list&#45;&#45;item topDiameterSpec" style="display: none;">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Diameter</span>
-                                            <span class="specs-diameter product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topDiameterSpecLabel">undefinedcm</span>
-                                        </li>
-                                        <li class="specs-lengte-li product-specificaties__list&#45;&#45;item topLengthSpec">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Length</span>
-                                            <span class="specs-lengte product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topLengthSpecLabel">160cm</span>
-                                        </li>
-                                        <li class="specs-breedte-li product-specificaties__list&#45;&#45;item topWidthSpec">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Width</span>
-                                            <span class="specs-breedte product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topWidthSpecLabel">90cm</span>
-                                        </li>
-                                        <li class="specs-dikte-li product-specificaties__list&#45;&#45;item">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Thickness</span>
-                                            <span class="specs-dikte product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topThicknessSpecLabel">3cm</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-specificaties__part">
-                                    <span class="product-specificaties__subtitle">Frame</span>
-                                    <ul class="product-specificaties__list">
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Finish</span>
-                                            <span class="specs-kleur-frame product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="frameFinishSpecLabel">Steel black powdercoating</span>
-                                        </li>
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Type</span>
-                                            <span class="specs-model product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="frameTypeSpecLabel">Butterfly</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-specificaties__part">
-                                    <span class="product-specificaties__subtitle">Product number</span>
-                                    <ul class="product-specificaties__list">
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Product number</span>
-                                            <span class="specs-kleur-frame product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="skuSpecLabel">T-RC-160-90-3-3041-STD-B-B</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-description">
-                            <h3 class="product-description__title">Delivery &amp; payment</h3>
-                            <p class="product-description__text">Did you find a piece of furniture you love? Once you've placed your order, we ask for a down payment of € 500,-. Is your order in stock or less than&nbsp;€ 500,-? Then&nbsp;we ask you to pay the full amount in advance.&nbsp;You can pay at checkout using iDeal, Credit Card or Bancontact (Mister Cash). The rest of the amount can be paid by debit&nbsp;card at delivery or pick up.</p>
-
-                            <p class="product-description__text">You can pick up your order&nbsp;in Haarlem or have it delivered for free within the Netherlands and&nbsp;Belgium. Note: are your product(s) delivered outside of the Netherlands or Belgium? Then the product(s) will only be shipped after complete payment. Feel free to <a href="https://www.studio-henk.nl/en/contact" target="_blank">contact</a>&nbsp;us for more information about the delivery costs outside of the Netherlands and Belgium.<br>
-                                <br>
-                                Can't wait for your new design table? <a href="https://www.studio-henk.nl/en/stock" target="_blank">Check our stock here!</a></p>
-
-                        </div>
-                    </div>-->
     </div>
     <div
       class="col-md-6 off-grid-large-left-md off-grid-large-left-lg off-grid-large-left-xl off-grid-large-left-xxl configurator__grid-item configurator__right-column"
     >
       <div class="product-configuration">
-        <h1 class="product-configuration__title">Configure your table</h1>
+        <!--<h1 class="product-configuration__title">Configure your table</h1>-->
 
         <div class="steps" id="step-one">
           <div class="selector">
@@ -2015,63 +1907,6 @@ import Icon from "../../components/Icon.astro";
                       Khaki Grey Powdercoating KTL
                     </span>
                   </div>
-
-                  <!--<div class="choose-cards__item topFinish" data-value="0008" id="topFinish_0008" data-visible="1" data-label="Oak natural lacquer " data-targetgroup="rectangular_kleur-tafelblad" data-configuratorid="3" style="">
-                                                <div class="choose-cards__item&#45;&#45;image">
-                                                    <span class="choose-cards__item&#45;&#45;favorite">Smart choice</span>
-                                                    <img src="https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/Oak%20natural%20lacquer.jpg" alt="" class="texture img-responsive">
-                                                </div>
-                                                <span class="choose-cards__item&#45;&#45;label">
-                                                    Oak natural lacquer
-                                                </span>
-                                            </div>-->
-
-                  <!--<div class="choose-cards__item topFinish choose-cards__active" data-value="3041" id="topFinish_3041" data-visible="1" data-label="Oak hardwax oil natural light" data-targetgroup="rectangular_kleur-tafelblad" data-configuratorid="3" style="">
-                                                <div class="choose-cards__item&#45;&#45;image">
-                                                    <span class="choose-cards__item&#45;&#45;favorite">Most popular</span>
-                                                    <img src="https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_hardwax.jpg" alt="" class="texture img-responsive">
-                                                </div>
-                                                <span class="choose-cards__item&#45;&#45;label">
-                                                    Oak hardwax oil natural light
-                                                </span>
-                                            </div>-->
-
-                  <!--<div class="choose-cards__item topFinish" data-value="3062" id="topFinish_3062" data-visible="1" data-label="Oak hardwax oil natural" data-targetgroup="rectangular_kleur-tafelblad" data-configuratorid="3" style="">
-                                                <div class="choose-cards__item&#45;&#45;image">
-                                                    <img src="https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_lak.jpg" alt="" class="texture img-responsive">
-                                                </div>
-                                                <span class="choose-cards__item&#45;&#45;label">
-                                                    Oak hardwax oil natural
-                                                </span>
-                                            </div>-->
-
-                  <!--<div class="choose-cards__item topFinish" data-value="9017" id="topFinish_9017" data-visible="1" data-label="Oak black stain" data-targetgroup="rectangular_kleur-tafelblad" data-configuratorid="3" style="">
-                                                <div class="choose-cards__item&#45;&#45;image">
-                                                    <img src="https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_9017.jpg" alt="" class="texture img-responsive">
-                                                </div>
-                                                <span class="choose-cards__item&#45;&#45;label">
-                                                    Oak black stain
-                                                </span>
-                                            </div>-->
-
-                  <!--<div class="choose-cards__item topFinish" data-value="0002" id="topFinish_0002" data-visible="1" data-label="Oak smoked" data-targetgroup="rectangular_kleur-tafelblad" data-configuratorid="3" style="">
-                                                <div class="choose-cards__item&#45;&#45;image">
-                                                    <img src="https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_0002.jpg" alt="" class="texture img-responsive">
-                                                </div>
-                                                <span class="choose-cards__item&#45;&#45;label">
-                                                    Oak smoked
-                                                </span>
-                                            </div>-->
-
-                  <!--<div class="choose-cards__item topFinish" data-value="0001" id="topFinish_0001" data-visible="1" data-label="Walnut naturel lacquer" data-targetgroup="rectangular_kleur-tafelblad" data-configuratorid="3" style="">
-                                                <div class="choose-cards__item&#45;&#45;image">
-                                                    <img src="https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_walnut_0001.jpg" alt="" class="texture img-responsive">
-                                                </div>
-                                                <span class="choose-cards__item&#45;&#45;label">
-                                                    Walnut naturel lacquer
-                                                </span>
-                                            </div>-->
-
                   <div
                     class="choose-cards__item topFinish"
                     data-value="9016"
@@ -3813,307 +3648,30 @@ import Icon from "../../components/Icon.astro";
         </span>
       </div>
 
-      <!--<div class="hidden-md">
-                        <div class="product-specificaties">
-                            <div class="product-specificaties">
-                                <h3 class="product-specificaties__title  sh-float-left">Specifications of your table</h3>
-                                <div class="configurator__price sh-float-right">
-                                    <h2 class="h1" id="configurator__price11">€ 2049</h2>
-                                </div>
-                                <div class="product-specificaties__part">
-                                    <h5 class="product-specificaties__subtitle">
-                                        Tabletop</h5>
-                                    <ul class="product-specificaties__list">
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Material
-                                        </span>
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topMaterialSpecLabel">Oak</span>
-                                        </li>
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Shape
-                                            </span>
-                                            <span class="specs-subcategorie product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topShapeSpecLabel">Rectangular</span>
-                                        </li>
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Edge finish
-                                            </span>
-                                            <span class="specs-blad-extra-opties product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topEdgeTypeSpecLabel">Chamfered</span>
-                                        </li>
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Finish</span>
-                                            <span class="specs-afwerking-blad product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topFinishSpecLabel">Hardwax oil natural light 3041</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-specificaties__part">
-                                    <h5 class="product-specificaties__subtitle">
-                                        Dimensions</h5>
-                                    <ul class="product-specificaties__list">
-                                        <li class="specs-diameter-li product-specificaties__list&#45;&#45;item topDiameterSpec" style="display: none;">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Diameter</span>
-                                            <span class="specs-diameter product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topDiameterSpecLabel">undefinedcm</span></li>
-                                        <li class="specs-lengte-li product-specificaties__list&#45;&#45;item topLengthSpec">
-                                            <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">Length</span>
-                                            <span class="specs-lengte product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topLengthSpecLabel">160cm</span>
-                                        </li>
-                                        <li class="specs-breedte-li product-specificaties__list&#45;&#45;item topWidthSpec">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Width
-                                        </span>
-                                            <span class="specs-breedte product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topWidthSpecLabel">90cm</span>
-                                        </li>
-                                        <li class="specs-dikte-li product-specificaties__list&#45;&#45;item">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Thickness&gt;
-                                        </span>
-                                            <span class="specs-dikte product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="topThicknessSpecLabel">3cm</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-specificaties__part">
-                                    <h5 class="product-specificaties__subtitle">
-                                        Frame
-                                    </h5>
-                                    <ul class="product-specificaties__list">
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Finish
-                                        </span>
-                                            <span class="specs-kleur-frame product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="frameFinishSpecLabel">Steel black powdercoating</span>
-                                        </li>
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Type
-                                        </span>
-                                            <span class="specs-model product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="frameTypeSpecLabel">Butterfly</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-specificaties__part">
-                                <span class="product-specificaties__subtitle">
-                                    Product number
-                                </span>
-                                    <ul class="product-specificaties__list">
-                                        <li class="product-specificaties__list&#45;&#45;item">
-                                        <span class="product-specificaties__list&#45;&#45;item&#45;&#45;name">
-                                            Product number
-                                        </span>
-                                            <span class="specs-kleur-frame product-specificaties__list&#45;&#45;item&#45;&#45;value" data-label="skuSpecLabel">T-RC-160-90-3-3041-STD-B-B</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-description">
-                            <h3 class="product-description__title">
-                            </h3>
-                        </div>
-                    </div>-->
-
       <div class="product-specificaties">
-        <div class="product-specificaties">
-          <h3 class="product-specificaties__title sh-float-left">
-            Specifications of your table
-          </h3>
-          <div class="configurator__price sh-float-right">
-            <h2 class="h1" id="configurator__price11">€ 2049</h2>
-          </div>
-          <div class="product-specificaties__part">
-            <h5 class="product-specificaties__subtitle">Tabletop</h5>
-            <ul class="product-specificaties__list">
-              <li class="product-specificaties__list--item">
-                <span class="product-specificaties__list--item--name">
-                  Material
-                </span>
-                <span
-                  class="product-specificaties__list--item--value"
-                  data-label="topMaterialSpecLabel">Oak</span
-                >
-              </li>
-              <li class="product-specificaties__list--item">
-                <span class="product-specificaties__list--item--name">
-                  Shape
-                </span>
-                <span
-                  class="specs-subcategorie product-specificaties__list--item--value"
-                  data-label="topShapeSpecLabel">Rectangular</span
-                >
-              </li>
-              <li class="product-specificaties__list--item">
-                <span class="product-specificaties__list--item--name">
-                  Edge finish
-                </span>
-                <span
-                  class="specs-blad-extra-opties product-specificaties__list--item--value"
-                  data-label="topEdgeTypeSpecLabel">Chamfered</span
-                >
-              </li>
-              <li class="product-specificaties__list--item">
-                <span class="product-specificaties__list--item--name">
-                  Finish</span
-                >
-                <span
-                  class="specs-afwerking-blad product-specificaties__list--item--value"
-                  data-label="topFinishSpecLabel"
-                  >Hardwax oil natural light 3041</span
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="product-specificaties__part">
-            <h5 class="product-specificaties__subtitle">Dimensions</h5>
-            <ul class="product-specificaties__list">
-              <li
-                class="specs-diameter-li product-specificaties__list--item topDiameterSpec"
-                style="display: none;"
-              >
-                <span class="product-specificaties__list--item--name">
-                  Diameter</span
-                >
-                <span
-                  class="specs-diameter product-specificaties__list--item--value"
-                  data-label="topDiameterSpecLabel">undefinedcm</span>
-              </li>
-              <li
-                class="specs-lengte-li product-specificaties__list--item topLengthSpec"
-              >
-                <span class="product-specificaties__list--item--name"
-                  >Length</span
-                >
-                <span
-                  class="specs-lengte product-specificaties__list--item--value"
-                  data-label="topLengthSpecLabel">160cm</span
-                >
-              </li>
-              <li
-                class="specs-breedte-li product-specificaties__list--item topWidthSpec"
-              >
-                <span class="product-specificaties__list--item--name">
-                  Width
-                </span>
-                <span
-                  class="specs-breedte product-specificaties__list--item--value"
-                  data-label="topWidthSpecLabel">90cm</span
-                >
-              </li>
-              <li class="specs-dikte-li product-specificaties__list--item">
-                <span class="product-specificaties__list--item--name">
-                  Thickness&gt;
-                </span>
-                <span
-                  class="specs-dikte product-specificaties__list--item--value"
-                  data-label="topThicknessSpecLabel">3cm</span
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="product-specificaties__part">
-            <h5 class="product-specificaties__subtitle">Frame</h5>
-            <ul class="product-specificaties__list">
-              <li class="product-specificaties__list--item">
-                <span class="product-specificaties__list--item--name">
-                  Finish
-                </span>
-                <span
-                  class="specs-kleur-frame product-specificaties__list--item--value"
-                  data-label="frameFinishSpecLabel"
-                  >Steel black powdercoating</span
-                >
-              </li>
-              <li class="product-specificaties__list--item">
-                <span class="product-specificaties__list--item--name">
-                  Type
-                </span>
-                <span
-                  class="specs-model product-specificaties__list--item--value"
-                  data-label="frameTypeSpecLabel">Butterfly</span
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="product-specificaties__part">
-            <span class="product-specificaties__subtitle"> Product number</span>
-            <ul class="product-specificaties__list">
-              <li class="product-specificaties__list--item">
+        <div class="product-specificaties__part">
+          <span class="product-specificaties__subtitle"> Product number</span>
+          <ul class="product-specificaties__list">
+            <li class="product-specificaties__list--item">
                 <span class="product-specificaties__list--item--name">
                   Product number
                 </span>
-                <span
+              <span
                   class="specs-kleur-frame product-specificaties__list--item--value"
                   data-label="skuSpecLabel">T-RC-160-90-3-3041-STD-B-B</span
-                >
-              </li>
-            </ul>
-          </div>
+              >
+            </li>
+          </ul>
         </div>
       </div>
 
       <div class="product-summary">
-        <div class="product-summary__numbers">
-          <ul class="product-summary__quantity">
-            <li class="product-summary__quantity--item">Quantity</li>
-            <li class="product-summary__quantity--item">
-              <div class="input-holder">
-                <input
-                  type="button"
-                  value="-"
-                  class="qtyminus"
-                  field="product_count"
-                />
-                <input
-                  type="text"
-                  name="product_count"
-                  value="1"
-                  class="qty"
-                  readonly="readonly"
-                />
-                <input
-                  type="button"
-                  value="+"
-                  class="qtyplus"
-                  field="product_count"
-                />
-              </div>
-            </li>
-          </ul>
-          <ul class="product-summary__price">
-            <li class="product-summary__price--item">Amount</li>
-            <li class="product-summary__price--item" id="configurator__price2">
-              € 2049
-            </li>
-          </ul>
-        </div>
-        <div
-          class="org-addtocart-console__delivery"
-          id="product_delivery_time_wrapper"
-          style="padding: 13px 0px;"
-        >
-          <p>
-            Delivery time <span id="product_delivery_time">9-10</span>
-            weeks
-          </p>
-        </div>
-        <div
-          class="org-addtocart-console__delivery"
-          id="product_stock_wrapper"
-          style="padding: 13px 0;display: none;"
-        >
-          <p>Your table is in stock!</p>
-        </div>
-        <div class="product-summary__btn">
-          <a
-            href="javascript:redirectToCart()"
-            class="sh-atom-button"
-            data-style="filled"
-          >
-            Add to shopping cart
-          </a>
-        </div>
+        <a href="javascript:redirectToCart()" class="sh-atom-button" data-style="filled" data-alignment="price-between" data-expand="true" data-shape="toolbar">
+          Add to cart
+          <span class="org-addtocart-console__price">€ 539</span>
+        </a>
+      </div>
+    </div>
       </div>
     </div>
   </section>
@@ -4146,7 +3704,14 @@ import Icon from "../../components/Icon.astro";
 
 <style is:global>
   .configurator {
+    /*--size-card-item: 88;*/
+    --size-card-item: 56;
+    --size-card-column-gap: 20;
     margin: 0;
+  }
+
+  .configurator__controls-row {
+    display: none;
   }
 
   .configurator__container.container:after,
@@ -4163,14 +3728,9 @@ import Icon from "../../components/Icon.astro";
     max-width: none;
   }
 
-  .configurator__view {
-    background-color: var(--color-accent1, #fff);
-    margin: 0;
-  }
-
-  .configurator .configurator__container > .configurator__grid,
-  .configurator__controls-row {
-    margin: 0;
+  .configurator__grid.--is-landscape {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .configurator__grid-item {
@@ -4180,22 +3740,185 @@ import Icon from "../../components/Icon.astro";
   }
 
   .configurator__left-column {
+    background-color: var(--color-accent1);
+  }
+
+  .configurator__right-column {
+    /*background-color: transparent;*/
+  }
+
+  .configurator__grid:not(.--is-landscape) .configurator__right-column {
+    /*padding-top: 12rem;*/
+    padding-top: var(--size-height-for-configurator, 12rem);
+  }
+
+  .configurator__grid.--is-landscape .configurator__right-column {
+    padding-top: 2rem;
+  }
+
+  .configurator__right-column .product-configuration {
+    background-color: transparent;
+    margin: 0;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
   }
 
   .configurator__right-column .product-configuration .selector__label {
-    margin: 68px 0 48px !important;
+    /*margin: 24px 0 24px !important;*/
+    margin: 0 !important;
+  }
+
+  .configurator .steps+.steps {
+    margin: 0;
+  }
+
+  .selector__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .configurator__view {
+    background-color: var(--color-accent1, #fff);
+    margin: 0;
+    position: fixed;
+    z-index: 9;
+    cursor: default;
+  }
+
+  .configurator__grid:not(.--is-landscape) .configurator__view {
+    aspect-ratio: 16/11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 57px;
+    overflow: hidden;
+    /*position: fixed;
+    z-index: 9;*/
+  }
+
+  .configurator__grid.--is-landscape .configurator__view {
+    /*max-width: 50vw;*/
+    position: sticky;
+    top: 0;
+    /*height: 100svh;*/
+    height: calc(100svh - var(--size-height-for-hero));
+  }
+
+  .configurator__grid.--is-landscape .configurator__view--image {
+    height: calc(100svh - var(--size-height-for-hero));
+  }
+
+  .configurator__grid.--is-landscape .configurator__view--image img {
+    /*object-fit: cover;
+    height: calc(100svh - var(--size-height-for-hero));*/
+    aspect-ratio: 1/1;
+    height: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .configurator .configurator__container > .configurator__grid,
+  .configurator__controls-row {
+    margin: 0;
+  }
+
+  .configurator__view--image {
+    /*height: 350px;*/
+    /*height: 16rem;*/
+  }
+
+  .configurator__view--image img {
+    /*object-fit: cover;
+    aspect-ratio: 16/9;
+    object-position: center 44%;*/
   }
 
   .configurator__right-column .choose-cards {
     margin: 0;
-    gap: 24px;
+    column-gap: calc(var(--size-card-column-gap) / 16 * 1rem);
+    row-gap: 1rem;
   }
 
   .configurator__right-column .choose-cards__item {
+    zoom: unset;
     width: auto;
-    flex: 0 1 75px;
+    /*flex: 0 1 80px;*/
+    flex: 0 1 calc(var(--size-card-item) * 1px);
     padding: 0;
+    margin: 0;
+    hyphens: auto;
   }
+
+  @media only screen and (min-width: 375px) {
+    .configurator {
+      --size-card-item: 64;
+      --size-card-column-gap: 28;
+    }
+
+    .configurator__right-column .choose-cards__item {
+      /*flex-basis: 66px;*/
+    }
+
+    .configurator__view--image {
+      /*height: 20rem;*/
+    }
+
+    .configurator__right-column {
+      /*padding-top: 16rem;*/
+    }
+  }
+
+  @media only screen and (min-width: 414px) {
+    .configurator {
+      --size-card-item: 54;
+      --size-card-column-gap: 28;
+    }
+
+    .configurator__right-column .choose-cards__item {
+      /*flex-basis: 56px;*/
+    }
+
+    .configurator__view--image {
+      /*height: 22rem;*/
+    }
+
+    .configurator__right-column {
+      /*padding-top: 18rem;*/
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .configurator .configurator__right-column {
+      /*padding: 0 1em 1em 0;*/
+    }
+
+    .configurator__right-column .choose-cards__item {
+      flex-basis: 90px;
+    }
+
+    .configurator__right-column .choose-cards {
+      /*column-gap: 70px;*/
+      row-gap: 16px;
+    }
+
+    .configurator__view--image {
+      /*height: 30rem;*/
+    }
+
+    .configurator__view--image img {
+      /*transform: translateY(-16%);*/
+    }
+
+    .configurator__right-column {
+      /*padding-top: 32rem;*/
+    }
+  }
+
+
 
   .configurator__right-column .choose-cards__item--image {
     border: 0;
@@ -4226,50 +3949,51 @@ import Icon from "../../components/Icon.astro";
     text-align: center;
   }
 
-  .configurator__right-column .product-configuration {
+  /*.configurator__right-column .product-configuration {
     padding: 1em 0 0 0;
     margin: 0;
+  }*/
+
+  .configurator .configurator__right-column .product-summary {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    z-index: 99;
   }
 
-  .configurator__view--image img {
-    /*max-height: 772px;*/
-    object-fit: cover;
+  .product-specificaties {
+    padding: 1em;
   }
 
-  @media only screen and (max-width: 767px) {
-    /*.configurator__view--image {
-            background-color: var(--color-accent1, #fff);
-        }*/
+  /*.configurator__right-column .product-configuration {
+    padding: 0em 1em 0 1em;
+    background-color: transparent;
+  }*/
 
+  .org-footer {
+    position: relative;
+    z-index: 99;
+  }
+
+  /*@supports (aspect-ratio: 16/9) {
     .configurator__view--image img {
-      max-height: 772px;
-      object-fit: cover;
+
     }
+  }*/
+
+  /*
+  @media only screen and (max-width: 767px) {
 
     .configurator__left-column {
       position: relative;
-      height: 41.2vh;
       background-color: pink;
     }
 
-    .configurator__left-column .configurator__view {
-      position: fixed;
-      top: 56px;
-      z-index: 9;
-    }
-
-    .configurator__controls-row {
-      position: absolute;
-      bottom: 8px;
-      width: 100%;
-    }
-
     .configurator__right-column {
+      padding-top: 200px
     }
 
     .configurator .configurator__right-column .product-summary {
-      background: black;
-      color: white;
       width: 100%;
       position: sticky;
       bottom: 0;
@@ -4281,9 +4005,9 @@ import Icon from "../../components/Icon.astro";
       display: none;
     }
 
-    /*.configurator .configurator__right-column .org-addtocart-console__delivery {
+    /!*.configurator .configurator__right-column .org-addtocart-console__delivery {
             display: none;
-        }*/
+        }*!/
 
     .product-specificaties {
       padding: 1em;
@@ -4294,8 +4018,8 @@ import Icon from "../../components/Icon.astro";
     }
 
     .configurator__right-column .choose-cards__item--label {
-      /*font-size: 7px;*/
-        font-size: 12px;
+      /!*font-size: 7px;*!/
+        /!*font-size: 12px;*!/
     }
 
     .configurator__right-column .product-configuration {
@@ -4308,22 +4032,14 @@ import Icon from "../../components/Icon.astro";
       z-index: 99;
     }
   }
+  */
 
   /* iPad 768: 2 columns  */
   @media only screen and (min-width: 768px) {
-    .configurator__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1em;
-    }
 
-    .configurator .configurator__left-column,
+    /*.configurator .configurator__left-column,
     .configurator .configurator__right-column {
-      /*width: 50%;*/
-    }
-
-    .configurator .configurator__right-column {
-      padding: 0 1em 1em 0;
+      /!*width: 50%;*!/
     }
 
     .hidden-xs.visible-md-block .product-specificaties,
@@ -4337,25 +4053,25 @@ import Icon from "../../components/Icon.astro";
 
     .configurator .configurator__right-column .product-summary {
       width: 100%;
-    }
+    }*/
   }
 
   @media only screen and (min-width: 992px) {
-    .configurator .configurator__container > .configurator__grid {
+    /*.configurator .configurator__container > .configurator__grid {
       margin: 0;
-      /*max-height: calc(768px - var(--size-height-for-hero));*/
-      /*overflow-y: scroll;*/
+      /!*max-height: calc(768px - var(--size-height-for-hero));*!/
+      /!*overflow-y: scroll;*!/
       gap: 0;
       grid-template-columns: 2fr 1.6fr;
-      /*height: calc(100svh - 124px);*/
+      /!*height: calc(100svh - 124px);*!/
     }
 
     .configurator .configurator__left-column {
       padding: 0;
-      /*position: sticky;
+      /!*position: sticky;
             top: 0;
             height: calc(768px - var(--size-height-for-hero));
-            background-color: var(--color-accent1, #fff);*/
+            background-color: var(--color-accent1, #fff);*!/
       background-color: var(--color-accent1, #fff);
     }
 
@@ -4381,7 +4097,7 @@ import Icon from "../../components/Icon.astro";
     }
 
     .configurator .configurator__right-column {
-      padding: 0;
+      /!*padding: 0;*!/
       height: calc(100svh - 124px);
       overflow-y: scroll;
     }
@@ -4414,24 +4130,59 @@ import Icon from "../../components/Icon.astro";
     .configurator .configurator__right-column .product-summary__numbers,
     .configurator .configurator__right-column .org-addtocart-console__delivery {
       display: none;
-    }
+    }*/
   }
 
   @media only screen and (min-width: 1280px) {
-    .configurator__right-column .choose-cards__item {
+    /*.configurator__right-column .choose-cards__item {
       flex: 0 1 90px;
-    }
+    }*/
   }
 
   @media only screen and (min-width: 1920px) {
-      .configurator .configurator__container > .configurator__grid {
+      .configurator__grid.--is-landscape {
           grid-template-columns: 3fr 1.6fr;
       }
   }
 
   @media only screen and (min-width: 3000px) {
-      .configurator .configurator__container > .configurator__grid {
+      /*.configurator .configurator__container > .configurator__grid {
           grid-template-columns: 6fr 1.6fr;
-      }
+      }*/
+    .configurator__grid.--is-landscape {
+      /*grid-template-columns: 4fr 1.6fr;*/
+      /*grid-template-columns: 1fr calc((5 * var(--size-card-item)) / 16 * 1em);*/
+      grid-template-columns: 1fr calc((5 * var(--size-card-item) + (4 * 32)) / 16 * 1em);
+    }
   }
 </style>
+<script defer src="/static/std/assets/toolkit/scripts/heightForConfigurator.js"></script>
+<script is:inline defer>
+  const portraitOnLoad = window.matchMedia("(orientation: portrait)").matches;
+  console.log("portraitOnLoad: " + portraitOnLoad);
+  if (portraitOnLoad) {
+    // do something
+    console.log("portrait mode");
+    document.querySelector(".configurator__grid").classList.remove("--is-landscape");
+  } else {
+    // do something else
+    console.log("landscape mode");
+    document.querySelector(".configurator__grid").classList.add("--is-landscape");
+
+  }
+
+  window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
+    const portrait = e.matches;
+
+    if (portrait) {
+      // do something
+      console.log("portrait mode");
+      document.querySelector(".configurator__grid").classList.remove("--is-landscape");
+    } else {
+      // do something else
+      console.log("landscape mode");
+      document.querySelector(".configurator__grid").classList.add("--is-landscape");
+
+    }
+  });
+</script>
