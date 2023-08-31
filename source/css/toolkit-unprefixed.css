@@ -14843,6 +14843,7 @@ quickfix for images causing gap in grid
     opacity: 1;
   }
 }
+/*TODO: rewrite to card component type product */
 .mdl-shop-product {
   display: inline-flex;
   /* with price */
@@ -14869,11 +14870,11 @@ quickfix for images causing gap in grid
   transition: opacity 0.5s ease;
 }
 .mdl-shop-product .mdl-shop-product__content {
-  display: grid;
-  grid-template-columns: 1fr auto;
-}
-.mdl-shop-product .mdl-shop-product__content .mdl-shop-product__desc {
-  grid-column: 1/3;
+  /*display: grid;
+  grid-template-columns: 1fr auto;*/
+  /*.mdl-shop-product__desc {
+    grid-column: 1/3;
+  }*/
 }
 .mdl-shop-product .mdl-shop-product__content .mdl-shop-product__price {
   /*margin: 4px 0 0 0;
@@ -14988,11 +14989,11 @@ quickfix for images causing gap in grid
   }
 }
 .mdl-shop-product[data-variant=ar-portrait] .mdl-shop-product__content {
-  display: grid;
-  grid-template-columns: 1fr auto;
-}
-.mdl-shop-product[data-variant=ar-portrait] .mdl-shop-product__content .mdl-shop-product__desc {
-  grid-column: 1/3;
+  /*display: grid;
+  grid-template-columns: 1fr auto;*/
+  /*.mdl-shop-product__desc {
+    grid-column: 1/3;
+  }*/
 }
 .mdl-shop-product[data-variant=ar-portrait] .mdl-shop-product__content .mdl-shop-product__price {
   /*margin: 0;
@@ -15209,6 +15210,21 @@ quickfix for images causing gap in grid
   line-height: 25px;
   font-feature-settings: "pnum" on, "lnum" on;
   padding-right: 12px;
+}
+
+/*
+UPDATED 2023-08-31 • 10:25 - CEST
+*/
+.mdl-shop-product > * > .sh-atom-tag {
+  margin: 0;
+  position: absolute;
+  right: 12px;
+  top: 20px;
+}
+
+.mdl-shop-product .mdl-shop-product__content {
+  display: flex;
+  flex-direction: column;
 }
 
 [data-brick-name=faq-brick] {
