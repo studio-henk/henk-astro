@@ -1,3 +1,4 @@
+/*TODO: rewrite to card component type product */
 .mdl-shop-product {
   display: inline-flex;
 
@@ -26,12 +27,12 @@
 
   /* with price */
   .mdl-shop-product__content {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    /*display: grid;
+    grid-template-columns: 1fr auto;*/
 
-    .mdl-shop-product__desc {
+    /*.mdl-shop-product__desc {
       grid-column: 1/3;
-    }
+    }*/
 
     .mdl-shop-product__price {
       /*margin: 4px 0 0 0;
@@ -175,12 +176,12 @@
 
     // exactly the same? as above....
     .mdl-shop-product__content {
-      display: grid;
-      grid-template-columns: 1fr auto;
+      /*display: grid;
+      grid-template-columns: 1fr auto;*/
 
-      .mdl-shop-product__desc {
+      /*.mdl-shop-product__desc {
         grid-column: 1/3;
-      }
+      }*/
 
       .mdl-shop-product__price {
         /*margin: 0;
@@ -447,4 +448,20 @@
   line-height: 25px;
   font-feature-settings: "pnum" on, "lnum" on;
   padding-right: 12px;
+}
+
+/*
+UPDATED 2023-08-31 • 10:25 - CEST
+*/
+
+.mdl-shop-product > * > .sh-atom-tag {
+  margin: 0;
+  position: absolute;
+  right: 12px;
+  top: 20px;
+}
+
+.mdl-shop-product .mdl-shop-product__content {
+  display: flex;
+  flex-direction: column;
 }
