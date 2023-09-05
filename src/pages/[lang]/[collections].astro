@@ -1,4 +1,5 @@
 ---
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import {getOtherLang} from "../../i18n/helpers.js";
 export function getStaticPaths() {
     return [
@@ -11,5 +12,7 @@ const otherLang = getOtherLang(lang);
 const languages = getStaticPaths();
 const otherLangData = languages[otherLang].params;
 ---
-<h1>hello: {lang} - {collections}</h1>
-<p>This page in the other language is at: url here: {otherLangData.collections} - {otherLangData.lang}</p>
+<BaseLayout title="Collections">
+    <h1>hello: {lang} - {collections}</h1>
+    <p>This page in the other language is at: url here: {otherLangData.collections} - {otherLangData.lang}</p>
+</BaseLayout>

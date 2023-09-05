@@ -1,0 +1,104 @@
+/* :root {
+    --color-accent11: pink;
+} */
+
+.side-modal {
+  display: flex;
+}
+
+.side-modal * {
+  margin: 0;
+  padding: 0;
+}
+
+.side-modal-mask {
+  position: fixed;
+  z-index: 910002;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, var(--color-background-alpha-overlay, 0.3));
+  display: flex;
+  justify-content: flex-end;
+  transition: opacity 0.3s ease;
+}
+
+.side-modal-container {
+  max-width: 898px;
+  padding: 48px;
+  background-color: var(--color-henk-white, #fff);
+  transition: all 0.3s ease;
+}
+
+.side-modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.side-modal-header .side-modal__heading {
+  font-size: 22px;
+}
+
+/* .modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+    background-color: yellow;
+} */
+
+/* .modal-body {
+    margin: 20px 0;
+} */
+
+/* .modal-default-button {
+  float: right;
+} */
+
+.side-modal__close-button {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+/* .modal-enter-from {
+  opacity: 0;
+}
+
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-from .modal-container,
+.modal-leave-to .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+} */
+
+.side-modal-enter-from {
+  opacity: 0;
+}
+
+.side-modal-leave-to {
+  opacity: 0;
+}
+
+.side-modal-enter-from .side-modal-container,
+.side-modal-leave-to .side-modal-container {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* sh-atom-button extra: TODO: move to button */
+.sh-atom-button {
+  font-feature-settings: "pnum" on, "lnum" on;
+}

@@ -246,7 +246,7 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   text-align: right;
 }
 
-// in split fieldset set error mesages aligned left
+// in split fieldset set error messages aligned left
 .sh-forms__fieldset--split [data-invalid-message]::after {
   left: 8px;
   right: auto;

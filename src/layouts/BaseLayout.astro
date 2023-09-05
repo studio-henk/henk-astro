@@ -40,14 +40,14 @@ const {title, mainID, mainClass} = Astro.props;
     <div id="page-title">
         <h1 class="sr-only">{title}</h1>
     </div>
-    <MsgBar />
+    <MsgBar/>
     <TheNav />
     <slot name="pre-main" />
     <main id={mainID} class={mainClass}>
-        <slot />
+        <slot/>
     </main>
-    <TheFooter />
+    <TheFooter/>
 </div>
-<slot name="footer-scripts" />
+<slot name="footer-scripts"/>
 </body>
 </html>

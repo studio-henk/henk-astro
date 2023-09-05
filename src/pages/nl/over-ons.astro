@@ -1,11 +1,13 @@
 ---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+// import "../../styles/atom-button-new.css";
 import { getLangFromUrl } from '../../i18n/utils';
 import BaseLayout from "../../layouts/BaseLayout.astro";
 // import "../../styles/atom-button-new.css";
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<BaseLayout title="About">
+<BaseLayout title="About" locale="en">
   <style>
     .hero-block .hero__image {
       height: auto;

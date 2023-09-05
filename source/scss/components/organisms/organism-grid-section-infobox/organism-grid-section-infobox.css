@@ -1,0 +1,28 @@
+.organism-grid-section-infobox {
+  display: grid;
+  gap: 1.25rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/*@media only screen and (min-width: 768px) {
+    .organism-grid-section-infobox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}*/
+
+@media only screen and (min-width: 992px) {
+  .organism-grid-section-infobox {
+    padding: 1.75rem;
+    /*grid-template-columns: repeat(3, minmax(auto, 470px));*/
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+  }
+
+  .organism-grid-section-infobox .molecule-info-box {
+    /*max-width: 470px;*/
+  }
+}
+
+/* equal heights issue */
+.organism-grid-section-infobox[data-equal-heights="true"] {
+}

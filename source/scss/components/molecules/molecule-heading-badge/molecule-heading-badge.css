@@ -1,0 +1,32 @@
+.molecule-heading-badge {
+    --color-background-atom-badge: var(--color-accent15);
+    --color-text-atom-badge: var(--color-henk-black);
+}
+
+.molecule-heading-badge .component-layout-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+.atom-badge {
+    background-color: var(--color-background-atom-badge, pink);
+    color: var(--color-text-atom-badge, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 20px;
+    width: calc(20 / 16 * 1em);
+    height: calc(20 / 16 * 1em);
+    border-radius: 50%;
+    /*font-feature-settings: "dnom" on;*/
+}
+
+@media only screen and (min-width: 768px) {
+    .atom-badge {
+        width: calc(28 / 16 * 1em);
+        height: calc(28 / 16 * 1em);
+    }
+}
