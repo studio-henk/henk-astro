@@ -1,4 +1,5 @@
 ---
+import BaseLayout from "../../layouts/BaseLayout.astro";
 export function getStaticPaths () {
     return [
         {params: {lang: 'en'}},
@@ -8,4 +9,8 @@ export function getStaticPaths () {
 
 const { lang} = Astro.params;
 ---
-<h1>hello: {lang}</h1>
+<BaseLayout title="Info">
+    <h1>hello EN - Info</h1>
+    <!--<HeroVideo />-->
+    <h1>hello: {lang}</h1>
+</BaseLayout>

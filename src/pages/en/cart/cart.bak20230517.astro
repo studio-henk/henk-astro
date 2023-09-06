@@ -2,9 +2,8 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import HeadingBadge from "../../../components/HeadingBadge.astro";
 import CartList from "../../../components/CartList.astro";
-import InfoBox from "../../../components/InfoBox.astro";
 ---
-<BaseLayout title="Cart list">
+<BaseLayout title="Cart list" locale="en">
       <script slot="head-scripts" src="/static/std/assets/toolkit/scripts/vue/vue.global.js" defer></script>
       <div class="cart-page-layout-container" id="app">
         <div id="heading-badge" class="cart-page__grid-item" data-hide="">
@@ -39,34 +38,17 @@ import InfoBox from "../../../components/InfoBox.astro";
         <div class="cart-page__grid-item" id="cart-list" data-count="1">
           <!-- cart-list -->
           <!-- contains modal for desktop -->
-          <CartList />
+          <CartList />          
         </div>
         <div class="cart-page__grid-item" id="info-boxes">
-          <div class="grid-info-box">
-            <InfoBox
-                title="Bezorgen op afspraak"
-                icon="calendar"
-                content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
-            />
-            <InfoBox
-                title="Gratis levering"
-                icon="truck"
-                content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
-            />
-            <InfoBox
-                title="Waar kunnen we mee helpen?"
-                icon="phone"
-                content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
-            />
-          </div>
-          <!--<div class="organism-grid-section-infobox">
+          <div class="organism-grid-section-infobox">
             <div
               class="molecule-info-box"
-              style="&#45;&#45;color-background-component-bgbox:var(&#45;&#45;color-accent1); &#45;&#45;color-text-component-bgbox:var(&#45;&#45;color-black);"
+              style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);"
             >
               <div
                 class="sh-molecule-padding-box"
-                style="&#45;&#45;size-spacing-units-top:3; &#45;&#45;size-spacing-units-right:5; &#45;&#45;size-spacing-units-bottom:4; &#45;&#45;size-spacing-units-left:5;&#45;&#45;size-spacing-units-top-desktop:7; &#45;&#45;size-spacing-units-right-desktop:7; &#45;&#45;size-spacing-units-bottom-desktop:7; &#45;&#45;size-spacing-units-left-desktop:7;"
+                style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;"
               >
                 <div class="component-layout-box">
                   <span class="sh-atom-icon">
@@ -102,11 +84,11 @@ import InfoBox from "../../../components/InfoBox.astro";
             </div>
             <div
               class="molecule-info-box"
-              style="&#45;&#45;color-background-component-bgbox:var(&#45;&#45;color-accent1); &#45;&#45;color-text-component-bgbox:var(&#45;&#45;color-black);"
+              style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);"
             >
               <div
                 class="sh-molecule-padding-box"
-                style="&#45;&#45;size-spacing-units-top:3; &#45;&#45;size-spacing-units-right:5; &#45;&#45;size-spacing-units-bottom:4; &#45;&#45;size-spacing-units-left:5;&#45;&#45;size-spacing-units-top-desktop:7; &#45;&#45;size-spacing-units-right-desktop:7; &#45;&#45;size-spacing-units-bottom-desktop:7; &#45;&#45;size-spacing-units-left-desktop:7;"
+                style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;"
               >
                 <div class="component-layout-box">
                   <span class="sh-atom-icon">
@@ -158,11 +140,11 @@ import InfoBox from "../../../components/InfoBox.astro";
             </div>
             <div
               class="molecule-info-box"
-              style="&#45;&#45;color-background-component-bgbox:var(&#45;&#45;color-accent1); &#45;&#45;color-text-component-bgbox:var(&#45;&#45;color-black);"
+              style="--color-background-component-bgbox:var(--color-accent1); --color-text-component-bgbox:var(--color-black);"
             >
               <div
                 class="sh-molecule-padding-box"
-                style="&#45;&#45;size-spacing-units-top:3; &#45;&#45;size-spacing-units-right:5; &#45;&#45;size-spacing-units-bottom:4; &#45;&#45;size-spacing-units-left:5;&#45;&#45;size-spacing-units-top-desktop:7; &#45;&#45;size-spacing-units-right-desktop:7; &#45;&#45;size-spacing-units-bottom-desktop:7; &#45;&#45;size-spacing-units-left-desktop:7;"
+                style="--size-spacing-units-top:3; --size-spacing-units-right:5; --size-spacing-units-bottom:4; --size-spacing-units-left:5;--size-spacing-units-top-desktop:7; --size-spacing-units-right-desktop:7; --size-spacing-units-bottom-desktop:7; --size-spacing-units-left-desktop:7;"
               >
                 <div class="component-layout-box">
                   <span class="sh-atom-icon">
@@ -197,7 +179,7 @@ import InfoBox from "../../../components/InfoBox.astro";
                 </div>
               </div>
             </div>
-          </div>-->
+          </div>
         </div>
         <div
           id="action-console"
