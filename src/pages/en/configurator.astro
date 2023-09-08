@@ -45,12 +45,16 @@ import Icon from "../../components/Icon.astro";
             </div>
 
             <div class="row configurator__controls-row">
-              <span class="sh-atom-button" data-style="outline-dark"
+              <a href="javascript:redirectToCart()" class="sh-atom-button" data-style="outline-dark" data-alignment="price-between" data-size="small">
+                <Icon icon="icon-cart" />
+                <span class="org-addtocart-console__price">€ 539</span>
+              </a>
+              <!--<span class="sh-atom-button" data-style="outline-dark"
                 >Enlarge</span
               >
               <span class="sh-atom-button" data-style="outline-dark"
                 >View in 3D</span
-              >
+              >-->
         </div>
       </div>
     </div>
@@ -162,6 +166,16 @@ import Icon from "../../components/Icon.astro";
                         alt=""
                         class="img-responsive"
                       />
+                      <svg width="78" height="30" viewBox="0 0 78 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.15" y="0.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="13.65" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="27.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="4.65" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="18.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="9.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="22.65" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                      </svg>
+
                     </div>
                     <span class="choose-cards__item--label"
                       >Rectangular Outdoor</span
@@ -196,6 +210,16 @@ import Icon from "../../components/Icon.astro";
                         alt=""
                         class="img-responsive"
                       />
+                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.15" y="0.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="13.65" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="27.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="4.65" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="18.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="9.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="22.65" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                      </svg>
+
                     </div>
                     <span class="choose-cards__item--label">Square outdoor</span
                     >
@@ -2493,7 +2517,7 @@ import Icon from "../../components/Icon.astro";
                   >
                     <div class="choose-cards__item--image">
                       <img
-                        src="https://assets.studio-henk.nl/assets/_default_upload_bucket/configurator_symbol_edgefinish_RRC_1.jpg"
+                        src="https://assets.studio-henk.nl/assets/Images/configurator/edge/configurator_symbol_edgefinish_RRC_1.png"
                         alt=""
                         class="img-responsive"
                       />
@@ -3669,16 +3693,22 @@ import Icon from "../../components/Icon.astro";
                   data-label="skuSpecLabel">T-RC-160-90-3-3041-STD-B-B</span
               >
             </li>
+            <li class="product-specificaties__list--item">
+              <a href="javascript:redirectToCart()" class="sh-atom-button" data-style="outline-dark" data-alignment="price-center" data-expand="true">
+                <Icon icon="icon-cart" />
+                <span class="org-addtocart-console__price">€ 539</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="product-summary">
+      <!--<div class="product-summary">
         <a href="javascript:redirectToCart()" class="sh-atom-button" data-style="filled" data-alignment="price-between" data-expand="true" data-shape="toolbar">
           Add to cart
           <span class="org-addtocart-console__price">€ 539</span>
         </a>
-      </div>
+      </div>-->
     </div>
       </div>
     </div>

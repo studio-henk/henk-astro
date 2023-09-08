@@ -4809,8 +4809,21 @@ sh-atom-button[data-state="unmuted"] .muted {
   justify-content: space-evenly;
 }
 
+.sh-atom-button[data-alignment*=price-start] {
+  justify-content: flex-start;
+}
+
+.sh-atom-button[data-alignment*=price-end] {
+  justify-content: flex-end;
+}
+
 .sh-atom-button[data-alignment*=separator] {
   grid-template-columns: repeat(3, auto);
+}
+
+.sh-atom-button__separator,
+.org-addtocart-console__separator {
+  font-size: 28px;
 }
 
 /* shapes */
@@ -17224,7 +17237,10 @@ Triptych image block
 }
 
 .configurator__controls-row {
-  display: none;
+  /*display: none;*/
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
 }
 
 .configurator__container.container:after,
@@ -17252,7 +17268,7 @@ Triptych image block
 }
 
 .configurator__left-column {
-  background-color: var(--color-accent1);
+  /*background-color: var(--color-accent1);*/
 }
 
 .configurator__grid:not(.--is-landscape) .configurator__right-column {
@@ -17287,7 +17303,7 @@ Triptych image block
 }
 
 .configurator__view {
-  background-color: var(--color-accent1, #fff);
+  background-color: var(--color-white, #fff);
   margin: 0;
   position: fixed;
   z-index: 9;
@@ -17346,6 +17362,11 @@ Triptych image block
   justify-content: flex-start;
 }
 
+.choose-cards__item--favorite {
+  height: auto;
+  top: unset;
+}
+
 .choose-cards__item--image {
   margin: 0;
 }
@@ -17358,7 +17379,8 @@ Triptych image block
   border: 0;
 }
 
-.configurator__right-column .choose-cards__item--image img {
+.configurator__right-column .choose-cards__item--image img.texture,
+.configurator__right-column .topEdgeType .choose-cards__item--image img {
   border-radius: 50%;
   border: 1px solid #d0d0d0;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.14);

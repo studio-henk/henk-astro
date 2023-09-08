@@ -298,8 +298,21 @@ sh-atom-button[data-state="unmuted"] .muted {
   justify-content: space-evenly;
 }
 
+.sh-atom-button[data-alignment*="price-start"] {
+  justify-content: flex-start;
+}
+
+.sh-atom-button[data-alignment*="price-end"] {
+  justify-content: flex-end;
+}
+
 .sh-atom-button[data-alignment*="separator"] {
   grid-template-columns: repeat(3, auto);
+}
+
+.sh-atom-button__separator,
+.org-addtocart-console__separator {
+  font-size: 28px;
 }
 
 /* shapes */
