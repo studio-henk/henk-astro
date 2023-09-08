@@ -11,8 +11,8 @@ const { NavFont = "new", NavTheme, NavOnHero } = Astro.props;
     const mastheadDesktop = document.querySelector(".masthead-desktop");
     const masthead = document.querySelector(".masthead");
 
-    const NavBarHeroMobile = mastheadMobile.getAttribute('data-hashero');
-    const NavBarHeroDesktop = mastheadDesktop.getAttribute('data-hashero');
+    const NavBarHeroMobile = mastheadMobile.getAttribute('data-has-hero');
+    const NavBarHeroDesktop = mastheadDesktop.getAttribute('data-has-hero');
 
     // Create a media condition that targets viewports at least 768px wide
     const mediaQuery = window.matchMedia('(max-width: 1279px)')

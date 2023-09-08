@@ -3339,6 +3339,47 @@ main.sh-l-page-main section + section {
   width: 45%;
 }
 
+.nav-card {
+  --border-radius-image-figure: 5px;
+  background-color: var(--color-background-figure, transparent);
+  color: var(--color-text-figure, #000);
+}
+
+.nav-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+}
+
+.nav-card__link:hover .nav-card__image {
+  transform: scale(1.025);
+}
+
+.nav-card__image-mask {
+  border-radius: var(--border-radius-image-figure, 5px);
+  overflow: hidden;
+}
+
+.nav-card__image {
+  border-radius: var(--border-radius-image-figure, 5px);
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: auto;
+}
+
+.nav-card__caption {
+  margin: 0;
+  line-height: 40px;
+  text-align: left;
+}
+
+.nav-card .hover-interaction-c-2 .hover-interaction-c-2-target::after,
+.nav-card .hover-interaction-c-2 .hover-interaction-c-2-target::before {
+  bottom: 8px;
+}
+
 .blogpost__copy--title {
   margin-top: 0;
 }
@@ -5236,7 +5277,8 @@ figure figcaption,
 }
 
 .sh-atom__figure figcaption,
-.sh-atom-figure figcaption {
+.sh-atom-figure figcaption,
+.sh-atom-figure__caption {
   margin: 0;
   line-height: 40px;
   text-align: left;
@@ -6656,7 +6698,7 @@ so calc is unit size * unit num
   .--desktop-menu-open .masthead-desktop {
     --color-text-masthead: var(--color-black);
   }
-  .masthead-desktop[data-theme=dark][data-hashero=true]:not(.--status-scrolled) {
+  .masthead-desktop[data-theme=dark][data-has-hero=true]:not(.--status-scrolled) {
     --color-text-masthead: var(--color-black);
     --color-background-masthead: var(--color-transparent);
     --color-background-badge: var(--color-black);
@@ -6677,7 +6719,7 @@ so calc is unit size * unit num
     --color-text-badge: var(--color-white);
   }
   .masthead-desktop.--masthead-desktop-hovered,
-  .masthead-desktop.--masthead-desktop-hovered[data-theme=dark][data-hashero=true] {
+  .masthead-desktop.--masthead-desktop-hovered[data-theme=dark][data-has-hero=true] {
     --color-background-masthead: var(--color-white);
     --color-text-masthead: var(--color-black);
     --color-background-badge: var(--color-black);
@@ -6700,15 +6742,34 @@ so calc is unit size * unit num
     gap: 42px;
   }
   .masthead-desktop .utilities-nav__list {
-    display: flex;
-    gap: 42px;
+    display: grid;
+    gap: 32px;
     position: relative;
-    top: 2px;
     list-style: none;
     margin: 0;
+    grid-template-columns: repeat(3, auto);
   }
-  #utilities-nav__language {
+  /*.masthead-desktop #utilities-nav__search {
+      font-size: 0;
+  }*/
+  /*.masthead-desktop .utilities-nav__item a.--icon-search {
+      text-indent: -999em;
+  }*/
+  #utilities-nav__search,
+  #utilities-nav__cart {
+    display: flex;
+  }
+  #utilities-nav__cart {
+    grid-column: 3;
+  }
+  .masthead-desktop .utilities-nav__item a[class*="--icon"] {
+    /*display: inline-block;*/
+    text-indent: -999em;
+  }
+  #utilities-nav__lang {
     position: relative;
+    grid-column: 2;
+    grid-row: 1;
   }
   .masthead-desktop .atom-logo {
     justify-self: flex-start;
@@ -6892,11 +6953,11 @@ so calc is unit size * unit num
   overflow: hidden;
 }
 
+/*
 .sh-atom-figure .hover-interaction-c-2 .hover-interaction-c-2-target::after,
 .sh-atom-figure .hover-interaction-c-2 .hover-interaction-c-2-target::before {
-  bottom: 8px;
-}
-
+    bottom: 8px;
+}*/
 .info-box {
   --color-background-component-bgbox: var(--color-accent1);
   --color-text-component-bgbox: var(--color-henk-black);

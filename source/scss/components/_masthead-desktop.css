@@ -71,7 +71,7 @@
         --color-text-masthead: var(--color-black);
     }
 
-    .masthead-desktop[data-theme="dark"][data-hashero="true"]:not(.--status-scrolled) {
+    .masthead-desktop[data-theme="dark"][data-has-hero="true"]:not(.--status-scrolled) {
         --color-text-masthead: var(--color-black);
         --color-background-masthead: var(--color-transparent);
         --color-background-badge: var(--color-black);
@@ -96,7 +96,7 @@
     }
 
     .masthead-desktop.--masthead-desktop-hovered,
-    .masthead-desktop.--masthead-desktop-hovered[data-theme="dark"][data-hashero="true"] {
+    .masthead-desktop.--masthead-desktop-hovered[data-theme="dark"][data-has-hero="true"] {
         --color-background-masthead: var(--color-white);
         --color-text-masthead: var(--color-black);
         --color-background-badge: var(--color-black);
@@ -126,16 +126,40 @@
     .masthead-desktop .utilities-nav {}
 
     .masthead-desktop .utilities-nav__list {
-        display: flex;
-        gap: 42px;
+        display: grid;
+        gap: 32px;
         position: relative;
-        top: 2px;
         list-style: none;
         margin: 0;
+        grid-template-columns: repeat(3, auto);
     }
 
-    #utilities-nav__language {
+    /*.masthead-desktop #utilities-nav__search {
+        font-size: 0;
+    }*/
+
+    /*.masthead-desktop .utilities-nav__item a.--icon-search {
+        text-indent: -999em;
+    }*/
+
+    #utilities-nav__search,
+    #utilities-nav__cart {
+        display: flex;
+    }
+
+    #utilities-nav__cart {
+        grid-column: 3;
+    }
+
+    .masthead-desktop .utilities-nav__item a[class*="--icon"] {
+        /*display: inline-block;*/
+        text-indent: -999em;
+    }
+
+    #utilities-nav__lang {
         position: relative;
+        grid-column: 2;
+        grid-row: 1;
     }
 
     .masthead-desktop .atom-logo {
@@ -350,7 +374,8 @@
     overflow: hidden;
 }
 
+/*
 .sh-atom-figure .hover-interaction-c-2 .hover-interaction-c-2-target::after,
 .sh-atom-figure .hover-interaction-c-2 .hover-interaction-c-2-target::before {
     bottom: 8px;
-}
+}*/

@@ -1,0 +1,40 @@
+.nav-card {
+    --border-radius-image-figure: 5px;
+    background-color: var(--color-background-figure, transparent);
+    color: var(--color-text-figure, #000);
+}
+
+.nav-card__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+}
+
+.nav-card__link:hover .nav-card__image {
+    transform: scale(1.025);
+}
+
+.nav-card__image-mask {
+    border-radius: var(--border-radius-image-figure, 5px);
+    overflow: hidden;
+}
+
+.nav-card__image {
+    border-radius: var(--border-radius-image-figure, 5px);
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    height: auto;
+}
+
+.nav-card__caption {
+    margin: 0;
+    line-height: 40px;
+    text-align: left;
+}
+
+.nav-card .hover-interaction-c-2 .hover-interaction-c-2-target::after,
+.nav-card .hover-interaction-c-2 .hover-interaction-c-2-target::before {
+    bottom: 8px;
+}

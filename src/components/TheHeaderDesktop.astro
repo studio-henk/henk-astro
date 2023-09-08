@@ -4,6 +4,7 @@ import AtomBadge from "./Atoms/AtomBadge.astro";
 import AtomFigure from "./Atoms/AtomFigure.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import LangSwitchNoScript from "./LangSwitchNoScript.astro";
+import Icon from "./Icon.astro";
 // import LangSwitch3 from "./LangSwitch3.astro";
 const lang = getLangFromUrl(Astro.url);
 const { NavOnHero } = Astro.props;
@@ -24,7 +25,7 @@ if (!NavTheme) {
   class="masthead masthead-desktop"
   id="masthead-desktop"
   data-theme={NavTheme}
-  data-hasHero={NavOnHero}
+  data-has-hero={NavOnHero}
 >
   <div class="primary-nav-container">
     <AtomLogo url="/" icon="henk-logo" width="163" height="14" />
@@ -50,14 +51,21 @@ if (!NavTheme) {
     </nav>
     <div class="utilities-nav">
       <ul class="utilities-nav__list">
-        <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"} class="hover-interaction-a">Search</a></li>
+        <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"} class="sh-atom-button-icon --icon-search" data-style="plain-dark"><Icon icon="search" />Search</a></li>
+        <!--<li class="utilities-nav__item" id="utilities-nav__contact"><a href={"/" + lang + "/contact"} class="hover-interaction-a">Contact</a></li>-->
+        <li class="utilities-nav__item" id="utilities-nav__cart">
+          <a href={"/" + lang + "/cart/list"} class="sh-atom-button-icon --icon-cart" data-style="plain-dark">
+            <Icon icon="icon-cart" />
+            Cart
+          </a>
+          <!--<AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" />-->
+        </li>
         <li class="utilities-nav__item" id="utilities-nav__lang">
           <lang-switch data-url={otherURL} title={otherURL} lang={lang}></lang-switch>
           <noscript>
             <LangSwitchNoScript url={otherURL} lang={lang} />
           </noscript>
         </li>
-        <li class="utilities-nav__item" id="utilities-nav__cart"><AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" /></li>
       </ul>
     </div>
   </div>
@@ -319,6 +327,24 @@ if (!NavTheme) {
         <div
             class="submenu__grid category__gallery --category-gallery-active"
         >
+          <div class="nav-card">
+            <a
+                href="https://disney.com"
+               class="hover-interaction-c-2 nav-card__link"
+               title="hello"
+            >
+              <div class="nav-card__image-mask">
+                <img
+                    src="/static/std/assets/toolkit/images/navbar/shop-base_01.jpg"
+                    class="nav-card__image"
+                    alt="alt"
+                    width="556"
+                    height="722"
+                />
+              </div>
+              <p class="nav-card__caption hover-interaction-c-2-target">hello card</p>
+            </a>
+          </div>
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
