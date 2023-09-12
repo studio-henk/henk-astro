@@ -6460,7 +6460,7 @@ so calc is unit size * unit num
     --color-text-badge: var(--color-white);
     --color-background-button-nav-mobile: var(--color-black);
   }
-  .masthead-mobile[data-theme=dark][data-hashero=true]:not(.--status-scrolled) {
+  .masthead-mobile[data-theme=dark][data-has-hero=true]:not(.--status-scrolled) {
     --color-text-masthead: var(--color-black);
     --color-background-masthead: var(--color-transparent);
     --color-background-badge: var(--color-black);
@@ -6621,6 +6621,9 @@ so calc is unit size * unit num
   }
   .--menu-open .--moveToLevel3 .nav-bar-mobile .nav-bar-mobile__link-list {
     transform: translateX(-200vw);
+  }
+  .masthead-mobile .primary-nav-container a[class*="--icon"] {
+    text-indent: -999em;
   }
 }
 @media (min-resolution: 2dppx) {

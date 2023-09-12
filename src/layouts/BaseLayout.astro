@@ -31,6 +31,15 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
         type="text/css"
     />
     <slot name="head-styles"/>
+    <!--scripts for navigation-->
+    <script src="/static/std/assets/js/web-components/LangSwitch.js" type="module"></script>
+    <script defer src="/static/std/assets/js/navigation_mobile.js"></script>
+    <script slot="head-scripts" src="/static/std/assets/js/web-components/HamburgerButton.js" type="module"></script>
+    <script defer src="/static/std/assets/js/navigation_desktop.js"></script>
+    <script defer src="/static/std/assets/js/web-components/LangSwitchAction.js"></script>
+    <script defer src="/static/std/assets/js/navigation_scroll-observer.js"></script>
+    <script defer src="/static/std/assets/js/navigation_content-padding.js"></script>
+    <!--end scripts for navigation-->
     <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script is:inline defer src="/static/std/assets/toolkit/scripts/toolkit.js"></script>
     <!--<script is:inline defer src="/static/std/assets/toolkit/scripts/toolkit.min.js"></script>-->

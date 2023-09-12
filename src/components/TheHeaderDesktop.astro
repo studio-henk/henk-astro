@@ -30,20 +30,20 @@ if (!NavTheme) {
   <div class="primary-nav-container">
     <AtomLogo url="/" icon="henk-logo" width="163" height="14" />
     <nav class="primary-nav">
-      <a id="pn-shop" class="hoverlink" href="#shop" data-target="shop">Shop</a>
+      <a id="xpn-shop" class="hoverlink" href="#shop" data-target="shop">Shop</a>
       <a href="/en/configurator" class="hover-interaction-a">Configurator</a>
       <a href="/en/samples" class="hover-interaction-a">Samples</a>
-      <a id="pn-visit" class="hoverlink" href="#visit" data-target="visit"
+      <a id="xpn-visit" class="hoverlink" href="#visit" data-target="visit"
         >Visit</a
       >
       <a
-        id="pn-inspiration"
+        id="xpn-inspiration"
         class="hoverlink"
         href="#inspiration"
         data-target="inspiration">Inspiration
       </a>
       <a
-          id="pn-about"
+          id="xpn-about"
           class="hoverlink"
           href="#about"
           data-target="about">About
@@ -70,7 +70,7 @@ if (!NavTheme) {
     </div>
   </div>
   <!-- submenu shop -->
-  <div class="submenu" id="mn-shop">
+  <div class="submenu" id="xmn-shop">
     <div
       class="submenu-main-grid"
     >
@@ -325,7 +325,7 @@ if (!NavTheme) {
         class="category-grid-container"
       >
         <div
-            class="submenu__grid category__gallery --category-gallery-active"
+            class="submenu__grid category__gallery "
         >
           <div class="nav-card">
             <a
@@ -636,7 +636,7 @@ if (!NavTheme) {
       </div>
       <div class="category-grid-container">
         <div
-            class="submenu__grid category__gallery --category-gallery-active"
+            class="submenu__grid category__gallery "
         >
           <AtomFigure
               hasLink="https://disney.com"
@@ -679,7 +679,7 @@ if (!NavTheme) {
       </div>
     </div>
   </div>
-  <div class="submenu" id="mn-inspiration">
+  <div class="submenu" id="xmn-inspiration">
     <div class="submenu-main-grid">
       <div class="submenu-main-grid__item">
         <small style="line-height: 14px; letter-spacing: normal;"
@@ -692,7 +692,7 @@ if (!NavTheme) {
       </div>
       <div class="category-grid-container">
         <div
-            class="submenu__grid category__gallery --category-gallery-active"
+            class="submenu__grid category__gallery "
         >
           <AtomFigure
               hasLink="https://disney.com"
@@ -736,7 +736,7 @@ if (!NavTheme) {
 
     </div>
   </div>
-  <div class="submenu" id="mn-about">
+  <div class="submenu" id="xmn-about">
     <div class="submenu-main-grid">
       <div class="submenu-main-grid__item">
         <small style="line-height: 14px; letter-spacing: normal;"
@@ -749,12 +749,12 @@ if (!NavTheme) {
       </div>
       <div class="category-grid-container">
         <div
-            class="submenu__grid category__gallery --category-gallery-active"
+            class="submenu__grid category__gallery "
         >
           <AtomFigure
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_01.jpg"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about_01.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -795,222 +795,3 @@ if (!NavTheme) {
   </div>
 </header>
 <div id="pixel-to-watch"></div>
-<script is:inline defer>
-  // elements
-  // const htmlElement = document.documentElement;
-  const rootElementDesktop = document.documentElement;
-  const mastheadDesktop = document.querySelector(".masthead-desktop");
-  const primaryNavLinks = document.querySelectorAll(".masthead-desktop .primary-nav .hoverlink");
-  const categoryLinks = document.querySelectorAll(".masthead-desktop .category__link");
-  const categoryCloseLinks = document.querySelectorAll(".masthead-desktop .category__close-link");
-  const categoryGallery = document.querySelectorAll(".masthead-desktop .category__gallery");
-  // console.log(categoryGallery);
-  let menuOpen = false;
-
-  // LISTENERS
-
-  // when mouse enters masthead-desktop
-  mastheadDesktop.addEventListener("mouseenter", function (e) {
-    // console.log("mouse entered the masthead-desktop");
-    if (!menuOpen) {
-      invertMainNav();
-    }
-  });
-
-  // when mouse leaves masthead-desktop
-  mastheadDesktop.addEventListener("mouseleave", function (e) {
-    mastheadDesktop.classList.remove("--masthead-desktop-hovered");
-    if (menuOpen) {
-      fadeOutSubmenu();
-    }
-  });
-
-  // primary nav links that have a submenu
-  primaryNavLinks.forEach(function (currentElement, currentIndex, listObj, isTouchDevice) {
-    // disable clicking on these
-    currentElement.addEventListener("click", function (event) {
-      event.preventDefault();
-    });
-
-    // set mouse over listener
-    currentElement.addEventListener("mouseover", function (event) {
-      handlePrimaryLinks(currentElement, event);
-    });
-  });
-
-  categoryLinks.forEach(function (currentElement, currentIndex, listObj) {
-    // handle clicking on these
-    currentElement.addEventListener("click", function (event) {
-      event.preventDefault();
-      /*handleCategoryLinks(currentIndex, currentElement);*/
-      openCategorySubmenu(currentIndex, currentElement);
-    });
-  });
-
-  categoryCloseLinks.forEach(function (currentElement, currentIndex, listObj) {
-    // handle clicking on these
-    currentElement.addEventListener("click", function (event) {
-      event.preventDefault();
-      closeCategorySubmenu(currentIndex, currentElement);
-    });
-  });
-
-  // FUNCTIONS
-
-  // MainNav
-  function invertMainNav() {
-    mastheadDesktop.classList.add("--masthead-desktop-hovered");
-  }
-
-  function handlePrimaryLinks(currentElement, event) {
-    event.preventDefault();
-    // check if already open ie has class --hoverlink-active
-    if (currentElement.classList.contains("--hoverlink-active")) {
-      // console.log("already active");
-      return;
-    } else {
-      const targetSubmenu = currentElement.getAttribute("data-target");
-      // console.log("target is: " + targetSubmenu);
-
-      // deactivate any open active link
-      const activeLink = mastheadDesktop.querySelector(".--hoverlink-active");
-      if (activeLink != null) {
-        // console.log(activeLink);
-        activeLink.classList.remove("--hoverlink-active");
-      }
-
-      // add class active to current hovered one
-      currentElement.classList.add("--hoverlink-active");
-
-      const anyOpenSubmenus = mastheadDesktop.querySelector(".--submenu-open");
-      if (anyOpenSubmenus != null) {
-        // console.log(anyOpenSubmenus);
-        anyOpenSubmenus.classList.remove("--submenu-open");
-      } else {
-        fadeInSubmenu(targetSubmenu);
-      }
-
-      mastheadDesktop
-        .querySelector("#mn-" + targetSubmenu)
-        .classList.add("--submenu-open");
-    }
-  }
-
-  function fadeInSubmenu(ID) {
-    // console.log("fading in submenu with ID: " + ID);
-    // add --desktop-menu-open to html element
-    mastheadDesktop.querySelector("#mn-" + ID).classList.add("--submenu-fade-in");
-    mastheadDesktop
-      .querySelector("#mn-" + ID)
-      .addEventListener("animationend", fadeInEnded, false);
-    rootElementDesktop.classList.add("--desktop-menu-open");
-    menuOpen = true;
-  }
-
-  function fadeInEnded() {
-    // console.log("fade in ended");
-    mastheadDesktop
-      .querySelector(".--submenu-fade-in")
-      .removeEventListener("animationend", fadeInEnded, false);
-    mastheadDesktop
-      .querySelector(".--submenu-fade-in")
-      .classList.remove("--submenu-fade-in");
-  }
-
-  function fadeOutSubmenu() {
-    const currentlyOpenSubmenu = mastheadDesktop.querySelector(".--submenu-open");
-    if (currentlyOpenSubmenu != null) {
-      // console.log("fading submenu out");
-      mastheadDesktop
-        .querySelector(".--submenu-open")
-        .classList.add("--submenu-fade-out");
-      mastheadDesktop
-        .querySelector(".--submenu-open.--submenu-fade-out")
-        .addEventListener("animationend", fadeOutEnded, false);
-    }
-  }
-
-  function fadeOutEnded() {
-    // console.log("fade out ended");
-    mastheadDesktop
-      .querySelector(".--submenu-fade-out")
-      .removeEventListener("animationend", fadeOutEnded, false);
-    mastheadDesktop
-      .querySelector(".--submenu-fade-out")
-      .classList.remove("--submenu-fade-out");
-    mastheadDesktop
-      .querySelector(".--submenu-open")
-      .classList.remove("--submenu-open");
-    mastheadDesktop
-      .querySelector(".--hoverlink-active")
-      .classList.remove("--hoverlink-active");
-    rootElementDesktop.classList.remove("--desktop-menu-open");
-    menuOpen = false;
-    // close any open submenu under Shop
-    closeShopSubmenu();
-  }
-
-  function handleCategoryLinks(currentIndex, currentElement) {
-    if (document.querySelector(".--category-open") != null) {
-      document
-          .querySelector(".--category-open")
-          .classList.remove("--category-open");
-      currentElement.parentElement.classList.toggle("--category-open");
-    } else {
-      // console.log("null: no open category");
-      currentElement.parentElement.classList.toggle("--category-open");
-    }
-
-    if (document.querySelector(".--category-gallery-active") != null) {
-      document
-          .querySelector(".--category-gallery-active")
-          .classList.remove("--category-gallery-active");
-    }
-
-    let galleryIndex = currentIndex + 1;
-    categoryGallery[galleryIndex].classList.add("--category-gallery-active");
-  }
-
-  function openCategorySubmenu (currentIndex, currentElement) {
-    resetActiveCategory();
-    currentElement.classList.add("--category-active");
-    showCorrespondingGallery(currentIndex);
-  }
-
-  function closeCategorySubmenu (currentIndex, currentElement) {
-    resetActiveCategory();
-    currentElement.classList.remove("--category-active");
-  }
-
-  function showCorrespondingGallery (currentIndex) {
-    let galleryIndex = currentIndex + 1;
-    // console.log(galleryIndex);
-    document
-        .querySelector(".--category-gallery-active")
-        .classList.remove("--category-gallery-active");
-    categoryGallery[galleryIndex].classList.add("--category-gallery-active");
-  }
-
-  function resetActiveCategory () {
-    const allActiveCategories = document.querySelectorAll(".--category-active");
-    // console.log(allActiveCategories);
-    if (allActiveCategories.length > 0 ) {
-      allActiveCategories.forEach(function (currentActiveCategory, currentIndex, listObj) {
-        currentActiveCategory.classList.remove("--category-active");
-      });
-    }
-    resetGallery();
-  }
-
-  function closeShopSubmenu () {
-    resetActiveCategory();
-    resetGallery();
-  }
-
-  function resetGallery () {
-    document
-        .querySelector(".--category-gallery-active")
-        .classList.remove("--category-gallery-active");
-    categoryGallery[0].classList.add("--category-gallery-active");
-  }
-</script>
