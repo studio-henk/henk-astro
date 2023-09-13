@@ -6560,12 +6560,10 @@ so calc is unit size * unit num
   .--menu-open .nav-bar-mobile .nav-bar-mobile__link-list {
     display: block;
     opacity: 1;
-    height: calc(100svh - 124px);
+    height: calc(100svh - 69px);
     overflow-x: clip;
     width: 300vw;
     pointer-events: all;
-  }
-  .--menu-open .nav-bar-mobile .nav-bar-mobile__link-list {
     overflow-y: auto;
   }
   .nav-bar-mobile .nav-bar-mobile__link-list a,
