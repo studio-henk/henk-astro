@@ -3578,6 +3578,11 @@ main.sh-l-page-main section + section {
     display: flex;
   }
 }
+.slick-video {
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
 ul.breadcrumbs {
   margin: 1rem 0 2rem 0;
 }
