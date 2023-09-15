@@ -282,22 +282,42 @@ sh-atom-button[data-state="unmuted"] .muted {
 .sh-atom-button[data-alignment*="price"] {
  display: inline-grid;
  grid-template-columns: repeat(2, auto);
- column-gap: 2vw;
+ column-gap: 1em;
  justify-content: center;
 }
 
-.sh-atom-button[data-alignment="price-around"] {
+.sh-atom-button[data-alignment*="price-around"] {
   justify-content: space-around;
 }
 
-.sh-atom-button[data-alignment="price-between"] {
+.sh-atom-button[data-alignment*="price-between"] {
   justify-content: space-between;
 }
 
-.sh-atom-button[data-alignment="price-evenly"] {
+.sh-atom-button[data-alignment*="price-evenly"] {
   justify-content: space-evenly;
+}
+
+.sh-atom-button[data-alignment*="price-start"] {
+  justify-content: flex-start;
+}
+
+.sh-atom-button[data-alignment*="price-end"] {
+  justify-content: flex-end;
 }
 
 .sh-atom-button[data-alignment*="separator"] {
   grid-template-columns: repeat(3, auto);
+}
+
+.sh-atom-button__separator,
+.org-addtocart-console__separator {
+  font-size: 28px;
+}
+
+/* shapes */
+
+/* toolbar */
+.sh-atom-button[data-shape*="toolbar"] {
+  border-radius: 0;
 }
