@@ -61,6 +61,9 @@
 @use "components/atoms/__atoms";
 @use "components/molecules/__molecules";
 
+@use "../../public/static/std/assets/css/components/atom-button-new.css";
+@use "../../public/static/std/assets/css/components/atom-button-icon.css";
+
 @use "components/_info-box.css";
 
 /// molecules

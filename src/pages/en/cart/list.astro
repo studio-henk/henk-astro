@@ -4,17 +4,22 @@ import HeadingBadge from "../../../components/HeadingBadge.astro";
 import CartList from "../../../components/CartList.astro";
 import InfoBox from "../../../components/InfoBox.astro";
 ---
+
 <BaseLayout title="Cart list">
-      <script slot="head-scripts" src="/static/std/assets/toolkit/scripts/vue/vue.global.js" defer></script>
-      <div class="cart-page-layout-container" id="app">
-        <div id="heading-badge" class="cart-page__grid-item" data-hide="">
-          <!-- heading badge -->
-          <HeadingBadge />
-        </div>
-        <div id="continue-shopping" class="cart-page__grid-item" data-hide="">
-          <div
-            class="sh-molecule-padding-box"
-            style="
+  <script
+    slot="head-scripts"
+    src="/static/std/assets/toolkit/scripts/vue/vue.global.js"
+    defer
+  ></script>
+  <div class="cart-page-layout-container" id="app">
+    <div id="heading-badge" class="cart-page__grid-item" data-hide="">
+      <!-- heading badge -->
+      <HeadingBadge />
+    </div>
+    <div id="continue-shopping" class="cart-page__grid-item" data-hide="">
+      <div
+        class="sh-molecule-padding-box"
+        style="
                     --size-spacing-units-top: 5;
                     --size-spacing-units-right: 6;
                     --size-spacing-units-bottom: 5;
@@ -24,42 +29,61 @@ import InfoBox from "../../../components/InfoBox.astro";
                     --size-spacing-units-bottom-desktop: 5;
                     --size-spacing-units-left-desktop: 6;
                 "
-          >
-            <a href="/en/" class="sh-atom-button" data-style="plain-dark" data-icon-arrow-left="true">
-                          <span class="icon-frame">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path id="arrow-left-line" d="M20 10L7.48148 10" stroke="currentcolor" stroke-width="0.8"></path>
-                              <path id="arrow-left-point" d="M11.3333 14L7 10L11.3333 6" stroke="currentcolor" stroke-width="0.8"></path>
-                            </svg>
-                          </span>
-              Continue shopping
-            </a>
-          </div>
-        </div>
-        <div class="cart-page__grid-item" id="cart-list" data-count="1">
-          <!-- cart-list -->
-          <!-- contains modal for desktop -->
-          <CartList />          
-        </div>
-        <div class="cart-page__grid-item" id="info-boxes">
-          <div class="grid-info-box">
-            <InfoBox
-                title="Bezorgen op afspraak"
-                icon="calendar"
-                content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
-            />
-            <InfoBox
-                title="Gratis levering"
-                icon="truck"
-                content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
-            />
-            <InfoBox
-                title="Waar kunnen we mee helpen?"
-                icon="phone"
-                content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
-            />
-          </div>
-          <!--<div class="organism-grid-section-infobox">
+      >
+        <a
+          href="/en/"
+          class="sh-atom-button"
+          data-style="plain-dark"
+          data-icon-arrow-left="true"
+        >
+          <span class="icon-frame">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="arrow-left-line"
+                d="M20 10L7.48148 10"
+                stroke="currentcolor"
+                stroke-width="0.8"></path>
+              <path
+                id="arrow-left-point"
+                d="M11.3333 14L7 10L11.3333 6"
+                stroke="currentcolor"
+                stroke-width="0.8"></path>
+            </svg>
+          </span>
+          Continue shopping
+        </a>
+      </div>
+    </div>
+    <div class="cart-page__grid-item" id="cart-list" data-count="1">
+      <!-- cart-list -->
+      <!-- contains modal for desktop -->
+      <CartList />
+    </div>
+    <div class="cart-page__grid-item" id="info-boxes">
+      <div class="grid-info-box">
+        <InfoBox
+          title="Bezorgen op afspraak"
+          icon="calendar"
+          content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+        <InfoBox
+          title="Gratis levering"
+          icon="truck"
+          content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+        <InfoBox
+          title="Waar kunnen we mee helpen?"
+          icon="phone"
+          content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+      </div>
+      <!--<div class="organism-grid-section-infobox">
             <div
               class="molecule-info-box"
               style="&#45;&#45;color-background-component-bgbox:var(&#45;&#45;color-accent1); &#45;&#45;color-text-component-bgbox:var(&#45;&#45;color-black);"
@@ -198,42 +222,89 @@ import InfoBox from "../../../components/InfoBox.astro";
               </div>
             </div>
           </div>-->
-        </div>
-        <div
-          id="action-console"
-          class="action-console cart-page__grid-item"
-          data-is-sticky="true"
-          data-has-toolbar="true"
-        >
-          <div class="action-console__layout-box">
-            <ul class="cost-section__list">
-              <li class="cost-section__list-item">
-                <p class="cost-section__label">Shipping</p>
-                <p class="cost-section__data"><strong>FREE</strong></p>
-              </li>
-              <li class="cost-section__list-item">
-                <p class="cost-section__label">
-                  <small>Total incl VAT</small>
-                </p>
-                <p class="cost-section__data"><small>€49</small></p>
-              </li>
-              <li>
-                <!--Cadeaukaartcode invoeren-->
-                <button type="button">Enter gift card code</button>
-              </li>
-            </ul>
-            <div class="action-console__toolbar">
-              <a
-                href="/en/checkout/delivery"
-                class="sh-atom-button"
-                data-role="primary"
-                data-style="filled"
-              >Checkout now
-              </a>
-            </div>
-          </div>
+    </div>
+    <div
+      id="action-console"
+      class="action-console cart-page__grid-item"
+      data-is-sticky="true"
+      data-has-toolbar="true"
+    >
+      <div class="action-console__layout-box">
+        <ul class="cost-section__list">
+          <li class="cost-section__list-item">
+            <p class="cost-section__label">Shipping</p>
+            <p class="cost-section__data"><strong>FREE</strong></p>
+          </li>
+          <li class="cost-section__list-item">
+            <p class="cost-section__label">
+              <small>Total incl VAT</small>
+            </p>
+            <p class="cost-section__data"><small>€49</small></p>
+          </li>
+          <li>
+            <!--Cadeaukaart-code invoeren-->
+            <base-modal
+              hidden
+              openButtonText="Enter gift card code"
+              modalTitle="Cadeaukaart"
+            >
+              <div class="slot" slot="content">
+                <div
+                  class="molecule-input-label layout-container-input-label"
+                  data-style="is-stacked"
+                  data-show-required-fields="true"
+                >
+                  <input
+                    class="atom-input-txt"
+                    type="text"
+                    name="txt_cf1"
+                    id="txt_cf1"
+                    autocomplete="off"
+                    inputmode="text"
+                    placeholder=" "
+                    required=""
+                    pattern=".*\S.*"
+                    title="This field may not ONLY contain a space character."
+                  />
+                  <label
+                    class="atom-label"
+                    for="txt_cf1"
+                    data-style="labels-as-placeholders"
+                    title="This field may not ONLY contain a space character."
+                  >
+                    cadeaukaartcode
+                  </label>
+                </div>
+              </div>
+              <div class="slot" slot="footer">
+                <button
+                  id="discountButton"
+                  type="button"
+                  class="sh-atom-button"
+                  data-style="filled"
+                  data-expand="true">Add</button
+                >
+              </div>
+            </base-modal>
+          </li>
+        </ul>
+        <div class="action-console__toolbar">
+          <a
+            href="/en/checkout/delivery"
+            class="sh-atom-button"
+            data-role="primary"
+            data-style="filled"
+            >Checkout now
+          </a>
         </div>
       </div>
+    </div>
+  </div>
+  <script
+    src="/static/std/assets/js/web-components/BaseModal.js"
+    type="module"
+    slot="head-scripts"
+  ></script>
 
   <!-- vue app -->
   <script type="module" slot="footer-scripts">
@@ -242,9 +313,27 @@ import InfoBox from "../../../components/InfoBox.astro";
 
     createApp({
       components: {
-        SideModal
-      }
+        SideModal,
+      },
     }).mount("#app");
   </script>
-  <script slot="footer-scripts" src="/static/std/assets/toolkit/scripts/org-sheet.js" defer></script>
+  <script
+    slot="footer-scripts"
+    src="/static/std/assets/toolkit/scripts/org-sheet.js"
+    defer
+  ></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttonInSlottedContent = document
+            .querySelector("base-modal #discountButton");
+        if (buttonInSlottedContent) {
+          buttonInSlottedContent.addEventListener("click", () => {
+            // Your event handling code here
+            const baseModal = document.querySelector('base-modal');
+            baseModal.removeAttribute("open");
+            baseModal.closeModal();
+          });
+        }
+    });
+  </script>
 </BaseLayout>
