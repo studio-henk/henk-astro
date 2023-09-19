@@ -117,18 +117,17 @@ import InfoBox from "../../../components/InfoBox.astro";
                   <input
                     class="atom-input-txt"
                     type="text"
-                    name="txt_cf1"
-                    id="txt_cf1"
+                    name="txt_couponcode"
+                    id="txt_couponcode"
                     autocomplete="off"
                     inputmode="text"
                     placeholder=" "
                     required=""
-                    pattern=".*\S.*"
                     title="This field may not ONLY contain a space character."
                   />
                   <label
                     class="atom-label"
-                    for="txt_cf1"
+                    for="txt_couponcode"
                     data-style="labels-as-placeholders"
                     title="This field may not ONLY contain a space character."
                   >
@@ -199,11 +198,22 @@ import InfoBox from "../../../components/InfoBox.astro";
   ></script>
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
-        const buttonInSlottedContent = document
+      const couponInput = document
+          .querySelector("base-modal #txt_couponcode");
+      const discountButton = document
             .querySelector("base-modal #discountButton");
-        if (buttonInSlottedContent) {
-          buttonInSlottedContent.addEventListener("click", () => {
-            // Your event handling code here
+      // validate the coupon / voucher code?
+      // prevent leaving input empty?
+      // calculate new price here?
+      // do we need a form?
+
+      // close the modal if button clicked
+        if (discountButton) {
+          discountButton.addEventListener("click", () => {
+            // check if input not empty
+            // console.log(couponInput.validity.valid);
+            console.log(couponInput);
+
             const baseModal = document.querySelector('base-modal');
             baseModal.removeAttribute("open");
             baseModal.closeModal();
