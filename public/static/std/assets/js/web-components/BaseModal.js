@@ -173,10 +173,8 @@ class BaseModal extends HTMLElement {
     // Reflect the value of the open property as an HTML attribute.
     if (val) {
       this.setAttribute("open", "");
-      // this.openModal();
     } else {
       this.removeAttribute("open");
-      //this.closeModal();
     }
   }
 
@@ -196,28 +194,15 @@ class BaseModal extends HTMLElement {
   }
 
   openModal() {
-    console.log("clicked, opening");
+    // console.log("clicked, opening");
     // add class
     document.querySelector("body").classList.add("BaseModal_open");
-    // prevent body from scrolling
-    // document.querySelector("body").style.overflow = "hidden";
-    // override style for .action-console[data-is-sticky=true] otherwise modal doesnt go on top of navigation
-    /*const actionConsole = document.querySelector(
-      ".action-console[data-is-sticky=true]"
-    );
-    actionConsole.style.zIndex = "unset";
-      actionConsole.style.position = "unset";*/
     this.open = true;
   }
 
   // Close the modal when the overlay is clicked
   closeModal() {
-    console.log("clicked, closing");
-    // document.querySelector("body").style.removeProperty("overflow");
-    /*const actionConsole = document.querySelector(
-      ".action-console[data-is-sticky=true]"
-    );
-    actionConsole.removeAttribute("style");*/
+    // console.log("clicked, closing");
     document.querySelector("body").classList.remove("BaseModal_open");
     this.open = false;
   }

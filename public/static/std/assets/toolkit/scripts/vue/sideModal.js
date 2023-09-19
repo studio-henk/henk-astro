@@ -40,7 +40,8 @@ export default {
     },
     onHide() {
       /* prevent page from scrolling */
-      document.querySelector('body').style.overflow = 'auto';
+      // document.querySelector('body').style.overflow = 'auto';
+      document.querySelector('body').style.removeProperty("overflow");
     },
   },
   template: `
