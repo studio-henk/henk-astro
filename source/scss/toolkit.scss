@@ -60,6 +60,7 @@
 @use "components/cookie";
 @use "components/atoms/__atoms";
 @use "components/molecules/__molecules";
+@use "components/_BaseModal.css";
 
 @use "../../public/static/std/assets/css/components/atom-button-new.css";
 @use "../../public/static/std/assets/css/components/atom-button-icon.css";

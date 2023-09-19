@@ -101,8 +101,10 @@ const cmpSheet = {
         function restoreDoc() {
             console.log('restoring document');
             cmpSheet.sheetElement.style.display = "none";
-            cmpSheet.bodyElement.style.overflow = "unset";
-            cmpSheet.bodyElement.style.touchAction = "unset";
+            // cmpSheet.bodyElement.style.overflow = "unset";
+            // cmpSheet.bodyElement.style.touchAction = "unset";
+            cmpSheet.bodyElement.style.removeProperty("overflow");
+            cmpSheet.bodyElement.style.removeProperty("touchAction");
             cmpSheet.sheetOpen = false;
         }
 

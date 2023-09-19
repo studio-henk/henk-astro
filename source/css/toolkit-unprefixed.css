@@ -5790,6 +5790,14 @@ so calc is unit size * unit num
   top: -4px;
 }
 
+.BaseModal_open {
+  overflow: hidden;
+}
+
+.BaseModal_open .action-console[data-is-sticky=true] {
+  z-index: 99999;
+}
+
 .sh-atom-button {
   font-family: "ff-scala-sans-pro", sans-serif;
   /* 17px */
