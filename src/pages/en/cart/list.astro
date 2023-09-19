@@ -175,9 +175,9 @@ import InfoBox from "../../../components/InfoBox.astro";
     </div>
   </div>
   <script
-    src="/static/std/assets/js/web-components/BaseModal.js"
-    type="module"
-    slot="head-scripts"
+      src="/static/std/assets/js/web-components/BaseModal.min.js"
+      type="module"
+      slot="head-scripts"
   ></script>
 
   <!-- vue app -->
@@ -192,10 +192,11 @@ import InfoBox from "../../../components/InfoBox.astro";
     }).mount("#app");
   </script>
   <script
-    slot="footer-scripts"
-    src="/static/std/assets/toolkit/scripts/org-sheet.js"
-    defer
-  ></script>
+      slot="footer-scripts"
+      src="/static/std/assets/toolkit/scripts/org-sheet.min.js"
+      defer
+  >
+  </script>
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
       const couponInput = document
@@ -216,6 +217,7 @@ import InfoBox from "../../../components/InfoBox.astro";
 
             const baseModal = document.querySelector('base-modal');
             baseModal.removeAttribute("open");
+            // noinspection TypeScriptUnresolvedReference
             baseModal.closeModal();
           });
         }
