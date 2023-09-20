@@ -73,7 +73,7 @@ class BaseModal extends HTMLElement {
         flex-direction: column;
         /*justify-content: space-between;*/
         padding: 16px;
-        gap: 1rem;
+        gap: 2rem;
       }
       
       @media only screen and (min-width: 768px) {

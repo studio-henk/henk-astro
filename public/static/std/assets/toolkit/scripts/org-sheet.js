@@ -100,10 +100,11 @@ const cmpSheet = {
         function restoreDoc() {
             // console.log('restoring document');
             cmpSheet.sheetElement.style.display = "none";
-            // cmpSheet.bodyElement.style.overflow = "unset";
-            // cmpSheet.bodyElement.style.touchAction = "unset";
             cmpSheet.bodyElement.style.removeProperty("overflow");
-            cmpSheet.bodyElement.style.removeProperty("touchAction");
+            cmpSheet.bodyElement.style.removeProperty("touch-action");
+            if (cmpSheet.bodyElement.style.length === 0) {
+                cmpSheet.bodyElement.removeAttribute("style");
+            }
             cmpSheet.sheetOpen = false;
         }
 

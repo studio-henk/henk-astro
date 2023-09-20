@@ -99,9 +99,9 @@ import InfoBox from "../../../components/InfoBox.astro";
             <p class="cost-section__label">
               <small>Total incl VAT</small>
             </p>
-            <p class="cost-section__data"><small>€49</small></p>
+            <p class="cost-section__data cost-section__data_total"><small>€49</small></p>
           </li>
-          <li>
+          <li class="cost-section__list-item cost-section_discount">
             <!--Cadeaukaart-code invoeren-->
             <base-modal
               hidden
@@ -113,6 +113,7 @@ import InfoBox from "../../../components/InfoBox.astro";
                   class="molecule-input-label layout-container-input-label"
                   data-style="is-stacked"
                   data-show-required-fields="true"
+                  data-use-css-validation="true"
                 >
                   <input
                     class="atom-input-txt"
@@ -122,45 +123,36 @@ import InfoBox from "../../../components/InfoBox.astro";
                     autocomplete="off"
                     inputmode="text"
                     placeholder=" "
+                    pattern="HENK-[A-Z]{5}"
                     required=""
-                    title="This field may not ONLY contain a space character."
+                    title="This field should be formatted as HENK-? and not longer than 10 characters."
                   />
                   <label
                     class="atom-label"
                     for="txt_couponcode"
                     data-style="labels-as-placeholders"
-                    title="This field may not ONLY contain a space character."
                   >
                     cadeaukaart-code
                   </label>
+                  <span class="molecule-input-label__message-invalid">
+                    Please format the code like HENK-ABC-001
+                </span>
                 </div>
               </div>
               <div class="slot" slot="footer">
                 <button
+                  disabled
                   id="discountButton"
                   type="button"
                   class="sh-atom-button"
                   data-style="filled"
-                  data-expand="true">Add</button
-                >
+                  data-expand="true"
+                  title="Button is disabled if input is empty or invalid."
+                >Add
+                </button>
               </div>
             </base-modal>
           </li>
-          <!--<li>
-            <h2>test 2nd modal</h2>
-            <base-modal
-                hidden
-                openButtonText="open this modal"
-                modalTitle="a modal !"
-            >
-              <div class="slot" slot="content">
-                content
-              </div>
-              <div class="slot" slot="footer">
-                footer content
-              </div>
-            </base-modal>
-          </li>-->
         </ul>
         <div class="action-console__toolbar">
           <a
@@ -183,7 +175,7 @@ import InfoBox from "../../../components/InfoBox.astro";
   <!-- vue app -->
   <script type="module" slot="footer-scripts">
     const { createApp } = Vue;
-    import SideModal from "/static/std/assets/toolkit/scripts/vue/sideModal.js";
+    import SideModal from "/static/std/assets/toolkit/scripts/vue/sideModal.min.js";
 
     createApp({
       components: {
@@ -197,30 +189,11 @@ import InfoBox from "../../../components/InfoBox.astro";
       defer
   >
   </script>
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      const couponInput = document
-          .querySelector("base-modal #txt_couponcode");
-      const discountButton = document
-            .querySelector("base-modal #discountButton");
-      // validate the coupon / voucher code?
-      // prevent leaving input empty?
-      // calculate new price here?
-      // do we need a form?
-
-      // close the modal if button clicked
-        if (discountButton) {
-          discountButton.addEventListener("click", () => {
-            // check if input not empty
-            // console.log(couponInput.validity.valid);
-            console.log(couponInput);
-
-            const baseModal = document.querySelector('base-modal');
-            baseModal.removeAttribute("open");
-            // noinspection TypeScriptUnresolvedReference
-            baseModal.closeModal();
-          });
-        }
-    });
+  <script
+      slot="footer-scripts"
+      src="/static/std/assets/js/page-scripts/cart-list-discount.min.js"
+      defer
+  >
   </script>
+
 </BaseLayout>
