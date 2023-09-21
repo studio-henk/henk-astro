@@ -44,18 +44,18 @@ import Icon from "../../components/Icon.astro";
               />
             </div>
 
-            <div class="row configurator__controls-row">
-              <a href="javascript:redirectToCart()" class="sh-atom-button" data-style="outline-dark" data-alignment="price-between" data-size="small">
+            <!--<div class="row configurator__controls-row">
+              &lt;!&ndash;<a href="javascript:redirectToCart()" class="sh-atom-button" data-style="outline-dark" data-alignment="price-between" data-size="small">
                 <Icon icon="icon-cart" />
                 <span class="org-addtocart-console__price">€ 539</span>
-              </a>
-              <!--<span class="sh-atom-button" data-style="outline-dark"
+              </a>&ndash;&gt;
+              &lt;!&ndash;<span class="sh-atom-button" data-style="outline-dark"
                 >Enlarge</span
               >
               <span class="sh-atom-button" data-style="outline-dark"
                 >View in 3D</span
-              >-->
-        </div>
+              >&ndash;&gt;
+            </div>-->
       </div>
     </div>
     <div
@@ -3741,18 +3741,20 @@ import Icon from "../../components/Icon.astro";
 </script>
 
 
-<script defer src="/static/std/assets/toolkit/scripts/heightForConfigurator.js"></script>
+<script defer src="/static/std/assets/js/page-scripts/configurator/heightForConfigurator.js"></script>
+<script defer src="/static/std/assets/js/page-scripts/configurator/configurator_device-orientation.min.js"></script>
+<!--
 <script is:inline defer>
   const portraitOnLoad = window.matchMedia("(orientation: portrait)").matches;
   console.log("portraitOnLoad: " + portraitOnLoad);
   if (portraitOnLoad) {
     // do something
     console.log("portrait mode");
-    document.querySelector(".configurator__grid").classList.remove("--is-landscape");
+    document.querySelector(".configurator__grid").classList.remove("&#45;&#45;is-landscape");
   } else {
     // do something else
     console.log("landscape mode");
-    document.querySelector(".configurator__grid").classList.add("--is-landscape");
+    document.querySelector(".configurator__grid").classList.add("&#45;&#45;is-landscape");
 
   }
 
@@ -3762,12 +3764,12 @@ import Icon from "../../components/Icon.astro";
     if (portrait) {
       // do something
       console.log("portrait mode");
-      document.querySelector(".configurator__grid").classList.remove("--is-landscape");
+      document.querySelector(".configurator__grid").classList.remove("&#45;&#45;is-landscape");
     } else {
       // do something else
       console.log("landscape mode");
-      document.querySelector(".configurator__grid").classList.add("--is-landscape");
+      document.querySelector(".configurator__grid").classList.add("&#45;&#45;is-landscape");
 
     }
   });
-</script>
+</script>-->
