@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import AstroHeart from "../../components/custom-elements/AstroHeart.astro";
-//import HelloWorld from "../../components/custom-elements/hello-world.js";
 ---
 
 <BaseLayout title="Design System Index">
@@ -10,68 +8,9 @@ import AstroHeart from "../../components/custom-elements/AstroHeart.astro";
   <ul>
     <li><a href="atoms/atom-tag">Atom Tag</a></li>
   </ul>
-  <hr>
-  <h2>Test web component</h2>
-  <AstroHeart />
-  <hr>
-  <h2>Test HelloWorld comp</h2>
-  <!--<HelloWorld client:load />-->
-  <hello-world name="Nils"></hello-world>
-  <h1>Studio HENK - Front-end Only</h1>
-  <p>This is a work-in-progress</p>
-  <p>Stuff might (and probably will) not work!</p>
-  <h2>Stuff to do / fix etc</h2>
+  <h2>Components</h2>
   <ul>
-    <li>button arrow down / anchor in hero:
-      <ul>
-        <li>arrow size is wrong, too big</li>
-        <li>positioning: set in hero brick styles.</li>
-      </ul>
-    </li>
-    <li>DoubleImageBrick:
-      <ul>
-        <li>line 4: --color-text-component-bgbox: var(); if not empty needed!</li>
-        <li>Update button !</li>
-      </ul>
-    </li>
-    <li>SplitscreenBrick
-      <ul>
-        <li>update button</li>
-      </ul>
-    </li>
-    <li>Slider front end from live doesnt work here.</li>
-    <li>Interior Advice page: modal iframes work with backend so not here....</li>
-    <li>quick-delivery: modal? vue?</li>
-    <li>stores / shops ?</li>
-    <li>can't submit forms here</li>
-    <li>footer rating thingy is just front-end, not dynamic</li>
-    <li>10th-anniversary-part-1 (has many different bricks)</li>
-    <li>Contact:
-      <ul>
-        <li>re-captcha missing.</li>
-      </ul>
-    </li>
+    <li><a href="components/component-InfoBox">InfoBox</a></li>
   </ul>
-  <h2>Pages to add</h2>
-  <ul>
-    <li>Blog</li>
-    <li>Projects?</li>
-    <li>PDP?</li>
-    <li>configurator?</li>
-  </ul>
-  <h2>Document</h2>
-  <ul>
-    <li>scripts
-      <ul>
-        <li>/static/std/assets/toolkit/scripts/heightForHeroes.js</li>
-        <li>/static/std/assets/toolkit/scripts/libs.js
-          <ul>
-            <li>parsley?</li>
-            <li>script for navigation / dropdown is in here too</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <script slot="head-scripts" src="../src/components/custom-elements/hello-world.js" type="module"></script>
+
 </BaseLayout>

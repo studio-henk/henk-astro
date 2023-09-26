@@ -1,5 +1,5 @@
 ---
-import {getLangFromUrl} from '../../i18n/utils';
+import { getLangFromUrl } from "../../i18n/utils";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -204,6 +204,40 @@ https://assets.studio-henk.nl/assets/Images/about-us/window_p_936x1170.jpg 936w"
     <!-- how it started -->
     <div class="content-block" style="background-color: var(--color-accent1);">
         <div class="content-block__container" style="
+  "
+    >
+      <div class="content-block__layout">
+        <div class="content-block__header">
+          <h2 class="content-block__heading">Our Journey</h2>
+        </div>
+
+        <div class="content-block__content">
+          <img
+            alt="timeline"
+            class="timeline-svg"
+            data-hide="tablet|desktop"
+            height="310"
+            src="/static/std/assets/toolkit/images/about-us/timeline-mobile2.svg"
+            width="364"
+          />
+          <img
+            alt="timeline"
+            class="timeline-svg"
+            data-hide="mobile"
+            height="333"
+            src="/static/std/assets/toolkit/images/about-us/timeline2.svg"
+            width="658"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end: our journey -->
+  <!-- how it started -->
+  <div class="content-block" style="background-color: var(--color-accent1);">
+    <div
+      class="content-block__container"
+      style="
 --size-spacing-units-top: 4;
 --size-spacing-units-right: 0;
 --size-spacing-units-bottom: 4;

@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Icon from "../../../components/Icon.astro";
+import InfoBox from "../../../components/InfoBox.astro";
+---
+
+<BaseLayout title="Component InfoBox">
+    <div class="grid-info-box">
+        <InfoBox
+            title="Title here. No icon."
+            content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+        <InfoBox
+            title="Bezorgen op afspraak"
+            icon="calendar"
+            content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+        <InfoBox
+            title="Gratis levering"
+            icon="truck"
+            content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+        <InfoBox
+            title="Waar kunnen we mee helpen?"
+            icon="phone"
+            content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+    </div>
+</BaseLayout>
+<!--
+<style is:global>
+    .grid-info-box {
+        display: grid;
+        gap: 1.25rem;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+        padding: 1.5em;
+    }
+</style>-->

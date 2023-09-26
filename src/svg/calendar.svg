@@ -1,0 +1,19 @@
+<svg
+        class="sh-atom-icon__svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        aria-labelledby="iconCalendar"
+        id="iconCalendar"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+>
+    <title>iconCalendar</title>
+    <desc>icon of a calendar</desc>
+    <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5.99702 2V3.62766H14.0031V2H14.5706V3.62766H18V6.88261V7.42125V18H2V7.42125V6.88261V3.62766H5.42951V2H5.99702ZM17.4325 6.88261V4.1663H2.56751V6.88261H17.4325ZM2.56751 7.42125V17.4614H17.4325V7.42125H2.56751ZM10.2838 12.5787H12.8558V13.1173H10.2838V15.5587H9.71625V13.1173H7.1441V12.5787H9.71625V10.1376H10.2838V12.5787Z"
+            fill="currentcolor"
+    ></path>
+</svg>

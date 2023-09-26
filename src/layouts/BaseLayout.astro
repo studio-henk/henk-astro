@@ -30,20 +30,24 @@ const {title, mainID, mainClass} = Astro.props;
         type="text/css"
     />
     <slot name="head-styles"/>
-    <script is:inline src="/static/std/assets/toolkit/scripts/libs.js"></script>
+    <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
     <slot name="head-scripts"/>
 </head>
 <body>
 <div class="wrapper">
-    <MsgBar />
+    <!--value comes from head <title> tag....usually, which is set in title field on SEO tab in pimcore-->
+    <div id="page-title">
+        <h1 class="sr-only">{title}</h1>
+    </div>
+    <MsgBar/>
     <TheNav />
-    <main class={mainClass} id={mainID}>
-        <!--<LanguagePicker/>-->
-        <slot />
+    <slot name="pre-main" />
+    <main id={mainID} class={mainClass}>
+        <slot/>
     </main>
-    <TheFooter />
+    <TheFooter/>
 </div>
-<slot name="footer-scripts" />
+<slot name="footer-scripts"/>
 </body>
 </html>

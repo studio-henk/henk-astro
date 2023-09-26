@@ -1,0 +1,127 @@
+.cmp-sheet {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cmp-sheet__overlay {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  place-content: center;
+  place-items: flex-end;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: background-color;
+  transition-timing-function: ease;
+}
+
+.cmp-sheet__content * {
+  margin: 0;
+  padding: 0;
+}
+
+.cmp-sheet__content {
+  width: 100vw;
+  height: 98%;
+  transform: translateY(100%);
+  transition-delay: 0.15s;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  transition-property: transform, height;
+}
+
+@supports (min-height: 100dvh) {
+  .cmp-sheet__content {
+    /* background-color: blue !important; */
+    /* height: 98dvh; */
+  }
+}
+
+.cmp-sheet__content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: auto;
+
+  .cmp-sheet__content-header-touch-target {
+    //padding: 24px 0;
+    width: 100%;
+    /* TODO: re-design? */
+    min-height: 40px;
+  }
+
+  #close-button-sheet {
+    align-self: flex-end;
+  }
+}
+
+.cmp-sheet__content main.cmp-sheet__content-body {
+  max-height: calc(98% - 80px);
+  overflow: scroll;
+  overscroll-behavior: contain;
+
+  .org-media {
+    background-color: transparent;
+    //padding-top: 0;
+
+    .org-media__content {
+      /*grid-row-start: 1;
+      grid-column-start: 2;
+      grid-row-end: 3;*/
+    }
+
+    @media only screen and (max-width: 767px) {
+      /*grid-template-rows: 114px auto;*/
+
+      .prod-specs {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.cmp-sheet__content main ol {
+  list-style: none;
+}
+
+.cmp-sheet__content main ol li {
+  padding: 24px 0;
+}
+
+.cmp-sheet__content main ol li + li {
+  border-top: 1px solid #ccc;
+}
+
+.cmp-sheet__overlay.overlay-open {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.cmp-sheet__overlay .cmp-sheet__content--half-screen main {
+  /* max-height: calc(50vh - 80px); */
+  max-height: calc(50% - 80px);
+}
+
+@supports (min-height: 100dvh) {
+  .cmp-sheet__overlay .cmp-sheet__content--half-screen main {
+    /* background-color: orange; */
+    /* max-height: calc(48dvh - 80px); */
+    /* max-height: 90vh; */
+  }
+}
+
+/* decorative styles, theme */
+[data-theme="cmp-sheet-theme-henk"] {
+  --color-background-sheet: var(--color-henk-white);
+}
+
+.cmp-sheet__content {
+  background-color: var(--color-background-sheet, #f1f1f1);
+  border-radius: 12px 12px 0 0;
+}
