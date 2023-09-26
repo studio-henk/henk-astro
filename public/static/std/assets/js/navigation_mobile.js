@@ -66,6 +66,7 @@ function ListItemsAnimateIn() {
     currentElement.style.opacity = 1;
     currentElement.style.transitionDelay = (currentIndex + 1) * 0.15 + "s";
   });
+  setHeightLevel2();
 }
 
 function ListItemsReset() {
@@ -118,4 +119,25 @@ function handleBackLinks(currentElement) {
   currentElement.parentElement.parentElement.parentElement
     .querySelector(".--active")
     .classList.remove("--active");
+}
+
+function setHeightLevel2 () {
+  // Select all elements with the specified classes and convert them to an array
+  const Level2Elements = Array.from(document.querySelectorAll(".submenu.--nav-level2"));
+  /*console.log(Level2Elements);*/
+
+// Find the element with the maximum height using the ES6 arrow function and reduce method
+  const maxValueInArray = Level2Elements.reduce((maxElement, currentElement) => {
+    const maxHeight = Math.max(maxElement.offsetHeight, currentElement.offsetHeight);
+    return maxHeight === maxElement.offsetHeight ? maxElement : currentElement;
+  }, Level2Elements[0]);
+
+  console.log("maxValueInArray:" + maxValueInArray);
+
+// Set the height of all elements with the specified classes to 100vh
+  Level2Elements.forEach(element => {
+    /*element.style.height = "100vh";*/
+    /*element.style.height = maxValueInArray.offsetHeight + 69 + "px";*/
+    element.style.height = maxValueInArray.offsetHeight + "px";
+  });
 }
