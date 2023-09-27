@@ -39,8 +39,9 @@
 - min-height: calc(100vh - var(--size-height-for-hero) - 224px);
 */
 
+/*
 @media only screen and (max-width: 768px) {
   .cart-page-layout-container #cart-list[data-count="1"] {
     min-height: calc(100vh - var(--size-height-for-hero) - 224px);
   }
-}
+}*/

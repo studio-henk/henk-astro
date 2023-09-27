@@ -10515,12 +10515,17 @@ Brick with grid with 3 columns containing editable for:
 }
 .cart-list .cart-list__list-item {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 140px 1fr;
   grid-template-rows: 35px auto auto 35px auto;
   gap: 0px 20px;
   justify-items: flex-start;
   align-items: flex-start;
   padding-bottom: 0;
+}
+@media only screen and (min-width: 375px) {
+  .cart-list .cart-list__list-item {
+    grid-template-columns: 180px 1fr;
+  }
 }
 .cart-list .cart-list__list-item-image {
   grid-row: 1/span 4;
@@ -10533,6 +10538,17 @@ Brick with grid with 3 columns containing editable for:
   grid-row: 1;
   line-height: 1;
   margin-top: 0;
+}
+@media only screen and (max-width: 767px) {
+  .cart-list .cart-list__list-item-content-title {
+    position: relative;
+  }
+  .cart-list .cart-list__list-item-content-title .sh-atom-tag {
+    position: absolute;
+    left: 16px;
+    top: -28px;
+    white-space: nowrap;
+  }
 }
 .cart-list .cart-list__list-item .wc-stepper-quantity {
   margin: 0;
@@ -11240,11 +11256,12 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
 - room after item list if only one item (set by twig file data-count)
 - min-height: calc(100vh - var(--size-height-for-hero) - 224px);
 */
+/*
 @media only screen and (max-width: 768px) {
   .cart-page-layout-container #cart-list[data-count="1"] {
     min-height: calc(100vh - var(--size-height-for-hero) - 224px);
   }
-}
+}*/
 /* :root {
     --color-accent11: pink;
 } */
