@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Video from "../../../components/Video.astro";
 ---
 
 <BaseLayout title="Poufs">
@@ -334,11 +335,16 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
                         animation-delay: 0.75s;
                         ">
                     <div class="mdl-shop-product" data-variant="category-setting">
-                        <div class="mdl-shop-product__container">
+                        <!--<div class="mdl-shop-product__container">-->
+                        <a class="mdl-shop-product__link" href="#">
                             <div class="mdl-shop-product__image-mask">
-                                <img class="mdl-shop-product__image"
-                                     src="https://studio-henk.nl/_default_upload_bucket/700363/image-thumb__700363__settingimageBrickThumb/studio-henk-bar-poufs-2~-~media--859ff47b--query.jpg"
-                                     width="1480" height="1988" alt="text">
+                                <!--<img class="mdl-shop-product__image"
+                                     src="https://studio-henk.nl/_default_upload_bucket/700363/image-thumb__700363__settingimageBrickThumb/studio-henk-bar-poufs-2~-~media&#45;&#45;859ff47b&#45;&#45;query.jpg"
+                                     width="1480" height="1988" alt="text">-->
+                                <Video
+                                    src="/static/std/assets/video/portrait_sound.mp4"
+                                    classNames="mdl-shop-product__video"
+                                />
                             </div>
                             <div class="mdl-shop-product__content">
                                 <p class="mdl-shop-product__title">
@@ -352,7 +358,8 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
                                 >Discover more</span
                                 >
                             </div>
-                        </div>
+                        </a>
+                        <!--</div>-->
                     </div>
                 </div>
                 <div class="org-grid-lister__item" style="

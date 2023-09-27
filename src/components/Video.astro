@@ -1,0 +1,16 @@
+---
+const { src, controls = "false", autoplay = "true", muted = "true", loop = "true", classNames = "video" } = Astro.props;
+
+const videoProperties = {
+    ...(muted === "true" && { "muted": "" }),
+    ...(autoplay === "true" && { "autoplay": "" }),
+    ...(loop === "true" && { "loop": "" }),
+    ...(controls === "true" && { "controls": "" })
+}
+---
+<video
+    { ...videoProperties }
+    class={classNames}
+>
+    <source src={src} type="video/mp4" />
+</video>
