@@ -28,10 +28,10 @@
   --fg-default: var(--color-henk-black);
 
   /* css-vars */
-  --var-lineheight: 28;
-  --var-global-lineheight: 28;
-  --var-letterspacing: 1.2;
-  --var-letterspacing-ems: calc(var(--var-letterspacing) / var(--var-global-fontsize-root) * 1em);
+  // --var-lineheight: 28;
+  // --var-global-lineheight: 28;
+  // --var-letterspacing: 1.2;
+  // --var-letterspacing-ems: calc(var(--var-letterspacing) / var(--var-global-fontsize-root) * 1em);
 }
 
 @media only screen and (min-width: 768px) {

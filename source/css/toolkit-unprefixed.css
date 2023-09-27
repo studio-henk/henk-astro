@@ -418,10 +418,6 @@ template {
   --bg-default: var(--color-white);
   --fg-default: var(--color-henk-black);
   /* css-vars */
-  --var-lineheight: 28;
-  --var-global-lineheight: 28;
-  --var-letterspacing: 1.2;
-  --var-letterspacing-ems: calc(var(--var-letterspacing) / var(--var-global-fontsize-root) * 1em);
 }
 
 @media only screen and (min-width: 768px) {
@@ -480,8 +476,8 @@ template {
   /*14px*/
   --size-font-small: 14;
   /*16px*/
-  --size-font-base: 16;
-  --size-font-root: 16;
+  --size-font-base: 15;
+  --size-font-root: 15;
   /*20px*/
   --size-font-medium: 20;
   /*21px*/
@@ -542,9 +538,9 @@ templates/Areas/reviews-brick/view.html.twig
   --color-text-selection-text: var(--color-henk-black);
   /* sizes from design as plugin numbers */
   /* sizes from design as plugin numbers. in px */
-  --size-font-body: 16;
-  --size-font-lineheight-body: 28;
-  --size-font-letterspacing-body: 0.5;
+  --size-font-body: 15;
+  --size-font-lineheight-body: 18;
+  --size-font-letterspacing-body: 0.15;
   /* tmp, move to size tokens? */
   --size-horizontal-rhythm: 1;
   /* buttons */
@@ -582,7 +578,7 @@ templates/Areas/reviews-brick/view.html.twig
   font-display: swap;
 }
 .NeueHaasGrotTextRound-76BoldItalic-Web {
-  font-family: "Haas Grot Text R Web";
+  font-family: "Haas Grot Text R Web", sans-serif;
   font-weight: 700;
   font-style: italic;
   font-stretch: normal;
@@ -680,10 +676,11 @@ templates/Areas/reviews-brick/view.html.twig
 html {
   background-color: var(--bg-default, #fff);
   color: var(--fg-default, #000);
-  line-height: calc(var(--var-lineheight) / var(--var-global-fontsize-root));
-  letter-spacing: var(--var-letterspacing-ems);
+  line-height: calc(var(--size-font-lineheight-body) / var(--size-font-body));
+  letter-spacing: calc(var(--size-font-letterspacing-body) * 1px);
   height: 100%;
-  font-size: 100%;
+  /*font-size: 100%;*/
+  font-size: 15px;
   font-feature-settings: "pnum" on, "lnum" on;
   -webkit-font-smoothing: antialiased;
 }
@@ -12163,7 +12160,7 @@ label.radio:after {
   position: absolute;
   right: 0;
   top: 2px;
-  line-height: calc(var(--var-lineheight) / 13);
+  line-height: calc(var(--size-font-lineheight-body) / 13);
   margin-top: 0;
 }
 .basic-input__info {

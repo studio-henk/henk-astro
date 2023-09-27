@@ -9,7 +9,7 @@
 }
 
 .NeueHaasGrotTextRound-76BoldItalic-Web {
-  font-family: 'Haas Grot Text R Web';
+  font-family: 'Haas Grot Text R Web', sans-serif;
   font-weight:  700;
   font-style:   italic;
   font-stretch: normal;
@@ -121,10 +121,11 @@
 html {
   background-color: var(--bg-default, #fff);
   color: var(--fg-default, #000);
-  line-height: calc(var(--var-lineheight) / var(--var-global-fontsize-root));
-  letter-spacing: var(--var-letterspacing-ems);
+  line-height: calc(var(--size-font-lineheight-body) / var(--size-font-body));
+  letter-spacing: calc(var(--size-font-letterspacing-body) * 1px);
   height: 100%;
-  font-size: 100%;
+  /*font-size: 100%;*/
+  font-size: 15px;
   font-feature-settings: "pnum" on, "lnum" on;
   -webkit-font-smoothing: antialiased;
 }
