@@ -6943,6 +6943,7 @@ so calc is unit size * unit num
 .submenu__grid.category__gallery {
   opacity: 1;
   grid-template-columns: repeat(4, 1fr);
+  justify-content: flex-start;
 }
 
 .submenu-main-grid {

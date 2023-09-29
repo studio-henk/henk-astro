@@ -1,11 +1,10 @@
 ---
 import AtomLogo from "./Atoms/AtomLogo.astro";
-import AtomBadge from "./Atoms/AtomBadge.astro";
 import AtomFigure from "./Atoms/AtomFigure.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import LangSwitchNoScript from "./LangSwitchNoScript.astro";
 import Icon from "./Icon.astro";
-// import LangSwitch3 from "./LangSwitch3.astro";
+import NavCard from "./NavCard.astro";
 const lang = getLangFromUrl(Astro.url);
 const { NavOnHero } = Astro.props;
 let { NavTheme } = Astro.props;
@@ -116,6 +115,11 @@ if (!NavTheme) {
                   <a
                     class="category__list-link"
                     href="/en/products/bistro-tables">Bistro Tables</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-tables">Outdoor Tables</a>
                 </li>
               </ul>
             </div>
@@ -325,81 +329,27 @@ if (!NavTheme) {
         class="category-grid-container"
       >
         <div
-            class="submenu__grid category__gallery "
+            class="submenu__grid category__gallery " style="grid-template-columns: repeat(2, auto);"
         >
-          <div class="nav-card">
-            <a
-                href="https://disney.com"
-               class="hover-interaction-c-2 nav-card__link"
-               title="hello"
-            >
-              <div class="nav-card__image-mask">
-                <img
-                    src="/static/std/assets/toolkit/images/navbar/shop-base_01.jpg"
-                    class="nav-card__image"
-                    alt="alt"
-                    width="556"
-                    height="722"
-                />
-              </div>
-              <p class="nav-card__caption hover-interaction-c-2-target">hello card</p>
-            </a>
-          </div>
-          <!--<AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_01.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
-          />-->
-          <div class="nav-card">
-            <a
-                href="https://disney.com"
-                class="hover-interaction-c-2 nav-card__link"
-                title="hello"
-            >
-              <div class="nav-card__image-mask">
-                <img
-                    src="/static/std/assets/toolkit/images/navbar/shop-base_02.jpg"
-                    class="nav-card__image"
-                    alt="alt"
-                    width="556"
-                    height="722"
-                />
-              </div>
-              <p class="nav-card__caption hover-interaction-c-2-target">hello card</p>
-            </a>
-          </div>
-          <!--<AtomFigure
+              caption="Base Collection"
+          />
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_02.jpg"
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_04.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
-          />-->
-          <div class="nav-card">
-            <a
-                href="https://disney.com"
-                class="hover-interaction-c-2 nav-card__link"
-                title="hello"
-            >
-              <div class="nav-card__image-mask">
-                <img
-                    src="/static/std/assets/toolkit/images/navbar/shop-base_03.jpg"
-                    class="nav-card__image"
-                    alt="alt"
-                    width="556"
-                    height="722"
-                />
-              </div>
-              <p class="nav-card__caption hover-interaction-c-2-target">hello card</p>
-            </a>
-          </div>
-          <!--<AtomFigure
+              caption="Meest verkocht"
+          />
+          <!--<NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_03.jpg"
@@ -407,29 +357,20 @@ if (!NavTheme) {
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
-          />-->
-          <div class="nav-card">
-            <a
-                href="https://disney.com"
-                class="hover-interaction-c-2 nav-card__link"
-                title="hello"
-            >
-              <div class="nav-card__image-mask">
-                <img
-                    src="/static/std/assets/toolkit/images/navbar/shop-base_04.jpg"
-                    class="nav-card__image"
-                    alt="alt"
-                    width="556"
-                    height="722"
-                />
-              </div>
-              <p class="nav-card__caption hover-interaction-c-2-target">hello card</p>
-            </a>
-          </div>
-          <!--<AtomFigure
+          />
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
-              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_04.jpg"
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_02.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
@@ -439,65 +380,57 @@ if (!NavTheme) {
         <!-- gallery Tables -->
         <div
           class="submenu__grid category__gallery"
+          style="grid-template-columns: repeat(5, 1fr);"
         >
-          <!--<AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/tables_01.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
-          />-->
-          <div class="nav-card">
-            <a
-                href="https://disney.com"
-                class="hover-interaction-c-2 nav-card__link"
-                title="hello"
-            >
-              <div class="nav-card__image-mask">
-                <img
-                    src="/static/std/assets/toolkit/images/navbar/tables_01.jpg"
-                    class="nav-card__image"
-                    alt="alt"
-                    width="556"
-                    height="722"
-                />
-              </div>
-              <p class="nav-card__caption hover-interaction-c-2-target">hello card</p>
-            </a>
-          </div>
-          <AtomFigure
+              caption="Dining Tables"
+          />
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/tables_02.jpg"
               imgWidth="556"
               imgHeight="722"
               altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
+              caption="Coffee Tables"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/tables_03.jpg"
               imgWidth="556"
               imgHeight="722"
-              altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
+              altText="Home Desks"
+              caption="Home Desks"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/tables_04.jpg"
               imgWidth="556"
               imgHeight="722"
-              altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
+              altText="Bistro Tables"
+              caption="Bistro Tables"
+          />
+          <NavCard
+              hasLink="products/outdoor-tables"
+              linkTitle="outdoor tables"
+              imgUrl="/static/std/assets/toolkit/images/navbar/tables_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="an outdoor table"
+              caption="Outdoor Tables"
           />
         </div>
         <!-- gallery chairs -->
         <div class="submenu__grid category__gallery">
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/chairs_01.jpg"
@@ -506,7 +439,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/chairs_02.jpg"
@@ -515,7 +448,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/chairs_03.jpg"
@@ -524,7 +457,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/chairs_04.jpg"
@@ -536,7 +469,7 @@ if (!NavTheme) {
         </div>
         <!-- gallery Sofas -->
         <div class="submenu__grid category__gallery">
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/sofas_01.jpg"
@@ -545,7 +478,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/sofas_02.jpg"
@@ -554,7 +487,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/sofas_03.jpg"
@@ -563,7 +496,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/sofas_04.jpg"
@@ -576,7 +509,7 @@ if (!NavTheme) {
         <!-- end gallery -->
         <!-- gallery cabinets -->
         <div class="submenu__grid category__gallery">
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/cabinets_01.jpg"
@@ -585,7 +518,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/cabinets_02.jpg"
@@ -594,7 +527,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/cabinets_03.jpg"
@@ -603,7 +536,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/cabinets_04.jpg"
@@ -616,7 +549,7 @@ if (!NavTheme) {
         <!-- end gallery -->
         <!-- gallery accessories -->
         <div class="submenu__grid category__gallery">
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/accessories_01.jpg"
@@ -625,7 +558,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/accessories_02.jpg"
@@ -634,7 +567,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/accessories_03.jpg"
@@ -643,7 +576,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/accessories_04.jpg"
@@ -656,7 +589,7 @@ if (!NavTheme) {
         <!-- end gallery -->
         <!-- gallery outdoor -->
         <div class="submenu__grid category__gallery">
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_01.jpg"
@@ -665,7 +598,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_02.jpg"
@@ -674,7 +607,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_03.jpg"
@@ -683,7 +616,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_04.jpg"
@@ -709,7 +642,6 @@ if (!NavTheme) {
       <div class="category-grid-container">
         <div
             class="submenu__grid category__gallery"
-            style="grid-template-columns: 1fr;"
         >
           <div class="nav-card">
             <a
@@ -723,13 +655,13 @@ if (!NavTheme) {
                     class="nav-card__image"
                     alt="alt"
                     width="556"
-                    height="722"
+                    height="718"
                 />
               </div>
               <p class="nav-card__caption hover-interaction-c-2-target">hello card</p>
             </a>
           </div>
-          <!--<AtomFigure
+          <!--<NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/studio-henk-store-amsterdam.jpg"
@@ -738,7 +670,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/studio-henk-store-antwerpen.jpg"
@@ -747,7 +679,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/studio-henk-store-rotterdam.jpg"
@@ -756,7 +688,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/studio-henk-store-utrecht.jpg"
@@ -785,7 +717,7 @@ if (!NavTheme) {
         <div
             class="submenu__grid category__gallery "
         >
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_01.jpg"
@@ -794,7 +726,7 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_02.jpg"
@@ -803,22 +735,22 @@ if (!NavTheme) {
               altText="Photo of a cliff with a nice view on the ocean."
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_03.jpg"
               imgWidth="556"
               imgHeight="722"
-              altText="Photo of a cliff with a nice view on the ocean."
+              altText="photo"
               caption="Title here"
           />
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_04.jpg"
               imgWidth="556"
               imgHeight="722"
-              altText="Photo of a cliff with a nice view on the ocean."
+              altText="photo"
               caption="Title here"
           />
         </div>
@@ -842,40 +774,13 @@ if (!NavTheme) {
         <div
             class="submenu__grid category__gallery "
         >
-          <AtomFigure
+          <NavCard
               hasLink="https://disney.com"
               linkTitle="Click to go to Disney website."
               imgUrl="/static/std/assets/toolkit/images/navbar/about_01.jpg"
               imgWidth="556"
               imgHeight="722"
-              altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
-          />
-          <AtomFigure
-              hasLink="https://disney.com"
-              linkTitle="Click to go to Disney website."
-              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_02.jpg"
-              imgWidth="556"
-              imgHeight="722"
-              altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
-          />
-          <AtomFigure
-              hasLink="https://disney.com"
-              linkTitle="Click to go to Disney website."
-              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_03.jpg"
-              imgWidth="556"
-              imgHeight="722"
-              altText="Photo of a cliff with a nice view on the ocean."
-              caption="Title here"
-          />
-          <AtomFigure
-              hasLink="https://disney.com"
-              linkTitle="Click to go to Disney website."
-              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_04.jpg"
-              imgWidth="556"
-              imgHeight="722"
-              altText="Photo of a cliff with a nice view on the ocean."
+              altText="photo"
               caption="Title here"
           />
         </div>

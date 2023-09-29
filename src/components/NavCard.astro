@@ -1,64 +1,39 @@
 ---
-import {parse} from "node-html-parser";
 const {
-    caption = "Here should be a caption text",
-    hasLink = false,
-    linkTitle,
-    imgUrl,
-    imgWidth,
-    imgHeight,
-    altText,
-    borderRadius,
-    foregroundColor = "currentcolor",
-    backgroundColor = "transparent"
+  caption = "Here should be a caption text",
+  hasLink = false,
+  linkTitle,
+  imgUrl,
+  imgWidth,
+  imgHeight,
+  altText,
+  borderRadius,
+  foregroundColor = "currentcolor",
+  backgroundColor = "transparent",
 } = Astro.props;
 ---
-<div
-    class="nav-card"
->
-    { hasLink ?
-        <a
-            href={hasLink}
-            class="hover-interaction-c-2"
-            title={linkTitle}
-        >
-            { imgUrl ?
-            <div class="__image-mask">
-                <img
-                src={imgUrl}
-                class="_image"
-                alt={altText}
-                width={imgWidth}
-                height={imgHeight}
-            />
-            </div>
-            :
-            <p>No image assigned</p>
-            }
-            <p class="sh-atom-figure__caption hover-interaction-c-2-target">{caption}</p>
-        </a>
-    : imgUrl ?
-        <div class="sh-atom-figure__image-mask">
-            <img
-            src={imgUrl}
-            class="sh-atom-figure__image"
-            alt={altText}
-            width={imgWidth}
-            height={imgHeight}
-        />
-        </div>
-        :
-        <p>No image assigned</p>
-        <figcaption class="sh-atom-figure__caption">{caption}</figcaption>
-    }
+
+<div class="nav-card">
+  <a href={hasLink} class="nav-card__link hover-interaction-c-2" title={linkTitle}>
+    <div class="nav-card__image-mask">
+      <img
+        src={imgUrl}
+        class="nav-card__image"
+        alt={altText}
+        width={imgWidth}
+        height={imgHeight}
+      />
+    </div>
+    <p class="nav-card__caption hover-interaction-c-2-target">{caption}</p>
+  </a>
 </div>
 <style define:vars={{ foregroundColor, backgroundColor, borderRadius }}>
-    .sh-atom-figure {
+  /*.sh-atom-figure {
         --color-background-figure: var(--backgroundColor);
         --color-text-figure: var(--foregroundColor);
     }
 
     .sh-atom-figure__image {
         --border-radius-image-figure: var(--borderRadius);
-    }
+    }*/
 </style>
