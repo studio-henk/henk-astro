@@ -5,11 +5,11 @@ if (portraitOnLoad) {
   // console.log("portrait mode");
   document
     .querySelector(".configurator__grid")
-    .classList.remove("--is-landscape");
+    .classList.remove("configurator__grid--is-landscape");
 } else {
   // do something else
   // console.log("landscape mode");
-  document.querySelector(".configurator__grid").classList.add("--is-landscape");
+  document.querySelector(".configurator__grid").classList.add("configurator__grid--is-landscape");
 }
 
 window.matchMedia("(orientation: portrait)").addEventListener("change", (e) => {
@@ -20,12 +20,12 @@ window.matchMedia("(orientation: portrait)").addEventListener("change", (e) => {
     // console.log("portrait mode");
     document
       .querySelector(".configurator__grid")
-      .classList.remove("--is-landscape");
+      .classList.remove("configurator__grid--is-landscape");
   } else {
     // do something else
     // console.log("landscape mode");
     document
       .querySelector(".configurator__grid")
-      .classList.add("--is-landscape");
+      .classList.add("configurator__grid--is-landscape");
   }
 });

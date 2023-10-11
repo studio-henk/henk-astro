@@ -1,9 +1,11 @@
 ---
 import {getLangFromUrl} from '../i18n/utils';
+import MsgBar from "./MsgBar.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
 <section class="navigation">
   <div class="main-menu">
+    <MsgBar/>
     <div class="container-fluid">
       <div class="flex-menu">
         <div class="brand-logo">
@@ -42,7 +44,7 @@ const lang = getLangFromUrl(Astro.url);
               </a>
               <ul class="sub-nav" style="height: auto;">
                 <li class="group sub-nav__item">
-                  Featured
+                  <span class="sub-nav-category-link">Featured</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/trace-outdoor-collection"
@@ -69,7 +71,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Outdoor
+                  <span class="sub-nav-category-link">Outdoor</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/outdoor-products">All Outdoor Products</a>
@@ -88,7 +90,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Tables
+                  <a class="sub-nav-category-link">Tables</a>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/dining-tables">Dining Tables</a>
@@ -106,7 +108,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Chairs
+                  <span class="sub-nav-category-link">Chairs</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/chairs">Dining Chairs</a>
@@ -124,7 +126,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Sofas
+                  <span class="sub-nav-category-link">Sofas</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/sofas">Sofas</a>
@@ -139,7 +141,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Cabinets
+                  <span class="sub-nav-category-link">Cabinets</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/collect-cabinets">Collect Cabinet</a
@@ -160,7 +162,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Accessories
+                  <span class="sub-nav-category-link">Accessories</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/lighting">Lighting</a>

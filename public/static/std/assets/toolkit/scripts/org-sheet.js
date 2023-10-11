@@ -19,12 +19,12 @@ const cmpSheet = {
         }
     },
     openSheet: function (event) {
-        // console.log("openSheet called");
         event.preventDefault();
         cmpSheet.sheetElement =
-            event.target.parentElement.parentElement.querySelector(
+            event.target.parentElement.querySelector(
                 ".cmp-sheet"
             );
+        console.log(cmpSheet.sheetElement);
 
         cmpSheet.overlayElement = cmpSheet.sheetElement.querySelector(
             ".cmp-sheet__overlay"
