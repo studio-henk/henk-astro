@@ -1,4 +1,5 @@
 ---
+const { productName = "Product name"} = Astro.props;
 ---
 
 <div class="org-media">
@@ -20,7 +21,7 @@
     class="org-media__image"
   />
   <div class="org-media__content">
-    <h2 class="org-media__content-heading">T-shirt</h2>
+    <h2 class="org-media__content-heading">{productName}</h2>
     <div class="pimcore__product-group-description">
       <p>
         The HENK T-shirt is a simple, timeless and unisex T-shirt. The T-shirt

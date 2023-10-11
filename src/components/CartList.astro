@@ -16,7 +16,7 @@ import AtomTag from "./Atoms/AtomTag.astro";
           height="1240"
           class="cart-list__list-item-image"
         />
-        <p class="cart-list__list-item-content-title">T-shirt</p>
+        <p class="cart-list__list-item-content-title">Nod L Staande lamp <span class="sh-atom-tag">in Stock !</span></p>
         <!-- MOBILE Button for SHEET -->
         <a
           href="#"
@@ -43,15 +43,11 @@ import AtomTag from "./Atoms/AtomTag.astro";
           </template>
           <template #body>
             <slot name="body">
-              <OrgMedia />
+              <OrgMedia productName="Nod L - Prod 1" />
               <ProdSpecs />
             </slot>
           </template>
         </Side-Modal>
-        <!-- <hr /> -->
-        <!-- <div>
-          <OrgMedia />
-        </div>         -->
         <!-- wc stepper here -->
         <Stepper />
         <div class="cart-list__list-item-content-grid">
@@ -109,7 +105,106 @@ import AtomTag from "./Atoms/AtomTag.astro";
           </p>
         </div>
         <!-- sheet -->
-        <OrgSheet />
+        <OrgSheet productName="Nod L - Prod 1" />
+      </li>
+      <li class="cart-list__list-item">
+        <img
+            src="https://www.studio-henk.nl/Images/emersya/poof-without-background/702040/image-thumb__702040__TransparentSquare/OT-OTTOS-3062-steelcut2-135.png"
+            alt="Otto S"
+            width="1240"
+            height="1240"
+            class="cart-list__list-item-image"
+        />
+        <p class="cart-list__list-item-content-title">Other Product <span class="sh-atom-tag">in Stock !</span></p>
+        <!-- MOBILE Button for SHEET -->
+        <a
+            href="#"
+            class="cart-list__list-item-content-link sh-atom-button"
+            data-function="openSheet"
+            data-hide="tablet|desktop"
+            data-style="plain"
+            data-text-underline="true"
+            data-size="small"
+        >Product info
+        </a>
+        <!-- DESKTOP -->
+        <!-- new SideModal here -->
+        <Side-Modal
+            button-type="button"
+            button-id="sideModalButton2"
+            button-text="Product info"
+            modal-max-width="470"
+            data-hide="mobile"
+            overlay-opacity="0.1"
+        >
+          <template #header>
+            <!-- <p class="modal__heading"></p> -->
+          </template>
+          <template #body>
+            <slot name="body">
+              <OrgMedia productName="Other Product - Prod 2" />
+              <ProdSpecs />
+            </slot>
+          </template>
+        </Side-Modal>
+        <!-- wc stepper here -->
+        <Stepper />
+        <div class="cart-list__list-item-content-grid">
+          <a href="/en/cart/remove/149249" class="sh-atom-button-icon" data-style="outline" data-shape="circle" data-size="35" data-role="destructive"><span class="icon-frame"><svg width="10" height="14" viewBox="0 0 10 14" fill="none" class="sh-atom-icon" id="sh-icon-trashcan" xmlns="http://www.w3.org/2000/svg"><title>icon-trashcan</title><path d="M9.34973 2.88989H0.635582C0.575113 2.88989 0.514538 2.92018 0.46916 2.96556C0.423782 3.01094 0.408691 3.07151 0.408691 3.13198L1.07438 12.3908C1.11976 13.0111 1.61902 13.5103 2.19393 13.5103H7.79156C8.36648 13.5103 8.86576 13.0261 8.91112 12.3908L9.5767 3.13198C9.5767 3.07151 9.56161 3.01094 9.51623 2.96556C9.48594 2.92018 9.42537 2.88989 9.34981 2.88989H9.34973ZM2.87463 11.483H2.84435C2.70821 11.483 2.57208 11.4225 2.46613 11.3317C2.34508 11.2257 2.26942 11.0594 2.26942 10.893L2.01225 5.56769C1.99716 5.23486 2.23913 4.94738 2.57198 4.91721C2.72331 4.91721 2.87453 4.96258 2.98048 5.06854C3.10153 5.17449 3.17719 5.3408 3.17719 5.50722L3.43437 10.8325C3.44946 11.1654 3.20748 11.4679 2.87463 11.483H2.87463ZM5.58267 10.9536C5.58267 11.241 5.34059 11.4831 5.05312 11.4831H4.94716C4.65969 11.4831 4.4176 11.241 4.4176 10.9536L4.41771 5.4467C4.41771 5.15923 4.65979 4.91714 4.94727 4.91714H5.05322C5.34069 4.91714 5.58278 5.15923 5.58278 5.4467L5.58267 10.9536ZM7.71585 10.893C7.71585 11.0594 7.64019 11.2258 7.51915 11.3317C7.41319 11.4224 7.27706 11.483 7.14093 11.483H7.11064C6.79288 11.4679 6.53572 11.1804 6.5509 10.8325L6.80808 5.5072C6.80808 5.34078 6.88375 5.18944 7.00479 5.06852C7.12583 4.96257 7.26196 4.91719 7.41329 4.91719C7.73105 4.93228 7.98821 5.21974 7.97302 5.56767L7.71585 10.893Z" fill="currentColor"></path><path d="M8.88062 1.04391H6.73225C6.68688 0.46899 6.21791 0 5.62789 0H4.3571C3.76708 0 3.28291 0.453889 3.23755 1.04391H1.10437C0.499275 1.04391 0 1.54316 0 2.14828V2.3147C0 2.43574 0.105953 2.54159 0.226888 2.54159H9.77311C9.89416 2.54159 10 2.43564 10 2.3147V2.14828C10.0001 1.54318 9.50083 1.04391 8.88064 1.04391H8.88062ZM4.35713 0.46899H5.62791C5.96074 0.46899 6.24822 0.726165 6.27839 1.05901H3.70654C3.73682 0.726179 4.02429 0.46899 4.35713 0.46899Z" fill="currentColor"></path></svg></span></a>
+          <span class="cart-list__list-item-content-price">€49</span>
+        </div>
+        <div class="cart-list__list-item-info">
+          <p class="cart-list__list-item-downpayment">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                style="width: 20px; height: 20px;"
+            >
+              <g data-name="Hand Euro">
+                <path
+                    d="M44 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 44 1zm2 12a1 1 0 0 1 0 2h-6.91a5.6 5.6 0 0 0 0 2H46a1 1 0 0 1 0 2h-6.188A6 6 0 0 0 45 22a5.848 5.848 0 0 0 3.419-1.084 1 1 0 0 1 1.162 1.628A7.83 7.83 0 0 1 45 24a8.009 8.009 0 0 1-7.411-5H36a1 1 0 0 1 0-2h1.069a7.281 7.281 0 0 1 0-2H36a1 1 0 0 1 0-2h1.589A8.009 8.009 0 0 1 45 8a7.752 7.752 0 0 1 4.587 1.47 1 1 0 1 1-1.174 1.619A5.764 5.764 0 0 0 45 10a6 6 0 0 0-5.188 3z"
+                    style="fill:currentColor"/>
+                <path
+                    d="M60.88 32.12a3.93 3.93 0 0 0-5.42 0L44.59 43H29a1 1 0 0 1 0-2h10.5a3.5 3.5 0 0 0 0-7H19a1.033 1.033 0 0 0-.71.29l-6.88 6.88 12.42 12.42L26.41 51H47a1.033 1.033 0 0 0 .71-.29l13.17-13.17a3.839 3.839 0 0 0 0-5.42zM7.707 40.293a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414l17 17a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0 0-1.414zM2.29 48.29A1.033 1.033 0 0 0 2 49v13a1 1 0 0 0 1 1h13a1.033 1.033 0 0 0 .71-.29l.88-.88L3.17 47.41z"
+                    style="fill:currentColor"/>
+              </g>
+            </svg>
+            Downpayment €500
+          </p>
+          <p class="cart-list__list-item-date">
+            <svg
+                width="19"
+                height="12"
+                viewBox="0 0 19 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                  d="M2.4259 9.90476H1V1H12.3333V9.90476H6.23077"
+                  stroke="black"
+                  stroke-width="0.5"
+                  stroke-linecap="square"></path>
+              <path
+                  d="M16.381 9.90485H18V5.85728L16.381 2.61914H12.3334V9.90485H13.1429"
+                  stroke="black"
+                  stroke-width="0.5"
+                  stroke-linecap="square"></path>
+              <path
+                  d="M4.23807 11.5237C5.13224 11.5237 5.85711 10.7989 5.85711 9.90469C5.85711 9.01052 5.13224 8.28564 4.23807 8.28564C3.34389 8.28564 2.61902 9.01052 2.61902 9.90469C2.61902 10.7989 3.34389 11.5237 4.23807 11.5237Z"
+                  stroke="black"
+                  stroke-width="0.5"
+                  stroke-linecap="square"></path>
+              <path
+                  d="M14.7619 11.5237C15.656 11.5237 16.3809 10.7989 16.3809 9.90469C16.3809 9.01052 15.656 8.28564 14.7619 8.28564C13.8677 8.28564 13.1428 9.01052 13.1428 9.90469C13.1428 10.7989 13.8677 11.5237 14.7619 11.5237Z"
+                  stroke="black"
+                  stroke-width="0.5"
+                  stroke-linecap="square"></path>
+            </svg>
+            Delivery within a week
+          </p>
+        </div>
+        <!-- sheet -->
+        <OrgSheet productName="Other Prod - Prod 2" />
       </li>
     </ul>
   </form>

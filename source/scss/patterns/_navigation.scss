@@ -252,6 +252,7 @@
     transform-origin: top;
     text-align: left;
     height: 0;
+    margin: 0;
 
     &__item {
       padding: 0.25rem 0;
@@ -601,7 +602,8 @@
   text-align: right;
 
   // padding-right: 3.2rem;
-  padding-right: 2rem; // 32px
+  // padding-right: 2rem; // 32px
+  padding-right: 1.5rem;
 
   &::first-line {
     font-weight: 400;
@@ -665,3 +667,7 @@
 //    // TODO: replace with inline svg in php file for navigation
 //  }
 // }
+
+.main-nav__row>li.main-nav__item .sub-nav-category-link {
+  margin-right: 0;
+}

@@ -8,10 +8,9 @@ const cmpSheet = {
     ),
     prevScrollPos: 0,
     init: function () {
-        console.log("init called");
+        // console.log("init called");
         // for each button with data-function="openSheet" add event-listener
         for (let openButtonElement of this.openButtonElements) {
-            console.log("found a button");
             openButtonElement.addEventListener(
                 "click",
                 cmpSheet.openSheet,
@@ -20,12 +19,12 @@ const cmpSheet = {
         }
     },
     openSheet: function (event) {
-        console.log("openSheet called");
         event.preventDefault();
         cmpSheet.sheetElement =
-            event.target.parentElement.parentElement.querySelector(
+            event.target.parentElement.querySelector(
                 ".cmp-sheet"
             );
+        console.log(cmpSheet.sheetElement);
 
         cmpSheet.overlayElement = cmpSheet.sheetElement.querySelector(
             ".cmp-sheet__overlay"
@@ -89,7 +88,7 @@ const cmpSheet = {
         );
     },
     closeSheet: function () {
-        console.log("closeSheet called");
+        // console.log("closeSheet called");
         cmpSheet.contentElement.classList.remove(
             "cmp-sheet__content--half-screen"
         );
@@ -99,10 +98,13 @@ const cmpSheet = {
         );
 
         function restoreDoc() {
-            console.log('restoring document');
+            // console.log('restoring document');
             cmpSheet.sheetElement.style.display = "none";
-            cmpSheet.bodyElement.style.overflow = "unset";
-            cmpSheet.bodyElement.style.touchAction = "unset";
+            cmpSheet.bodyElement.style.removeProperty("overflow");
+            cmpSheet.bodyElement.style.removeProperty("touch-action");
+            if (cmpSheet.bodyElement.style.length === 0) {
+                cmpSheet.bodyElement.removeAttribute("style");
+            }
             cmpSheet.sheetOpen = false;
         }
 
@@ -134,22 +136,22 @@ const cmpSheet = {
             "touchend",
             cmpSheet.touchEnd
         );
-        console.log("closeSheet ended");
+        // console.log("closeSheet ended");
     },
     closeSheetOnBlur: function (event) {
-        console.log("closeSheetOnBlur called");
+        // console.log("closeSheetOnBlur called");
         if (
             event.target === event.currentTarget &&
             cmpSheet.sheetOpen === true
         ) {
-            console.log("closeSheetOnBlur called and qualified to close sheet");
+            // console.log("closeSheetOnBlur called and qualified to close sheet");
             cmpSheet.slideDownToBottom();
-        } else {
+        } /*else {
             console.log("closeSheetOnBlur called but not qualified to close");
-        }
+        }*/
     },
     closeButtonHandler() {
-        console.log("closeButtonHandler called");
+        // console.log("closeButtonHandler called");
         cmpSheet.overlayElement.removeEventListener(
             "click",
             cmpSheet.closeSheetOnBlur,
@@ -163,12 +165,12 @@ const cmpSheet = {
         cmpSheet.slideDownToBottom();
     },
     slideUpToHalfScreen: function () {
-        console.log("slideUpToHalfScreen called");
+        // console.log("slideUpToHalfScreen called");
         cmpSheet.contentElement.style.transform = "translateY(50%)";
         cmpSheet.contentElement.classList.add("cmp-sheet__content--half-screen");
     },
     slideDownToHalfScreen: function () {
-        console.log("slideDownToHalfScreen called");
+        // console.log("slideDownToHalfScreen called");
         cmpSheet.contentElement.style.transform = "translateY(50%)";
         cmpSheet.contentElement.classList.add("cmp-sheet__content--half-screen");
         // if it has fullscreen remove it
@@ -183,14 +185,14 @@ const cmpSheet = {
         }
     },
     slideDownToBottom: function () {
-        console.log("slideDownToBottom called");
-        console.log("moving down to bottom and closing");
+        // console.log("slideDownToBottom called");
+        // console.log("moving down to bottom and closing");
         cmpSheet.contentElement.style.transform = "translateY(100%)";
         setTimeout(cmpSheet.closeSheet, 4);
     },
     slideUpToFullScreen: function () {
-        console.log("slideUpToFullscreen called");
-        console.log("moving up to fullscreen");
+        // console.log("slideUpToFullscreen called");
+        // console.log("moving up to fullscreen");
         cmpSheet.contentElement.style.transform = "translateY(0%)";
         cmpSheet.contentElement.classList.add("cmp-sheet__content--fullscreen");
         // if it has half-screen remove it
@@ -205,40 +207,37 @@ const cmpSheet = {
         }
     },
     touchStart: function (event) {
-        console.log("touchStarted called");
+        // console.log("touchStarted called");
         // console.log("start: " + event.touches[0].clientY);
         cmpSheet.prevScrollPos = event.touches[0].clientY;
     },
     touchMoveHandler: function (event) {
-        console.log("touchMoveHandler called");
+        // console.log("touchMoveHandler called");
         let touchstart = cmpSheet.prevScrollPos;
         let touchmove = event.changedTouches[0].clientY;
-        // console.log("touchstart: " + touchstart);
-        // console.log("touchmove: " + touchmove);
         let touchDiff = Math.abs(touchstart - touchmove);
-        // console.log("diff: " + touchDiff);
 
         if (touchstart > touchmove) {
-            // console.log("up?");
+            // up
             cmpSheet.slideUpToFullScreen();
         } else {
-            // console.log("down?");
+            // down
             if (
                 cmpSheet.contentElement.classList.contains(
                     "cmp-sheet__content--fullscreen"
                 ) &&
                 touchDiff < 400
             ) {
-                console.log("moving to half screen");
+                // console.log("moving to half screen");
                 cmpSheet.slideDownToHalfScreen();
             } else {
-                console.log("moving to bottom");
+                // console.log("moving to bottom");
                 cmpSheet.slideDownToBottom();
             }
         }
     },
     touchEnd: function (event) {
-        console.log("touchEnd called");
+        // console.log("touchEnd called");
         event.preventDefault();
     },
     overlayOpen: function () {

@@ -1,6 +1,5 @@
 ---
 import {getLangFromUrl} from '../i18n/utils';
-import MsgBar from "../components/MsgBar.astro";
 import TheNav from "../components/TheNav.astro";
 import TheFooter from "../components/TheFooter.astro";
 
@@ -31,7 +30,8 @@ const {title, mainID, mainClass} = Astro.props;
     />
     <slot name="head-styles"/>
     <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
-    <script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>
+    <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes_002.min.js"></script>-->
+    <script defer src="/src/scripts/heightForHeroes_002.min.js"></script>
     <slot name="head-scripts"/>
 </head>
 <body>
@@ -40,7 +40,6 @@ const {title, mainID, mainClass} = Astro.props;
     <div id="page-title">
         <h1 class="sr-only">{title}</h1>
     </div>
-    <MsgBar/>
     <TheNav />
     <slot name="pre-main" />
     <main id={mainID} class={mainClass}>
