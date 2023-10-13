@@ -8,12 +8,12 @@
   font-display: swap;
 }
 
-.NeueHaasGrotTextRound-76BoldItalic-Web {
+/*.NeueHaasGrotTextRound-76BoldItalic-Web {
   font-family: 'Haas Grot Text R Web', sans-serif;
   font-weight:  700;
   font-style:   italic;
   font-stretch: normal;
-}
+}*/
 
 @font-face {
   font-family: 'Haas Grot Text R Web';
@@ -25,12 +25,12 @@
   font-display: swap;
 }
 
-.NeueHaasGrotTextRound-75Bold-Web {
+/*.NeueHaasGrotTextRound-75Bold-Web {
   font-family: 'Haas Grot Text R Web';
   font-weight:  700;
   font-style:   normal;
   font-stretch: normal;
-}
+}*/
 
 @font-face {
   font-family: 'Haas Grot Text R Web';
@@ -42,12 +42,12 @@
   font-display: swap;
 }
 
-.NeueHaasGrotTextRound-66MediumItalic-Web {
+/*.NeueHaasGrotTextRound-66MediumItalic-Web {
   font-family: 'Haas Grot Text R Web';
   font-weight:  500;
   font-style:   italic;
   font-stretch: normal;
-}
+}*/
 
 
 @font-face {
@@ -60,12 +60,12 @@
   font-display: swap;
 }
 
-.NeueHaasGrotTextRound-65Medium-Web {
+/*.NeueHaasGrotTextRound-65Medium-Web {
   font-family: 'Haas Grot Text R Web';
   font-weight:  500;
   font-style:   normal;
   font-stretch: normal;
-}
+}*/
 
 
 @font-face {
@@ -78,12 +78,12 @@
   font-display: swap;
 }
 
-.NeueHaasGrotTextRound-56Italic-Web {
+/*.NeueHaasGrotTextRound-56Italic-Web {
   font-family: 'Haas Grot Text R Web';
   font-weight:  400;
   font-style:   italic;
   font-stretch: normal;
-}
+}*/
 
 
 @font-face {
@@ -96,12 +96,12 @@
   font-display: swap;
 }
 
-.NeueHaasGrotTextRound-55Roman-Web {
+/*.NeueHaasGrotTextRound-55Roman-Web {
   font-family: 'Haas Grot Text R Web';
   font-weight:  400;
   font-style:   normal;
   font-stretch: normal;
-}
+}*/
 
 * {
   margin: 0;
@@ -119,25 +119,25 @@
 }
 
 html {
-  background-color: var(--bg-default, #fff);
-  color: var(--fg-default, #000);
+  background-color: var(--color-background-page, #fff);
+  color: var(--color-text-page, #000);
   line-height: calc(var(--size-font-lineheight-body) / var(--size-font-body));
   letter-spacing: calc(var(--size-font-letterspacing-body) * 1px);
   height: 100%;
-  /*font-size: 100%;*/
-  font-size: 15px;
+  font-size: 100%;
   font-feature-settings: "pnum" on, "lnum" on;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background-color: var(--bg-default, #fff);
-  color: var(--fg-default, #000);
+  background-color: var(--color-background-page, #fff);
+  color: var(--color-text-page, #000);
   margin: 0;
   /*font-family: "Haas Grot Text R Web", sans-serif;*/
   font-family: var(--font-body, sans-serif), sans-serif;
   font-weight:  400;
-  font-size: 1rem;
+  /*font-size: 1rem;*/
+  font-size: calc(var(--size-font-body) / var(--size-font-root) * 1rem);
 }
 
 h1,

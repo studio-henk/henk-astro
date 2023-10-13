@@ -4,9 +4,9 @@
 
 /* turn off */
 // legacy
-@use "_v2/vars/_css-custom-properties";
+// @use "_v2/vars/_css-custom-properties";
 
-@use "tokens/_tokens-colors";
+@use "tokens/_tokens-colors.css";
 
 // @use "tokens/_tokens-colors-legacy";
 @use "tokens/_tokens-size-font";

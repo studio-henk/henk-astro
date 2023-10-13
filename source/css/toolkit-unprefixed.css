@@ -395,40 +395,6 @@ template {
 }
 
 /* turn off */
-/* css custom props (variables) */
-:root,
-::before,
-::after {
-  /* fnt sizes */
-  --var-global-fontsize-xxx-large: 35;
-  --var-global-fontsize-xx-large: 24;
-  --var-global-fontsize-x-large: 27;
-  --var-global-fontsize-large: 20;
-  --var-global-fontsize-root: 16;
-  --var-global-fontsize-small: 12;
-  --var-global-fontsize-x-small: 12;
-  --var-global-fontsize-xx-small: 12;
-  --var-global-button-fontsize: 12;
-  --var-global-button-lineheight: 21;
-  --var-global-button-bgc: var(--color-background-button);
-  --var-global-button-bgc-hover: var(--color-transparent);
-  --var-global-button-text-color: var(--color-text-button);
-  --var-global-button-text-color-hover: var(--color-black);
-  --var-global-button-border-color: var(--color-henk-black);
-  --var-global-button-border-color-hover: var(--color-black);
-  --bg-default: var(--color-white);
-  --fg-default: var(--color-henk-black);
-  /* css-vars */
-}
-
-@media only screen and (min-width: 768px) {
-  :root {
-    --var-global-fontsize-xxx-large: 53;
-    --var-global-fontsize-xx-large: 33;
-    --var-global-fontsize-small: 14;
-    --var-global-fontsize-x-small: 13;
-  }
-}
 :root,
 ::before,
 ::after,
@@ -477,8 +443,8 @@ template {
   /*14px*/
   --size-font-small: 14;
   /*16px*/
-  --size-font-base: 15;
-  --size-font-root: 15;
+  --size-font-base: 16;
+  --size-font-root: 16;
   /*20px*/
   --size-font-medium: 20;
   /*21px*/
@@ -494,7 +460,7 @@ template {
   /*53px*/
   --size-font-xxxxxlarge: 53;
   /* @todo: remove when not needed */
-  --var-global-fontsize-root: var(--size-font-root, 16);
+  /*--var-global-fontsize-root: var(--size-font-root, 16);*/
   --size-text-lineheight: var(--size-vertical-rhythm, 28);
 }
 
@@ -539,9 +505,9 @@ templates/Areas/reviews-brick/view.html.twig
   --color-text-selection-text: var(--color-henk-black);
   /* sizes from design as plugin numbers */
   /* sizes from design as plugin numbers. in px */
-  --size-font-body: 15;
-  --size-font-lineheight-body: 18;
-  --size-font-letterspacing-body: 0.15;
+  --size-font-body: 16;
+  --size-font-lineheight-body: 24;
+  --size-font-letterspacing-body: 0;
   /* tmp, move to size tokens? */
   --size-horizontal-rhythm: 1;
   /* buttons */
@@ -578,13 +544,12 @@ templates/Areas/reviews-brick/view.html.twig
   font-stretch: normal;
   font-display: swap;
 }
-.NeueHaasGrotTextRound-76BoldItalic-Web {
-  font-family: "Haas Grot Text R Web", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+/*.NeueHaasGrotTextRound-76BoldItalic-Web {
+  font-family: 'Haas Grot Text R Web', sans-serif;
+  font-weight:  700;
+  font-style:   italic;
   font-stretch: normal;
-}
-
+}*/
 @font-face {
   font-family: "Haas Grot Text R Web";
   src: url("/fonts/NeueHaasGrotTextRound-75Bold-Web.woff2") format("woff2"), url("/fonts/NeueHaasGrotTextRound-75Bold-Web.woff") format("woff");
@@ -593,13 +558,12 @@ templates/Areas/reviews-brick/view.html.twig
   font-stretch: normal;
   font-display: swap;
 }
-.NeueHaasGrotTextRound-75Bold-Web {
-  font-family: "Haas Grot Text R Web";
-  font-weight: 700;
-  font-style: normal;
+/*.NeueHaasGrotTextRound-75Bold-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  700;
+  font-style:   normal;
   font-stretch: normal;
-}
-
+}*/
 @font-face {
   font-family: "Haas Grot Text R Web";
   src: url("/fonts/NeueHaasGrotTextRound-66MediumItalic-Web.woff2") format("woff2"), url("/fonts/NeueHaasGrotTextRound-66MediumItalic-Web.woff") format("woff");
@@ -608,13 +572,12 @@ templates/Areas/reviews-brick/view.html.twig
   font-stretch: normal;
   font-display: swap;
 }
-.NeueHaasGrotTextRound-66MediumItalic-Web {
-  font-family: "Haas Grot Text R Web";
-  font-weight: 500;
-  font-style: italic;
+/*.NeueHaasGrotTextRound-66MediumItalic-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  500;
+  font-style:   italic;
   font-stretch: normal;
-}
-
+}*/
 @font-face {
   font-family: "Haas Grot Text R Web";
   src: url("/fonts/NeueHaasGrotTextRound-65Medium-Web.woff2") format("woff2"), url("/fonts/NeueHaasGrotTextRound-65Medium-Web.woff") format("woff");
@@ -623,13 +586,12 @@ templates/Areas/reviews-brick/view.html.twig
   font-stretch: normal;
   font-display: swap;
 }
-.NeueHaasGrotTextRound-65Medium-Web {
-  font-family: "Haas Grot Text R Web";
-  font-weight: 500;
-  font-style: normal;
+/*.NeueHaasGrotTextRound-65Medium-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  500;
+  font-style:   normal;
   font-stretch: normal;
-}
-
+}*/
 @font-face {
   font-family: "Haas Grot Text R Web";
   src: url("/fonts/NeueHaasGrotTextRound-56Italic-Web.woff2") format("woff2"), url("/fonts/NeueHaasGrotTextRound-56Italic-Web.woff") format("woff");
@@ -638,13 +600,12 @@ templates/Areas/reviews-brick/view.html.twig
   font-stretch: normal;
   font-display: swap;
 }
-.NeueHaasGrotTextRound-56Italic-Web {
-  font-family: "Haas Grot Text R Web";
-  font-weight: 400;
-  font-style: italic;
+/*.NeueHaasGrotTextRound-56Italic-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  400;
+  font-style:   italic;
   font-stretch: normal;
-}
-
+}*/
 @font-face {
   font-family: "Haas Grot Text R Web";
   src: url("/fonts/NeueHaasGrotTextRound-55Roman-Web.woff2") format("woff2"), url("/fonts/NeueHaasGrotTextRound-55Roman-Web.woff") format("woff");
@@ -653,13 +614,12 @@ templates/Areas/reviews-brick/view.html.twig
   font-stretch: normal;
   font-display: swap;
 }
-.NeueHaasGrotTextRound-55Roman-Web {
-  font-family: "Haas Grot Text R Web";
-  font-weight: 400;
-  font-style: normal;
+/*.NeueHaasGrotTextRound-55Roman-Web {
+  font-family: 'Haas Grot Text R Web';
+  font-weight:  400;
+  font-style:   normal;
   font-stretch: normal;
-}
-
+}*/
 * {
   margin: 0;
   padding: 0;
@@ -675,25 +635,25 @@ templates/Areas/reviews-brick/view.html.twig
 }
 
 html {
-  background-color: var(--bg-default, #fff);
-  color: var(--fg-default, #000);
+  background-color: var(--color-background-page, #fff);
+  color: var(--color-text-page, #000);
   line-height: calc(var(--size-font-lineheight-body) / var(--size-font-body));
   letter-spacing: calc(var(--size-font-letterspacing-body) * 1px);
   height: 100%;
-  /*font-size: 100%;*/
-  font-size: 15px;
+  font-size: 100%;
   font-feature-settings: "pnum" on, "lnum" on;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background-color: var(--bg-default, #fff);
-  color: var(--fg-default, #000);
+  background-color: var(--color-background-page, #fff);
+  color: var(--color-text-page, #000);
   margin: 0;
   /*font-family: "Haas Grot Text R Web", sans-serif;*/
   font-family: var(--font-body, sans-serif), sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  /*font-size: 1rem;*/
+  font-size: calc(var(--size-font-body) / var(--size-font-root) * 1rem);
 }
 
 h1,
@@ -9050,7 +9010,6 @@ main.sh-l-page-main .sample__quickshop__content ul,
     grid-template-columns: repeat(4, 1fr);
   }
 }
-/*@use "../../../_v2/text-styles/_text-styles" as *;*/
 .sh-org-blog-teaser {
   padding: 0 0 28px 0;
 }
@@ -9981,7 +9940,6 @@ Brick with grid with 3 columns containing editable for:
 }
 
 /* stylelint-disable selector-class-pattern */
-/*@use "../../../_v2/text-styles/text-styles" as *;*/
 @media only screen and (max-width: 767px) {
   .swiper {
     padding-bottom: 1rem !important;
