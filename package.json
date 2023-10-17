@@ -30,6 +30,8 @@
     "postcss": "^8.4.21",
     "postcss-cli": "^9.1.0",
     "prettier-plugin-astro": "^0.8.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
     "uglify-js": "^3.17.4"
   }
 }
