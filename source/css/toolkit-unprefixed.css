@@ -16333,9 +16333,14 @@ UPDATED 2023-08-31 • 10:25 - CEST
   width: 100%;
   object-fit: cover;
   aspect-ratio: 0.8;
-  border-radius: 5px;
 }
 
+@media only screen and (min-width: 992px) {
+  .mdl-shop-product__image-mask video,
+  .mdl-shop-product__video {
+    border-radius: 5px;
+  }
+}
 .--large .mdl-shop-product {
   width: 100%;
 }

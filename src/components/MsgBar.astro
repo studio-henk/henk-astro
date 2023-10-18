@@ -1,37 +1,6 @@
-<style is:global>
-    @media only screen and (max-width: 767px) {
-        #discount-timer {
-            display: block;
-        }
-
-        #discount-timer .dash {
-            display: none;
-        }
-    }
-
-    .sh-org-msg-bar--discount,
-    .sh-org-msg-bar--discount a {
-        background: #0a0a0a;
-        color: white;
-    }
-
-    .sh-org-msg-bar--discount .sh-org-msg-bar__pc-translation {
-        display: none;
-    }
-
-    .sh-org-msg-bar:not(.sh-org-msg-bar--discount) .sh-org-msg-bar__discount-link,
-    .sh-org-msg-bar:not(.sh-org-msg-bar--discount) #discount-timer {
-        display: none;
-    }
-</style>
-<!--<script is:inline src="/static/std/assets/js/body-scripts/discount-timer_002.min.js"></script>-->
-<script src="/src/scripts/discount-timer_002.min.js"></script>
 <!-- .sh-org-msg-bar -->
-<div id="msg-covid" class="sh-org-msg-bar sh-org-msg-bar--discount">
+<div id="msg-covid" class="sh-org-msg-bar">
     <!-- id is still need for javascript function that calculates height -->
-    <span class="sh-org-msg-bar__pc-translation"><a href="en/stores/rotterdam-brand-store">Our new Rotterdam brand store is now open!</a></span>
-    <a class="sh-org-msg-bar__discount-link" href="https://www.studio-henk.nl/en/henk10jaar">Get 10% discount with code HENK10</a>
-    <!--10% korting met code HENK10-->
-    <span id="discount-timer"></span>
+    <a href="en/stores/rotterdam-brand-store">Our new Rotterdam brand store is now open!</a>
 </div>
 <!-- /.sh-org-msg-bar -->
