@@ -24,7 +24,7 @@ const cmpSheet = {
             event.target.parentElement.querySelector(
                 ".cmp-sheet"
             );
-        console.log(cmpSheet.sheetElement);
+        // console.log(cmpSheet.sheetElement);
 
         cmpSheet.overlayElement = cmpSheet.sheetElement.querySelector(
             ".cmp-sheet__overlay"

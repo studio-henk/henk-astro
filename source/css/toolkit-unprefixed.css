@@ -3629,6 +3629,11 @@ main.sh-l-page-main section + section {
     display: flex;
   }
 }
+.slick-video {
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
 ul.breadcrumbs {
   margin: 1rem 0 2rem 0;
 }
@@ -16371,6 +16376,27 @@ UPDATED 2023-08-31 • 10:25 - CEST
   flex-direction: column;
 }
 
+.mdl-shop-product__image-mask video,
+.mdl-shop-product__video {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 0.8;
+}
+
+@media only screen and (min-width: 992px) {
+  .mdl-shop-product__image-mask video,
+  .mdl-shop-product__video {
+    border-radius: 5px;
+  }
+}
+.--large .mdl-shop-product {
+  width: 100%;
+}
+
+.--large .mdl-shop-product .mdl-shop-product__link {
+  width: 100%;
+}
+
 [data-brick-name=faq-brick] {
   background-color: var(--var-brick-bg, var(--bg-default, #f00));
   color: var(--var-brick-fg, currentcolor);
@@ -17393,7 +17419,7 @@ otherwise it would go under the image.
   margin: 0;
   position: fixed;
   z-index: 9;
-  cursor: default;
+  /*cursor: default;*/
 }
 
 .configurator__grid:not(.configurator__grid--is-landscape) .configurator__view {

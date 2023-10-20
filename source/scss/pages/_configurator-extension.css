@@ -102,7 +102,7 @@ otherwise it would go under the image.
     margin: 0;
     position: fixed;
     z-index: 9;
-    cursor: default;
+    /*cursor: default;*/
 }
 
 .configurator__grid:not(.configurator__grid--is-landscape) .configurator__view {

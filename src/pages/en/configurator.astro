@@ -34,8 +34,9 @@ import Icon from "../../components/Icon.astro";
                 src="/static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-4096w.png"
                 alt="Configurator"
                 class="img-responsive"
-                width="4096"
-                height="4096"
+                width="2000"
+                height="2000"
+                loading="eager"
               />
               <!--<img
                   id="configurator__image"
@@ -3744,35 +3745,5 @@ import Icon from "../../components/Icon.astro";
 </script>
 
 
-<script defer src="/static/std/assets/js/page-scripts/configurator/heightForConfigurator.js"></script>
+<script defer src="/static/std/assets/js/page-scripts/configurator/heightForConfigurator.min.js"></script>
 <script defer src="/static/std/assets/js/page-scripts/configurator/configurator_device-orientation.min.js"></script>
-<!--
-<script is:inline defer>
-  const portraitOnLoad = window.matchMedia("(orientation: portrait)").matches;
-  console.log("portraitOnLoad: " + portraitOnLoad);
-  if (portraitOnLoad) {
-    // do something
-    console.log("portrait mode");
-    document.querySelector(".configurator__grid").classList.remove("&#45;&#45;is-landscape");
-  } else {
-    // do something else
-    console.log("landscape mode");
-    document.querySelector(".configurator__grid").classList.add("&#45;&#45;is-landscape");
-
-  }
-
-  window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-    const portrait = e.matches;
-
-    if (portrait) {
-      // do something
-      console.log("portrait mode");
-      document.querySelector(".configurator__grid").classList.remove("&#45;&#45;is-landscape");
-    } else {
-      // do something else
-      console.log("landscape mode");
-      document.querySelector(".configurator__grid").classList.add("&#45;&#45;is-landscape");
-
-    }
-  });
-</script>-->
