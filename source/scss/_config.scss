@@ -4,7 +4,6 @@
 ///
 /// @author Nils Hendriks
 /// date: 2022-08-5, Fri, 11:34
-/// @todo move all calculations to a separate file or token file?
 ////
 
 /* variables that control base settings */
@@ -18,17 +17,14 @@
   /* colors */
   --color-background-page-primary-base: var(--color-white, #fff);
   --color-background-page: var(--color-white, #fff);
-  --color-text-page: var(--color-henk-black, #000);
+  /*--color-text-page: var(--color-henk-black, #000);
+  --color-text-action: var(--color-henk-black, #000);*/
+  --color-text-page: var(--color-black-lacquer, #000);
+  --color-text-action: var(--color-black-lacquer, #000);
 
   /* text selection */
   --color-text-selection-bg: var(--color-accent5);
   --color-text-selection-text: var(--color-henk-black);
-
-  /* sizes from design as plugin numbers */
-  /* sizes from design as plugin numbers. in px */
-  --size-font-body: 16;
-  --size-font-lineheight-body: 24;
-  --size-font-letterspacing-body: 0;
 
   /* tmp, move to size tokens? */
   --size-horizontal-rhythm: 1;
@@ -63,4 +59,17 @@
   /* nav */
   /*dropdown .sh-atom-sup highlight "NEW" color*/
   --color-text-sup-highlight-nav: var(--color-accent8);
+
+  /* sizes from design as plugin numbers. in px */
+  --size-font-body: 16;
+  --size-font-lineheight-body: 24;
+  --size-font-letterspacing-body: 0;
+
+  /* h1 */
+  --size-font-h1: var(--size-font-32);
+  --size-font-h2: var(--size-font-24);
+  --size-font-h3: var(--size-font-20);
+  --size-font-h4: var(--size-font-16);
+  --size-font-h5: var(--size-font-16);
+  --size-font-h6: var(--size-font-16);
 }

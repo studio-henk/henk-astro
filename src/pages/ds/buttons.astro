@@ -641,6 +641,27 @@ import AtomTag from "../../components/Atoms/AtomTag.astro";
       <a class="sh-atom-button" data-style="filled">button text</a>
       <a class="sh-atom-button" data-style="filled">button text</a>
     </div>
+
+    <h2>New interactions</h2>
+    <h3>Interaction A</h3>
+    <a href="/en/shops" class="hover-interaction-a">View opening hours</a>
+
+    <h3>Interaction B - missing in action</h3>
+    <a href="/en/shops" class="hover-interaction-b">View opening hours</a>
+
+    <h3>Interaction C</h3>
+    <a href="/en/shops" class="hover-interaction-c">View opening hours</a>
+
+    <h3>Interaction C-2</h3>
+    <p>when not the <code>a</code> element but something inside should get the hover interaction</p>
+    <p>Very specific to new navbar figure element in dropdown.</p>
+    <a
+        href="/en/shops"
+        class="hover-interaction-c-2"
+    ><p>something inside with an <span class="hover-interaction-c-2-target">interaction</span></p>
+    </a>
+
+
   </div>
   <!--<h2>Work-In-Progress</h2>
   <h2>Button + icon</h2>

@@ -57,17 +57,20 @@
 }
 
 .hero-brick__header-title {
-  font-size: 1.5rem; // 24px
-  line-height: 38px;
-  letter-spacing: 1.2px;
+  /*font-size: 1.5rem; // 24px*/
+  /*line-height: 38px;
+  letter-spacing: 1.2px;*/
+  font-size: calc(var(--size-font-32) / var(--size-font-body) * 1em);
+  line-height: calc(48 / var(--size-font-32));
+  /*font-weight: 500;*/
 }
 
 .hero-brick__header-subtitle {
-  font-weight: 400;
+  /*font-weight: 400;
   font-size: 0.75rem; // 12px
   line-height: 21px;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.2em;*/
 }
 
 .hero-brick__body-intro {
@@ -101,15 +104,15 @@
   }
 
   .hero-brick__header-title {
-    font-size: 2.0625rem; // 33px
+    /*font-size: 2.0625rem; // 33px
     line-height: 50px;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.07em;*/
   }
 
   .hero-brick__header-subtitle {
-    font-size: 0.875rem; // 14px
+    /*font-size: 0.875rem; // 14px
     line-height: 28px;
-    letter-spacing: 2.8px;
+    letter-spacing: 2.8px;*/
   }
 
   .hero-brick__body-intro {

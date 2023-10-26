@@ -1,6 +1,7 @@
 ---
 import {getLangFromUrl} from '../i18n/utils';
 import MsgBar from "./MsgBar.astro";
+import Icon from "./Icon.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
 <section class="navigation">
@@ -8,12 +9,35 @@ const lang = getLangFromUrl(Astro.url);
     <MsgBar/>
     <div class="container-fluid">
       <div class="flex-menu">
+        <!--<style>
+          .brand-logo__image {
+            width: 160px;
+            height: auto;
+          }
+
+          @media only screen and (min-width: 768px) {
+            .brand-logo__image {
+              width: 230px;
+              height: auto;
+            }
+          }
+
+          @media only screen and (max-width: 767px) {
+            .brand-logo {
+              left: 16px;
+              position: absolute;
+            }
+          }
+        </style>-->
         <div class="brand-logo">
-          <a href="/en">
+          <a class="brand-logo__link" href="/en" title="click to go back to the homepage" tabindex="1">
+            <!--<Icon icon="henk" class="brand-logo__image logo" />-->
             <img
-              class="logo"
+              class="logo brand-logo__image"
               src="https://assets.studio-henk.nl/assets/Images/logo/henk-logo.svg"
               alt="Studio HENK"
+              width="230"
+              height="20"
             />
           </a>
         </div>

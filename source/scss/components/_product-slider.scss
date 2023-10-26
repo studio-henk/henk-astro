@@ -308,7 +308,7 @@
 .product-slider__controls--resize {
   float: left;
   background-color: var(--color-accent1, #fff);
-  font-size: 0.6875rem; // 11px
+  font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem); // 11px
   line-height: 18px;
   letter-spacing: 0.8px;
   border-radius: 50px;

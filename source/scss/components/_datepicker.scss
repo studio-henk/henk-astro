@@ -1,7 +1,7 @@
 // used by jquery date picker on checkout page when product is in stock.
 
 .ui-datepicker.ui-widget {
-  font-family: "ff-scala-sans-pro", sans-serif;
+  font-family: var(--font-body, sans-serif), sans-serif;
 }
 
 .ui-widget-header {

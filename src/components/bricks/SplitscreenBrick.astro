@@ -1,8 +1,8 @@
 ---
-const { title = "Title here!", intro = "Intro text here!", buttonText = "Button text" } = Astro.props;
+const { title = "Title here!", subtitle, intro = "Intro text here!", buttonText = "Button text", order } = Astro.props;
 ---
 <section id="blob">
-    <div class="sh-org-splitscreen" data-order="reverse" style="
+    <div class="sh-org-splitscreen" data-order={order} style="
                             --var-local-button-hover-override: var(--var-global-color-HENK-Black, #f00);
                                         --var-local-button-text-color-override: var(--var-global-color-HENK-White, #000);
             ">
@@ -22,9 +22,11 @@ const { title = "Title here!", intro = "Intro text here!", buttonText = "Button 
                 </a>
             </div>
             <div class="sh-l-grid__item">
-
                 <header class="sh-molecule-section-header --reverse-order">
                     <h1 class="sh-molecule-section-header__title">{title}</h1>
+                    {
+                        subtitle && <h2 class="sh-molecule-section-header__subtitle">{subtitle}</h2>
+                    }
                 </header>
                 <div class="sh-section__content">
                     <p class="sh-section__intro">{intro}</p>
@@ -33,7 +35,7 @@ const { title = "Title here!", intro = "Intro text here!", buttonText = "Button 
                     <a
                         href="#"
                         class="sh-atom-button"
-                        data-style="soft"
+                        data-style="filled"
                     >
                         {buttonText}
                     </a>

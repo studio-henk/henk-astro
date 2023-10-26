@@ -18,13 +18,15 @@ ul.breadcrumbs {
   list-style: none;
   padding: 0;
   position: relative;
-  font-size: 0.8125rem; // 13px
-  font-size: 0.8125rem; // 13px
+  /*font-size: 0.8125rem; // 13px
+  font-size: 0.8125rem; // 13px*/
+  font-size: calc(var(--size-font-14) / 16 * 1em);
+  line-height: calc(24 / 14);
 
   &__item {
     color: rgba(0, 0, 0, 0.88);
     float: left;
-    letter-spacing: calc(0.75 / 13 * 1em);
+    /*letter-spacing: calc(0.75 / 13 * 1em);*/
 
     & .icon {
       width: 0.5rem; // 8px
@@ -40,8 +42,8 @@ ul.breadcrumbs {
     }
 
     &:last-child {
-      font-weight: 400;
-      letter-spacing: calc(0.65 / 13 * 1em);
+      font-weight: 500;
+      /*letter-spacing: calc(0.65 / 13 * 1em);*/
     }
 
     a {

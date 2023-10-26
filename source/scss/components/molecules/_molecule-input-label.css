@@ -5,6 +5,7 @@
     /* something to with telephone field and message below and or alignment of space between checkboxes radio buttons? */
     /* case order to be wrong for base input labels, label below input */
     flex-direction: column-reverse;
+    justify-content: center;
     width: 100%;
     /* in case child label has [data-style="labels-as-placeholders"]   */
     position: relative;

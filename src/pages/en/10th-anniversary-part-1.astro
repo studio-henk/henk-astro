@@ -1,33 +1,67 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-/*import HeroBrick from "../../components/bricks/HeroBrick.astro";*/
+import HeroBrick from "../../components/bricks/HeroBrick.astro";
 import HeroBrick002 from "../../components/bricks/HeroBrick.002.astro";
 import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
 import DoubleImageBrick from "../../components/bricks/DoubleImageBrick.astro";
 import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
 import SliderBrick from "../../components/bricks/SliderBrick.astro";
 import ContainerTest from "../../components/ContainerTest.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import SectionHeader2 from "../../components/SectionHeader2.astro";
 // import HeroVideo from "../../components/bricks/HeroVideo.astro";
 ---
 <BaseLayout title="10th Anniversary Part 1">
-    <BlockquoteBrick />
-    <ContainerTest />
     <!--<HeroBrick />-->
-    <!--<HeroBrick002
+    <HeroBrick002
         buttonPreset="anchor"
         buttonStyle="outline-light"
     />
-    <DoubleImageBrick />
+    <!--<BlockquoteBrick />-->
+    <SectionHeader2 />
+    <!--https://www.studio-henk.nl/_default_upload_bucket/706014/image-thumb__706014__doubleimageBrickLargeImageThumb/Schermafbeelding%202022-12-23%20om%2011.17.54.png-->
+    <DoubleImageBrick
+        image="https://www.studio-henk.nl/_default_upload_bucket/706014/image-thumb__706014__doubleimageBrickLargeImageThumb/Schermafbeelding%202022-12-23%20om%2011.17.54.png"
+        smallImage="https://www.studio-henk.nl/_default_upload_bucket/706015/image-thumb__706015__doubleimageBrickSmallImageThumb/Schermafbeelding%202022-12-23%20om%2011.18.18.png"
+        buttonText="View all"
+    />
     <SplitscreenBrick
         title="Blob Coffee Table"
-        intro="This new cabinet is the perfection of simplicity in design and construction, featuring oak wedges and half-lap joints to hold it together."
-        buttonText="Shop now"
-    />-->
-    <!--<SliderBrick />-->
-    <!--<SplitscreenBrick
-        title="Column Cabinet"
         intro="Characterised by its recognisable ‘blob’ shape, this coffee table has a subtle yet solid presence, making it a pleasant addition to any living space."
-        buttonText="Customise now"
+        buttonText="Discover more"
+        order="reverse"
     />
-    <DoubleImageBrick />-->
+    <SplitscreenBrick
+        title="Column Cabinet"
+        intro="This new cabinet is the perfection of simplicity in design and construction, featuring oak wedges and half-lap joints to hold it together."
+        buttonText="Discover more"
+        image="https://www.studio-henk.nl/_default_upload_bucket/706004/image-thumb__706004__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-48~-~media--5860a965--query.jpg"
+    />
+    <DoubleImageBrick
+        image="https://www.studio-henk.nl/_default_upload_bucket/706012/image-thumb__706012__doubleimageBrickLargeImageThumb/Schermafbeelding%202022-12-22%20om%2017.20.27_1.png"
+        smallImage="https://www.studio-henk.nl/_default_upload_bucket/706011/image-thumb__706011__doubleimageBrickSmallImageThumb/Schermafbeelding%202022-12-23%20om%2010.56.29.png"
+        buttonText="Shop Shelves"
+    />
+    <SplitscreenBrick
+        title="Mikado Dining Table"
+        intro="This distinctive dining table, inspired by the pick-up sticks game of the same name, stacks unexpected details with intentional design."
+        buttonText="Shop Mikado"
+        image="https://www.studio-henk.nl/_default_upload_bucket/706004/image-thumb__706004__splitscreenBrickThumb/Studio%20HENK%20January%20Campaign%202023_-48~-~media--5860a965--query.jpg"
+    />
+    <DoubleImageBrick
+        order="reverse"
+        image="https://www.studio-henk.nl/_default_upload_bucket/705759/image-thumb__705759__doubleimageBrickLargeImageThumb/Schermafbeelding%202022-12-16%20om%2012.43.51.png"
+        smallImage="https://www.studio-henk.nl/_default_upload_bucket/705760/image-thumb__705760__doubleimageBrickSmallImageThumb/Schermafbeelding%202022-12-16%20om%2012.45.13.png"
+        buttonText="Shop Checker"
+    />
+    <SplitscreenBrick
+        order="reverse"
+        title="Reimagining the future"
+        subtitle="Sustainability"
+        intro="This collection is a culmination of ten years of design. We believe that the pieces presented, many of which are made of responsibly sourced wood, show the progress we have made as a conscious design brand and represent our optimistic and ambitious vision for a zero-waste furniture industry."
+        buttonText="Read more"
+        image=""
+    />
+    <!--<ContainerTest />-->
+    <!--<SliderBrick />-->
 </BaseLayout>

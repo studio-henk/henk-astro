@@ -1,0 +1,118 @@
+.hover-interaction-a {
+    position: relative;
+    text-decoration: none;
+}
+
+.hover-interaction-a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: currentcolor;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-interaction-a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* interaction C */
+.hover-interaction-c {
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+
+    /* width: fit-content; */
+    display: inline-block;
+}
+
+.hover-interaction-c::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+
+    /* transform: scaleX(0); */
+    height: 1px;
+    bottom: 0;
+    left: -110%;
+    background-color: currentcolor;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-interaction-c::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: currentcolor;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-interaction-c:hover::before {
+    transform: translateX(110%);
+}
+
+.hover-interaction-c:hover::after {
+    transform: translateX(110%);
+    transform-origin: bottom left;
+}
+
+.hover-interaction-c-2 {
+    text-decoration: none;
+}
+
+.hover-interaction-c-2 .hover-interaction-c-2-target {
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    width: fit-content;
+    display: inline-block;
+}
+
+/* start */
+
+/* line showing on load */
+.hover-interaction-c-2 .hover-interaction-c-2-target::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: currentcolor;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+/* line showing on hover, moving in ltr */
+.hover-interaction-c-2 .hover-interaction-c-2-target::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+
+    /* transform: scaleX(0); */
+    height: 1px;
+    bottom: 0;
+    left: -110%;
+    background-color: currentcolor;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-interaction-c-2:hover .hover-interaction-c-2-target::before {
+    transform: translateX(110%);
+}
+
+.hover-interaction-c-2:hover .hover-interaction-c-2-target::after {
+    transform: translateX(110%);
+    transform-origin: bottom left;
+}

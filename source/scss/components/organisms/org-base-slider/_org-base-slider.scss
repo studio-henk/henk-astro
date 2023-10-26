@@ -106,7 +106,7 @@
   margin: 0;
   font-size: 1rem;
   line-height: 28px;
-  font-weight: 300;
+  /*font-weight: 300;*/
   text-transform: none;
   letter-spacing: 0.04em;
   padding-left: 0;
@@ -209,7 +209,7 @@
           line-height: 38px;
           letter-spacing: 1.2px;
           text-transform: none;
-          font-weight: 300;
+          /*font-weight: 300;*/
 
           @media only screen and (min-width: 768px) {
             font-size: 2.0625rem; // 33px

@@ -502,7 +502,7 @@
   }
 }
 .main-nav__row.main-nav__row--sub > .main-nav__item > a {
-  font-size: 15px;
+  font-size: calc(var(--size-font-14) / 16 * 1em);
   letter-spacing: 0.75px;
 }
 
@@ -520,7 +520,7 @@
 .sub-nav__item.group .group__list .sub-nav__item a {
   text-transform: none;
   letter-spacing: normal;
-  font-size: 15px;
+  font-size: calc(var(--size-font-14) / 16 * 1em);
   font-weight: 400;
   margin-right: 0;
 }

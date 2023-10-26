@@ -174,7 +174,7 @@ small {
 sub,
 sup {
   /*font-size: 75%;*/
-  font-size: 0.6875rem;
+  font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem);
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -238,7 +238,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "ff-scala-sans-pro", sans-serif; /* 1 */
+  font-family: var(--font-body, sans-serif), sans-serif; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */

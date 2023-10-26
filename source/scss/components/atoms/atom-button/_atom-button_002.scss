@@ -21,7 +21,7 @@
   color: var(--color-text-button, #fff);
   border: 1px solid var(--color-border-button, #000);
   border-radius: clamp(40px, 5.04032258vw, 50px);
-  font-family: "ff-scala-sans-pro", sans-serif;
+  font-family: var(--font-body, sans-serif), sans-serif;
   font-size: clamp(12px, 1.41129032vw, 14px);
   text-transform: uppercase;
   margin-top: calc(28 / var(--var-global-fontsize-root) * 1rem);
@@ -64,7 +64,7 @@
 
   &[data-text-uppercase="no"] {
     text-transform: none;
-    font-weight: 300;
+    /*font-weight: 300;*/
   }
 
   &[data-variant="primary"] {

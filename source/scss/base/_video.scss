@@ -63,7 +63,7 @@
       text-align: center;
       letter-spacing: 0.03em;
       color: var(--color-henk-white);
-      font-weight: 300;
+      /*font-weight: 300;*/
       margin: 0 0 16px 0;
       padding: 0 5px;
 
@@ -112,7 +112,7 @@
       }
 
       @media only screen and (min-width: 768px) {
-        // font-size: 15px;
+        // font-size: calc(var(--size-font-14) / 16 * 1em);
         font-size: 0.9375rem; // 15px
       }
 

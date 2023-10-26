@@ -1,3 +1,6 @@
+---
+const { buttonText = "Button text", order, image, smallImage } = Astro.props;
+---
 <section id="block_2">
     <div class="sh-molecule-bg-box" style="
                 --color-background-component-bgbox: var(--color-henk-white, transparent);
@@ -13,7 +16,7 @@
                                         --size-spacing-units-bottom-desktop: 11;
                                         --size-spacing-units-left-desktop: 5;
                                 ">
-            <div class="sh-l-grid sh-double-image-brick" data-grid="grid-k" style="
+            <div class="sh-l-grid sh-double-image-brick" data-order={order} data-grid="grid-k" style="
                                             --var-local-button-hover-override: var(--color-henk-black, #f00);
 
                                     --var-local-button-text-color-override: var(--color-henk-white, #000);
@@ -23,7 +26,7 @@
 
                         <figure class="item__figure sh-atom__figure">
                             <img class="item__image" id="img1"
-                                 src="https://www.studio-henk.nl/_default_upload_bucket/706014/image-thumb__706014__doubleimageBrickLargeImageThumb/Schermafbeelding%202022-12-23%20om%2011.17.54.png"
+                                 src={image}
                                  alt="Crafted elegance" loading="lazy" width="560" height="700">
                         </figure>
 
@@ -46,7 +49,7 @@
                         <figure class="item__figure sh-atom__figure">
 
                             <img class="item__image" id="img1"
-                                 src="https://www.studio-henk.nl/_default_upload_bucket/706015/image-thumb__706015__doubleimageBrickSmallImageThumb/Schermafbeelding%202022-12-23%20om%2011.18.18.png"
+                                 src={smallImage}
                                  alt="Available in a striking smoked oak finish" loading="lazy" width="404"
                                  height="499">
                         </figure>
@@ -60,8 +63,12 @@
                 </div>
                 <div class="sh-l-grid__item" data-colspan="2">
 
-                    <a href="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
-                       class="sh-atom-button --variant-soft">VIEW ALL</a>
+                    <a
+                        href="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
+                        class="sh-atom-button"
+                        data-style="filled"
+                    >{buttonText}
+                    </a>
                 </div>
             </div>
         </div>
