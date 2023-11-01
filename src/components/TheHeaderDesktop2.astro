@@ -819,24 +819,34 @@ const tableGallery = 5;
               </ul>
             </div>
           </li>
+          <li>
+            <a class="submenu__link submenu__open-link" href="#more"
+              >Service & Maintenance
+            </a>
+            <a class="submenu__link submenu__close-link" href="#more"
+              >Service & Maintenance
+            </a>
+            <div class="category__list-container">
+              <ul class="category__list">
+                <li>
+                  <a class="category__list-link" href="/en/faq">FAQ</a>
+                </li>
+                <li>
+                  <a class="category__list-link" href="/en/maintenance"
+                    >Maintenance</a
+                  >
+                </li>
+                <li>
+                  <a class="category__list-link" href="/en/services">Services</a
+                  >
+                </li>
+                <li>
+                  <a class="category__list-link" href="/en/manuals">Manuals</a>
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
-        <!--Service en onderhoud
-
-        FAQ
-
-        Onderhoud
-
-        Services
-
-        Handleidingen
-
-        Levertijden en prijzen
-
-        Levertijden
-
-        Voorraad
-
-        Prijslijst-->
       </div>
       <div class="category-grid-container">
         <div class="submenu__grid category__gallery --category-gallery-active">
@@ -929,16 +939,39 @@ const tableGallery = 5;
             altText="alt text"
             caption="Jobs"
           />
-          <!--<NavCard
-              hasLink="/en/about-us"
-              linkTitle="click to go to this"
-              imgUrl="/static/std/assets/toolkit/images/navbar/about_02.jpg"
-              imgWidth="1112"
-              imgHeight="1444"
-              altText="alt text"
-              caption="Whatsapp"
-          />-->
         </div>
+
+        <!-- services and maintenance gallery -->
+        <div class="submenu__grid category__gallery">
+          <NavCard
+            hasLink="/en/contact"
+            linkTitle="Click to go to Contact"
+            imgUrl="/static/std/assets/toolkit/images/navbar/about-more-press.jpg"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="photo"
+            caption="Press"
+          />
+          <NavCard
+            hasLink="/en/about-us"
+            linkTitle="click to go to this"
+            imgUrl="/static/std/assets/toolkit/images/navbar/about-more-bank.jpg"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="alt text"
+            caption="Image Bank"
+          />
+          <NavCard
+            hasLink="/en/about-us"
+            linkTitle="click to go to this"
+            imgUrl="/static/std/assets/toolkit/images/navbar/about-more-jobs.jpg"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="alt text"
+            caption="Jobs"
+          />
+        </div>
+        <!-- end services & maintenace galler -->
       </div>
     </div>
   </div>
