@@ -301,3 +301,71 @@ sh-atom-button[data-state="unmuted"] .muted {
 .sh-atom-button[data-alignment*="separator"] {
   grid-template-columns: repeat(3, auto);
 }
+
+.sh-atom-button[data-shape="circle"] {
+  aspect-ratio: 1;
+  padding: 6px 19px;
+}
+
+.sh-atom-button[data-shape="circle"][data-size="large"] {
+  aspect-ratio: 1;
+  padding: 0;
+  width: 64px;
+}
+
+.sh-atom-button[data-shape="circle"][data-size="large"] svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sh-atom-button[data-shape="circle"][data-size="small"] {
+  aspect-ratio: 1;
+  padding: 0;
+  width: 24px;
+}
+
+.sh-atom-button[data-shape="circle"][data-icon-arrow-left]
+.sh-atom-button[data-shape="circle"][data-icon-arrow-right] {
+  padding: 0 12px 0 16px;
+}
+
+.sh-atom-button[data-shape="circle"][data-icon-arrow-left] {
+  padding: 0 16px 0 12px;
+}
+
+.sh-atom-button[data-shape="circle"][data-icon-arrow-right][data-size="large"] {
+
+}
+
+.sh-atom-button[data-shape="circle"][data-icon-arrow-right][data-size="large"] svg {
+  width: 32px;
+  height: 32px;
+  left: 4px;
+}
+
+.sh-atom-button[data-shape="circle"][data-icon-arrow-left][data-size="large"] svg {
+  width: 32px;
+  height: 32px;
+  right: 4px;
+}
+
+/* swiper buttons */
+.swiper-button-disabled {
+  display: none;
+}
+
+.sh-custom-swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  z-index: 9;
+  transform: translateY(-50%);
+}
+
+.sh-custom-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  z-index: 9;
+  transform: translateY(-50%);
+}

@@ -2,6 +2,7 @@
     --border-radius-image-figure: 5px;
     background-color: var(--color-background-figure, transparent);
     color: var(--color-text-figure, #000);
+    height: max-content;
 }
 
 .nav-card__link {
@@ -9,7 +10,7 @@
     flex-direction: column;
     height: 100%;
     text-decoration: none;
-    max-width: 278px;
+    /*max-width: 278px;*/
 }
 
 .nav-card__link:hover .nav-card__image {

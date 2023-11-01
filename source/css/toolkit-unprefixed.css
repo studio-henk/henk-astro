@@ -1,4 +1,34 @@
 @charset "UTF-8";
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Atoms
+ *   Buttons..............Button elements.
+ * Molecules
+ * Organisms
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -394,6 +424,7 @@ template {
   display: none;
 }
 
+/* turn off */
 /* css custom props (variables) */
 :root,
 ::before,
@@ -3343,6 +3374,7 @@ main.sh-l-page-main section + section {
   --border-radius-image-figure: 5px;
   background-color: var(--color-background-figure, transparent);
   color: var(--color-text-figure, #000);
+  height: max-content;
 }
 
 .nav-card__link {
@@ -3350,7 +3382,7 @@ main.sh-l-page-main section + section {
   flex-direction: column;
   height: 100%;
   text-decoration: none;
-  max-width: 278px;
+  /*max-width: 278px;*/
 }
 
 .nav-card__link:hover .nav-card__image {
@@ -4949,6 +4981,69 @@ sh-atom-button[data-state="unmuted"] .muted {
 
 .sh-atom-button[data-alignment*=separator] {
   grid-template-columns: repeat(3, auto);
+}
+
+.sh-atom-button[data-shape=circle] {
+  aspect-ratio: 1;
+  padding: 6px 19px;
+}
+
+.sh-atom-button[data-shape=circle][data-size=large] {
+  aspect-ratio: 1;
+  padding: 0;
+  width: 64px;
+}
+
+.sh-atom-button[data-shape=circle][data-size=large] svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sh-atom-button[data-shape=circle][data-size=small] {
+  aspect-ratio: 1;
+  padding: 0;
+  width: 24px;
+}
+
+.sh-atom-button[data-shape=circle][data-icon-arrow-left] .sh-atom-button[data-shape=circle][data-icon-arrow-right] {
+  padding: 0 12px 0 16px;
+}
+
+.sh-atom-button[data-shape=circle][data-icon-arrow-left] {
+  padding: 0 16px 0 12px;
+}
+
+.sh-atom-button[data-shape=circle][data-icon-arrow-right][data-size=large] svg {
+  width: 32px;
+  height: 32px;
+  left: 4px;
+}
+
+.sh-atom-button[data-shape=circle][data-icon-arrow-left][data-size=large] svg {
+  width: 32px;
+  height: 32px;
+  right: 4px;
+}
+
+/* swiper buttons */
+.swiper-button-disabled {
+  display: none;
+}
+
+.sh-custom-swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  z-index: 9;
+  transform: translateY(-50%);
+}
+
+.sh-custom-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  z-index: 9;
+  transform: translateY(-50%);
 }
 
 .icon-frame {
@@ -6677,13 +6772,6 @@ so calc is unit size * unit num
       background-color: transparent;
     }
   }
-  #pixel-to-watch {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    top: 72px;
-    left: 0;
-  }
   .masthead-desktop * {
     box-sizing: border-box;
     margin: 0;
@@ -6703,9 +6791,6 @@ so calc is unit size * unit num
     transition: opacity 0.3s ease-out, background-color 0.3s ease-out, transform 0.3s ease;
     --color-text-badge: var(--color-henk-black);
   }
-  /*.masthead-desktop[data-font="old"] {
-      font-family: ff-scala-sans-pro,sans-serif;
-  }*/
   .masthead-desktop[data-theme=dark] {
     --color-text-masthead: var(--color-black);
     --color-background-masthead: var(--color-white);
@@ -6755,7 +6840,6 @@ so calc is unit size * unit num
     align-items: center;
     z-index: 9;
     position: relative;
-    /*mix-blend-mode: difference;*/
   }
   .masthead-desktop .primary-nav-container .primary-nav {
     display: flex;
@@ -6769,12 +6853,6 @@ so calc is unit size * unit num
     margin: 0;
     grid-template-columns: repeat(3, auto);
   }
-  /*.masthead-desktop #utilities-nav__search {
-      font-size: 0;
-  }*/
-  /*.masthead-desktop .utilities-nav__item a.--icon-search {
-      text-indent: -999em;
-  }*/
   #utilities-nav__search,
   #utilities-nav__cart {
     display: flex;
@@ -6783,7 +6861,6 @@ so calc is unit size * unit num
     grid-column: 3;
   }
   .masthead-desktop .utilities-nav__item a[class*="--icon"] {
-    /*display: inline-block;*/
     text-indent: -999em;
   }
   #utilities-nav__lang {
@@ -6804,45 +6881,45 @@ so calc is unit size * unit num
     text-decoration-line: underline;
     text-decoration-thickness: 1px;
   }
-  .masthead-desktop .submenu {
+  .dt-submenu {
     background-color: var(--color-accent1);
-    position: absolute;
+    /*background-color: pink;*/
+    position: fixed;
     top: 0;
     left: 0;
     opacity: 0;
     z-index: 4;
     pointer-events: none;
-    /*transition: opacity 0.3s ease-in-out;*/
     width: 100%;
     padding: 121px 28px 42px;
   }
-  .masthead-desktop .submenu.--submenu-open {
+  .dt-submenu.--submenu-open {
     pointer-events: all;
     opacity: 1;
   }
-  .masthead-desktop .submenu.--submenu-open.--submenu-fade-in {
+  .dt-submenu.--submenu-open.--submenu-fade-in {
     animation-name: fade-in;
     animation-delay: 0s;
     animation-direction: normal;
-    animation-duration: 600ms;
+    animation-duration: 300ms;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
   }
-  .masthead-desktop .submenu.--submenu-open.--submenu-fade-out {
+  .dt-submenu.--submenu-open.--submenu-fade-out {
     animation-name: fade-out;
     animation-delay: 0s;
     animation-direction: normal;
-    animation-duration: 600ms;
+    animation-duration: 300ms;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
   }
   .submenu__grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 401px;
-    gap: 17px;
+    /*grid-template-columns: repeat(5, 1fr);*/
+    /*grid-template-rows: 401px;*/
+    gap: 24px;
     opacity: 0;
     transition: opacity 700ms ease;
   }
@@ -6851,6 +6928,7 @@ so calc is unit size * unit num
   }
   .submenu__ul {
     list-style: none;
+    margin: 1rem 0 0 0;
   }
   .submenu__link {
     line-height: 40px;
@@ -6908,13 +6986,22 @@ so calc is unit size * unit num
     display: none;
   }
 }
-.category__link.--category-active,
+/*.category__link.--category-active,
 .category__close-link {
+    display: none;
+}*/
+.submenu__open-link.--is-active,
+.submenu__close-link {
   display: none;
 }
 
-.category__link.--category-active + .category__close-link {
+.submenu__open-link.--is-active + .submenu__close-link {
   display: block;
+}
+
+.submenu__open-link.--is-active + .submenu__close-link + .category__list-container {
+  display: block;
+  /*background-color: yellow;*/
 }
 
 .category__list-container {
@@ -6941,24 +7028,20 @@ so calc is unit size * unit num
 }
 
 .submenu__grid.category__gallery {
-  opacity: 1;
+  /*opacity: 1;*/
   grid-template-columns: repeat(4, 1fr);
   justify-content: flex-start;
+  min-height: 50vh;
 }
 
+/*.submenu__grid.category__gallery.has-swiper {
+    display: block;
+}*/
 .submenu-main-grid {
   display: grid;
   grid-template-columns: 285px 4fr;
-  max-width: 1467px;
+  /*max-width: 1467px;*/
   margin: 0 auto;
-}
-
-/*.--category-active {
-    display: none;
-}*/
-.--category-active + .category__close-link + .category__list-container {
-  display: block;
-  /*background-color: yellow;*/
 }
 
 /*.--category-open .category__list-container {
@@ -6966,11 +7049,23 @@ so calc is unit size * unit num
 }*/
 .--category-gallery-active {
   display: grid;
-  /*transform: translateY(-50%);*/
+}
+
+/*
+.--category-gallery-active.has-swiper {
+    display: block;
+    position: relative;
+}*/
+/*.category__gallery {
+    display: grid;
+}*/
+.category__gallery.--category-gallery-active.has-swiper {
+  display: block;
+  position: relative;
 }
 
 .category-grid-container {
-  max-height: 401px;
+  /*max-height: 401px;*/
   overflow: hidden;
 }
 
@@ -12018,6 +12113,7 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   }
 }
 /* equal heights issue */
+/* update 2023-02-08 • 13:27 - CET */
 /* grid on mobile */
 @media only screen and (min-width: 992px) {
   .cart-page-layout-container {
@@ -12056,6 +12152,7 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
     min-height: calc(100vh - var(--size-height-for-hero) - 224px);
   }
 }*/
+/* update 2023-03-28 • 10:32 - CEST */
 /* :root {
     --color-accent11: pink;
 } */
@@ -12180,8 +12277,6 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   flex: 1 1 48%;
 }
 
-/* update 2023-02-08 • 13:27 - CET */
-/* update 2023-03-28 • 10:32 - CEST */
 /* .navigation {
   // reset owl
   * + * {
@@ -12610,18 +12705,12 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   .no-touchevents .main-nav__row > li.main-nav__item--with-dropdown:hover .icon {
     transform: rotate(180deg);
   }
-}
-@media screen and (min-width: 992px) {
   .main-nav__row > li.main-nav__item:last-of-type {
     padding-left: 1.5rem;
   }
-}
-@media screen and (min-width: 992px) {
   .main-nav__row > li.main-nav__item:not(.main-nav__cart) a {
     white-space: nowrap;
   }
-}
-@media screen and (min-width: 992px) {
   .main-nav__row > li.main-nav__item.active:not(.main-nav__cart) a::before, .main-nav__row > li.main-nav__item:not(.main-nav__cart) a::before {
     content: "";
     position: absolute;
@@ -12634,20 +12723,14 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
     width: 0;
     transition: width 0.075s cubic-bezier(0, 0, 1, 0.06), top 0.75s cubic-bezier(0, 0, 1, 0.06);
   }
-}
-@media screen and (min-width: 992px) {
   .no-touchevents .main-nav__row > li.main-nav__item:not(.main-nav__cart) a:hover:before {
     width: 45%;
     transition: width 0.25s cubic-bezier(0, 0, 0, 1.06);
   }
-}
-@media screen and (min-width: 992px) {
   .no-touchevents .main-nav__row > li.main-nav__item.active:not(.main-nav__cart) a:before {
     width: 45%;
     transition: width 0.25s cubic-bezier(0, 0, 0, 1.06);
   }
-}
-@media screen and (min-width: 992px) {
   .main-nav__row > li.main-nav__item .sub-nav {
     height: auto;
     position: absolute;
@@ -12664,8 +12747,6 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   .main-nav__row > li.main-nav__item .sub-nav__item a::before {
     bottom: 2px !important;
   }
-}
-@media screen and (min-width: 992px) {
   .no-touchevents .main-nav__row > li.main-nav__item:hover .sub-nav {
     transition-duration: 0.5s;
     max-height: 1000px;
@@ -12674,14 +12755,10 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
     opacity: 1;
     transform: scaleY(1);
   }
-}
-@media screen and (min-width: 992px) {
   .main-nav__row--sub {
     margin-bottom: 0.25rem;
     margin-top: 0.625rem;
   }
-}
-@media screen and (min-width: 992px) {
   .main-nav__row--sub > li.main-nav__item {
     padding-left: 1rem;
   }
@@ -17654,6 +17731,7 @@ UPDATED 2023-08-31 • 10:25 - CEST
     letter-spacing: 0.5px;
   }
 }
+/* added */
 /*---
 title: Section-Header (brick)
 section: Bricks
@@ -18134,37 +18212,5 @@ Triptych image block
 }
 </style>
 */
-/**
- * CONTENTS
- *
- * SETTINGS
- * Global...............Globally-available variables and config.
- *
- * TOOLS
- * Mixins...............Useful mixins.
- *
- * GENERIC
- * Normalize.css........A level playing field.
- * Box-sizing...........Better default `box-sizing`.
- *
- * BASE
- * Headings.............H1–H6 styles.
- *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- *
- * COMPONENTS
- * Atoms
- *   Buttons..............Button elements.
- * Molecules
- * Organisms
- * Page-head............The main page header.
- * Page-foot............The main page footer.
- *
- * TRUMPS
- * Text.................Text helpers.
- */
-/* turn off */
-/* added */
 
 /*# sourceMappingURL=toolkit-unprefixed.css.map */

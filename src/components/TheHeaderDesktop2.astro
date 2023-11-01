@@ -1,0 +1,908 @@
+---
+import AtomLogo from "./Atoms/AtomLogo.astro";
+import { getLangFromUrl } from "../i18n/utils";
+import LangSwitchNoScript from "./LangSwitchNoScript.astro";
+import Icon from "./Icon.astro";
+import NavCard from "./NavCard.astro";
+const lang = getLangFromUrl(Astro.url);
+const { NavOnHero } = Astro.props;
+let { NavTheme } = Astro.props;
+const currentPath = Astro.url.pathname.substring(4);
+let otherLang;
+if (lang =="nl") {
+  otherLang = "en"
+} else {
+  otherLang = "nl"
+}
+let otherURL = "/" + otherLang + "/" + currentPath;
+if (!NavTheme) {
+  NavTheme = "dark"
+}
+
+const tableGallery = 5;
+---
+<header
+  class="masthead masthead-desktop"
+  id="masthead-desktop"
+  data-theme={NavTheme}
+  data-has-hero={NavOnHero}
+>
+  <div class="primary-nav-container">
+    <AtomLogo url="/" icon="henk-logo" width="163" height="14" />
+    <nav class="primary-nav">
+      <a id="xpn-shop" class="hoverlink" href="#mn-shop">Shop</a>
+      <a href="/en/configurator" class="hover-interaction-a">Configurator</a>
+      <a href="/en/samples" class="hover-interaction-a">Samples</a>
+      <a id="xpn-visit" class="hoverlink" href="#mn-visit"
+        >Visit</a
+      >
+      <a
+        id="xpn-inspiration"
+        class="hoverlink"
+        href="#mn-inspiration"
+        data-target="inspiration">Inspiration
+      </a>
+      <a
+          id="xpn-about"
+          class="hoverlink"
+          href="#mn-about"
+          data-target="about">About
+      </a>
+    </nav>
+    <div class="utilities-nav">
+      <ul class="utilities-nav__list">
+        <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"} class="sh-atom-button-icon --icon-search" data-style="plain-dark"><Icon icon="search" />Search</a></li>
+        <!--<li class="utilities-nav__item" id="utilities-nav__contact"><a href={"/" + lang + "/contact"} class="hover-interaction-a">Contact</a></li>-->
+        <li class="utilities-nav__item" id="utilities-nav__cart">
+          <a href={"/" + lang + "/cart/list"} class="sh-atom-button-icon --icon-cart" data-style="plain-dark">
+            <Icon icon="icon-cart" />
+            Cart
+          </a>
+          <!--<AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" />-->
+        </li>
+        <li class="utilities-nav__item" id="utilities-nav__lang">
+          <lang-switch data-url={otherURL} title={otherURL} lang={lang}></lang-switch>
+          <noscript>
+            <LangSwitchNoScript url={otherURL} lang={lang} />
+          </noscript>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="dt-submenu" id="mn-shop">
+    <div
+        class="submenu-main-grid"
+    >
+      <div class="submenu-main-grid__item">
+        <small>Products</small
+        >
+        <ul class="submenu__ul">
+          <li>
+            <a
+                class="category__linkx submenu__link submenu__open-link"
+                href="#tables"
+            >Tables
+            </a>
+            <a
+                class="category__close-link submenu__link submenu__close-link"
+                href="#tables"
+            >Tables
+            </a>
+            <div class="category__list-container">
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href={"/" + lang + "/products/all-tables"}>All Tables</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href={"/" + lang + "/products/dining-tables"}>Dining Tables</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/coffee-tables">Coffee Tables</a>
+                </li>
+                <li>
+                  <a class="category__list-link" href="/en/products/home-desks"
+                  >Home Desks</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/bistro-tables">Bistro Tables</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-tables">Outdoor Tables</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+                class="category__linkx submenu__link submenu__open-link"
+                href="#chairs">Chairs
+            </a>
+            <a
+                class="category__close-link submenu__link submenu__close-link"
+                href="#chairs">Chairs
+            </a>
+            <div class="category__list-container">
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/all-chairs">All Chairs</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/dining-chairs">Dining Chairs</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/lounge-chairs">Lounge Chairs</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/dining-benches">Dining Benches</a>
+                </li>
+                <li>
+                  <a class="category__list-link" href="/en/products/stools"
+                  >Stools</a>
+                </li>
+                <li>
+                  <a class="category__list-link" href="/en/products/poufs"
+                  >Poufs</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+                class="category__link submenu__link submenu__open-link"
+                href="#sofas">Sofas</a
+            >
+            <a
+                class="category__close-link submenu__link submenu__close-link"
+                href="#sofas">Sofas
+            </a>
+            <div class="category__list-container">
+              <!--<a class="category__header-link" href="/en/products/tables">All Sofas</a>-->
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/all-sofas">All Sofas</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/sofas">Sofas</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/lounge-chairs">Lounge Chairs</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/poufs">Poufs</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+                class="category__link submenu__link submenu__open-link"
+                href="#cabinets">Cabinets
+            </a>
+            <a
+                class="category__close-link submenu__link submenu__close-link"
+                href="#cabinets">Cabinets
+            </a>
+            <div class="category__list-container">
+              <!--<a class="category__header-link" href="/en/products/cabinets">All Cabinets</a>-->
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/all-cabinets">All Cabinets</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/modular-cabinets">Modular Cabinets</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/column-cabinets">Column Cabinets</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/collect-cabinets">Collect Cabinets</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/dressers">Dressers</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+                class="category__linkx submenu__link submenu__open-link"
+                href="#accessories">Accessories
+            </a>
+            <a
+                class="category__close-linkx submenu__link submenu__close-link"
+                href="#accessories">Accessories
+            </a>
+            <div class="category__list-container">
+              <!--<a class="category__header-link" href="/en/products/cabinets">All Accessories</a>-->
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/all-accessories">All Accessories</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/lightning">Lightning</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/shelves">Shelves</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/the-blob-vase">The Blob Vase</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+                class="category__linkx submenu__link submenu__open-link"
+                href="#outdoor">Outdoor
+            </a>
+            <a
+                class="category__close-linkx submenu__link submenu__close-link"
+                href="#outdoor">Outdoor
+            </a>
+            <div class="category__list-container">
+              <!--<a class="category__header-link" href="/en/products/all-outdoor">All Outdoor</a>-->
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/all-outdoor">All Outdoor</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-tables">Outdoor Tables</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-benches">Outdoor Benches</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-sofas">Outdoor Sofas</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-coffee-table">Outdoor Coffee Table</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/products/outdoor-chairs">Outdoor Chairs</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+          class="category-grid-container"
+      >
+        <!-- featured gallery -->
+        <!-- in pimcore connect to pages/links under this category -->
+        <!-- if number of pages/links > 4 then gallery is a slider -->
+        <div
+            class="submenu__grid category__gallery --category-gallery-active"
+        >
+          <NavCard
+              hasLink="/en/products/base-collection"
+              linkTitle="base collection"
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_01.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text here"
+              caption="Base Collection"
+          />
+          <NavCard
+              hasLink="/en/smart-collection"
+              linkTitle="click to go to this"
+              imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_04.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Most Sold"
+          />
+        </div>
+        <!-- gallery Tables -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+        <div
+            class="submenu__grid category__gallery has-swiper"
+        >
+          <div class="swiper-container">
+            <swiper-container
+                slides-per-view="4"
+                loop="false"
+                speed="500"
+                css-mode="true"
+                space-between="24"
+                navigation="true"
+                navigation-prev-el=".sh-custom-swiper-button-prev"
+                navigation-next-el=".sh-custom-swiper-button-next"
+            >
+              <swiper-slide>
+                <NavCard
+                    hasLink="https://disney.com"
+                    linkTitle="Click to go to Disney website."
+                    imgUrl="/static/std/assets/toolkit/images/navbar/tables_01-1112w.jpg"
+                    imgWidth="1112"
+                    imgHeight="1444"
+                    altText="Photo of a cliff with a nice view on the ocean."
+                    caption="Dining Tables"
+                />
+              </swiper-slide>
+              <swiper-slide>
+                <NavCard
+                    hasLink="https://disney.com"
+                    linkTitle="Click to go to Disney website."
+                    imgUrl="/static/std/assets/toolkit/images/navbar/tables_02.jpg"
+                    imgWidth="1112"
+                    imgHeight="1444"
+                    altText="Photo of a cliff with a nice view on the ocean."
+                    caption="Coffee Tables"
+                />
+              </swiper-slide>
+              <swiper-slide>
+                <NavCard
+                    hasLink="https://disney.com"
+                    linkTitle="Click to go to Disney website."
+                    imgUrl="/static/std/assets/toolkit/images/navbar/tables_03.jpg"
+                    imgWidth="1112"
+                    imgHeight="1444"
+                    altText="Home Desks"
+                    caption="Home Desks"
+                />
+              </swiper-slide>
+              <swiper-slide>
+                <NavCard
+                    hasLink="https://disney.com"
+                    linkTitle="Click to go to Disney website."
+                    imgUrl="/static/std/assets/toolkit/images/navbar/tables_04.jpg"
+                    imgWidth="1112"
+                    imgHeight="1444"
+                    altText="Bistro Tables"
+                    caption="Bistro Tables"
+                />
+              </swiper-slide>
+              <swiper-slide>
+                <NavCard
+                    hasLink="products/outdoor-tables"
+                    linkTitle="outdoor tables"
+                    imgUrl="/static/std/assets/toolkit/images/navbar/tables_01.jpg"
+                    imgWidth="1112"
+                    imgHeight="1444"
+                    altText="an outdoor table"
+                    caption="Outdoor Tables"
+                />
+              </swiper-slide>
+            </swiper-container>
+            <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-left="true">
+              <Icon icon="arrow-left" />
+            </div>
+            <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true">
+              <Icon icon="arrow-right" />
+            </div>
+          </div>
+        </div>
+
+        <!-- gallery chairs -->
+        <div class="submenu__grid category__gallery">
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/chairs_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/chairs_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/chairs_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/chairs_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- gallery Sofas -->
+        <div class="submenu__grid category__gallery">
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/sofas_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- end gallery -->
+        <!-- gallery cabinets -->
+        <div class="submenu__grid category__gallery">
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/cabinets_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/cabinets_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/cabinets_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/cabinets_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- end gallery -->
+        <!-- gallery accessories -->
+        <div class="submenu__grid category__gallery">
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/accessories_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/accessories_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/accessories_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/accessories_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- end gallery -->
+        <!-- gallery outdoor -->
+        <div class="submenu__grid category__gallery">
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_01.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_02.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_03.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+          <NavCard
+              hasLink="https://disney.com"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/outdoor_04.jpg"
+              imgWidth="556"
+              imgHeight="722"
+              altText="Photo of a cliff with a nice view on the ocean."
+              caption="Title here"
+          />
+        </div>
+        <!-- end gallery -->
+      </div>
+    </div>
+  </div>
+  <div class="dt-submenu" id="mn-visit">
+    <div class="submenu-main-grid">
+      <div class="submenu-main-grid__item">
+        <small>Visit</small>
+        <ul class="submenu__ul">
+          <li><a class="submenu__link" href={"/" + lang + "/shops"}>Our stores</a></li>
+          <li><a class="submenu__link" href={"/" + lang + "/interior-advice"}>Interior advice</a></li>
+        </ul>
+      </div>
+      <div class="category-grid-container">
+        <div
+            class="submenu__grid category__gallery --category-gallery-active"
+        >
+          <!--href={"/" + lang + "/shops"}-->
+          <NavCard
+              hasLink={"/" + lang + "/shops"}
+              linkTitle="to shops page"
+              imgUrl="/static/std/assets/toolkit/images/navbar/visit_01.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Our Stores"
+          />
+          <NavCard
+              hasLink={"/" + lang + "/interior-advice"}
+              linkTitle="to shops page"
+              imgUrl="/static/std/assets/toolkit/images/navbar/visit_02.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Interior Advice"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dt-submenu" id="mn-inspiration">
+    <div class="submenu-main-grid">
+      <div class="submenu-main-grid__item">
+        <small>Inspiration</small>
+        <ul class="submenu__ul">
+          <li><a class="submenu__link" href={"/" + lang + "/blogs"}>Stories</a></li>
+          <li><a class="submenu__link" href={"/" + lang + "/projects"}>Projects</a></li>
+        </ul>
+      </div>
+      <div class="category-grid-container">
+        <div
+            class="submenu__grid category__gallery --category-gallery-active"
+        >
+          <NavCard
+              hasLink="/stories"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_01.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Stories"
+          />
+          <NavCard
+              hasLink="/projects"
+              linkTitle="Click to go to Disney website."
+              imgUrl="/static/std/assets/toolkit/images/navbar/inspiration_02.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Projects"
+          />
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="dt-submenu" id="mn-about">
+    <div class="submenu-main-grid">
+      <div class="submenu-main-grid__item">
+        <small>About</small
+        >
+        <ul class="submenu__ul">
+          <li>
+            <a
+                class="submenu__link submenu__open-link"
+                href="#contact"
+            >Contact
+            </a>
+            <a
+                class="submenu__link submenu__close-link"
+                href="#contact"
+            >Contact
+            </a>
+            <div class="category__list-container">
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="tel:+31202333820">Phone</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/contact">Contact form</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="#">Chat</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="https://wa.me/31202333820">Whatsapp</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+                class="submenu__link submenu__open-link"
+                href="#more"
+            >More About Us
+            </a>
+            <a
+                class="submenu__link submenu__close-link"
+                href="#more"
+            >More About Us
+            </a>
+            <div class="category__list-container">
+              <ul class="category__list">
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/press">Press</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/top-nav/imagebank">Image Bank</a>
+                </li>
+                <li>
+                  <a
+                      class="category__list-link"
+                      href="/en/jobs">Jobs</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <!--Service en onderhoud
+
+        FAQ
+
+        Onderhoud
+
+        Services
+
+        Handleidingen
+
+        Levertijden en prijzen
+
+        Levertijden
+
+        Voorraad
+
+        Prijslijst-->
+      </div>
+      <div class="category-grid-container">
+        <div
+            class="submenu__grid category__gallery --category-gallery-active"
+        >
+          <NavCard
+              hasLink="/en/contact"
+              linkTitle="Click to go to Contact"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about_01.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="photo"
+              caption="Contact"
+          />
+          <NavCard
+              hasLink="/en/about-us"
+              linkTitle="click to go to this"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about_02.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="More About Us"
+          />
+        </div>
+
+        <!-- contact gallery -->
+        <div class="submenu__grid category__gallery">
+          <NavCard
+              hasLink="/en/contact"
+              linkTitle="Click to go to Contact"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about-contact-phone.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="photo"
+              caption="Phone"
+          />
+          <NavCard
+              hasLink="/en/about-us"
+              linkTitle="click to go to this"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about-contact-form.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Contact Form"
+          />
+          <NavCard
+              hasLink="/en/about-us"
+              linkTitle="click to go to this"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about-contact-chat.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Chat"
+          />
+          <NavCard
+              hasLink="/en/about-us"
+              linkTitle="click to go to this"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about-contact-whatsapp.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Whatsapp"
+          />
+        </div>
+
+        <!-- more about us gallery -->
+        <div class="submenu__grid category__gallery">
+          <NavCard
+              hasLink="/en/contact"
+              linkTitle="Click to go to Contact"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about-more-press.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="photo"
+              caption="Press"
+          />
+          <NavCard
+              hasLink="/en/about-us"
+              linkTitle="click to go to this"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about-more-bank.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Image Bank"
+          />
+          <NavCard
+              hasLink="/en/about-us"
+              linkTitle="click to go to this"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about-more-jobs.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Jobs"
+          />
+          <!--<NavCard
+              hasLink="/en/about-us"
+              linkTitle="click to go to this"
+              imgUrl="/static/std/assets/toolkit/images/navbar/about_02.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text"
+              caption="Whatsapp"
+          />-->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="pixel-to-watch"></div>
