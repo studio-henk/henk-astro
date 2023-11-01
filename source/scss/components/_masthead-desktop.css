@@ -37,7 +37,8 @@
         left: 0;
         z-index: 999;
         width: 100%;
-        padding: 20px 28px;
+        /* padding: 20px 28px; */
+        padding: 0;
         background-color: var(--color-background-masthead, transparent);
         color: var(--color-text-masthead, #fff);
         transition: opacity 0.3s ease-out, background-color 0.3s ease-out, transform 0.3s ease;
@@ -103,6 +104,7 @@
         align-items: center;
         z-index: 9;
         position: relative;
+        padding: 20px 28px; 
     }
 
     .masthead-desktop .primary-nav-container .primary-nav {

@@ -1,39 +1,40 @@
 ---
-import NavBarMobile from '../components/NavBarMobile.astro';
+import NavBarMobile from "../components/NavBarMobile.astro";
 import Icon from "./Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
 import MobileNavButton from "./MobileNavButton.astro";
 import { getLangFromUrl } from "../i18n/utils";
+import MsgBar from "./MsgBar.astro";
 const lang = getLangFromUrl(Astro.url);
 
 const { NavOnHero } = Astro.props;
-let {NavTheme} = Astro.props;
+let { NavTheme } = Astro.props;
 
 if (!NavTheme) {
-    NavTheme = "dark"
+  NavTheme = "dark";
 }
 ---
 
 <header
-    class="masthead masthead-mobile"
-    id="masthead-mobile"
-    data-theme={NavTheme}
-    data-has-hero={NavOnHero}
+  class="masthead masthead-mobile"
+  id="masthead-mobile"
+  data-theme={NavTheme}
+  data-has-hero={NavOnHero}
 >
-    <div class="primary-nav-container">
-        <AtomLogo
-            url="/"
-            icon="henk-logo"
-            width="174"
-            height="16"
-        />
-        <a href={"/" + lang + "/cart/list"} class="sh-atom-button-icon --icon-cart" data-style="plain-dark">
-            <Icon icon="icon-cart" />
-            Cart
-        </a>
-        <!--<AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6"/>-->
-        <hamburger-button></hamburger-button>
-    </div>
-    <NavBarMobile/>
+  <MsgBar />
+  <div class="primary-nav-container">
+    <AtomLogo url="/" icon="henk-logo" width="174" height="16" />
+    <a
+      href={"/" + lang + "/cart/list"}
+      class="sh-atom-button-icon --icon-cart"
+      data-style="plain-dark"
+    >
+      <Icon icon="icon-cart" />
+      Cart
+    </a>
+    <!--<AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6"/>-->
+    <hamburger-button></hamburger-button>
+  </div>
+  <NavBarMobile />
 </header>
