@@ -1,5 +1,6 @@
 .nav-card {
     --border-radius-image-figure: 5px;
+
     background-color: var(--color-background-figure, transparent);
     color: var(--color-text-figure, #000);
     height: max-content;
@@ -10,7 +11,18 @@
     flex-direction: column;
     height: 100%;
     text-decoration: none;
-    /*max-width: 278px;*/
+
+    /* max-width: 278px; */
+}
+
+.nav-card__image {
+    border-radius: var(--border-radius-image-figure, 5px);
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+
+    /* width: 100%; */
+    height: auto;
+    aspect-ratio: 556/722;
 }
 
 .nav-card__link:hover .nav-card__image {
@@ -20,15 +32,6 @@
 .nav-card__image-mask {
     border-radius: var(--border-radius-image-figure, 5px);
     overflow: hidden;
-}
-
-.nav-card__image {
-    border-radius: var(--border-radius-image-figure, 5px);
-    object-fit: cover;
-    transition: all .3s ease-in-out;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 556/722;
 }
 
 .nav-card__caption {

@@ -11,15 +11,12 @@
 ::before,
 ::after,
 ::selection {
-  /* font */
-  /*--font-body: "Haas Grot Text R Web";*/
-  --font-body: "ff-scala-sans-pro";
+  --font-body: "Haas Grot Text R Web";
+  /*--font-body: "ff-scala-sans-pro";*/
 
   /* colors */
   --color-background-page-primary-base: var(--color-white, #fff);
   --color-background-page: var(--color-white, #fff);
-  /*--color-text-page: var(--color-henk-black, #000);
-  --color-text-action: var(--color-henk-black, #000);*/
   --color-text-page: var(--color-black-lacquer, #000);
   --color-text-action: var(--color-black-lacquer, #000);
 

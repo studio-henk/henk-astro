@@ -2,9 +2,11 @@
 import { getLangFromUrl } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const mainClass = "sh-l-page-main";
 ---
 
-<BaseLayout title="About" NavTheme="dark" NavOnHero="true">
+<BaseLayout title="About" NavTheme="dark" NavOnHero="true" mainClass={mainClass}>
     <style>
         .hero-block .hero__image {
             height: auto;

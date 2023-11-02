@@ -24,6 +24,23 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
     <title>{title}</title>
     <!-- henk styles -->
     <!-- <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css" /> -->
+    <!-- preload font -->
+    <link
+        rel="preload"
+        href="/fonts/NeueHaasGrotTextRound-55Roman-Web.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+    />
+    <!-- NavBar styles -->
+    <link rel="preload" href="/static/std/assets/css/_masthead-desktop.css" as="style" />
+    <link rel="preload" href="/static/std/assets/toolkit/styles/toolkit.css" as="style" />
+    <link
+        href="/static/std/assets/css/_masthead-desktop.css"
+        media="screen"
+        rel="stylesheet"
+        type="text/css"
+    />
     <link
         href="/static/std/assets/toolkit/styles/toolkit.css"
         media="screen"
@@ -33,17 +50,15 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
     <slot name="head-styles"/>
     <!--scripts for navigation-->
     <script src="/static/std/assets/js/web-components/LangSwitch.js" type="module"></script>
+    <script defer src="/static/std/assets/js/web-components/LangSwitchAction.js"></script>
     <script defer src="/static/std/assets/js/navigation_mobile.js"></script>
     <script slot="head-scripts" src="/static/std/assets/js/web-components/HamburgerButton.js" type="module"></script>
     <script defer src="/static/std/assets/js/navigation_desktop.js"></script>
-    <script defer src="/static/std/assets/js/web-components/LangSwitchAction.js"></script>
     <script defer src="/static/std/assets/js/navigation_scroll-observer.js"></script>
     <script defer src="/static/std/assets/js/navigation_content-padding.js"></script>
     <!--end scripts for navigation-->
     <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script is:inline defer src="/static/std/assets/toolkit/scripts/toolkit.js"></script>
-    <!--<script is:inline defer src="/static/std/assets/toolkit/scripts/toolkit.min.js"></script>-->
-    <!--<script is:inline defer src="/static/std/assets/toolkit/scripts/toolkit.bak20230818.js"></script>-->
     <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes.js"></script>-->
     <slot name="head-scripts"/>
 </head>
@@ -53,7 +68,6 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
     <div id="page-title">
         <h1 class="sr-only">{title}</h1>
     </div>
-    <!--<MsgBar />-->
     <TheHeader NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
     <slot name="pre-main" />
     <main id={mainID} class={mainClass}>

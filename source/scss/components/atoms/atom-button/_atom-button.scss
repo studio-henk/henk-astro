@@ -141,13 +141,9 @@
     --color-background-button: var(--color-accent14);
     --color-text-button: var(--color-henk-black);
     --color-border-button: var(--color-background-button);
-    // border: 0;
-    /*/*font-weight: 300;*/*/
   }
 
   &.--variant-alt {
-    //--var-global-button-bgc: transparent;
-    //--var-global-button-text-color: #000;
     --color-background-button: var(--color-transparent);
     --color-text-button: var(--color-henk-black);
     border: 0;
