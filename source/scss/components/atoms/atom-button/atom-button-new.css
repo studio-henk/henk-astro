@@ -1,18 +1,17 @@
 .sh-atom-button {
-  font-family: "ff-scala-sans-pro", sans-serif;
-  /* 17px */
-  font-size: 1.0625rem;
-  font-weight: 300;
+  font-family: var(--font-body, sans-serif), sans-serif;
+  font-size: 1rem;
   line-height: 200%;
   display: inline-flex;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.01em;
+  /*letter-spacing: 0.01em;*/
   text-decoration: none;
   text-transform: none;
-  /*padding: 7px 20px;*/
+
+  /* padding: 7px 20px; */
   padding: calc(7 / 17 * 1em) 20px;
   cursor: pointer;
   font-feature-settings: "pnum" on, "lnum" on;
@@ -39,6 +38,7 @@
   --color-background-button: var(--color-henk-black);
   --color-text-button: var(--color-henk-white);
   --color-border-button: var(--color-henk-black);
+
   opacity: 0.85;
 }
 
@@ -63,6 +63,7 @@
 .sh-atom-button[data-style="plain-dark"] {
   --color-background-button: var(--color-transparent);
   --color-text-button: var(--color-henk-black);
+
   padding: 0;
   border: 0;
 }
@@ -70,6 +71,7 @@
 .sh-atom-button[data-style="plain-light"] {
   --color-background-button: var(--color-transparent);
   --color-text-button: var(--color-henk-white);
+
   padding: 0;
   border: 0;
 }
@@ -94,8 +96,9 @@
   position: absolute;
   bottom: 0;
   height: 1px;
-  /*background: rgba(0 0 0 / 96%);*/
-  background-color: currentColor;
+
+  /* background: rgba(0 0 0 / 96%); */
+  background-color: currentcolor;
   display: block;
   left: 0;
   pointer-events: none;
@@ -117,7 +120,8 @@
 .sh-atom-button[data-size="small"] {
   /* 12px */
   font-size: 0.75rem;
-  /*line-height: 20px;*/
+
+  /* line-height: 20px; */
 }
 
 .sh-atom-button[data-style*="plain"][data-size="small"] {
@@ -136,6 +140,7 @@
 .sh-atom-button:disabled,
 .sh-atom-button[data-disabled="true"] {
   opacity: 0.5;
+
   /* pointer-events: none; */
 }
 
@@ -143,7 +148,7 @@
 .sh-atom-button[data-disabled="true"]:hover {
   cursor: not-allowed;
   background-color: transparent;
-  color: currentColor;
+  color: currentcolor;
   opacity: 0.5;
 }
 
@@ -172,12 +177,12 @@
 
 /* other icons */
 .sh-atom-button .icon-frame {
-  margin-left: 0.47058824em;
+  margin-left: 0.4706em;
 }
 
 .sh-atom-button[data-icon-arrow-left="true"] .icon-frame,
 .sh-atom-button[data-icon-arrow-right="true"] .icon-frame {
-  /*padding: 2px 0 0 0;*/
+  /* padding: 2px 0 0 0; */
   padding: 0;
   width: 20px;
   margin: 0;
@@ -253,13 +258,14 @@
 }
 
 /* video sound buttons */
-/*.sh-atom-button[data-state="muted"] .unmuted {
+
+/* .sh-atom-button[data-state="muted"] .unmuted {
   display: none;
 }
 
 sh-atom-button[data-state="unmuted"] .muted {
   display: none;
-}*/
+} */
 
 .sh-atom-button-icon[data-state="muted"] .sound-on {
   display: none !important;
@@ -282,20 +288,28 @@ sh-atom-button[data-state="unmuted"] .muted {
 .sh-atom-button[data-alignment*="price"] {
  display: inline-grid;
  grid-template-columns: repeat(2, auto);
- column-gap: 2vw;
+ column-gap: 1em;
  justify-content: center;
 }
 
-.sh-atom-button[data-alignment="price-around"] {
+.sh-atom-button[data-alignment*="price-around"] {
   justify-content: space-around;
 }
 
-.sh-atom-button[data-alignment="price-between"] {
+.sh-atom-button[data-alignment*="price-between"] {
   justify-content: space-between;
 }
 
-.sh-atom-button[data-alignment="price-evenly"] {
+.sh-atom-button[data-alignment*="price-evenly"] {
   justify-content: space-evenly;
+}
+
+.sh-atom-button[data-alignment*="price-start"] {
+  justify-content: flex-start;
+}
+
+.sh-atom-button[data-alignment*="price-end"] {
+  justify-content: flex-end;
 }
 
 .sh-atom-button[data-alignment*="separator"] {
@@ -368,4 +382,16 @@ sh-atom-button[data-state="unmuted"] .muted {
   right: 1rem;
   z-index: 9;
   transform: translateY(-50%);
+}
+
+.sh-atom-button__separator,
+.org-addtocart-console__separator {
+  font-size: 28px;
+}
+
+/* shapes */
+
+/* toolbar */
+.sh-atom-button[data-shape*="toolbar"] {
+  border-radius: 0;
 }

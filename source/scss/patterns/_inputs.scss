@@ -163,7 +163,7 @@ label.radio {
     position: absolute;
     right: 0;
     top: 2px;
-    line-height: calc(var(--var-lineheight) / 13); // 25px
+    line-height: calc(var(--size-font-lineheight-body) / 13); // 25px
     margin-top: 0;
   }
 
@@ -213,7 +213,7 @@ input.parsley-error {
     width: 100%;
     background: none;
     border: 0;
-    font-family: "ff-scala-sans-pro", sans-serif;
+    font-family: var(--font-body, sans-serif), sans-serif;
     color: rgb(117, 117, 117);
     @at-root .no-touchevents &:hover {
       cursor: pointer;

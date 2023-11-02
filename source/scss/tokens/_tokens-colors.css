@@ -1,0 +1,48 @@
+:root,
+::before,
+::after,
+::selection {
+  /* brand */
+  --color-henk-black: #1f1f1f;
+  --color-henk-white: #f7f8f6;
+  --color-ral-9005: #0a0c10;
+  --color-ral-9016: #f1f0ea;
+
+  /* neutral */
+  --color-transparent: transparent;
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* accents */
+  --color-accent1: #f3f1ec;
+  --color-accent2: #f1efe9;
+  --color-accent3: #f2f0e9;
+  --color-accent4: #f1ebdf;
+  --color-accent5: #eae4d7;
+  --color-accent6: #ccb193;
+  --color-accent7: #b5af9b;
+  --color-accent8: #9f5b28;
+  --color-accent9: #b59a84;
+  --color-accent10: #563f24;
+  --color-accent11: #9aabbc;
+  --color-accent12: #60563e;
+  --color-accent13: #988367;
+  --color-accent14: #ccc7bd;
+  --color-accent15: #f1f0ee;
+  --color-accent16: #6b7156;
+  --color-accent17: #9e5b28;
+  --color-accent18: #dfdccd;
+  --color-accent19: #343e2a;
+  --color-henk-danger: #f00;
+  --color-henk-danger-dark: #c00;
+  --color-henk-success: #008000;
+  --color-henk-warning: #ffa500;
+  --color-henk-disabled: #d3d3d3;
+
+  /* todo: remove after check where used */
+  --color-henk-green-victorious: var(--color-accent16);
+
+  /* alias */
+  --color-black-lacquer: var(--color-ral-9005);
+  --color-white-lacquer: var(--color-ral-9016);
+}

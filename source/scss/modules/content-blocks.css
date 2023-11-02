@@ -12,13 +12,15 @@
   background-color: var(--color-accent1, #fff);
 }
 
-.content-block * {
+/* .content-block * {
   margin-top: 0;
-}
+} */
 
 .content-block .content-block__container {
-  max-width: calc(366 / 414 * 100 * 1%);
+   max-width: calc(366 / 414 * 100 * 1%);
   margin: 0 auto;
+
+  /* padding: 1rem; */
   padding: calc(var(--size-spacing-units-top, 10) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-right, 0) * var(--size-spacing-unit-base))
     calc(var(--size-spacing-units-bottom, 10) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-left, 0) * var(--size-spacing-unit-base));
 }
@@ -36,35 +38,38 @@
 }
 
 .content-block .content-block__heading {
-  font-size: 16px;
-  line-height: 28px;
-  letter-spacing: 0.5px;
+  /* font-size: 16px;
+  line-height: 24px; */
+
+  /* letter-spacing: 0.5px; */
   margin-bottom: 12px;
 }
 
 @media only screen and (min-width: 992px) {
   .content-block .content-block__container {
-    max-width: 968px;
-    padding: calc(var(--size-spacing-units-top-desktop, 14) * var(--size-spacing-unit-base))
+     max-width: 968px;
+     padding: calc(var(--size-spacing-units-top-desktop, 14) * var(--size-spacing-unit-base))
       calc(var(--size-spacing-units-right-desktop, 0) * var(--size-spacing-unit-base))
       calc(var(--size-spacing-units-bottom-desktop, 24) * var(--size-spacing-unit-base))
       calc(var(--size-spacing-units-left-desktop, 0) * var(--size-spacing-unit-base));
   }
 
   .content-block .content-block__layout {
-    display: grid;
-    grid-template-columns: 230px 1fr;
-    column-gap: 48px;
+     display: grid;
+    /*grid-template-columns: 230px 1fr;*/
+    grid-template-columns: 16vw 1fr;
+     column-gap: 48px;
   }
 
   .content-block .content-block__content {
-    row-gap: 40px;
+     row-gap: 40px;
   }
 
   .content-block .content-block__heading {
-    font-size: 21px;
-    line-height: 138%;
-    letter-spacing: 0.5px;
+    /* font-size: 21px;
+    line-height: 138%; */
+
+    /* letter-spacing: 0.5px; */
     margin-bottom: 0;
   }
 }
@@ -164,7 +169,7 @@
   }
 }
 
-/*---
+/* ---
 title:   Triptych
 section: Content
 author: Nils Hendriks for Studio HENK
@@ -173,7 +178,7 @@ date: 2023-01-26 • 18:39 - CET
 Triptych image block
 */
 .triptych .triptych__container {
-  /*padding: 48px 24px;*/
+  /* padding: 48px 24px; */
   padding: calc(var(--size-spacing-units-top-desktop, 23) * var(--size-spacing-unit-base))
     calc(var(--size-spacing-units-right-desktop, 0) * var(--size-spacing-unit-base))
     calc(var(--size-spacing-units-bottom-desktop, 22) * var(--size-spacing-unit-base))
@@ -310,7 +315,8 @@ Triptych image block
     width: 968px;
     column-gap: 48px;
     display: grid;
-    grid-template-columns: 230px 1fr;
+    /*grid-template-columns: 230px 1fr;*/
+    grid-template-columns: 16vw 1fr;
     transform: translateX(-50%);
     margin: 0;
   }

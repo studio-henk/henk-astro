@@ -38,7 +38,7 @@
       grid-row: 1/1;
       grid-column: 2/2;
       font-size: 0.875rem; // 14px
-      font-weight: 300;
+      /*font-weight: 300;*/
       line-height: 25px;
       text-align: right;
       letter-spacing: 0.2em;
@@ -100,14 +100,14 @@
     line-height: 28px;
     margin-top: 4px;
     font-size: 1rem;
-    font-weight: 300;
+    /*font-weight: 300;*/
     text-transform: none;
     letter-spacing: 0.04em;
     padding-left: 0;
 
     @media only screen and (max-width: 767px) {
       font-size: 1rem;
-      font-weight: 300;
+      /*font-weight: 300;*/
       text-transform: none;
       letter-spacing: 0.04em;
       padding-left: 0;
@@ -189,7 +189,7 @@
         grid-row: 1/1;
         grid-column: 2/2;
         font-size: 0.875rem; // 14px
-        font-weight: 300;
+        /*font-weight: 300;*/
         line-height: 25px;
         text-align: right;
         letter-spacing: 0.2em;
@@ -246,7 +246,7 @@
       margin-top: 0;
       font-size: 2.0625rem; // 33px
       text-transform: capitalize;
-      font-weight: 300;
+      /*font-weight: 300;*/
       letter-spacing: 0.07em;
       line-height: 50px;
       padding-left: 0;

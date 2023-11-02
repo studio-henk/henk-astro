@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Design System Index">
+  <h1>Design System Index</h1>
+  <h2 id="foundation">Foundation</h2>
+  <h3 id="Type">Type</h3>
+
+  <!--<p>Body font size base is 15px with line-height of 18px.</p>-->
+  <!--<p>This is rather small on larger screens (> 1280). Responsive fontsize?</p>-->
+  <div class="example">
+    <p>Bringhurst said line measure should be ca. 66 characters per line.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur deserunt facere iusto laudantium? Atque beatae eos, eum iusto magni minus molestias non numquam, omnis, perferendis quae repellat sequi. Corporis, eaque.</p>
+  </div>
+  <h2>Headings</h2>
+  <div class="example">
+    <h1>Heading level 1</h1>
+    <h2>Heading level 2</h2>
+    <h3>Heading level 3</h3>
+    <h4>Heading level 4</h4>
+    <h5>Heading level 5</h5>
+    <h6>Heading level 6</h6>
+  </div>
+  <hr>
+  <h2>All font sizes</h2>
+  <style>
+    .example * {
+      margin: 0;
+    }
+  </style>
+  <div class="example">
+    <p class="size-font-76">Font-size 76</p>
+    <p class="size-font-60">Font-size 60</p>
+    <p class="size-font-48">Font-size 48</p>
+    <p class="size-font-38">Font-size 38</p>
+    <p class="size-font-32">Font-size 32</p>
+    <p class="size-font-24">Font-size 24</p>
+    <p class="size-font-20">Font-size 20</p>
+    <p class="size-font-16">Font-size 16</p>
+    <p class="size-font-14">Font-size 14</p>
+    <p class="size-font-12">Font-size 12</p>
+  </div>
+</BaseLayout>

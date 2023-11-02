@@ -75,14 +75,14 @@
     }
 
     address a {
-      font-weight: 300;
+      /*font-weight: 300;*/
       text-decoration: none;
       color: currentcolor;
 
       &:hover,
       &:focus {
         text-decoration-line: underline;
-        text-underline-offset: 0.25rem;
+        /*text-underline-offset: 0.25rem;*/
         text-decoration-thickness: 1px;
       }
     }
@@ -114,9 +114,10 @@
     grid-area: org-footer-policy;
     margin: 0;
     padding: 0;
-    font-size: 0.6875rem; // 11px
-    line-height: 1.63636364; // 18/11
-    letter-spacing: 0.8px;
+    font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem); // 11px
+    line-height: calc(24 / 12);
+    /*line-height: 1.63636364; // 18/11*/
+    /*letter-spacing: 0.8px;*/
     display: inline-flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -129,7 +130,7 @@
 
     a {
       text-decoration: none;
-      font-weight: 300;
+      /*font-weight: 300;*/
       white-space: nowrap;
       color: currentcolor;
       margin-right: 8px;
@@ -137,7 +138,7 @@
       &:hover,
       &:focus {
         text-decoration-line: underline;
-        text-underline-offset: 0.25rem;
+        /*text-underline-offset: 0.25rem;*/
         text-decoration-thickness: 1px;
       }
 
@@ -279,9 +280,9 @@
     .payment-title {
       margin: 0;
       padding: 0;
-      font-size: 0.75rem; // 12px
+      /*font-size: 0.75rem; // 12px
       line-height: 1.5; // 18/12
-      letter-spacing: 0.1em;
+      letter-spacing: 0.1em;*/
     }
   }
 
@@ -342,12 +343,14 @@
   }
 
   .org-footer__heading {
-    font-size: 0.8125rem; // 13px
-    font-weight: 400;
+    /*font-size: 0.8125rem; // 13px*/
+    font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem);
+    line-height: calc(24 / 12);
+    /*font-weight: 400;*/
     /*line-height: calc(var(--var-lineheight) / 13);*/
-    line-height: 2.15384615; // 28/13
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+    /*line-height: 2.15384615; // 28/13*/
+    /*text-transform: uppercase;*/
+    /*letter-spacing: 0.2em;*/
     margin: 0;
   }
 
@@ -360,7 +363,7 @@
 
       &:hover {
         text-decoration-line: underline;
-        text-underline-offset: 0.25em;
+        /*text-underline-offset: 0.25em;*/
       }
     }
   }

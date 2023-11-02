@@ -1,6 +1,7 @@
 ---
 import OrgMedia from "../components/OrgMedia.astro";
 import ProdSpecs from "../components/ProdSpecs.astro";
+const { productName = "Product name"} = Astro.props;
 ---
 
 <div class="cmp-sheet" data-theme="cmp-sheet-theme-henk">
@@ -32,7 +33,7 @@ import ProdSpecs from "../components/ProdSpecs.astro";
         </button>
       </header>
       <main class="cmp-sheet__content-body">
-        <OrgMedia />
+        <OrgMedia productName={productName} />
         <!-- specs -->
         <ProdSpecs />
       </main>

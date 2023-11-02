@@ -75,7 +75,7 @@
         // var handleCookies = require('./helpers/02_handleCookies.js');
         // handleCookies();
 
-        svg4everybody();
+        // svg4everybody();
 
         $(function () {
             $('#form-newsletter').parsley();

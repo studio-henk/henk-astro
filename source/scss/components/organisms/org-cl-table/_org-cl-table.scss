@@ -36,7 +36,7 @@ td[data-alignment="align-right"] {
 td[data-alignment="align-number"] {
   font-family: monospace, monospace;
   white-space: nowrap;
-  font-size: 15px;
+  font-size: calc(var(--size-font-14) / 16 * 1em);
   min-width: 12ch;
   width: 12ch;
 }

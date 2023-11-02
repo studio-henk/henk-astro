@@ -35,9 +35,9 @@
 
 /* turn off */
 // legacy
-@use "_v2/vars/_css-custom-properties";
+// @use "_v2/vars/_css-custom-properties";
 
-@use "tokens/_tokens-colors";
+@use "tokens/_tokens-colors.css";
 
 // @use "tokens/_tokens-colors-legacy";
 @use "tokens/_tokens-size-font";
@@ -81,7 +81,7 @@
 @use "components/choose-card.css";
 @use "components/radio-menu";
 @use "components/product-order";
-@use "components/product-specificaties"; 
+@use "components/product-specificaties";
 @use "components/sub-menu";
 @use "components/post";
 @use "components/quote";
@@ -92,6 +92,12 @@
 @use "components/cookie";
 @use "components/atoms/__atoms";
 @use "components/molecules/__molecules";
+@use "components/_BaseModal.css";
+
+/*@use "../../public/static/std/assets/css/components/atom-button-new.css";
+@use "../../public/static/std/assets/css/components/atom-button-icon.css";*/
+@use "components/atoms/atom-button/atom-button-new.css";
+@use "components/atoms/atom-button-icon/atom-button-icon.css";
 @use "components/_LangSwitchNoScript.css";
 @use "components/_masthead-mobile.css";
 @use "components/_masthead-desktop.css";
@@ -104,7 +110,7 @@
 @use "components/organisms/__organisms";
 
 /// patterns ///
-@use "patterns/__patterns"; 
+@use "patterns/__patterns";
 
 /// modules ///
 @use "modules/__modules";
@@ -132,6 +138,7 @@
 @use "components/bricks/section-header-brick/section-header-brick";
 @use "components/bricks/quoteBrick/quote-brick.css";
 @use "components/bricks/shop-product-row/shop-product-row-brick.css";
+/* TODO: check this, is this for pimcore brickV2? */
 @use "components/bricks/hero-brick-v2/hero-brick-v2.css";
 
 /* added */
@@ -145,6 +152,5 @@
 /// 2023-04-18 • 13:30 - CEST
 @use "modules/content-blocks.css";
 
-/// update
-/// 2023-06-14 • 14:30 - CEST
-//@use "components/organisms/_navbar.css";
+/// configurator extension
+@use "pages/_configurator-extension.css";

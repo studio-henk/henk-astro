@@ -39,7 +39,7 @@
   // max-width: 1200px;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  border-bottom: 1px solid #efefef;
 
   .nav-open & {
     position: fixed;
@@ -141,11 +141,11 @@
 
   &__row > li.main-nav__item {
     display: block;
-    line-height: 2.5rem; // 40px
+    /*line-height: 2.5rem; // 40px*/
     position: relative;
 
     @media (min-width: 992px) {
-      line-height: 2rem; // 32px
+      /*line-height: 2rem; // 32px*/
     }
 
     &--with-dropdown {
@@ -156,9 +156,9 @@
       }
 
       > a.icon-right {
-        font-size: 0.75rem; // 12px
+        /*font-size: 0.75rem; // 12px
         text-transform: uppercase;
-        letter-spacing: 1.8px;
+        letter-spacing: 1.8px;*/
       }
     }
 
@@ -174,7 +174,7 @@
       & a {
         display: block;
         transition: 0.3s ease all;
-        color: rgba(0, 0, 0, 0.88);
+        /*color: rgba(0, 0, 0, 0.88);*/
         text-decoration: none;
         position: relative;
         cursor: pointer;
@@ -183,9 +183,9 @@
 
       &.main {
         > a {
-          font-size: 0.75rem; // 12px
+          /*font-size: 0.75rem; // 12px
           text-transform: uppercase;
-          letter-spacing: 1.8px;
+          letter-spacing: 1.8px;*/
         }
       }
     }
@@ -229,10 +229,11 @@
     }
 
     & > li.main-nav__lang--item a {
+      font-size: calc(var(--size-font-14) / 16 * 1em);
       text-decoration: none;
-      color: rgba(0, 0, 0, 0.88);
-      font-size: 0.9375rem; // 15px
-      letter-spacing: 0.75px;
+      /*color: rgba(0, 0, 0, 0.88);*/
+      /*font-size: 0.9375rem; // 15px*/
+      /*letter-spacing: 0.75px;*/
     }
 
     & > li.main-nav__lang--divider {
@@ -252,14 +253,15 @@
     transform-origin: top;
     text-align: left;
     height: 0;
+    margin: 0;
 
     &__item {
       padding: 0.25rem 0;
       display: block;
-      text-transform: uppercase;
+      /*text-transform: uppercase;*/
 
       /*font-size: calc(12 / var(--var-global-fontsize-root) * 1rem);*/
-      font-size: 0.75rem; // 12px
+      /*font-size: 0.75rem;*/ // 12px
 
       &:last-child {
         margin-bottom: 1.5rem;
@@ -291,11 +293,11 @@
       padding-left: 0.25rem;
       right: -0.75rem; // 12px
       display: block;
-      bottom: 0.5rem; // 8px
+      bottom: 0.7rem; // 8px
       text-align: left;
       width: 0.625rem; // 10px TODO
       height: auto;
-      font-size: 0.9375rem; // 15px TODO
+      //font-size: 0.9375rem; // 15px TODO
     }
   }
 }
@@ -538,7 +540,7 @@
         opacity: 0;
         padding: 0 3000px;
         margin-left: -3000px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+        border-bottom: 1px solid #efefef;
 
         &__item {
           & a {
@@ -588,8 +590,8 @@
 .main-nav__row.main-nav__row--sub > .main-nav__item > a {
   // font-size: 1.5rem !important;
   // font-size: 0.9375rem !important; // 15px
-  font-size: 15px;
-  letter-spacing: 0.75px;
+  font-size: calc(var(--size-font-14) / 16 * 1em);
+  /*letter-spacing: 0.75px;*/
 }
 
 .sub-nav__item.group {
@@ -601,7 +603,8 @@
   text-align: right;
 
   // padding-right: 3.2rem;
-  padding-right: 2rem; // 32px
+  // padding-right: 2rem; // 32px
+  padding-right: 1.5rem;
 
   &::first-line {
     font-weight: 400;
@@ -612,7 +615,7 @@
       a {
         text-transform: none;
         letter-spacing: normal;
-        font-size: 15px; // TODO
+        font-size: calc(var(--size-font-14) / 16 * 1em); // TODO
         font-weight: 400;
         margin-right: 0;
       }
@@ -665,3 +668,7 @@
 //    // TODO: replace with inline svg in php file for navigation
 //  }
 // }
+
+.main-nav__row>li.main-nav__item .sub-nav-category-link {
+  margin-right: 0;
+}

@@ -40,7 +40,10 @@ export default {
     },
     onHide() {
       /* prevent page from scrolling */
-      document.querySelector('body').style.overflow = 'auto';
+      document.querySelector('body').style.removeProperty("overflow");
+      if (document.querySelector('body').style.length === 0) {
+        document.querySelector('body').removeAttribute("style");
+      }
     },
   },
   template: `

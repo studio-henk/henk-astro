@@ -1,23 +1,49 @@
 ---
 import {getLangFromUrl} from '../i18n/utils';
+import MsgBar from "./MsgBar.astro";
+import Icon from "./Icon.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
 <section class="navigation">
   <div class="main-menu">
+    <MsgBar/>
     <div class="container-fluid">
       <div class="flex-menu">
+        <!--<style>
+          .brand-logo__image {
+            width: 160px;
+            height: auto;
+          }
+
+          @media only screen and (min-width: 768px) {
+            .brand-logo__image {
+              width: 230px;
+              height: auto;
+            }
+          }
+
+          @media only screen and (max-width: 767px) {
+            .brand-logo {
+              left: 16px;
+              position: absolute;
+            }
+          }
+        </style>-->
         <div class="brand-logo">
-          <a href="/en">
+          <a class="brand-logo__link" href="/en" title="click to go back to the homepage" tabindex="1">
+            <!--<Icon icon="henk" class="brand-logo__image logo" />-->
             <img
-              class="logo"
+              class="logo brand-logo__image"
               src="https://assets.studio-henk.nl/assets/Images/logo/henk-logo.svg"
               alt="Studio HENK"
+              width="230"
+              height="20"
             />
           </a>
         </div>
         <div class="cart-mobile">
           <a href="/en/cart/list">
-            <svg class="icon">
+            <svg class="icon" icon-cart-empty="">
               <use
                 xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-cart-empty"
               ></use>
@@ -32,20 +58,17 @@ const lang = getLangFromUrl(Astro.url);
               id="shop-menu-item"
               class="main-nav__item main-nav__item--with-dropdown"
             >
-              <a
-                  href="#"
-                  class="icon-right"
-                  style="pointer-events: none;"
-              >Shop
+              <a href="#" class="icon-right"
+                >Shop
                 <svg class="icon icon-chevron-down">
                   <use
-                      xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-down"
+                    xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-down"
                   ></use>
                 </svg>
               </a>
               <ul class="sub-nav" style="height: auto;">
                 <li class="group sub-nav__item">
-                  Featured
+                  <span class="sub-nav-category-link">Featured</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/trace-outdoor-collection"
@@ -72,7 +95,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Outdoor
+                  <span class="sub-nav-category-link">Outdoor</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/outdoor-products">All Outdoor Products</a>
@@ -91,7 +114,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Tables
+                  <a class="sub-nav-category-link">Tables</a>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/dining-tables">Dining Tables</a>
@@ -109,7 +132,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Chairs
+                  <span class="sub-nav-category-link">Chairs</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/chairs">Dining Chairs</a>
@@ -127,7 +150,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Sofas
+                  <span class="sub-nav-category-link">Sofas</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/sofas">Sofas</a>
@@ -142,7 +165,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Cabinets
+                  <span class="sub-nav-category-link">Cabinets</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/collect-cabinets">Collect Cabinet</a
@@ -163,7 +186,7 @@ const lang = getLangFromUrl(Astro.url);
                 </li>
 
                 <li class="group sub-nav__item">
-                  Accessories
+                  <span class="sub-nav-category-link">Accessories</span>
                   <ul class="group__list">
                     <li class="sub-nav__item">
                       <a href="/en/products/lighting">Lighting</a>
@@ -228,7 +251,7 @@ const lang = getLangFromUrl(Astro.url);
               class="main-nav__item main-nav__cart hidden-xs visible-lg-block"
             >
               <a class="quick-cart__launch" href={`/${lang}/cart/list`}>
-                <svg class="icon">
+                <svg class="icon" icon-cart-empty="">
                   <use
                     xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-cart-empty"
                   ></use>
@@ -289,14 +312,11 @@ const lang = getLangFromUrl(Astro.url);
               <a target="" href="/en/sustainability"> Sustainability</a>
             </li>
 
-            <li>
-              <ul class="main-nav__item main-nav__lang">
-                <li class="main-nav__lang--item active"><a href="/nl ">NL</a></li>
-                <li class="main-nav__lang--divider">|</li>
-                <li class="main-nav__lang--item"><a href="/en">EN</a></li>
-              </ul>
-            </li>
-
+            <ul class="main-nav__item main-nav__lang">
+              <li class="main-nav__lang--item active"><a href="/nl ">NL</a></li>
+              <li class="main-nav__lang--divider">|</li>
+              <li class="main-nav__lang--item"><a href="/en">EN</a></li>
+            </ul>
           </ul>
         </nav>
         <div id="nav-icon3">

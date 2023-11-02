@@ -1,0 +1,85 @@
+<div class="sh-container">
+  <div class="sh-container__layout-box">
+    <h2>title</h2>
+    <h3>subtitle</h3>
+    <p class="text">This collection embraces our past and celebrates the future. A culmination of ten years of design, these products highlight geometric shapes and our passion for materiality while balancing presence and permanence.</p>
+  </div>
+</div>
+<hr>
+<!-- in a grid -->
+<div class="test-grid">
+  <div class="sh-container">
+    <div class="sh-container__layout-box">
+      <h2>title</h2>
+      <h3>subtitle</h3>
+      <p class="text">This collection embraces our past and celebrates the future. A culmination of ten years of design, these products highlight geometric shapes and our passion for materiality while balancing presence and permanence.</p>
+    </div>
+  </div>
+  <div class="sh-container">
+    <div class="sh-container__layout-box">
+      <h2>title</h2>
+      <h3>subtitle</h3>
+      <p class="text">This collection embraces our past and celebrates the future. A culmination of ten years of design, these products highlight geometric shapes and our passion for materiality while balancing presence and permanence.</p>
+    </div>
+  </div>
+</div>
+<style is:global>
+  /* styles for both, supported and not supported */
+  .sh-container {
+    background-color: #ccc;
+  }
+
+  .sh-container .text {
+    font-size: clamp(1rem, 2.04499vw, 30px);
+  }
+
+  @supports (container-type: inline-size) {
+    .sh-container {
+      container-type: inline-size;
+      container-name: sh-container;
+      background-color: pink;
+    }
+
+    /*child element */
+    .sh-container .text {
+      font-size: clamp(1rem, 2.04499cqw, 30px);
+    }
+
+
+    @container sh-container (max-width:767px) {
+      .sh-container .sh-container__layout-box {
+        background-color: yellow;
+      }
+    }
+
+    @container sh-container (min-width:768px) {
+      .sh-container__layout-box {
+        background-color: green;
+      }
+    }
+
+    @container sh-container (min-width:992px) {
+      .sh-container__layout-box {
+        background-color: deepskyblue;
+      }
+    }
+  }
+
+  @supports not (container-type: inline-size) {
+    .sh-container {
+      /*background-color: red;*/
+    }
+
+    @media screen and (min-width: 414px) {
+      .sh-container__layout-box {
+        /*background: aqua;*/
+      }
+    }
+  }
+
+  .test-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+</style>

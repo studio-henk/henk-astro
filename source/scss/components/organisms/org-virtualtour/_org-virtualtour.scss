@@ -11,9 +11,9 @@
     }
   }
 
-  font-family: "ff-scala-sans-pro", sans-serif;
+  font-family: var(--font-body, sans-serif), sans-serif;
   font-style: normal;
-  font-weight: 300;
+  /*font-weight: 300;*/
 
   @media only screen and (min-width: 992px) and (max-width: 1125px) {
     top: 139px;
@@ -52,7 +52,7 @@
   }
 
   h1 {
-    font-weight: 300;
+    /*font-weight: 300;*/
     font-style: normal;
     font-size: 2.3125rem; // 37px
     line-height: 44px;
@@ -320,7 +320,7 @@
 #vt-app .vt-btn {
   background-color: #141212;
   color: #fff;
-  font-family: "ff-scala-sans-pro", sans-serif;
+  font-family: var(--font-body, sans-serif), sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 0.8125rem; // 13px
