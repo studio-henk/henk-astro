@@ -301,7 +301,7 @@
         .submenu__grid.category__gallery {
             grid-template-columns: repeat(4, 1fr);
             justify-content: flex-start;
-            min-height: 50vh;
+            /*min-height: 50vh;*/
         }
     
         .submenu-main-grid {
