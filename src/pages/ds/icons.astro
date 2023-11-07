@@ -3,10 +3,29 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/Icon.astro";
 ---
 <BaseLayout title="Icons">
-    <h1>Icons</h1>
-    <Icon icon="arrow-right" />
-    <p>test button icon</p>
-    <a
+    <div class="page">
+        <h1>Icons</h1>
+        <!--<Icon icon="henk-logo" />-->
+        <h2>All icons listed</h2>
+        <div class="example --icons">
+            <span class="icon"><Icon icon="arrow-left"/></span>
+            <span class="icon"><Icon icon="arrow-right"/></span>
+            <span class="icon"><Icon icon="arrow-nav-bar"/></span>
+            <span class="icon"><Icon icon="arrow-nav-bar-back"/></span>
+            <span class="icon"><Icon icon="icon-calendar"/></span>
+            <span class="icon"><Icon icon="icon-arrow-down"/></span>
+            <span class="icon"><Icon icon="icon-cart"/></span>
+            <span class="icon"><Icon icon="icon-chevron-down"/></span>
+            <span class="icon"><Icon icon="icon-chevron-up"/></span>
+            <span class="icon"><Icon icon="icon-close"/></span>
+            <span class="icon"><Icon icon="icon-hamburger"/></span>
+            <span class="icon"><Icon icon="icon-trashcan"/></span>
+            <span class="icon"><Icon icon="phone"/></span>
+            <span class="icon"><Icon icon="search"/></span>
+            <span class="icon"><Icon icon="truck"/></span>
+        </div>
+        <p>test button icon</p>
+        <a
         href="#"
         class="sh-atom-button"
         data-style="filled"
@@ -33,11 +52,6 @@ import Icon from "../../components/Icon.astro";
         class="sh-atom-icon"
         data-size="small"
     />
-    <!--<Icon
-        icon="search"
-        width="44"
-        height="44"
-    />-->
     <h2>Arrow Right</h2>
     <hr>
     <h2>Close icon</h2>
@@ -45,4 +59,30 @@ import Icon from "../../components/Icon.astro";
         icon="icon-close"
         class="sh-atom-icon"
     />
+    </div>
 </BaseLayout>
+<style>
+    .page {
+        background-color: #fff;
+        padding: 2rem;
+    }
+
+    /* span as figma frame? */
+    .icon {
+        display: inline-flex;
+        border: 1px solid black;
+        /*width: 48px;
+        height: 48px;*/
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*width: 24px;
+        height: 24px;*/
+        background-color: beige;
+    }
+</style>

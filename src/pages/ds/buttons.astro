@@ -8,48 +8,64 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
 <BaseLayout title="Buttons">
   <div
     class="frame"
-    style="max-width: 960px; margin: 0 auto; padding: 2rem 0 0 0;"
   >
     <h1>Buttons</h1>
-    <!--<div class="example">
-          <button type="button">button text</button>
-        </div>-->
     <h2>Default (also <em>Outline Light</em>)</h2>
     <div
-      class="example"
-      style="background-color: var(--color-accent16);padding: 1rem;"
+      class="example on-dark"
     >
       <button type="button" class="sh-atom-button">button text</button>
     </div>
     <h3>Default - small</h3>
     <div
-      class="example"
-      style="background-color: var(--color-accent16);padding: 1rem;"
+      class="example on-dark"
     >
       <button type="button" class="sh-atom-button" data-size="small"
         >button text</button
       >
     </div>
     <h2>Outline Dark</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <button type="button" class="sh-atom-button" data-style="outline-dark"
         >button text
       </button>
     </div>
     <h2>Filled</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <button type="button" class="sh-atom-button" data-style="filled"
         >button text
       </button>
     </div>
     <h2>Soft</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <button type="button" class="sh-atom-button" data-style="soft"
         >button text
       </button>
     </div>
+    <h2>Arrows - non-animated</h2>
+    <div class="example">
+      <a
+          href="#"
+          class="sh-atom-button"
+          data-style="filled"
+      >
+        <Icon icon="arrow-left" />
+        button text
+      </a>
+    </div>
+      <hr>
+    <div class="example">
+      <a
+          href="#"
+          class="sh-atom-button"
+          data-style="filled"
+      >button text
+        <Icon icon="arrow-right" />
+      </a>
+    </div>
+    <hr>
     <h2>Arrow right (<em>animated</em>)</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="#"
         class="sh-atom-button"
@@ -58,23 +74,31 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         >button text
         <Icon icon="arrow-right" />
       </a>
-      <!--<p>new arrow right</p>
-            <a
-                href="#"
-                class="sh-atom-button"
-                data-style="filled"
-                data-icon-arrow-right="true"
-            >
-              icon right
-              <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="arrow-right-line" d="M0 4H12.5185" stroke="currentcolor" stroke-width="0.8"/>
-                <path id="arrow-right-point" d="M8.66667 0L13 4L8.66667 8" stroke="currentcolor" stroke-width="0.8"/>
-              </svg>
-            </a>-->
+    </div>
+    <hr>
+    <div class="example">
+      <a
+          href="#"
+          class="sh-atom-button"
+          data-style="filled"
+          data-icon-arrow-right="true"
+      >button text
+        <Icon icon="icon-calendar" />
+      </a>
+    </div>
+    <div class="example">
+      <a
+          href="#"
+          class="sh-atom-button"
+          data-style="filled"
+          data-icon-arrow-right="true"
+      >button text
+        <Icon icon="icon-cart" />
+      </a>
     </div>
     <hr>
     <h2>icon only Arrow right (<em>animated</em>)</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -87,7 +111,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
           href="#"
           class="sh-atom-button"
           data-style="filled"
-          data-icon-arrow-right="true"
+          xdata-icon-arrow-right="true"
           data-shape="circle"
       ><Icon icon="arrow-right" />
       </a>
@@ -109,35 +133,9 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
           data-size="large"
       ><Icon icon="arrow-right" />
       </a>
-      <a
-          href="/en/cart/remove/378093"
-          class="sh-atom-button"
-          data-style="filled"
-          data-shape="circle"
-      >
-          <Icon icon="icon-trashcan" />
-      </a>
-      <a
-          href="/en/cart/remove/378093"
-          class="sh-atom-button"
-          data-style="filled"
-          data-shape="circle"
-          data-size="small"
-      >
-        <Icon icon="icon-trashcan" />
-      </a>
-      <a
-          href="/en/cart/remove/378093"
-          class="sh-atom-button"
-          data-style="filled"
-          data-shape="circle"
-          data-size="large"
-      >
-        <Icon icon="icon-trashcan" />
-      </a>
     </div>
     <h2>Arrow left (<em>animated</em>)</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="#"
         class="sh-atom-button"
@@ -170,7 +168,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       >
     </div>
     <h3>Plain Dark Animated Underline</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="/en/shops"
         class="sh-atom-button"
@@ -194,7 +192,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>Plain Dark + Arrow Left</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="#"
         class="sh-atom-button"
@@ -206,7 +204,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>Arrow down Anchor-link</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="#anchor"
         class="sh-atom-button"
@@ -219,20 +217,36 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>Circle Icon Button</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="/en/cart/remove/378093"
-        class="sh-atom-button-icon"
+        class="sh-atom-button"
         data-style="filled"
         data-shape="circle"
       >
-        <span class="icon-frame">
-          <Icon icon="icon-trashcan" />
-        </span>
+        <Icon icon="icon-trashcan" />
+      </a>
+      <a
+          href="/en/cart/remove/378093"
+          class="sh-atom-button"
+          data-style="filled"
+          data-shape="circle"
+          data-size="small"
+      >
+        <Icon icon="icon-trashcan" />
+      </a>
+      <a
+          href="/en/cart/remove/378093"
+          class="sh-atom-button"
+          data-style="filled"
+          data-shape="circle"
+          data-size="large"
+      >
+        <Icon icon="icon-trashcan" />
       </a>
     </div>
     <h3>Circle Icon Button - Small</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example" style="border: 1px solid red;">
       <a
         href="/en/cart/remove/378093"
         class="sh-atom-button-icon"
@@ -246,7 +260,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>Icon Button - Plain</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="/en/cart/remove/378093"
         class="sh-atom-button-icon"
@@ -258,7 +272,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h3>Close button</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="/en/cart/remove/378093"
           class="sh-atom-button-icon"
@@ -270,7 +284,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>With price</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -282,7 +296,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h3>price and expanded</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -294,7 +308,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -306,7 +320,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -318,7 +332,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -331,7 +345,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>Price and separator •</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -345,7 +359,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
     </div>
     <hr>
     <h3>reverse</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -358,7 +372,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h3>with icon</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -371,7 +385,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h3>expanded</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -384,7 +398,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <Icon icon="icon-cart" />
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -397,7 +411,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <Icon icon="icon-cart" />
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -410,7 +424,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -423,7 +437,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -436,7 +450,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -450,7 +464,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>As a toolbar</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -464,7 +478,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>With price</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -476,7 +490,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h3>price and expanded</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -488,7 +502,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -500,7 +514,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -512,7 +526,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -525,7 +539,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>Price and separator •</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -539,7 +553,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
     </div>
     <hr>
     <h3>reverse</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -552,7 +566,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h3>with icon</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -565,7 +579,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h3>expanded</h3>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -578,7 +592,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <Icon icon="icon-cart" />
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -591,7 +605,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <Icon icon="icon-cart" />
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -604,7 +618,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -617,7 +631,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -630,7 +644,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -644,7 +658,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>As a toolbar</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
           href="#"
           class="sh-atom-button"
@@ -669,7 +683,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>Chevron Down</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="#anchor"
         class="sh-atom-button"
@@ -682,7 +696,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       </a>
     </div>
     <h2>Chevron Up</h2>
-    <div class="example" style="padding: 1rem;">
+    <div class="example">
       <a
         href="#anchor"
         class="sh-atom-button"
@@ -772,15 +786,26 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       <Icon icon="icon-close" class="sh-atom-icon" />
     </span>
   </button>
-  <hr>
-  <h2>Swiper</h2>
-  <h3>Custom prev and next</h3>
-  <!--<div class="sh-custom-swiper-button-next astro-OE7POGHR" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-258a133d612e9c17" aria-disabled="false">
-    <svg width="20" height="8" viewBox="0 0 20 8" fill="none" aria-labelledby="iconArrowRight" id="iconArrowRight" xmlns="http://www.w3.org/2000/svg" class="astro-OE7POGHR" aria-hidden="true">
-      <title>iconArrowRight</title>
-      <desc>icon Arrow Right</desc>
-      <path id="arrow-right-line" d="M0 4H12.5185" stroke="currentcolor" stroke-width="0.8"></path>
-      <path id="arrow-right-point" d="M8.66667 0L13 4L8.66667 8" stroke="currentcolor" stroke-width="0.8"></path>
-    </svg>
-  </div>-->
 </BaseLayout>
+<style is:global>
+  .frame {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .example {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .on-dark {
+    background-color: var(--color-accent16);
+  }
+
+  .sh-atom-button-icon {
+    border: 1px solid red;
+  }
+</style>
