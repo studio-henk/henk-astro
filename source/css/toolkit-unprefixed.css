@@ -3480,6 +3480,13 @@ main.sh-l-page-main section + section {
   animation-timing-function: ease;
 }
 
+.nav-card video {
+  aspect-ratio: 1112/1444;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+
 .blogpost__copy--title {
   margin-top: 0;
 }

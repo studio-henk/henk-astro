@@ -59,3 +59,10 @@
     animation-iteration-count: 1;
     animation-timing-function: ease;
 }
+
+.nav-card video {
+    aspect-ratio: 1112/1444;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+}
