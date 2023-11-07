@@ -413,7 +413,20 @@ const tableGallery = 5;
         <!-- in pimcore connect to pages/links under this category -->
         <!-- if number of pages/links > 4 then gallery is a slider -->
         <div class="submenu__grid category__gallery --category-gallery-active">
+          <!-- video test -->
           <NavCard
+              hasLink="/en/products/base-collection"
+              linkTitle="base collection"
+              ximgUrl="/static/std/assets/toolkit/images/navbar/shop-base_01.jpg"
+              imgWidth="1112"
+              imgHeight="1444"
+              altText="alt text here"
+              caption="Base Collection"
+              delay="0ms"
+              isVideo="true"
+              videoSrc="/static/std/assets/video/portrait_sound.mp4"
+          />
+          <!--<NavCard
             hasLink="/en/products/base-collection"
             linkTitle="base collection"
             imgUrl="/static/std/assets/toolkit/images/navbar/shop-base_01.jpg"
@@ -422,7 +435,7 @@ const tableGallery = 5;
             altText="alt text here"
             caption="Base Collection"
             delay="0ms"
-          />
+          />-->
           <NavCard
             hasLink="/en/smart-collection"
             linkTitle="click to go to this"
@@ -467,12 +480,14 @@ const tableGallery = 5;
                 <NavCard
                   hasLink="https://disney.com"
                   linkTitle="Click to go to Disney website."
-                  imgUrl="/static/std/assets/toolkit/images/navbar/tables_02.jpg"
+                  ximgUrl="/static/std/assets/toolkit/images/navbar/tables_02.jpg"
                   imgWidth="1112"
                   imgHeight="1444"
                   altText="Photo of a cliff with a nice view on the ocean."
                   caption="Coffee Tables"
                   delay="300ms"
+                  isVideo="true"
+                  videoSrc="/static/std/assets/video/portrait_sound.mp4"
                 />
               </swiper-slide>
               <swiper-slide>

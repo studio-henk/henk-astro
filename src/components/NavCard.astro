@@ -1,9 +1,11 @@
 ---
+import Video from "./Video.astro";
 const {
   caption = "Here should be a caption text",
   hasLink = false,
   linkTitle,
   imgUrl,
+  videoSrc,
   imgWidth,
   imgHeight,
   altText,
@@ -21,19 +23,32 @@ const {
     title={linkTitle}
   >
     <div class="nav-card__image-mask">
-      <img
-        src={imgUrl}
-        class="nav-card__image"
-        alt={altText}
-        width={imgWidth}
-        height={imgHeight}
-        decoding="async"
-        loading="eager"
-      />
+      {
+        imgUrl && <img
+              src={imgUrl}
+              class="nav-card__image"
+              alt={altText}
+              width={imgWidth}
+              height={imgHeight}
+              decoding="async"
+              loading="eager"
+          />
+      }
+      {
+          videoSrc && <Video
+              src={videoSrc}
+              classNames=""
+          />
+      }
     </div>
     <p class="nav-card__caption hover-interaction-c-2-target">{caption}</p>
   </a>
 </div>
-<!--<style is:global>-->
-<!--  -->
-<!--</style>-->
+<style is:global>
+  .nav-card video {
+    aspect-ratio: 1112/1444;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+  }
+</style>
