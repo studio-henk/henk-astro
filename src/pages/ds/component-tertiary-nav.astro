@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TertiaryNav from "../../components/TertiaryNav.astro";
+---
+
+<BaseLayout title="Component T Nav">
+  <h1>T Nav</h1>
+  <hr />
+  <div class="example">
+    <TertiaryNav />
+  </div>
+</BaseLayout>
+<style>
+  .example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+</style>
+<script
+  src="/static/std/assets/js/web-components/CardWithImage.js"
+  type="module"
+></script>

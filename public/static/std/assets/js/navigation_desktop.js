@@ -1,6 +1,8 @@
 const navBarDesktop = {
   name: "navBarDesktop",
   menuOpen: false,
+  hasEventListener: false,
+  subMenus: [],
   rootElementDesktop: document.documentElement,
   bodyElement: document.querySelector("body"),
   mastheadDesktop: document.querySelector(".masthead-desktop"),
@@ -9,11 +11,19 @@ const navBarDesktop = {
   ),
   subMenuOpenLinks: document.querySelectorAll(".submenu__open-link"),
   subMenuCloseLinks: document.querySelectorAll(".submenu__close-link"),
+  tertiaryNavOpenLinks: document.querySelectorAll(
+    ".masthead-desktop .tertiary-navigation .tertiary-navigation__button--open"
+  ),
+  tertiaryNavCloseLinks: document.querySelectorAll(
+    ".masthead-desktop .tertiary-navigation .tertiary-navigation__button--close"
+  ),
   categoryGallery: document.querySelectorAll(
-      ".masthead-desktop .category__gallery",
+    ".masthead-desktop .category__gallery"
   ),
   init: function () {
     console.log("init called");
+    // console.log(navBarDesktop.subMenus);
+    // let hasEventListener = false;
 
     // LISTENERS
 
@@ -35,18 +45,20 @@ const navBarDesktop = {
       // check if a submenu submenu left open
       // if so then close it
       // and restore its gallery to index 0
-      const isSubmenuSubmenuOpen = document.querySelector(".submenu__open-link.--is-active");
-      // console.log(isSubmenuSubmenuOpen);
+      const isSubmenuSubmenuOpen = document.querySelector(
+        ".submenu__open-link.--is-active"
+      );
       if (isSubmenuSubmenuOpen) {
         navBarDesktop.resetGallery();
-        navBarDesktop.resetActiveSubmenu();
+        navBarDesktop.resetActiveSubmenuSubmenu();
       }
+      navBarDesktop.closeTertiaryNavAndGallery();
     });
 
     // primary nav links that have a submenu
     navBarDesktop.primaryNavLinks.forEach(function (
       currentElement,
-      currentIndex
+      primaryNavIndex
     ) {
       // disable clicking on these
       currentElement.addEventListener("click", function (event) {
@@ -55,17 +67,56 @@ const navBarDesktop = {
 
       // set mouse over listener
       currentElement.addEventListener("mouseover", function (event) {
-        navBarDesktop.handlePrimaryLinks(currentElement, currentIndex, event);
+        navBarDesktop.handlePrimaryLinks(
+          currentElement,
+          primaryNavIndex,
+          event
+        );
+      });
+
+      // set the submenu handler data her
+      // Create a new submenu
+      const newSubmenu = {
+        hasEventListener: false,
+      };
+
+      // Add the new submenu to the array
+      navBarDesktop.subMenus[primaryNavIndex] = newSubmenu;
+    });
+
+    // Tertiary Nav Open Links
+    navBarDesktop.tertiaryNavOpenLinks.forEach(function (
+      currentElement,
+      currentIndex
+    ) {
+      currentElement.addEventListener("click", function (event) {
+        navBarDesktop.handleTertiaryNavOpen(
+          currentElement,
+          currentIndex,
+          event
+        );
+      });
+    });
+
+    // Tertiary Nav Close Links
+    navBarDesktop.tertiaryNavCloseLinks.forEach(function (
+      currentElement,
+      currentIndex
+    ) {
+      currentElement.addEventListener("click", function (event) {
+        navBarDesktop.handleTertiaryNavClose(
+          currentElement,
+          currentIndex,
+          event
+        );
       });
     });
   },
   invertMainNav: function () {
     navBarDesktop.mastheadDesktop.classList.add("--masthead-desktop-hovered");
   },
-  handlePrimaryLinks: function (currentElement, currentIndex, event) {
-    // console.log("hello: CI: " + currentIndex);
+  handlePrimaryLinks: function (currentElement, primaryNavIndex, event) {
     event.preventDefault();
-    // check if already open ie has class --hoverlink-active
     if (!currentElement.classList.contains("--hoverlink-active")) {
       // deactivate any open active link
       const activeLink = navBarDesktop.mastheadDesktop.querySelector(
@@ -74,138 +125,212 @@ const navBarDesktop = {
       if (activeLink != null) {
         activeLink.classList.remove("--hoverlink-active");
       }
-
       // add class active to current hovered one
       currentElement.classList.add("--hoverlink-active");
 
+      // move this !
       // check if a submenu submenu left open
       // if so then close it
       // and restore its gallery to index 0
-      const isSubmenuSubmenuOpen = document.querySelector(".submenu__open-link.--is-active");
-      // console.log(isSubmenuSubmenuOpen);
+      const isSubmenuSubmenuOpen = document.querySelector(
+        ".submenu__open-link.--is-active"
+      );
       if (isSubmenuSubmenuOpen) {
         navBarDesktop.resetGallery();
-        navBarDesktop.resetActiveSubmenu();
+        navBarDesktop.resetActiveSubmenuSubmenu();
+        navBarDesktop.closeTertiaryNavAndGallery();
       }
 
-      const anyOpenSubmenus =
-        navBarDesktop.bodyElement.querySelector(".--submenu-open");
-      if (anyOpenSubmenus != null) {
-        anyOpenSubmenus.classList.remove("--submenu-open");
-      } else {
-        navBarDesktop.fadeInSubmenu(currentIndex);
-      }
+      // clear / close any open submenus
+      navBarDesktop.closeSubmenu(primaryNavIndex);
 
-      // add open class to this submenu
-      navBarDesktop.bodyElement
-        .querySelectorAll(".dt-submenu")
-        [currentIndex].classList.add("--submenu-open");
-
-      // event handlers for submenu open links
-      // console.log(navBarDesktop.subMenuOpenLinks);
-      const currentOpenSubMenuOpenLinks = document.querySelectorAll(
-        ".--submenu-open .submenu__open-link"
-      );
-      const currentOpenSubMenuCloseLinks = document.querySelectorAll(
-        ".--submenu-open .submenu__close-link"
-      );
-      /*console.log(currentOpenSubMenuOpenLinks);*/
-      currentOpenSubMenuOpenLinks.forEach(function (
+      // open the submenu by index
+      navBarDesktop.openSubmenu(primaryNavIndex);
+    }
+  },
+  openSubmenu: function (primaryNavIndex) {
+    // add open class to this submenu
+    navBarDesktop.bodyElement
+      .querySelectorAll(".dt-submenu")
+      [primaryNavIndex].classList.add("--submenu-open");
+    if (!navBarDesktop.subMenus[primaryNavIndex].hasEventListener) {
+      navBarDesktop.setHandlersForSubmenu(primaryNavIndex);
+    }
+  },
+  setHandlersForSubmenu: function (primaryNavIndex) {
+    const openSubmenu =
+      navBarDesktop.bodyElement.querySelectorAll(".dt-submenu")[
+        primaryNavIndex
+      ];
+    // get the open links for this submenu
+    const openSubmenuOpenLinks = openSubmenu.querySelectorAll(
+      ".submenu__open-link"
+    );
+    // set event handler
+    if (openSubmenuOpenLinks.length > 0) {
+      openSubmenuOpenLinks.forEach(function (
         currentElement,
-        currentIndex
+        subMenuOpenLinksIndex
       ) {
-        // handle clicking on these
-        currentElement.addEventListener("click", function (event) {
+        const openSubmenuFunc = function (event) {
           event.preventDefault();
-          navBarDesktop.openSubmenuSubmenu(currentIndex, currentElement);
-        });
+          navBarDesktop.openSubmenuSubmenu(
+            subMenuOpenLinksIndex,
+            currentElement,
+            event
+          );
+        };
+        currentElement.addEventListener("click", openSubmenuFunc);
+        // add to array
+        const newSubmenu = {
+          hasEventListener: true,
+        };
+        navBarDesktop.subMenus[primaryNavIndex] = newSubmenu;
       });
+    }
 
-      // event handlers for submenu close links
-      currentOpenSubMenuCloseLinks.forEach(function (
+    // get the close links for this submenu
+    const submenuCloseLinks = openSubmenu.querySelectorAll(
+      ".submenu__close-link"
+    );
+
+    // set event handler
+    if (submenuCloseLinks.length > 0) {
+      submenuCloseLinks.forEach(function (
         currentElement,
-        currentIndex
+        submenuCloseLinksIndex
       ) {
-        // handle clicking on these
-        currentElement.addEventListener("click", function (event) {
+        const closeSubmenuFunc = function (event) {
           event.preventDefault();
-          navBarDesktop.closeSubmenuSubmenu(currentIndex, currentElement);
-        });
+          navBarDesktop.closeSubmenuSubmenu(
+            submenuCloseLinksIndex,
+            currentElement,
+            event
+          );
+        };
+        currentElement.addEventListener("click", closeSubmenuFunc);
+        // navBarDesktop.hasEventListener = true;
       });
     }
   },
-  resetActiveSubmenu: function () {
+  closeSubmenu: function (primaryNavIndex) {
+    const anyOpenSubmenus =
+      navBarDesktop.bodyElement.querySelector(".--submenu-open");
+    if (anyOpenSubmenus != null) {
+      anyOpenSubmenus.classList.remove("--submenu-open");
+    } else {
+      navBarDesktop.fadeInSubmenu(primaryNavIndex);
+    }
+  },
+  //TODO: still used??
+  resetActiveSubmenuSubmenu: function () {
+    // console.log(document.querySelector(".dt-submenu .--is-active"));
     if (document.querySelector(".dt-submenu .--is-active")) {
       document
         .querySelector(".dt-submenu .--is-active")
         .classList.remove("--is-active");
     }
+    navBarDesktop.closeTertiaryNavAndGallery();
   },
-  openSubmenuSubmenu: function (currentIndex, currentElement) {
-    // console.log(currentIndex);
-    navBarDesktop.resetActiveSubmenu();
-
+  openSubmenuSubmenu: function (subMenuOpenLinksIndex, currentElement) {
+    navBarDesktop.resetActiveSubmenuSubmenu();
     currentElement.classList.add("--is-active");
-    navBarDesktop.showCorrespondingGallery(currentIndex);
+    navBarDesktop.showCorrespondingGallery(subMenuOpenLinksIndex);
   },
-  closeSubmenuSubmenu: function (currentIndex, currentElement) {
-    // console.log('close triggerd');
+  closeSubmenuSubmenu: function (subMenuOpenLinksIndex, currentElement) {
+    // console.log(currentIndex);
+    // console.log(subMenuOpenLinksIndex);
     if (currentElement) {
-      // currentElement.previousElementSibling.classList.remove("--is-active");
-      // remove is-active class from open/close link
-      navBarDesktop.resetActiveSubmenu();
-      // de-activate other gallery in this submenu
-      currentElement.parentElement.parentElement.parentElement.nextElementSibling.querySelector(".--category-gallery-active").classList.remove("--category-gallery-active");
-      // reset first gallery to active
-      currentElement.parentElement.parentElement.parentElement.nextElementSibling.querySelector(".category__gallery:first-child").classList.add("--category-gallery-active");
+      navBarDesktop.resetActiveSubmenuSubmenu();
+      currentElement.parentElement.parentElement.parentElement.nextElementSibling
+        .querySelector(".--category-gallery-active")
+        .classList.remove("--category-gallery-active");
+      currentElement.parentElement.parentElement.parentElement.nextElementSibling
+        .querySelector(".category__gallery:first-child")
+        .classList.add("--category-gallery-active");
     } else {
-      navBarDesktop.resetActiveSubmenu();
-      /*navBarDesktop.resetActiveGallery();*/
+      navBarDesktop.resetActiveSubmenuSubmenu();
       console.log("what????");
     }
   },
-  showCorrespondingGallery: function (currentIndex) {
-    // console.log('showCorrespondingGallery: ' + currentIndex);
-    let galleryIndex = currentIndex + 1;
-    /*let galleryIndex = currentIndex;*/
+  showCorrespondingGallery: function (subMenuOpenLinksIndex) {
+    // console.log(currentIndex);
+    // console.log(subMenuOpenLinksIndex);
+    let galleryIndex = subMenuOpenLinksIndex + 1;
     const currentOpenSubmenu = document.querySelector(".--submenu-open");
-    /*const currentActiveGallery = document.querySelector(".--category-gallery-active");*/
-    const currentActiveGallery = currentOpenSubmenu.querySelector(".--category-gallery-active");
-    // console.log(currentActiveGallery);
+    const currentActiveGallery = currentOpenSubmenu.querySelector(
+      ".--category-gallery-active"
+    );
     if (currentActiveGallery) {
       currentActiveGallery.classList.remove("--category-gallery-active");
     }
     // find the right gallery to show inside this
-    currentOpenSubmenu.querySelectorAll(".category__gallery")[galleryIndex].classList.add("--category-gallery-active");
+    currentOpenSubmenu
+      .querySelectorAll(".category__gallery")
+      [galleryIndex].classList.add("--category-gallery-active");
   },
   resetGallery: function () {
-    // de-activate other gallery in this submenu
-    // currentElement.parentElement.parentElement.parentElement.nextElementSibling.querySelector(".--category-gallery-active").classList.remove("--category-gallery-active");
-    // reset first gallery to active
-    //  currentElement.parentElement.parentElement.parentElement.nextElementSibling.querySelector(".category__gallery:first-child").classList.add("--category-gallery-active");
-    const ActiveGallery = document.querySelector(".--submenu-open .--category-gallery-active");
+    const ActiveGallery = document.querySelector(
+      ".--submenu-open .--category-gallery-active"
+    );
     ActiveGallery.classList.remove("--category-gallery-active");
     // set first gallery for this submenu active again
-    document.querySelectorAll(".--submenu-open .category__gallery")[0].classList.add("--category-gallery-active");
+    document
+      .querySelectorAll(".--submenu-open .category__gallery")[0]
+      .classList.add("--category-gallery-active");
   },
-  fadeInSubmenu: function (currentIndex) {
-    // console.log("fadeInSub called");
+  handleTertiaryNavOpen: function (currentElement, currentIndex, event) {
+    navBarDesktop.closeTertiaryNavAndGallery();
+    currentElement.parentElement.parentElement.setAttribute("open", "");
+    navBarDesktop.showTertiaryGallery(currentIndex);
+  },
+  closeTertiaryNavAndGallery: function () {
+    const tertNavs = document.querySelectorAll(".tertiary-navigation");
+    const tertNavsOpen = tertNavs.forEach(function (
+      tertNavElement,
+      tertNavIndex
+    ) {
+      // check if has open attr
+      if (tertNavElement.hasAttribute("open")) {
+        tertNavElement.removeAttribute("open");
+        navBarDesktop.resetTertiaryGallery(tertNavIndex);
+      }
+    });
+  },
+  handleTertiaryNavClose: function (currentElement, currentIndex, event) {
+    currentElement.parentElement.parentElement.removeAttribute("open");
+    navBarDesktop.resetTertiaryGallery(currentIndex);
+  },
+  showTertiaryGallery: function (tertiaryGalleryIndex) {
+    const tertiaryGalleries = document.querySelectorAll(
+      ".tertiary-navigation__gallery"
+    );
+    tertiaryGalleries[tertiaryGalleryIndex].classList.toggle(
+      "tertiary-navigation__gallery--active"
+    );
+  },
+  resetTertiaryGallery: function (tertiaryGalleryIndex) {
+    const tertiaryGalleries = document.querySelectorAll(
+      ".tertiary-navigation__gallery"
+    );
+    tertiaryGalleries[tertiaryGalleryIndex].classList.toggle(
+      "tertiary-navigation__gallery--active"
+    );
+  },
+  fadeInSubmenu: function (primaryNavIndex) {
     navBarDesktop.bodyElement
       .querySelectorAll(".dt-submenu")
-      [currentIndex].classList.add("--submenu-fade-in");
+      [primaryNavIndex].classList.add("--submenu-fade-in");
     navBarDesktop.bodyElement
       .querySelectorAll(".dt-submenu")
-      [currentIndex].addEventListener(
+      [primaryNavIndex].addEventListener(
         "animationend",
         navBarDesktop.fadeInEnded,
         false
       );
     navBarDesktop.rootElementDesktop.classList.add("--desktop-menu-open");
-    /*menuOpen = true;*/
-    // console.log("is navBarDesktop.menuOpen: " + navBarDesktop.menuOpen);
   },
   fadeInEnded: function () {
-    // console.log("fadeInEnded called");
     navBarDesktop.bodyElement
       .querySelector(".--submenu-fade-in")
       .removeEventListener("animationend", navBarDesktop.fadeInEnded, false);
@@ -213,14 +338,11 @@ const navBarDesktop = {
       .querySelector(".--submenu-fade-in")
       .classList.remove("--submenu-fade-in");
     navBarDesktop.menuOpen = true;
-    // console.log("navBarDesktop.menuOpen: " + navBarDesktop.menuOpen);
   },
   fadeOutSubmenu: function () {
-    // console.log("fadeOutSubmenu called");
     const currentlyOpenSubmenu =
       navBarDesktop.bodyElement.querySelector(".--submenu-open");
     if (currentlyOpenSubmenu != null) {
-      // console.log("fading submenu out");
       navBarDesktop.bodyElement
         .querySelector(".--submenu-open")
         .classList.add("--submenu-fade-out");
@@ -228,10 +350,8 @@ const navBarDesktop = {
         .querySelector(".--submenu-open.--submenu-fade-out")
         .addEventListener("animationend", navBarDesktop.fadeOutEnded, false);
     }
-    // console.log("navBarDesktop.menuOpen: " + navBarDesktop.menuOpen);
   },
   fadeOutEnded: function () {
-    // console.log("fade out ended");
     navBarDesktop.bodyElement
       .querySelector(".--submenu-fade-out")
       .removeEventListener("animationend", navBarDesktop.fadeOutEnded, false);
@@ -245,12 +365,8 @@ const navBarDesktop = {
       .querySelector(".--hoverlink-active")
       .classList.remove("--hoverlink-active");
     navBarDesktop.rootElementDesktop.classList.remove("--desktop-menu-open");
-    // menuOpen = false;
     navBarDesktop.menuOpen = false;
-    // console.log("navBarDesktop.menuOpen: " + navBarDesktop.menuOpen);
-    // close any open submenu under Shop
-    // closeSubmenuSubmenu();
-    navBarDesktop.resetActiveSubmenu();
+    navBarDesktop.resetActiveSubmenuSubmenu();
   },
 };
 

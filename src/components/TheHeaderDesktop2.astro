@@ -86,7 +86,7 @@ const tableGallery = 5;
         <ul class="submenu__ul">
           <li>
             <a
-              class="category__linkx submenu__link submenu__open-link"
+              class="submenu__link submenu__open-link hover-interaction-a"
               href="#tables"
               >Tables
             </a>
@@ -99,37 +99,87 @@ const tableGallery = 5;
               <ul class="category__list">
                 <li>
                   <a
-                    class="category__list-link"
-                    href={"/" + lang + "/products/all-tables"}>All Tables</a
+                    class="category__list-link hover-interaction-a"
+                    href={"/" + lang + "/products/tables"}>All Tables</a
+                  >
+                </li>
+                <li>
+                  <div class="tertiary-navigation">
+                    <nav class="tertiary-navigation__nav">
+                      <button
+                        type="button"
+                        class="tertiary-navigation__button tertiary-navigation__button--open hover-interaction-a"
+                        >Dining Tables
+                      </button>
+                      <button
+                        type="button"
+                        class="tertiary-navigation__button tertiary-navigation__button--close tertiary-navigation__button--hidden hover-interaction-a"
+                        >Dining Tables</button
+                      >
+                    </nav>
+                    <ul class="tertiary-navigation__ul">
+                      <li>
+                        <a
+                          class="tertiary-navigation__link hover-interaction-a"
+                          href="/en/products/dining-tables">All Dining Tables</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="tertiary-navigation__link hover-interaction-a"
+                          href="/en/products/dining-tables?diningTableTopShape%5B%5D=RD"
+                          >Round Dining Tables</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="tertiary-navigation">
+                    <nav class="tertiary-navigation__nav">
+                      <button
+                        type="button"
+                        class="tertiary-navigation__button tertiary-navigation__button--open hover-interaction-a"
+                        >Coffee Tables</button
+                      >
+                      <button
+                        type="button"
+                        class="tertiary-navigation__button tertiary-navigation__button--close tertiary-navigation__button--hidden hover-interaction-a"
+                        >Coffee Tables</button
+                      >
+                    </nav>
+                    <ul class="tertiary-navigation__ul">
+                      <li>
+                        <a
+                          class="tertiary-navigation__link hover-interaction-a"
+                          href="/en/products/coffee-tables">All Coffee Tables</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="tertiary-navigation__link hover-interaction-a"
+                          href="/en/products/coffee-tables?coffeeTableTopShape%5B%5D=RD"
+                          >Round Coffee Tables</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a
+                    class="category__list-link hover-interaction-a"
+                    href="/en/products/home-desks">Home Desks</a
                   >
                 </li>
                 <li>
                   <a
-                    class="category__list-link"
-                    href={"/" + lang + "/products/dining-tables"}
-                    >Dining Tables</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="category__list-link"
-                    href="/en/products/coffee-tables">Coffee Tables</a
-                  >
-                </li>
-                <li>
-                  <a class="category__list-link" href="/en/products/home-desks"
-                    >Home Desks</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="category__list-link"
+                    class="category__list-link hover-interaction-a"
                     href="/en/products/bistro-tables">Bistro Tables</a
                   >
                 </li>
                 <li>
                   <a
-                    class="category__list-link"
+                    class="category__list-link hover-interaction-a"
                     href="/en/products/outdoor-tables">Outdoor Tables</a
                   >
                 </li>
@@ -138,7 +188,7 @@ const tableGallery = 5;
           </li>
           <li>
             <a
-              class="category__linkx submenu__link submenu__open-link"
+              class="submenu__link submenu__open-link hover-interaction-a"
               href="#chairs"
               >Chairs
             </a>
@@ -187,7 +237,7 @@ const tableGallery = 5;
           </li>
           <li>
             <a
-              class="category__link submenu__link submenu__open-link"
+              class="category__link submenu__link submenu__open-link hover-interaction-a"
               href="#sofas">Sofas</a
             >
             <a
@@ -224,7 +274,7 @@ const tableGallery = 5;
           </li>
           <li>
             <a
-              class="category__link submenu__link submenu__open-link"
+              class="category__link submenu__link submenu__open-link hover-interaction-a"
               href="#cabinets"
               >Cabinets
             </a>
@@ -270,13 +320,11 @@ const tableGallery = 5;
           </li>
           <li>
             <a
-              class="category__linkx submenu__link submenu__open-link"
+              class="submenu__link submenu__open-link hover-interaction-a"
               href="#accessories"
               >Accessories
             </a>
-            <a
-              class="category__close-linkx submenu__link submenu__close-link"
-              href="#accessories"
+            <a class="submenu__link submenu__close-link" href="#accessories"
               >Accessories
             </a>
             <div class="category__list-container">
@@ -309,13 +357,11 @@ const tableGallery = 5;
           </li>
           <li>
             <a
-              class="category__linkx submenu__link submenu__open-link"
+              class="submenu__link submenu__open-link hover-interaction-a"
               href="#outdoor"
               >Outdoor
             </a>
-            <a
-              class="category__close-linkx submenu__link submenu__close-link"
-              href="#outdoor"
+            <a class="submenu__link submenu__close-link" href="#outdoor"
               >Outdoor
             </a>
             <div class="category__list-container">
@@ -493,8 +539,8 @@ const tableGallery = 5;
             hasLink="https://disney.com"
             linkTitle="Click to go to Disney website."
             imgUrl="/static/std/assets/toolkit/images/navbar/chairs_01.jpg"
-            imgWidth="556"
-            imgHeight="722"
+            imgWidth="1112"
+            imgHeight="1444"
             altText="Photo of a cliff with a nice view on the ocean."
             caption="Title here"
             delay="0ms"
@@ -503,8 +549,8 @@ const tableGallery = 5;
             hasLink="https://disney.com"
             linkTitle="Click to go to Disney website."
             imgUrl="/static/std/assets/toolkit/images/navbar/chairs_02.jpg"
-            imgWidth="556"
-            imgHeight="722"
+            imgWidth="1112"
+            imgHeight="1444"
             altText="Photo of a cliff with a nice view on the ocean."
             caption="Title here"
             delay="300ms"
@@ -513,8 +559,8 @@ const tableGallery = 5;
             hasLink="https://disney.com"
             linkTitle="Click to go to Disney website."
             imgUrl="/static/std/assets/toolkit/images/navbar/chairs_03.jpg"
-            imgWidth="556"
-            imgHeight="722"
+            imgWidth="1112"
+            imgHeight="1444"
             altText="Photo of a cliff with a nice view on the ocean."
             caption="Title here"
             delay="600ms"
@@ -523,8 +569,8 @@ const tableGallery = 5;
             hasLink="https://disney.com"
             linkTitle="Click to go to Disney website."
             imgUrl="/static/std/assets/toolkit/images/navbar/chairs_04.jpg"
-            imgWidth="556"
-            imgHeight="722"
+            imgWidth="1112"
+            imgHeight="1444"
             altText="Photo of a cliff with a nice view on the ocean."
             caption="Title here"
             delay="900ms"
@@ -705,7 +751,54 @@ const tableGallery = 5;
             delay="900ms"
           />
         </div>
-        <!-- end gallery -->
+        <!-- end level 2 gallery -->
+        <!--tertiary-navigation__galleries-->
+        <!-- <div class="tertiary-navigation__galleries"> -->
+        <div class="tertiary-navigation__gallery">
+          <NavCard
+            hasLink="/en/products/dining-tables"
+            linkTitle="click to go to this"
+            imgUrl="https://picsum.photos/id/702/1112/1444"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="alt text"
+            caption="All Dining Tables"
+            delay="0ms"
+          />
+          <NavCard
+            hasLink="https://www.studio-henk.nl/en/products/dining-tables?diningTableTopShape%5B%5D=RD"
+            linkTitle="click to go to this"
+            imgUrl="https://picsum.photos/id/703/1112/1444"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="alt text"
+            caption="Round Dining Tables"
+            delay="300ms"
+          />
+        </div>
+        <div class="tertiary-navigation__gallery">
+          <NavCard
+            hasLink="/en/products/coffee-tables"
+            linkTitle="click to go to this"
+            imgUrl="https://picsum.photos/id/702/1112/1444"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="alt text"
+            caption="All Coffee Tables"
+            delay="0ms"
+          />
+          <NavCard
+            hasLink="https://www.studio-henk.nl/en/products/coffee-tables?coffeeTableTopShape%5B%5D=RD"
+            linkTitle="click to go to this"
+            imgUrl="https://picsum.photos/id/703/1112/1444"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="alt text"
+            caption="Round Coffee Tables"
+            delay="300ms"
+          />
+        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -925,24 +1018,24 @@ const tableGallery = 5;
             delay="300ms"
           />
           <NavCard
-              hasLink="/en/about-us"
-              linkTitle="click to go to this"
-              imgUrl="https://picsum.photos/id/700/1112/1444"
-              imgWidth="1112"
-              imgHeight="1444"
-              altText="alt text"
-              caption="Service & Maintenance"
-              delay="600ms"
+            hasLink="/en/about-us"
+            linkTitle="click to go to this"
+            imgUrl="https://picsum.photos/id/700/1112/1444"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="alt text"
+            caption="Service & Maintenance"
+            delay="600ms"
           />
           <NavCard
-              hasLink="/en/about-us"
-              linkTitle="click to go to this"
-              imgUrl="https://picsum.photos/id/701/1112/1444"
-              imgWidth="1112"
-              imgHeight="1444"
-              altText="alt text"
-              caption="Delivery Times & Prices"
-              delay="900ms"
+            hasLink="/en/about-us"
+            linkTitle="click to go to this"
+            imgUrl="https://picsum.photos/id/701/1112/1444"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="alt text"
+            caption="Delivery Times & Prices"
+            delay="900ms"
           />
         </div>
 
