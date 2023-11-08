@@ -1,13 +1,5 @@
-<svg
-        width="14"
-        height="8"
-        viewBox="0 0 14 8"
-        fill="none"
-        class="sh-atom-icon"
-        id="sh-icon-chevron-up"
-        style="position:relative;top:1px;"
-        xmlns="http://www.w3.org/2000/svg"
->
-    <path d="M6.10997 0.890034L6.95189 -2.83122e-07L14 7.04811L13.134 7.93814L6.95189 1.75601L0.865979 7.84192L0 7L3.53608 3.48797L6.10997 0.890034Z"
-          fill="currentcolor"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="icon-chevron-up">
+        <path id="Vector" d="M10.7285 7.34546L11.9313 6L22 16.6546L20.7629 18L11.9313 8.65454L3.23711 17.8545L2 16.5818L7.05154 11.2727L10.7285 7.34546Z" fill="#1F1F1F"/>
+    </g>
 </svg>

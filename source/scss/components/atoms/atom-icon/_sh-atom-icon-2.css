@@ -1,0 +1,9 @@
+/* class on svg element */
+.sh-atom-icon-2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background-icon, transparent);
+    color: currentColor;
+    fill: currentColor;
+}

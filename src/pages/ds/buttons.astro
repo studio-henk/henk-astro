@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/Icon.astro";
 import AtomTag from "../../components/Atoms/AtomTag.astro";
 import MobileNavButton from "../../components/MobileNavButton.astro";
+import NavCard from "../../components/NavCard.astro";
 ---
 
 <BaseLayout title="Buttons">
@@ -200,6 +201,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         data-icon-arrow-left="true"
       >
         <Icon icon="arrow-left" />
+        <!--<Icon class="sh-atom-icon-2" icon="arrow-left" />-->
         Arrow left
       </a>
     </div>
@@ -213,9 +215,64 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       >
         Discover<br />
         more
-        <Icon icon="icon-arrow-down" />
+        <Icon class="sh-atom-icon-2" icon="icon-arrow-down" />
       </a>
     </div>
+    <h2>Swiper prev and next</h2>
+    <h3>Prev</h3>
+    <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle" data-icon-arrow-left="true" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-10668aa19d29f10713" aria-disabled="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon-2" aria-hidden="true"><!--<title>{icon}</title>-->
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.76367 11.5212L10.3481 4.67718L9.69661 4L2.32575 11.6614L2 12L2.32575 12.3386L9.69661 20L10.3481 19.3228L3.76367 12.4788H21.5393H22V11.5212H21.5393H3.76367Z"></path>
+      </svg>
+    </div>
+    <h3>Next</h3>
+    <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-e541b13cbfe10625d" aria-disabled="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon-2" aria-hidden="true">
+        <g id="icon-arrow-right-nav-next">
+          <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M20.2363 12.4788L13.6519 19.3228L14.3034 20L21.6743 12.3386L22 12L21.6743 11.6614L14.3034 4L13.6519 4.67718L20.2363 11.5212L2.46068 11.5212H2V12.4788H2.46068L20.2363 12.4788Z"></path>
+        </g>
+      </svg>
+    </div>
+    <h4>In a swiper like container</h4>
+    <div class="swiper-container">
+      <div class="slides">
+        <NavCard
+            hasLink="https://disney.com"
+            linkTitle="Click to go to Disney website."
+            imgUrl="/static/std/assets/toolkit/images/navbar/tables_01-1112w.jpg"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="Photo of a cliff with a nice view on the ocean."
+            caption="Dining Tables"
+            delay="0ms"
+        />
+        <NavCard
+            hasLink="https://disney.com"
+            linkTitle="Click to go to Disney website."
+            ximgUrl="/static/std/assets/toolkit/images/navbar/tables_02.jpg"
+            imgWidth="1112"
+            imgHeight="1444"
+            altText="Photo of a cliff with a nice view on the ocean."
+            caption="Coffee Tables"
+            delay="300ms"
+            isVideo="true"
+            videoSrc="/static/std/assets/video/portrait_sound.mp4"
+        />
+      </div>
+      <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle" data-icon-arrow-left="true" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-10668aa19d29f10713" aria-disabled="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon-2" aria-hidden="true"><!--<title>{icon}</title>-->
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.76367 11.5212L10.3481 4.67718L9.69661 4L2.32575 11.6614L2 12L2.32575 12.3386L9.69661 20L10.3481 19.3228L3.76367 12.4788H21.5393H22V11.5212H21.5393H3.76367Z"></path>
+        </svg>
+      </div>
+      <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-e541b13cbfe10625d" aria-disabled="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon-2" aria-hidden="true">
+          <g id="icon-arrow-right-nav-next">
+            <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M20.2363 12.4788L13.6519 19.3228L14.3034 20L21.6743 12.3386L22 12L21.6743 11.6614L14.3034 4L13.6519 4.67718L20.2363 11.5212L2.46068 11.5212H2V12.4788H2.46068L20.2363 12.4788Z"></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <hr>
     <h2>Circle Icon Button</h2>
     <div class="example">
       <a
@@ -224,7 +281,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
         data-style="filled"
         data-shape="circle"
       >
-        <Icon icon="icon-trashcan" />
+        <Icon class="sh-atom-icon-2" icon="icon-trashcan"/>
       </a>
       <a
           href="/en/cart/remove/378093"
@@ -233,54 +290,17 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
           data-shape="circle"
           data-size="small"
       >
-        <Icon icon="icon-trashcan" />
-      </a>
-      <a
-          href="/en/cart/remove/378093"
-          class="sh-atom-button"
-          data-style="filled"
-          data-shape="circle"
-          data-size="large"
-      >
-        <Icon icon="icon-trashcan" />
+        <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-trashcan"/>
       </a>
     </div>
-    <h3>Circle Icon Button - Small</h3>
-    <div class="example" style="border: 1px solid red;">
-      <a
-        href="/en/cart/remove/378093"
-        class="sh-atom-button-icon"
-        data-style="filled"
-        data-shape="circle"
-        data-size="small"
-      >
-        <span class="icon-frame">
-          <Icon icon="icon-trashcan" />
-        </span>
-      </a>
-    </div>
-    <h2>Icon Button - Plain</h2>
+    <h3>Circle Icon Button - Small plain</h3>
     <div class="example">
       <a
         href="/en/cart/remove/378093"
-        class="sh-atom-button-icon"
+        class="sh-atom-button"
         data-style="plain-dark"
       >
-        <span class="icon-frame">
-          <Icon icon="icon-trashcan" />
-        </span>
-      </a>
-    </div>
-    <h3>Close button</h3>
-    <div class="example">
-      <a
-          href="/en/cart/remove/378093"
-          class="sh-atom-button-icon"
-          data-style="plain-dark"
-      >
-        <span class="icon-frame">
-          <Icon icon="icon-close" />
-        </span>
+          <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-trashcan"/>
       </a>
     </div>
     <h2>With price</h2>
@@ -381,7 +401,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
+        <Icon class="sh-atom-icon-2" icon="icon-cart" />
       </a>
     </div>
     <h3>expanded</h3>
@@ -770,7 +790,7 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
   <AtomTag text="fast delivery" icon="truck" iconPosition="left" />
   <hr />-->
   <p>with icon right</p>
-  <AtomTag text="fast delivery" icon="truck" iconPosition="right" />
+  <AtomTag text="fast delivery" icon="icon-truck" iconPosition="right" />
   <h2>close icon button</h2>
   <a
     href="/en/cart/remove/378093"
@@ -807,5 +827,11 @@ import MobileNavButton from "../../components/MobileNavButton.astro";
 
   .sh-atom-button-icon {
     border: 1px solid red;
+  }
+
+  .swiper-container .slides {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
   }
 </style>

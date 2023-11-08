@@ -6,59 +6,63 @@ import Icon from "../../components/Icon.astro";
     <div class="page">
         <h1>Icons</h1>
         <!--<Icon icon="henk-logo" />-->
-        <h2>All icons listed</h2>
-        <div class="example --icons">
-            <span class="icon"><Icon icon="arrow-left"/></span>
-            <span class="icon"><Icon icon="arrow-right"/></span>
-            <span class="icon"><Icon icon="arrow-nav-bar"/></span>
-            <span class="icon"><Icon icon="arrow-nav-bar-back"/></span>
-            <span class="icon"><Icon icon="icon-calendar"/></span>
-            <span class="icon"><Icon icon="icon-arrow-down"/></span>
-            <span class="icon"><Icon icon="icon-cart"/></span>
-            <span class="icon"><Icon icon="icon-chevron-down"/></span>
-            <span class="icon"><Icon icon="icon-chevron-up"/></span>
-            <span class="icon"><Icon icon="icon-close"/></span>
-            <span class="icon"><Icon icon="icon-hamburger"/></span>
-            <span class="icon"><Icon icon="icon-trashcan"/></span>
-            <span class="icon"><Icon icon="phone"/></span>
-            <span class="icon"><Icon icon="search"/></span>
-            <span class="icon"><Icon icon="truck"/></span>
+        <h2>Todo</h2>
+        <ul>
+            <li>blog list still uses icon-left class. (source/scss/base/_icons.scss)</li>
+            <li>redo: animated arrows</li>
+        </ul>
+        <h2>All icons listed at 24px size - default</h2>
+        <div class="example">
+            <Icon class="sh-atom-icon-2" icon="icon-arrow-left-nav-back"/>
+            <Icon class="sh-atom-icon-2" icon="icon-arrow-right-nav-next"/>
+            <Icon class="sh-atom-icon-2" icon="icon-calendar" />
+            <Icon class="sh-atom-icon-2" icon="icon-arrow-down"/>
+            <Icon class="sh-atom-icon-2" icon="icon-cart"/>
+            <Icon class="sh-atom-icon-2" icon="icon-chevron-down"/>
+            <Icon class="sh-atom-icon-2" icon="icon-chevron-up"/>
+            <Icon class="sh-atom-icon-2" icon="icon-close"/>
+            <Icon class="sh-atom-icon-2" icon="icon-hamburger"/>
+            <Icon class="sh-atom-icon-2" icon="icon-phone"/>
+            <Icon class="sh-atom-icon-2" icon="icon-search"/>
+            <Icon class="sh-atom-icon-2" icon="icon-truck"/>
+            <Icon class="sh-atom-icon-2" icon="icon-trashcan"/>
         </div>
-        <p>test button icon</p>
-        <a
-        href="#"
-        class="sh-atom-button"
-        data-style="filled"
-        data-icon-arrow-right="true"
-    >button text
-        <Icon icon="arrow-right" />
-    </a>
-    <h3>test Icon component</h3>
-    <p>Default is 24px by 24px</p>
-    <Icon
-        icon="search"
-        class="sh-atom-icon"
-    />
-    <p>large: 48px by 48px</p>
-    <Icon
-        icon="search"
-        class="sh-atom-icon"
-        data-size="large"
-        aria-hidden="false"
-    />
-    <p>small: 16px by 16px</p>
-    <Icon
-        icon="search"
-        class="sh-atom-icon"
-        data-size="small"
-    />
-    <h2>Arrow Right</h2>
-    <hr>
-    <h2>Close icon</h2>
-    <Icon
-        icon="icon-close"
-        class="sh-atom-icon"
-    />
+        <h2>All icons listed at 16px size - small</h2>
+        <div class="example">
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-arrow-left-nav-back"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-arrow-right-nav-next"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-calendar" />
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-arrow-down"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-cart"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-chevron-down"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-chevron-up"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-close"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-hamburger"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-phone"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-search"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-truck"/>
+            <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-trashcan"/>
+        </div>
+        <h2>Redo: special: animated</h2>
+        <div>
+            <Icon icon="arrow-left"/>
+            <Icon icon="arrow-right"/>
+        </div>
+        <hr>
+        <h2>How to use</h2>
+        <h3>In Astro</h3>
+        <pre><code>&lt;Icon class=&quot;sh-atom-icon-2&quot; icon=&quot;icon-trashcan&quot;/&gt;</code></pre>
+        <p>generates</p>
+        <pre><code>
+&lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;sh-atom-icon-2 astro-XLTLEOBX&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;g id=&quot;icon-trashcan&quot;&gt;
+        &lt;g id=&quot;Vector&quot;&gt;
+            &lt;path d=&quot;M18.0896 6.27805H5.88981C5.80516 6.27805 5.72035 6.32289 5.65682 6.39007C5.59329 6.45725 5.57217 6.54692 5.57217 6.63643L6.50413 20.3427C6.56766 21.261 7.26663 22 8.0715 22H15.9082C16.7131 22 17.4121 21.2832 17.4756 20.3427L18.4074 6.63643C18.4074 6.54692 18.3863 6.45725 18.3227 6.39007C18.2803 6.32289 18.1954 6.27805 18.0896 6.27805ZM9.02448 18.9989H8.98209C8.79149 18.9989 8.60091 18.9093 8.45258 18.7749C8.28311 18.618 8.17719 18.3718 8.17719 18.1255L7.81715 10.2421C7.79602 9.74944 8.13478 9.32386 8.60077 9.2792C8.81263 9.2792 9.02434 9.34637 9.17267 9.50322C9.34214 9.66007 9.44807 9.90626 9.44807 10.1526L9.80812 18.0359C9.82924 18.5287 9.49047 18.9765 9.02448 18.9989ZM12.8157 18.2152C12.8157 18.6406 12.4768 18.999 12.0744 18.999H11.926C11.5236 18.999 11.1846 18.6406 11.1846 18.2152L11.1848 10.063C11.1848 9.63748 11.5237 9.2791 11.9262 9.2791H12.0745C12.477 9.2791 12.8159 9.63748 12.8159 10.063L12.8157 18.2152ZM15.8022 18.1255C15.8022 18.3718 15.6963 18.6181 15.5268 18.7749C15.3785 18.9092 15.1879 18.9989 14.9973 18.9989H14.9549C14.51 18.9765 14.15 18.5509 14.1713 18.0359L14.5313 10.1526C14.5313 9.90623 14.6372 9.6822 14.8067 9.50319C14.9762 9.34635 15.1667 9.27917 15.3786 9.27917C15.8235 9.30151 16.1835 9.72705 16.1622 10.2421L15.8022 18.1255Z&quot;&gt;&lt;/path&gt;
+            &lt;path d=&quot;M17.4329 3.54535H14.4252C14.3616 2.69427 13.7051 2 12.879 2H11.0999C10.2739 2 9.59607 2.67192 9.53257 3.54535H6.54612C5.69898 3.54535 5 4.28442 5 5.18021V5.42657C5 5.60575 5.14833 5.76245 5.31764 5.76245H18.6824C18.8518 5.76245 19 5.6056 19 5.42657V5.18021C19.0001 4.28445 18.3011 3.54535 17.4329 3.54535ZM11.1 2.69427H12.8791C13.345 2.69427 13.7475 3.07498 13.7897 3.56771H10.1892C10.2315 3.075 10.634 2.69427 11.1 2.69427Z&quot;&gt;&lt;/path&gt;
+        &lt;/g&gt;
+    &lt;/g&gt;
+&lt;/svg&gt;
+        </code></pre>
     </div>
 </BaseLayout>
 <style>
@@ -67,22 +71,8 @@ import Icon from "../../components/Icon.astro";
         padding: 2rem;
     }
 
-    /* span as figma frame? */
-    .icon {
-        display: inline-flex;
-        border: 1px solid black;
-        /*width: 48px;
-        height: 48px;*/
-        width: 24px;
-        height: 24px;
-    }
-
-    .icon svg {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /*width: 24px;
-        height: 24px;*/
-        background-color: beige;
+    pre {
+        /*white-space: break-spaces;*/
+        overflow-x: auto;
     }
 </style>

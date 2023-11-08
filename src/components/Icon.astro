@@ -26,16 +26,22 @@ function getSVG(name: string) {
     };
 }
 
-/*const { icon } = Astro.props as Props;
-const { default: innerHTML } = await import(`../svg/${icon}.svg?raw`);*/
 const { icon, ...attributes } = Astro.props as Props;
 const { attributes: baseAttributes, innerHTML } = getSVG(icon);
+
+// Function to remove fill attribute from path elements
+function removeFillFromPathElements(innerHTML: string) {
+    const modifiedInnerHTML = innerHTML.replace(/fill="[^"]*"/g, '');
+    return modifiedInnerHTML;
+}
+
+const strippedInnerHTML = removeFillFromPathElements(innerHTML);
 
 const svgAttributes = { ...baseAttributes, ...attributes };
 ---
 <svg
     {...svgAttributes}
-    set:html={innerHTML}
+    set:html={strippedInnerHTML}
     aria-hidden='true'
 >
     <!--<title>{icon}</title>-->
