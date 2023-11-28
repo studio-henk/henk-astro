@@ -155,7 +155,7 @@
         transition: transform 0.4s;
       }
 
-      > a.icon-right {
+      a.icon-right {
         font-size: 0.75rem; // 12px
         text-transform: uppercase;
         letter-spacing: 1.8px;
@@ -670,4 +670,35 @@
 
 .main-nav__row>li.main-nav__item .sub-nav-category-link {
   margin-right: 0;
+}
+
+/* fix ios ipad 992 screen tap shop to open menu not working  */
+.main-nav__row > li.main-nav__item a.nav-close {
+  display: none;
+  margin-bottom: 0;
+}
+
+.main-nav__row > li.main-nav__item a.nav-close svg {
+  width: 12px;
+  height: 12px;
+  margin-left: 0.5rem;
+  margin-top: -2px;
+}
+
+@media only screen and (min-width: 992px) {
+  .touchevents .main-nav__row > li.main-nav__item :target#shop .nav-open {
+    display: none;
+  }
+
+  .touchevents .main-nav__row > li.main-nav__item :target#shop .nav-close {
+    display: block;
+  }
+
+  .touchevents .main-nav__row > li.main-nav__item :target#shop + .sub-nav {
+    max-height: 1000px;
+    opacity: 1;
+    padding-top: 11px;
+    transform: scaleY(1);
+    transition-duration: 0.5s;
+  }
 }

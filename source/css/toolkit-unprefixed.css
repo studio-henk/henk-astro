@@ -11570,7 +11570,7 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   height: 0.75rem;
   transition: transform 0.4s;
 }
-.main-nav__row > li.main-nav__item--with-dropdown > a.icon-right {
+.main-nav__row > li.main-nav__item--with-dropdown a.icon-right {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1.8px;
@@ -11970,6 +11970,34 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   margin-right: 0;
 }
 
+/* fix ios ipad 992 screen tap shop to open menu not working  */
+.main-nav__row > li.main-nav__item a.nav-close {
+  display: none;
+  margin-bottom: 0;
+}
+
+.main-nav__row > li.main-nav__item a.nav-close svg {
+  width: 12px;
+  height: 12px;
+  margin-left: 0.5rem;
+  margin-top: -2px;
+}
+
+@media only screen and (min-width: 992px) {
+  .touchevents .main-nav__row > li.main-nav__item :target#shop .nav-open {
+    display: none;
+  }
+  .touchevents .main-nav__row > li.main-nav__item :target#shop .nav-close {
+    display: block;
+  }
+  .touchevents .main-nav__row > li.main-nav__item :target#shop + .sub-nav {
+    max-height: 1000px;
+    opacity: 1;
+    padding-top: 11px;
+    transform: scaleY(1);
+    transition-duration: 0.5s;
+  }
+}
 textarea,
 input {
   box-sizing: border-box;
