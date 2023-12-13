@@ -1,0 +1,12 @@
+.hide-if-no-js {
+    display: none !important;
+}
+
+.atom-input-txt:required+.atom-label[data-style=labels-as-placeholders]+.molecule-input-label__message-invalid {
+    display: initial;
+}
+
+.recaptcha-error-msg,
+.molecule-input-label__message-invalid {
+    color: red;
+}
