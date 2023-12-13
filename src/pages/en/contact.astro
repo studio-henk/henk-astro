@@ -19,50 +19,7 @@ import SFcontactForm from "../../components/SFcontactForm.astro";
         <div id="page-title">
             <h1 class="h2">Contact</h1>
         </div>
-        <SFcontactForm />
+        <SFcontactForm client:load />
     </div>
-    <!-- vue -->
-    <script is:inline>
-        const app = new Vue({
-            delimiters: ["[[", "]]"],
-            el: "#app-vue-contact-form",
-            data: {
-                appName: "appContactFormVue",
-                loading: true,
-                errored: false,
-                debug: "...",
-                selectedCountry: "NL",
-                selectedCategory: "",
-            },
-            methods: {},
-            computed: {},
-            created() {
-                console.log(this.appName + " created");
-            },
-            mounted() {
-                console.log(this.appName + " mounted");
-                this.$nextTick(function () {
-                    // Code that will run only after the
-                    // entire view has been rendered
-                    this.loading = false;
-                });
-            }
-        });
-    </script>
-    <script slot="footer-scripts" defer>
-        function runTelField() {
-            var input = document.querySelector("#phone");
-            window.intlTelInput(input, {
-                // options here
-                // preferredCountries: ["nl", "be"],
-                initialCountry: "nl",
-                separateDialCode: true,
-                onlyCountries: ["at", "be", "nl", "de", "fr", "it", "lu"],
-                autoPlaceholder: "aggressive",
-                utilsScript: "/static/std/assets/toolkit/scripts/intlTelInput/js/utils.js",
-            });
-        }
 
-        // runTelField();
-    </script>
 </BaseLayout>

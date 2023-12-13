@@ -32,6 +32,8 @@ const app = {
       this.subject = this.selectedReason;
     },
     onSubmit(event) {
+
+      event.preventDefault();
       const trimmedEmail = this.$refs.email.value.trim();
       const trimmedName = this.$refs.name.value.trim();
 
