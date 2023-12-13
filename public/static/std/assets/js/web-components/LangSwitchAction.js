@@ -1,3 +1,5 @@
+console.log('hello lang-switch-action');
+
 const langSwitches = document.querySelectorAll("lang-switch");
 langSwitches.forEach(function (currentElement) {
   const url = currentElement.dataset.url;
