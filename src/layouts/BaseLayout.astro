@@ -5,8 +5,9 @@ const lang = getLangFromUrl(Astro.url);
 // import TheNav from "../components/TheNav.astro";
 import TheHeader from "../components/TheHeader.astro";
 import TheFooter from "../components/TheFooter.astro";
+import TheHeaderDesktop3 from "../components/TheHeaderDesktop3.astro";
 
-const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHero } = Astro.props;
+const { title, mainID, mainClass, pageClass, NavFont = "new", Theme, hasHero, showMsgBar } = Astro.props;
 ---
 <html lang={lang} class={pageClass}>
 <head>
@@ -33,7 +34,7 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
         crossorigin
     />
     <!-- NavBar styles -->
-    <link rel="preload" href="/static/std/assets/css/_masthead-desktop.css" as="style" />
+    <!--<link rel="preload" href="/static/std/assets/css/_masthead-desktop.css" as="style" />
     <link rel="preload" href="/static/std/assets/toolkit/styles/toolkit.css" as="style" />
     <link
         href="/static/std/assets/css/_masthead-desktop.css"
@@ -41,21 +42,34 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
         rel="stylesheet"
         type="text/css"
     />
+    -->
+
+    <!-- Preload stylesheets -->
+    <link rel="preload" href="/static/std/assets/components/navbar/_skeleton-loading.css" as="style" />
+    <link rel="preload" href="/static/std/assets/components/navbar/NavBarMobile.css" as="style" />
+    <link rel="preload" href="/static/std/assets/components/navbar/NavBar-desktop.css" as="style" />
+
+    <!-- Apply stylesheets -->
+    <link rel="stylesheet" href="/static/std/assets/components/navbar/_skeleton-loading.css" />
+    <link rel="stylesheet" href="/static/std/assets/components/navbar/NavBarMobile.css" />
+    <link rel="stylesheet" href="/static/std/assets/components/navbar/NavBar-desktop.css" />
+
     <link
         href="/static/std/assets/toolkit/styles/toolkit.css"
         media="screen"
         rel="stylesheet"
         type="text/css"
     />
+
     <slot name="head-styles"/>
     <!--scripts for navigation-->
-    <script src="/static/std/assets/js/web-components/LangSwitch.js" type="module"></script>
+    <!--<script src="/static/std/assets/js/web-components/LangSwitch.js" type="module"></script>
     <script defer src="/static/std/assets/js/web-components/LangSwitchAction.js"></script>
     <script defer src="/static/std/assets/js/navigation_mobile.js"></script>
     <script slot="head-scripts" src="/static/std/assets/js/web-components/HamburgerButton.js" type="module"></script>
     <script defer src="/static/std/assets/js/navigation_desktop.js"></script>
     <script defer src="/static/std/assets/js/navigation_scroll-observer.js"></script>
-    <script defer src="/static/std/assets/js/navigation_content-padding.js"></script>
+    <script defer src="/static/std/assets/js/navigation_content-padding.js"></script>-->
     <!--end scripts for navigation-->
     <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
     <script is:inline defer src="/static/std/assets/toolkit/scripts/toolkit.js"></script>
@@ -68,7 +82,8 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", NavTheme, NavOnHer
     <div id="page-title">
         <h1 class="sr-only">{title}</h1>
     </div>
-    <TheHeader NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />
+    <!--<TheHeader NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />-->
+    <TheHeaderDesktop3 Theme={Theme} hasHero={hasHero} showMsgBar={showMsgBar} />
     <slot name="pre-main" />
     <main id={mainID} class={mainClass}>
         <slot />

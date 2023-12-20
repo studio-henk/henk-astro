@@ -50,7 +50,7 @@ import NavCard from "../../components/NavCard.astro";
           class="sh-atom-button"
           data-style="filled"
       >
-        <Icon icon="arrow-left" />
+        <Icon icon="icon-arrow-left" />
         button text
       </a>
     </div>
@@ -61,92 +61,73 @@ import NavCard from "../../components/NavCard.astro";
           class="sh-atom-button"
           data-style="filled"
       >button text
-        <Icon icon="arrow-right" />
+        <Icon icon="icon-arrow-right" />
       </a>
     </div>
     <hr>
+    <!--<h2>Testing animated arrow right</h2>
+    <button class="sh-atom-button" data-style="filled">
+      button text
+      <Icon icon="icon-arrow-right-animated"/>
+    </button>
+    <hr>-->
     <h2>Arrow right (<em>animated</em>)</h2>
     <div class="example">
       <a
         href="#"
         class="sh-atom-button"
         data-style="filled"
-        data-icon-arrow-right="true"
         >button text
-        <Icon icon="arrow-right" />
+        <Icon icon="icon-arrow-right-animated"/>
       </a>
     </div>
     <hr>
-    <div class="example">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-icon-arrow-right="true"
-      >button text
-        <Icon icon="icon-calendar" />
-      </a>
-    </div>
-    <div class="example">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-icon-arrow-right="true"
-      >button text
-        <Icon icon="icon-cart" />
-      </a>
-    </div>
+    <h2>icon only Arrow right</h2>
+    <a
+        href="#"
+        class="sh-atom-button"
+        data-style="plain"
+    >
+      <Icon class="sh-atom-icon" icon="icon-arrow-right" />
+    </a>
     <hr>
-    <h2>icon only Arrow right (<em>animated</em>)</h2>
+    <h2>icon only Arrow right (<em>animated</em>) circle</h2>
     <div class="example">
       <a
           href="#"
           class="sh-atom-button"
           data-style="filled"
-          data-icon-arrow-right="true"
-      >button text
-        <Icon icon="arrow-right" />
-      </a>
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          xdata-icon-arrow-right="true"
           data-shape="circle"
-      ><Icon icon="arrow-right" />
+      ><Icon icon="icon-arrow-right-animated" />
       </a>
       <a
           href="#"
           class="sh-atom-button"
           data-style="soft"
-          data-icon-arrow-left="true"
           data-shape="circle"
           data-size="large"
-      ><Icon icon="arrow-left" />
+      ><Icon icon="icon-arrow-right-animated" />
       </a>
       <a
           href="#"
           class="sh-atom-button"
           data-style="soft"
-          data-icon-arrow-right="true"
           data-shape="circle"
-          data-size="large"
-      ><Icon icon="arrow-right" />
+      ><Icon icon="icon-arrow-right-animated" />
       </a>
     </div>
-    <h2>Arrow left (<em>animated</em>)</h2>
+    <!--<h2>Arrow left (<em>animated</em>)</h2>
     <div class="example">
       <a
         href="#"
         class="sh-atom-button"
         data-style="filled"
-        data-icon-arrow-left="true"
+        
       >
-        <Icon icon="arrow-left" />
+        <Icon icon="icon-arrow-left" />
         icon left
       </a>
-    </div>
+    </div>-->
     <h2>Plain Light</h2>
     <div
       class="example"
@@ -186,10 +167,9 @@ import NavCard from "../../components/NavCard.astro";
         href="#"
         class="sh-atom-button"
         data-style="plain-light"
-        data-icon-arrow-right="true"
       >
         plain + arrow right
-        <Icon icon="arrow-right" />
+        <Icon icon="icon-arrow-right" />
       </a>
     </div>
     <h2>Plain Dark + Arrow Left</h2>
@@ -198,10 +178,9 @@ import NavCard from "../../components/NavCard.astro";
         href="#"
         class="sh-atom-button"
         data-style="plain-dark"
-        data-icon-arrow-left="true"
+        
       >
-        <Icon icon="arrow-left" />
-        <!--<Icon class="sh-atom-icon-2" icon="arrow-left" />-->
+        <Icon icon="icon-arrow-left" />
         Arrow left
       </a>
     </div>
@@ -215,19 +194,19 @@ import NavCard from "../../components/NavCard.astro";
       >
         Discover<br />
         more
-        <Icon class="sh-atom-icon-2" icon="icon-arrow-down" />
+        <Icon class="sh-atom-icon" icon="icon-arrow-down" />
       </a>
     </div>
     <h2>Swiper prev and next</h2>
     <h3>Prev</h3>
-    <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle" data-icon-arrow-left="true" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-10668aa19d29f10713" aria-disabled="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon-2" aria-hidden="true"><!--<title>{icon}</title>-->
+    <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle"  tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-10668aa19d29f10713" aria-disabled="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true"><!--<title>{icon}</title>-->
         <path fill-rule="evenodd" clip-rule="evenodd" d="M3.76367 11.5212L10.3481 4.67718L9.69661 4L2.32575 11.6614L2 12L2.32575 12.3386L9.69661 20L10.3481 19.3228L3.76367 12.4788H21.5393H22V11.5212H21.5393H3.76367Z"></path>
       </svg>
     </div>
     <h3>Next</h3>
     <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-e541b13cbfe10625d" aria-disabled="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon-2" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">
         <g id="icon-arrow-right-nav-next">
           <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M20.2363 12.4788L13.6519 19.3228L14.3034 20L21.6743 12.3386L22 12L21.6743 11.6614L14.3034 4L13.6519 4.67718L20.2363 11.5212L2.46068 11.5212H2V12.4788H2.46068L20.2363 12.4788Z"></path>
         </g>
@@ -259,13 +238,13 @@ import NavCard from "../../components/NavCard.astro";
             videoSrc="/static/std/assets/video/portrait_sound.mp4"
         />
       </div>
-      <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle" data-icon-arrow-left="true" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-10668aa19d29f10713" aria-disabled="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon-2" aria-hidden="true"><!--<title>{icon}</title>-->
+      <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle"  tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-10668aa19d29f10713" aria-disabled="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true"><!--<title>{icon}</title>-->
           <path fill-rule="evenodd" clip-rule="evenodd" d="M3.76367 11.5212L10.3481 4.67718L9.69661 4L2.32575 11.6614L2 12L2.32575 12.3386L9.69661 20L10.3481 19.3228L3.76367 12.4788H21.5393H22V11.5212H21.5393H3.76367Z"></path>
         </svg>
       </div>
       <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-e541b13cbfe10625d" aria-disabled="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon-2" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">
           <g id="icon-arrow-right-nav-next">
             <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M20.2363 12.4788L13.6519 19.3228L14.3034 20L21.6743 12.3386L22 12L21.6743 11.6614L14.3034 4L13.6519 4.67718L20.2363 11.5212L2.46068 11.5212H2V12.4788H2.46068L20.2363 12.4788Z"></path>
           </g>
@@ -281,7 +260,7 @@ import NavCard from "../../components/NavCard.astro";
         data-style="filled"
         data-shape="circle"
       >
-        <Icon class="sh-atom-icon-2" icon="icon-trashcan"/>
+        <Icon class="sh-atom-icon" icon="icon-trashcan"/>
       </a>
       <a
           href="/en/cart/remove/378093"
@@ -290,7 +269,7 @@ import NavCard from "../../components/NavCard.astro";
           data-shape="circle"
           data-size="small"
       >
-        <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-trashcan"/>
+        <Icon class="sh-atom-icon" width="16" height="16" icon="icon-trashcan"/>
       </a>
     </div>
     <h3>Circle Icon Button - Small plain</h3>
@@ -300,7 +279,7 @@ import NavCard from "../../components/NavCard.astro";
         class="sh-atom-button"
         data-style="plain-dark"
       >
-          <Icon class="sh-atom-icon-2" width="16" height="16" icon="icon-trashcan"/>
+          <Icon class="sh-atom-icon" width="16" height="16" icon="icon-trashcan"/>
       </a>
     </div>
     <h2>With price</h2>
@@ -401,7 +380,7 @@ import NavCard from "../../components/NavCard.astro";
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
-        <Icon class="sh-atom-icon-2" icon="icon-cart" />
+        <Icon class="sh-atom-icon" icon="icon-cart" />
       </a>
     </div>
     <h3>expanded</h3>
@@ -689,17 +668,6 @@ import NavCard from "../../components/NavCard.astro";
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h2>Work-In-Progress</h2>
-    <h3>Button + icon</h3>
-    <p>Icon too big.</p>
-    <div class="example">
-      <a href="#" class="sh-atom-button" data-style="filled"
-        >button text
-        <span class="icon-frame">
-          <Icon icon="icon-trashcan" />
-        </span>
       </a>
     </div>
     <h2>Chevron Down</h2>
@@ -710,9 +678,7 @@ import NavCard from "../../components/NavCard.astro";
         data-style="soft"
       >
         Show
-        <span class="icon-frame">
           <Icon icon="icon-chevron-down" />
-        </span>
       </a>
     </div>
     <h2>Chevron Up</h2>
@@ -723,16 +689,14 @@ import NavCard from "../../components/NavCard.astro";
         data-style="soft"
       >
         Hide
-        <span class="icon-frame">
           <Icon icon="icon-chevron-up" />
-        </span>
       </a>
     </div>
-    <!-- playground -->
+    <h2>Mobile NavButton</h2>
     <MobileNavButton />
 
     <!-- end container -->
-    <h2>Grouped</h2>
+    <h2>Grouped buttons and alignment</h2>
     <div class="button-group">
       <a class="sh-atom-button" data-style="filled">button text</a>
       <a class="sh-atom-button" data-style="filled">button text</a>
@@ -765,47 +729,19 @@ import NavCard from "../../components/NavCard.astro";
 
 
   </div>
-  <!--<h2>Work-In-Progress</h2>
-  <h2>Button + icon</h2>
-  <p>Icon too big.</p>
-  <div class="example">
-    <a
-        href="#"
-        class="sh-atom-button"
-        data-style="filled"
-    >button text
-      <span class="icon-frame">
-        <Icon icon="icon-trashcan" />
-      </span>
-    </a>
-  </div>
-  <h2>Atom-Tag</h2>
-  <AtomTag text="Made to Order" />
-  <p>
-    From: <a
-      href="https://www.figma.com/file/wppNFHNUP3QZYFNEXzm6qf/PDP-Sticky-Add-to-Cart-%2B-Delivery-times?type=design&node-id=0-1&t=8cUR9uWWEX8p2eRP-0"
-      >Figma PDP</a>
-  </p>
-  <p>with icon left</p>
-  <AtomTag text="fast delivery" icon="truck" iconPosition="left" />
-  <hr />-->
-  <p>with icon right</p>
+  <!--<p>with icon right</p>
   <AtomTag text="fast delivery" icon="icon-truck" iconPosition="right" />
   <h2>close icon button</h2>
   <a
     href="/en/cart/remove/378093"
-    class="sh-atom-button-icon"
+    class="sh-atom-button"
     data-style="plain-dark"
   >
-    <span class="icon-frame">
       <Icon icon="icon-trashcan" />
-    </span>
   </a>
-  <button type="button" data-style="plain-dark" class="sh-atom-button-icon">
-    <span class="icon-frame">
+  <button type="button" data-style="plain-dark" class="sh-atom-button">
       <Icon icon="icon-close" class="sh-atom-icon" />
-    </span>
-  </button>
+  </button>-->
 </BaseLayout>
 <style is:global>
   .frame {
@@ -825,9 +761,6 @@ import NavCard from "../../components/NavCard.astro";
     background-color: var(--color-accent16);
   }
 
-  .sh-atom-button-icon {
-    border: 1px solid red;
-  }
 
   .swiper-container .slides {
     display: grid;

@@ -1,0 +1,39 @@
+:root,
+::before,
+::after,
+::selection {
+    --color-transparent: transparent;
+    --color-black: #000;
+    --color-henk-black: #1f1f1f;
+    --color-white: #fff;
+    --color-henk-white: #f7f8f6;
+
+    /* accents */
+    --color-accent1: #f3f1ec;
+    --color-accent2: #f1efe9;
+    --color-accent3: #f2f0e9;
+    --color-accent4: #f1ebdf;
+    --color-accent5: #eae4d7;
+    --color-accent6: #ccb193;
+    --color-accent7: #b5af9b;
+    --color-accent8: #9f5b28;
+    --color-accent9: #b59a84;
+    --color-accent10: #563f24;
+    --color-accent11: #9aabbc;
+    --color-accent12: #60563e;
+    --color-accent13: #988367;
+    --color-accent14: #ccc7bd;
+    --color-accent15: #f1f0ee;
+    --color-accent16: #6b7156;
+    --color-accent17: #9e5b28;
+    --color-accent18: #dfdccd;
+    --color-accent19: #343e2a;
+    --color-henk-danger: #ff0000;
+    --color-henk-danger-dark: #cc0000;
+    --color-henk-success: #008000;
+    --color-henk-warning: #ffa500;
+    --color-henk-disabled: #d3d3d3;
+
+    /* todo: remove after check where used */
+    --color-henk-green-victorious: var(--color-accent16);
+}

@@ -1,0 +1,183 @@
+---
+import AtomLogo from "./Atoms/AtomLogo.astro";
+import { getLangFromUrl } from "../i18n/utils";
+import LangSwitchNoScript from "./LangSwitchNoScript.astro";
+import Icon from "./Icon.astro";
+import NavCard from "./NavCard.astro";
+import MsgBar from "./MsgBar.astro";
+const lang = getLangFromUrl(Astro.url);
+// const { NavOnHero } = Astro.props;
+let { Theme } = Astro.props;
+let {showMsgBar} = Astro.props;
+const currentPath = Astro.url.pathname.substring(4);
+let otherLang;
+if (lang == "nl") {
+  otherLang = "en";
+} else {
+  otherLang = "nl";
+}
+let otherURL = "/" + otherLang + "/" + currentPath;
+if (!Theme) {
+    Theme = "light";
+}
+
+const tableGallery = 5;
+
+import primaryNav from '../../public/data/navigation_data.json';
+// Convert the object to a JSON string
+const primaryNavJSON = JSON.stringify(primaryNav);
+
+const {hasHero} = Astro.props;
+---
+<script is:inline src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<!-- swiper -->
+<script
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+></script>
+
+<div id="NavBarMobile">NavBar Mobile here</div>
+<div
+    id="NavBar"
+    data-primary-nav={primaryNavJSON}
+>
+    <div class="nav-bar-skeleton isLoading">
+        <div class="nav-bar-skeleton__msg-bar"></div>
+        <div class="nav-bar-skeleton__primary-nav-container">
+            <div class="nav-bar-skeleton__logo"></div>
+            <div class="nav-bar-skeleton__primary-nav"></div>
+            <div class="nav-bar-skeleton__utils"></div>
+        </div>
+    </div>
+    <header
+        class="masthead masthead-desktop"
+        :class="{ 'NavBar--isScrolled': isScrolled, 'NavBar--isHovered': statusNavBarHovered, 'NavBar--submenuOpen': showSubmenu }"
+        id="masthead-desktop"
+        @mouseleave="handleNavBarMouseLeave"
+        @mouseenter="handleNavBarMouseEnter"
+        ref="navBar"
+        data-has-hero={hasHero}
+        data-theme={Theme}
+        data-show-topmessagebar={showMsgBar}
+        v-cloak
+    >
+        <div id="msg-covid" class="message-bar">
+            <a href="en/stores/rotterdam-brand-store">Our new Rotterdam brand store is now open!</a>
+            <!--<discount-timer
+                :count-down-date="'Dec 17, 2023 23:59:59'"
+                :show-timer="true"
+            ></discount-timer>-->
+        </div>
+        <div class="primary-nav-container">
+            <AtomLogo
+                url="/"
+                icon="logo-henk-solo"
+                width="163"
+                height="14"
+            />
+            <nav class="primary-nav">
+                <a
+                    class="primary-nav__link"
+                    :class="{ 'hover-interaction-a': !item.childrenData }"
+                    v-for="item in navigationData"
+                    :key="item.id"
+                    :href="item.url"
+                    @mouseover="handlePrimaryNavItemHover(item)"
+                >[[ item.navTitle ]]
+                </a>
+            </nav>
+            <div class="utilities-nav">
+                <ul class="utilities-nav__list">
+                    <li class="utilities-nav__item" id="utilities-nav__search">
+                        <a href="/en/search-results" class="sh-atom-button --icon-search" data-style="plain-dark">
+                            <!-- icon search here -->
+                            <Icon class="sh-atom-icon" width="24" height="24" icon="icon-search"/>
+                            Search
+                        </a>
+                    </li>
+                    <li class="utilities-nav__item" id="utilities-nav__cart">
+                        <a href="/en/cart/list" class="sh-atom-button --icon-cart" data-style="plain-dark">
+                            <!-- icon cart here -->
+                            <Icon class="sh-atom-icon" width="24" height="24" icon="icon-cart"/>
+                            Cart
+                        </a>
+                    </li>
+                    <li class="utilities-nav__item" id="utilities-nav__lang">
+                        <lang-switch data-url={otherURL} title={otherURL } lang={lang}></lang-switch>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <transition appear>
+            <div class="submenuOverlay" v-show="showSubmenu">
+            <div
+                class="submenu"
+                @mouseleave.self="handleNavBarSubmenuMouseLeave"
+                @mouseout.self="handleNavBarSubmenuMouseOut"
+            >
+                <small class="submenu__heading">[[ submenuHeading]]</small>
+                <div class="gallery-controller">
+                    <div class="gallery-controller__list-container gallery-controller__mask">
+                        <button
+                            v-if="currentLevel > 1"
+                            @click="navigateToPreviousLevel"
+                            class="gallery-controller__level-back sh-atom-button"
+                            :class="{ reverse: isGoingBack }"
+                            data-style="plain"
+                        >
+                            <!-- arrow back -->
+                            <Icon class="sh-atom-icon" width="16" height="16" icon="icon-arrow-left-nav-back"/>
+                        </button>
+                        <transition name="slide-fade" mode="out-in" appear>
+                            <ol
+                                class="gallery-controller__list gallery-controller__controls"
+                                :key="currentLevel"
+                            >
+                                <li v-for="(item, index) in currentItems" :key="item.title">
+            <span class="gallery-controller__level-link" v-if="item.childrenData" @click="navigateToNextLevel(item)">[[ item.navTitle ]]
+                <!-- arrow right -->
+                <Icon class="sh-atom-icon" width="16" height="16" icon="icon-arrow-right-nav-next"/>
+            </span>
+                                    <a v-else :href="item.url" class="page-link">
+                                        [[ item.navTitle ]]
+                                    </a>
+                                </li>
+                            </ol>
+                        </transition>
+                    </div>
+                    <div class="gallery-controller__gallery-container" v-if="currentItems.length < 5">
+                        <ol class="gallery-controller__list gallery-controller__gallery">
+                            <li v-for="(item, index) in currentItems" :key="item.navTitle">
+                                <gallery-card :category="item" @navigate="navigateToNextLevel"></gallery-card>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="gallery-controller__gallery-container has-swiper" v-else>
+                        <swiper-container
+                            :slides-per-view="4.3"
+                            :loop="false"
+                            :speed="500"
+                            :css-mode="true"
+                            :space-between="16"
+                            :navigation="true"
+                        >
+                            <swiper-slide v-for="(item, index) in currentItems" :key="item.navTitle">
+                                <gallery-card :category="item" @navigate="navigateToNextLevel"></gallery-card>
+                            </swiper-slide>
+                        </swiper-container>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </transition>
+    </header>
+</div>
+<div id="pixel-to-watch"></div>
+
+<script src="/static/std/assets/components/navbar/LangSwitch.js" type="module"></script>
+
+<script type="module" src="/static/std/assets/components/navbar/NavBar2.js" defer></script>
+
+<script defer src="/static/std/assets/components/navbar/LangSwitchAction.js"></script>

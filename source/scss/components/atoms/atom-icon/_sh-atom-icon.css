@@ -1,5 +1,6 @@
 /* class on svg element */
-.sh-atom-icon-2 {
+svg,
+.sh-atom-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -7,3 +8,14 @@
     color: currentColor;
     fill: currentColor;
 }
+
+/*
+.sh-atom-icon[data-size="large"] {
+    width: 48px;
+    height: auto;
+}
+
+.sh-atom-icon[data-size="small"] {
+    width: 16px;
+    height: auto;
+}*/
