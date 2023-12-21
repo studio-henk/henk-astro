@@ -1,0 +1,323 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Salesforce">
+    <link slot="head-styles" rel="stylesheet" href="/static/std/assets/toolkit/scripts/intlTelInput/css/intlTelInput.css">
+    <script slot="head-scripts" src="/static/std/assets/toolkit/scripts/intlTelInput/js/intlTelInput.min.js"></script>
+    <script slot="head-scripts" src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <div class="sh-molecule-padding-box" style="
+                    --size-spacing-units-top: 4;
+                    --size-spacing-units-right: 4;
+                    --size-spacing-units-bottom: 0;
+                    --size-spacing-units-left: 4;
+                    --size-spacing-units-top-desktop: 6;
+                    --size-spacing-units-right-desktop: 6;
+                    --size-spacing-units-bottom-desktop: 0;
+                    --size-spacing-units-left-desktop: 6;
+                    max-width: 652px;
+                ">
+        <div id="page-title">
+            <h1 class="h2">Contact</h1>
+        </div>
+        <div
+            class="org-form"
+            data-show-required-fields="true"
+            data-use-css-validation="true"
+            id="app-vue-contact-form"
+        >
+            <form class="org-form__form" action="https://studio-henk--train.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+                <input name="orgid" type="hidden" value="00D3H0000008q6o" />
+                <input name="retURL" type="hidden" value="https://www.studio-henk.nl/nl/salesforce/contact_bedankt" />
+                <div
+                        class="molecule-input-label layout-container-input-label"
+                        data-style="is-stacked"
+                >
+                    <input
+                            class="atom-input-txt"
+                            type="text"
+                            name="company"
+                            id="company"
+                            autocomplete="organization"
+                            inputmode="text"
+                            placeholder=" "
+                    />
+                    <label
+                            class="atom-label"
+                            for="company"
+                            data-style="labels-as-placeholders"
+                    >
+                        Company
+                    </label>
+                </div>
+                <div
+                    class="molecule-input-label layout-container-input-label"
+                    data-style="is-stacked"
+                >
+                    <input
+                        class="atom-input-txt"
+                        type="text"
+                        name="name"
+                        id="name"
+                        autocomplete="name"
+                        inputmode="text"
+                        placeholder=" "
+                        required=""
+                    />
+                    <label
+                        class="atom-label"
+                        for="name"
+                        data-style="labels-as-placeholders"
+                    >
+                        Contact Name
+                    </label>
+                </div>
+                <div
+                    class="molecule-input-label layout-container-input-label"
+                    data-style="is-stacked"
+                    data-use-css-validation="true"
+                >
+                    <input
+                        class="atom-input-txt"
+                        type="text"
+                        name="email"
+                        id="email"
+                        autocomplete="email"
+                        inputmode="text"
+                        placeholder=" "
+                        required=""
+                        pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
+                        title="Please enter a valid email address."
+                    />
+                    <label
+                        class="atom-label"
+                        for="email"
+                        data-style="labels-as-placeholders"
+                        title="Please enter a valid email address."
+                    >
+                        Email
+                    </label>
+                    <span class="molecule-input-label__message-invalid">
+                Please enter a valid email address.
+            </span>
+                </div>
+
+                <!--<div
+                    class="molecule-input-label layout-container-input-label"
+                    data-style="is-stacked"
+                >
+            <span class="molecule-input-label__message-help">
+                Verklaren waar we het telefoon nummer voor gebruiken
+            </span>
+                    <input
+                        class="atom-input-txt"
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        autocomplete="tel-national"
+                        inputmode="text"
+                        placeholder="12345678"
+                    />
+                    <label
+                        class="atom-label"
+                        for="phone"
+                        data-style="labels-as-placeholders"
+                    >
+                        Phone
+                    </label>
+                </div>-->
+                {/*<div
+                    class="molecule-input-label layout-container-input-label"
+                    data-style="is-stacked"
+                >
+                    <input
+                        class="atom-input-txt"
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        autocomplete="off"
+                        inputmode="text"
+                        placeholder=" "
+                    />
+                    <label
+                        class="atom-label"
+                        for="subject"
+                        data-style="labels-as-placeholders"
+                    >
+                        Subject
+                    </label>
+                </div>*/}
+                <div class="org-form__grid-container">
+                    <div class="molecule-label-select layout-container-input-label org-form__grid-item">
+                        <div class="atom-select">
+                            <div class="atom-select__field">
+                                <select
+                                        class="atom-select__select-element"
+                                        autocomplete="off"
+                                        id="00N3H0000022MGA" name="00N3H0000022MGA" title="Case Category"
+                                        v-model="selectedCategory"
+                                >
+                                    <option value="">--None--</option>
+                                    <option value="Producten">Producten</option>
+                                    <option value="Montage &amp; Onderhoud">Montage &amp; Onderhoud</option>
+                                    <option value="Levertijd &amp; Bezorging">Levertijd &amp; Bezorging</option>
+                                    <option value="Betalingen">Betalingen</option>
+                                    <option value="Verkooppunten">Verkooppunten</option>
+                                </select>
+                            </div>
+                            <span class="sh-atom-icon">
+            <svg
+                    class="sh-atom-icon__svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                    aria-labelledby="iconDisclosureCollapsed"
+                    id="iconDisclosureCollapsed"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+                <title>iconDisclosureCollapsed</title>
+                <desc>Arrow icon pointing down</desc>
+                <path
+                        d="M14 1L7.5 7L1 1"
+                        stroke="currentcolor"
+                        stroke-width="0.7"
+                        stroke-linecap="round"
+                ></path>
+            </svg>
+        </span>
+                        </div>
+                        <label class="atom-label" for="00N3H0000022MGA" data-style="labels-as-placeholders">
+                            Case Category
+                        </label>
+                    </div>
+                    <!-- col 2 -->
+                    <div class="molecule-label-select layout-container-input-label org-form__grid-item">
+                        <div class="atom-select">
+                            <div class="atom-select__field">
+                                <select
+                                        class="atom-select__select-element"
+                                        autocomplete="off"
+                                        id="00N3H0000022MHe" name="00N3H0000022MHe" title="Case Reason">
+                                    <option value="">--None--</option>
+                                    <option value="Vraag over het gebruik van een product" v-if="selectedCategory == 'Producten'">Vraag over het gebruik van
+                                        een product
+                                    </option>
+                                    <option value="Vraag over specifieke afwerkingen" v-if="selectedCategory == 'Producten'">Vraag over specifieke
+                                        afwerkingen
+                                    </option>
+                                    <option value="Vraag over impregneren stof" v-if="selectedCategory == 'Producten'">Vraag over impregneren stof</option>
+                                    <option value="Vraag over het bestellen van losse onderdelen" v-if="selectedCategory == 'Producten'">Vraag over het
+                                        bestellen van losse onderdelen
+                                    </option>
+                                    <option value="Vraag over levering in het buitenland" v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Vraag over levering in het
+                                        buitenland
+                                    </option>
+                                    <option value="Vraag over levertijd" v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Vraag over levertijd</option>
+                                    <option value="Afspraak maken interieuradvies" v-if="selectedCategory == 'Verkooppunten'">Afspraak maken interieuradvies
+                                    </option>
+                                    <option value="Vraag over fysiek bekijken producten in eigen winkel" v-if="selectedCategory == 'Verkooppunten'">Vraag over
+                                        fysiek bekijken producten in eigen winkel
+                                    </option>
+                                    <option value="Vraag over fysiek bekijken producten bij retailer" v-if="selectedCategory == 'Verkooppunten'">Vraag over fysiek
+                                        bekijken producten bij retailer
+                                    </option>
+                                    <option value="Vraag over locatie verkooppunt" v-if="selectedCategory == 'Verkooppunten'">Vraag over locatie verkooppunt
+                                    </option>
+                                    <option value="Vraag over verschil bij kopen Studio HENK vs kopen bij retailer" v-if="selectedCategory == 'Verkooppunten'">
+                                        Vraag over verschil bij kopen Studio HENK vs kopen bij retailer
+                                    </option>
+                                    <option value="Leverdatum wijzigen" v-if="selectedCategory == 'Levertijd &amp; Bezorging'">Leverdatum wijzigen</option>
+                                    <option value="Is mijn betaling ontvangen" v-if="selectedCategory == 'Betalingen'">Is mijn betaling ontvangen</option>
+                                    <option value="Vraag over betaling slot-termijn" v-if="selectedCategory == 'Betalingen'">Vraag over betaling slot-termijn
+                                    </option>
+                                    <option value="Verleggen BTW" v-if="selectedCategory == 'Betalingen'">Verleggen BTW</option>
+                                    <option value="Vervangen viltdoppen" v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vervangen viltdoppen</option>
+                                    <option value="Vragen over montage" v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over montage</option>
+                                    <option value="Vragen over schoonmaak en vlekverwijdering" v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over schoonmaak en
+                                        vlekverwijdering
+                                    </option>
+                                    <option value="Vragen over behandelen product" v-if="selectedCategory == 'Montage &amp; Onderhoud'">Vragen over behandelen product
+                                    </option>
+                                </select>
+                            </div>
+                            <span class="sh-atom-icon">
+            <svg
+                    class="sh-atom-icon__svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                    aria-labelledby="iconDisclosureCollapsed"
+                    id="iconDisclosureCollapsed"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+                <title>iconDisclosureCollapsed</title>
+                <desc>Arrow icon pointing down</desc>
+                <path
+                        d="M14 1L7.5 7L1 1"
+                        stroke="currentcolor"
+                        stroke-width="0.7"
+                        stroke-linecap="round"
+                ></path>
+            </svg>
+        </span>
+                        </div>
+                        <label class="atom-label" for="00N3H0000022MHe" data-style="labels-as-placeholders">
+                            Case Reason
+                        </label>
+                    </div>
+                </div>
+                <div class="molecule-label-textarea layout-container-input-label">
+                    <textarea class="atom-textarea" name="description" id="description" autocomplete="off"></textarea>
+                    <label class="atom-label" for="description">Description</label>
+                </div>
+                <button type="submit" class="sh-atom-button" style="margin-top: 0;">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- vue -->
+    <script is:inline>
+        const app = new Vue({
+            delimiters: ["[[", "]]"],
+            el: "#app-vue-contact-form",
+            data: {
+                appName: "appContactFormVue",
+                loading: true,
+                errored: false,
+                debug: "...",
+                selectedCountry: "NL",
+                selectedCategory: "",
+            },
+            methods: {},
+            computed: {},
+            created() {
+                console.log(this.appName + " created");
+            },
+            mounted() {
+                console.log(this.appName + " mounted");
+                this.$nextTick(function () {
+                    // Code that will run only after the
+                    // entire view has been rendered
+                    this.loading = false;
+                });
+            }
+        });
+    </script>
+    <script slot="footer-scripts" defer>
+        function runTelField() {
+            var input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+                // options here
+                // preferredCountries: ["nl", "be"],
+                initialCountry: "nl",
+                separateDialCode: true,
+                onlyCountries: ["at", "be", "nl", "de", "fr", "it", "lu"],
+                autoPlaceholder: "aggressive",
+                utilsScript: "/static/std/assets/toolkit/scripts/intlTelInput/js/utils.js",
+            });
+        }
+
+        // runTelField();
+    </script>
+</BaseLayout>

@@ -58,7 +58,8 @@ const lang = getLangFromUrl(Astro.url);
               id="shop-menu-item"
               class="main-nav__item main-nav__item--with-dropdown"
             >
-              <a href="#" class="icon-right"
+              <div id="shop">
+              <a href="#shop" class="icon-right nav-open"
                 >Shop
                 <svg class="icon icon-chevron-down">
                   <use
@@ -66,6 +67,13 @@ const lang = getLangFromUrl(Astro.url);
                   ></use>
                 </svg>
               </a>
+              <a href="#" class="icon-right nav-close"
+              >Shop
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" class="sh-atom-icon" id="sh-icon-chevron-up" style="position:relative;top:1px;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6.10997 0.890034L6.95189 -2.83122e-07L14 7.04811L13.134 7.93814L6.95189 1.75601L0.865979 7.84192L0 7L3.53608 3.48797L6.10997 0.890034Z" fill="currentcolor"></path>
+                </svg>
+              </a>
+              </div>
               <ul class="sub-nav" style="height: auto;">
                 <li class="group sub-nav__item">
                   <span class="sub-nav-category-link">Featured</span>

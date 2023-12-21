@@ -1,0 +1,414 @@
+---
+const locale = "en";
+const returnURL = "https://www.studio-henk.nl/en/contact_thanks";
+const LabelCompany = "Company";
+const LabelName = "First- and last name";
+const LabelEmail = "Email address";
+---
+{/*{% set locale = app.request.locale %}*/}
+<!--<script src="https://www.google.com/recaptcha/api.js"></script>-->
+<!--<script is:inline defer>
+    function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500);
+</script>-->
+
+<!-- load vue 3 -->
+<script is:inline src="/static/std/assets/js/vue.global.prod.min.js"></script>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="/static/std/assets/css/_SFcontactForm.css">
+<div
+    class="org-form"
+    data-show-required-fields="true"
+    id="app-vue-contact-form"
+>
+    <form
+        action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D68000000bpfr"
+        class="org-form__form"
+        method="POST"
+        ref="sf_form"
+        data-locale={locale}
+        v-on:submit="onSubmit"
+    >
+        <input type=hidden name='captcha_settings' value='{"keyname":"SH_Recaptcha","fallback":"true","orgId":"00D68000000bpfr","ts":""}'>
+        <input
+            name="orgid"
+            type="hidden"
+            value="00D68000000bpfr"
+        />
+        <input
+            name="retURL"
+            type="hidden"
+            value={returnURL}
+        />
+        <input
+            name="subject"
+            type="hidden"
+            v-model="subject"
+        />
+        <input
+            id="priority"
+            name="priority"
+            type="hidden"
+            value="Medium"
+        />
+        <div
+            class="molecule-input-label layout-container-input-label"
+            data-style="is-stacked"
+        >
+            <input
+                autocomplete="organization"
+                class="atom-input-txt"
+                id="company"
+                inputmode="text"
+                name="company"
+                placeholder=" "
+                type="text"
+            />
+            <label
+                class="atom-label"
+                data-style="labels-as-placeholders"
+                for="company"> { LabelCompany }
+            </label>
+        </div>
+
+        <div
+            class="molecule-input-label layout-container-input-label"
+            data-style="is-stacked"
+        >
+            <input
+                autocomplete="name"
+                class="atom-input-txt"
+                id="name"
+                inputmode="text"
+                name="name"
+                placeholder=" "
+                required
+                type="text"
+                ref="name"
+            />
+            <label
+                class="atom-label"
+                data-style="labels-as-placeholders"
+                for="name"
+            >{ LabelName }
+            </label>
+            <span
+                class="molecule-input-label__message-invalid hide-if-no-js"
+                v-show="nameError"
+            > [[ nameErrorMessage ]]
+                </span>
+        </div>
+
+        <div
+            class="molecule-input-label layout-container-input-label"
+            data-style="is-stacked"
+        >
+            <input
+                autocomplete="email"
+                class="atom-input-txt"
+                id="email"
+                inputmode="text"
+                minlength="4"
+                name="email"
+                pattern="[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
+                placeholder=" "
+                ref="email"
+                required=""
+                title="Please enter a valid email address."
+                type="email"
+                v-on:input="emailInput"
+            />
+            <label
+                class="atom-label"
+                data-style="labels-as-placeholders"
+                for="email"
+                title="Please enter a valid email address."
+            >{ LabelEmail }
+            </label>
+            <span class="molecule-input-label__message-invalid hide-if-no-js" v-show="emailError">
+                  [[ emailFieldErrorMessage ]]
+                </span>
+        </div>
+
+        <div class="org-form__grid-container">
+            <div class="molecule-label-select layout-container-input-label org-form__grid-item">
+                <div class="atom-select" data-required="true">
+                    <div class="atom-select__field">
+                        <select
+                            autocomplete="off"
+                            class="atom-select__select-element"
+                            id="00N68000004Vpzh"
+                            name="00N68000004Vpzh"
+                            ref="caseSelectElement"
+                            required
+                            title="Case Category"
+                            v-model="selectedCategory"
+                            v-on:change="categoryChanged"
+                        >
+                            <option value="">{ locale == 'nl' ? '--Geen--' : '--None--' }</option>
+                            <option value="Producten">{ locale == 'nl' ? 'Producten' : 'Products' }</option>
+                            <option
+                                value="Montage &amp; Onderhoud">{ locale == 'nl' ? 'Montage &amp; Onderhoud' : 'Assembly &amp; Maintenance' }</option>
+                            <option
+                                value="Bestelling en offerte">{ locale == 'nl' ? 'Bestelling en offerte' : 'Order and quotation' }</option>
+                            <option
+                                value="Verkooppunten">{ locale == 'nl' ? 'Verkooppunten' : 'Outlets' }</option>
+                            <option value="Reclamatie">{ locale == 'nl' ? 'Reclamatie' : 'Complaint' }</option>
+                            <option
+                                value="Endless live services">{ locale == 'nl' ? 'Garantie &amp; Services' : 'Endless live services' }</option>
+                        </select>
+                    </div>
+                    <span class="sh-atom-icon">
+                            <svg
+                                aria-labelledby="iconDisclosureCollapsed"
+                                class="sh-atom-icon__svg"
+                                fill="none"
+                                height="8"
+                                id="iconDisclosureCollapsed"
+                                viewbox="0 0 15 8"
+                                width="15"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <title>icon</title>
+                                <desc>Arrow icon pointing down</desc>
+                                <path
+                                    d="M14 1L7.5 7L1 1"
+                                    stroke="currentcolor"
+                                    stroke-linecap="round"
+                                    stroke-width="0.7"
+                                >
+                                </path>
+                            </svg>
+                        </span>
+                </div>
+                <label
+                    class="atom-label"
+                    data-style="labels-as-placeholders"
+                    for="00N68000004Vpzh"
+                >{ locale == 'nl' ? 'Onderwerp' : 'Subject' }
+                </label>
+                <span
+                    v-show="caseSelectError"
+                    class="molecule-input-label__message-invalid hide-if-no-js"
+                >
+                        [[ caseSelectErrorMessage ]]
+                    </span>
+            </div>
+            <!-- col 2 -->
+
+            <div class="molecule-label-select layout-container-input-label org-form__grid-item">
+                <div class="atom-select" data-required="true">
+                    <div class="atom-select__field">
+                        <select
+                            autocomplete="off"
+                            class="atom-select__select-element"
+                            id="00N68000004eHnI"
+                            ref="reasonSelectElement"
+                            name="00N68000004eHnI"
+                            required
+                            title="Case Reason"
+                            v-model="selectedReason"
+                            v-on:change="reasonChanged"
+                        >
+                            <option disabled value="">{ locale == 'nl' ? '--Geen--' : '--None--' }</option>
+                            <!--to what group does this belong ?-->
+                            <!--<option value="Vraag over specifieke afwerkingen">Vraag over specifieke afwerkingen</option>-->
+
+                            <!--Producten-->
+                            <option
+                                v-if="selectedCategory === 'Producten'"
+                                value="Vraag over product (afwerking / maatwerk / advies)"
+                            >{ locale == 'nl' ? 'Vraag over product' : 'Question about using a product' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Producten'"
+                                value="Onderdelen bestellen montage en onderhoud"
+                            >{ locale == 'nl' ? 'Onderdelen bestellen' : 'Order parts' }
+                            </option>
+
+                            <!--Montage & onderhoud-->
+                            <option
+                                v-if="selectedCategory === 'Montage &amp; Onderhoud'"
+                                value="Vragen over montage"
+                            >{ locale == 'nl' ? 'Vraag over montage' : 'Question About Assembly' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Montage &amp; Onderhoud'"
+                                value="Vraag over onderhoud"
+                            >{ locale == 'nl' ? 'Vraag over onderhoud' : 'Question about maintenance' }
+                            </option>
+
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Vraag over bezorging (levertijd / internationaal transport)"
+                            >{ locale == 'nl' ? 'Vraag over bezorging' : 'Question about delivery' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Leverdatum wijzigen"
+                            >{ locale == 'nl' ? 'Leverdatum wijzigen' : 'Change delivery date' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Vraag over betaling / factuur"
+                            >{ locale == 'nl' ? 'Betaling' : 'Payment' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="BTW verleggen"
+                            >{ locale == 'nl' ? 'BTW verleggen' : 'Transfer VAT' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Restitutie"
+                            >{ locale == 'nl' ? 'Restitutie' : 'Restitution' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Inkoop bestelling plaatsen / wijzigen / annuleren"
+                            >{ locale == 'nl' ? 'Bestelling plaatsen' : 'Place an order' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Inkoop bestelling plaatsen / wijzigen / annuleren"
+                            >{ locale == 'nl' ? 'Bestelling annuleren' : 'Cancel order' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Inkoop bestelling plaatsen / wijzigen / annuleren"
+                            >{ locale == 'nl' ? 'Bestelling wijzigen' : 'Change order' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Offerte akkoord / wijzigen / aanvraag"
+                            >{ locale == 'nl' ? 'Offerte aanvragen particulier' : 'Request a private quote' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Offerte akkoord / wijzigen / aanvraag"
+                            >{ locale == 'nl' ? 'Offerte aanvragen zakelijk' : 'Request a business quote' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Offerte akkoord / wijzigen / aanvraag"
+                            >{ locale == 'nl' ? 'Offerte aanpassen' : 'Adjust quotation' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Bestelling en offerte'"
+                                value="Offerte akkoord / wijzigen / aanvraag"
+                            >{ locale == 'nl' ? 'Offerte akkoord' : 'Quote approved' }
+                            </option>
+
+                            <!--verkooppunten-->
+                            <option
+                                v-if="selectedCategory === 'Verkooppunten'"
+                                value="Afspraak interieuradvies maken"
+                            >{ locale == 'nl' ? 'Afspraak interieuradvies maken' : 'Appointment Interior Advice' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Verkooppunten'"
+                                value="Vraag over producten bij verkooppunt / showroom"
+                            >{ locale == 'nl' ? 'Vraag over een verkooppunt' : 'Question about a store' }
+                            </option>
+
+                            <!--reclamatie-->
+                            <option
+                                v-if="selectedCategory === 'Reclamatie'"
+                                value="Schade aan product bij levering"
+                            >{ locale == 'nl' ? 'Schade aan product bij levering' : 'Damage to product upon delivery' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Reclamatie'"
+                                value="Verkeerd product ontvangen/besteld"
+                            >{ locale == 'nl' ? 'Verkeerd product ontvangen/besteld' : 'Wrong product received/ordered' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Reclamatie'"
+                                value="Product retourneren na levering"
+                            >{ locale == 'nl' ? 'Retourneren' : 'Returns' }
+                            </option>
+
+                            <!--Garantie en Services-->
+                            <option
+                                v-if="selectedCategory === 'Endless live services'"
+                                value="Reparatie aanvraag"
+                            >{ locale == 'nl' ? 'Reparatie aanvraag' : 'Repair request' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Endless live services'"
+                                value="Inruil aanvraag"
+                            >{ locale == 'nl' ? 'Inruil aanvraag' : 'Trade-in request' }
+                            </option>
+                            <option
+                                v-if="selectedCategory === 'Endless live services'"
+                                value="Herstofferings aanvraag"
+                            >{ locale == 'nl' ? 'Herstofferings aanvraag' : 'Reupholstery request' }
+                            </option>
+                        </select>
+                    </div>
+                    <span class="sh-atom-icon">
+                            <svg
+                                aria-labelledby="iconDisclosureCollapsed"
+                                class="sh-atom-icon__svg"
+                                fill="none"
+                                height="8"
+                                id="iconDisclosureCollapsed"
+                                viewbox="0 0 15 8"
+                                width="15"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <title>icon</title>
+                                <desc>Arrow icon pointing down</desc>
+                                <path
+                                    d="M14 1L7.5 7L1 1"
+                                    stroke="currentcolor"
+                                    stroke-linecap="round"
+                                    stroke-width="0.7"
+                                >
+                                </path>
+                            </svg>
+                        </span>
+                </div>
+                <label
+                    class="atom-label"
+                    data-style="labels-as-placeholders"
+                    for="00N68000004Vq1c"
+                >{ locale == 'nl' ? 'Reden' : 'Reason' }
+                </label>
+                <span
+                    v-show="reasonSelectError"
+                    class="molecule-input-label__message-invalid hide-if-no-js"
+                >
+                        [[ reasonSelectErrorMessage ]]
+                    </span>
+            </div>
+        </div>
+
+        <div class="molecule-label-textarea layout-container-input-label">
+                <textarea
+                    autocomplete="off"
+                    class="atom-textarea"
+                    id="description"
+                    name="description"
+                >
+                </textarea>
+            <label
+                class="atom-label"
+                for="description"
+            >{ locale == 'nl' ? 'Jouw vraag of opmerking' : 'Your question or remarks' }
+            </label>
+        </div>
+
+        <div class="g-recaptcha" data-sitekey="6LcZpZgUAAAAAJuKyBtwuhMaWmR3Ab5K5R-qPlvB"></div>
+        <span class="recaptcha-error-msg hide-if-no-js" v-show="recaptchaError">[[ recaptchaErrorMessage ]]</span>
+        <button
+            class="sh-atom-button"
+            data-style="filled"
+            style="margin-top: 0;"
+            type="submit"
+        >{ locale == 'nl' ? 'Verzend' : 'Send' }
+        </button>
+    </form>
+</div>
+
+<script defer src="/static/std/assets/js/SFcontactForm.js"></script>

@@ -1,0 +1,116 @@
+<script defer is:inline>
+    function initEmbeddedMessaging() {
+        try {
+            embeddedservice_bootstrap.settings.language = 'nl_NL';
+            window.addEventListener("onEmbeddedMessagingReady", () => {
+                console.log("Received the onEmbeddedMessagingReady event…");
+                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Language": "nl_NL"});
+            });
+            embeddedservice_bootstrap.init(
+                '00D3H0000008q6o',
+                'Studio_Henk_web_CHat',
+                'https://studio-henk--train.sandbox.my.site.com/ESWStudioHenkwebCHat1701949332624',
+                {
+                    scrt2URL: 'https://studio-henk--train.sandbox.my.salesforce-scrt.com'
+                }
+            );
+        } catch (err) {
+            console.error('Error loading Embedded Messaging: ', err);
+        }
+    }
+
+    function hideChatButton(closeButton, chatButton) {
+        closeButton.classList.toggle('button--hidden');
+        // chatButton.parentElement.classList.toggle('button--hidden');
+        // document.getElementById("embedded-messaging").classList.toggle('button--hidden');
+        document.getElementById("embeddedMessagingConversationButton").classList.toggle('button--hidden');
+    }
+
+    function handleButtonAvailability() {
+        const chatButton = document.getElementById('embeddedMessagingConversationButton');
+        if (chatButton) {
+            // The button is available, you can perform actions on it here
+            console.log("Chat button is available!");
+            // get its parent
+            const chatButtonParent = chatButton.parentElement;
+            // create close button
+            const closeChatButton = document.createElement('button');
+            closeChatButton.setAttribute('type', 'button');
+            closeChatButton.setAttribute('id', 'chatbuttonclose');
+            closeChatButton.setAttribute('class', 'sh-atom-button');
+            closeChatButton.setAttribute('data-style', 'filled');
+            closeChatButton.setAttribute('data-shape', 'circle');
+            closeChatButton.setAttribute('data-size', 'small');
+
+            // Add SVG content to the button
+            closeChatButton.innerHTML = `
+    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.44766 0.810913L15.0795 14.4427" stroke="currentcolor" stroke-linecap="round"></path>
+      <path d="M15.0797 0.810913L1.44785 14.4428" stroke="currentcolor" stroke-linecap="round"></path>
+    </svg>`;
+
+            // Append the button to the body or another container
+            document.body.appendChild(closeChatButton);
+
+            // Add an event listener to the button
+            closeChatButton.addEventListener('click', function() {
+                hideChatButton(this, chatButton);
+            });
+        } else {
+            // The button is not available yet, you may want to retry or handle this scenario
+            console.log("Chat button is not available yet.");
+            setTimeout(handleButtonAvailability, 1000);
+        }
+    }
+</script>
+<script type='text/javascript' src='https://studio-henk--train.sandbox.my.site.com/ESWStudioHenkwebCHat1701949332624/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging(); handleButtonAvailability();' defer></script>
+<style is:global>
+    .embeddedMessagingConversationButtonWrapper .embeddedMessagingConversationButton {
+        outline: 0;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px 0 rgba(45, 45, 45, 0.5);
+        text-align: center;
+        overflow: hidden;
+        pointer-events: all;
+        cursor: pointer;
+    }
+
+    .embeddedMessagingConversationButton {
+        right:unset !important;
+        left:16px !important;
+        width: 44px !important;
+        height: 44px !important;
+        /*bottom: 54px !important;*/
+        transition: bottom .3s ease;
+        --eswHeaderColor: var(--color-accent1) !important;
+        --eswIconFillColor: var(--color-henk-black) !important;
+    }
+
+    .embeddedMessagingConversationButton .embeddedMessagingIconChat {
+        max-width: 24px !important;
+        max-height: 24px !important;
+    }
+
+    #chatbuttonclose {
+        background: black;
+        color: white;
+        position: fixed;
+        bottom: 70px;
+        border-radius: 50px;
+        left: 52px;
+        padding: 4px;
+        z-index: 9999;
+    }
+
+    #chatbuttonclose svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    #embedded-messaging.button--hidden,
+    #embeddedMessagingConversationButton.button--hidden,
+    #chatbuttonclose.button--hidden {
+        display: none !important;
+    }
+</style>

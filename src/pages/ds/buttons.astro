@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/Icon.astro";
 import AtomTag from "../../components/Atoms/AtomTag.astro";
+import SfChatButton from "@components/third-party/_sf-chatbutton.astro";
 import MobileNavButton from "../../components/MobileNavButton.astro";
 import NavCard from "../../components/NavCard.astro";
 ---
@@ -122,7 +123,7 @@ import NavCard from "../../components/NavCard.astro";
         href="#"
         class="sh-atom-button"
         data-style="filled"
-        
+
       >
         <Icon icon="icon-arrow-left" />
         icon left
@@ -178,7 +179,7 @@ import NavCard from "../../components/NavCard.astro";
         href="#"
         class="sh-atom-button"
         data-style="plain-dark"
-        
+
       >
         <Icon icon="icon-arrow-left" />
         Arrow left
@@ -728,20 +729,16 @@ import NavCard from "../../components/NavCard.astro";
     </a>
 
 
+    <hr>
+    <h2>Chatbot button</h2>
+    <div class="embeddedMessagingConversationButtonWrapper">
+      <button class="embeddedMessagingConversationButton" id="embeddedMessagingConversationButton" tabindex="0" role="button" aria-label="Hallo. Hebt u een vraag? Stel deze in de chat." title="Hallo. Hebt u een vraag? Stel deze in de chat." dir="ltr" style="--eswHeaderColor: #1A1B1E; --eswSecondaryColor: #005290;/* display: none; */"><div id="embeddedMessagingIconContainer" class="embeddedMessagingIconContainer"><svg focusable="false" aria-hidden="true" viewBox="0 0 100 100" id="embeddedMessagingIconChat" class="embeddedMessagingIconChat">
+        <path d="M50 0c27.614 0 50 20.52 50 45.833S77.614 91.667 50 91.667c-8.458 0-16.425-1.925-23.409-5.323-13.33 6.973-21.083 9.839-23.258 8.595-2.064-1.18.114-8.436 6.534-21.767C3.667 65.54 0 56.08 0 45.833 0 20.52 22.386 0 50 0zm4.583 61.667H22.917a2.917 2.917 0 000 5.833h31.666a2.917 2.917 0 000-5.833zm12.5-15.834H22.917a2.917 2.917 0 000 5.834h44.166a2.917 2.917 0 000-5.834zM79.583 30H22.917a2.917 2.917 0 000 5.833h56.666a2.917 2.917 0 000-5.833z"></path>
+      </svg></div></button>
+    </div>
   </div>
-  <!--<p>with icon right</p>
-  <AtomTag text="fast delivery" icon="icon-truck" iconPosition="right" />
-  <h2>close icon button</h2>
-  <a
-    href="/en/cart/remove/378093"
-    class="sh-atom-button"
-    data-style="plain-dark"
-  >
-      <Icon icon="icon-trashcan" />
-  </a>
-  <button type="button" data-style="plain-dark" class="sh-atom-button">
-      <Icon icon="icon-close" class="sh-atom-icon" />
-  </button>-->
+  <hr>
+  <SfChatButton />
 </BaseLayout>
 <style is:global>
   .frame {
