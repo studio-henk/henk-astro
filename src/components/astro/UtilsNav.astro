@@ -1,0 +1,154 @@
+---
+import { getLangFromUrl } from "../../i18n/utils";
+import Icon from "../Icon.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname.substring(4);
+let otherLang;
+if (lang == "nl") {
+  otherLang = "en";
+} else {
+  otherLang = "nl";
+}
+let otherURL = "/" + otherLang + "/" + currentPath;
+---
+
+<div class="utilities-nav">
+    <div class="utils utils_contact-bar">
+        <!--<div class="utils_location-stores">-->
+            <a class="utils_contact-bar-link" href="#">
+                <Icon class="sh-atom-icon" icon="icon-location-store"/>
+                Stores
+            </a>
+        <!--</div>-->
+        <a class="utils_contact-bar-link" href="#">Contact</a>
+    </div>
+  <ul class="utilities-nav__list">
+    <li class="utilities-nav__item" id="utilities-nav__search">
+      <a
+        href="/en/search-results"
+        class="sh-atom-button --icon-search"
+        data-style="plain-dark"
+      >
+        <!-- icon search here -->
+        <Icon class="sh-atom-icon" width="24" height="24" icon="icon-search" />
+        Search
+      </a>
+    </li>
+    <li class="utilities-nav__item" id="utilities-nav__cart">
+      <a
+        href="/en/cart/list"
+        class="sh-atom-button --icon-cart"
+        data-style="plain-dark"
+      >
+        <!-- icon cart here -->
+        <Icon class="sh-atom-icon" width="24" height="24" icon="icon-cart" />
+        Cart
+      </a>
+    </li>
+    <li class="utilities-nav__item" id="utilities-nav__lang">
+      <lang-switch data-url={otherURL} title={otherURL} lang={lang}
+      ></lang-switch>
+    </li>
+  </ul>
+</div>
+<style is:global>
+  /* utilities nav */
+  .utilities-nav {
+      max-width: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+  }
+
+  .utils_contact-bar {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 8px;
+  }
+
+  .utils_contact-bar-link {
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 24px;
+      --color-text-action: var(--color-text-action-dimmed);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+  }
+
+  [data-theme="dark"] .utils_contact-bar-link {
+      --color-text-action: var(--color-henk-white);
+  }
+
+  [data-theme="dark"].NavBar--isHovered .utils_contact-bar-link,
+  [data-theme="dark"].NavBar--isScrolled .utils_contact-bar-link,
+  [data-theme="dark"].NavBar--submenuOpen .utils_contact-bar-link {
+      --color-text-action: var(--color-text-action-dimmed);
+  }
+
+  [data-theme="dark"].NavBar--isHovered .utils_contact-bar-link:hover,
+  [data-theme="dark"].NavBar--isScrolled .utils_contact-bar-link:hover,
+  [data-theme="dark"].NavBar--submenuOpen .utils_contact-bar-link:hover {
+      --color-text-action: var(--color-henk-black);
+  }
+
+  .utils_location-stores {
+      display: flex;
+      gap: 4px;
+      align-items: center
+  }
+
+  .utilities-nav__list {
+    display: grid;
+    gap: 24px;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    padding-bottom: 17px;
+  }
+
+  #utilities-nav__search,
+  #utilities-nav__cart {
+    display: flex;
+  }
+
+  #utilities-nav__cart {
+    grid-column: 3;
+  }
+
+  .utilities-nav__item a[class*="--icon"] {
+    text-indent: -999em;
+    line-height: 24px;
+      font-size: 0;
+  }
+
+  [data-theme="dark"] .utilities-nav__item a {
+    --color-text-button: var(--color-white);
+  }
+
+  [data-theme="dark"].NavBar--isHovered .utilities-nav__item a,
+  [data-theme="dark"].NavBar--isScrolled .utilities-nav__item a,
+  [data-theme="dark"].NavBar--submenuOpen .utilities-nav__item a {
+    --color-text-button: var(--color-black);
+  }
+
+  .utilities-nav__item a:hover,
+  [data-theme="dark"].NavBar--submenuOpen .utilities-nav__item a:hover {
+      --color-text-button: var(--color-accent16);
+  }
+
+  [data-theme="dark"].NavBar--isHovered .utilities-nav__item a:hover {
+      --color-text-button: var(--color-accent11);
+      /*--color-text-button: var(--color-accent16);*/
+  }
+
+  #utilities-nav__lang {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+</style>

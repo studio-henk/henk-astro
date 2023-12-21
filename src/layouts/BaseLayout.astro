@@ -45,11 +45,13 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", Theme, hasHero, sh
     -->
 
     <!-- Preload stylesheets -->
+    <link rel="preload" href="/source/scss/tokens/_tokens-colors.css" as="style" />
     <link rel="preload" href="/static/std/assets/components/navbar/_skeleton-loading.css" as="style" />
     <link rel="preload" href="/static/std/assets/components/navbar/NavBarMobile.css" as="style" />
     <link rel="preload" href="/static/std/assets/components/navbar/NavBar-desktop.css" as="style" />
 
     <!-- Apply stylesheets -->
+    <link rel="stylesheet" href="/source/scss/tokens/_tokens-colors.css" />
     <link rel="stylesheet" href="/static/std/assets/components/navbar/_skeleton-loading.css" />
     <link rel="stylesheet" href="/static/std/assets/components/navbar/NavBarMobile.css" />
     <link rel="stylesheet" href="/static/std/assets/components/navbar/NavBar-desktop.css" />

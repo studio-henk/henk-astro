@@ -32,14 +32,6 @@
  */
 
 @use "base/_reset";
-
-/* turn off */
-// legacy
-// @use "_v2/vars/_css-custom-properties";
-
-@use "tokens/_tokens-colors.css";
-
-// @use "tokens/_tokens-colors-legacy";
 @use "tokens/_tokens-size-font";
 @use "tokens/_tokens-size-spacings";
 @use "utils/_modifiers";

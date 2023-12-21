@@ -2,14 +2,18 @@
 @import url(_message-bar.css);
 @import url(_atom-logo.css);
 
+#NavBar,
+#NavBar[v-cloak]{
+    display: none;
+}
+
 @media only screen and (min-width: 1280px) {
-    body {
-        transition: all 1s ease;
+    :root {
+        scrollbar-gutter: stable;
     }
 
-    #NavBar,
-    #NavBar[v-cloak]{
-        display: none;
+    body {
+        transition: all 1s ease;
     }
 
     #NavBar {
@@ -19,7 +23,8 @@
         top: 0;
         left: 0;
         z-index: 999;
-        width: 100%;
+        /*width: 100%;*/
+        width: 100vw;
         padding: 0;
         font-family: var(--font-body, sans-serif), sans-serif;
     }
@@ -50,10 +55,10 @@
         background-color: var(--color-background-masthead, transparent);
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         z-index: 9;
         position: relative;
-        padding: 20px 28px;
+        padding: 0 32px;
         opacity: 1;
         transition: all .5s ease;
     }
@@ -62,54 +67,32 @@
         flex: 1 1 auto;
     }
 
+    .masthead-desktop .primary-nav-container .atom-logo:hover {
+        color: var(--color-accent16);
+    }
 
     .masthead-desktop .primary-nav-container .primary-nav {
         display: flex;
-        gap: 42px;
+        gap: 24px;
         flex: 4 1 auto;
+        padding-bottom: 17px;
     }
 
     .masthead-desktop .primary-nav .primary-nav__link {
         text-decoration: none;
+        /*--color-text-action: var(--color-henk-black);*/
     }
 
-    /* utilities nav */
-    .masthead-desktop .utilities-nav__list {
-        display: grid;
-        gap: 32px;
-        position: relative;
-        list-style: none;
-        margin: 0;
-        grid-template-columns: repeat(3, auto);
-        align-items: center;
+    .masthead-desktop .primary-nav .primary-nav__link:hover {
+        --color-text-action: var(--color-accent16);
     }
 
-    .masthead-desktop #utilities-nav__search,
-    .masthead-desktop #utilities-nav__cart {
-        display: flex;
+    [data-theme="dark"] .primary-nav .primary-nav__link:hover {
+        --color-text-action: var(--color-accent11);
     }
 
-    .masthead-desktop #utilities-nav__cart {
-        grid-column: 3;
-    }
-
-    .masthead-desktop .utilities-nav__item a[class*="--icon"] {
-        text-indent: -999em;
-    }
-
-    .masthead-desktop[data-theme="dark"] .utilities-nav__item a {
-        --color-text-button: var(--color-white);
-    }
-
-    .masthead-desktop[data-theme="dark"].NavBar--isHovered .utilities-nav__item a,
-    .masthead-desktop[data-theme="dark"].NavBar--isScrolled .utilities-nav__item a {
-        --color-text-button: var(--color-black);
-    }
-
-    .masthead-desktop #utilities-nav__lang {
-        position: relative;
-        grid-column: 2;
-        grid-row: 1;
+    [data-theme="dark"].NavBar--submenuOpen .primary-nav .primary-nav__link:hover {
+        --color-text-action: var(--color-accent16);
     }
 
     /* submenu */
@@ -134,6 +117,7 @@
 
     .masthead-desktop.NavBar--submenuOpen {
         --color-background-masthead: var(--color-accent1);
+        --color-text-masthead: var(--color-henk-black);
     }
 
     .masthead-desktop.NavBar--submenuOpen.NavBar--isScrolled {

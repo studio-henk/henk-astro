@@ -3,8 +3,6 @@
 ::after,
 ::selection {
   /* brand */
-  --color-henk-black: #1f1f1f;
-  --color-henk-white: #f7f8f6;
   --color-ral-9005: #0a0c10;
   --color-ral-9016: #f1f0ea;
 
@@ -12,6 +10,7 @@
   --color-transparent: transparent;
   --color-black: #000;
   --color-white: #fff;
+  --color-black-65: #a6a6a6;
 
   /* accents */
   --color-accent1: #f3f1ec;
@@ -37,7 +36,7 @@
   --color-henk-danger-dark: #c00;
   --color-henk-success: #008000;
   --color-henk-warning: #ffa500;
-  --color-henk-disabled: #d3d3d3;
+  /*--color-henk-disabled: #d3d3d3;*/
 
   /* todo: remove after check where used */
   --color-henk-green-victorious: var(--color-accent16);
@@ -45,4 +44,6 @@
   /* alias */
   --color-black-lacquer: var(--color-ral-9005);
   --color-white-lacquer: var(--color-ral-9016);
+  --color-henk-black: var(--color-ral-9005);
+  --color-henk-white: var(--color-ral-9016);
 }

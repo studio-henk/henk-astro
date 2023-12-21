@@ -41,6 +41,16 @@ createApp({
                 document.body.style.paddingTop = `${navBarHeight}px`;
             }
         },
+        setBodyOverflow() {
+            document.body.style.overflow = "hidden";
+            // document.body.style.paddingRight = "15px";
+            /*document.documentElement.style.overflow = "hidden";*/
+        },
+        removeBodyOverflow() {
+            document.body.style.removeProperty('overflow');
+            // document.body.style.paddingRight = "0";
+            /*document.documentElement.style.removeProperty('overflow');*/
+        },
         handleIntersection(entries) {
             this.isScrolled = entries[0].boundingClientRect.y < 0;
         },
@@ -59,6 +69,19 @@ createApp({
         handleNavBarSubmenuMouseOut() {
             console.log("mouseOut submenu");
         },
+        handleSubmenuOverlayTouch() {
+            console.log('Overlay touched');
+            this.showSubmenu = false;
+            this.statusNavBarHovered = false;
+            this.resetSubmenu();
+        },
+        handleSubmenuOverlayMouseOver() {
+            console.log('Overlay MouseOver');
+            this.showSubmenu = false;
+            this.statusNavBarHovered = false;
+            this.resetSubmenu();
+            this.removeBodyOverflow();
+        },
         handlePrimaryNavItemHover(item) {
             // console.log(`Hovered over ${item.navTitle}`);
             this.resetSubmenu();
@@ -66,6 +89,8 @@ createApp({
                 this.submenuHeading = item.navTitle;
                 this.currentItems = item.childrenData || [];
                 this.showSubmenu = true;
+                // overflow on body here to prevent scrolling while submenu open
+                this.setBodyOverflow();
             } else {
                 this.showSubmenu = false;
             }
@@ -87,6 +112,7 @@ createApp({
             this.currentItems = [];
             this.stack = [];
             this.isGoingBack = false;
+            this.removeBodyOverflow();
         },
     },
     created() {
@@ -98,7 +124,7 @@ createApp({
         this.$nextTick(() => {
             this.setBodyPadding();
             // for debugging to keep menu open
-            this.handlePrimaryNavItemHover(this.navigationData[5]);
+            // this.handlePrimaryNavItemHover(this.navigationData[5]);
         });
 
         const navBarSkeleton = document.querySelector(".nav-bar-skeleton");

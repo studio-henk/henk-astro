@@ -5,6 +5,8 @@ import LangSwitchNoScript from "./LangSwitchNoScript.astro";
 import Icon from "./Icon.astro";
 import NavCard from "./NavCard.astro";
 import MsgBar from "./MsgBar.astro";
+import UtilsNav from "../components/astro/UtilsNav.astro";
+
 const lang = getLangFromUrl(Astro.url);
 // const { NavOnHero } = Astro.props;
 let { Theme } = Astro.props;
@@ -53,12 +55,12 @@ const {hasHero} = Astro.props;
         class="masthead masthead-desktop"
         :class="{ 'NavBar--isScrolled': isScrolled, 'NavBar--isHovered': statusNavBarHovered, 'NavBar--submenuOpen': showSubmenu }"
         id="masthead-desktop"
-        @mouseleave="handleNavBarMouseLeave"
-        @mouseenter="handleNavBarMouseEnter"
         ref="navBar"
         data-has-hero={hasHero}
         data-theme={Theme}
         data-show-topmessagebar={showMsgBar}
+        @mouseleave="handleNavBarMouseLeave"
+        @mouseenter="handleNavBarMouseEnter"
         v-cloak
     >
         <div id="msg-covid" class="message-bar">
@@ -69,16 +71,21 @@ const {hasHero} = Astro.props;
             ></discount-timer>-->
         </div>
         <div class="primary-nav-container">
+            <!--<AtomLogo
+                url="/"
+                icon="logo-henk-solo"
+                width="106"
+                height="25"
+            />-->
             <AtomLogo
                 url="/"
                 icon="logo-henk-solo"
-                width="163"
-                height="14"
+                width="140"
+                height="32"
             />
             <nav class="primary-nav">
                 <a
                     class="primary-nav__link"
-                    :class="{ 'hover-interaction-a': !item.childrenData }"
                     v-for="item in navigationData"
                     :key="item.id"
                     :href="item.url"
@@ -86,18 +93,20 @@ const {hasHero} = Astro.props;
                 >[[ item.navTitle ]]
                 </a>
             </nav>
-            <div class="utilities-nav">
+            <UtilsNav />
+            <!--:class="{ 'hover-interaction-a': !item.childrenData }"-->
+            <!--<div class="utilities-nav">
                 <ul class="utilities-nav__list">
                     <li class="utilities-nav__item" id="utilities-nav__search">
-                        <a href="/en/search-results" class="sh-atom-button --icon-search" data-style="plain-dark">
-                            <!-- icon search here -->
+                        <a href="/en/search-results" class="sh-atom-button &#45;&#45;icon-search" data-style="plain-dark">
+                            &lt;!&ndash; icon search here &ndash;&gt;
                             <Icon class="sh-atom-icon" width="24" height="24" icon="icon-search"/>
                             Search
                         </a>
                     </li>
                     <li class="utilities-nav__item" id="utilities-nav__cart">
-                        <a href="/en/cart/list" class="sh-atom-button --icon-cart" data-style="plain-dark">
-                            <!-- icon cart here -->
+                        <a href="/en/cart/list" class="sh-atom-button &#45;&#45;icon-cart" data-style="plain-dark">
+                            &lt;!&ndash; icon cart here &ndash;&gt;
                             <Icon class="sh-atom-icon" width="24" height="24" icon="icon-cart"/>
                             Cart
                         </a>
@@ -106,14 +115,17 @@ const {hasHero} = Astro.props;
                         <lang-switch data-url={otherURL} title={otherURL } lang={lang}></lang-switch>
                     </li>
                 </ul>
-            </div>
+            </div>-->
         </div>
         <transition appear>
-            <div class="submenuOverlay" v-show="showSubmenu">
+            <div
+                class="submenuOverlay"
+                v-show="showSubmenu"
+                @touchstart.self="handleSubmenuOverlayTouch()"
+                @mouseover.self="handleSubmenuOverlayMouseOver()"
+            >
             <div
                 class="submenu"
-                @mouseleave.self="handleNavBarSubmenuMouseLeave"
-                @mouseout.self="handleNavBarSubmenuMouseOut"
             >
                 <small class="submenu__heading">[[ submenuHeading]]</small>
                 <div class="gallery-controller">

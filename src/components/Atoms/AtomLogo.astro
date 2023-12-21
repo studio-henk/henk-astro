@@ -9,12 +9,13 @@ const { url = "/", icon = "henk-logo", width = 174, height = 16 } = Astro.props;
         height={height}
     />
 </a>
-<style>
+<style is:global>
     .atom-logo {
+
     }
 
-    .atom-logo svg {
-        width: 82px;
-        height: 24px;
+    .masthead-desktop .atom-logo {
+        padding-bottom: 21px;
     }
+
 </style>

@@ -44,6 +44,7 @@ template.innerHTML = `
     :host([lang="nl"]) .LangSwitch__label:first-child,
     :host([lang="en"]) .LangSwitch__label:last-child {
         cursor: not-allowed;
+        color: var(--color-henk-disabled, #ccc);
     }   
    
     

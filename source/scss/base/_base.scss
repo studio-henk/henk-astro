@@ -231,11 +231,16 @@ h1:first-child {
 // @todo connect to better var / token, not directly a color ie var-link-color
 
 a {
-  /*color: var(--color-henk-black);*/
   color: var(--color-text-action);
   text-decoration-line: underline;
   text-underline-offset: .0875em;
   text-decoration-thickness: 1px;
+  transition: color .2s ease;
+}
+
+a:focus,
+a:hover {
+  --color-text-action: var(--color-henk-black);
 }
 
 p {
