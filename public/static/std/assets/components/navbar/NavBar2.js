@@ -55,9 +55,9 @@ createApp({
         },
         handleNavBarMouseLeave() {
             console.log('Mouse leave');
-            /*this.showSubmenu = false;
+            this.showSubmenu = false;
             this.statusNavBarHovered = false;
-            this.resetSubmenu();*/
+            this.resetSubmenu();
         },
         handleNavBarSubmenuMouseLeave() {
           console.log("mouseLeave submenu");
@@ -130,7 +130,7 @@ createApp({
         this.$nextTick(() => {
             this.setBodyPadding();
             // for debugging to keep menu open
-            this.handlePrimaryNavItemHover(this.navigationData[5]);
+            // this.handlePrimaryNavItemHover(this.navigationData[5]);
         });
 
         const navBarSkeleton = document.querySelector(".nav-bar-skeleton");
