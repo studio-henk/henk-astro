@@ -71,10 +71,14 @@ const ariaProperties = {
     >
         <div id="msg-covid" class="message-bar">
             <a href="en/stores/rotterdam-brand-store">Our new Rotterdam brand store is now open!</a>
-            <!--<discount-timer
-                :count-down-date="'Dec 17, 2023 23:59:59'"
-                :show-timer="true"
-            ></discount-timer>-->
+            <!-- CountdownTimer -->
+            <countdown-timer
+                start-date-time="Jan 4, 2024 10:00:00"
+                end-date-time="Feb 4, 2024 10:00:00"
+                lang={lang}
+            >
+            </countdown-timer>
+            <!-- CountdownTimer -->
         </div>
         <div class="primary-nav-container">
             <!--<AtomLogo
@@ -102,28 +106,6 @@ const ariaProperties = {
                 </a>
             </nav>
             <UtilsNav />
-            <!--:class="{ 'hover-interaction-a': !item.childrenData }"-->
-            <!--<div class="utilities-nav">
-                <ul class="utilities-nav__list">
-                    <li class="utilities-nav__item" id="utilities-nav__search">
-                        <a href="/en/search-results" class="sh-atom-button &#45;&#45;icon-search" data-style="plain-dark">
-                            &lt;!&ndash; icon search here &ndash;&gt;
-                            <Icon class="sh-atom-icon" width="24" height="24" icon="icon-search"/>
-                            Search
-                        </a>
-                    </li>
-                    <li class="utilities-nav__item" id="utilities-nav__cart">
-                        <a href="/en/cart/list" class="sh-atom-button &#45;&#45;icon-cart" data-style="plain-dark">
-                            &lt;!&ndash; icon cart here &ndash;&gt;
-                            <Icon class="sh-atom-icon" width="24" height="24" icon="icon-cart"/>
-                            Cart
-                        </a>
-                    </li>
-                    <li class="utilities-nav__item" id="utilities-nav__lang">
-                        <lang-switch data-url={otherURL} title={otherURL } lang={lang}></lang-switch>
-                    </li>
-                </ul>
-            </div>-->
         </div>
         <transition appear>
             <div

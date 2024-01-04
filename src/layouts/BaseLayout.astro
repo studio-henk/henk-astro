@@ -34,16 +34,6 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", Theme, hasHero, sh
         crossorigin
     />
     <!-- NavBar styles -->
-    <!--<link rel="preload" href="/static/std/assets/css/_masthead-desktop.css" as="style" />
-    <link rel="preload" href="/static/std/assets/toolkit/styles/toolkit.css" as="style" />
-    <link
-        href="/static/std/assets/css/_masthead-desktop.css"
-        media="screen"
-        rel="stylesheet"
-        type="text/css"
-    />
-    -->
-
     <!-- Preload stylesheets -->
     <link rel="preload" href="/static/std/assets/css/_tokens-colors.css" as="style" />
     <link rel="preload" href="/static/std/assets/components/navbar/_skeleton-loading.css" as="style" />
@@ -64,6 +54,9 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", Theme, hasHero, sh
     />
 
     <slot name="head-styles"/>
+
+    <!-- web components -->
+    <script src="/static/std/assets/js/web-components/CountdownTimer.js" defer></script>
     <!--scripts for navigation-->
     <!--<script src="/static/std/assets/js/web-components/LangSwitch.js" type="module"></script>
     <script defer src="/static/std/assets/js/web-components/LangSwitchAction.js"></script>
