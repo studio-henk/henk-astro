@@ -213,7 +213,10 @@ img.sh-atom-sample {
       }
 
       .samples__pack__sample__desc {
-        @include truncate(2);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         margin: 0;
       }
 
@@ -712,7 +715,6 @@ main.sh-l-page-main .sample__quickshop__content ul,
     }
 
     .samples_filter__title {
-      /*@include sh-text-style-h2;*/
       font-size: 1.5rem; // 24px
       line-height: 38px;
       letter-spacing: 1.2px;

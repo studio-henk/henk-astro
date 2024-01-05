@@ -1,0 +1,23 @@
+.basic-section {
+  margin: 1.25rem 0; }
+  @media (min-width: 768px) {
+    .basic-section {
+      margin: 1.5rem 0; } }
+  @media (min-width: 992px) {
+    .basic-section {
+      margin: 3rem 0; } }
+
+/*used on collection page
+also about-us*/
+.intro {
+  margin: 1.25rem 0; }
+  @media (min-width: 768px) {
+    .intro {
+      margin: 1.5rem 0; } }
+  @media (min-width: 992px) {
+    .intro {
+      margin: 3rem 0; } }
+  .intro .intro__block--title {
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 28px; }

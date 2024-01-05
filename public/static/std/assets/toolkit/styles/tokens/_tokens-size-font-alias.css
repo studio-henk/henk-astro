@@ -1,0 +1,7 @@
+:root,
+::before,
+::after,
+::selection {
+    --size-font-h1-min: var(--size-font-24);
+    --size-font-h1-max: var(--size-font-42);
+}

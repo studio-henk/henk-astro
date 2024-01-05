@@ -71,8 +71,6 @@
       transition: all 0.3s ease;
 
       .item__title {
-        /*@include sh-text-style-1;*/
-        /*font-size: calc(var(--var-global-fontsize-small) / 16 * 1rem);*/
         font-size: 0.75rem; // 12px
         letter-spacing: 0.2em;
         text-transform: uppercase;

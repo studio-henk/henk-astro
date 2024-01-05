@@ -118,7 +118,8 @@
 /* todo: remove after CFGP page is done*/
 .seemore-link,
 .seeless-link {
-  @include font-light;
+  font-family: var(--font-body, sans-serif), sans-serif;
+  text-transform: none;
   display: block;
   clear: both;
   width: 100%;

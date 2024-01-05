@@ -8,7 +8,7 @@
 
   &__quantity,
   &__price {
-    @extend .no-select;
+    user-select: none;
     list-style: none;
     margin: 0;
 

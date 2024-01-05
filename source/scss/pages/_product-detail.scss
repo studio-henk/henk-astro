@@ -106,7 +106,9 @@
       width: 100%;
       height: 5rem; // 80px
       &::-webkit-input-placeholder {
-        @include font-normal;
+        font-family: var(--font-body, sans-serif), sans-serif;
+        font-weight: 400;
+        text-transform: none;
         color: rgba(0, 0, 0, 0.88);
       }
     }

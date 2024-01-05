@@ -14,7 +14,9 @@
       display: inline-block;
       margin-right: 1rem;
       margin-bottom: 0.5rem;
-      @include font-normal;
+      font-family: var(--font-body, sans-serif), sans-serif;
+      font-weight: 400;
+      text-transform: none;
       position: relative;
       & > a:before {
         @include underline();

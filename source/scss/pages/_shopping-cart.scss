@@ -31,10 +31,8 @@
   &__quantity,
   &__price {
     display: block;
-    //    @extend .no-select;
     list-style: none;
     &--item {
-      // max-height: 4rem;
       max-height: 2.5rem; // 40px
       text-align: right;
       margin: 0;
@@ -194,7 +192,7 @@ table th[class*="col-"] {
 .column-labels,
 .shopping-cart-product,
 .totals-item {
-  @extend .group;
+  zoom: 1;
   // background-color: red !important;
 }
 
@@ -357,8 +355,6 @@ label {
       width: 100%;
       margin-top: 0.75rem;
       & span {
-        // @extend .h4;
-        // background-color: red !important;
       }
       @media screen and (min-width: 544px) {
         width: calc(100% - 160px);
@@ -453,7 +449,6 @@ label {
       }
     }
     &--item-total {
-      // @include font-normal;
     }
   }
   &__order-btn {

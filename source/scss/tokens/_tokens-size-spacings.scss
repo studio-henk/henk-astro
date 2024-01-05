@@ -5,6 +5,6 @@
   --size-spacing-unit-base: calc(4 / var(--size-font-body) * 1rem);
 
   /* calc to get line-height multiplier ie 1.75 */
-  --size-vertical-rhythm: calc(var(--size-font-lineheight-body, 28px) / var(--size-font-body, 16px));
+  /*--size-vertical-rhythm: calc(var(--size-font-lineheight-body, 28px) / var(--size-font-body, 16px));*/
 
 }

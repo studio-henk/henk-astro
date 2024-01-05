@@ -1,0 +1,71 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    text-align: left;
+    margin: 24px 0;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+    margin-top: 0;
+}
+
+h1,
+.h1 {
+    /* target screen 1792 (42/1792)*100 */
+    font-size: clamp(1.5rem, 2.34375vw, 2.625rem);
+    /* 40, 64 */
+    line-height: clamp(40px, 3.57142857vw, 64px);
+}
+
+h2,
+.h2 {
+    font-size: clamp(1.25rem, 2.34375vw, 2.25rem);
+    /* 32, 56 */
+    line-height: clamp(32px, 3.125vw, 56px);
+}
+
+/* 18, 32 */
+h3,
+.h3 {
+    font-size: clamp(1.125rem, 2.34375vw, 2rem);
+    /* 32, 48 */
+    line-height: clamp(32px, 2.67857143vw, 48px);
+}
+
+/* 16, 24 */
+h4,
+.h4 {
+    font-size: clamp(1rem, 2.34375vw, 1.5rem);
+    /* 24, 40 */
+    line-height: clamp(24px, 2.23214286vw, 40px);
+}
+
+/* 16, 20 */
+h5,
+.h5 {
+    font-size: clamp(1rem, 2.34375vw, 1.25rem);
+    /* 24, 32 */
+    line-height: clamp(24px, 1.78571429vw, 32px);
+}
+
+/* 16, 18 */
+h6,
+.h6 {
+    font-size: clamp(1rem, 2.34375vw, 1.125rem);
+    /* 24, 32 */
+    line-height: clamp(24px, 1.78571429vw, 32px);
+}
+
+/*h1 as first-child no margin top*/
+h1:first-child {
+   margin-top: 0;
+}

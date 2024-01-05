@@ -9,12 +9,7 @@
     }
     &--btn {
       margin-top: 0.5rem;
-      //      @include font-uppercase;
-      //      @extend .uppercase;
-      // background-color: red !important;
       & .icon {
-        // width: 1.2rem;
-        // height: 1.2rem;
         width: 0.75rem; // 12px
         height: 0.75rem; // 12px
       }
@@ -39,9 +34,6 @@
     }
     &--btn {
       margin-top: 0.5rem;
-      //      @include font-uppercase;
-      //      @extend .uppercase;
-      //        background-color: red !important;
     }
   }
   &__text {

@@ -180,7 +180,7 @@
 
   &__thumbnail {
     cursor: pointer;
-    @extend .no-select;
+    user-select: none;
     padding: 0.5rem;
     height: auto;
     // flex: 0 1 calc(25% - 1.6rem);

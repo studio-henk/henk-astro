@@ -41,10 +41,8 @@
   }
 
   &__btn {
-    // @extend .no-select;
     cursor: pointer;
     display: block;
-    // @extend h2;
     @media (min-width: 768px) {
       margin-bottom: 0.75rem;
     }
@@ -60,13 +58,10 @@
 
   &__title {
     display: block;
-    // @include font-uppercase;
-    // @extend .uppercase;
     margin: 0 0 1rem 0;
   }
 
   &__category {
-    //    margin-top: 1.5rem;
   }
 
   &__checklist {
@@ -75,7 +70,6 @@
     display: block;
 
     &--item {
-      // @extend p;
       display: block;
       margin-bottom: 0.5rem;
       // update for listerpages 2022-08-11 • 10:54 - CEST

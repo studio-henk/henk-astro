@@ -1,4 +1,4 @@
-@use "../../../mixins/_mixins" as *;
+//@use "../../../mixins/_mixins" as *;
 
 [data-variant="slider-brick-variant-B"] {
   background-color: var(--color-henk-white, #f00);
@@ -37,7 +37,10 @@
     }
 
     .item__caption {
-      @include truncate(2);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .item__price {

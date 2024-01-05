@@ -31,68 +31,67 @@
  * Text.................Text helpers.
  */
 
-@use "base/_reset";
-@use "tokens/_tokens-size-font";
-@use "tokens/_tokens-size-spacings";
-@use "utils/_modifiers";
+//@use "base/_reset";
+//@use "tokens/_tokens-size-font";
+//@use "tokens/_tokens-size-spacings";
+// @use "utils/_modifiers";
 
-@use "_config.scss";
-@use "base/base";
-
-// remove when possible
-@use "utils/helpers";
+// @use "_config.scss";
+// @use "base/base";
 
 // remove when possible
-@use "utils/data-attrs";
+// @use "utils/helpers";
 
 // remove when possible
-@use "utils/sections";
+// @use "utils/data-attrs";
+
+// remove when possible
+// @use "utils/sections";
 
 /// base ///
-@use "base/_icons";
-@use "base/_video";
+/*@use "base/_icons";
+@use "base/_video";*/
 
 /// layout ///
-@use "layout/_grid";
-@use "layout/_sh-l-grid";
-@use "layout/_sh-l-page-main";
+// @use "layout/grid";
+// @use "layout/sh-l-grid";
+// @use "layout/sh-l-page-main";
 
 /// basics ? ///
-@use "basics/_selector";
-@use "basics/_toggle";
+/*@use "basics/_selector";
+@use "basics/_toggle";*/
 
 /// components ///
-@use "components/product-card";
-@use "components/_NavCard.css";
-@use "components/blogpost";
-// @use "components/cta-block";
-@use "components/product-slider.scss";
-@use "components/breadcrumbs";
-@use "components/related-products";
-@use "components/seo";
-@use "components/choose-card.css";
+// @use "components/product-card";
+// @use "components/_NavCard.css";
+// @use "components/blogpost";
+// @use "components/product-slider.scss";
+// @use "components/breadcrumbs";
+// @use "components/related-products";
+// @use "components/seo";
+// @use "components/choose-card.css";
 @use "components/radio-menu";
 @use "components/product-order";
 @use "components/product-specificaties";
-@use "components/sub-menu";
+// @use "components/sub-menu";
 @use "components/post";
 @use "components/quote";
 @use "components/people";
 @use "components/quick-cart";
 @use "components/detail-image";
 @use "components/datepicker";
-@use "components/cookie";
+// @use "components/cookie";
+
+
+
 @use "components/atoms/__atoms"; 
 @use "components/molecules/__molecules"; 
 @use "components/_BaseModal.css"; 
 
-/*@use "../../public/static/std/assets/css/components/atom-button-new.css";
-@use "../../public/static/std/assets/css/components/atom-button-icon.css";*/
 @use "components/atoms/atom-button/atom-button-new.css";
-// @use "components/atoms/atom-button-icon/atom-button-icon.css";
 @use "components/_LangSwitchNoScript.css";
-@use "components/_masthead-mobile.css";
-//@use "components/_masthead-desktop.css";
+// @use "components/_masthead-mobile.css";
+
 
 @use "components/_info-box.css";
 

@@ -10,10 +10,7 @@
 }
 
 .choose-cards {
-  // @extend .no-select;
-  // background-color: red !important;
   list-style: none;
-  // margin: 0 -0.4rem;
   margin: 0 -0.25rem; // -4px
   display: flex;
   flex-wrap: wrap;
@@ -130,9 +127,6 @@
       left: 50%;
       text-align: center;
       transform: translate(-50%, -50%);
-      // -webkit-transform: translate(-50%, -50%);
-      // @extend .caption;
-      //background-color: red !important;
     }
 
     &--image {

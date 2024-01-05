@@ -1,0 +1,27 @@
+svg.icon,
+img.icon {
+  width: 1.5rem;
+  height: 1.5rem; }
+
+.icon-small svg.icon {
+  width: 0.875rem;
+  height: 0.875rem; }
+
+.icon-right .icon {
+  margin-left: 0.5rem;
+  margin-top: -2px; }
+
+.icon-right-hyperlink:hover .icon {
+  margin-left: 0.75rem; }
+
+.icon-left .icon {
+  margin-right: 0.5rem;
+  margin-top: -2px; }
+
+.icon-collapse {
+  transition: 0.3s ease-in-out;
+  transform: rotate(0deg); }
+
+.collapser--expanded .icon-collapse {
+  transition: 0.3s ease-in-out;
+  transform: rotate(180deg); }
