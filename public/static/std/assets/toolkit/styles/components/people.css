@@ -1,0 +1,36 @@
+.people__name {
+  display: block;
+  font-weight: 400;
+}
+
+.people__text {
+  padding-bottom: 1.25rem;
+  margin: 0;
+}
+
+.people .people__photos .img-hover {
+  display: none;
+}
+
+.people .people__photos:hover .img-hover {
+  display: block;
+  margin-top: -150%;
+}
+
+@media only screen and (min-width: 360px) {
+  .personal .col-md-3 {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .personal .col-md-3 {
+    width: 33%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .personal .col-md-3 {
+    width: 25%;
+  }
+}
