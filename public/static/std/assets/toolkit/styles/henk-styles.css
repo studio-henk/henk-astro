@@ -36,24 +36,24 @@
 @import "components/_related-products.css";
 @import "components/_seo.css";
 @import "components/_choose-card.css";
+@import "components/radio-menu.css";
+@import "components/product-order.css";
+@import "components/product-specificaties.css";
+@import "components/post.css";
+@import "components/quote.css";
+@import "components/people.css";
+@import "components/quick-cart.css";
+@import "components/detail-image.css";
+@import "components/datepicker.css";
+
+/*Web-components*/
+@import "components/web-components/wc-stepper-quantity/wc-stepper-quantity.css";
 
 /*
 @import "components/NavCard.css";
 @import "components/blogpost";
 
 
-
-@import "components/radio-menu";
-@import "components/product-order";
-@import "components/product-specificaties";
-@import "components/sub-menu";
-@import "components/post";
-@import "components/quote";
-@import "components/people";
-@import "components/quick-cart";
-@import "components/detail-image";
-@import "components/datepicker";
-@import "components/cookie";
 @import "components/atoms/__atoms";
 @import "components/molecules/__molecules";
 @import "components/BaseModal.css";

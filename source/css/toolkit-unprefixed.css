@@ -1,873 +1,4 @@
 @charset "UTF-8";
-/**
- * CONTENTS
- *
- * SETTINGS
- * Global...............Globally-available variables and config.
- *
- * TOOLS
- * Mixins...............Useful mixins.
- *
- * GENERIC
- * Normalize.css........A level playing field.
- * Box-sizing...........Better default `box-sizing`.
- *
- * BASE
- * Headings.............H1–H6 styles.
- *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- *
- * COMPONENTS
- * Atoms
- *   Buttons..............Button elements.
- * Molecules
- * Organisms
- * Page-head............The main page header.
- * Page-foot............The main page footer.
- *
- * TRUMPS
- * Text.................Text helpers.
- */
-/*@use "base/_icons";
-@use "base/_video";*/
-/*@use "basics/_selector";
-@use "basics/_toggle";*/
-.size-menu,
-.radio-menu,
-.fabric-module-menu {
-  padding: 0 0 0.5rem 0;
-}
-.size-menu__item,
-.radio-menu__item,
-.fabric-module-menu__item {
-  padding: 0.5rem;
-}
-.no-touchevents .size-menu__item:hover,
-.no-touchevents .radio-menu__item:hover,
-.no-touchevents .fabric-module-menu__item:hover {
-  background-color: var(--color-henk-black);
-}
-.no-touchevents .size-menu__item:hover label.radio,
-.no-touchevents .radio-menu__item:hover label.radio,
-.no-touchevents .fabric-module-menu__item:hover label.radio {
-  color: #fff !important;
-}
-.no-touchevents .size-menu__item:hover label.radio:before,
-.no-touchevents .radio-menu__item:hover label.radio:before,
-.no-touchevents .fabric-module-menu__item:hover label.radio:before {
-  background-color: #fff;
-}
-.no-touchevents .size-menu__item:hover label.radio:after,
-.no-touchevents .radio-menu__item:hover label.radio:after,
-.no-touchevents .fabric-module-menu__item:hover label.radio:after {
-  border-color: #fff;
-}
-
-ul.size-menu,
-ul.radio-menu,
-ul.fabric-module-menu {
-  list-style: none;
-  margin: 0;
-}
-
-.choose-card__switch-menu {
-  padding: 1rem 0 0 0;
-}
-
-.size-menu__item:hover label {
-  color: #fff !important;
-}
-
-/*@mixin sh-text-style-1 {
-  font-size: calc(var(--var-global-fontsize-small) / 16 * 1rem);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-feature-settings: "pnum" on, "lnum" on;
-}*/
-.normal {
-  font-weight: normal;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-.lowercase {
-  text-transform: lowercase;
-}
-
-.bold {
-  font-weight: 400;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right !important;
-}
-
-.text-left {
-  text-align: left !important;
-}
-
-.text-shadow {
-  text-shadow: 0.5px 0.5px 0.5px #000;
-}
-
-.xs-right {
-  float: right !important;
-}
-
-@media (min-width: 544px) {
-  .sm-right {
-    float: right !important;
-  }
-}
-@media (min-width: 768px) {
-  .md-right {
-    float: right !important;
-  }
-}
-@media (min-width: 992px) {
-  .lg-right {
-    float: right !important;
-  }
-}
-@media (min-width: 1366px) {
-  .xl-right {
-    float: right !important;
-  }
-}
-.flex-fix-ie {
-  display: flex;
-  flex-direction: row;
-}
-
-.rotate {
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.cursorpointer {
-  cursor: pointer;
-}
-
-a.cursorpointer {
-  text-decoration: underline;
-}
-
-.flex {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.hidden {
-  display: none !important;
-}
-
-.show-block {
-  display: block !important;
-}
-
-.show-inline-block {
-  display: inline-block !important;
-}
-
-.show-inline {
-  display: inline !important;
-}
-
-/*
- * Hide input without blocking validation
- */
-span.hidden-input + input {
-  opacity: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border-width: 0 !important;
-  position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-}
-
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-  white-space: inherit;
-}
-
-/* Hiding class, making content visible only to screen readers but not visually */
-/* "sr" meaning "screen-reader" */
-.sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-.invisible {
-  visibility: hidden;
-}
-
-.no-select {
-  user-select: none;
-}
-
-.img-responsive {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
-.img-responsive img {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
-
-/*********************/
-/* SHOW HIDE HELPERS */
-/*********************/
-.hidden-xs {
-  display: none !important;
-}
-
-/* SM hide */
-@media (min-width: 544px) {
-  .hidden-sm {
-    display: none !important;
-  }
-}
-/* MD hide */
-@media (min-width: 768px) {
-  .hidden-md {
-    display: none !important;
-  }
-}
-/* LG hide */
-@media (min-width: 992px) {
-  .hidden-lg {
-    display: none !important;
-  }
-}
-/* XL hide */
-@media (min-width: 1366px) {
-  .hidden-xl {
-    display: none !important;
-  }
-}
-/* SM show */
-@media (min-width: 544px) {
-  .visible-sm-block {
-    display: block !important;
-  }
-  .visible-sm-inline {
-    display: inline !important;
-  }
-  .visible-sm-inline-block {
-    display: inline-block !important;
-  }
-}
-/* MD show */
-@media (min-width: 768px) {
-  .visible-md-block {
-    display: block !important;
-  }
-  .visible-md-inline {
-    display: inline !important;
-  }
-  .visible-md-inline-block {
-    display: inline-block !important;
-  }
-}
-/* lg show */
-@media (min-width: 992px) {
-  .visible-lg-block {
-    display: block !important;
-  }
-  .visible-lg-inline {
-    display: inline !important;
-  }
-  .visible-lg-inline-block {
-    display: inline-block !important;
-  }
-}
-/* xl show */
-@media (min-width: 1366px) {
-  .visible-xl-block {
-    display: block !important;
-  }
-  .visible-xl-inline {
-    display: inline !important;
-  }
-  .visible-xl-inline-block {
-    display: inline-block !important;
-  }
-}
-.visible-print {
-  display: none !important;
-}
-
-@media print {
-  .visible-print {
-    display: block !important;
-  }
-}
-.visible-print-block {
-  display: none !important;
-}
-
-@media print {
-  .visible-print-block {
-    display: block !important;
-  }
-}
-.visible-print-inline {
-  display: none !important;
-}
-
-@media print {
-  .visible-print-inline {
-    display: inline !important;
-  }
-}
-.visible-print-inline-block {
-  display: none !important;
-}
-
-@media print {
-  .visible-print-inline-block {
-    display: inline-block !important;
-  }
-}
-@media print {
-  .hidden-print {
-    display: none !important;
-  }
-}
-/* Border radius */
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.quote {
-  font-size: 1.25rem;
-  line-height: 1.6875rem;
-}
-
-.pull-over-small {
-  position: relative;
-  top: -1.875rem;
-  margin-bottom: -1.875rem;
-}
-
-.pull-over-medium {
-  position: relative;
-  top: -5rem;
-  margin-bottom: -5rem;
-}
-
-.ratio16-9:before {
-  padding-top: 56.25%;
-}
-
-.ratio {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.product-summary {
-  margin-top: 0;
-  float: right;
-}
-.product-summary__quantity, .product-summary__price {
-  user-select: none;
-  list-style: none;
-  margin: 0;
-}
-.product-summary__quantity--item, .product-summary__price--item {
-  max-height: 2.5rem;
-  display: inline-block;
-  margin: 0;
-  padding: 0.5rem 0;
-}
-.product-summary__quantity--item:first-child, .product-summary__price--item:first-child {
-  min-width: 6.75rem;
-  padding-right: 1rem;
-}
-.product-summary__price--item:nth-of-type(2) {
-  float: right;
-}
-.product-summary .input-holder {
-  display: block;
-  width: 100%;
-  position: relative;
-}
-.product-summary .input-holder input {
-  margin: 0;
-}
-.product-summary .input-holder input.qtyminus, .product-summary .input-holder input.qtyplus {
-  cursor: pointer;
-  line-height: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  text-align: center;
-  padding: 0 0 2px 2px;
-  transition: background-color 0.2s ease-out;
-}
-.product-summary .input-holder input.qty {
-  border: 0;
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
-  width: 4rem;
-}
-.product-summary__btn {
-  margin-top: 0.75rem;
-}
-
-.product-specificaties__title {
-  margin: 1rem 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 28px;
-}
-@media (min-width: 768px) {
-  .product-specificaties__title {
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-  }
-}
-.product-specificaties__title.sh-float-left {
-  float: left;
-}
-.product-specificaties__subtitle {
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-}
-.product-specificaties__part {
-  position: relative;
-  width: 100%;
-  clear: both;
-}
-.product-specificaties__list {
-  list-style: none;
-  margin-bottom: 1.25rem;
-  margin-left: 0;
-}
-.product-specificaties__list--item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-.product-specificaties__list--item--name {
-  padding-right: 0.5rem;
-  flex: 2;
-}
-.product-specificaties__list--item--value {
-  align-items: center;
-  text-align: right;
-  flex: 4;
-}
-.product-specificaties .configurator__price #configurator__price1 {
-  font-weight: 400;
-}
-
-/* stylelint-disable selector-class-pattern, custom-property-pattern, scss/dollar-variable-pattern */
-.first-post {
-  margin-bottom: 4rem;
-}
-.first-post * + * {
-  margin-top: 0;
-}
-.first-post .first-post__links--item {
-  text-decoration: none;
-}
-.first-post .first-post__links--item:hover {
-  text-decoration: underline;
-}
-
-.container-flex .col-sm-6.col-lg-4 {
-  display: flex;
-}
-
-.post {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  /*padding: 8px;*/
-}
-.post__image {
-  margin-bottom: 1rem;
-}
-.post__image--extra {
-  margin-top: 4.5rem;
-}
-.post__title {
-  /*font-size: 1.125rem; // 18px
-  font-size: 1.125rem; // 18px
-  font-weight: 400;*/
-  /*line-height: calc(28 / 18);*/
-  /*margin: math.div(16, 2) + 0px 0;*/
-  /*margin-top: 0;*/
-}
-.post .post-detail__title {
-  /*font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  margin: 10px 0;*/
-}
-.post .post-detail__intro {
-  font-size: calc(var(--size-font-20) / 16 * 1em);
-  line-height: 1.6;
-}
-.post__links--item {
-  display: flex;
-  align-items: center;
-}
-.post__links--item .icon {
-  width: 0.75rem;
-  height: 0.75rem;
-}
-.post .post__text {
-  flex: 1 1 auto;
-}
-
-.post-detail__image {
-  /*margin-bottom: 2rem;*/
-  margin-bottom: 24px;
-  margin-top: 0;
-}
-.post-detail__image--extra {
-  margin-top: 4.5rem;
-}
-.post-detail__links--item {
-  margin-top: 0.5rem;
-}
-.post-detail__links--item .icon {
-  width: 0.75rem;
-  height: 0.75rem;
-}
-.post-detail__back {
-  margin-bottom: 1rem;
-  text-decoration: none;
-}
-.post-detail__back .icon {
-  width: 0.75rem;
-  height: 0.75rem;
-  transform: rotate(180deg);
-}
-.post-detail__extra-content {
-  margin: 3rem 0;
-}
-.post-detail__extra-content--text {
-  margin-top: 3rem;
-}
-.post-detail__extra-content--image {
-  margin-bottom: 1.5rem;
-}
-
-.post-link {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 4rem;
-  background-color: #fff;
-  text-decoration: none;
-  transition: all 300ms ease-in-out;
-}
-.post-link * + * {
-  margin-top: 0;
-}
-.post-link:hover, .post-link:focus {
-  background-color: #f8f8f8;
-}
-.post-link:hover .post__links--item, .post-link:focus .post__links--item {
-  text-decoration: underline;
-  /*font-weight: bolder;*/
-}
-
-.product-detail .col-md-9 .post {
-  padding: 0;
-  margin-top: 0.625rem;
-}
-
-.quote {
-  text-align: center;
-  padding-bottom: 1.25rem;
-}
-@media (min-width: 768px) {
-  .quote {
-    padding-bottom: 3rem;
-  }
-}
-@media (min-width: 992px) {
-  .quote {
-    padding-bottom: 6rem;
-  }
-}
-
-.people__name {
-  display: block;
-  font-weight: 400;
-}
-.people__text {
-  padding-bottom: 1.25rem;
-  margin: 0;
-}
-
-.people .people__photos .img-hover {
-  display: none;
-}
-
-.people .people__photos:hover .img-hover {
-  display: block;
-  margin-top: -150%;
-}
-
-@media only screen and (min-width: 360px) {
-  .personal .col-md-3 {
-    width: 50%;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .personal .col-md-3 {
-    width: 33%;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .personal .col-md-3 {
-    width: 25%;
-  }
-}
-
-.quick-cart {
-  transform: scaleY(0);
-  max-height: 1px;
-  opacity: 0;
-  z-index: 4567890;
-  position: fixed;
-  right: -2rem;
-  background-color: #fff;
-  padding: 0.75rem 2rem 1.5rem 2rem;
-  height: auto;
-  border-left: 1px solid rgba(0, 0, 0, 0.36);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.36);
-  transform-origin: top center;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .quick-cart {
-    width: auto;
-  }
-}
-.quick-cart.quick-cart__open {
-  transition-duration: 0.4s;
-  max-height: 1000px;
-  opacity: 1;
-  transform: scaleY(1);
-}
-.quick-cart__title {
-  display: block;
-  text-align: left;
-  margin-bottom: 1.5rem;
-}
-.quick-cart__list {
-  list-style: none;
-  margin-left: 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  margin-bottom: 0.75rem;
-}
-.quick-cart__list--item {
-  display: flex;
-  align-content: stretch;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 0 0.25rem 0;
-  padding: 0.25rem 0 0.5rem;
-  line-height: 1;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  text-align: left;
-}
-.quick-cart__list--item span:first-of-type {
-  padding-right: 4.5rem;
-}
-.quick-cart-total {
-  text-align: right;
-}
-.quick-cart-total__list {
-  list-style: none;
-  display: inline-block;
-  margin: 0;
-  line-height: 1;
-  text-align: right;
-}
-.quick-cart-total__list--item {
-  padding: 0.5rem 0;
-}
-.quick-cart-total__list--prices {
-  padding-left: 1.5rem;
-}
-.quick-cart__btn-row {
-  text-align: right;
-  margin-top: 1.5rem;
-  position: relative;
-}
-.quick-cart__btn-row--change {
-  margin-bottom: 0.5rem;
-  display: block;
-  font-weight: normal !important;
-}
-@media (min-width: 544px) {
-  .quick-cart__btn-row--change {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-}
-.quick-cart__btn-row--order {
-  position: relative;
-  margin-left: 0.5rem;
-}
-
-.detail-image {
-  margin-top: 2rem;
-}
-.detail-image__block--text {
-  margin-bottom: 2rem;
-}
-
-.ui-datepicker.ui-widget {
-  font-family: var(--font-body, sans-serif), sans-serif;
-}
-
-.ui-widget-header {
-  background: white;
-  border-color: #eee;
-}
-
-.ui-datepicker td span,
-.ui-datepicker td a {
-  text-align: center;
-}
-
-td[data-handler=selectDay] .ui-state-default {
-  background: #fff;
-  color: #000;
-}
-
-.ui-datepicker-current-day .ui-state-default.ui-state-active {
-  background: black;
-  color: white;
-}
-
-.ui-datepicker .ui-datepicker-title,
-.ui-datepicker th {
-  font-weight: 400;
-}
-
-.ui-datepicker .ui-datepicker-week-col {
-  text-align: center;
-}
-
-#datepicker + .basic-input {
-  margin-top: 1rem;
-}
-
-.ui-datepicker .ui-datepicker-unselectable.ui-state-disabled {
-  background: #eee;
-  opacity: 0.2;
-}
-
-.ui-datepicker-prev > .ui-icon {
-  background-image: url("/static/std/assets/toolkit/images/icons1/chevron_left-24px.svg") !important;
-  background-position: 50% 50%;
-}
-
-.ui-datepicker-next > .ui-icon {
-  background-image: url("/static/std/assets/toolkit/images/icons1/chevron_right-24px.svg") !important;
-  background-position: 50% 50%;
-}
-
-.ui-datepicker .ui-datepicker-prev-hover,
-.ui-datepicker .ui-datepicker-next-hover {
-  background-color: #fff;
-  background-image: none;
-  border-color: #000;
-  border-radius: 100%;
-}
-
-.ui-datepicker .ui-datepicker-prev-hover > .ui-icon,
-.ui-datepicker .ui-datepicker-next-hover > .ui-icon {
-  background-color: transparent;
-}
-
 dl[data-direction=horizontal],
 .sh-atom-dl[data-direction=horizontal] {
   display: flex;
@@ -8469,6 +7600,358 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   margin-right: 0;
 }
 
+.normal {
+  font-weight: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.bold {
+  font-weight: 400;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-shadow {
+  text-shadow: 0.5px 0.5px 0.5px #000;
+}
+
+.xs-right {
+  float: right !important;
+}
+
+@media (min-width: 544px) {
+  .sm-right {
+    float: right !important;
+  }
+}
+@media (min-width: 768px) {
+  .md-right {
+    float: right !important;
+  }
+}
+@media (min-width: 992px) {
+  .lg-right {
+    float: right !important;
+  }
+}
+@media (min-width: 1366px) {
+  .xl-right {
+    float: right !important;
+  }
+}
+.flex-fix-ie {
+  display: flex;
+  flex-direction: row;
+}
+
+.rotate {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.cursorpointer {
+  cursor: pointer;
+}
+
+a.cursorpointer {
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show-block {
+  display: block !important;
+}
+
+.show-inline-block {
+  display: inline-block !important;
+}
+
+.show-inline {
+  display: inline !important;
+}
+
+/*
+ * Hide input without blocking validation
+ */
+span.hidden-input + input {
+  opacity: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-width: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.img-responsive img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/*********************/
+/* SHOW HIDE HELPERS */
+/*********************/
+.hidden-xs {
+  display: none !important;
+}
+
+/* SM hide */
+@media (min-width: 544px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+/* MD hide */
+@media (min-width: 768px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+/* LG hide */
+@media (min-width: 992px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+/* XL hide */
+@media (min-width: 1366px) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
+/* SM show */
+@media (min-width: 544px) {
+  .visible-sm-block {
+    display: block !important;
+  }
+  .visible-sm-inline {
+    display: inline !important;
+  }
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+/* MD show */
+@media (min-width: 768px) {
+  .visible-md-block {
+    display: block !important;
+  }
+  .visible-md-inline {
+    display: inline !important;
+  }
+  .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+/* lg show */
+@media (min-width: 992px) {
+  .visible-lg-block {
+    display: block !important;
+  }
+  .visible-lg-inline {
+    display: inline !important;
+  }
+  .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+/* xl show */
+@media (min-width: 1366px) {
+  .visible-xl-block {
+    display: block !important;
+  }
+  .visible-xl-inline {
+    display: inline !important;
+  }
+  .visible-xl-inline-block {
+    display: inline-block !important;
+  }
+}
+.visible-print {
+  display: none !important;
+}
+
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+}
+.visible-print-block {
+  display: none !important;
+}
+
+@media print {
+  .visible-print-block {
+    display: block !important;
+  }
+}
+.visible-print-inline {
+  display: none !important;
+}
+
+@media print {
+  .visible-print-inline {
+    display: inline !important;
+  }
+}
+.visible-print-inline-block {
+  display: none !important;
+}
+
+@media print {
+  .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
+}
+/* Border radius */
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.quote {
+  font-size: 1.25rem;
+  line-height: 1.6875rem;
+}
+
+.pull-over-small {
+  position: relative;
+  top: -1.875rem;
+  margin-bottom: -1.875rem;
+}
+
+.pull-over-medium {
+  position: relative;
+  top: -5rem;
+  margin-bottom: -5rem;
+}
+
+.ratio16-9:before {
+  padding-top: 56.25%;
+}
+
+.ratio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 textarea,
 input {
   box-sizing: border-box;
@@ -13149,7 +12632,7 @@ note: br element built in for p element in body for larger screen, starting at 9
 */
 .wc-stepper-quantity {
   display: flex;
-  border: 0.5px solid hsl(0, 0%, 0%);
+  border: 0.5px solid #000000;
   border-radius: 50px;
   justify-content: space-between;
   align-items: center;
