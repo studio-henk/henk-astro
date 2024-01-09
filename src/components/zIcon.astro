@@ -1,0 +1,60 @@
+---
+// Import necessary modules
+import { parse } from 'node-html-parser';
+import { readFile } from 'fs/promises';
+import { fileURLToPath } from 'url';
+
+// Define the Props interface
+export interface Props {
+    icon: string;
+    width?: string;
+    height?: string;
+}
+
+// Function to retrieve SVG content
+async function getSVG(name: string) {
+    const filepath = fileURLToPath(new URL(`./src/svg/${name}.svg`, import.meta.url));
+
+    try {
+        const content = await readFile(filepath, 'utf-8');
+        const root = parse(content);
+
+        const svg = root.querySelector('svg');
+        const { attributes, innerHTML } = svg;
+
+        return {
+            attributes,
+            innerHTML,
+        };
+    } catch (error) {
+        console.error('Error loading SVG:', error);
+        return null;
+    }
+}
+
+// Destructure props and get SVG attributes and content
+const { icon, ...attributes } = Astro.props as Props;
+
+// Function to remove fill attribute from path elements
+function removeFillFromPathElements(innerHTML: string) {
+    const modifiedInnerHTML = innerHTML.replace(/fill="[^"]*"/g, '');
+    return modifiedInnerHTML;
+}
+
+// Call getSVG function
+const { attributes: baseAttributes, innerHTML } = await getSVG(icon);
+
+// Remove fill attributes from path elements
+const strippedInnerHTML = removeFillFromPathElements(innerHTML);
+
+// Combine base and specific attributes
+const svgAttributes = { ...baseAttributes, ...attributes };
+
+---
+<svg
+    {...svgAttributes}
+    set:html={strippedInnerHTML}
+    aria-hidden='true'
+>
+    <!--<title>{icon}</title>-->
+</svg>

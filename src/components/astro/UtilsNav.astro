@@ -1,6 +1,6 @@
 ---
 import { getLangFromUrl } from "../../i18n/utils";
-import { Icon } from 'astro-icon/components';
+import Icon from "./Icon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname.substring(4);
@@ -44,7 +44,6 @@ let otherURL = "/" + otherLang + "/" + currentPath;
       >
         <!-- icon cart here -->
         <Icon class="sh-atom-icon" width="24" height="24" name="icon-cart" />
-
         Cart
       </a>
     </li>

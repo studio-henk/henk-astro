@@ -1,0 +1,51 @@
+---
+import { IconSizes, SvgStructure } from 'types/iconTypes';
+import { parse } from "node-html-parser";
+
+export interface Props {
+  name: string;
+  width?: IconSizes;
+  height?: IconSizes;
+}
+
+function getSVG(name: string): SvgStructure {
+  const filepath = `/src/svg/${name}.svg`;
+  const files = import.meta.glob('/src/svg/**/*.svg', { as: 'raw', eager: true })
+
+  if (!(filepath in files)) {
+    console.log("filepath is NOT in files");
+    throw new Error(`${filepath} not found`);
+  }
+
+  const root = parse(files[filepath]);
+
+  const svg = root.querySelector("svg");
+  const { attributes, innerHTML } = svg;
+
+  return {
+    attributes,
+    innerHTML,
+  };
+}
+
+const { name, ...attributes } = Astro.props as Props;
+const { attributes: baseAttributes, innerHTML } = getSVG(name);
+
+// Function to remove fill attribute from path elements
+function removeFillFromPathElements(innerHTML: string) {
+  const modifiedInnerHTML = innerHTML.replace(/fill="[^"]*"/g, "");
+  return modifiedInnerHTML;
+}
+
+const strippedInnerHTML = removeFillFromPathElements(innerHTML);
+
+const svgAttributes = { ...baseAttributes, ...attributes };
+---
+
+<svg
+    {...svgAttributes}
+    set:html={strippedInnerHTML}
+    aria-hidden="true"
+>
+  <!--<title>{icon}</title>-->
+</svg>

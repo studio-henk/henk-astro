@@ -1,4 +1,6 @@
 ---
+import IconArrowRightAnimated from "../../components/Icons/icon-arrow-right-animated.astro";
+import Icon from "../astro/Icon.astro";
 const {title, subtitle, buttonText = 'Discover more'} = Astro.props;
 ---
 <section id="hero-brick_1">
@@ -32,12 +34,8 @@ const {title, subtitle, buttonText = 'Discover more'} = Astro.props;
                             data-icon-arrow-right="true"
                         >
                             {buttonText}
-                            <span class="icon-frame">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path id="arrow-right-line" d="M0 10H12.5185" stroke="currentcolor" stroke-width="0.8"></path>
-                                <path id="arrow-right-point" d="M8.66667 6L13 10L8.66667 14" stroke="currentcolor" stroke-width="0.8"></path>
-                              </svg>
-                            </span>
+                            <!--<IconArrowRightAnimated />-->
+                            <Icon name="icon-arrow-right-animated" />
                         </span>
                     </footer>
                 </div>

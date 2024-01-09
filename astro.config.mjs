@@ -1,11 +1,11 @@
 import { defineConfig } from 'astro/config';
 
-import icon from "astro-icon";
+// import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
   compressHTML: false,
-  integrations: [icon()],
+  integrations: [],
   build: {
     inlineStylesheets: `never`,
   },

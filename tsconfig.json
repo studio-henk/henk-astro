@@ -1,10 +1,12 @@
 {
     "extends": "astro/tsconfigs/base",
+    "include": ["types/iconTypes.ts"],
     "compilerOptions": {
-        "baseUrl": ".",
+        "baseUrl": "./",
         "paths": {
             "@components/*": ["src/components/*"],
-            "@assets/*": ["src/assets/*"]
-        }
+            "@assets/*": ["src/assets/*"],
+            "*": ["types/*"]
+        },
     }
 }

@@ -1,11 +1,12 @@
 ---
 import NavBarMobile from "../components/NavBarMobile.astro";
-import { Icon } from 'astro-icon/components';
+// import { Icon } from 'astro-icon/components';
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
 import MobileNavButton from "./MobileNavButton.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import MsgBar from "./MsgBar.astro";
+import Icon from "./astro/Icon.astro";
 const lang = getLangFromUrl(Astro.url);
 
 const { NavOnHero } = Astro.props;
