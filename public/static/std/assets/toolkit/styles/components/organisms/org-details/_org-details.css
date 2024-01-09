@@ -1,0 +1,87 @@
+@charset "UTF-8";
+.org-details {
+  margin-top: 2rem;
+  color: var(--var-component-fg-color, currentcolor);
+}
+.org-details details > summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.org-details summary::-webkit-details-marker {
+  display: none;
+}
+.org-details summary::after {
+  content: "+";
+  display: inline-flex;
+  background-color: var(--var-component-bg-color, var(--color-accent1));
+  color: var(--var-component-marker-color, var(--var-component-fg-color, currentcolor));
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+  border-radius: 100%;
+  line-height: 1;
+  font-size: 1.25rem;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+.org-details details[open] summary:after {
+  transform: rotate(45deg);
+}
+@media only screen and (max-width: 767px) {
+  .org-details details {
+    font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem);
+    line-height: 18px;
+    letter-spacing: 0.8px;
+  }
+}
+.org-details details ul,
+.org-details details ol {
+  margin-left: 14px;
+}
+.org-details + .org-details {
+  margin-top: 2rem;
+}
+.org-details[data-marker-circle=false] summary::after {
+  border-radius: 0;
+  background-color: transparent;
+}
+.org-details[data-marker="+-"] details[open] summary:after {
+  transform: unset;
+  content: "−";
+}
+.org-details[data-variant=faq] {
+  border-bottom: 1px solid var(--var-component-border-color, var(--var-component-fg-color, currentcolor));
+  margin-top: 0;
+  padding: 3px 0 4px;
+}
+@media (min-resolution: 2dppx) {
+  .org-details[data-variant=faq] {
+    /* Media with 2 or more dots per px */
+    border-bottom: 0.5px solid var(--var-component-border-color, var(--var-component-fg-color, currentcolor));
+  }
+}
+@media only screen and (max-width: 767px) {
+  .org-details[data-variant=faq] details,
+  .org-details[data-variant=faq] summary {
+    font-size: 0.75rem;
+    line-height: 20px;
+  }
+}
+.org-details[data-variant=faq] summary {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.org-details[data-variant=faq] summary::after {
+  margin: 0;
+}
+.org-details[data-variant=faq] summary + * {
+  margin-top: 7px;
+}
+.org-details[data-variant=faq] summary ~ *:last-child {
+  margin-bottom: 14px;
+}

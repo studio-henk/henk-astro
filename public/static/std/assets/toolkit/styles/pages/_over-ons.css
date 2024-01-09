@@ -1,0 +1,48 @@
+.over-ons {
+  margin: 1.25rem 0;
+}
+@media (min-width: 768px) {
+  .over-ons {
+    margin: 3rem 0;
+  }
+}
+@media (min-width: 992px) {
+  .over-ons {
+    margin: 6rem 0;
+  }
+}
+
+.personal {
+  margin: 3rem 0 0 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  float: left;
+}
+
+.heroes {
+  margin: 1.25rem 0;
+}
+@media (min-width: 768px) {
+  .heroes {
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .heroes {
+    margin-top: 6rem;
+  }
+}
+
+.personal__title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 10px 0;
+}
+
+.people__name {
+  font-size: 1.125rem;
+  line-height: 1.5555555556;
+  margin: 8px 0;
+}

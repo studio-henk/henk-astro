@@ -1,0 +1,36 @@
+.sh-atom-tag {
+  font-size: 0.75em;
+  line-height: 1.66666667;
+  text-align: center;
+  letter-spacing: 0.1em;
+  background-color: var(--color-accent1, #f3f1ec);
+  border-radius: 40px;
+  display: inline-flex;
+  gap: 0.36363636em;
+  padding: 0.25em 0.83333333em;
+  justify-content: flex-start;
+  align-items: center;
+  /*margin: 1.75em 0;*/
+  vertical-align: middle;
+}
+.shopping-cart-product__details--description .sh-atom-tag {
+  margin-top: 14px;
+}
+
+.sh-atom-tag__link,
+.sh-atom-tag[data-haslink] > a {
+  text-decoration: none;
+}
+
+.sh-atom-tag[data-haslink] {
+  padding: 0;
+}
+
+.sh-atom-tag[data-haslink] .sh-atom-tag__link,
+.sh-atom-tag[data-haslink] > a {
+  padding: 0.25em 0.83333333em;
+  display: flex;
+  gap: 0.36363636em;
+  justify-content: flex-start;
+  align-items: center;
+}

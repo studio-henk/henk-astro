@@ -1,0 +1,27 @@
+.sh-org-steps-block {
+  background-color: var(--color-accent1, #fff);
+}
+.sh-org-steps-block .sh-molecule-section-header {
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.sh-org-steps-block .sh-molecule-section-header .sh-molecule-section-header__title {
+  text-align: left;
+  margin: 0;
+}
+.sh-org-steps-block .sh-org-grid {
+  grid-template-columns: 1fr;
+  display: grid;
+  row-gap: 28px;
+  column-gap: 28px;
+}
+@media only screen and (min-width: 768px) {
+  .sh-org-steps-block .sh-org-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .sh-org-steps-block .sh-org-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

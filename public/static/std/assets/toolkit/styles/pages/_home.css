@@ -1,0 +1,138 @@
+.intro-home {
+  margin-top: 56px;
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .intro-home {
+    margin-top: 94px;
+  }
+}
+.intro-home .intro-home__block {
+  margin: 0 auto;
+  max-width: 388px;
+}
+@media only screen and (min-width: 768px) {
+  .intro-home .intro-home__block {
+    max-width: 600px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .intro-home .intro-home__block {
+    max-width: 870px;
+  }
+}
+.intro-home .intro-home__block .intro-home__block--title {
+  font-size: 1.33333em;
+  /*font-weight: 300;*/
+  line-height: 130.5%;
+  text-align: center;
+  letter-spacing: 0.07em;
+  margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  .intro-home .intro-home__block .intro-home__block--title {
+    font-size: 1.866666em;
+    line-height: 138.5%;
+  }
+}
+.intro-home .intro-home__block .intro-home__block--text {
+  font-size: 0.8em;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-henk-black, #000);
+  letter-spacing: 1.8px;
+  margin: 3.75rem 0 0 0;
+}
+@media only screen and (min-width: 768px) {
+  .intro-home .intro-home__block .intro-home__block--text {
+    margin: 25px 0 60px;
+  }
+}
+.intro-home .intro-home__block .intro-home__block--text a {
+  text-decoration: none;
+  letter-spacing: inherit;
+}
+
+section.cta-block {
+  margin: 1.25rem 0 0.5rem 0;
+}
+@media (min-width: 768px) {
+  section.cta-block {
+    margin: 1.5rem 0 0.5rem 0;
+  }
+}
+@media (min-width: 992px) {
+  section.cta-block {
+    margin: 3rem 0 0.5rem 0;
+  }
+}
+
+.products__intro {
+  margin-bottom: 1.5rem;
+}
+
+.products {
+  margin: 3rem 0;
+}
+@media (min-width: 992px) {
+  .products {
+    margin: 6rem 0;
+  }
+}
+
+.detail-image {
+  margin-top: 4rem;
+}
+.detail-image__block--title, .detail-image__block--text {
+  text-align: center;
+}
+
+.blog {
+  margin: 3rem 0;
+}
+@media (min-width: 992px) {
+  .blog {
+    margin: 6rem 0;
+  }
+}
+.blog__intro {
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .blog__intro {
+    margin-bottom: 1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .blog__intro {
+    margin-bottom: 3rem;
+  }
+}
+.blog .blogpost-small__title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.blog .blogpost-small__copy--title {
+  font-size: 1.125rem;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    padding-top: 0;
+  }
+}
+.products-collection {
+  margin-top: 0;
+}
+
+.seo h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-top: 8px;
+  line-height: 28px;
+}

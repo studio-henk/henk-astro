@@ -1,0 +1,22 @@
+/* swiper buttons */
+.swiper-button-disabled {
+    display: none;
+}
+
+.swiper-container {
+    position: relative;
+}
+
+.swiper-container .sh-custom-swiper-button-prev {
+    position: absolute;
+    top: calc((100% - 48px - 40px) / 2);
+    left: 1rem;
+    z-index: 9;
+}
+
+.swiper-container .sh-custom-swiper-button-next {
+    position: absolute;
+    top: calc((100% - 48px - 40px) / 2);
+    right: 1rem;
+    z-index: 9;
+}

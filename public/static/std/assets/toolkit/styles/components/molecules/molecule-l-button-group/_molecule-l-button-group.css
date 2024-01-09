@@ -1,0 +1,57 @@
+.button-group,
+.sh-molecule-l-button-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 28px;
+  /* mobile alignment prop */
+  /* larger than 991 alignment prop */
+}
+.button-group .sh-atom-button,
+.sh-molecule-l-button-group .sh-atom-button {
+  margin: 0;
+}
+.button-group[data-alignment=center],
+.sh-molecule-l-button-group[data-alignment=center] {
+  justify-content: center;
+}
+.button-group[data-alignment=start],
+.sh-molecule-l-button-group[data-alignment=start] {
+  justify-content: flex-start;
+}
+.button-group[data-alignment=end],
+.sh-molecule-l-button-group[data-alignment=end] {
+  justify-content: flex-end;
+}
+.button-group[data-alignment=around],
+.sh-molecule-l-button-group[data-alignment=around] {
+  justify-content: space-around;
+}
+.button-group[data-alignment=between],
+.sh-molecule-l-button-group[data-alignment=between] {
+  justify-content: space-between;
+}
+.button-group[data-alignment=evenly],
+.sh-molecule-l-button-group[data-alignment=evenly] {
+  justify-content: space-evenly;
+}
+@media only screen and (max-width: 991px) {
+  .button-group[data-alignment-mobile=end],
+  .sh-molecule-l-button-group[data-alignment-mobile=end] {
+    justify-content: flex-end;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .button-group[data-alignment-desktop=start],
+  .sh-molecule-l-button-group[data-alignment-desktop=start] {
+    justify-content: flex-start;
+  }
+}
+
+.swiper + .sh-molecule-l-button-group {
+  margin-top: 0;
+}
+
+.swiper + .button-group {
+  margin-top: 0;
+}

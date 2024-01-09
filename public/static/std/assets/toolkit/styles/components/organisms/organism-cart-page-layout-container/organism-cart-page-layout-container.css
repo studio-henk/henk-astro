@@ -1,0 +1,38 @@
+/* grid on mobile */
+@media only screen and (min-width: 992px) {
+  .cart-page-layout-container {
+    display: grid;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cart-page-layout-container #action-console {
+    grid-row: 4;
+    position: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 140px 28px 50px 0;
+  }
+  .cart-page-layout-container #action-console .action-console__layout-box {
+    --color-background-actionconsole: var(--color-transparent);
+    min-width: 400px;
+  }
+  .cart-page-layout-container #action-console .sh-atom-button[data-shape=rect] {
+    border-radius: 3.125rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cart-page-layout-container #info-boxes {
+    grid-row: 5;
+  }
+}
+/* mobile only
+- room after item list if only one item (set by twig file data-count)
+- min-height: calc(100vh - var(--size-height-for-hero) - 224px);
+*/
+/*
+@media only screen and (max-width: 768px) {
+  .cart-page-layout-container #cart-list[data-count="1"] {
+    min-height: calc(100vh - var(--size-height-for-hero) - 224px);
+  }
+}*/

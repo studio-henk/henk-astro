@@ -1,0 +1,21 @@
+.sh-media-block {
+  padding: 0;
+}
+.sh-media-block figure.sh-media-block__item {
+  max-width: none;
+}
+.sh-media-block .sh-l-flex-container .sh-l-flex__item + .sh-l-flex__item .sh-media-block__item {
+  padding: 24px 24px 48px 24px;
+}
+@media only screen and (min-width: 992px) {
+  .sh-media-block {
+    padding: 0;
+  }
+  .sh-media-block .sh-l-flex-container {
+    align-items: center;
+    gap: 0;
+  }
+  .sh-media-block[data-order=reverse] .sh-l-flex-container {
+    flex-direction: row-reverse;
+  }
+}

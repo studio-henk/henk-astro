@@ -19,7 +19,8 @@ h6:first-child {
 }
 
 h1,
-.h1 {
+.h1,
+.sh-title {
     /* target screen 1792 (42/1792)*100 */
     font-size: clamp(1.5rem, 2.34375vw, 2.625rem);
     /* 40, 64 */
@@ -27,7 +28,8 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+.sh-subtitle {
     font-size: clamp(1.25rem, 2.34375vw, 2.25rem);
     /* 32, 56 */
     line-height: clamp(32px, 3.125vw, 56px);

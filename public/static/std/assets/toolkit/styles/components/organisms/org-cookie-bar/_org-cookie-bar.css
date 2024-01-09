@@ -1,0 +1,43 @@
+.footer__cookie-consent {
+  display: none !important;
+}
+
+.org-cookie-bar {
+  background-color: #eae8e1;
+  color: #070707;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.org-cookie-bar .org-cookie-bar__copy {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+.org-cookie-bar .org-cookie-bar__copy > a {
+  color: #070707;
+  text-decoration: underline;
+}
+.org-cookie-bar .org-cookie-bar__button {
+  background-color: transparent;
+  color: #000;
+}
+.org-cookie-bar .org-cookie-bar__button:hover, .org-cookie-bar .org-cookie-bar__button:focus {
+  background-color: #fff;
+  color: #000;
+}
+@media only screen and (min-width: 768px) {
+  .org-cookie-bar {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .org-cookie-bar .org-cookie-bar__button {
+    margin: 0 0 0 auto;
+  }
+}

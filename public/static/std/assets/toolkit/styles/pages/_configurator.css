@@ -1,0 +1,169 @@
+.configurator {
+  /* reset owl*/
+}
+.configurator * + * {
+  margin-top: 0;
+}
+
+.configurator {
+  margin-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .configurator {
+    margin-top: 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .configurator {
+    margin-top: 3rem;
+  }
+}
+.configurator__view {
+  margin-bottom: 0.5rem;
+  cursor: url("../../toolkit/images/icons/zoom.png"), default;
+}
+@media (min-width: 544px) {
+  .configurator__view {
+    margin-bottom: 1rem;
+  }
+}
+.configurator__controls {
+  margin: 0;
+  padding: 0;
+}
+.configurator__controls--resize {
+  cursor: pointer;
+}
+.configurator__price {
+  text-align: right;
+}
+.configurator__price > .h1 {
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .configurator__price > .h1 {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 992px) {
+  .configurator__price > .h1 {
+    font-size: 2rem;
+  }
+}
+.configurator__price.sh-float-right {
+  float: right;
+  margin-top: 2.125rem;
+}
+.configurator .toggle__bar {
+  margin-top: 0;
+}
+.configurator .product-description__title {
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .configurator .product-description__title {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 543px) {
+  .configurator__price {
+    margin-top: -8px;
+  }
+  .configurator .selector__bar {
+    padding-bottom: 0.25rem;
+  }
+  .configurator .choose-cards {
+    margin: 0.5rem -0.25rem;
+  }
+  .configurator .product-configuration {
+    margin-top: -4px;
+  }
+}
+.configurator .choose-cards__item[data-configuratormaterial=wood] {
+  display: none;
+}
+.configurator .steps + .steps {
+  margin-top: 1rem;
+}
+
+.product-configuration__title + .selector .selector__label {
+  margin-top: 0 !important;
+}
+@media (min-width: 768px) {
+  .product-configuration__title + .selector .selector__label {
+    margin-top: 0.5rem !important;
+  }
+}
+
+.product-configuration .selector__label {
+  margin-top: 0 !important;
+}
+@media (min-width: 768px) {
+  .product-configuration .selector__label {
+    margin-top: 1rem !important;
+  }
+}
+
+.info-popover {
+  font-size: 0.875rem;
+}
+
+/* todo: remove after CFGP page is done*/
+#less_finishes_link {
+  display: none;
+}
+
+/* todo: remove after CFGP page is done*/
+.seemore-link,
+.seeless-link {
+  font-family: var(--font-body, sans-serif), sans-serif;
+  text-transform: none;
+  display: block;
+  clear: both;
+  width: 100%;
+  padding: 0 0 0 10px;
+}
+
+.seeless-link .icon {
+  transform: rotate(0deg);
+}
+
+.seemore-link .icon,
+.seeless-link .icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: transform 0.4s;
+}
+
+.seemore-link:hover .icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: 0.3s ease all;
+}
+
+.seeless-link:hover .icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: 0.3s ease all;
+}
+
+.hidden-md .configurator__price.sh-float-right {
+  margin-top: 1rem;
+}
+
+/* todo: remove this when new grid is active*/
+/* need to get rid of bootstrap grids that use css flex, floating and overflow hidden all over the place*/
+[data-fix=qf-nils-until-new-grid] .selector {
+  overflow: revert;
+}
+[data-fix=qf-nils-until-new-grid] .selector .selector__content {
+  float: unset;
+  position: relative;
+}
+[data-fix=qf-nils-until-new-grid] .product-configuration {
+  margin-top: 26px;
+}
+[data-fix=qf-nils-until-new-grid] .product-configuration__title {
+  margin-bottom: 40px;
+}

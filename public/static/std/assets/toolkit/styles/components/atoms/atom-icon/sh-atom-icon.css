@@ -1,0 +1,21 @@
+/* class on svg element */
+svg,
+.sh-atom-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background-icon, transparent);
+  color: currentColor;
+  fill: currentColor;
+}
+
+/*
+.sh-atom-icon[data-size="large"] {
+    width: 48px;
+    height: auto;
+}
+
+.sh-atom-icon[data-size="small"] {
+    width: 16px;
+    height: auto;
+}*/

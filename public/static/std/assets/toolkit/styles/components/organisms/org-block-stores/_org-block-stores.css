@@ -1,0 +1,24 @@
+.sh-org-block--stores {
+  background-color: var(--color-accent1);
+  color: var(--color-henk-black);
+}
+@media only screen and (min-width: 992px) {
+  .sh-org-block--stores {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
+.sh-org-block--stores .sh-org-block__heading {
+  /*font-weight: 300;*/
+  line-height: 38px;
+}
+@media only screen and (max-width: 991px) {
+  .sh-org-block--stores .sh-org-block__heading {
+    margin: 24px 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .sh-org-block--stores .sh-org-block__heading {
+    line-height: 50px;
+  }
+}

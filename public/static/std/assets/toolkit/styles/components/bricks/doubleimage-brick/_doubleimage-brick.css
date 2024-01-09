@@ -1,0 +1,33 @@
+.sh-double-image-brick[data-grid=grid-k] {
+  /* mobile only  */
+  /* all screens */
+}
+@media only screen and (max-width: 767px) {
+  .sh-double-image-brick[data-grid=grid-k] {
+    row-gap: 28px;
+  }
+  .sh-double-image-brick[data-grid=grid-k] .item__content {
+    color: inherit;
+    opacity: 1;
+    position: unset;
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+}
+.sh-double-image-brick[data-grid=grid-k] .item__content .item__title {
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  /*letter-spacing: 0.04em;*/
+}
+.sh-double-image-brick[data-grid=grid-k] .item__content .item__caption {
+  font-size: 0.75rem;
+  /*letter-spacing: 0.04em;*/
+  letter-spacing: 0;
+}
+.sh-double-image-brick.sh-l-grid {
+  padding: 0;
+}
+.sh-double-image-brick.sh-l-grid .sh-l-grid__item > a {
+  text-decoration: none;
+}

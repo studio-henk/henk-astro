@@ -1,0 +1,230 @@
+.sh-module-K * + * {
+  margin-top: 0;
+}
+
+.sh-module-K {
+  --var-screenwidth: 414;
+  --var-image-maxwidth: 560px;
+  --var-padding-top-px: 24;
+  --var-padding-right-px: 24;
+  --var-padding-bottom-px: 24;
+  --var-padding-left-px: 24;
+  font-feature-settings: "liga";
+}
+
+.sh-module-K:last-child {
+  padding-bottom: 68px;
+}
+
+.sh-module-K .sh-org-block {
+  max-width: var(--var-image-maxwidth);
+  margin: 0 auto;
+}
+
+.sh-module-K .sh-module-K__figure {
+  --var-padding-top-vw: calc(var(--var-padding-top-px) / var(--var-screenwidth) * 100vw);
+  --var-padding-right-vw: calc(var(--var-padding-right-px) / var(--var-screenwidth) * 100vw);
+  --var-padding-bottom-vw: calc(var(--var-padding-bottom-px) / var(--var-screenwidth) * 100vw);
+  --var-padding-left-vw: calc(var(--var-padding-left-px) / var(--var-screenwidth) * 100vw);
+  padding: var(--var-padding-top-vw) var(--var-padding-right-vw) var(--var-padding-bottom-vw) var(--var-padding-left-vw);
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.sh-module-K__image {
+  display: block;
+}
+
+.mb-slide-arrow {
+  display: none;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.mb-slide-arrow.--left {
+  right: auto;
+  left: 8px;
+}
+
+.sh-module-K__figure .img-container + .sh-org-block,
+.sh-module-K__figure > a + .sh-org-block {
+  margin-top: 35px;
+}
+
+.sh-module-K .--small .sh-module-K__figure {
+  --var-image-maxwidth: 404px;
+  --var-padding-top-px: 44;
+  --var-padding-right-px: 68;
+  --var-padding-bottom-px: 44;
+  --var-padding-left-px: 68;
+}
+
+.sh-module-K .sh-module-K__caption {
+  text-align: right;
+  display: block;
+  position: absolute;
+  right: var(--var-padding-right-vw);
+  font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem);
+  line-height: 1.63636364;
+}
+
+@media only screen and (max-width: 767px) {
+  .sh-module-K__figure .img-container {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    justify-content: flex-start;
+    gap: 40px;
+    /* -webkit-overflow-scrolling: touch; */
+  }
+  .sh-module-K__figure .img-container::-webkit-scrollbar-track {
+    /* border-bottom: 2px solid #bfbfbf;     */
+  }
+  ::-webkit-scrollbar {
+    /* -webkit-appearance: none;
+       background-color: #fff;
+       height: 8px; */
+  }
+  ::-webkit-scrollbar-thumb {
+    /* border-bottom: 2px solid #000;        */
+  }
+  .sh-module-K__figure .img-container .sh-module-K__image {
+    scroll-snap-align: center;
+  }
+  .sh-module-K__figure .img-container .mb-slide {
+    flex: 0 0 100%;
+    position: relative;
+  }
+  .sh-module-K__figure .img-container .mb-slide span {
+    text-align: right;
+    bottom: 8px;
+    position: absolute;
+    color: #fff;
+    right: 16px;
+    font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem);
+    line-height: 18px;
+    letter-spacing: 0.8px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sh-module-K {
+    --var-screenwidth: 768;
+    display: flex;
+    margin: 0 auto;
+  }
+  .sh-module-K .sh-module-K__column {
+    flex: 0 0 50%;
+  }
+  .sh-module-K[data-order=reversed] {
+    flex-direction: row-reverse;
+  }
+  .sh-module-K .--small .sh-module-K__figure,
+  .sh-module-K .--large .sh-module-K__figure {
+    --var-padding-bottom-px: 0;
+  }
+  .sh-module-K .--large .sh-module-K__figure {
+    --var-padding-top-px: 50;
+    --var-padding-right-px: 26;
+    --var-padding-bottom-px: 0;
+    --var-padding-left-px: 58;
+  }
+  .sh-module-K .--small .sh-module-K__figure {
+    --var-padding-top-px: 102;
+    --var-padding-right-px: 95;
+    --var-padding-bottom-px: 0;
+    --var-padding-left-px: 72;
+  }
+  .sh-module-K__figure .img-container {
+    position: relative;
+  }
+  .sh-module-K__image.--hover {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+  .sh-module-K__figure .img-container:hover .sh-module-K__image.--hover {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+  }
+  .sh-module-K[data-order=reversed] .--large .sh-module-K__figure {
+    --var-padding-right-px: 58;
+    --var-padding-left-px: 26;
+  }
+  .sh-module-K[data-order=reversed] .--small .sh-module-K__figure {
+    --var-padding-right-px: 72;
+    --var-padding-left-px: 95;
+  }
+  .sh-module-K__figure .img-container .mb-slide span,
+  .mb-slide-arrow {
+    display: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .sh-module-K {
+    --var-screenwidth: 992;
+  }
+  .sh-module-K:last-child {
+    padding-bottom: 116px;
+  }
+  .sh-module-K .--large .sh-module-K__figure {
+    --var-padding-top-px: 64;
+    --var-padding-right-px: 34;
+    --var-padding-bottom-px: 0;
+    --var-padding-left-px: 76;
+  }
+  .sh-module-K .--small .sh-module-K__figure {
+    --var-padding-top-px: 132;
+    --var-padding-right-px: 124;
+    --var-padding-bottom-px: 0;
+    --var-padding-left-px: 94;
+  }
+  .sh-module-K[data-order=reversed] .--large .sh-module-K__figure {
+    --var-padding-right-px: 76;
+    --var-padding-left-px: 34;
+  }
+  .sh-module-K[data-order=reversed] .--small .sh-module-K__figure {
+    --var-padding-right-px: 94;
+    --var-padding-left-px: 124;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .sh-module-K {
+    --var-screenwidth: 1440;
+    display: flex;
+    margin: 0 auto;
+  }
+  .sh-module-K .--large .sh-module-K__figure {
+    --var-padding-top-px: 86;
+    --var-padding-right-px: 50;
+    --var-padding-bottom-px: 0;
+    --var-padding-left-px: 110;
+  }
+  .sh-module-K .--small .sh-module-K__figure {
+    --var-padding-top-px: 184;
+    --var-padding-right-px: 180;
+    --var-padding-bottom-px: 0;
+    --var-padding-left-px: 136;
+  }
+  .sh-module-K[data-order=reversed] .--large .sh-module-K__figure {
+    --var-padding-right-px: 101;
+    --var-padding-left-px: 59;
+  }
+  .sh-module-K[data-order=reversed] .--small .sh-module-K__figure {
+    --var-padding-right-px: 128;
+    --var-padding-left-px: 188;
+  }
+  .sh-module-K__image {
+    width: 100%;
+    max-width: none;
+  }
+  .sh-module-K__image + .sh-org-block {
+    /*margin-top: 46px;*/
+  }
+}

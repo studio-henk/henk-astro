@@ -1,8 +1,0 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g id="icon-hamburger">
-        <g id="Vector">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2 15.75C2 15.4739 2.18274 15.25 2.40816 15.25H21.5918C21.8172 15.25 22 15.4739 22 15.75C22 16.0261 21.8172 16.25 21.5918 16.25H2.40816C2.18274 16.25 2 16.0261 2 15.75Z" fill="#1F1F1F"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2 8.25C2 7.97386 2.18274 7.75 2.40816 7.75H21.5918C21.8172 7.75 22 7.97386 22 8.25C22 8.52614 21.8172 8.75 21.5918 8.75H2.40816C2.18274 8.75 2 8.52614 2 8.25Z" fill="#1F1F1F"/>
-        </g>
-    </g>
-</svg>

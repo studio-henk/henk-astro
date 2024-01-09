@@ -1,5 +1,5 @@
 ---
-import { IconSizes, SvgStructure } from 'types/iconTypes';
+import { IconSizes, SvgStructure } from "types/iconTypes";
 import { parse } from "node-html-parser";
 
 export interface Props {
@@ -10,7 +10,10 @@ export interface Props {
 
 function getSVG(name: string): SvgStructure {
   const filepath = `/src/svg/${name}.svg`;
-  const files = import.meta.glob('/src/svg/**/*.svg', { as: 'raw', eager: true })
+  const files = import.meta.glob("/src/svg/**/*.svg", {
+    as: "raw",
+    eager: true,
+  });
 
   if (!(filepath in files)) {
     console.log("filepath is NOT in files");
@@ -42,10 +45,6 @@ const strippedInnerHTML = removeFillFromPathElements(innerHTML);
 const svgAttributes = { ...baseAttributes, ...attributes };
 ---
 
-<svg
-    {...svgAttributes}
-    set:html={strippedInnerHTML}
-    aria-hidden="true"
->
+<svg {...svgAttributes} set:html={strippedInnerHTML} aria-hidden="true">
   <!--<title>{icon}</title>-->
 </svg>

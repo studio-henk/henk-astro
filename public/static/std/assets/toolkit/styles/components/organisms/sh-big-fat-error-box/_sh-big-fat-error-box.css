@@ -1,0 +1,13 @@
+.sh-big-fat-error-box {
+  color: hsl(8.3, 90%, 20%);
+  background-color: hsl(340, 69%, 97%);
+  border: 1px solid hsl(340, 74%, 50%);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  max-width: 50vw;
+  margin: 1rem auto;
+}

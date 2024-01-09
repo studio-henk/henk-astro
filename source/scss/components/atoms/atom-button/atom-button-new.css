@@ -1,7 +1,7 @@
 .sh-atom-button {
   font-family: var(--font-body, sans-serif), sans-serif;
   font-size: 1rem;
-  line-height: calc(30 / 16);
+  line-height: 1.875;
   display: inline-flex;
   box-sizing: border-box;
   justify-content: center;

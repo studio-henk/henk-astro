@@ -1,0 +1,44 @@
+.sh-org-splitscreen {
+  padding: 24px 24px 56px;
+  background-color: var(--color-accent15, #fff);
+}
+.sh-org-splitscreen .sh-l-grid {
+  display: grid;
+  row-gap: 1.75rem;
+  column-gap: 0;
+  max-width: none;
+}
+@media only screen and (min-width: 768px) {
+  .sh-org-splitscreen .sh-l-grid {
+    align-items: center;
+  }
+  .sh-org-splitscreen .sh-l-grid .sh-molecule-section-header__subtitle {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sh-org-splitscreen {
+    padding: 0;
+  }
+  .sh-org-splitscreen[data-order=reverse] .sh-l-grid {
+    grid-auto-flow: dense;
+  }
+  .sh-org-splitscreen[data-order=reverse] .sh-l-grid .sh-l-grid__item:first-child {
+    grid-column: 2;
+  }
+}
+.sh-org-splitscreen .sh-l-grid__item video {
+  object-fit: cover;
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .sh-org-splitscreen .sh-l-grid__item video {
+    height: auto;
+    aspect-ratio: 183/208;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sh-org-splitscreen .sh-l-grid__item video {
+    height: 100vh;
+  }
+}

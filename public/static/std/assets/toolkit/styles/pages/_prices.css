@@ -1,0 +1,84 @@
+.prices-page {
+  margin-top: 3rem;
+}
+
+.prices {
+  display: none;
+}
+@media (min-width: 544px) {
+  .prices {
+    display: block;
+  }
+}
+.prices__title {
+  margin-bottom: 1.5rem;
+}
+.prices__details {
+  list-style: none;
+}
+.prices__details--item {
+  margin-bottom: 1rem;
+}
+.prices__details--item-title, .prices__details--item-value {
+  display: block;
+}
+.prices__details--item-title {
+  margin-bottom: 0;
+}
+.prices__tables {
+  overflow: hidden;
+  padding: 0 0.25rem;
+}
+@media (min-width: 544px) {
+  .prices__tables {
+    padding: 0;
+  }
+}
+.prices__tables--subtitle {
+  margin-top: 3rem;
+}
+.prices__tables--subtitle + table {
+  margin-top: 0;
+}
+.prices__tables--table {
+  margin-top: 3rem;
+  width: 100%;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.prices__tables--table thead tr th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.88);
+  border-collapse: separate;
+  border-spacing: 8px 8px;
+}
+.prices__tables--table thead {
+  text-align: left;
+}
+.prices__tables--table thead tr {
+  height: 2rem;
+  vertical-align: top;
+}
+.prices__tables--table tr th, .prices__tables--table tr td {
+  padding-right: 1.5rem;
+}
+.prices__tables--table tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.prices__tables--table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.prices__links {
+  margin-top: 2rem;
+  vertical-align: top;
+}
+.prices__links--download {
+  margin-top: 1rem;
+  display: block;
+}
+@media (min-width: 544px) {
+  .prices__links--download {
+    float: right;
+    margin-top: 0;
+  }
+}

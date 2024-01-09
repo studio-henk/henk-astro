@@ -1,0 +1,48 @@
+.setMoreModal {
+    display: none;
+    background: rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+}
+.setMoreModal .setMoreIframe {
+    border: 0;
+    width: 90vw;
+    height: 90vh;
+    max-width: 600px;
+    max-height: 635px;
+    background-color: var(--color-henk-white);
+    color: #000;
+}
+.setMoreModal .modal-container {
+    position: relative;
+}
+.setMoreModal .--btn-close {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: -10px;
+    height: 32px;
+    width: 32px;
+    top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    --color-background-button: var(--color-black);
+}
+.setMoreModal .--btn-close svg {
+    width: 14px;
+    height: 14px;
+}
+.setMoreModal.modalOpen {
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+.iframeModal {
+    padding: 24px;
+}
