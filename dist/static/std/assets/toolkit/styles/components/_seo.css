@@ -1,0 +1,20 @@
+.seo {
+  margin: 4.5rem 0 3rem; }
+  @media (min-width: 992px) {
+    .seo {
+      margin: 9rem 0 6rem; } }
+  .seo__intro {
+    margin-bottom: 3rem; }
+
+.seo-tile {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  margin-bottom: 1rem; }
+  .seo-tile__title {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    margin: 0 0 1rem 0 !important; }
+  .seo-tile__text {
+    margin: 0 0 0.75rem 0 !important; }

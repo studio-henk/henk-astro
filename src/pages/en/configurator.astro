@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Icon from "../../components/Icon.astro";
+import { Icon } from 'astro-icon/components';
 ---
 
 <BaseLayout title="Configurator">
@@ -50,7 +50,7 @@ import Icon from "../../components/Icon.astro";
 
             <!--<div class="row configurator__controls-row">
               &lt;!&ndash;<a href="javascript:redirectToCart()" class="sh-atom-button" data-style="outline-dark" data-alignment="price-between" data-size="small">
-                <Icon icon="icon-cart" />
+                <Icon name="icon-cart" />
                 <span class="org-addtocart-console__price">€ 539</span>
               </a>&ndash;&gt;
               &lt;!&ndash;<span class="sh-atom-button" data-style="outline-dark"
@@ -2392,7 +2392,7 @@ import Icon from "../../components/Icon.astro";
               data-style="plain-dark"
               >Show more finishes
               <span class="icon-frame">
-                <Icon icon="icon-chevron-down" />
+                <Icon name="icon-chevron-down" />
               </span>
             </span>
             <span
@@ -2403,7 +2403,7 @@ import Icon from "../../components/Icon.astro";
               data-style="plain-dark"
               >Show less finishes
               <span class="icon-frame">
-                <Icon icon="icon-chevron-up" />
+                <Icon name="icon-chevron-up" />
               </span>
             </span>
           </div>

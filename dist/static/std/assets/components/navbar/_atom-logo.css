@@ -1,0 +1,4 @@
+.atom-logo {
+    /*color: var(--color-text-logo, currentColor);*/
+    color: currentColor;
+}

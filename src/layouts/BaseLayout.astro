@@ -35,13 +35,13 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", Theme, hasHero, sh
     />
     <!-- NavBar styles -->
     <!-- Preload stylesheets -->
-    <link rel="preload" href="/static/std/assets/css/_tokens-colors.css" as="style" />
+    <link rel="preload" href="/static/std/assets/toolkit/styles/tokens/_tokens-colors.css" as="style" />
     <link rel="preload" href="/static/std/assets/components/navbar/_skeleton-loading.css" as="style" />
     <link rel="preload" href="/static/std/assets/components/navbar/NavBarMobile.css" as="style" />
     <link rel="preload" href="/static/std/assets/components/navbar/NavBar-desktop.css" as="style" />
 
     <!-- Apply stylesheets -->
-    <link rel="stylesheet" href="/static/std/assets/css/_tokens-colors.css" />
+    <link rel="stylesheet" href="/static/std/assets/toolkit/styles/tokens/_tokens-colors.css" />
     <link rel="stylesheet" href="/static/std/assets/components/navbar/_skeleton-loading.css" />
     <link rel="stylesheet" href="/static/std/assets/components/navbar/NavBarMobile.css" />
     <link rel="stylesheet" href="/static/std/assets/components/navbar/NavBar-desktop.css" />
@@ -90,7 +90,6 @@ const { title, mainID, mainClass, pageClass, NavFont = "new", Theme, hasHero, sh
     <div id="page-title">
         <h1 class="sr-only">{title}</h1>
     </div>
-    <!--<TheHeader NavFont={NavFont} NavTheme={NavTheme} NavOnHero={NavOnHero} />-->
     <TheHeaderDesktop3 Theme={Theme} hasHero={hasHero} showMsgBar={showMsgBar} />
     <slot name="pre-main" />
     <main id={mainID} class={mainClass}>

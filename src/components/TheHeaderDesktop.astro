@@ -3,7 +3,7 @@ import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomFigure from "./Atoms/AtomFigure.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import LangSwitchNoScript from "./LangSwitchNoScript.astro";
-import Icon from "./Icon.astro";
+import { Icon } from 'astro-icon/components';
 import NavCard from "./NavCard.astro";
 const lang = getLangFromUrl(Astro.url);
 const { NavOnHero } = Astro.props;
@@ -50,11 +50,11 @@ if (!NavTheme) {
     </nav>
     <div class="utilities-nav">
       <ul class="utilities-nav__list">
-        <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"} class="sh-atom-button-icon --icon-search" data-style="plain-dark"><Icon icon="icon-search" />Search</a></li>
+        <li class="utilities-nav__item" id="utilities-nav__search"><a href={"/" + lang + "/search-results"} class="sh-atom-button-icon --icon-search" data-style="plain-dark"><Icon name="icon-search" />Search</a></li>
         <!--<li class="utilities-nav__item" id="utilities-nav__contact"><a href={"/" + lang + "/contact"} class="hover-interaction-a">Contact</a></li>-->
         <li class="utilities-nav__item" id="utilities-nav__cart">
           <a href={"/" + lang + "/cart/list"} class="sh-atom-button-icon --icon-cart" data-style="plain-dark">
-            <Icon icon="icon-cart" />
+            <Icon name="icon-cart" />
             Cart
           </a>
           <!--<AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" />-->

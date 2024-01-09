@@ -1,5 +1,5 @@
 ---
-import Icon from "./Icon.astro";
+import { Icon } from 'astro-icon/components';
 const { title = "Heading here", icon, content = "<p>Lorem ipsum, content here.</p>" } = Astro.props;
 ---
 <div
@@ -11,7 +11,7 @@ const { title = "Heading here", icon, content = "<p>Lorem ipsum, content here.</
             {
                 icon &&
                 <Icon
-                    icon={icon}
+                    name={icon}
                     class="sh-atom-icon__svg"
                 />
             }

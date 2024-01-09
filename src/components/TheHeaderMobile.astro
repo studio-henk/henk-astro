@@ -1,6 +1,6 @@
 ---
 import NavBarMobile from "../components/NavBarMobile.astro";
-import Icon from "./Icon.astro";
+import { Icon } from 'astro-icon/components';
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import AtomBadge from "./Atoms/AtomBadge.astro";
 import MobileNavButton from "./MobileNavButton.astro";
@@ -30,7 +30,7 @@ if (!NavTheme) {
       class="sh-atom-button --icon-cart"
       data-style="plain-dark"
     >
-      <Icon icon="icon-cart" />
+      <Icon name="icon-cart" />
       Cart
     </a>
     <!--<AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6"/>-->

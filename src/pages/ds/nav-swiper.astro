@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NavCard from "../../components/NavCard.astro";
-import Icon from "../../components/Icon.astro";
+import { Icon } from 'astro-icon/components';
 ---
 
 <BaseLayout title="Swiper">
@@ -75,10 +75,10 @@ import Icon from "../../components/Icon.astro";
       <!--<div slot="container-end">Rendered after wrapper</div>-->
     </swiper-container>
     <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-left="true">
-      <Icon icon="arrow-left" />
+      <Icon name="arrow-left" />
     </div>
     <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true">
-      <Icon icon="arrow-right" />
+      <Icon name="arrow-right" />
     </div>
   </div>
   <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>

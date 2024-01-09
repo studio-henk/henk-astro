@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Icon from "../../components/Icon.astro";
+import { Icon } from 'astro-icon/components';
 import AtomTag from "../../components/Atoms/AtomTag.astro";
 import SfChatButton from "@components/third-party/_sf-chatbutton.astro";
 import MobileNavButton from "../../components/MobileNavButton.astro";
 import NavCard from "../../components/NavCard.astro";
+import IconArrowRightAnimated from "@components/Icons/icon-arrow-right-animated.astro";
 ---
 
 <BaseLayout title="Buttons">
@@ -51,7 +52,11 @@ import NavCard from "../../components/NavCard.astro";
           class="sh-atom-button"
           data-style="filled"
       >
-        <Icon icon="icon-arrow-left" />
+        <Icon
+            name="icon-arrow-left"
+            width="24"
+            height="24"
+        />
         button text
       </a>
     </div>
@@ -62,14 +67,18 @@ import NavCard from "../../components/NavCard.astro";
           class="sh-atom-button"
           data-style="filled"
       >button text
-        <Icon icon="icon-arrow-right" />
+        <Icon
+            name="icon-arrow-right"
+            width="24"
+            height="24"
+        />
       </a>
     </div>
     <hr>
     <!--<h2>Testing animated arrow right</h2>
     <button class="sh-atom-button" data-style="filled">
       button text
-      <Icon icon="icon-arrow-right-animated"/>
+      <Icon name="icon-arrow-right-animated"/>
     </button>
     <hr>-->
     <h2>Arrow right (<em>animated</em>)</h2>
@@ -79,7 +88,12 @@ import NavCard from "../../components/NavCard.astro";
         class="sh-atom-button"
         data-style="filled"
         >button text
-        <Icon icon="icon-arrow-right-animated"/>
+        <!--<Icon
+            name="icon-arrow-right-animated"
+            width="24"
+            height="24"
+        />-->
+        <IconArrowRightAnimated />
       </a>
     </div>
     <hr>
@@ -89,7 +103,7 @@ import NavCard from "../../components/NavCard.astro";
         class="sh-atom-button"
         data-style="plain"
     >
-      <Icon class="sh-atom-icon" icon="icon-arrow-right" />
+      <Icon class="sh-atom-icon" name="icon-arrow-right" />
     </a>
     <hr>
     <h2>icon only Arrow right (<em>animated</em>) circle</h2>
@@ -99,7 +113,7 @@ import NavCard from "../../components/NavCard.astro";
           class="sh-atom-button"
           data-style="filled"
           data-shape="circle"
-      ><Icon icon="icon-arrow-right-animated" />
+      ><Icon name="icon-arrow-right-animated" />
       </a>
       <a
           href="#"
@@ -107,14 +121,14 @@ import NavCard from "../../components/NavCard.astro";
           data-style="soft"
           data-shape="circle"
           data-size="large"
-      ><Icon icon="icon-arrow-right-animated" />
+      ><Icon name="icon-arrow-right-animated" />
       </a>
       <a
           href="#"
           class="sh-atom-button"
           data-style="soft"
           data-shape="circle"
-      ><Icon icon="icon-arrow-right-animated" />
+      ><Icon name="icon-arrow-right-animated" />
       </a>
     </div>
     <!--<h2>Arrow left (<em>animated</em>)</h2>
@@ -125,7 +139,7 @@ import NavCard from "../../components/NavCard.astro";
         data-style="filled"
 
       >
-        <Icon icon="icon-arrow-left" />
+        <Icon name="icon-arrow-left" />
         icon left
       </a>
     </div>-->
@@ -170,7 +184,7 @@ import NavCard from "../../components/NavCard.astro";
         data-style="plain-light"
       >
         plain + arrow right
-        <Icon icon="icon-arrow-right" />
+        <Icon name="icon-arrow-right" />
       </a>
     </div>
     <h2>Plain Dark + Arrow Left</h2>
@@ -181,7 +195,7 @@ import NavCard from "../../components/NavCard.astro";
         data-style="plain-dark"
 
       >
-        <Icon icon="icon-arrow-left" />
+        <Icon name="icon-arrow-left" />
         Arrow left
       </a>
     </div>
@@ -195,7 +209,7 @@ import NavCard from "../../components/NavCard.astro";
       >
         Discover<br />
         more
-        <Icon class="sh-atom-icon" icon="icon-arrow-down" />
+        <Icon class="sh-atom-icon" name="icon-arrow-down" />
       </a>
     </div>
     <h2>Swiper prev and next</h2>
@@ -261,7 +275,7 @@ import NavCard from "../../components/NavCard.astro";
         data-style="filled"
         data-shape="circle"
       >
-        <Icon class="sh-atom-icon" icon="icon-trashcan"/>
+        <Icon class="sh-atom-icon" name="icon-trashcan"/>
       </a>
       <a
           href="/en/cart/remove/378093"
@@ -270,7 +284,7 @@ import NavCard from "../../components/NavCard.astro";
           data-shape="circle"
           data-size="small"
       >
-        <Icon class="sh-atom-icon" width="16" height="16" icon="icon-trashcan"/>
+        <Icon class="sh-atom-icon" width="16" height="16" name="icon-trashcan"/>
       </a>
     </div>
     <h3>Circle Icon Button - Small plain</h3>
@@ -280,7 +294,7 @@ import NavCard from "../../components/NavCard.astro";
         class="sh-atom-button"
         data-style="plain-dark"
       >
-          <Icon class="sh-atom-icon" width="16" height="16" icon="icon-trashcan"/>
+          <Icon class="sh-atom-icon" width="16" height="16" name="icon-trashcan"/>
       </a>
     </div>
     <h2>With price</h2>
@@ -381,7 +395,7 @@ import NavCard from "../../components/NavCard.astro";
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
-        <Icon class="sh-atom-icon" icon="icon-cart" />
+        <Icon class="sh-atom-icon" name="icon-cart" />
       </a>
     </div>
     <h3>expanded</h3>
@@ -395,7 +409,7 @@ import NavCard from "../../components/NavCard.astro";
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
+        <Icon name="icon-cart" />
       </a>
     </div>
     <div class="example">
@@ -408,7 +422,7 @@ import NavCard from "../../components/NavCard.astro";
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
+        <Icon name="icon-cart" />
       </a>
     </div>
     <div class="example">
@@ -575,7 +589,7 @@ import NavCard from "../../components/NavCard.astro";
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
+        <Icon name="icon-cart" />
       </a>
     </div>
     <h3>expanded</h3>
@@ -589,7 +603,7 @@ import NavCard from "../../components/NavCard.astro";
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
+        <Icon name="icon-cart" />
       </a>
     </div>
     <div class="example">
@@ -602,7 +616,7 @@ import NavCard from "../../components/NavCard.astro";
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
+        <Icon name="icon-cart" />
       </a>
     </div>
     <div class="example">
@@ -679,7 +693,7 @@ import NavCard from "../../components/NavCard.astro";
         data-style="soft"
       >
         Show
-          <Icon icon="icon-chevron-down" />
+          <Icon name="icon-chevron-down" />
       </a>
     </div>
     <h2>Chevron Up</h2>
@@ -690,7 +704,7 @@ import NavCard from "../../components/NavCard.astro";
         data-style="soft"
       >
         Hide
-          <Icon icon="icon-chevron-up" />
+          <Icon name="icon-chevron-up" />
       </a>
     </div>
     <h2>Mobile NavButton</h2>

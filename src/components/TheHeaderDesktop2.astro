@@ -2,7 +2,7 @@
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import LangSwitchNoScript from "./LangSwitchNoScript.astro";
-import Icon from "./Icon.astro";
+import { Icon } from 'astro-icon/components';
 import NavCard from "./NavCard.astro";
 import MsgBar from "./MsgBar.astro";
 const lang = getLangFromUrl(Astro.url);
@@ -65,7 +65,7 @@ const tableGallery = 5;
           <a
             href={"/" + lang + "/search-results"}
             class="sh-atom-button --icon-search"
-            data-style="plain-dark"><Icon icon="icon-search" />Search</a
+            data-style="plain-dark"><Icon name="icon-search" />Search</a
           >
         </li>
         <!--<li class="utilities-nav__item" id="utilities-nav__contact"><a href={"/" + lang + "/contact"} class="hover-interaction-a">Contact</a></li>-->
@@ -75,7 +75,7 @@ const tableGallery = 5;
             class="sh-atom-button --icon-cart"
             data-style="plain-dark"
           >
-            <Icon icon="icon-cart" />
+            <Icon name="icon-cart" />
             Cart
           </a>
           <!--<AtomBadge isLink={true} url={"/" + lang + "/cart/list"} badgeNumber="6" />-->
@@ -543,14 +543,14 @@ const tableGallery = 5;
               data-style="soft"
               data-shape="circle"
             >
-              <Icon class="sh-atom-icon" icon="icon-arrow-left-nav-back"/>
+              <Icon class="sh-atom-icon" name="icon-arrow-left-nav-back"/>
             </div>
             <div
               class="sh-custom-swiper-button-next sh-atom-button"
               data-style="soft"
               data-shape="circle"
             >
-              <Icon class="sh-atom-icon" icon="icon-arrow-right-nav-next"/>
+              <Icon class="sh-atom-icon" name="icon-arrow-right-nav-next"/>
             </div>
           </div>
         </div>

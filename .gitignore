@@ -4,3 +4,4 @@ backstop_data
 .idea
 .nova
 *.pem
+dist

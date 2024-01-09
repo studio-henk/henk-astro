@@ -1,5 +1,5 @@
 ---
-import Icon from "./Icon.astro";
+import { Icon } from 'astro-icon/components';
 import { getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -13,7 +13,7 @@ const lang = getLangFromUrl(Astro.url);
       onclick="closeModal(this)"
     >
       <span class="icon-frame">
-        <Icon icon="icon-close" class="sh-atom-icon" />
+        <Icon name="icon-close" class="sh-atom-icon" />
       </span>
     </button>
     <form method="post" action={"/"+lang+"/search-results"} class="search-modal__form">

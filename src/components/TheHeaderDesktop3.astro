@@ -2,7 +2,7 @@
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import LangSwitchNoScript from "./LangSwitchNoScript.astro";
-import Icon from "./Icon.astro";
+import { Icon } from 'astro-icon/components';
 import NavCard from "./NavCard.astro";
 import MsgBar from "./MsgBar.astro";
 import UtilsNav from "../components/astro/UtilsNav.astro";
@@ -81,12 +81,6 @@ const ariaProperties = {
             <!-- CountdownTimer -->
         </div>
         <div class="primary-nav-container">
-            <!--<AtomLogo
-                url="/"
-                icon="logo-henk-solo"
-                width="106"
-                height="25"
-            />-->
             <AtomLogo
                 url="/"
                 icon="logo-henk-solo"
@@ -128,7 +122,7 @@ const ariaProperties = {
                             data-style="plain"
                         >
                             <!-- arrow back -->
-                            <Icon class="sh-atom-icon" width="16" height="16" icon="icon-arrow-left-nav-back"/>
+                            <Icon class="sh-atom-icon" width="16" height="16" name="icon-arrow-left-nav-back"/>
                             Back
                         </button>
                             <ol
@@ -138,7 +132,7 @@ const ariaProperties = {
                                 <li v-for="(item, index) in currentItems" :key="item.title" class="gallery-controller__list-item" :style="{ 'animation-delay': index * 0.1 + 's', opacity: 0 }">
                                     <span class="gallery-controller__level-link" v-if="item.childrenData" @click="navigateToNextLevel(item)">[[ item.navTitle ]]
                                         <!-- arrow right -->
-                                        <Icon class="sh-atom-icon" width="16" height="16" icon="icon-arrow-right-nav-next"/>
+                                        <Icon class="sh-atom-icon" width="16" height="16" name="icon-arrow-right-nav-next"/>
                                     </span>
                                     <a v-else :href="item.url" class="page-link">
                                         [[ item.navTitle ]]

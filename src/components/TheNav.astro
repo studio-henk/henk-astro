@@ -1,7 +1,7 @@
 ---
 import {getLangFromUrl} from '../i18n/utils';
 import MsgBar from "./MsgBar.astro";
-import Icon from "./Icon.astro";
+import { Icon } from 'astro-icon/components';
 const lang = getLangFromUrl(Astro.url);
 ---
 <section class="navigation">
@@ -31,7 +31,7 @@ const lang = getLangFromUrl(Astro.url);
         </style>-->
         <div class="brand-logo">
           <a class="brand-logo__link" href="/en" title="click to go back to the homepage" tabindex="1">
-            <!--<Icon icon="henk" class="brand-logo__image logo" />-->
+            <!--<Icon name="henk" class="brand-logo__image logo" />-->
             <img
               class="logo brand-logo__image"
               src="https://assets.studio-henk.nl/assets/Images/logo/henk-logo.svg"
