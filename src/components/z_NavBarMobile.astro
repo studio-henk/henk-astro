@@ -1,0 +1,473 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+import LangSwitchNoScript from "./LangSwitchNoScript.astro";
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname.substring(4);
+let otherLang;
+if (lang == "nl") {
+  otherLang = "en";
+} else {
+  otherLang = "nl";
+}
+let otherURL = "/" + otherLang + "/" + currentPath;
+---
+
+<nav class="nav-bar-mobile" id="nav-bar-mobile">
+  <ul class="nav-bar-mobile__link-list --nav-level1">
+    <li role="none" class="--has-submenu">
+      <a class="subview-link" href="#Shop"
+        >Shop <svg
+          width="20"
+          height="16"
+          viewBox="0 0 22 18"
+          fill="none"
+          aria-labelledby="iconArrowRightNavBar"
+          id="iconArrowRightNavBar"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-arrow-navbar"
+          aria-hidden="true"
+          ><!--<title>{icon}</title>-->
+
+          <title>iconArrowRightNavBar</title>
+          <desc>icon Arrow Right for nav bar</desc>
+          <path
+            d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+            fill="currentcolor"></path>
+          <path
+            d="M12.5 1L20.5 9L12.5 17"
+            stroke="currentcolor"
+            stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <ul class="submenu --nav-level2" id="Shop">
+        <li class="back-level">
+          <a href="#back" class="--back">
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowLeftNavBar"
+              id="iconArrowLeftNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowLeftNavBar</title>
+              <desc>icon Arrow Left for nav bar</desc>
+              <path
+                d="M21.5 9L1.5 9"
+                stroke="currentcolor"
+                stroke-linecap="square"></path>
+              <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+            </svg>
+            Back
+          </a>
+        </li>
+        <li class="--has-submenu">
+          <a href="#tables" class="subview-link"
+            >Tables <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowRightNavBar"
+              id="iconArrowRightNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowRightNavBar</title>
+              <desc>icon Arrow Right for nav bar</desc>
+              <path
+                d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+                fill="currentcolor"></path>
+              <path
+                d="M12.5 1L20.5 9L12.5 17"
+                stroke="currentcolor"
+                stroke-width="1.5"></path>
+            </svg>
+          </a>
+          <ul class="submenu --nav-level3">
+            <li class="back-level">
+              <a href="#back" class="--back">
+                <svg
+                  width="20"
+                  height="16"
+                  viewBox="0 0 22 18"
+                  fill="none"
+                  aria-labelledby="iconArrowLeftNavBar"
+                  id="iconArrowLeftNavBar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon-arrow-navbar"
+                  aria-hidden="true"
+                  ><!--<title>{icon}</title>-->
+
+                  <title>iconArrowLeftNavBar</title>
+                  <desc>icon Arrow Left for nav bar</desc>
+                  <path
+                    d="M21.5 9L1.5 9"
+                    stroke="currentcolor"
+                    stroke-linecap="square"></path>
+                  <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+                </svg>
+                Back
+              </a>
+            </li>
+            <li>
+              <a href="#all-tables"> All Tables</a>
+            </li><li>
+              <a href={"/" + lang + "/products/dining-tables"}>Dining Tables</a>
+            </li><li>
+              <a href="#coffee-tables"> Coffee Tables</a>
+            </li><li>
+              <a href="#home-desks"> Home Desks</a>
+            </li><li>
+              <a href="#bistro-tables"> Bistro Tables</a>
+            </li>
+          </ul>
+        </li><li class="--has-submenu">
+          <a href="#chairs" class="subview-link"
+            >Chairs <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowRightNavBar"
+              id="iconArrowRightNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowRightNavBar</title>
+              <desc>icon Arrow Right for nav bar</desc>
+              <path
+                d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+                fill="currentcolor"></path>
+              <path
+                d="M12.5 1L20.5 9L12.5 17"
+                stroke="currentcolor"
+                stroke-width="1.5"></path>
+            </svg>
+          </a>
+          <ul class="submenu --nav-level3">
+            <li class="back-level">
+              <a href="#back" class="--back">
+                <svg
+                  width="20"
+                  height="16"
+                  viewBox="0 0 22 18"
+                  fill="none"
+                  aria-labelledby="iconArrowLeftNavBar"
+                  id="iconArrowLeftNavBar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon-arrow-navbar"
+                  aria-hidden="true"
+                  ><!--<title>{icon}</title>-->
+
+                  <title>iconArrowLeftNavBar</title>
+                  <desc>icon Arrow Left for nav bar</desc>
+                  <path
+                    d="M21.5 9L1.5 9"
+                    stroke="currentcolor"
+                    stroke-linecap="square"></path>
+                  <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+                </svg>
+                Back
+              </a>
+            </li>
+            <li>
+              <a href="#all-chairs"> All Chairs</a>
+            </li><li>
+              <a href="#dining-chairs"> Dining Chairs</a>
+            </li>
+          </ul>
+        </li><li class="--has-submenu">
+          <a href="#sofas" class="subview-link"
+            >Sofas <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowRightNavBar"
+              id="iconArrowRightNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowRightNavBar</title>
+              <desc>icon Arrow Right for nav bar</desc>
+              <path
+                d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+                fill="currentcolor"></path>
+              <path
+                d="M12.5 1L20.5 9L12.5 17"
+                stroke="currentcolor"
+                stroke-width="1.5"></path>
+            </svg>
+          </a>
+          <ul class="submenu --nav-level3">
+            <li class="back-level">
+              <a href="#back" class="--back">
+                <svg
+                  width="20"
+                  height="16"
+                  viewBox="0 0 22 18"
+                  fill="none"
+                  aria-labelledby="iconArrowLeftNavBar"
+                  id="iconArrowLeftNavBar"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon-arrow-navbar"
+                  aria-hidden="true"
+                  ><!--<title>{icon}</title>-->
+
+                  <title>iconArrowLeftNavBar</title>
+                  <desc>icon Arrow Left for nav bar</desc>
+                  <path
+                    d="M21.5 9L1.5 9"
+                    stroke="currentcolor"
+                    stroke-linecap="square"></path>
+                  <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+                </svg>
+                Back
+              </a>
+            </li>
+            <li>
+              <a href="#all-sofas"> All Sofas</a>
+            </li><li>
+              <a href="#sofas"> Sofas</a>
+            </li><li>
+              <a href="#poufs"> Poufs</a>
+            </li>
+          </ul>
+        </li><li class="">
+          <a href="#cabinets" class="">Cabinets</a>
+        </li><li class="">
+          <a href="#accessories" class="">Accessories</a>
+        </li><li class="">
+          <a href="/en/outdoor" class="">Outdoor</a>
+        </li>
+      </ul>
+    </li><li role="none" class="">
+      <a href={"/" + lang + "/configurator"}>Configurator</a>
+    </li><li role="none" class="">
+      <a href={"/" + lang + "/samples"}>Samples</a>
+    </li>
+    <li role="none" class="--has-submenu">
+      <a class="subview-link" href="#Visit"
+        >Visit <svg
+          width="20"
+          height="16"
+          viewBox="0 0 22 18"
+          fill="none"
+          aria-labelledby="iconArrowRightNavBar"
+          id="iconArrowRightNavBar"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-arrow-navbar"
+          aria-hidden="true"
+        >
+          <title>iconArrowRightNavBar</title>
+          <desc>icon Arrow Right for nav bar</desc>
+          <path
+            d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+            fill="currentcolor"></path>
+          <path
+            d="M12.5 1L20.5 9L12.5 17"
+            stroke="currentcolor"
+            stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <ul class="submenu --nav-level2" id="Visit">
+        <li class="back-level">
+          <a href="#back" class="--back">
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowLeftNavBar"
+              id="iconArrowLeftNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowLeftNavBar</title>
+              <desc>icon Arrow Left for nav bar</desc>
+              <path
+                d="M21.5 9L1.5 9"
+                stroke="currentcolor"
+                stroke-linecap="square"></path>
+              <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+            </svg>
+            Back
+          </a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/shops"}>Our Stores</a>
+        </li><li class="">
+          <a href={"/" + lang + "/interior-advice"}>Interior advice</a>
+        </li>
+      </ul>
+    </li><li role="none" class="--has-submenu">
+      <a class="subview-link" href="#"
+        >Inspiration <svg
+          width="20"
+          height="16"
+          viewBox="0 0 22 18"
+          fill="none"
+          aria-labelledby="iconArrowRightNavBar"
+          id="iconArrowRightNavBar"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-arrow-navbar"
+          aria-hidden="true"
+          ><!--<title>{icon}</title>-->
+
+          <title>iconArrowRightNavBar</title>
+          <desc>icon Arrow Right for nav bar</desc>
+          <path
+            d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+            fill="currentcolor"></path>
+          <path
+            d="M12.5 1L20.5 9L12.5 17"
+            stroke="currentcolor"
+            stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <ul class="submenu --nav-level2" id="Inspiration">
+        <li class="back-level">
+          <a href="#back" class="--back">
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowLeftNavBar"
+              id="iconArrowLeftNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowLeftNavBar</title>
+              <desc>icon Arrow Left for nav bar</desc>
+              <path
+                d="M21.5 9L1.5 9"
+                stroke="currentcolor"
+                stroke-linecap="square"></path>
+              <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+            </svg>
+            Back
+          </a>
+        </li>
+        <li class="">
+          <a href="/en/blogs" class="">Stories</a>
+        </li><li class="">
+          <a href="/en/projects" class="">Projects</a>
+        </li>
+      </ul>
+    </li>
+    <li role="none" class="--has-submenu">
+      <a class="subview-link" href="#"
+        >About <svg
+          width="20"
+          height="16"
+          viewBox="0 0 22 18"
+          fill="none"
+          aria-labelledby="iconArrowRightNavBar"
+          id="iconArrowRightNavBar"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-arrow-navbar"
+          aria-hidden="true"
+          ><!--<title>{icon}</title>-->
+
+          <title>iconArrowRightNavBar</title>
+          <desc>icon Arrow Right for nav bar</desc>
+          <path
+            d="M20 9.75H20.75V8.25H20V9.75ZM0 9.75H20V8.25H0V9.75Z"
+            fill="currentcolor"></path>
+          <path
+            d="M12.5 1L20.5 9L12.5 17"
+            stroke="currentcolor"
+            stroke-width="1.5"></path>
+        </svg>
+      </a>
+      <ul class="submenu --nav-level2" id="About">
+        <li class="back-level">
+          <a href="#back" class="--back">
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 22 18"
+              fill="none"
+              aria-labelledby="iconArrowLeftNavBar"
+              id="iconArrowLeftNavBar"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-arrow-navbar"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+
+              <title>iconArrowLeftNavBar</title>
+              <desc>icon Arrow Left for nav bar</desc>
+              <path
+                d="M21.5 9L1.5 9"
+                stroke="currentcolor"
+                stroke-linecap="square"></path>
+              <path d="M9 17L1 9L9 1" stroke="currentcolor"></path>
+            </svg>
+            Back
+          </a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About</a>
+        </li><li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+        <li class="">
+          <a href={"/" + lang + "/about-us"}>About 2</a>
+        </li>
+      </ul>
+    </li>
+    <li role="none" class="">
+      <a href={"/" + lang + "/search-results"}>Search</a>
+    </li>
+    <li role="none" class="">
+      <!--<span class="label">Language <lang-switch data-url={otherURL}></lang-switch></span>-->
+      <span class="label"
+        >Language <lang-switch data-url={otherURL} title={otherURL} lang={lang}
+        ></lang-switch>
+        <noscript>
+          <LangSwitchNoScript url={otherURL} lang={lang} />
+        </noscript></span
+      >
+    </li>
+  </ul>
+</nav>

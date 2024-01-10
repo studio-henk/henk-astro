@@ -32,9 +32,16 @@ body {
     background-color: var(--color-background-page, #fff);
     color: var(--color-text-page, #000);
     margin: 0;
+    padding: var(--paddingTopMobile, 0) 0 0 0;
     font-family: var(--font-body, sans-serif), sans-serif;
     font-weight:  400;
     line-height: calc(1.5em);
+}
+
+@media only screen and (min-width: 1280px) {
+    body {
+        padding: var(--paddingTopDesktop, 0) 0 0 0;
+    }
 }
 
 strong {

@@ -1,11 +1,11 @@
 const {createApp} = Vue;
 import GalleryCard from './GalleryCard.js'
-import DiscountTimer from "./DiscountTimer.js";
+// import DiscountTimer from "./DiscountTimer.js";
 createApp({
     delimiters: ["[[", "]]"],
     components: {
         GalleryCard,
-        DiscountTimer
+        // DiscountTimer
     },
     data() {
         return {
@@ -38,8 +38,11 @@ createApp({
             // only if page has no hero
             const hasHeroAttribute = document.getElementById('masthead-desktop').getAttribute('data-has-hero');
             if (!hasHeroAttribute) {
-                document.body.style.paddingTop = `${navBarHeight}px`;
+                // document.body.style.paddingTop = `${navBarHeight}px`;
+                // Update CSS variable dynamically
+                document.documentElement.style.setProperty('--paddingTopDesktop', navBarHeight + 'px');
             }
+            document.documentElement.style.setProperty('--navBarHeightDesktop', navBarHeight + 'px');
         },
         setBodyOverflow() {
             document.body.style.overflow = "hidden";
