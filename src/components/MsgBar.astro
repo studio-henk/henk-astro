@@ -1,6 +1,35 @@
+---
+const lang = Astro.props;
+---
+
 <!-- .sh-org-msg-bar -->
-<div id="msg-covid" class="sh-org-msg-bar">
-    <!-- id is still need for javascript function that calculates height -->
+<div id="MsgBar" class="message-bar">
     <a href="en/stores/rotterdam-brand-store">Our new Rotterdam brand store is now open!</a>
+    <!-- CountdownTimer -->
+    <countdown-timer
+        start-date-time="Jan 4, 2024 10:00:00"
+        end-date-time="Feb 4, 2024 10:00:00"
+        lang={lang}
+    >
+    </countdown-timer>
+    <!-- CountdownTimer -->
 </div>
 <!-- /.sh-org-msg-bar -->
+<script is:inline>
+    // get MsgBar height and set CSS variable
+    document.addEventListener('DOMContentLoaded', function() {
+        const msgBar = document.getElementById('MsgBar');
+
+        // Create a ResizeObserver
+        const resizeObserver = new ResizeObserver(setMsgBarHeight);
+
+        // Observe changes in MsgBar size
+        resizeObserver.observe(msgBar);
+
+        // Function to set CSS variable --MsgBarHeight
+        function setMsgBarHeight() {
+            const msgBarHeight = msgBar.clientHeight;
+            document.documentElement.style.setProperty('--MsgBarHeight', msgBarHeight + 'px');
+        }
+    });
+</script>

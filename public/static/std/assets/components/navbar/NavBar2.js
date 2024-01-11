@@ -1,11 +1,9 @@
 const {createApp} = Vue;
 import GalleryCard from './GalleryCard.js'
-// import DiscountTimer from "./DiscountTimer.js";
 createApp({
     delimiters: ["[[", "]]"],
     components: {
         GalleryCard,
-        // DiscountTimer
     },
     data() {
         return {
@@ -30,18 +28,40 @@ createApp({
             this.navigationData = JSON.parse(primaryNavAttribute).navigationData;
             this.isLoading = false;
         },
+        getNavBarHeight() {
+            // let navBarHeight = this.$refs.navBar.clientHeight;
+            const navBar = document.getElementById('NavBar');
+
+            // Create a ResizeObserver
+            const resizeObserver = new ResizeObserver(setNavBarHeight);
+
+            // Observe changes in NavBar size
+            resizeObserver.observe(navBar);
+
+            // Function to set CSS variable --MsgBarHeight
+            function setNavBarHeight() {
+                const navBarHeight = navBar.clientHeight;
+                document.documentElement.style.setProperty('--NavBarHeight-desktop', navBarHeight + 'px');
+            }
+        },
         setBodyPadding() {
-            // Calculate the height of the NavBar
-            const navBarHeight = this.$refs.navBar.clientHeight;
+            // get the height of the NavBar
+            let navBarHeight = this.$refs.navBar.clientHeight;
 
             // Set padding-top for the body element
             // only if page has no hero
             const hasHeroAttribute = document.getElementById('masthead-desktop').getAttribute('data-has-hero');
             if (!hasHeroAttribute) {
-                // document.body.style.paddingTop = `${navBarHeight}px`;
+                // get MsgBarHeight if exists
+                if (this.MsgBarHeight) {
+                    console.log(this.MsgBarHeight);
+                    navBarHeight = navBarHeight + this.MsgBarHeight;
+                }
                 // Update CSS variable dynamically
                 document.documentElement.style.setProperty('--paddingTopDesktop', navBarHeight + 'px');
-            }
+            } /*else {
+                document.documentElement.style.setProperty('--paddingTopDesktop', '0px');
+            }*/
             document.documentElement.style.setProperty('--navBarHeightDesktop', navBarHeight + 'px');
         },
         setBodyOverflow() {
@@ -131,7 +151,8 @@ createApp({
         // Set the navigationData property based on the retrieved attribute
         // this.navigationData = JSON.parse(primaryNavAttribute).navigationData;*/
         this.$nextTick(() => {
-            this.setBodyPadding();
+            this.getNavBarHeight();
+            // this.setBodyPadding();
             // for debugging to keep menu open
             // this.handlePrimaryNavItemHover(this.navigationData[5]);
         });

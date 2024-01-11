@@ -1,9 +1,8 @@
 ---
 import AtomLogo from "./Atoms/AtomLogo.astro";
 import { getLangFromUrl } from "../i18n/utils";
-import LangSwitchNoScript from "./LangSwitchNoScript.astro";
 import Icon from "../components/astro/Icon.astro";
-import NavCard from "./NavCard.astro";
+// import NavCard from "./NavCard.astro";
 import MsgBar from "./MsgBar.astro";
 import UtilsNav from "../components/astro/UtilsNav.astro";
 import NavBarMobile from "../components/NavBarMobile.astro";
@@ -12,6 +11,12 @@ const lang = getLangFromUrl(Astro.url);
 // const { NavOnHero } = Astro.props;
 let { Theme } = Astro.props;
 let {showMsgBar} = Astro.props;
+
+if (!showMsgBar) {
+    showMsgBar = "false";
+}
+console.log(showMsgBar);
+
 const currentPath = Astro.url.pathname.substring(4);
 let otherLang;
 if (lang == "nl") {
@@ -33,8 +38,6 @@ const primaryNavJSON = JSON.stringify(primaryNav);
 const {hasHero} = Astro.props;
 
 const ariaProperties = {
-    "data-menu-item-id": "some-id",
-    "aria-haspopup": "somepopup",
     ...(hasHero && { "data-has-hero": "true" })
 }
 ---
@@ -45,13 +48,15 @@ const ariaProperties = {
     src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
 ></script>
 
+{
+    showMsgBar === "true" && <MsgBar lang={lang} />
+}
 <NavBarMobile Theme={Theme} hasHero={hasHero} showMsgBar={showMsgBar} />
 <div
     id="NavBar"
     data-primary-nav={primaryNavJSON}
 >
     <div class="nav-bar-skeleton isLoading">
-        <div class="nav-bar-skeleton__msg-bar"></div>
         <div class="nav-bar-skeleton__primary-nav-container">
             <div class="nav-bar-skeleton__logo"></div>
             <div class="nav-bar-skeleton__primary-nav"></div>
@@ -59,28 +64,17 @@ const ariaProperties = {
         </div>
     </div>
     <header
-        { ...ariaProperties }
+        { /*...ariaProperties*/ }
         class="masthead masthead-desktop"
         :class="{ 'NavBar--isScrolled': isScrolled, 'NavBar--isHovered': statusNavBarHovered, 'NavBar--submenuOpen': showSubmenu }"
         id="masthead-desktop"
         ref="navBar"
         data-theme={Theme}
-        data-show-topmessagebar={showMsgBar}
+        {/*data-show-topmessagebar={showMsgBar}*/}
         @mouseleave="handleNavBarMouseLeave"
         @mouseenter="handleNavBarMouseEnter"
         v-cloak
     >
-        <div id="msg-covid" class="message-bar">
-            <a href="en/stores/rotterdam-brand-store">Our new Rotterdam brand store is now open!</a>
-            <!-- CountdownTimer -->
-            <countdown-timer
-                start-date-time="Jan 4, 2024 10:00:00"
-                end-date-time="Feb 4, 2024 10:00:00"
-                lang={lang}
-            >
-            </countdown-timer>
-            <!-- CountdownTimer -->
-        </div>
         <div class="primary-nav-container">
             <AtomLogo
                 url="/"

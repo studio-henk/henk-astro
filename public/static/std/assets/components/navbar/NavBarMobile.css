@@ -1,8 +1,163 @@
-#NavBarMobile {
-    background-color: aqua;
-}
+@media only screen and (max-width: 1023px) {
+    @keyframes MoveLeftRight {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
 
-@media only screen and (min-width: 1280px) {
+    @keyframes MoveRightLeft {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    .NavBarMobile .NavBarMobile__top {
+        position: fixed;
+        /*top: 0;*/
+        top: var(--MsgBarHeight, 0);
+        z-index: 999;
+        width: 100%;
+        background-color: var(--color-white);
+        padding: 24px;
+        display: grid;
+        align-items: center;
+        gap: 8px;
+        grid-template-columns: 1fr 24px 24px;
+        transition: all 0.3s ease;
+    }
+
+    .NavBarMobile .NavBarMobile__top hamburger-button {
+        justify-self: center;
+    }
+
+    .NavBarMobile[data-theme="dark"] .NavBarMobile__top {
+        background-color: var(--color-transparent);
+        color: var(--color-white);
+        --color-background-button-nav-mobile: var(--color-white);
+    }
+
+    .NavBarMobile[data-theme="dark"] .NavBarMobile__top-link {
+        color: var(--color-white);
+    }
+
+    .NavBarMobile__top-link {
+        font-size: 0;
+    }
+
+    .NavBarMobile .NavBarMobile__header.NavBar--isOpen .NavBarMobile__top,
+    .NavBarMobile .NavBarMobile__header.NavBar--isOpen .NavBarMobile__top-link {
+        background-color: var(--color-accent1);
+        color: var(--color-black);
+        --color-background-button-nav-mobile: var(--color-black);
+    }
+
+    .NavBarMobile .NavBarMobile__header.NavBar--isScrolled .NavBarMobile__top,
+    .NavBarMobile .NavBarMobile__header.NavBar--isScrolled .NavBarMobile__top-link {
+        background-color: var(--color-white);
+        color: var(--color-black);
+        --color-background-button-nav-mobile: var(--color-black);
+    }
+
+    .NavBarMobile .NavBarMobile__nav {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
+        background-color: var(--color-accent1);
+        position: fixed;
+        top: var(--total-bars-height, 0);
+        z-index: 998;
+        width: 100%;
+        padding: 0 24px 24px 24px;
+    }
+
+    .NavBarMobile .NavBarMobile__nav.active {
+        opacity: 1;
+        visibility: visible;
+        height: calc(100svh - var(--total-bars-height, 0));
+    }
+
+    .NavBarMobile .NavBarMobile__list {
+        margin: 0;
+        list-style: none;
+        max-height: calc(100svh - calc(var(--total-bars-height) + 24px));
+        overflow-y: scroll;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .NavBarMobile .NavBar--isOpen .NavBarMobile__list {
+        animation: MoveRightLeft 0.6s ease-in-out both;
+    }
+
+    .NavBarMobile .NavBarMobile__list-item {
+        animation: fadeIn 0.3s ease-in-out forwards,
+        MoveLeftRight 0.3s ease-in-out forwards;
+        font-size: 24px;
+        line-height: 48px;
+        width: 100%;
+    }
+
+    .NavBarMobile .NavBarMobile__list .NavBarMobile__list {
+        margin: 0;
+        list-style: none;
+        flex: 1;
+        align-self: flex-end;
+    }
+
+    .NavBarMobile .NavBarMobile__button-next-level {
+        cursor: pointer;
+    }
+
+    .NavBarMobile .page-link {
+        display: block;
+        text-decoration: none;
+    }
+
+    .NavBarMobile .NavBarMobile__button-back {
+        animation: fadeInOut 1s ease-in-out normal forwards;
+    }
+
+    .NavBarMobile .NavBarMobile__button-back.reverse {
+        animation: fadeOutIn 1s ease-in-out normal forwards;
+    }
+
+    .NavBarMobile .NavBarMobile__utils-list-container {
+        flex: 1;
+        display: flex;
+    }
+
+    .NavBarMobile .NavBarMobile__utils-list {
+        list-style: none;
+        margin: 0;
+        align-self: flex-end;
+        width: 100%;
+    }
+
+    .NavBarMobile .NavBarMobile__utils-list-item {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .NavBarMobile .NavBarMobile__utils-list.--direction-horizontal {
+        display: flex;
+    }
+
+    .--direction-horizontal .NavBarMobile__utils-list-item {
+        display: flex;
+        /*justify-content: center;*/
+        align-items: center;
+    }
+}
+@media only screen and (min-width: 1024px) {
     #NavBarMobile {
         display: none;
     }

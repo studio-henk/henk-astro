@@ -28,20 +28,35 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
+:root {
+    --total-bars-height: calc(var(--NavBarHeight-mobile, 80px) + var(--MsgBarHeight, 0px));
+}
+
+@media only screen and (min-width: 1024px) {
+    :root {
+        --total-bars-height: calc(var(--NavBarHeight-desktop, 80px) + var(--MsgBarHeight, 0px));
+    }
+}
+
 body {
     background-color: var(--color-background-page, #fff);
     color: var(--color-text-page, #000);
     margin: 0;
-    padding: var(--paddingTopMobile, 0) 0 0 0;
+    /*padding: var(--paddingTopMobile, 0) 0 0 0;*/
+    padding: var(--total-bars-height, 80px) 0 0 0;
     font-family: var(--font-body, sans-serif), sans-serif;
     font-weight:  400;
     line-height: calc(1.5em);
 }
 
+[data-has-hero] body {
+    padding: 0;
+}
+
 @media only screen and (min-width: 1280px) {
-    body {
-        padding: var(--paddingTopDesktop, 0) 0 0 0;
-    }
+    /*body {
+        padding: var(--total-bars-height, 80px) 0 0 0;
+    }*/
 }
 
 strong {

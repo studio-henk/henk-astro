@@ -14,6 +14,7 @@ let otherURL = "/" + otherLang + "/" + currentPath;
 import primaryNav from "../../public/data/navigation_data.json";
 import Icon from "./astro/Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
+import MsgBar from "./MsgBar.astro";
 // Convert the object to a JSON string
 const primaryNavJSON = JSON.stringify(primaryNav);
 
@@ -35,93 +36,109 @@ const ariaProperties = {
   id="NavBarMobile"
   class="NavBarMobile"
   data-theme={Theme}
-  data-show-topmessagebar={showMsgBar}
+  {/*data-show-topmessagebar={showMsgBar}*/}
   data-primary-nav={primaryNavJSON}
 >
   <header
-    {...ariaProperties}
+    {/*...ariaProperties*/}
     class="masthead masthead-mobile NavBarMobile__header"
     :class="{ 'NavBar--isScrolled': isScrolled, 'NavBar--isOpen': isNavVisible }"
     id="masthead-mobile"
     data-theme={Theme}
     data-show-topmessagebar={showMsgBar}
   >
+    <!--<MsgBar lang={lang} />-->
     <!--v-cloak-->
     <div class="NavBarMobile__top" ref="NavBarMobile__top">
-      <AtomLogo
-          url="/"
-          icon="logo-henk-solo"
-          width="140"
-          height="32"
-      />
+      <AtomLogo url="/" icon="logo-henk-solo" width="140" height="32" />
       <!-- cart icon/button -->
-      <a
-          href="/en/cart/list"
-          class="NavBarMobile__top-link"
-      >
+      <a href="/en/cart/list" class="NavBarMobile__top-link">
         <!-- icon cart here -->
-        <Icon class="sh-atom-icon" width="24" height="24" name="icon-cart"/>
+        <Icon class="sh-atom-icon" width="24" height="24" name="icon-cart" />
         Cart
       </a>
       <!-- hamburger button -->
       <hamburger-button @click="toggleNav"></hamburger-button>
     </div>
     <nav
-        :class="{ 'mobile-nav': true, 'active': isNavVisible }"
-        class="NavBarMobile__nav"
+      :class="{ 'mobile-nav': true, 'active': isNavVisible }"
+      class="NavBarMobile__nav"
     >
       <button
-      v-if="currentLevel > 1"
-      @click="navigateToPreviousLevel"
-      class="sh-atom-button NavBarMobile__button NavBarMobile__button-back"
-      :class="{ reverse: isGoingBack }"
-      data-style="plain"
-    >
-      <!-- arrow back -->
-      <Icon
-        class="sh-atom-icon NavBarMobile__icon-back"
-        width="16"
-        height="16"
-        name="icon-arrow-left-nav-back"
-      />
-      Back
-    </button>
-    <ol class="NavBarMobile__list" :key="currentLevel">
-      <li
-        v-for="(item, index) in (currentLevel === 1 ? navigationData : currentItems)"
-        :key="item.title"
-        class="NavBarMobile__list-item"
-        :style="{ 'animation-delay': index * 0.15 + 's', opacity: 0 }"
+        v-if="currentLevel > 1"
+        @click="navigateToPreviousLevel"
+        class="sh-atom-button NavBarMobile__button NavBarMobile__button-back"
+        :class="{ reverse: isGoingBack }"
+        data-style="plain"
       >
-        <span
-          v-if="item.childrenData"
-          class="NavBarMobile__button NavBarMobile__button-next-level"
-          @click="handleMobileNavItemClick(item)"
-        >
-          [[ item.navTitle ]]
-          <Icon
-            class="sh-atom-icon"
-            width="16"
-            height="16"
-            name="icon-arrow-right-nav-next"
-          />
-        </span>
-        <a v-else :href="item.url" class="page-link"> [[ item.navTitle ]]</a>
-      </li>
-      <li
+        <!-- arrow back -->
+        <Icon
+          class="sh-atom-icon NavBarMobile__icon-back"
+          width="16"
+          height="16"
+          name="icon-arrow-left-nav-back"
+        />
+        Back
+      </button>
+      <ol class="NavBarMobile__list" :key="currentLevel">
+        <li
+          v-for="(item, index) in (currentLevel === 1 ? navigationData : currentItems)"
+          :key="item.title"
           class="NavBarMobile__list-item"
-          v-if="currentLevel === 1"
-      >
-        <a
-            href="/en/cart/list"
-            class="page-link"
+          :style="{ 'animation-delay': index * 0.15 + 's', opacity: 0 }"
         >
-          <!-- icon cart here -->
-          <Icon class="sh-atom-icon" width="24" height="24" name="icon-cart"/>
-          Cart
-        </a>
-      </li>
-    </ol>
+          <span
+            v-if="item.childrenData"
+            class="NavBarMobile__button NavBarMobile__button-next-level"
+            @click="handleMobileNavItemClick(item)"
+          >
+            [[ item.navTitle ]]
+            <Icon
+              class="sh-atom-icon"
+              width="16"
+              height="16"
+              name="icon-arrow-right-nav-next"
+            />
+          </span>
+          <a v-else :href="item.url" class="page-link"> [[ item.navTitle ]]</a>
+        </li>
+        <li
+          v-if="currentLevel === 1"
+          class="NavBarMobile__list-item NavBarMobile__utils-list-container"
+        >
+          <ul class="NavBarMobile__utils-list --direction-horizontal">
+            <li class="NavBarMobile__list-item NavBarMobile__utils-list-item">
+              <a href="/en/stores" class="page-link">
+                <!--search-->
+                Stores
+                <Icon
+                  class="sh-atom-icon"
+                  width="16"
+                  height="16"
+                  name="icon-location"
+                />
+              </a>
+            </li>
+            <li class="NavBarMobile__list-item NavBarMobile__utils-list-item">
+              <a href="/en/search" class="page-link">
+                <!--search-->
+                Search
+                <Icon
+                  class="sh-atom-icon"
+                  width="16"
+                  height="16"
+                  name="icon-search"
+                />
+              </a>
+            </li>
+            <li class="NavBarMobile__list-item NavBarMobile__utils-list-item">
+              <!-- langSwitch -->
+              <lang-switch data-url={otherURL} title={otherURL} lang={lang}>
+              </lang-switch>
+            </li>
+          </ul>
+        </li>
+      </ol>
     </nav>
   </header>
 </div>
@@ -130,9 +147,7 @@ const ariaProperties = {
   const { createApp } = Vue;
   const NavBarMobileApp = createApp({
     delimiters: ["[[", "]]"],
-    components: {
-
-    },
+    components: {},
     data() {
       return {
         isNavVisible: false,
@@ -168,17 +183,27 @@ const ariaProperties = {
           this.resetNav();
         }
       },
-      /*toggleNav() {
-        if (this.isNavVisible) {
-          this.preventBodyScroll();
-          // If the menu is currently visible, reset the navigation state
-          this.resetNav();
-        } else {
-          this.allowBodyScroll();
-          // If the menu is not visible, toggle its visibility
-          this.isNavVisible = !this.isNavVisible;
+      getNavBarMobileHeight() {
+        // let navBarHeight = this.$refs.navBar.clientHeight;
+        /*const navBar = document.getElementById("NavBar");*/
+        const navBarMobile = document.querySelector("#NavBarMobile .NavBarMobile__top");
+
+
+        // Create a ResizeObserver
+        const resizeObserver = new ResizeObserver(setNavBarMobileHeight);
+
+        // Observe changes in NavBar size
+        resizeObserver.observe(navBarMobile);
+
+        // Function to set CSS variable --MsgBarHeight
+        function setNavBarMobileHeight() {
+          const navBarMobileHeight = navBarMobile.clientHeight;
+          document.documentElement.style.setProperty(
+            "--NavBarHeight-mobile",
+            navBarMobileHeight + "px"
+          );
         }
-      },*/
+      },
       setBodyPadding() {
         // Calculate the height of the NavBar
         const navBarHeightMobile = this.$refs.NavBarMobile__top.clientHeight;
@@ -191,9 +216,15 @@ const ariaProperties = {
         // console.log(hasHeroAttribute);
         if (!hasHeroAttribute) {
           // Update CSS variable dynamically
-          document.documentElement.style.setProperty('--paddingTopMobile', navBarHeightMobile + 'px');
+          document.documentElement.style.setProperty(
+            "--paddingTopMobile",
+            navBarHeightMobile + "px"
+          );
         }
-        document.documentElement.style.setProperty('--navBarHeightMobile', navBarHeightMobile + 'px');
+        document.documentElement.style.setProperty(
+          "--navBarHeightMobile",
+          navBarHeightMobile + "px"
+        );
       },
       preventBodyScroll() {
         document.body.style.position = "fixed";
@@ -244,7 +275,8 @@ const ariaProperties = {
       // Set the navigationData property based on the retrieved attribute
       // this.navigationData = JSON.parse(primaryNavAttribute).navigationData;*/
       this.$nextTick(() => {
-        this.setBodyPadding();
+        // this.setBodyPadding();
+          this.getNavBarMobileHeight();
       });
 
       // Create an IntersectionObserver
@@ -258,124 +290,14 @@ const ariaProperties = {
     },
   });
 
-  NavBarMobileApp.config.isCustomElement = tag => tag.startsWith('hamburger-');
+  NavBarMobileApp.config.isCustomElement = (tag) =>
+    tag.startsWith("hamburger-") || tag.startsWith("lang-");
 
-  NavBarMobileApp.mount('#NavBarMobile');
+  NavBarMobileApp.mount("#NavBarMobile");
 </script>
-<style is:global>
-  @keyframes MoveLeftRight {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
 
-  @keyframes MoveRightLeft {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
 
-  .NavBarMobile .NavBarMobile__top {
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    background-color: var(--color-white);
-    padding: 24px;
-    display: grid;
-    align-items: center;
-    gap: 8px;
-    grid-template-columns: 1fr 24px 24px;
-    transition: all .3s ease;
-  }
-
-  .NavBarMobile .NavBarMobile__top hamburger-button {
-    justify-self: center;
-  }
-
-  .NavBarMobile[data-theme="dark"] .NavBarMobile__top {
-    background-color: var(--color-transparent);
-    color: var(--color-white);
-    --color-background-button-nav-mobile: var(--color-white);
-  }
-
-  .NavBarMobile[data-theme="dark"] .NavBarMobile__top-link {
-    color: var(--color-white);
-  }
-
-  .NavBarMobile__top-link {
-    font-size: 0;
-  }
-
-  .NavBarMobile .NavBarMobile__header.NavBar--isOpen .NavBarMobile__top,
-  .NavBarMobile .NavBarMobile__header.NavBar--isScrolled .NavBarMobile__top,
-  .NavBarMobile .NavBarMobile__header.NavBar--isScrolled .NavBarMobile__top-link,
-  .NavBarMobile .NavBarMobile__header.NavBar--isOpen .NavBarMobile__top-link {
-    background-color: var(--color-accent1);
-    color: var(--color-black);
-    --color-background-button-nav-mobile: var(--color-black);
-  }
-
-  .NavBarMobile .NavBarMobile__nav {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
-    background-color: var(--color-accent1);
-    position: fixed;
-    /*top: 104px;*/
-    top: var(--navBarHeightMobile, 0);
-    z-index: 998;
-    width: 100%;
-    padding: 0 24px 24px 24px;
-  }
-
-  .NavBarMobile .NavBarMobile__nav.active {
-    opacity: 1;
-    visibility: visible;
-    /*height: calc(100svh - 104px);*/
-    height: calc(100svh - var(--navBarHeightMobile, 0));
-  }
-
-  .NavBarMobile .NavBarMobile__list {
-    margin: 0;
-    list-style: none;
-    max-height: calc(100svh - calc(var(--navBarHeightMobile)  + 24px));
-    overflow-y: scroll;
-  }
-
-  .NavBarMobile .NavBar--isOpen .NavBarMobile__list {
-    animation: MoveRightLeft .6s ease-in-out both;
-  }
-
-  .NavBarMobile .NavBarMobile__list-item {
-    animation: fadeIn .3s ease-in-out forwards, MoveLeftRight .3s ease-in-out forwards;
-    font-size: 24px;
-    line-height: 48px;
-  }
-
-  .NavBarMobile .NavBarMobile__button-next-level {
-    cursor: pointer;
-  }
-
-  .NavBarMobile .page-link {
-    text-decoration: none;
-  }
-
-  .NavBarMobile .NavBarMobile__button-back {
-    animation: fadeInOut 1s ease-in-out normal forwards;
-  }
-
-  .NavBarMobile .NavBarMobile__button-back.reverse {
-    animation: fadeOutIn 1s ease-in-out normal forwards;
-  }
-</style>
-
-<script src="/static/std/assets/js/web-components/HamburgerButton.js" type="module"></script>
+<script
+  src="/static/std/assets/js/web-components/HamburgerButton.js"
+  type="module"
+></script>

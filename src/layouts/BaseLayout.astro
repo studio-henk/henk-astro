@@ -6,7 +6,7 @@ import TheFooter from "../components/TheFooter.astro";
 
 const { title, mainID, mainClass, pageClass, NavFont = "new", Theme, hasHero, showMsgBar } = Astro.props;
 ---
-<html lang={lang} class={pageClass}>
+<html lang={lang} class={pageClass} data-has-hero={hasHero}>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
