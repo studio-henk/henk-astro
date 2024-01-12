@@ -1,9 +1,0 @@
-.BaseModal_open {
-    overflow: hidden;
-}
-
-.BaseModal_open .action-console {}
-
-.BaseModal_open .action-console[data-is-sticky=true] {
-    z-index: 99999;
-}

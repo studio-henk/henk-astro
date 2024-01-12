@@ -18,6 +18,7 @@ template.innerHTML = `
       font-weight: bold;
     }
 
+    :host(.timer-hidden),
     :host(.timer-hidden) .CountdownTimer {
         display: none;
     }

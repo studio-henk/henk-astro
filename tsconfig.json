@@ -1,17 +1,12 @@
 {
-    "extends": "astro/tsconfigs/base",
-    // "include": ["types/iconTypes.ts"],
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.d.ts",
-        "types/**/*.ts"
-    ],
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@components/*": ["src/components/*"],
-            "@assets/*": ["src/assets/*"],
-            "*": ["types/*"]
-        },
-    }
+  "extends": "astro/tsconfigs/base",
+  "include": ["src/**/*.ts", "**/*.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
+    },
+    "verbatimModuleSyntax": true
+  }
 }

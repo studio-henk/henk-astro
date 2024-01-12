@@ -7,22 +7,21 @@
     "dev": "astro dev",
     "devExt": "astro dev --host",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "watch:scss": "watch -p 'source/scss/**/*.scss' -c 'npm run buildCSS'",
-    "buildCSS": "npm run compileSass && npm run autoprefix",
-    "compileSass": "sass source/scss/toolkit.scss source/css/toolkit-unprefixed.css --style=expanded",
     "autoprefix": "npx postcss source/css/toolkit-unprefixed.css --use autoprefixer cssnano --no-map -m -o public/static/std/assets/toolkit/styles/toolkit.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@astrojs/check": "^0.4.1",
     "astro": "^4.1.0",
     "astro-icon": "^1.0.2",
     "glob": "^10.3.10",
     "node-html-parser": "^6.1.5",
     "sass": "^1.59.3",
+    "typescript": "^5.3.3",
     "watch-cli": "^0.2.3"
   },
   "devDependencies": {
