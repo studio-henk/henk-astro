@@ -44,26 +44,6 @@ createApp({
                 document.documentElement.style.setProperty('--NavBarHeight-desktop', navBarHeight + 'px');
             }
         },
-        setBodyPadding() {
-            // get the height of the NavBar
-            let navBarHeight = this.$refs.navBar.clientHeight;
-
-            // Set padding-top for the body element
-            // only if page has no hero
-            const hasHeroAttribute = document.getElementById('masthead-desktop').getAttribute('data-has-hero');
-            if (!hasHeroAttribute) {
-                // get MsgBarHeight if exists
-                if (this.MsgBarHeight) {
-                    console.log(this.MsgBarHeight);
-                    navBarHeight = navBarHeight + this.MsgBarHeight;
-                }
-                // Update CSS variable dynamically
-                document.documentElement.style.setProperty('--paddingTopDesktop', navBarHeight + 'px');
-            } /*else {
-                document.documentElement.style.setProperty('--paddingTopDesktop', '0px');
-            }*/
-            document.documentElement.style.setProperty('--navBarHeightDesktop', navBarHeight + 'px');
-        },
         setBodyOverflow() {
             document.body.style.overflow = "hidden";
         },
@@ -152,19 +132,18 @@ createApp({
         // this.navigationData = JSON.parse(primaryNavAttribute).navigationData;*/
         this.$nextTick(() => {
             this.getNavBarHeight();
-            // this.setBodyPadding();
             // for debugging to keep menu open
             // this.handlePrimaryNavItemHover(this.navigationData[5]);
         });
 
-        const navBarSkeleton = document.querySelector(".nav-bar-skeleton");
+        // const navBarSkeleton = document.querySelector(".nav-bar-skeleton");
 
         // Hide the skeleton by setting display: none; after removing the isLoading class
-        navBarSkeleton.classList.remove("isLoading");
-        navBarSkeleton.style.display = "none";
+        // navBarSkeleton.classList.remove("isLoading");
+        // navBarSkeleton.style.display = "none";
 
         // Create an IntersectionObserver
-        const mastheadDesktop = document.querySelector(".masthead-desktop");
+        // const mastheadDesktop = document.querySelector(".masthead-desktop");
         const pixelToWatch = document.querySelector("#pixel-to-watch");
 
         if (pixelToWatch) {
