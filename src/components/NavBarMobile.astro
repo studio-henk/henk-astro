@@ -1,6 +1,5 @@
 ---
 import { getLangFromUrl } from "../i18n/utils";
-// import LangSwitchNoScript from "./LangSwitchNoScript.astro";
 const lang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname.substring(4);
 let otherLang;
@@ -14,7 +13,6 @@ let otherURL = "/" + otherLang + "/" + currentPath;
 import primaryNav from "../../public/data/navigation_data.json";
 import Icon from "./astro/Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
-import MsgBar from "./MsgBar.astro";
 // Convert the object to a JSON string
 const primaryNavJSON = JSON.stringify(primaryNav);
 
@@ -23,13 +21,8 @@ let { Theme } = Astro.props;
 if (!Theme) {
   Theme = "light";
 }
-let { showMsgBar } = Astro.props;
 
-const ariaProperties = {
-  "data-menu-item-id": "some-id",
-  "aria-haspopup": "somepopup",
-  ...(hasHero && { "data-has-hero": "true" }),
-};
+// let { showMsgBar } = Astro.props;
 ---
 
 <div
@@ -44,8 +37,8 @@ const ariaProperties = {
     class="masthead masthead-mobile NavBarMobile__header"
     :class="{ 'NavBar--isScrolled': isScrolled, 'NavBar--isOpen': isNavVisible }"
     id="masthead-mobile"
-    data-theme={Theme}
-    data-show-topmessagebar={showMsgBar}
+    {/*data-theme={Theme}*/}
+    {/*data-show-topmessagebar={showMsgBar}*/}
     v-cloak
   >    
     <div class="NavBarMobile__top" ref="NavBarMobile__top">

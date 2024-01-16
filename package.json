@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "concurrently 'astro dev' 'npm run watch:css'",
     "devExt": "astro dev --host",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "autoprefix": "npx postcss source/css/toolkit-unprefixed.css --use autoprefixer cssnano --no-map -m -o public/static/std/assets/toolkit/styles/toolkit.css"
+    "compileCSS": "npx postcss src/static/std/assets/css/henk-styles.css -o public/static/std/assets/css/henk-styles.min.css",
+    "watch:css": "watch -p 'src/static/std/assets/css/**/*.css' -c 'npm run compileCSS'"
   },
   "keywords": [],
   "author": "",
@@ -25,14 +26,17 @@
     "watch-cli": "^0.2.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "cssnano": "^5.1.15",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "cssnano": "^6.0.3",
     "eslint": "^8.49.0",
     "node-sass": "^9.0.0",
     "node-sass-glob-importer": "^5.3.3",
-    "postcss": "^8.4.21",
-    "postcss-cli": "^9.1.0",
-    "prettier-plugin-astro": "^0.8.0",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-discard-comments": "^6.0.1",
+    "postcss-import": "^16.0.0",
+    "prettier-plugin-astro": "^0.8.1",
     "sass-glob-importer": "^1.0.1",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",

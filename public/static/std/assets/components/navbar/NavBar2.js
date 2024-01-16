@@ -57,25 +57,25 @@ createApp({
           this.statusNavBarHovered = true;
         },
         handleNavBarMouseLeave() {
-            console.log('Mouse leave');
+            // console.log('Mouse leave');
             this.showSubmenu = false;
             this.statusNavBarHovered = false;
             this.resetSubmenu();
         },
         handleNavBarSubmenuMouseLeave() {
-          console.log("mouseLeave submenu");
+          // console.log("mouseLeave submenu");
         },
         handleNavBarSubmenuMouseOut() {
-            console.log("mouseOut submenu");
+            // console.log("mouseOut submenu");
         },
         handleSubmenuOverlayTouch() {
-            console.log('Overlay touched');
+            // console.log('Overlay touched');
             this.showSubmenu = false;
             this.statusNavBarHovered = false;
             this.resetSubmenu();
         },
         handleSubmenuOverlayMouseOver() {
-            console.log('Overlay MouseOver');
+            // console.log('Overlay MouseOver');
             this.showSubmenu = false;
             this.statusNavBarHovered = false;
             this.resetSubmenu();
@@ -95,10 +95,10 @@ createApp({
             }
         },
         handlePrimaryNavItemTouch(item) {
-            console.log("touched?");
+            // console.log("touched?");
         },
         handlePrimaryNavItemClick(item, event) {
-            console.log("clicked");
+            // console.log("clicked");
             if (item.childrenData) {
                 // If there are children, prevent the default click action
                 event.preventDefault();

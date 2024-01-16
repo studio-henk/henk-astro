@@ -89,7 +89,7 @@ class HamburgerButton extends HTMLElement {
   }
 
   attributeChangedCallback(attrName, oldValue, newValue) {
-    console.log("attributeChangedCallback called");
+    // console.log("attributeChangedCallback called");
     // do stuff when attributes change
     if (newValue !== oldValue) {
       this.attrName = newValue;

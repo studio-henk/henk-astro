@@ -487,7 +487,7 @@
                     $('.product-slider__large-image').removeClass('emersyaSlide');
                 }
             } else {
-                console.log("no emersya slide");
+               // console.log("no emersya slide");
             }
             
 

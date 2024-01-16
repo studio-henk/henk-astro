@@ -2,9 +2,6 @@
 
 @import "_normalize.css";
 @import "_font-face.css";
-@import "tokens/_tokens-size-font.css";
-@import "tokens/_tokens-size-font-alias.css";
-@import "tokens/_tokens-size-spacing.css";
 @import "_config.css";
 @import "base/_base.css";
 @import "base/_base-typography-headings.css";
@@ -90,7 +87,7 @@
 @import "components/molecules/_molecule-label-checkbox.css";
 @import "components/molecules/_molecule-label-radio.css";
 @import "components/molecules/_molecule-label-select.css";
-@import "components/molecules/_molecule-label-textarea.css";
+/* @import "components/molecules/_molecule-label-textarea.css"; */
 
 /* organisms */
 @import "components/organisms/org-breadcrumbs/_org-breadcrumbs.css";
