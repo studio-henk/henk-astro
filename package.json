@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently 'astro dev' 'npm run watch:css'",
-    "devExt": "astro dev --host",
+    "devExt": "concurrently 'astro dev --host' 'npm run watch:css'",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",

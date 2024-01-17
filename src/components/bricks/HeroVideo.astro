@@ -1,45 +1,63 @@
 ---
 import Icon from "../astro/Icon.astro";
-const {title, subtitle, buttonText = 'Discover more'} = Astro.props;
+const { title, subtitle, buttonText = "Discover more" } = Astro.props;
 ---
+
 <section id="hero-brick_1">
-    <div class="hero-video-brick" style="color: var(--color-henk-white, #fff);">
-        <!-- surrounding A element -->
-        <a class="hero-video-brick__anchor-link" href="https://www.studio-henk.nl/en/trace-outdoor-collection" style="color: var(--color-henk-white, #fff);">
-            <!--video-->
-            <video muted="" loop="" playsinline="" autoplay="" style="height: calc(100vh - var(--size-height-for-hero));">
-                <source src="https://assets.studio-henk.nl/assets/Images/home/tmp-off/studio-henk-trace-buitencollectie.mp4" type="video/mp4">
-                Sorry, your browser doesn't support embedded videos.
-            </video>
-            <div class="hero-video-brick__overlay" style="background-color: hsla(0, 0%, 12%, 22%);">
-                <div class="hero-video-brick__content">
-                    <header class="hero-video-brick__header">
-                        <!--<p class="hero-video-brick__header-subtitle">
+  <div class="hero-video-brick" style="color: var(--color-henk-white, #fff);">
+    <!-- surrounding A element -->
+    <a
+      class="hero-video-brick__anchor-link"
+      href="https://www.studio-henk.nl/en/trace-outdoor-collection"
+      style="color: var(--color-henk-white, #fff);"
+    >
+      <!--video-->
+      <video
+        muted=""
+        loop=""
+        playsinline=""
+        autoplay=""
+        xstyle="height: calc(100vh - var(--size-height-for-hero));"
+      >
+        <source
+          src="https://assets.studio-henk.nl/assets/Images/home/tmp-off/studio-henk-trace-buitencollectie.mp4"
+          type="video/mp4"
+        />
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+      <div
+        class="hero-video-brick__overlay"
+        style="background-color: hsla(0, 0%, 12%, 22%);"
+      >
+        <div class="hero-video-brick__content">
+          <header class="hero-video-brick__header">
+            <!--<p class="hero-video-brick__header-subtitle">
                             {subtitle}
                         </p>
                         <p class="hero-video-brick__header-title">{title}</p>-->
-                        <p class="hero-video-brick__header-subtitle .sh-subtitle">{subtitle}</p>
-                        <p class="hero-video-brick__header-title sh-title">{title}</p>
-                    </header>
-                    <main class="hero-video-brick__body">
-                    </main>
-                    <footer class="hero-video-brick__footer">
-                        <!--button type selector -->
-                        <span
-                            class="sh-atom-button"
-                            data-style="filled"
-                            data-icon-arrow-right="true"
-                        >
-                            {buttonText}
-                            <Icon name="icon-arrow-right-animated" />
-                        </span>
-                    </footer>
-                </div>
-            </div>
-        </a>
-    </div>
-    <script>
-/*
+            <p class="hero-video-brick__header-subtitle .sh-subtitle">
+              {subtitle}
+            </p>
+            <p class="hero-video-brick__header-title sh-title">{title}</p>
+          </header>
+          <main class="hero-video-brick__body"></main>
+          <footer class="hero-video-brick__footer">
+            <!--button type selector -->
+            <span
+              class="sh-atom-button"
+              data-style="filled"
+              data-icon-arrow-right="true"
+            >
+              {buttonText}
+              <Icon name="icon-arrow-right-animated" />
+            </span>
+          </footer>
+        </div>
+      </div>
+    </a>
+  </div>
+  <script>
+    /*
         const setVideoHeight = {
 
             init: function() {
@@ -56,16 +74,16 @@ const {title, subtitle, buttonText = 'Discover more'} = Astro.props;
         };
 */
 
-        /*document.addEventListener("DOMContentLoaded", function() {
+    /*document.addEventListener("DOMContentLoaded", function() {
             setVideoHeight.init();
         });*/
-        /*window.addEventListener("resize", function() {
+    /*window.addEventListener("resize", function() {
             setVideoHeight.init();
         });*/
-    </script>
+  </script>
 </section>
 <style>
-    .hero-video-brick video {
+  /* .hero-video-brick video {
         height: 100vh !important;
-    }
+    } */
 </style>
