@@ -2,6 +2,8 @@
   position: relative;
   opacity: 0;
   animation: 1s linear 0.3s forwards fadeIn;
+  --color-text-hero-video: var(--color-white, #fff);
+  color: var(--color-text-hero-video, #fff);
 }
 
 .hero-video-brick * {
@@ -11,6 +13,7 @@
 .hero-video-brick__anchor-link {
   display: grid;
   width: 100%;
+  color: currentColor;
 }
 
 .hero-video-brick video {
@@ -23,14 +26,15 @@
 .hero-video-brick__overlay {
   position: absolute;
   margin: 0;
-  background-color: rgba(31, 31, 31, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   display: grid;
   place-content: center;
-  padding: 24px 64px;
+  /* padding: 24px 64px; */
+  padding: 1.5rem;
 }
 
 .hero-video-brick__content {
@@ -56,24 +60,22 @@
 }
 
 .hero-video-brick__header-title {
-  /*font-size: 1.5rem;
-  line-height: 38px;*/
-  /*letter-spacing: 1.2px;*/
-  /* target screen 1792 (42/1792)*100 */
   font-size: clamp(1.5rem, 2.34375vw, 2.625rem);
   /* 40, 64 */
   line-height: clamp(40px, 3.57142857vw, 64px);
+  text-wrap: pretty;
 }
 
+/* 
+fs: 16
+lh: 24
+lh: 32, 56 
+*/
 .hero-video-brick__header-subtitle {
-  /*font-weight: 400;
-  font-size: 0.75rem;
-  line-height: 21px;*/
-  /*text-transform: uppercase;*/
-  /*letter-spacing: 0.2em;*/
-  font-size: clamp(1.25rem, 2.34375vw, 2.25rem);
-  /* 32, 56 */
-  line-height: clamp(32px, 3.125vw, 56px);
+  /* font-size: clamp(1.25rem, 2.34375vw, 2.25rem);
+  line-height: clamp(32px, 3.125vw, 56px); */
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .hero-video-brick .sh-atom-button.--transparent.--anchor-link {
@@ -85,26 +87,20 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .hero-video-brick__content {
+  /* .hero-video-brick__content {
     gap: 28px;
-  }
-  .hero-video-brick__header {
+  } */
+  /* .hero-video-brick__header {
     gap: 12px;
-  }
-  .hero-video-brick__header-title {
-    /*font-size: 2.0625rem;
-    line-height: 50px;*/
-    /*letter-spacing: 0.07em;*/
-  }
-  .hero-video-brick__header-subtitle {
-    /*font-size: 0.875rem;
-    line-height: 28px;*/
-    /*letter-spacing: 2.8px;*/
+  } */
+  /* .hero-video-brick__header-title {
+  } */
+  /* 32, 56 */
+  /* .hero-video-brick__header-subtitle {  
     font-size: clamp(1.25rem, 2.34375vw, 2.25rem);
-    /* 32, 56 */
-    line-height: clamp(32px, 3.125vw, 56px);
-  }
-  .hero-video-brick__footer {
+    line-height: clamp(32px, 3.125vw, 56px); 
+  } */
+  /* .hero-video-brick__footer {
     margin-top: 12px;
-  }
+  } */
 }

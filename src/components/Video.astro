@@ -1,16 +1,34 @@
 ---
-const { src, controls = "false", autoplay = "true", muted = "true", loop = "true", classNames = "video" } = Astro.props;
+interface Props {
+  src: string;
+  controls?: string;
+  autoplay?: string;
+  muted?: string;
+  loop?: string;
+  playsinline?: string;
+  classNames?: string;
+}
+
+const {
+  src,
+  controls = "false",
+  autoplay = "true",
+  muted = "true",
+  loop = "true",
+  playsinline = "true",
+  classNames = "video",
+} = Astro.props;
 
 const videoProperties = {
-    ...(muted === "true" && { "muted": "" }),
-    ...(autoplay === "true" && { "autoplay": "" }),
-    ...(loop === "true" && { "loop": "" }),
-    ...(controls === "true" && { "controls": "" })
-}
+  ...(muted === "true" && { muted: "" }),
+  ...(autoplay === "true" && { autoplay: "" }),
+  ...(loop === "true" && { loop: "" }),
+  ...(controls === "true" && { controls: "" }),
+  ...(playsinline === "true" && { playsinline: "" }),
+};
 ---
-<video
-    { ...videoProperties }
-    class={classNames}
->
-    <source src={src} type="video/mp4" />
+
+<video {...videoProperties} class={classNames}>
+  <source src={src} type="video/mp4" />
+  Sorry, your browser doesn't support embedded videos.
 </video>

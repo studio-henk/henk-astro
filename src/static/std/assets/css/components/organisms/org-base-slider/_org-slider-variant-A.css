@@ -1,8 +1,42 @@
-[data-variant=slider-brick-variant-A] {
-  padding-bottom: 46px;
+/* [data-variant="slider-brick-variant-A"] {
+  padding-bottom: 48px;
 }
 @media only screen and (min-width: 768px) {
-  [data-variant=slider-brick-variant-A] .sh-molecule-section-header__title {
+  [data-variant="slider-brick-variant-A"] .sh-molecule-section-header__title {
     text-align: left;
+  }
+} */
+.SliderBrickVariantA {
+  padding-bottom: 24px;
+  position: relative;
+}
+
+.SliderBrickVariantA .SliderBrickVariantA__HeadingContainer {
+  padding: 24px;
+}
+
+.SliderBrickVariantA .SliderBrickVariantA__Heading {
+  margin: 0;
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .SliderBrickVariantA .SliderBrickVariantA__Heading {
+    text-align: center;
+  }
+
+  .SliderBrickVariantA .swiper {
+    position: unset;
+    padding-top: 0 !important;
+  }
+
+  .SliderBrickVariantA .swiper-wrapper {
+    padding-top: 0px !important;
+  }
+
+  .SliderBrickVariantA .swiper-button-prev,
+  .SliderBrickVariantA .swiper-button-next {
+    top: 32px !important;
+    margin: 0;
   }
 }
