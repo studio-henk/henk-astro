@@ -30,7 +30,7 @@
   /*font-weight: 300;*/
   line-height: 115%;
   text-align: center;
-  letter-spacing: 0.06em;
+  /* letter-spacing: 0.06em; */
   margin: 0 0 16px;
 }
 
@@ -39,7 +39,7 @@
   /*font-weight: 300;*/
   line-height: 115%;
   text-align: center;
-  letter-spacing: 0.13em;
+  /* letter-spacing: 0.13em; */
   margin: 0;
 }
 @media only screen and (max-width: 414px) {
@@ -91,7 +91,7 @@
   font-size: 1.6875rem;
   /*font-weight: 300;*/
   line-height: 115.5%;
-  letter-spacing: 0.03em;
+  /* letter-spacing: 0.03em; */
   margin: 0 0 24px 0;
 }
 
@@ -125,7 +125,7 @@
 .collection__products__title {
   font-size: 0.9375rem;
   line-height: 115.5%;
-  letter-spacing: 0.08em;
+  /* letter-spacing: 0.08em; */
   margin-bottom: 12px;
   text-indent: 8px;
 }
@@ -139,7 +139,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 115.5%;
-  letter-spacing: 0.13em;
+  /* letter-spacing: 0.13em; */
   text-transform: uppercase;
   margin: 10px 0 0 0;
 }
@@ -147,7 +147,7 @@
 .collection__product__desc {
   font-size: 0.625rem;
   line-height: 155.5%;
-  letter-spacing: 0.13em;
+  /* letter-spacing: 0.13em; */
   margin-top: 6px;
 }
 
@@ -155,7 +155,7 @@
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 115.5%;
-  letter-spacing: 0.13em;
+  /* letter-spacing: 0.13em; */
   text-transform: uppercase;
   margin: 12px 0 0 0;
 }
@@ -194,7 +194,7 @@
   }
   .hero-block-campaign__slogan {
     font-size: 0.9375rem;
-    letter-spacing: 0.1em;
+    /* letter-spacing: 0.1em; */
     line-height: 115.5%;
     color: #fff;
   }

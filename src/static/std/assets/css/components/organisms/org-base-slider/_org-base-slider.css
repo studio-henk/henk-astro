@@ -81,7 +81,8 @@
   right: 115px !important;
 }
 @media only screen and (max-width: 767px) {
-  .swiper-button-prev {
+  .swiper-button-prev,
+  .sh-custom-swiper-button-prev {
     display: none !important;
   }
 }
@@ -91,7 +92,8 @@
   right: 50px !important;
 }
 @media only screen and (max-width: 767px) {
-  .swiper-button-next {
+  .swiper-button-next,
+  .sh-custom-swiper-button-next {
     display: none !important;
   }
 }
@@ -112,25 +114,24 @@
 .swiper-slide .item__title {
   margin: 0;
   font-size: 1rem;
-  line-height: 28px;
-  /*font-weight: 300;*/
+  line-height: 24px;
   text-transform: none;
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
   padding-left: 0;
 }
 
 .swiper-slide .item__caption {
   font-size: 0.75rem;
   line-height: 20px;
-  letter-spacing: 1.2px;
+  /* letter-spacing: 1.2px; */
   margin: 0;
 }
 
 @media only screen and (min-width: 992px) {
   .swiper-slide .item__caption {
     font-size: 0.875rem;
-    line-height: 28px;
-    letter-spacing: 1.2px;
+    /* line-height: 28px;
+    letter-spacing: 1.2px; */
   }
 }
 @media only screen and (min-width: 768px) {
@@ -150,7 +151,8 @@
     display: none;
   }
 }
-.swiper-pagination.swiper-pagination-hero, .swiper-pagination.swiper-pagination-sample-packs-fullwidth {
+.swiper-pagination.swiper-pagination-hero,
+.swiper-pagination.swiper-pagination-sample-packs-fullwidth {
   display: block;
   bottom: 16px !important;
   right: 42px;
@@ -159,7 +161,9 @@
   width: auto !important;
   --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.39);
 }
-.swiper-pagination.swiper-pagination-hero .swiper-pagination-bullet-active, .swiper-pagination.swiper-pagination-sample-packs-fullwidth .swiper-pagination-bullet-active {
+.swiper-pagination.swiper-pagination-hero .swiper-pagination-bullet-active,
+.swiper-pagination.swiper-pagination-sample-packs-fullwidth
+  .swiper-pagination-bullet-active {
   --swiper-pagination-color: var(--color-white, #fff);
 }
 
@@ -167,23 +171,23 @@
   --swiper-pagination-color: var(--color-accent13, #000);
 }
 
-.swiper[data-fullscreen=true] {
+.swiper[data-fullscreen="true"] {
   padding: 0 !important;
 }
-.swiper[data-fullscreen=true] .swiper__header {
+.swiper[data-fullscreen="true"] .swiper__header {
   display: none;
 }
-.swiper[data-fullscreen=true] .swiper-wrapper {
+.swiper[data-fullscreen="true"] .swiper-wrapper {
   padding-left: 0 !important;
   padding-top: 0 !important;
 }
-.swiper[data-fullscreen=true] .swiper-slide {
+.swiper[data-fullscreen="true"] .swiper-slide {
   position: relative;
 }
-.swiper[data-fullscreen=true] .swiper-slide picture img {
+.swiper[data-fullscreen="true"] .swiper-slide picture img {
   border-radius: 0;
 }
-.swiper[data-fullscreen=true] .swiper-slide .item__content {
+.swiper[data-fullscreen="true"] .swiper-slide .item__content {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -193,27 +197,30 @@
   margin: 0;
   gap: 28px;
 }
-.swiper[data-fullscreen=true] .swiper-slide .item__content .item__title {
+.swiper[data-fullscreen="true"] .swiper-slide .item__content .item__title {
   font-size: 1.5rem;
   line-height: 38px;
-  letter-spacing: 1.2px;
-  text-transform: none;
+  /* letter-spacing: 1.2px;
+  text-transform: none; */
   /*font-weight: 300;*/
 }
 @media only screen and (min-width: 768px) {
-  .swiper[data-fullscreen=true] .swiper-slide .item__content .item__title {
+  .swiper[data-fullscreen="true"] .swiper-slide .item__content .item__title {
     font-size: 2.0625rem;
     line-height: 50px;
-    letter-spacing: 0.07em;
+    /* letter-spacing: 0.07em; */
   }
 }
-.swiper[data-fullscreen=true] .swiper-slide .item__content .item__title + * {
+.swiper[data-fullscreen="true"] .swiper-slide .item__content .item__title + * {
   margin-top: 14px;
 }
-.swiper[data-fullscreen=true] .swiper-slide .item__content .sh-atom-button {
-  margin-top: 28px;
+.swiper[data-fullscreen="true"] .swiper-slide .item__content .sh-atom-button {
+  margin-top: 24px;
 }
-.swiper[data-fullscreen=true] .swiper-slide .item__content .samples__pack__samples {
+.swiper[data-fullscreen="true"]
+  .swiper-slide
+  .item__content
+  .samples__pack__samples {
   list-style: none;
   margin-bottom: 0;
   margin-left: 0;

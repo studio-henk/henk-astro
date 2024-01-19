@@ -19,70 +19,64 @@ scss/dollar-variable-pattern
   }
 }
 .sh-molecule-section-header .sh-molecule-section-header__subtitle {
-  /*text-transform: uppercase;*/
-  /*font-size: calc(var(--var-global-fontsize-small) / var(--var-global-fontsize-root) * 1rem);*/
-  /*font-size: 0.75rem; // 12px
-  letter-spacing: 0.2em;
-  line-height: 21px;*/
   color: currentcolor;
   margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
 }
-@media only screen and (min-width: 768px) {
+
+/* @media only screen and (min-width: 768px) {
   .sh-molecule-section-header .sh-molecule-section-header__subtitle {
-    /*font-size: 0.875rem; // 14px
-    line-height: 25px;*/
   }
-}
+} */
+
 .sh-molecule-section-header .sh-molecule-section-header__title {
-  /*font-size: calc(var(--var-global-fontsize-xx-large) / var(--var-global-fontsize-root) * 1rem);*/
-  /*font-size: 1.5rem; // 24px*/
-  /*font-weight: 300;*/
-  /*line-height: 38px;
-  letter-spacing: 1.2px;*/
   color: currentcolor;
   margin: 0;
 }
 @media only screen and (min-width: 768px) {
   .sh-molecule-section-header .sh-molecule-section-header__title {
-    /*font-size: 2.0625rem; // 33px
-    line-height: 50px;
-    letter-spacing: 0.07em;*/
     text-align: center;
   }
 }
-.sh-molecule-section-header .sh-molecule-section-header__title + .sh-molecule-section-header__subtitle {
-  margin-top: 1rem;
+.sh-molecule-section-header
+  .sh-molecule-section-header__title
+  + .sh-molecule-section-header__subtitle {
+  /* margin-top: 1rem; */
 }
 .sh-molecule-section-header.--reverse-order {
   flex-direction: column-reverse;
 }
-.sh-molecule-section-header.--reverse-order .sh-molecule-section-header__title + .sh-molecule-section-header__subtitle {
-  margin-top: 0;
+.sh-molecule-section-header.--reverse-order
+  .sh-molecule-section-header__title
+  + .sh-molecule-section-header__subtitle {
+  /* margin-top: 0; */
 }
 .sh-molecule-section-header.--reverse-order .sh-molecule-section-header__title {
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
 }
 .sh-molecule-section-header + .sh-section__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  /* margin-top: 24px; */
 }
 @media only screen and (min-width: 768px) {
   .sh-molecule-section-header + .sh-section__content {
     text-align: center;
     align-items: center;
-    margin-top: 25px;
+    /* margin-top: 25px; */
   }
 }
 .sh-molecule-section-header + .sh-section__content .sh-section__intro {
   max-width: 30em;
-  margin: 0;
+  /* margin: 0; */
 }
 .sh-molecule-section-header + .sh-section__content .sh-atom-button {
   align-self: center;
-  margin-top: 28px;
+  /* margin-top: 24px; */
 }
 @media only screen and (min-width: 768px) {
   .sh-l-grid__item .sh-molecule-section-header + .sh-section__content {
@@ -96,6 +90,6 @@ scss/dollar-variable-pattern
 }
 @media only screen and (min-width: 768px) {
   .sh-org-block > .sh-molecule-section-header {
-    padding-top: 26px;
+    padding-top: 24px;
   }
 }

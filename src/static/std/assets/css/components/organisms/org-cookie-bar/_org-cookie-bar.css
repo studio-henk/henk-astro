@@ -18,7 +18,7 @@
 .org-cookie-bar .org-cookie-bar__copy {
   font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  /* letter-spacing: 0.05em; */
 }
 .org-cookie-bar .org-cookie-bar__copy > a {
   color: #070707;
@@ -28,7 +28,8 @@
   background-color: transparent;
   color: #000;
 }
-.org-cookie-bar .org-cookie-bar__button:hover, .org-cookie-bar .org-cookie-bar__button:focus {
+.org-cookie-bar .org-cookie-bar__button:hover,
+.org-cookie-bar .org-cookie-bar__button:focus {
   background-color: #fff;
   color: #000;
 }

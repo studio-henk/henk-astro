@@ -1,5 +1,5 @@
-:root[data-theme~=addtocart-v2],
-:root[data-theme~=sh-henk-v2] {
+:root[data-theme~="addtocart-v2"],
+:root[data-theme~="sh-henk-v2"] {
   --var-local-component-bgc: var(--color-accent1);
   --var-local-component-shadow: none;
 }
@@ -98,7 +98,7 @@
   }
   .mcl-order-switcher .org-addtocart-console {
     grid-area: addtocart;
-    margin-top: 28px;
+    margin-top: 24px;
   }
 }
 

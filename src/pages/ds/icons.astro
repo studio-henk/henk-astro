@@ -2,72 +2,127 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/astro/Icon.astro";
 ---
+
 <BaseLayout title="Icons">
-    <div class="page">
-        <h1>Icons</h1>
-        <!--<Icon name="henk-logo" />-->
-        <h2>Todo</h2>
-        <ul>
-            <li>blog list still uses icon-left class. (source/scss/base/_icons.scss)</li>
-            <li>blog article page has back to overview old arrow</li>
-        </ul>
-        <h2>All icons listed at 24px size - default</h2>
-        <div class="example">
-            <Icon class="sh-atom-icon" name="icon-arrow-left"/>
-            <Icon class="sh-atom-icon" name="icon-arrow-right"/>
-            <!--<Icon class="sh-atom-icon" name="icon-arrow-right-animated"/>-->
-            <Icon class="sh-atom-icon" name="icon-arrow-left-nav-back"/>
-            <Icon class="sh-atom-icon" name="icon-arrow-right-nav-next"/>
-            <Icon class="sh-atom-icon" name="icon-calendar" />
-            <Icon class="sh-atom-icon" name="icon-arrow-down"/>
-            <Icon class="sh-atom-icon" name="icon-cart"/>
-            <Icon class="sh-atom-icon" name="icon-chevron-down"/>
-            <Icon class="sh-atom-icon" name="icon-chevron-up"/>
-            <Icon class="sh-atom-icon" name="icon-close"/>
-            <Icon class="sh-atom-icon" name="icon-hamburger"/>
-            <Icon class="sh-atom-icon" name="icon-phone"/>
-            <Icon class="sh-atom-icon" name="icon-search"/>
-            <Icon class="sh-atom-icon" name="icon-truck"/>
-            <Icon class="sh-atom-icon" name="icon-trashcan"/>
-            <Icon class="sh-atom-icon" width="24" height="24" name="icon-location"/>
-        </div>
-        <h2>All icons listed at 16px size - small</h2>
-        <div class="example">
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-arrow-left"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-arrow-right"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-arrow-left-nav-back"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-arrow-right-nav-next"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-calendar" />
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-arrow-down"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-cart"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-chevron-down"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-chevron-up"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-close"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-hamburger"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-phone"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-search"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-truck"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-trashcan"/>
-            <Icon class="sh-atom-icon" width="16" height="16" name="icon-location"/>
-        </div>
-        <h2>Redo: special: animated</h2>
-        <div class="example">
-            <button class="sh-atom-button" data-style="filled">
-                button text
-            <Icon name="icon-arrow-right-animated"/>
-            </button>
-        </div>
-        <hr>
-        <h2>How to create in Figma</h2>
-        <p>Playground Nils file, will become its own Icon file</p>
-        <p>create the 24px version. makes sure the shapes are flattened and have a fill, no stroke.</p>
-        <p>Copy as svg</p>
-        <hr>
-        <h2>How to use</h2>
-        <h3>In Astro</h3>
-        <pre><code>&lt;Icon class=&quot;sh-atom-icon&quot; icon=&quot;icon-trashcan&quot;/&gt;</code></pre>
-        <p>generates</p>
-        <pre><code>
+  <div class="page">
+    <h1>Icons</h1>
+    <!--<Icon name="henk-logo" />-->
+    <h2>Todo</h2>
+    <ul>
+      <li>
+        blog list still uses icon-left class. (source/scss/base/_icons.scss)
+      </li>
+      <li>blog article page has back to overview old arrow</li>
+    </ul>
+    <h2>All icons listed at 24px size - default</h2>
+    <div class="example">
+      <Icon class="sh-atom-icon" name="icon-arrow-left" />
+      <Icon class="sh-atom-icon" name="icon-arrow-right" />
+      <!--<Icon class="sh-atom-icon" name="icon-arrow-right-animated"/>-->
+      <Icon class="sh-atom-icon" name="icon-arrow-left-nav-back" />
+      <Icon class="sh-atom-icon" name="icon-arrow-right-nav-next" />
+      <Icon class="sh-atom-icon" name="icon-calendar" />
+      <Icon class="sh-atom-icon" name="icon-arrow-down" />
+      <Icon class="sh-atom-icon" name="icon-cart" />
+      <Icon class="sh-atom-icon" name="icon-chevron-down" />
+      <Icon class="sh-atom-icon" name="icon-chevron-up" />
+      <Icon class="sh-atom-icon" name="icon-chevron-left" />
+      <Icon class="sh-atom-icon" name="icon-chevron-right" />
+      <Icon class="sh-atom-icon" name="icon-close" />
+      <Icon class="sh-atom-icon" name="icon-hamburger" />
+      <Icon class="sh-atom-icon" name="icon-phone" />
+      <Icon class="sh-atom-icon" name="icon-search" />
+      <Icon class="sh-atom-icon" name="icon-truck" />
+      <Icon class="sh-atom-icon" name="icon-trashcan" />
+      <Icon class="sh-atom-icon" width="24" height="24" name="icon-location" />
+    </div>
+    <h2>All icons listed at 16px size - small</h2>
+    <div class="example">
+      <Icon
+        class="sh-atom-icon"
+        width="16"
+        height="16"
+        name="icon-arrow-left"
+      />
+      <Icon
+        class="sh-atom-icon"
+        width="16"
+        height="16"
+        name="icon-arrow-right"
+      />
+      <Icon
+        class="sh-atom-icon"
+        width="16"
+        height="16"
+        name="icon-arrow-left-nav-back"
+      />
+      <Icon
+        class="sh-atom-icon"
+        width="16"
+        height="16"
+        name="icon-arrow-right-nav-next"
+      />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-calendar" />
+      <Icon
+        class="sh-atom-icon"
+        width="16"
+        height="16"
+        name="icon-arrow-down"
+      />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-cart" />
+      <Icon
+        class="sh-atom-icon"
+        width="16"
+        height="16"
+        name="icon-chevron-down"
+      />
+      <Icon
+        class="sh-atom-icon"
+        width="16"
+        height="16"
+        name="icon-chevron-up"
+      />
+      <Icon
+        class="sh-atom-icon"
+        name="icon-chevron-left"
+        width="16"
+        height="16"
+      />
+      <Icon
+        class="sh-atom-icon"
+        name="icon-chevron-right"
+        width="16"
+        height="16"
+      />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-close" />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-hamburger" />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-phone" />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-search" />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-truck" />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-trashcan" />
+      <Icon class="sh-atom-icon" width="16" height="16" name="icon-location" />
+    </div>
+    <h2>Redo: special: animated</h2>
+    <div class="example">
+      <button class="sh-atom-button" data-style="filled">
+        button text
+        <Icon name="icon-arrow-right-animated" />
+      </button>
+    </div>
+    <hr />
+    <h2>How to create in Figma</h2>
+    <p>Playground Nils file, will become its own Icon file</p>
+    <p>
+      create the 24px version. makes sure the shapes are flattened and have a
+      fill, no stroke.
+    </p>
+    <p>Copy as svg</p>
+    <hr />
+    <h2>How to use</h2>
+    <h3>In Astro</h3>
+    <pre><code>&lt;Icon class=&quot;sh-atom-icon&quot; icon=&quot;icon-trashcan&quot;/&gt;</code></pre>
+    <p>generates</p>
+    <pre><code>
 &lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;sh-atom-icon astro-XLTLEOBX&quot; aria-hidden=&quot;true&quot;&gt;
     &lt;g id=&quot;icon-trashcan&quot;&gt;
         &lt;g id=&quot;Vector&quot;&gt;
@@ -77,20 +132,19 @@ import Icon from "../../components/astro/Icon.astro";
     &lt;/g&gt;
 &lt;/svg&gt;
         </code></pre>
-        <hr>
-        <h3>In pimcore Twig files</h3>
-        <pre><code>&#123;% include 'Components/Atoms/atom-icon/_atom-icon.html.twig' with &#123;'iconName' : 'icon-search'&#125; %&#125;</code></pre>
-
-    </div>
+    <hr />
+    <h3>In pimcore Twig files</h3>
+    <pre><code>&#123;% include 'Components/Atoms/atom-icon/_atom-icon.html.twig' with &#123;'iconName' : 'icon-search'&#125; %&#125;</code></pre>
+  </div>
 </BaseLayout>
 <style>
-    .page {
-        background-color: #fff;
-        padding: 2rem;
-    }
+  .page {
+    background-color: #fff;
+    padding: 2rem;
+  }
 
-    pre {
-        /*white-space: break-spaces;*/
-        overflow-x: auto;
-    }
+  pre {
+    /*white-space: break-spaces;*/
+    overflow-x: auto;
+  }
 </style>

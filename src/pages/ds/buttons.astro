@@ -8,20 +8,14 @@ import Icon from "../../components/astro/Icon.astro";
 ---
 
 <BaseLayout title="Buttons">
-  <div
-    class="frame"
-  >
+  <div class="frame">
     <h1>Buttons</h1>
     <h2>Default (also <em>Outline Light</em>)</h2>
-    <div
-      class="example on-dark"
-    >
+    <div class="example on-dark">
       <button type="button" class="sh-atom-button">button text</button>
     </div>
     <h3>Default - small</h3>
-    <div
-      class="example on-dark"
-    >
+    <div class="example on-dark">
       <button type="button" class="sh-atom-button" data-size="small"
         >button text</button
       >
@@ -46,34 +40,19 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <h2>Arrows - non-animated</h2>
     <div class="example">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-      >
-        <Icon
-            name="icon-arrow-left"
-            width="24"
-            height="24"
-        />
+      <a href="#" class="sh-atom-button" data-style="filled">
+        <Icon name="icon-arrow-left" width="24" height="24" />
         button text
       </a>
     </div>
-      <hr>
+    <hr />
     <div class="example">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-      >button text
-        <Icon
-            name="icon-arrow-right"
-            width="24"
-            height="24"
-        />
+      <a href="#" class="sh-atom-button" data-style="filled"
+        >button text
+        <Icon name="icon-arrow-right" width="24" height="24" />
       </a>
     </div>
-    <hr>
+    <hr />
     <!--<h2>Testing animated arrow right</h2>
     <button class="sh-atom-button" data-style="filled">
       button text
@@ -82,51 +61,32 @@ import Icon from "../../components/astro/Icon.astro";
     <hr>-->
     <h2>Arrow right (<em>animated</em>)</h2>
     <div class="example">
-      <a
-        href="#"
-        class="sh-atom-button"
-        data-style="filled"
+      <a href="#" class="sh-atom-button" data-style="filled"
         >button text
-        <Icon
-            name="icon-arrow-right-animated"
-            width="24"
-            height="24"
-        />
+        <Icon name="icon-arrow-right-animated" width="24" height="24" />
       </a>
     </div>
-    <hr>
+    <hr />
     <h2>icon only Arrow right</h2>
-    <a
-        href="#"
-        class="sh-atom-button"
-        data-style="plain"
-    >
+    <a href="#" class="sh-atom-button" data-style="plain">
       <Icon class="sh-atom-icon" name="icon-arrow-right" />
     </a>
-    <hr>
+    <hr />
     <h2>icon only Arrow right (<em>animated</em>) circle</h2>
     <div class="example">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-shape="circle"
-      ><Icon name="icon-arrow-right-animated" />
+      <a href="#" class="sh-atom-button" data-style="filled" data-shape="circle"
+        ><Icon name="icon-arrow-right-animated" />
       </a>
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="soft"
-          data-shape="circle"
-          data-size="large"
-      ><Icon name="icon-arrow-right-animated" />
+        href="#"
+        class="sh-atom-button"
+        data-style="soft"
+        data-shape="circle"
+        data-size="large"
+        ><Icon name="icon-arrow-right-animated" />
       </a>
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="soft"
-          data-shape="circle"
-      ><Icon name="icon-arrow-right-animated" />
+      <a href="#" class="sh-atom-button" data-style="soft" data-shape="circle"
+        ><Icon name="icon-arrow-right-animated" />
       </a>
     </div>
     <!--<h2>Arrow left (<em>animated</em>)</h2>
@@ -176,23 +136,14 @@ import Icon from "../../components/astro/Icon.astro";
       class="example"
       style="background-color: var(--color-accent16);padding: 1rem;"
     >
-      <a
-        href="#"
-        class="sh-atom-button"
-        data-style="plain-light"
-      >
+      <a href="#" class="sh-atom-button" data-style="plain-light">
         plain + arrow right
         <Icon name="icon-arrow-right" />
       </a>
     </div>
     <h2>Plain Dark + Arrow Left</h2>
     <div class="example">
-      <a
-        href="#"
-        class="sh-atom-button"
-        data-style="plain-dark"
-
-      >
+      <a href="#" class="sh-atom-button" data-style="plain-dark">
         <Icon name="icon-arrow-left" />
         Arrow left
       </a>
@@ -212,18 +163,90 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <h2>Swiper prev and next</h2>
     <h3>Prev</h3>
-    <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle"  tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-10668aa19d29f10713" aria-disabled="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true"><!--<title>{icon}</title>-->
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.76367 11.5212L10.3481 4.67718L9.69661 4L2.32575 11.6614L2 12L2.32575 12.3386L9.69661 20L10.3481 19.3228L3.76367 12.4788H21.5393H22V11.5212H21.5393H3.76367Z"></path>
+    <div
+      class="sh-custom-swiper-button-prev sh-atom-button"
+      data-style="soft"
+      data-shape="circle"
+      tabindex="0"
+      role="button"
+      aria-label="Previous slide"
+      aria-controls="swiper-wrapper-10668aa19d29f10713"
+      aria-disabled="false"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="sh-atom-icon"
+        aria-hidden="true"
+        ><!--<title>{icon}</title>-->
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M3.76367 11.5212L10.3481 4.67718L9.69661 4L2.32575 11.6614L2 12L2.32575 12.3386L9.69661 20L10.3481 19.3228L3.76367 12.4788H21.5393H22V11.5212H21.5393H3.76367Z"
+        ></path>
       </svg>
     </div>
     <h3>Next</h3>
-    <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-e541b13cbfe10625d" aria-disabled="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">
+    <div
+      class="sh-custom-swiper-button-next sh-atom-button"
+      data-style="soft"
+      data-shape="circle"
+      data-size="large"
+      data-icon-arrow-right="true"
+      tabindex="0"
+      role="button"
+      aria-label="Next slide"
+      aria-controls="swiper-wrapper-e541b13cbfe10625d"
+      aria-disabled="false"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="sh-atom-icon"
+        aria-hidden="true"
+      >
         <g id="icon-arrow-right-nav-next">
-          <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M20.2363 12.4788L13.6519 19.3228L14.3034 20L21.6743 12.3386L22 12L21.6743 11.6614L14.3034 4L13.6519 4.67718L20.2363 11.5212L2.46068 11.5212H2V12.4788H2.46068L20.2363 12.4788Z"></path>
+          <path
+            id="Union"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20.2363 12.4788L13.6519 19.3228L14.3034 20L21.6743 12.3386L22 12L21.6743 11.6614L14.3034 4L13.6519 4.67718L20.2363 11.5212L2.46068 11.5212H2V12.4788H2.46068L20.2363 12.4788Z"
+          ></path>
         </g>
       </svg>
+    </div>
+    <p>With chevron</p>
+    <div
+      class="sh-custom-swiper-button-next sh-atom-button"
+      data-style="soft"
+      data-shape="circle"
+      data-size="large"
+      tabindex="0"
+      role="button"
+      aria-label="Next slide"
+      aria-controls="swiper-wrapper-e541b13cbfe10625d"
+      aria-disabled="false"
+    >
+      <Icon class="sh-atom-icon" name="icon-chevron-right" />
+    </div>
+    <p>old swiper html</p>
+    <div
+      class="swiper-button-next swiper-button-next2 sh-atom-button"
+      data-style="soft"
+      data-shape="circle"
+      data-size="large"
+      tabindex="0"
+      role="button"
+      aria-label="Next slide"
+      aria-controls="swiper-wrapper-68cbe1fd63b9cdc8"
+    >
+      <Icon class="sh-atom-icon" name="icon-chevron-right" />
     </div>
     <h4>In a swiper like container</h4>
     <!--<div class="swiper-container">
@@ -264,7 +287,7 @@ import Icon from "../../components/astro/Icon.astro";
         </svg>
       </div>
     </div>-->
-    <hr>
+    <hr />
     <h2>Circle Icon Button</h2>
     <div class="example">
       <a
@@ -273,16 +296,21 @@ import Icon from "../../components/astro/Icon.astro";
         data-style="filled"
         data-shape="circle"
       >
-        <Icon class="sh-atom-icon" name="icon-trashcan"/>
+        <Icon class="sh-atom-icon" name="icon-trashcan" />
       </a>
       <a
-          href="/en/cart/remove/378093"
-          class="sh-atom-button"
-          data-style="filled"
-          data-shape="circle"
-          data-size="small"
+        href="/en/cart/remove/378093"
+        class="sh-atom-button"
+        data-style="filled"
+        data-shape="circle"
+        data-size="small"
       >
-        <Icon class="sh-atom-icon" width="16" height="16" name="icon-trashcan"/>
+        <Icon
+          class="sh-atom-icon"
+          width="16"
+          height="16"
+          name="icon-trashcan"
+        />
       </a>
     </div>
     <h3>Circle Icon Button - Small plain</h3>
@@ -292,16 +320,21 @@ import Icon from "../../components/astro/Icon.astro";
         class="sh-atom-button"
         data-style="plain-dark"
       >
-          <Icon class="sh-atom-icon" width="16" height="16" name="icon-trashcan"/>
+        <Icon
+          class="sh-atom-icon"
+          width="16"
+          height="16"
+          name="icon-trashcan"
+        />
       </a>
     </div>
     <h2>With price</h2>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -310,11 +343,11 @@ import Icon from "../../components/astro/Icon.astro";
     <h3>price and expanded</h3>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -322,11 +355,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-around"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-around"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -334,11 +367,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-between"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-between"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -346,11 +379,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-evenly"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-evenly"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -359,24 +392,24 @@ import Icon from "../../components/astro/Icon.astro";
     <h2>Price and separator •</h2>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <hr>
+    <hr />
     <h3>reverse</h3>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
       >
         <span class="org-addtocart-console__price">€ 539</span>
         <span class="org-addtocart-console__separator">•</span>
@@ -386,10 +419,10 @@ import Icon from "../../components/astro/Icon.astro";
     <h3>with icon</h3>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
@@ -399,11 +432,11 @@ import Icon from "../../components/astro/Icon.astro";
     <h3>expanded</h3>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
+        data-expand="true"
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
@@ -412,11 +445,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-start separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-start separator"
+        data-expand="true"
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
@@ -425,11 +458,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
@@ -438,11 +471,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-around separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-around separator"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
@@ -451,11 +484,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-between separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-between separator"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
@@ -464,11 +497,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-evenly separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-evenly separator"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
@@ -478,12 +511,12 @@ import Icon from "../../components/astro/Icon.astro";
     <h2>As a toolbar</h2>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-          data-expand="true"
-          data-shape="toolbar"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price"
+        data-expand="true"
+        data-shape="toolbar"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -492,10 +525,10 @@ import Icon from "../../components/astro/Icon.astro";
     <h2>With price</h2>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -504,11 +537,11 @@ import Icon from "../../components/astro/Icon.astro";
     <h3>price and expanded</h3>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -516,11 +549,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-around"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-around"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -528,11 +561,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-between"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-between"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -540,11 +573,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-evenly"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-evenly"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -553,24 +586,24 @@ import Icon from "../../components/astro/Icon.astro";
     <h2>Price and separator •</h2>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
         <span class="org-addtocart-console__price">€ 539</span>
       </a>
     </div>
-    <hr>
+    <hr />
     <h3>reverse</h3>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
       >
         <span class="org-addtocart-console__price">€ 539</span>
         <span class="org-addtocart-console__separator">•</span>
@@ -580,10 +613,10 @@ import Icon from "../../components/astro/Icon.astro";
     <h3>with icon</h3>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
@@ -593,11 +626,11 @@ import Icon from "../../components/astro/Icon.astro";
     <h3>expanded</h3>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
+        data-expand="true"
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
@@ -606,11 +639,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-start separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-start separator"
+        data-expand="true"
       >
         <span class="sh-atom-button__price">€ 539</span>
         <span class="sh-atom-button__separator">•</span>
@@ -619,11 +652,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price separator"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
@@ -632,11 +665,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-around separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-around separator"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
@@ -645,11 +678,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-between separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-between separator"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
@@ -658,11 +691,11 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-evenly separator"
-          data-expand="true"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price-evenly separator"
+        data-expand="true"
       >
         in winkelwagen
         <span class="org-addtocart-console__separator">•</span>
@@ -672,12 +705,12 @@ import Icon from "../../components/astro/Icon.astro";
     <h2>As a toolbar</h2>
     <div class="example">
       <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-          data-expand="true"
-          data-shape="toolbar"
+        href="#"
+        class="sh-atom-button"
+        data-style="filled"
+        data-alignment="price"
+        data-expand="true"
+        data-shape="toolbar"
       >
         in winkelwagen
         <span class="org-addtocart-console__price">€ 539</span>
@@ -685,24 +718,16 @@ import Icon from "../../components/astro/Icon.astro";
     </div>
     <h2>Chevron Down</h2>
     <div class="example">
-      <a
-        href="#anchor"
-        class="sh-atom-button"
-        data-style="soft"
-      >
+      <a href="#anchor" class="sh-atom-button" data-style="soft">
         Show
-          <Icon name="icon-chevron-down" />
+        <Icon name="icon-chevron-down" />
       </a>
     </div>
     <h2>Chevron Up</h2>
     <div class="example">
-      <a
-        href="#anchor"
-        class="sh-atom-button"
-        data-style="soft"
-      >
+      <a href="#anchor" class="sh-atom-button" data-style="soft">
         Hide
-          <Icon name="icon-chevron-up" />
+        <Icon name="icon-chevron-up" />
       </a>
     </div>
     <h2>Mobile NavButton</h2>
@@ -714,7 +739,7 @@ import Icon from "../../components/astro/Icon.astro";
       <a class="sh-atom-button" data-style="filled">button text</a>
       <a class="sh-atom-button" data-style="filled">button text</a>
     </div>
-    <hr>
+    <hr />
     <p>center</p>
     <div class="button-group" data-alignment="center">
       <a class="sh-atom-button" data-style="filled">button text</a>
@@ -732,24 +757,51 @@ import Icon from "../../components/astro/Icon.astro";
     <a href="/en/shops" class="hover-interaction-c">View opening hours</a>
 
     <h3>Interaction C-2</h3>
-    <p>when not the <code>a</code> element but something inside should get the hover interaction</p>
+    <p>
+      when not the <code>a</code> element but something inside should get the hover
+      interaction
+    </p>
     <p>Very specific to new navbar figure element in dropdown.</p>
-    <a
-        href="/en/shops"
-        class="hover-interaction-c-2"
-    ><p>something inside with an <span class="hover-interaction-c-2-target">interaction</span></p>
+    <a href="/en/shops" class="hover-interaction-c-2"
+      ><p>
+        something inside with an <span class="hover-interaction-c-2-target"
+          >interaction</span
+        >
+      </p>
     </a>
 
-
-    <hr>
+    <hr />
     <h2>Chatbot button</h2>
     <div class="embeddedMessagingConversationButtonWrapper">
-      <button class="embeddedMessagingConversationButton" id="embeddedMessagingConversationButton" tabindex="0" role="button" aria-label="Hallo. Hebt u een vraag? Stel deze in de chat." title="Hallo. Hebt u een vraag? Stel deze in de chat." dir="ltr" style="--eswHeaderColor: #1A1B1E; --eswSecondaryColor: #005290;/* display: none; */"><div id="embeddedMessagingIconContainer" class="embeddedMessagingIconContainer"><svg focusable="false" aria-hidden="true" viewBox="0 0 100 100" id="embeddedMessagingIconChat" class="embeddedMessagingIconChat">
-        <path d="M50 0c27.614 0 50 20.52 50 45.833S77.614 91.667 50 91.667c-8.458 0-16.425-1.925-23.409-5.323-13.33 6.973-21.083 9.839-23.258 8.595-2.064-1.18.114-8.436 6.534-21.767C3.667 65.54 0 56.08 0 45.833 0 20.52 22.386 0 50 0zm4.583 61.667H22.917a2.917 2.917 0 000 5.833h31.666a2.917 2.917 0 000-5.833zm12.5-15.834H22.917a2.917 2.917 0 000 5.834h44.166a2.917 2.917 0 000-5.834zM79.583 30H22.917a2.917 2.917 0 000 5.833h56.666a2.917 2.917 0 000-5.833z"></path>
-      </svg></div></button>
+      <button
+        class="embeddedMessagingConversationButton"
+        id="embeddedMessagingConversationButton"
+        tabindex="0"
+        role="button"
+        aria-label="Hallo. Hebt u een vraag? Stel deze in de chat."
+        title="Hallo. Hebt u een vraag? Stel deze in de chat."
+        dir="ltr"
+        style="--eswHeaderColor: #1A1B1E; --eswSecondaryColor: #005290;/* display: none; */"
+        ><div
+          id="embeddedMessagingIconContainer"
+          class="embeddedMessagingIconContainer"
+        >
+          <svg
+            focusable="false"
+            aria-hidden="true"
+            viewBox="0 0 100 100"
+            id="embeddedMessagingIconChat"
+            class="embeddedMessagingIconChat"
+          >
+            <path
+              d="M50 0c27.614 0 50 20.52 50 45.833S77.614 91.667 50 91.667c-8.458 0-16.425-1.925-23.409-5.323-13.33 6.973-21.083 9.839-23.258 8.595-2.064-1.18.114-8.436 6.534-21.767C3.667 65.54 0 56.08 0 45.833 0 20.52 22.386 0 50 0zm4.583 61.667H22.917a2.917 2.917 0 000 5.833h31.666a2.917 2.917 0 000-5.833zm12.5-15.834H22.917a2.917 2.917 0 000 5.834h44.166a2.917 2.917 0 000-5.834zM79.583 30H22.917a2.917 2.917 0 000 5.833h56.666a2.917 2.917 0 000-5.833z"
+            ></path>
+          </svg>
+        </div></button
+      >
     </div>
   </div>
-  <hr>
+  <hr />
   <!--<SfChatButton />-->
 </BaseLayout>
 <style is:global>
@@ -769,7 +821,6 @@ import Icon from "../../components/astro/Icon.astro";
   .on-dark {
     background-color: var(--color-accent16);
   }
-
 
   .swiper-container .slides {
     display: grid;

@@ -1,11 +1,3 @@
-/* [data-variant="slider-brick-variant-A"] {
-  padding-bottom: 48px;
-}
-@media only screen and (min-width: 768px) {
-  [data-variant="slider-brick-variant-A"] .sh-molecule-section-header__title {
-    text-align: left;
-  }
-} */
 .SliderBrickVariantA {
   padding-bottom: 24px;
   position: relative;
@@ -34,9 +26,22 @@
     padding-top: 0px !important;
   }
 
-  .SliderBrickVariantA .swiper-button-prev,
+  /* .SliderBrickVariantA .swiper-button-prev,
   .SliderBrickVariantA .swiper-button-next {
     top: 32px !important;
     margin: 0;
+  } */
+
+  .SliderBrickVariantA .sh-custom-swiper-button-prev,
+  .SliderBrickVariantA .sh-custom-swiper-button-next {
+    position: absolute;
+    top: 32px;
+  }
+
+  .SliderBrickVariantA .sh-custom-swiper-button-prev {
+    right: 6rem;
+  }
+  .SliderBrickVariantA .sh-custom-swiper-button-next {
+    right: 2rem;
   }
 }

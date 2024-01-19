@@ -19,7 +19,7 @@
   font-weight: 500;
   /*font-size: 0.875rem;*/
   line-height: 28px;
-  letter-spacing: 0;
+  /* letter-spacing: 0; */
   /*text-transform: uppercase;*/
   color: #000;
 }
@@ -27,7 +27,7 @@
 .category-header__category-description {
   font-size: 1.5rem;
   line-height: 38px;
-  letter-spacing: 0;
+  /* letter-spacing: 0; */
 }
 
 @media only screen and (min-width: 992px) {
@@ -39,7 +39,7 @@
     font-size: 1.6875rem;
     /*font-weight: 500;*/
     line-height: 41px;
-    letter-spacing: 0;
+    /* letter-spacing: 0; */
     max-width: 500px;
     text-align: center;
   }

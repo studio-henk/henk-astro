@@ -50,7 +50,7 @@
   font-size: 2.3125rem;
   line-height: 44px;
   text-align: center;
-  letter-spacing: 0.09em;
+  /* letter-spacing: 0.09em; */
   margin: 0 16px;
   padding: 0;
 }
@@ -65,7 +65,7 @@
 #vt-app h1 + p {
   font-size: 1.0625rem;
   text-align: center;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   padding: 0;
   margin: 18px 0 0;
 }
@@ -111,7 +111,7 @@
     padding: 100px 0;
     font-size: 1.3125rem;
     line-height: 127.8%;
-    letter-spacing: 0.08em;
+    /* letter-spacing: 0.08em; */
   }
 }
 
@@ -164,7 +164,7 @@
   font-size: 0.875rem;
   line-height: 17px;
   text-align: center;
-  letter-spacing: 0.1em;
+  /* letter-spacing: 0.1em; */
   position: absolute;
   bottom: 80px;
   left: 50%;
@@ -198,7 +198,7 @@
 #vt-app .--exitLink {
   font-size: 1.125rem;
   line-height: 22px;
-  letter-spacing: 0.1em;
+  /* letter-spacing: 0.1em; */
   font-weight: 400;
   color: #fff;
   text-decoration: none;
@@ -256,7 +256,7 @@
   font-size: 1.1875rem;
   line-height: 25px;
   text-align: center;
-  letter-spacing: 0.1em;
+  /* letter-spacing: 0.1em; */
   max-width: 265px;
 }
 #vt-app .--instruction1 > span + span {
@@ -283,7 +283,7 @@
   font-size: 1.3125rem;
   line-height: 25px;
   text-align: center;
-  letter-spacing: 0.1em;
+  /* letter-spacing: 0.1em; */
 }
 
 #vt-app .button-group {
@@ -312,12 +312,12 @@
   font-size: 0.8125rem;
   line-height: 16px;
   text-align: center;
-  letter-spacing: 0.12em;
+  /* letter-spacing: 0.12em; */
   width: 290px;
   height: 60px;
   border: 0;
   cursor: pointer;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 #vt-app .vt-btn + .vt-btn {

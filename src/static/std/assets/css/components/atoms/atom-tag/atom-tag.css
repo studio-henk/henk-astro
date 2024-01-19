@@ -2,7 +2,7 @@
   font-size: 0.75em;
   line-height: 1.66666667;
   text-align: center;
-  letter-spacing: 0.1em;
+  /* letter-spacing: 0.1em; */
   background-color: var(--color-accent1, #f3f1ec);
   border-radius: 40px;
   display: inline-flex;

@@ -40,7 +40,7 @@
 .org-breadcrumbs__item {
   display: flex;
   align-items: center;
-  letter-spacing: 0.0576923077em;
+  /* letter-spacing: 0.0576923077em; */
 }
 .org-breadcrumbs__item a {
   text-decoration: none;
@@ -58,8 +58,8 @@
 }
 
 .org-breadcrumbs__item:last-child {
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  /* font-weight: 400; */
+  /* letter-spacing: 0.05em; */
 }
 .org-breadcrumbs__item:last-child::after {
   content: none;

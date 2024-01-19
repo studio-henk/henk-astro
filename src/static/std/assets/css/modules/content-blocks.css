@@ -19,7 +19,12 @@
   max-width: 88.4057971014%;
   margin: 0 auto;
   /* padding: 1rem; */
-  padding: calc(var(--size-spacing-units-top, 10) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-right, 0) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-bottom, 10) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-left, 0) * var(--size-spacing-unit-base));
+  padding: calc(
+      var(--size-spacing-units-top, 10) * var(--size-spacing-unit-base)
+    )
+    calc(var(--size-spacing-units-right, 0) * var(--size-spacing-unit-base))
+    calc(var(--size-spacing-units-bottom, 10) * var(--size-spacing-unit-base))
+    calc(var(--size-spacing-units-left, 0) * var(--size-spacing-unit-base));
 }
 
 .content-block .content-block__layout {
@@ -44,7 +49,22 @@
 @media only screen and (min-width: 992px) {
   .content-block .content-block__container {
     max-width: 968px;
-    padding: calc(var(--size-spacing-units-top-desktop, 14) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-right-desktop, 0) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-bottom-desktop, 24) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-left-desktop, 0) * var(--size-spacing-unit-base));
+    padding: calc(
+        var(--size-spacing-units-top-desktop, 14) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-right-desktop, 0) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-bottom-desktop, 24) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-left-desktop, 0) *
+          var(--size-spacing-unit-base)
+      );
   }
   .content-block .content-block__layout {
     display: grid;
@@ -93,7 +113,22 @@
 }
 @media only screen and (min-width: 992px) {
   .image-block__layout {
-    padding: calc(var(--size-spacing-units-top-desktop, 23) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-right-desktop, 0) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-bottom-desktop, 22) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-left-desktop, 0) * var(--size-spacing-unit-base));
+    padding: calc(
+        var(--size-spacing-units-top-desktop, 23) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-right-desktop, 0) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-bottom-desktop, 22) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-left-desktop, 0) *
+          var(--size-spacing-unit-base)
+      );
   }
   .image-block__layout[data-grid-columns="2"] {
     display: grid;
@@ -128,7 +163,22 @@
     display: grid;
     grid-template-columns: 468px 393px;
     column-gap: 104px;
-    padding: calc(var(--size-spacing-units-top-desktop, 23) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-right-desktop, 0) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-bottom-desktop, 22) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-left-desktop, 0) * var(--size-spacing-unit-base));
+    padding: calc(
+        var(--size-spacing-units-top-desktop, 23) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-right-desktop, 0) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-bottom-desktop, 22) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-left-desktop, 0) *
+          var(--size-spacing-unit-base)
+      );
   }
   .image-text-block__content {
     align-content: center;
@@ -145,7 +195,19 @@ Triptych image block
 */
 .triptych .triptych__container {
   /* padding: 48px 24px; */
-  padding: calc(var(--size-spacing-units-top-desktop, 23) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-right-desktop, 0) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-bottom-desktop, 22) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-left-desktop, 0) * var(--size-spacing-unit-base));
+  padding: calc(
+      var(--size-spacing-units-top-desktop, 23) * var(--size-spacing-unit-base)
+    )
+    calc(
+      var(--size-spacing-units-right-desktop, 0) * var(--size-spacing-unit-base)
+    )
+    calc(
+      var(--size-spacing-units-bottom-desktop, 22) *
+        var(--size-spacing-unit-base)
+    )
+    calc(
+      var(--size-spacing-units-left-desktop, 0) * var(--size-spacing-unit-base)
+    );
 }
 
 .triptych__layout[data-grid-columns="3"] {
@@ -183,7 +245,7 @@ Triptych image block
 .triptych__quote {
   font-size: 20px;
   line-height: 30px;
-  letter-spacing: 1.2px;
+  /* letter-spacing: 1.2px; */
 }
 
 @media only screen and (min-width: 992px) {
@@ -201,7 +263,7 @@ Triptych image block
   .triptych__quote {
     font-size: 18px;
     line-height: 28px;
-    letter-spacing: 0.45px;
+    /* letter-spacing: 0.45px; */
   }
 }
 @media (hover: hover) and (pointer: fine) {

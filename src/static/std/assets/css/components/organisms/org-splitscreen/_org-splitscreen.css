@@ -1,5 +1,5 @@
 .sh-org-splitscreen {
-  padding: 24px 24px 56px;
+  padding: 24px 24px 0px;
   background-color: var(--color-accent15, #fff);
 }
 .sh-org-splitscreen .sh-l-grid {
@@ -20,10 +20,12 @@
   .sh-org-splitscreen {
     padding: 0;
   }
-  .sh-org-splitscreen[data-order=reverse] .sh-l-grid {
+  .sh-org-splitscreen[data-order="reverse"] .sh-l-grid {
     grid-auto-flow: dense;
   }
-  .sh-org-splitscreen[data-order=reverse] .sh-l-grid .sh-l-grid__item:first-child {
+  .sh-org-splitscreen[data-order="reverse"]
+    .sh-l-grid
+    .sh-l-grid__item:first-child {
     grid-column: 2;
   }
 }

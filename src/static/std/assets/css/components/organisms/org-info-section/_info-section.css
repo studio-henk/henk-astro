@@ -16,7 +16,10 @@
 }
 
 .info-section__box {
-  background-color: var(--color-background-component-info-section-box, var(--color-accent1));
+  background-color: var(
+    --color-background-component-info-section-box,
+    var(--color-accent1)
+  );
   color: var(--color-text-component-info-section-box, currentcolor);
   border-radius: 8px;
   padding: 20px;
@@ -39,13 +42,13 @@
   align-items: center;
 }
 .info-section__box .info-section__header .info-section__header-heading {
-  letter-spacing: 0.5px;
+  /* letter-spacing: 0.5px; */
 }
 .info-section__box .info-section__header .info-section__header-heading small {
   font-size: 12px;
 }
 .info-section__box .info-section__body {
-  letter-spacing: 0.5px;
+  /* letter-spacing: 0.5px; */
 }
 .info-section__box .info-section__body a {
   color: currentcolor;

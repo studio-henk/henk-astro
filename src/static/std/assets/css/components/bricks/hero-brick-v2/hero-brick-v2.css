@@ -33,11 +33,11 @@
   text-transform: none;
   font-size: 16px;
   font-weight: 300;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
 }
 
 @media only screen and (min-width: 992px) {
   .brick__hero-v2 .hero-brick__header-subtitle {
-    letter-spacing: 0.5px;
+    /* letter-spacing: 0.5px; */
   }
 }

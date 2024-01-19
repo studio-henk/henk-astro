@@ -10,7 +10,7 @@
   flex: 0 0 auto;
   font-size: 0.75rem;
   line-height: 20px;
-  letter-spacing: 1.2px;
+  /* letter-spacing: 1.2px; */
 }
 @media only screen and (max-width: 279px) {
   .sh-org-tooltip.--with-text {
@@ -45,7 +45,8 @@
   width: 166px;
   max-width: 220px;
 }
-.sh-org-tooltip[data-allowhtml]:hover .sh-org-tooltip__content, .sh-org-tooltip[data-allowhtml]:focus .sh-org-tooltip__content {
+.sh-org-tooltip[data-allowhtml]:hover .sh-org-tooltip__content,
+.sh-org-tooltip[data-allowhtml]:focus .sh-org-tooltip__content {
   display: block;
 }
 
@@ -75,20 +76,20 @@
   text-indent: 0;
 }
 
-.sh-org-tooltip[data-direction=ltr]:hover::after,
-.sh-org-tooltip[data-direction=ltr]:focus::after {
+.sh-org-tooltip[data-direction="ltr"]:hover::after,
+.sh-org-tooltip[data-direction="ltr"]:focus::after {
   left: 0;
   right: auto;
 }
 
-.sh-org-tooltip[data-placement=top-down]:hover::after,
-.sh-org-tooltip[data-placement=top-down]:focus::after {
+.sh-org-tooltip[data-placement="top-down"]:hover::after,
+.sh-org-tooltip[data-placement="top-down"]:focus::after {
   bottom: auto;
   top: 24px;
 }
 
-.sh-org-tooltip[data-placement=bottom-up]:hover::after,
-.sh-org-tooltip[data-placement=bottom-up]:focus::after {
+.sh-org-tooltip[data-placement="bottom-up"]:hover::after,
+.sh-org-tooltip[data-placement="bottom-up"]:focus::after {
   top: auto;
   bottom: 24px;
 }

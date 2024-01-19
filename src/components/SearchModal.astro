@@ -17,17 +17,21 @@ const lang = getLangFromUrl(Astro.url);
         <Icon name="icon-close" class="sh-atom-icon" />
       </span>
     </button>
-    <form method="post" action={"/"+lang+"/search-results"} class="search-modal__form">
+    <form
+      method="post"
+      action={"/" + lang + "/search-results"}
+      class="search-modal__form"
+    >
       <label class="search-modal__label" for="txt_search"
-      >What are you looking for?</label
+        >What are you looking for?</label
       >
       <input
-          class="search-modal__input-text"
-          type="text"
-          name="txt_search"
-          id="txt_search"
-          autocomplete="off"
-          inputmode="text"
+        class="search-modal__input-text"
+        type="text"
+        name="txt_search"
+        id="txt_search"
+        autocomplete="off"
+        inputmode="text"
       />
       <div class="sh-molecule-l-button-group" data-alignment="center">
         <button class="sh-atom-button" type="submit">Search</button>
@@ -87,7 +91,7 @@ const lang = getLangFromUrl(Astro.url);
     font-style: normal;
     font-weight: 300;
     line-height: 20px;
-    letter-spacing: 0.5px;
+    /* letter-spacing: 0.5px; */
   }
 
   .search-modal__input-text {
@@ -108,26 +112,25 @@ const lang = getLangFromUrl(Astro.url);
 
   // listeners
 
-
   function OpenSearchModal(ClickedElement, event) {
     event.preventDefault();
     const SearchModal = document.getElementById("search-modal");
     SearchModal.setAttribute("data-modal-open", "");
     // set listener for ESC key
-      document.addEventListener("keydown", closeModalOnESC, false);
+    document.addEventListener("keydown", closeModalOnESC, false);
   }
   function closeModal(thisElem) {
     const openModal = thisElem.closest("[data-modal-open]");
     openModal.removeAttribute("data-modal-open");
-      document.removeEventListener("keydown", closeModalOnESC, false);
+    document.removeEventListener("keydown", closeModalOnESC, false);
   }
 
   function closeModalOnESC(e) {
-      console.log(e.keyCode);
-      if (e.keyCode === 27) {
-          const openModal = document.querySelector("[data-modal-open]");
-          openModal.removeAttribute("data-modal-open");
-      }
-      document.removeEventListener("keydown", closeModalOnESC, false);
+    console.log(e.keyCode);
+    if (e.keyCode === 27) {
+      const openModal = document.querySelector("[data-modal-open]");
+      openModal.removeAttribute("data-modal-open");
+    }
+    document.removeEventListener("keydown", closeModalOnESC, false);
   }
 </script>

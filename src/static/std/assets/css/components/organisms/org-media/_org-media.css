@@ -29,7 +29,7 @@
 }
 
 .pimcore__product-group-description p {
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
   margin: 1rem 0 0 0;
 }
 

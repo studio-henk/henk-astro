@@ -15,7 +15,9 @@
   }
 }
 @media only screen and (min-width: 768px) {
-  #sh-rozengracht .sh-org-block:first-child[data-hasimage] .sh-molecule-section-header__title {
+  #sh-rozengracht
+    .sh-org-block:first-child[data-hasimage]
+    .sh-molecule-section-header__title {
     font-size: 1.375rem;
     line-height: 38px;
   }
@@ -24,13 +26,17 @@
   }
 }
 @media only screen and (min-width: 992px) {
-  #sh-rozengracht .sh-org-block:first-child[data-hasimage] .sh-molecule-section-header__title {
+  #sh-rozengracht
+    .sh-org-block:first-child[data-hasimage]
+    .sh-molecule-section-header__title {
     font-size: 2.0625rem;
     line-height: 50px;
   }
 }
 #sh-rozengracht .sh-org-block:first-child .sh-molecule-section-header__title,
-#sh-rozengracht .sh-org-block:first-child .sh-molecule-section-header__subtitle {
+#sh-rozengracht
+  .sh-org-block:first-child
+  .sh-molecule-section-header__subtitle {
   text-align: left;
 }
 #sh-rozengracht .sh-org-block__layer1 {
@@ -66,16 +72,16 @@
 #sh-rozengracht .sh-stores .sh-store__title {
   font-size: 0.875rem;
   line-height: 28px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  /* letter-spacing: 0.2em;
+  text-transform: uppercase; */
   margin-bottom: 10px;
 }
 #sh-rozengracht .sh-stores .sh-store__subtitle,
 #sh-rozengracht .sh-stores .sh-store__link {
   font-size: 0.75rem;
   line-height: 21px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  /* letter-spacing: 0.2em;
+  text-transform: uppercase; */
   margin-bottom: 0;
 }
 #sh-rozengracht .sh-stores .sh-store__link {
@@ -89,7 +95,11 @@
 #sh-rozengracht .sh-stores .sh-store__subtitle + p.sh-store__link__interior {
   margin-bottom: 46px;
 }
-#sh-rozengracht .sh-stores .sh-store__subtitle + p.sh-store__link__interior > a {
+#sh-rozengracht
+  .sh-stores
+  .sh-store__subtitle
+  + p.sh-store__link__interior
+  > a {
   display: block;
 }
 #sh-rozengracht .sh-l-grid--2 {
@@ -179,7 +189,7 @@
 #sh-rozengracht .sh-media-block li address {
   font-size: 0.75rem;
   line-height: 20px;
-  letter-spacing: 1.2px;
+  /* letter-spacing: 1.2px; */
 }
 @media only screen and (min-width: 500px) {
   #sh-rozengracht .sh-media-block li {

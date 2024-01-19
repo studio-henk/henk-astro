@@ -14,21 +14,21 @@
   align-items: flex-start;
   flex: 0 0 auto;
 }
-.sh-forms[data-labels-on-top=true] .sh-forms__fieldset:first-child,
-.sh-forms[data-labels-on-top=true] fieldset:first-child {
+.sh-forms[data-labels-on-top="true"] .sh-forms__fieldset:first-child,
+.sh-forms[data-labels-on-top="true"] fieldset:first-child {
   flex: 0 0 64px;
   display: inline-flex;
   align-items: flex-end;
 }
-.sh-forms[data-css-validation=true] {
+.sh-forms[data-css-validation="true"] {
   padding-bottom: 28px;
 }
 
-.sh-forms[data-bg-color=accent1] {
+.sh-forms[data-bg-color="accent1"] {
   --color-background-form: var(--color-accent1);
 }
 
-.sh-forms[data-color-text-label=accent10] {
+.sh-forms[data-color-text-label="accent10"] {
   --color-text-label: red;
 }
 
@@ -64,7 +64,7 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   color: var(--color-text-label, hsla(0, 0%, 0%, 0.3));
 }
 
-.sh-forms__label[data-style=on-top] {
+.sh-forms__label[data-style="on-top"] {
   cursor: text;
   padding: 0 4px;
   align-self: flex-start;
@@ -80,10 +80,13 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
 }
 
 .sh-forms__input-container input:focus + label,
-.sh-forms__select-container select + .sh-forms__label[data-style=on-top] {
+.sh-forms__select-container select + .sh-forms__label[data-style="on-top"] {
   top: -10px;
   font-size: 12px;
-  background-color: var(--color-background-input, var(--color-background-form, #fff));
+  background-color: var(
+    --color-background-input,
+    var(--color-background-form, #fff)
+  );
   /*background-color: var(--color-background-input, transparent);*/
   /*background-color: transparent;*/
   /*background: linear-gradient(0deg, hsl(45deg 98% 61%) 50%, hsl(54deg 100% 65%) 50%);*/
@@ -93,10 +96,16 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
 .sh-forms__input-container input:not(:placeholder-shown) + label {
   top: -10px;
   font-size: 12px;
-  background-color: var(--color-background-input, var(--color-background-form, #fff));
+  background-color: var(
+    --color-background-input,
+    var(--color-background-form, #fff)
+  );
 }
 
-[data-required-fields=show] .sh-forms__input-container :required ~ .sh-forms__label[data-style=on-top]::before {
+[data-required-fields="show"]
+  .sh-forms__input-container
+  :required
+  ~ .sh-forms__label[data-style="on-top"]::before {
   content: "*";
   display: flex;
   color: hsl(0, 100%, 50%);
@@ -117,14 +126,17 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
 .sh-forms__input-email,
 .sh-forms__select {
   /*background-color: var(--color-background-input, #fff);*/
-  background-color: var(--color-background-input, var(--color-background-form, #fff));
+  background-color: var(
+    --color-background-input,
+    var(--color-background-form, #fff)
+  );
   color: var(--color-text-input, #000);
   font-family: ff-scala-sans-pro, sans-serif;
   /*font-weight: 300;*/
   border-radius: 8px;
   border: 1px solid black;
   padding: 8px 16px;
-  letter-spacing: 1.2px;
+  /* letter-spacing: 1.2px; */
   font-size: 16px;
   line-height: 28px;
 }
@@ -166,33 +178,42 @@ fieldset.sh-forms__fieldset--split .sh-forms__input-container {
   font-weight: 400;
   pointer-events: none;
 }*/
-.iti input[type=tel] {
+.iti input[type="tel"] {
   width: 100%;
   border-radius: 8px;
 }
 
-[data-css-validation=true] .sh-forms__input-txt:invalid:not(:placeholder-shown):focus {
+[data-css-validation="true"]
+  .sh-forms__input-txt:invalid:not(:placeholder-shown):focus {
   border: 1px solid var(--color-henk-warning);
 }
 
-[data-css-validation=true] .sh-forms__input-txt:invalid:not(:placeholder-shown):not(:focus) {
+[data-css-validation="true"]
+  .sh-forms__input-txt:invalid:not(:placeholder-shown):not(:focus) {
   border: 1px solid red;
 }
 
 /*[data-css-validation="true"] .sh-forms__input-txt:invalid:not(:placeholder-shown) + label + .msg-invalid {
   visibility: visible;
 }*/
-[data-css-validation=true] .sh-forms__input-txt:invalid:not(:placeholder-shown):not(:focus) + label + .msg-invalid {
+[data-css-validation="true"]
+  .sh-forms__input-txt:invalid:not(:placeholder-shown):not(:focus)
+  + label
+  + .msg-invalid {
   visibility: visible;
 }
 
-[data-css-validation=true] .sh-forms__input-txt:valid:not(:placeholder-shown) + label ~ .msg-valid {
+[data-css-validation="true"]
+  .sh-forms__input-txt:valid:not(:placeholder-shown)
+  + label
+  ~ .msg-valid {
   visibility: visible;
   top: -36px;
   position: relative;
 }
 
-[data-css-validation=true] .sh-forms__input-txt:valid:not(:placeholder-shown) {
+[data-css-validation="true"]
+  .sh-forms__input-txt:valid:not(:placeholder-shown) {
   border: 1px solid green;
 }
 
