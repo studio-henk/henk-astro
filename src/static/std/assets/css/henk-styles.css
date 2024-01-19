@@ -5,6 +5,7 @@
 @import "_config.css";
 @import "base/_base.css";
 @import "base/_base-typography-headings.css";
+@import "base/_base-typography-sizes.css";
 
 /* utils */
 @import "utils/modifiers.css";

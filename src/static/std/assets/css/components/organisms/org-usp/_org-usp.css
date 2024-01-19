@@ -1,7 +1,6 @@
 @charset "UTF-8";
 .sh-org-usp {
   background-color: var(--color-accent14, #ccc);
-  /*background-color: var(--color-accent14,  var(--color-accent14));*/
   color: var(--color-henk-black);
   display: grid;
   grid-auto-rows: auto;
@@ -13,37 +12,29 @@
   margin: 0;
 }
 .sh-org-usp__container {
-  max-width: 301px;
   margin: 0 auto;
   display: grid;
-  row-gap: 6px;
+  row-gap: 8px;
 }
 .sh-org-usp__container * {
   text-align: center;
 }
 @media only screen and (min-width: 768px) {
   .sh-org-usp__container {
-    row-gap: 12px;
+    row-gap: 8px;
   }
 }
+
 .sh-org-usp__title {
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 28px;
-  text-transform: uppercase;
-  /* letter-spacing: 0.2em; */
   text-align: center;
 }
-@media only screen and (min-width: 768px) {
-  .sh-org-usp__title {
-    font-size: 0.875rem;
-  }
-}
+
 @media only screen and (min-width: 992px) {
   .sh-org-usp {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
+    gap: 1rem;
   }
 }
 
@@ -71,7 +62,8 @@ Brick with grid with 3 columns containing editable for:
 
 .sh-org-usp-v2 .brick__grid .brick__grid-item {
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 30em;
+  text-wrap: pretty;
 }
 
 .sh-org-usp-v2 .brick__grid-item * {
@@ -81,5 +73,6 @@ Brick with grid with 3 columns containing editable for:
 @media only screen and (min-width: 992px) {
   .sh-org-usp-v2 .brick__grid.component__layout-box {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 }

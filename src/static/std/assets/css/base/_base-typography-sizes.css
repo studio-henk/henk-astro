@@ -1,0 +1,21 @@
+/* --size-font-12: 12;
+    --size-font-14: 14;
+    --size-font-16: 16;
+    --size-font-18: 18;
+    --size-font-20: 20;
+    --size-font-24: 24;
+    --size-font-32: 32;
+    --size-font-38: 38;
+    --size-font-42: 42;
+    --size-font-48: 48;
+    --size-font-60: 60;
+    --size-font-76: 76; */
+
+.fs-12 {
+  /* 12
+        font-size: clamp(1rem, 2.34375vw, 1.125rem);
+        line-height: clamp(24px, 1.78571429vw, 32px); */
+}
+
+.fs-14 {
+}

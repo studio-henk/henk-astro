@@ -58,6 +58,8 @@
 .sh-org-reviews .review__content .review__text {
   margin: 0;
   text-align: center;
+  max-width: 30em;
+  text-wrap: pretty;
 }
 .sh-org-reviews .review__content .review__cite {
   /*font-size: calc(var(--size-font-xxsmall) / var(--size-font-root) * 1rem);*/

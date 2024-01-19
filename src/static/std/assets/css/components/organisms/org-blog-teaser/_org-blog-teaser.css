@@ -1,44 +1,33 @@
 .sh-org-blog-teaser {
-  padding: 0 0 28px 0;
+  padding: 0;
 }
+
 @media only screen and (min-width: 768px) {
   .sh-org-blog-teaser {
     display: grid;
-    grid-template-rows: 117px 1fr;
+    grid-template-rows: auto 1fr;
     align-items: center;
     padding-right: 24px;
-    padding-bottom: 56px;
+    padding-bottom: 0px;
   }
 }
+
 .sh-org-blog-teaser .sh-org-blog-teaser__section-header {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px;
 }
-@media only screen and (max-width: 767px) {
-  .sh-org-blog-teaser .sh-org-blog-teaser__section-header {
-    height: 103px;
-  }
-}
+
 .sh-org-blog-teaser .sh-org-blog-teaser__section-header__title {
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 21px;
   text-align: center;
-  /* text-transform: uppercase;
-  letter-spacing: 1.2px; */
   margin: 0;
 }
-@media only screen and (min-width: 768px) {
-  .sh-org-blog-teaser .sh-org-blog-teaser__section-header__title {
-    font-size: 0.875rem;
-    line-height: 28px;
-    /* letter-spacing: 0.2em; */
-  }
-}
+
 .sh-org-blog-teaser .sh-org-blog-teaser__grid {
   align-self: flex-start;
 }
+
 @media only screen and (min-width: 768px) {
   .sh-org-blog-teaser .sh-org-blog-teaser__grid {
     display: grid;
@@ -52,42 +41,27 @@
   justify-content: space-between;
   height: auto;
 }
-.sh-org-blog-teaser .sh-org-blog-teaser__grid-item > a {
-  margin-bottom: 1rem;
-}
-.sh-org-blog-teaser .sh-org-blog-teaser__grid-item .sh-molecule-l-button-group {
-  margin: 28px 0 0 0;
-}
+
 .sh-org-blog-teaser .sh-org-blog-teaser__post-title {
-  font-weight: 400;
+  font-weight: 500;
 }
-.sh-org-blog-teaser
-  .sh-org-blog-teaser__post-title
-  + .sh-org-blog-teaser__post-summary {
-  margin-top: 6px;
-}
-@media only screen and (max-width: 767px) {
-  .sh-org-blog-teaser .sh-org-blog-teaser__post-title {
-    margin-top: 1rem;
-  }
-}
+
 .sh-org-blog-teaser .blog-swiper,
 .sh-org-blog-teaser .swiper {
   padding: 0 24px 24px !important;
 }
+
 @media only screen and (min-width: 768px) {
   .sh-org-blog-teaser .blog-swiper,
   .sh-org-blog-teaser .swiper {
     padding: 0 0 24px 24px !important;
   }
 }
+
 .sh-org-blog-teaser .swiper-wrapper {
   padding-top: 0 !important;
   padding-left: 0 !important;
 }
 .sh-org-blog-teaser .sh-org-blog-teaser__image {
   border-radius: 0;
-}
-.sh-org-blog-teaser .sh-molecule-l-button-group {
-  padding-bottom: 0;
 }
