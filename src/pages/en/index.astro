@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import HeroVideo from "../../components/bricks/HeroVideo.astro";
 import SliderBrickVarA from "../../components/bricks/SliderBrickVarA.astro";
 import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
+import BlogSlider from "../../components/bricks/BlogSlider.astro";
 ---
 
 <BaseLayout
@@ -19,6 +20,7 @@ import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
     title="The Form of Things"
     subtitle="New: Slant Sofa"
     videoSRC="/static/std/assets/video/slant-sofa.mp4"
+    url="/en/the-form-of-things"
   />
   <SliderBrickVarA title="Our products" swiperID="2" />
   <SplitscreenBrick
@@ -26,6 +28,13 @@ import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
     title="Win €1000 shopping credit."
     intro="Could your interior use a fresh update? Good news. We're giving you the chance to win €1,000 shopping credit at Studio HENK. Sign up for our newsletter now and follow us on Instagram, Facebook, or TikTok. For even more chances to win, tag your friends. Who knows, you might soon have that beautiful new piece of furniture that's been on your wishlist for a while in your home. The promotion runs until Sunday, January 28th."
     buttonText="Sign up now!"
+  />
+  <BlogSlider />
+  <HeroVideo
+    title="Discover the world of Studio HENK"
+    subtitle="Studio HENK Stores"
+    videoSRC="/static/std/assets/video/StudioHenk_StoresMix_website.mp4"
+    url="/en/shops"
   />
   <SplitscreenBrick
     image="/images/bcorp.jpg"
