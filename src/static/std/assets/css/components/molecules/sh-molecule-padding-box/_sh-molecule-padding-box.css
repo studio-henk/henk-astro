@@ -5,19 +5,39 @@ so calc is unit size * unit num
 */
 .sh-molecule-padding-box {
   --size-spacing-units: 0;
-  --size-spacing-units-top: 11;
-  --size-spacing-units-right: 5;
-  --size-spacing-units-bottom: 11;
-  --size-spacing-units-left: 5;
-  --size-spacing-units-top-desktop: 11;
-  --size-spacing-units-right-desktop: 5;
-  --size-spacing-units-bottom-desktop: 11;
-  --size-spacing-units-left-desktop: 5;
-  padding: calc(var(--size-spacing-units-top, 11) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-right, 5) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-bottom, 11) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-left, 5) * var(--size-spacing-unit-base));
+  --size-spacing-units-top: 12;
+  --size-spacing-units-right: 6;
+  --size-spacing-units-bottom: 12;
+  --size-spacing-units-left: 6;
+  --size-spacing-units-top-desktop: 12;
+  --size-spacing-units-right-desktop: 6;
+  --size-spacing-units-bottom-desktop: 12;
+  --size-spacing-units-left-desktop: 6;
+  padding: calc(
+      var(--size-spacing-units-top, 12) * var(--size-spacing-unit-base)
+    )
+    calc(var(--size-spacing-units-right, 6) * var(--size-spacing-unit-base))
+    calc(var(--size-spacing-units-bottom, 12) * var(--size-spacing-unit-base))
+    calc(var(--size-spacing-units-left, 6) * var(--size-spacing-unit-base));
 }
 @media only screen and (min-width: 992px) {
   .sh-molecule-padding-box {
-    padding: calc(var(--size-spacing-units-top-desktop, 11) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-right-desktop, 5) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-bottom-desktop, 11) * var(--size-spacing-unit-base)) calc(var(--size-spacing-units-left-desktop, 5) * var(--size-spacing-unit-base));
+    padding: calc(
+        var(--size-spacing-units-top-desktop, 12) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-right-desktop, 6) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-bottom-desktop, 12) *
+          var(--size-spacing-unit-base)
+      )
+      calc(
+        var(--size-spacing-units-left-desktop, 6) *
+          var(--size-spacing-unit-base)
+      );
   }
 }
 

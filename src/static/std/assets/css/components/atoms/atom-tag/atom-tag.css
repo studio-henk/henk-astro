@@ -3,7 +3,7 @@
   line-height: 1.66666667;
   text-align: center;
   /* letter-spacing: 0.1em; */
-  background-color: var(--color-accent1, #f3f1ec);
+  background-color: var(--color-henk-white, #fff);
   border-radius: 40px;
   display: inline-flex;
   gap: 0.36363636em;

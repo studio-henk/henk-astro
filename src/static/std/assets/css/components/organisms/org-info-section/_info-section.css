@@ -18,7 +18,7 @@
 .info-section__box {
   background-color: var(
     --color-background-component-info-section-box,
-    var(--color-accent1)
+    var(--color-henk-white)
   );
   color: var(--color-text-component-info-section-box, currentcolor);
   border-radius: 8px;

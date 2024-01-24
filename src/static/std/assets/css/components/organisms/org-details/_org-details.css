@@ -16,7 +16,7 @@
 .org-details summary::after {
   content: "+";
   display: inline-flex;
-  background-color: var(--var-component-bg-color, var(--color-accent1));
+  background-color: var(--var-component-bg-color, var(--color-henk-white));
   color: var(
     --var-component-marker-color,
     var(--var-component-fg-color, currentcolor)

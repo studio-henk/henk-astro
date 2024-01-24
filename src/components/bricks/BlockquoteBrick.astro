@@ -1,30 +1,40 @@
+---
+interface Props {
+  text: string;
+  credit?: string;
+  jobtitle?: string;
+}
+
+const { text, credit, jobtitle } = Astro.props;
+---
+
 <div class="sh-quote-block" lang="en" id="block02">
-    <div class="sh-molecule-bg-box" style="
+  <div
+    class="sh-molecule-bg-box"
+    style="
                     --color-background-component-bgbox: var(--color-henk-white, #f00);
 
                     --color-text-component-bgbox: var(--color-henk-black, #000);
-                    ">
-        <div class="sh-molecule-padding-box" style="
-                            --size-spacing-units-top: 10;
-                                        --size-spacing-units-right: 4;
-                                        --size-spacing-units-bottom: 3;
-                                        --size-spacing-units-left: 4;
-                                        --size-spacing-units-top-desktop: 20;
-                                        --size-spacing-units-right-desktop: 100;
-                                        --size-spacing-units-bottom-desktop: 20;
-                                        --size-spacing-units-left-desktop: 100;
-                            ">
-            <div class="component__layout-box">
-                <!--<p class="quote__text">This collection embraces our past and celebrates the future. A culmination of ten
-                    years of design, these products highlight geometric shapes and our passion for materiality while
-                    balancing presence and permanence.</p>-->
-                <p class="quote__text">This collection embraces our past and celebrates the future. A culmination of ten years of design, these products highlight geometric shapes and our passion for materiality while balancing presence and permanence.</p>
-                <!--<div class="quote__meta">
-                    <p class="quote__citation">
-                        explore our new products
-                    </p>
-                </div>-->
-            </div>
-        </div>
+                    "
+  >
+    <div class="sh-molecule-padding-box">
+      <div class="component__layout-box">
+        {
+          credit ? (
+            <blockquote>
+              <p class="quote__text h3">{text}</p>
+              {credit && (
+                <div class="quote__meta">
+                  <p class="quote__citation">{credit}</p>
+                  <p class="quote__jobtitle">{jobtitle}</p>
+                </div>
+              )}
+            </blockquote>
+          ) : (
+            <p class="quote__text h3">{text}</p>
+          )
+        }
+      </div>
     </div>
+  </div>
 </div>

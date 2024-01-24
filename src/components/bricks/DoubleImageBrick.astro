@@ -1,76 +1,97 @@
 ---
 const { buttonText = "Button text", order, image, smallImage } = Astro.props;
 ---
+
 <section id="block_2">
-    <div class="sh-molecule-bg-box" style="
+  <div
+    class="sh-molecule-bg-box"
+    style="
                 --color-background-component-bgbox: var(--color-henk-white, transparent);
                 --color-text-component-bgbox: var();
-                ">
-        <div class="sh-molecule-padding-box" style="
-                                    --size-spacing-units-top: 11;
-                                            --size-spacing-units-right: 5;
-                                        --size-spacing-units-bottom: 11;
-                                        --size-spacing-units-left: 5;
-                                        --size-spacing-units-top-desktop: 11;
-                                        --size-spacing-units-right-desktop: 5;
-                                        --size-spacing-units-bottom-desktop: 11;
-                                        --size-spacing-units-left-desktop: 5;
-                                ">
-            <div class="sh-l-grid sh-double-image-brick" data-order={order} data-grid="grid-k" style="
+                "
+  >
+    <div
+      class="sh-molecule-padding-box"
+      style="
+                                    --size-spacing-units-top: 12;
+                                            --size-spacing-units-right: 6;
+                                        --size-spacing-units-bottom: 12;
+                                        --size-spacing-units-left: 6;
+                                        --size-spacing-units-top-desktop: 12;
+                                        --size-spacing-units-right-desktop: 6;
+                                        --size-spacing-units-bottom-desktop: 12;
+                                        --size-spacing-units-left-desktop: 6;
+                                "
+    >
+      <div
+        class="sh-l-grid sh-double-image-brick"
+        data-order={order}
+        data-grid="grid-k"
+        style="
                                             --var-local-button-hover-override: var(--color-henk-black, #f00);
 
                                     --var-local-button-text-color-override: var(--color-henk-white, #000);
-                                        ">
-                <div class="sh-l-grid__item">
-                    <a href="https://www.studio-henk.nl/en/slim-x-wood-dining-table" title="Crafted elegance">
+                                        "
+      >
+        <div class="sh-l-grid__item">
+          <a
+            href="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
+            title="Crafted elegance"
+          >
+            <figure class="item__figure sh-atom__figure">
+              <img
+                class="item__image"
+                id="img1"
+                src={image}
+                alt="Crafted elegance"
+                loading="lazy"
+                width="560"
+                height="700"
+              />
+            </figure>
 
-                        <figure class="item__figure sh-atom__figure">
-                            <img class="item__image" id="img1"
-                                 src={image}
-                                 alt="Crafted elegance" loading="lazy" width="560" height="700">
-                        </figure>
+            <div class="item__content">
+              <p class="item__title">Slim-X Wood Dining Table</p>
 
-                        <div class="item__content">
-
-                            <p class="item__title">Slim-X Wood Dining Table</p>
-
-                            <p class="item__caption">Crafted elegance</p>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
-                <div class="sh-l-grid__item --v-align-center">
-                    <a href="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
-                       title="Available in a striking smoked oak finish">
-
-                        <figure class="item__figure sh-atom__figure">
-
-                            <img class="item__image" id="img1"
-                                 src={smallImage}
-                                 alt="Available in a striking smoked oak finish" loading="lazy" width="404"
-                                 height="499">
-                        </figure>
-                        <div class="item__content">
-                            <p class="item__title">Slim-X Wood Dining Table</p>
-
-                            <p class="item__caption">Available in a striking smoked oak finish</p>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="sh-l-grid__item" data-colspan="2">
-
-                    <a
-                        href="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
-                        class="sh-atom-button"
-                        data-style="filled"
-                    >{buttonText}
-                    </a>
-                </div>
+              <p class="item__caption">Crafted elegance</p>
             </div>
+          </a>
         </div>
+
+        <div class="sh-l-grid__item --v-align-center">
+          <a
+            href="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
+            title="Available in a striking smoked oak finish"
+          >
+            <figure class="item__figure sh-atom__figure">
+              <img
+                class="item__image"
+                id="img1"
+                src={smallImage}
+                alt="Available in a striking smoked oak finish"
+                loading="lazy"
+                width="404"
+                height="499"
+              />
+            </figure>
+            <div class="item__content">
+              <p class="item__title">Slim-X Wood Dining Table</p>
+
+              <p class="item__caption">
+                Available in a striking smoked oak finish
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="sh-l-grid__item" data-colspan="2">
+          <a
+            href="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
+            class="sh-atom-button"
+            data-style="filled"
+            >{buttonText}
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

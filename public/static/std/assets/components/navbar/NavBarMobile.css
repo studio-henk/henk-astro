@@ -76,7 +76,7 @@
     height: 0;
     overflow: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
-    background-color: var(--color-accent1);
+    background-color: var(--color-henk-white);
     position: fixed;
     top: var(--total-bars-height, 0);
     z-index: 998;

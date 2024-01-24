@@ -9,84 +9,99 @@ import Icon from "../../components/astro/Icon.astro";
   <h1>Swiper</h1>
   <div class="swiper-container">
     <swiper-container
-        slides-per-view="4"
-        loop="false"
-        speed="500"
-        css-mode="true"
-        space-between="24"
-        navigation="true"
-        navigation-prev-el=".sh-custom-swiper-button-prev"
-        navigation-next-el=".sh-custom-swiper-button-next"
+      slides-per-view="4"
+      loop="false"
+      speed="500"
+      css-mode="true"
+      space-between="24"
+      navigation="true"
+      navigation-prev-el=".sh-custom-swiper-button-prev"
+      navigation-next-el=".sh-custom-swiper-button-next"
     >
       <swiper-slide>
         <NavCard
-            hasLink="https://disney.com"
-            linkTitle="Click to go to Disney website."
-            imgUrl="/static/std/assets/toolkit/images/navbar/tables_01-1112w.jpg"
-            imgWidth="1112"
-            imgHeight="1444"
-            altText="Photo of a cliff with a nice view on the ocean."
-            caption="Dining Tables"
+          hasLink="https://disney.com"
+          linkTitle="Click to go to Disney website."
+          imgUrl="/static/std/assets/toolkit/images/navbar/tables_01-1112w.jpg"
+          imgWidth="1112"
+          imgHeight="1444"
+          altText="Photo of a cliff with a nice view on the ocean."
+          caption="Dining Tables"
         />
       </swiper-slide>
       <swiper-slide>
         <NavCard
-            hasLink="https://disney.com"
-            linkTitle="Click to go to Disney website."
-            imgUrl="/static/std/assets/toolkit/images/navbar/tables_02.jpg"
-            imgWidth="1112"
-            imgHeight="1444"
-            altText="Photo of a cliff with a nice view on the ocean."
-            caption="Coffee Tables"
+          hasLink="https://disney.com"
+          linkTitle="Click to go to Disney website."
+          imgUrl="/static/std/assets/toolkit/images/navbar/tables_02.jpg"
+          imgWidth="1112"
+          imgHeight="1444"
+          altText="Photo of a cliff with a nice view on the ocean."
+          caption="Coffee Tables"
         />
       </swiper-slide>
       <swiper-slide>
         <NavCard
-            hasLink="https://disney.com"
-            linkTitle="Click to go to Disney website."
-            imgUrl="/static/std/assets/toolkit/images/navbar/tables_03.jpg"
-            imgWidth="1112"
-            imgHeight="1444"
-            altText="Home Desks"
-            caption="Home Desks"
+          hasLink="https://disney.com"
+          linkTitle="Click to go to Disney website."
+          imgUrl="/static/std/assets/toolkit/images/navbar/tables_03.jpg"
+          imgWidth="1112"
+          imgHeight="1444"
+          altText="Home Desks"
+          caption="Home Desks"
         />
       </swiper-slide>
       <swiper-slide>
         <NavCard
-            hasLink="https://disney.com"
-            linkTitle="Click to go to Disney website."
-            imgUrl="/static/std/assets/toolkit/images/navbar/tables_04.jpg"
-            imgWidth="1112"
-            imgHeight="1444"
-            altText="Bistro Tables"
-            caption="Bistro Tables"
+          hasLink="https://disney.com"
+          linkTitle="Click to go to Disney website."
+          imgUrl="/static/std/assets/toolkit/images/navbar/tables_04.jpg"
+          imgWidth="1112"
+          imgHeight="1444"
+          altText="Bistro Tables"
+          caption="Bistro Tables"
         />
       </swiper-slide>
       <swiper-slide>
         <NavCard
-            hasLink="products/outdoor-tables"
-            linkTitle="outdoor tables"
-            imgUrl="/static/std/assets/toolkit/images/navbar/tables_01.jpg"
-            imgWidth="1112"
-            imgHeight="1444"
-            altText="an outdoor table"
-            caption="Outdoor Tables"
+          hasLink="products/outdoor-tables"
+          linkTitle="outdoor tables"
+          imgUrl="/static/std/assets/toolkit/images/navbar/tables_01.jpg"
+          imgWidth="1112"
+          imgHeight="1444"
+          altText="an outdoor table"
+          caption="Outdoor Tables"
         />
       </swiper-slide>
       <!--<div slot="container-end">Rendered after wrapper</div>-->
     </swiper-container>
-    <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-left="true">
+    <div
+      class="sh-custom-swiper-button-prev sh-atom-button"
+      data-style="soft"
+      data-shape="circle"
+      data-size="large"
+      data-icon-arrow-left="true"
+    >
       <Icon name="arrow-left" />
     </div>
-    <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true">
+    <div
+      class="sh-custom-swiper-button-next sh-atom-button"
+      data-style="soft"
+      data-shape="circle"
+      data-size="large"
+      data-icon-arrow-right="true"
+    >
       <Icon name="arrow-right" />
     </div>
   </div>
-  <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+  ></script>
 </BaseLayout>
 <style>
   .swiper-container {
     position: relative;
-    background-color: var(--color-accent1);
+    background-color: var(--color-henk-white);
   }
 </style>

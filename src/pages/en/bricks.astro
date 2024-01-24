@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroVideo from "../../components/bricks/HeroVideo.astro";
+import SliderBrickVarA from "../../components/bricks/SliderBrickVarA.astro";
+import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
+import BlogSlider from "../../components/bricks/BlogSlider.astro";
+import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
+---
+
+<BaseLayout title="Bricks" hasHero="true" Theme="dark" showMsgBar="false">
+  <HeroVideo
+    title="HeroVideo Title"
+    subtitle="HeroVideo Subtitle"
+    videoSRC="/static/std/assets/video/slant-sofa.mp4"
+  />
+  <SliderBrickVarA title="SliderBrickVarA Heading" swiperID="2" />
+  <SplitscreenBrick
+    image="/images/slant1.jpg"
+    title="SplitscreenBrick Heading"
+    subtitle="SplitscreenBrick Subtitle"
+    intro="SplitscreenBrick Text"
+    buttonText="Button text"
+  />
+  <BlockquoteBrick
+    text="Organic shapes, soft lines, straight angles – the Studio Henk collection is characterised by a play with form. A fitting piece of furniture for every interior."
+  />
+  <BlockquoteBrick
+    text="To Be or Not to Be."
+    credit="W. Shakespeare"
+    jobtitle="Poet"
+  />
+  <SplitscreenBrick
+    image="/images/bcorp.jpg"
+    title="SplitscreenBrick Order Reversed"
+    subtitle="SplitscreenBrick Subtitle"
+    intro="SplitscreenBrick Text"
+    buttonText="Button text"
+    order="reverse"
+  />
+  <BlogSlider />
+</BaseLayout>

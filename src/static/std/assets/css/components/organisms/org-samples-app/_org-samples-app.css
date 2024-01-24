@@ -54,7 +54,7 @@ img.sh-atom-sample {
 }
 
 .sh-org-samples__grid {
-  background-color: var(--color-accent1, #f00);
+  background-color: var(--color-henk-white, #f00);
 }
 @media only screen and (min-width: 768px) {
   .sh-org-samples__grid {
