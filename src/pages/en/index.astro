@@ -4,6 +4,12 @@ import HeroVideo from "../../components/bricks/HeroVideo.astro";
 import SliderBrickVarA from "../../components/bricks/SliderBrickVarA.astro";
 import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
 import BlogSlider from "../../components/bricks/BlogSlider.astro";
+import BlogSlider1 from "../../components/bricks/BlogSlider1.astro";
+import BlogSlider2 from "../../components/bricks/BlogSlider2.astro";
+import UspBrick from "../../components/bricks/UspBrick.astro";
+import CustomerFavoritesSlider from "../../components/bricks/CustomerFavoritesSlider.astro";
+import QuickDeliverySlider from "../../components/bricks/QuickDeliverySlider.astro";
+import ReviewsBrick from "../../components/bricks/ReviewsBrick.astro";
 ---
 
 <BaseLayout
@@ -12,10 +18,6 @@ import BlogSlider from "../../components/bricks/BlogSlider.astro";
   Theme="dark"
   showMsgBar="false"
 >
-  <!-- <HeroVideo
-    title="Our designs at a friendlier price"
-    subtitle="smart choice"
-  /> -->
   <HeroVideo
     title="The Form of Things"
     subtitle="New: Slant Sofa"
@@ -29,13 +31,14 @@ import BlogSlider from "../../components/bricks/BlogSlider.astro";
     intro="Could your interior use a fresh update? Good news. We're giving you the chance to win €1,000 shopping credit at Studio HENK. Sign up for our newsletter now and follow us on Instagram, Facebook, or TikTok. For even more chances to win, tag your friends. Who knows, you might soon have that beautiful new piece of furniture that's been on your wishlist for a while in your home. The promotion runs until Sunday, January 28th."
     buttonText="Sign up now!"
   />
-  <BlogSlider />
+  <BlogSlider2 />
   <HeroVideo
     title="Discover the world of Studio HENK"
     subtitle="Studio HENK Stores"
     videoSRC="/static/std/assets/video/StudioHenk_StoresMix_website.mp4"
     url="/en/shops"
   />
+  <UspBrick />
   <SplitscreenBrick
     image="/images/bcorp.jpg"
     title="A zero-waste furniture industry"
@@ -44,6 +47,8 @@ import BlogSlider from "../../components/bricks/BlogSlider.astro";
     buttonText="Find out more"
     order="reverse"
   />
+  <!-- <SliderBrickVarA title="Customer favorites" swiperID="2" /> -->
+  <CustomerFavoritesSlider />
   <SplitscreenBrick
     image="/images/cheap.jpg"
     title="Our designs at a friendlier price"
@@ -51,4 +56,7 @@ import BlogSlider from "../../components/bricks/BlogSlider.astro";
     intro="We have added new, smart choices to our collection, demonstrating that quality, sustainability, and an up to 15% better price can go hand in hand."
     buttonText="Discover more"
   />
+  <QuickDeliverySlider />
+  <ReviewsBrick />
+  <BlogSlider1 />
 </BaseLayout>

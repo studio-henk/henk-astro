@@ -1,5 +1,15 @@
 ---
-const { buttonText = "Button text", order, image, smallImage } = Astro.props;
+const {
+  largeImageTitle,
+  largeImageCaption,
+  smallImageTitle,
+  smallImageCaption,
+  buttonText = "Button text",
+  buttonURL,
+  order,
+  image,
+  smallImage,
+} = Astro.props;
 ---
 
 <section id="block_2">
@@ -51,9 +61,9 @@ const { buttonText = "Button text", order, image, smallImage } = Astro.props;
             </figure>
 
             <div class="item__content">
-              <p class="item__title">Slim-X Wood Dining Table</p>
+              <p class="item__title">{largeImageTitle}</p>
 
-              <p class="item__caption">Crafted elegance</p>
+              <p class="item__caption">{largeImageCaption}</p>
             </div>
           </a>
         </div>
@@ -75,19 +85,14 @@ const { buttonText = "Button text", order, image, smallImage } = Astro.props;
               />
             </figure>
             <div class="item__content">
-              <p class="item__title">Slim-X Wood Dining Table</p>
+              <p class="item__title">{smallImageTitle}</p>
 
-              <p class="item__caption">
-                Available in a striking smoked oak finish
-              </p>
+              <p class="item__caption">{smallImageCaption}</p>
             </div>
           </a>
         </div>
         <div class="sh-l-grid__item" data-colspan="2">
-          <a
-            href="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
-            class="sh-atom-button"
-            data-style="filled"
+          <a href={buttonURL} class="sh-atom-button" data-style="filled"
             >{buttonText}
           </a>
         </div>

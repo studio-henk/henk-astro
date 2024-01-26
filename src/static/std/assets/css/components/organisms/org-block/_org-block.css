@@ -57,8 +57,9 @@
 .sh-org-block[data-fullscreen][data-hasimage] img,
 .sh-org-block[data-fullscreen][data-hasvideo] img {
   width: 100vw;
+  height: 100svh;
   object-fit: cover;
-  height: inherit;
+  /* height: inherit; */
 }
 .sh-org-block[data-fullscreen][data-hasimage][data-variant="fullwidthvideo-brick2"],
 .sh-org-block[data-fullscreen][data-hasvideo][data-variant="fullwidthvideo-brick2"] {
@@ -140,7 +141,8 @@
 @media only screen and (min-width: 768px) {
   .sh-org-block[data-fullscreen][data-hasbgoverlay].--is-hero picture img {
     /* update 2023-06-29 • 13:44 - CEST */
-    height: calc(100svh - var(--size-height-for-hero));
+    /* height: calc(100svh - var(--size-height-for-hero)); */
+    height: 100svh;
   }
 }
 .sh-org-block[data-fullscreen][data-hasbgoverlay][data-text-alignment="left-bottom"]

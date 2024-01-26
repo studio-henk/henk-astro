@@ -5,6 +5,13 @@ import SliderBrickVarA from "../../components/bricks/SliderBrickVarA.astro";
 import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
 import BlogSlider from "../../components/bricks/BlogSlider.astro";
 import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
+import BlogSlider1 from "../../components/bricks/BlogSlider1.astro";
+import BlogSlider2 from "../../components/bricks/BlogSlider2.astro";
+import DoubleImageBrick from "../../components/bricks/DoubleImageBrick.astro";
+import FullwidthMediaBrick from "../../components/bricks/FullwidthMediaBrick.astro";
+import FullwidthVideoBrick from "../../components/bricks/FullwidthVideoBrick.astro";
+import HeroBrick from "../../components/bricks/HeroBrick.astro";
+import SectionHeader from "../../components/bricks/SectionHeader.astro";
 ---
 
 <BaseLayout title="Bricks" hasHero="true" Theme="dark" showMsgBar="false">
@@ -13,6 +20,7 @@ import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
     subtitle="HeroVideo Subtitle"
     videoSRC="/static/std/assets/video/slant-sofa.mp4"
   />
+  <HeroBrick />
   <SliderBrickVarA title="SliderBrickVarA Heading" swiperID="2" />
   <SplitscreenBrick
     image="/images/slant1.jpg"
@@ -20,14 +28,6 @@ import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
     subtitle="SplitscreenBrick Subtitle"
     intro="SplitscreenBrick Text"
     buttonText="Button text"
-  />
-  <BlockquoteBrick
-    text="Organic shapes, soft lines, straight angles – the Studio Henk collection is characterised by a play with form. A fitting piece of furniture for every interior."
-  />
-  <BlockquoteBrick
-    text="To Be or Not to Be."
-    credit="W. Shakespeare"
-    jobtitle="Poet"
   />
   <SplitscreenBrick
     image="/images/bcorp.jpg"
@@ -37,5 +37,27 @@ import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
     buttonText="Button text"
     order="reverse"
   />
-  <BlogSlider />
+  <BlockquoteBrick
+    text="Organic shapes, soft lines, straight angles – the Studio Henk collection is characterised by a play with form. A fitting piece of furniture for every interior."
+  />
+  <BlockquoteBrick
+    text="To Be or Not to Be."
+    credit="W. Shakespeare"
+    jobtitle="Poet"
+  />
+  <BlogSlider1 />
+  <BlogSlider2 />
+  <DoubleImageBrick
+    largeImageTitle="Slim-X Wood Dining Table"
+    largeImageCaption="Crafted elegance"
+    image="/images/dib1.png"
+    smallImageTitle="Slim-X Wood Dining Table"
+    smallImageCaption="Available in a striking smoked oak finish"
+    smallImage="/images/dib2.png"
+    buttonText="Discover more"
+    buttonURL="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
+  />
+  <FullwidthMediaBrick />
+  <FullwidthVideoBrick />
+  <SectionHeader />
 </BaseLayout>

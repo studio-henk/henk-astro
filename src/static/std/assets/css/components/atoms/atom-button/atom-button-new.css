@@ -46,9 +46,9 @@
 }
 
 .sh-atom-button[data-style="soft"] {
-  --color-background-button: var(--color-accent5);
+  --color-background-button: var(--color-henk-white);
   --color-text-button: var(--color-henk-black);
-  --color-border-button: var(--color-accent5);
+  --color-border-button: var(--color-henk-white);
 }
 
 .sh-atom-button[data-style="soft"]:hover {

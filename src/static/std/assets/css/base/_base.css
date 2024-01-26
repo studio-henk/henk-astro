@@ -5,13 +5,16 @@
 }
 
 /*TODO: discuss*/
-*:focus {
+/* *:focus {
   outline: none;
+} */
+:focus-visible {
+  outline-style: solid;
+  outline-width: 2px;
+  border-radius: 4px;
 }
 
 ::selection {
-  /*color: var(--color-text-selection-text, var(--color-white, #fff));
-    background-color: var(--color-text-selection-bg, var(--color-accent5, #eae4d7));*/
   color: currentColor;
   background-color: var(--color-accent5, beige);
 }

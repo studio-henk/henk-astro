@@ -26,16 +26,11 @@
     padding-top: 0px !important;
   }
 
-  /* .SliderBrickVariantA .swiper-button-prev,
-  .SliderBrickVariantA .swiper-button-next {
-    top: 32px !important;
-    margin: 0;
-  } */
-
   .SliderBrickVariantA .sh-custom-swiper-button-prev,
   .SliderBrickVariantA .sh-custom-swiper-button-next {
     position: absolute;
-    top: 32px;
+    /* top: 32px; */
+    top: clamp(1rem, 1.6vw, 2rem);
   }
 
   .SliderBrickVariantA .sh-custom-swiper-button-prev {

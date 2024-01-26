@@ -11,13 +11,13 @@ scss/dollar-variable-pattern
   display: flex;
   flex-direction: column;
   width: auto;
-  align-items: flex-start;
+  align-items: center;
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .sh-molecule-section-header {
     align-items: center;
   }
-}
+} */
 .sh-molecule-section-header .sh-molecule-section-header__subtitle {
   color: currentcolor;
   margin: 0;
@@ -34,55 +34,45 @@ scss/dollar-variable-pattern
   color: currentcolor;
   margin: 0;
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .sh-molecule-section-header .sh-molecule-section-header__title {
     text-align: center;
   }
-}
-.sh-molecule-section-header
-  .sh-molecule-section-header__title
-  + .sh-molecule-section-header__subtitle {
-  /* margin-top: 1rem; */
-}
+} */
+
 .sh-molecule-section-header.--reverse-order {
   flex-direction: column-reverse;
 }
-.sh-molecule-section-header.--reverse-order
-  .sh-molecule-section-header__title
-  + .sh-molecule-section-header__subtitle {
-  /* margin-top: 0; */
-}
-.sh-molecule-section-header.--reverse-order .sh-molecule-section-header__title {
-  /* margin-top: 0.5rem; */
-}
+
 .sh-molecule-section-header + .sh-section__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  /* margin-top: 10px; */
-  /* margin-top: 24px; */
+  /* align-items: flex-start; */
+  align-items: center;
 }
-@media only screen and (min-width: 768px) {
+
+/* @media only screen and (min-width: 768px) {
   .sh-molecule-section-header + .sh-section__content {
     text-align: center;
     align-items: center;
-    /* margin-top: 25px; */
   }
-}
+} */
+
 .sh-molecule-section-header + .sh-section__content .sh-section__intro {
   max-width: 30em;
-  /* margin: 0; */
 }
+
 .sh-molecule-section-header + .sh-section__content .sh-atom-button {
   align-self: center;
-  /* margin-top: 24px; */
 }
+
 @media only screen and (min-width: 768px) {
   .sh-l-grid__item .sh-molecule-section-header + .sh-section__content {
     padding: 0 24px;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .sh-l-grid__item .sh-molecule-section-header {
     padding: 0 24px;
