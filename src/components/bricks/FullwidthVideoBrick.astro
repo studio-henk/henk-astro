@@ -1,0 +1,76 @@
+---
+---
+
+<section id="block_12">
+  <div
+    class="sh-org-block"
+    data-fullscreen=""
+    data-hasvideo=""
+    style="color: #fff;"
+    data-hasbgoverlay=""
+  >
+    <!--video-->
+    <video muted="" loop="" playsinline="">
+      <source
+        src="https://assets.studio-henk.nl/assets/Images/samples-landingpage/studioHENK_samples_stappen-3.mp4"
+        type="video/mp4"
+      />
+      Sorry, your browser doesn't support embedded videos.
+    </video>
+    <div
+      class="sh-org-block__layer1"
+      style="background-color: hsla(0, 0%, 12%, 30%);"
+    >
+      <header class="sh-molecule-section-header --reverse-order">
+        <h1 class="sh-molecule-section-header__title">Title</h1>
+
+        <h2 class="sh-molecule-section-header__subtitle">Subtitle</h2>
+      </header>
+      <div class="sh-section__content">
+        <p class="sh-section__intro">Text</p>
+        <a href="dfgdfgd" class="sh-atom-button" data-style="filled"> button</a>
+      </div>
+    </div>
+  </div>
+  <!-- this script is tied to this block's ID -->
+  <!-- otherwise may interfere with hero video -->
+  <script is:inline>
+    function playPauseVideo() {
+      let thisBrick = document.querySelector("#block_12");
+      //console.log(thisBrick);
+      // let videos = document.querySelectorAll("video");
+      let videos = thisBrick.querySelectorAll("video");
+      // console.log(videos);
+      videos.forEach((video) => {
+        // We can only control playback without interaction if video is mute
+        video.muted = true;
+        // Play is a promise, so we need to check we have it
+        let playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.then((_) => {
+            let observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.intersectionRatio !== 1 && !video.paused) {
+                    video.pause();
+                  } else if (video.paused) {
+                    video.play();
+                  }
+                });
+              },
+              { threshold: 0.2 }
+            );
+            observer.observe(video);
+          });
+        }
+      });
+    }
+
+    // Alternative to DOMContentLoaded event
+    document.onreadystatechange = function () {
+      if (document.readyState === "interactive") {
+        playPauseVideo();
+      }
+    };
+  </script>
+</section>
