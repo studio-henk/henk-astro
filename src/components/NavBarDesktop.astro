@@ -51,7 +51,7 @@ let { showMsgBar } = Astro.props;
       </nav>
       <div class="utilities-nav">
         <div class="utils utils_contact-bar">
-          <a class="utils_contact-bar-link" href="#">
+          <a class="utils_contact-bar-link" href={`/${lang}/shops/`}>
             <Icon
               class="sh-atom-icon"
               width="24"
@@ -60,7 +60,9 @@ let { showMsgBar } = Astro.props;
             />
             Stores
           </a>
-          <a class="utils_contact-bar-link" href="#">Contact</a>
+          <a class="utils_contact-bar-link" href={`/${lang}/contact/`}
+            >Contact</a
+          >
         </div>
         <ul class="utilities-nav__list">
           <li class="utilities-nav__item" id="utilities-nav__search">

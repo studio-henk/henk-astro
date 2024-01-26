@@ -5,6 +5,8 @@ import Icon from "../components/astro/Icon.astro";
 // import NavCard from "./NavCard.astro";
 import MsgBar from "../components/MsgBar.astro";
 import NavBarMobile from "../components/NavBarMobile.astro";
+import primaryNav from "../../public/data/navigation_data.json";
+import NavBarDesktop from "./NavBarDesktop.astro";
 
 const lang = getLangFromUrl(Astro.url);
 // const { NavOnHero } = Astro.props;
@@ -29,9 +31,6 @@ if (!Theme) {
 }
 
 // const tableGallery = 5;
-
-import primaryNav from "../../public/data/navigation_data.json";
-import NavBarDesktop from "./NavBarDesktop.astro";
 // Convert the object to a JSON string
 const primaryNavJSON = JSON.stringify(primaryNav);
 
