@@ -12,33 +12,24 @@ scss/dollar-variable-pattern
   flex-direction: column;
   width: auto;
   align-items: center;
+  max-width: 30em;
+  margin-inline: auto;
+  text-wrap: pretty;
 }
-/* @media only screen and (min-width: 768px) {
-  .sh-molecule-section-header {
-    align-items: center;
-  }
-} */
+
 .sh-molecule-section-header .sh-molecule-section-header__subtitle {
   color: currentcolor;
   margin: 0;
   font-size: 1rem;
   line-height: 1.5;
+  text-align: center;
 }
-
-/* @media only screen and (min-width: 768px) {
-  .sh-molecule-section-header .sh-molecule-section-header__subtitle {
-  }
-} */
 
 .sh-molecule-section-header .sh-molecule-section-header__title {
   color: currentcolor;
   margin: 0;
+  text-align: center;
 }
-/* @media only screen and (min-width: 768px) {
-  .sh-molecule-section-header .sh-molecule-section-header__title {
-    text-align: center;
-  }
-} */
 
 .sh-molecule-section-header.--reverse-order {
   flex-direction: column-reverse;
@@ -48,32 +39,28 @@ scss/dollar-variable-pattern
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: flex-start; */
   align-items: center;
+  margin-inline: auto;
+  text-wrap: pretty;
+  max-width: 30em;
+  text-align: center;
+}
+
+.sh-molecule-section-header + .sh-section__content .sh-section__intro {
+  /* max-width: 30em; */
+}
+
+/* .sh-molecule-section-header + .sh-section__content .sh-atom-button {
+  align-self: center;
+} */
+
+@media only screen and (min-width: 768px) {
+  /* .sh-l-grid__item .sh-molecule-section-header + .sh-section__content {
+    padding: 0 24px;
+  } */
 }
 
 /* @media only screen and (min-width: 768px) {
-  .sh-molecule-section-header + .sh-section__content {
-    text-align: center;
-    align-items: center;
-  }
-} */
-
-.sh-molecule-section-header + .sh-section__content .sh-section__intro {
-  max-width: 30em;
-}
-
-.sh-molecule-section-header + .sh-section__content .sh-atom-button {
-  align-self: center;
-}
-
-@media only screen and (min-width: 768px) {
-  .sh-l-grid__item .sh-molecule-section-header + .sh-section__content {
-    padding: 0 24px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
   .sh-l-grid__item .sh-molecule-section-header {
     padding: 0 24px;
   }
@@ -82,4 +69,4 @@ scss/dollar-variable-pattern
   .sh-org-block > .sh-molecule-section-header {
     padding-top: 24px;
   }
-}
+} */

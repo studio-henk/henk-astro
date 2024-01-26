@@ -1,6 +1,5 @@
 .sh-org-splitscreen {
-  padding: 24px 24px 0px;
-  /* background-color: var(--color-accent15, #fff); */
+  padding: 24px;
   background-color: var(--color-henk-white, #fff);
 }
 .sh-org-splitscreen .sh-l-grid {
