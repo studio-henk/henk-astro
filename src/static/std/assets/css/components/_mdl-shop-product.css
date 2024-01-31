@@ -131,6 +131,7 @@
   /*background-color: var(--color-background-card-product, var(--color-accent2));*/
   background-color: var(--color-background-card-product, #f9f8f6);
   /*flex: 1 1 auto;*/
+  flex: 1 1 auto;
 }
 
 .mdl-shop-product[data-variant="ar-portrait"] .mdl-shop-product__image,
