@@ -18,7 +18,7 @@
 #configurator__price1 {
   position: absolute;
   font-size: 1rem;
-  bottom: 8px;
+  bottom: 24px;
   left: 5%;
   z-index: 1;
 }
@@ -26,8 +26,18 @@
 @media only screen and (min-width: 1024px) {
   #configurator__price1 {
     font-size: 2.25rem;
+    bottom: 32px;
   }
 }
+
+#configurator__note {
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  left: 5%;
+  z-index: 1;
+}
+
 .configurator__controls-row {
   position: absolute;
   bottom: 16px;
@@ -62,11 +72,13 @@
 needed to position content below configurator image on portrait screens
 otherwise it would go under the image.
 */
-.configurator__grid:not(.configurator__grid--is-landscape) .configurator__right-column {
+.configurator__grid:not(.configurator__grid--is-landscape)
+  .configurator__right-column {
   padding-top: calc(var(--size-height-for-configurator, 12rem) + 1rem);
 }
 
-.configurator__grid.configurator__grid--is-landscape .configurator__right-column {
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__right-column {
   padding-top: 2rem;
 }
 
@@ -115,7 +127,8 @@ otherwise it would go under the image.
   width: 50%;
 }
 
-.configurator__grid.configurator__grid--is-landscape .configurator__view--image {
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__view--image {
   /* height: calc(100svh - var(--size-height-for-hero)); */
   position: relative;
 }
@@ -124,7 +137,9 @@ otherwise it would go under the image.
   opacity: 1;
 }
 
-.configurator__grid.configurator__grid--is-landscape .configurator__view--image img {
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__view--image
+  img {
   object-fit: cover;
   aspect-ratio: 16/9;
   position: relative;
@@ -183,7 +198,9 @@ otherwise it would go under the image.
 }
 
 .configurator__right-column .choose-cards__item--image::before {
-  background: transparent url("/static/std/assets/toolkit/svg-standalone/icon-checkmark-white.svg") no-repeat 50%;
+  background: transparent
+    url("/static/std/assets/toolkit/svg-standalone/icon-checkmark-white.svg")
+    no-repeat 50%;
   top: 8px;
   right: 6px;
 }

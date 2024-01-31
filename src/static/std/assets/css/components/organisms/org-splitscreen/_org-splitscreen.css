@@ -8,6 +8,12 @@
   column-gap: 0;
   max-width: none;
 }
+
+.sh-org-splitscreen__header,
+.sh-org-splitscreen__content {
+  padding: 0 24px;
+}
+
 @media only screen and (min-width: 768px) {
   .sh-org-splitscreen .sh-l-grid {
     align-items: center;

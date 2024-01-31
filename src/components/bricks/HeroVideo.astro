@@ -8,6 +8,7 @@ interface Props {
   buttonText?: string;
   url?: string;
   videoSRC: string;
+  text?: string;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   buttonText = "Discover more",
   url = "#",
   videoSRC,
+  text,
 } = Astro.props;
 ---
 
@@ -40,7 +42,11 @@ const {
             </p>
             <p class="hero-video-brick__header-title sh-title">{title}</p>
           </header>
-          <!-- <main class="hero-video-brick__body"></main> -->
+          <main class="hero-video-brick__body">
+            <p class="hero-video-brick__body-intro">
+              {text}
+            </p>
+          </main>
           <footer class="hero-video-brick__footer">
             <!--button type selector -->
             <span

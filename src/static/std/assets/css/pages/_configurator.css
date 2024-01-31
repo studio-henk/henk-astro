@@ -20,7 +20,7 @@
 }
 .configurator__view {
   margin-bottom: 0.5rem;
-  cursor: url("../../toolkit/images/icons/zoom.png"), default;
+  cursor: url("../../assets/toolkit/images/icons/zoom.png"), default;
 }
 @media (min-width: 544px) {
   .configurator__view {
@@ -80,7 +80,7 @@
     margin-top: -4px;
   }
 }
-.configurator .choose-cards__item[data-configuratormaterial=wood] {
+.configurator .choose-cards__item[data-configuratormaterial="wood"] {
   display: none;
 }
 .configurator .steps + .steps {
@@ -154,16 +154,16 @@
 
 /* todo: remove this when new grid is active*/
 /* need to get rid of bootstrap grids that use css flex, floating and overflow hidden all over the place*/
-[data-fix=qf-nils-until-new-grid] .selector {
+[data-fix="qf-nils-until-new-grid"] .selector {
   overflow: revert;
 }
-[data-fix=qf-nils-until-new-grid] .selector .selector__content {
+[data-fix="qf-nils-until-new-grid"] .selector .selector__content {
   float: unset;
   position: relative;
 }
-[data-fix=qf-nils-until-new-grid] .product-configuration {
+[data-fix="qf-nils-until-new-grid"] .product-configuration {
   margin-top: 26px;
 }
-[data-fix=qf-nils-until-new-grid] .product-configuration__title {
+[data-fix="qf-nils-until-new-grid"] .product-configuration__title {
   margin-bottom: 40px;
 }
