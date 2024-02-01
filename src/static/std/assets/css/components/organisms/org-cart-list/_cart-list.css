@@ -58,11 +58,7 @@
 .cart-list .cart-list__list-item-image {
   grid-row: 1 / span 4;
   height: auto;
-  /* background-color: var(--color-accent2); */
-  background-color: var(
-    --color-background-image-cart-list,
-    var(--color-accent2)
-  );
+  background-color: var(--color-accent5, #fff);
 }
 .cart-list .cart-list__list-item-content-title {
   grid-column: 2;

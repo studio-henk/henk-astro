@@ -13,7 +13,7 @@
   position: absolute;
   top: 6px;
   left: 0;
-  background: url("../../toolkit/svg-standalone/icon-checkmark.svg");
+  background: url("../../assets/toolkit/svg-standalone/icon-checkmark.svg");
 }
 
 ul.unstyled,

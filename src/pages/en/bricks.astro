@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import HeroVideo from "../../components/bricks/HeroVideo.astro";
 import SliderBrickVarA from "../../components/bricks/SliderBrickVarA.astro";
 import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
+import SplitscreenBrick2 from "../../components/bricks/SplitscreenBrick2.astro";
 import BlogSlider from "../../components/bricks/BlogSlider.astro";
 import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
 import BlogSlider1 from "../../components/bricks/BlogSlider1.astro";
@@ -40,6 +41,26 @@ import SectionHeader from "../../components/bricks/SectionHeader.astro";
     subtitle="SplitscreenBrick Subtitle"
     intro="SplitscreenBrick Text"
     buttonText="Button text"
+    order="reverse"
+  />
+  <SplitscreenBrick2
+    mediaSrc="/images/bcorp.jpg"
+    mediaUrl="/en/the-form-of-things"
+    title="SplitscreenBrick 2"
+    subtitle="SplitscreenBrick Subtitle"
+    text="SplitscreenBrick Text"
+    buttonText="Button text"
+    buttonUrl="/en/the-form-of-things"
+  />
+  <SplitscreenBrick2
+    mediaSrc="https://assets.studio-henk.nl/assets/Images/slant-campaign/Co.mp4"
+    mediaUrl="/en/the-form-of-things"
+    isVideo={true}
+    title="SplitscreenBrick 2 Order Reversed"
+    subtitle="SplitscreenBrick Subtitle"
+    text="SplitscreenBrick Text"
+    buttonText="Button text"
+    buttonUrl="/en/the-form-of-things"
     order="reverse"
   />
   <BlockquoteBrick
