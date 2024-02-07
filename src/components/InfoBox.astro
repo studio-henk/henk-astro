@@ -1,25 +1,22 @@
 ---
-// import { Icon } from 'astro-icon/components';
-
-import Icon from "./astro/Icon.astro";
-const { title = "Heading here", icon, content = "<p>Lorem ipsum, content here.</p>" } = Astro.props;
+import Icon from "./Icon.astro";
+const {
+  title = "Heading here",
+  icon,
+  content = "<p>Lorem ipsum, content here.</p>",
+  style,
+} = Astro.props;
 ---
-<div
-    class="info-box"
->
-    <div class="component-layout-box">
-        <header class="info-box__header">
-            <p class="info-box__heading">{title}</p>
-            {
-                icon &&
-                <Icon
-                    name={icon}
-                    class="sh-atom-icon__svg"
-                />
-            }
-        </header>
-        <div class="info-box__body" set:html={content}>
 
-        </div>
+<div class="info-box" style={style}>
+  <div class="component-layout-box">
+    <header class="info-box__header">
+      <p class="info-box__heading">{title}</p>
+      {icon && <Icon icon={icon} class="sh-atom-icon__svg" />}
+    </header>
+    <div class="info-box__body" set:html={content} />
+    <div class="info-box__footer">
+      <a href="#" class="sh-atom-button" data-style="outline-dark">button</a>
     </div>
+  </div>
 </div>
