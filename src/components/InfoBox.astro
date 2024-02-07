@@ -1,5 +1,6 @@
 ---
-import Icon from "./Icon.astro";
+import Icon from "../components/astro/Icon.astro";
+
 const {
   title = "Heading here",
   icon,
@@ -12,7 +13,7 @@ const {
   <div class="component-layout-box">
     <header class="info-box__header">
       <p class="info-box__heading">{title}</p>
-      {icon && <Icon icon={icon} class="sh-atom-icon__svg" />}
+      {icon && <Icon class="sh-atom-icon" name="icon-location" />}
     </header>
     <div class="info-box__body" set:html={content} />
     <div class="info-box__footer">
