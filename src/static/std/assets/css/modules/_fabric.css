@@ -17,7 +17,7 @@
 .fabric-module__image {
   position: relative;
   overflow: hidden;
-  cursor: url("../../toolkit/images/icons/zoom.png"), default;
+  cursor: url("/static/std/assets/toolkit/images/icons/zoom.png"), default;
   margin-bottom: 1rem;
 }
 @media (min-width: 544px) {

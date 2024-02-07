@@ -112,7 +112,8 @@
 @media (min-width: 768px) {
   .product-slider__large-image {
     /*cursor: url("../../toolkit/images/icons/zoom.png"), default;*/
-    cursor: url("../../images/icons/zoom.png"), default;
+    /* cursor: url("../../images/icons/zoom.png"), default; */
+    cursor: url("/static/std/assets/toolkit/images/icons/zoom.png"), default;
   }
 }
 .product-slider__large-image.no-cursor {
@@ -142,12 +143,14 @@
 
 .product-slider__prev-btn {
   left: 0;
-  cursor: url("../../images/icons/chevron-left.png"), default;
+  cursor: url("/static/std/assets/toolkit/images/icons/chevron-left.png"),
+    default;
 }
 
 .product-slider__next-btn {
   right: 0;
-  cursor: url("../../images/icons/chevron-right.png"), default;
+  cursor: url("/static/std/assets/toolkit/images/icons/chevron-right.png"),
+    default;
 }
 
 .product-slider__thumbnails {

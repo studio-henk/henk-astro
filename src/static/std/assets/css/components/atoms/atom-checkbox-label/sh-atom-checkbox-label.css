@@ -5,15 +5,15 @@
   min-height: 28px;
 }
 
-.sh-atom-checkbox-label[data-order=reverse] {
+.sh-atom-checkbox-label[data-order="reverse"] {
   flex-direction: row-reverse;
 }
 
-[data-custom-checkbox=true] {
+[data-custom-checkbox="true"] {
   gap: unset;
 }
 
-[data-custom-checkbox=true] .sh-atom-checkbox {
+[data-custom-checkbox="true"] .sh-atom-checkbox {
   width: auto;
   height: auto;
   z-index: 9999;
@@ -25,12 +25,12 @@
   cursor: pointer;
 }
 
-[data-custom-checkbox=true] .sh-atom-label {
+[data-custom-checkbox="true"] .sh-atom-label {
   position: relative;
   padding-left: 1.25rem;
 }
 
-[data-custom-checkbox=true] .sh-atom-label::before {
+[data-custom-checkbox="true"] .sh-atom-label::before {
   content: "";
   width: 8px;
   height: 8px;
@@ -42,12 +42,14 @@
   z-index: 2;
 }
 
-[data-custom-checkbox=true] input[type=checkbox]:checked + .sh-atom-label::before {
+[data-custom-checkbox="true"]
+  input[type="checkbox"]:checked
+  + .sh-atom-label::before {
   display: block;
-  background-image: url(https://www.studio-henk.nl/static/std/assets/toolkit/svg-standalone/icon-checkmark.svg);
+  background-image: url(/static/std/assets/toolkit/svg-standalone/icon-checkmark.svg);
 }
 
-[data-custom-checkbox=true] .sh-atom-label::after {
+[data-custom-checkbox="true"] .sh-atom-label::after {
   background-color: transparent;
   content: "";
   width: 12px;
@@ -59,11 +61,13 @@
   border: 1px solid #000;
 }
 
-[data-custom-checkbox=true][data-variant=circle] .sh-atom-label {
+[data-custom-checkbox="true"][data-variant="circle"] .sh-atom-label {
   padding-left: 1.5rem;
 }
 
-[data-custom-checkbox=true][data-variant=circle] input[type=checkbox]:checked + .sh-atom-label::before {
+[data-custom-checkbox="true"][data-variant="circle"]
+  input[type="checkbox"]:checked
+  + .sh-atom-label::before {
   background-image: none;
   background-color: #000;
   border-radius: 50px;
@@ -72,7 +76,7 @@
   left: 0;
 }
 
-[data-custom-checkbox=true][data-variant=circle] .sh-atom-label::after {
+[data-custom-checkbox="true"][data-variant="circle"] .sh-atom-label::after {
   display: block;
   width: 16px;
   height: 16px;
@@ -86,11 +90,16 @@
   border: 1px solid hsl(0, 0%, 0%);
 }
 
-[data-custom-checkbox=true][data-variant=circle] .sh-atom-label .icon-checkmark {
+[data-custom-checkbox="true"][data-variant="circle"]
+  .sh-atom-label
+  .icon-checkmark {
   display: none;
 }
 
-[data-custom-checkbox=true][data-variant=circle] input[type=checkbox]:checked + .sh-atom-label .icon-checkmark {
+[data-custom-checkbox="true"][data-variant="circle"]
+  input[type="checkbox"]:checked
+  + .sh-atom-label
+  .icon-checkmark {
   background-color: hsla(0, 0%, 0%, 0);
   position: absolute;
   left: 4px;

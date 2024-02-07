@@ -13,10 +13,10 @@ input.input-lg {
   padding: 1rem;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   display: none;
 }
-input[type=checkbox]:checked + label:before {
+input[type="checkbox"]:checked + label:before {
   display: block;
 }
 
@@ -33,7 +33,7 @@ label.checkbox:before {
   position: absolute;
   left: 3px;
   top: 7px;
-  background: url("../../toolkit/svg-standalone/icon-checkmark.svg");
+  background: url("/static/std/assets/toolkit/svg-standalone/icon-checkmark.svg");
   display: none;
   z-index: 2;
 }
@@ -51,10 +51,10 @@ label.checkbox:after {
   cursor: pointer;
 }
 
-input[type=radio] {
+input[type="radio"] {
   display: none;
 }
-input[type=radio]:checked + label:before {
+input[type="radio"]:checked + label:before {
   display: block;
   opacity: 1;
 }
@@ -65,7 +65,8 @@ label.radio {
   position: relative;
   color: rgba(0, 0, 0, 0.88) !important;
 }
-label.radio:before, label.radio:after {
+label.radio:before,
+label.radio:after {
   border-radius: 50%;
 }
 label.radio:before {
@@ -116,7 +117,8 @@ label.radio:after {
   max-width: 75%;
   display: block;
 }
-.basic-input input:focus, .basic-input textarea:focus {
+.basic-input input:focus,
+.basic-input textarea:focus {
   border-bottom: 1px solid rgba(0, 0, 0, 0.88);
 }
 .basic-input textarea {
@@ -198,7 +200,8 @@ input.parsley-error {
   top: 50%;
   transform: translateY(-50%);
   right: 8px;
-  background: #fff url("../../toolkit/svg-standalone/icon-chevron-down.svg") no-repeat center center;
+  background: #fff url("../../toolkit/svg-standalone/icon-chevron-down.svg")
+    no-repeat center center;
   z-index: 2;
   pointer-events: none;
 }
@@ -213,6 +216,6 @@ input.parsley-error {
   pointer-events: none;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   cursor: pointer;
 }
