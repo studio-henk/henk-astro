@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*---
 title: org-social-share
 section: Footer
@@ -21,45 +22,53 @@ Icons for facebook etc, used in footer
     gap: calc(40 / var(--var-global-fontsize-root) * 1rem);
   }*/
 }
+
 @media only screen and (min-width: 768px) {
   .org-social-share {
     justify-content: flex-start;
   }
 }
+
 .org-social-share__title {
   margin: 0;
   padding: 0;
   /*font-size: calc(11 / var(--var-global-fontsize-root) * 1rem);*/
-  font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem);
+  font-size: calc(var(--size-font-13) / var(--size-font-body) * 1rem);
   line-height: 2;
   /*line-height: 1.5; //18/12*/
   /*letter-spacing: 0.1em;*/
 }
+
 @media only screen and (max-width: 767px) {
   .org-social-share__title {
     display: none;
   }
 }
+
 .org-social-share__links {
   margin: 0;
   display: flex;
   align-items: center;
 }
+
 @media only screen and (min-width: 768px) {
   .org-social-share__links {
     margin-left: 0;
   }
 }
+
 .org-social-share__link {
   margin: 0;
   padding: 0;
   color: currentcolor;
   display: inline-flex;
 }
+
 .org-social-share__link svg {
   width: 22px;
   height: 22px;
 }
-.org-social-share__link + .org-social-share__link {
+
+.org-social-share__link+.org-social-share__link {
   margin-left: 13px;
 }

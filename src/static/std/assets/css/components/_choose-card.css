@@ -1,4 +1,4 @@
-.choose-cards * + * {
+.choose-cards *+* {
     margin-top: 0;
 }
 
@@ -16,7 +16,8 @@
     }
 }
 
-.choose-cards *[class^=" col-"], .choose-cards *[class^="col-"] {
+.choose-cards *[class^=" col-"],
+.choose-cards *[class^="col-"] {
     padding: 0;
 }
 
@@ -43,7 +44,7 @@
 
 .choose-cards__item {
     border: 0;
-    zoom: 1;
+    /* zoom: 1; */
     padding: 0 0.25rem;
     align-content: space-between;
     height: auto;
@@ -149,7 +150,8 @@
     border-radius: 100%;
 }
 
-.choose-cards__item--image::after, .choose-cards__item--image::before {
+.choose-cards__item--image::after,
+.choose-cards__item--image::before {
     display: none;
 }
 

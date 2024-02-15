@@ -2,6 +2,7 @@
   position: relative;
   opacity: 0;
   animation: 1s linear 0.3s forwards fadeIn;
+  background-color: var(--color-background-primary);
 }
 
 .hero-brick * {
@@ -15,7 +16,6 @@
 
 .hero-brick video {
   width: 100%;
-  /* height: calc(100svh - var(--size-height-for-hero)); */
   height: 100svh;
   object-fit: cover;
   object-position: center center;
@@ -41,7 +41,8 @@
   align-items: center;
   gap: 12px;
   max-width: 30em;
-  text-wrap: pretty;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .hero-brick__header,
@@ -62,8 +63,7 @@
   text-align: center;
 }
 
-.hero-brick__header-subtitle {
-}
+.hero-brick__header-subtitle {}
 
 .hero-brick .sh-atom-button.--transparent.--anchor-link,
 .hero-brick .sh-atom-button[data-icon-arrow-down="true"] {
@@ -75,9 +75,7 @@
 }
 
 .hero-brick .hero-brick__footer .sh-atom-button[data-icon-arrow-down],
-.hero-video-brick
-  .hero-video-brick__footer
-  .sh-atom-button[data-icon-arrow-down] {
+.hero-video-brick .hero-video-brick__footer .sh-atom-button[data-icon-arrow-down] {
   bottom: 20px;
   left: 50%;
   position: absolute;
@@ -89,6 +87,7 @@
   .hero-brick__content {
     gap: 28px;
   }
+
   .hero-brick__header {
     gap: 12px;
   }

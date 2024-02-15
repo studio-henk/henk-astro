@@ -17,6 +17,7 @@
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
+
 .modal__close {
   z-index: 91081;
   cursor: pointer;
@@ -25,6 +26,7 @@
   right: 1.5rem;
   padding-bottom: 1.5rem;
 }
+
 .modal__close:before {
   content: "ESC";
   position: absolute;
@@ -75,21 +77,23 @@
 
 .modal-backdrop.fade {
   opacity: 0;
-  filter: alpha(opacity=0);
+  /* filter: alpha(opacity=0); */
 }
 
 .modal-backdrop.in {
   opacity: 0.99;
-  filter: alpha(opacity=99);
+  /* filter: alpha(opacity=99); */
 }
 
 .modal-header {
   padding: 0;
 }
+
 .modal-header__title {
   display: block;
   margin-bottom: 0 !important;
 }
+
 .modal-header__subtitle {
   display: block;
   margin: 0;
@@ -108,15 +112,19 @@
   height: auto;
   overflow: hidden;
 }
-.modal-body > img {
+
+.modal-body>img {
   display: block;
   width: 100%;
   height: auto;
 }
+
 .modal-body__form {
   margin-top: 3rem;
 }
-.modal-body .product-slider__prev-btn, .modal-body .product-slider__next-btn {
+
+.modal-body .product-slider__prev-btn,
+.modal-body .product-slider__next-btn {
   width: 50%;
   height: 100%;
   position: absolute;
@@ -142,35 +150,42 @@
     margin: 0 auto;
   }
 }
+
 @media (min-width: 768px) {
   .modal-dialog {
     margin: 1rem auto;
     padding: 1rem 1.5rem 1.5rem 1.5rem;
   }
 }
+
 @media (min-width: 992px) {
   .modal-dialog {
     width: 980px;
   }
+
   .modal-dialog.fabric {
     width: 100%;
   }
 }
+
 @media (min-width: 1366px) {
   .modal-dialog {
     width: 1240px;
   }
 }
+
 @media (min-width: 1920px) {
   .modal-dialog {
     width: 1500px;
   }
 }
+
 @media only screen and (max-width: 768px) {
-  .modal.in > .modal-dialog {
+  .modal.in>.modal-dialog {
     padding: 0;
   }
-  .modal.in > .modal-dialog > .container {
+
+  .modal.in>.modal-dialog>.container {
     padding: 0;
   }
 }

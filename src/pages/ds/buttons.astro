@@ -3,8 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import AtomTag from "../../components/Atoms/AtomTag.astro";
 // import SfChatButton from "@components/third-party/_sf-chatbutton.astro";
 import MobileNavButton from "../../components/MobileNavButton.astro";
-// import NavCard from "../../components/NavCard.astro";
 import Icon from "../../components/astro/Icon.astro";
+import { IconSizes } from "../../../types/iconTypes";
 ---
 
 <BaseLayout title="Buttons">
@@ -41,7 +41,11 @@ import Icon from "../../components/astro/Icon.astro";
     <h2>Arrows - non-animated</h2>
     <div class="example">
       <a href="#" class="sh-atom-button" data-style="filled">
-        <Icon name="icon-arrow-left" width="24" height="24" />
+        <Icon
+          name="icon-arrow-left"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
         button text
       </a>
     </div>
@@ -49,7 +53,11 @@ import Icon from "../../components/astro/Icon.astro";
     <div class="example">
       <a href="#" class="sh-atom-button" data-style="filled"
         >button text
-        <Icon name="icon-arrow-right" width="24" height="24" />
+        <Icon
+          name="icon-arrow-right"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
       </a>
     </div>
     <hr />
@@ -63,13 +71,21 @@ import Icon from "../../components/astro/Icon.astro";
     <div class="example">
       <a href="#" class="sh-atom-button" data-style="filled"
         >button text
-        <Icon name="icon-arrow-right-animated" width="24" height="24" />
+        <Icon
+          name="icon-arrow-right-animated"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
       </a>
     </div>
     <div class="example">
       <a href="#" class="sh-atom-button" data-style="plain"
         >button text
-        <Icon name="icon-arrow-right-animated" width="24" height="24" />
+        <Icon
+          name="icon-arrow-right-animated"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
       </a>
     </div>
     <hr />
@@ -281,12 +297,12 @@ import Icon from "../../components/astro/Icon.astro";
         />
       </div>
       <div class="sh-custom-swiper-button-prev sh-atom-button" data-style="soft" data-shape="circle"  tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-10668aa19d29f10713" aria-disabled="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">&lt;!&ndash;<title>{icon}</title>&ndash;&gt;
+        <svg width={IconSizes.Medium} height={IconSizes.Medium} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">&lt;!&ndash;<title>{icon}</title>&ndash;&gt;
           <path fill-rule="evenodd" clip-rule="evenodd" d="M3.76367 11.5212L10.3481 4.67718L9.69661 4L2.32575 11.6614L2 12L2.32575 12.3386L9.69661 20L10.3481 19.3228L3.76367 12.4788H21.5393H22V11.5212H21.5393H3.76367Z"></path>
         </svg>
       </div>
       <div class="sh-custom-swiper-button-next sh-atom-button" data-style="soft" data-shape="circle" data-size="large" data-icon-arrow-right="true" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-e541b13cbfe10625d" aria-disabled="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">
+        <svg width={IconSizes.Medium} height={IconSizes.Medium} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">
           <g id="icon-arrow-right-nav-next">
             <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M20.2363 12.4788L13.6519 19.3228L14.3034 20L21.6743 12.3386L22 12L21.6743 11.6614L14.3034 4L13.6519 4.67718L20.2363 11.5212L2.46068 11.5212H2V12.4788H2.46068L20.2363 12.4788Z"></path>
           </g>
@@ -313,8 +329,8 @@ import Icon from "../../components/astro/Icon.astro";
       >
         <Icon
           class="sh-atom-icon"
-          width="16"
-          height="16"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
           name="icon-trashcan"
         />
       </a>
@@ -328,8 +344,8 @@ import Icon from "../../components/astro/Icon.astro";
       >
         <Icon
           class="sh-atom-icon"
-          width="16"
-          height="16"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
           name="icon-trashcan"
         />
       </a>

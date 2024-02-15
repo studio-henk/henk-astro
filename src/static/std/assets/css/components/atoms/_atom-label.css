@@ -24,11 +24,11 @@
 }
 
 /* label effect */
-.atom-input-txt:focus + .atom-label[data-style="labels-as-placeholders"],
-.molecule-input-label > .iti + .atom-label[data-style="labels-as-placeholders"],
-.atom-input-txt:placeholder-shown:not([placeholder=" "]) + .atom-label[data-style="labels-as-placeholders"],
-.atom-input-txt:not(:placeholder-shown) + .atom-label[data-style="labels-as-placeholders"],
-.atom-select + .atom-label[data-style="labels-as-placeholders"] {
+.atom-input-txt:focus+.atom-label[data-style="labels-as-placeholders"],
+.molecule-input-label>.iti+.atom-label[data-style="labels-as-placeholders"],
+.atom-input-txt:placeholder-shown:not([placeholder=" "])+.atom-label[data-style="labels-as-placeholders"],
+.atom-input-txt:not(:placeholder-shown)+.atom-label[data-style="labels-as-placeholders"],
+.atom-select+.atom-label[data-style="labels-as-placeholders"] {
     top: -10px;
     font-size: 12px;
     background-color: var(--color-background-input, var(--color-background-form, #fff));
@@ -40,10 +40,10 @@
 }
 
 /* label effect */
-.atom-input-txt:focus + .atom-label[data-style="labels-as-placeholders"]::before,
-.atom-input-txt:placeholder-shown:not([placeholder=" "]) + .atom-label[data-style="labels-as-placeholders"]::before,
-.atom-input-txt:not(:placeholder-shown) + .atom-label[data-style="labels-as-placeholders"]::before,
-.atom-select + .atom-label[data-style="labels-as-placeholders"]::before {
+.atom-input-txt:focus+.atom-label[data-style="labels-as-placeholders"]::before,
+.atom-input-txt:placeholder-shown:not([placeholder=" "])+.atom-label[data-style="labels-as-placeholders"]::before,
+.atom-input-txt:not(:placeholder-shown)+.atom-label[data-style="labels-as-placeholders"]::before,
+.atom-select+.atom-label[data-style="labels-as-placeholders"]::before {
     content: " ";
 
     /* background-color: var(--color-background-input); */
@@ -78,7 +78,7 @@
 } */
 
 /* has placeholder attr with just a space and not shown */
-.atom-input-txt[placeholder=" "]:not(:placeholder-shown) + .atom-label[data-style="labels-as-placeholders"] {
+.atom-input-txt[placeholder=" "]:not(:placeholder-shown)+.atom-label[data-style="labels-as-placeholders"] {
     /* border: 1px solid lawngreen; */
 }
 
@@ -90,7 +90,7 @@
 }
 
 /* when invalid show error msg after label */
-[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label:not([data-style="labels-as-placeholders"])::before {
+[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid+.atom-label:not([data-style="labels-as-placeholders"])::before {
     content: attr(title);
     position: absolute;
     left: 0;
@@ -101,14 +101,14 @@
 }
 
 @media only screen and (max-width: 303px) {
-    [data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid + .atom-label::before {
+    [data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown):invalid+.atom-label::before {
         /* font-size: 11px; */
-        font-size: calc(var(--size-font-12) / var(--size-font-body) * 1em);
+        font-size: calc(var(--size-font-13) / var(--size-font-body) * 1em);
     }
 }
 
 /* show checkmark when valid */
-[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown, :focus):valid + .atom-label:not([data-style="labels-as-placeholders"])::before {
+[data-use-css-validation="true"] .atom-input-txt:not(:placeholder-shown, :focus):valid+.atom-label:not([data-style="labels-as-placeholders"])::before {
     content: "✅";
     position: absolute;
     right: 8px;
@@ -121,6 +121,6 @@
     width: max-content;
 } */
 
-.atom-checkbox + .atom-label {
+.atom-checkbox+.atom-label {
     color: var(--color-black, #000);
 }

@@ -1,0 +1,43 @@
+---
+import Icon from "./Icon.astro";
+
+export interface Props {
+  title?: string;
+  titleWeight?: "400" | "500";
+  titleStyle?: "normal" | "italic";
+  content?: string;
+  id?: string;
+  showGrid?: boolean;
+  showBaseline?: boolean;
+}
+
+const {
+  title = "Heading here",
+  titleWeight = "400",
+  titleStyle = "normal",
+  content,
+  id,
+  showGrid,
+  showBaseline,
+} = Astro.props;
+---
+
+<div class="content-block" id={id}>
+  <div class="content-block__container">
+    <div class="content-block__layout">
+      <div class="content-block__header">
+        <h2
+          class={`content-block__heading ${
+            titleWeight ? "fw-" + titleWeight : ""
+          } ${titleStyle === "italic" ? "fstyle-italic" : ""}`}
+        >
+          {title}
+        </h2>
+      </div>
+
+      <div class="content-block__content">
+        <slot name="content" />
+      </div>
+    </div>
+  </div>
+</div>

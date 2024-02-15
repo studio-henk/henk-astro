@@ -1,8 +1,9 @@
 /* variables that control base settings */
-:root,
+/* :root,
 ::before,
 ::after,
-::selection {
+::selection { */
+:root {
   --font-body: "Haas Grot Text R Web";
   /*--font-body: "ff-scala-sans-pro";*/
   /* colors */
@@ -18,10 +19,10 @@
   --size-horizontal-rhythm: 1;
   /* buttons */
   /*--color-background-button: var(--color-white);
-
+  
   // foreground ie text
   --color-text-button: var(--color-henk-black);
-
+  
   // border
   --color-border-button: var(--color-henk-black);*/
   /* button background-color */
@@ -44,10 +45,12 @@
   --size-font-body: 16;
   --size-font-lineheight-body: 24;
   --size-font-letterspacing-body: 0;
+
   /* h1 */
-  --size-font-h1: var(--size-font-32);
+  /* --size-font-h1: var(--size-font-32);
   --size-font-h2: var(--size-font-24);
   --size-font-h3: var(--size-font-20);
   --size-font-h4: var(--size-font-16);
   --size-font-h5: var(--size-font-16);
-  --size-font-h6: var(--size-font-16); }
+  --size-font-h6: var(--size-font-16); */
+}

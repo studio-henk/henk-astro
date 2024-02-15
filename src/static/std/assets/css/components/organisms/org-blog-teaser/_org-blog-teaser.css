@@ -35,15 +35,12 @@
     gap: 32px;
   }
 }
+
 .sh-org-blog-teaser .sh-org-blog-teaser__grid-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: auto;
-}
-
-.sh-org-blog-teaser .sh-org-blog-teaser__post-title {
-  font-weight: 500;
 }
 
 .sh-org-blog-teaser .blog-swiper,
@@ -52,6 +49,7 @@
 }
 
 @media only screen and (min-width: 768px) {
+
   .sh-org-blog-teaser .blog-swiper,
   .sh-org-blog-teaser .swiper {
     padding: 0 0 24px 24px !important;
@@ -62,6 +60,7 @@
   padding-top: 0 !important;
   padding-left: 0 !important;
 }
+
 .sh-org-blog-teaser .sh-org-blog-teaser__image {
   border-radius: 0;
 }

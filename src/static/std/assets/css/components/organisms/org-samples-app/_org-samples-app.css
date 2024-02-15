@@ -71,6 +71,11 @@ img.sh-atom-sample {
   font-size: 0.75rem;
   line-height: 20px;
 }
+
+.sh-org-samples__header {
+  padding: 32px clamp(16px, 4.69vw, 48px);
+}
+
 .sh-org-samples__grid .samples__canvas {
   background-color: var(--color-henk-white, #f00);
 }
@@ -100,8 +105,8 @@ img.sh-atom-sample {
 
 .cart__title {
   display: none;
-  font-size: 1.6875rem;
-  line-height: 41px;
+  /* font-size: 1.6875rem; */
+  /* line-height: 41px; */
   /* letter-spacing: 0.07em; */
   margin: 16px 0 32px 16px;
 }
@@ -390,15 +395,16 @@ main.sh-l-page-main .sample__quickshop__content ul,
 @media only screen and (min-width: 768px) {
   .samples__cart {
     width: 375px;
-    height: 100vh;
+    /* height: 100vh; */
+    height: calc(100vh - var(--total-bars-height));
     justify-self: flex-end;
     align-self: flex-start;
-    top: 65px;
+    top: var(--total-bars-height);
     bottom: auto;
     grid-row: 1/3;
   }
   .samples__cart .cart__content {
-    min-height: 88vh;
+    min-height: 84vh;
     max-height: 90vh;
     display: flex;
     flex-direction: column;

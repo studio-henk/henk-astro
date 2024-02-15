@@ -5,7 +5,7 @@
 @import "_config.css";
 @import "base/_base.css";
 @import "base/_base-typography-headings.css";
-@import "base/_base-typography-sizes.css";
+/* @import "base/_base-typography-sizes.css"; */
 
 /* utils */
 @import "utils/modifiers.css";
@@ -76,7 +76,7 @@
 @import "components/bricks/quoteBrick/quote-brick.css";
 @import "components/bricks/shop-product-row/shop-product-row-brick.css";
 /*TODO: check this, is this for pimcore brickV2?*/
-@import "components/bricks/hero-brick-v2/hero-brick-v2.css";
+/* @import "components/bricks/hero-brick-v2/hero-brick-v2.css"; */
 
 @import "components/molecules/molecule-l-button-group/_molecule-l-button-group.css";
 @import "components/molecules/sh-molecule-section-header/_sh-molecule-section-header.css";

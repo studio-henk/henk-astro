@@ -17,7 +17,6 @@
   border: 1px solid var(--color-border-button, #fff);
   border-radius: 32px;
   transition: all 0.6s ease;
-  /* in case of an icon */
   gap: 0.5em;
 }
 
@@ -116,13 +115,11 @@
   /* 12px */
   font-size: 0.75rem;
   line-height: 1.5;
-  /*padding: 6px 24px;*/
 }
 
 .sh-atom-button[data-style*="plain"][data-size="small"] {
   /* 12px */
   font-size: 0.75rem;
-  /*line-height: 20px;*/
 }
 
 .sh-atom-button[data-text-underline="true"] {
@@ -135,7 +132,6 @@
 .sh-atom-button:disabled,
 .sh-atom-button[data-disabled="true"] {
   opacity: 0.5;
-  /* pointer-events: none; */
 }
 
 .sh-atom-button:disabled:hover,
@@ -156,24 +152,16 @@
   color: currentcolor;
 }
 
-/*.sh-atom-button[data-icon-arrow-left="true"],
-.sh-atom-button[data-icon-arrow-right="true"] {
-  gap: 8px;
-}*/
-/*.sh-atom-button[data-icon-arrow-left="true"]:not([data-style*="plain"]) {
-  padding-left: 14px;
-}*/
-/*.sh-atom-button[data-icon-arrow-right="true"]:not([data-style*="plain"]) {
-  padding-right: 14px;
-}*/
 /* other icons */
+
+/* TODO: remove */
+
 .sh-atom-button .icon-frame {
   margin-left: 0.4706em;
 }
 
 .sh-atom-button[data-icon-arrow-left="true"] .icon-frame,
 .sh-atom-button[data-icon-arrow-right="true"] .icon-frame {
-  /* padding: 2px 0 0 0; */
   padding: 0;
   width: 20px;
   margin: 0;
@@ -228,30 +216,6 @@
   text-decoration: none;
 }
 
-/* high res */
-@media (min-resolution: 2dppx) {
-  .sh-atom-button {
-    /*border-width: 0.5px;*/
-  }
-  .sh-atom-button[data-text-underline="true"] {
-    /*text-decoration-thickness: 0.5px;*/
-  }
-  .sh-atom-button[data-text-underline="true"],
-  .sh-atom-button[data-style*="plain"]:not([data-animated-hover]):hover {
-    /*text-decoration-thickness: 0.5px;*/
-  }
-  .sh-atom-button[data-style*="plain"][data-animated-hover]::before {
-    /*height: 0.5px;*/
-  }
-}
-/* video sound buttons */
-/* .sh-atom-button[data-state="muted"] .unmuted {
-  display: none;
-}
-
-sh-atom-button[data-state="unmuted"] .muted {
-  display: none;
-} */
 .sh-atom-button-icon[data-state="muted"] .sound-on {
   display: none !important;
 }
@@ -308,11 +272,6 @@ sh-atom-button[data-state="unmuted"] .muted {
   padding: 0.5833333333em;
 }
 
-.sh-atom-button__separator,
-.org-addtocart-console__separator {
-  /*font-size: 28px;*/
-}
-
 /* shapes */
 /* toolbar */
 .sh-atom-button[data-shape*="toolbar"] {
@@ -324,4 +283,17 @@ svg#iconArrowLeft,
 svg#iconArrowRight {
   position: relative;
   top: 1px;
+}
+
+#icon-arrow-right-animated #line,
+#icon-arrow-right-animated #head {
+  transition: transform 0.2s ease;
+}
+
+.sh-atom-button:hover #icon-arrow-right-animated #line {
+  transform: scaleX(1.7);
+}
+
+.sh-atom-button:hover #icon-arrow-right-animated #head {
+  transform: translateX(10px);
 }

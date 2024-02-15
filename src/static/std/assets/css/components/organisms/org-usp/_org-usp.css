@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .sh-org-usp {
   background-color: var(--color-accent7, #ccc);
   color: var(--color-henk-black);
@@ -8,17 +9,21 @@
   row-gap: 4.25rem;
   padding: 64px 0;
 }
+
 .sh-org-usp * {
   margin: 0;
 }
+
 .sh-org-usp__container {
   margin: 0 auto;
   display: grid;
   row-gap: 8px;
 }
+
 .sh-org-usp__container * {
   text-align: center;
 }
+
 @media only screen and (min-width: 768px) {
   .sh-org-usp__container {
     row-gap: 8px;
@@ -27,9 +32,9 @@
 
 .sh-org-usp__title {
   text-align: center;
-  font-weight: 500;
-  font-size: clamp(1.125rem, 2.75vw, 1.5rem);
-  line-height: clamp(32px, 2.75vw, 40px);
+  /* font-weight: 500; */
+  /* font-size: clamp(1.125rem, 2.75vw, 1.5rem);
+  line-height: clamp(32px, 2.75vw, 40px); */
 }
 
 @media only screen and (min-width: 992px) {
@@ -66,7 +71,7 @@ Brick with grid with 3 columns containing editable for:
 .sh-org-usp-v2 .brick__grid .brick__grid-item {
   margin: 0 auto;
   max-width: 20em;
-  text-wrap: pretty;
+  text-wrap: balance;
   display: flex;
   flex-direction: column;
   gap: 24px;

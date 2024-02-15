@@ -3,7 +3,7 @@ selector-class-pattern,
 custom-property-pattern,
 scss/dollar-variable-pattern
 */
-.sh-molecule-section-header * + * {
+.sh-molecule-section-header *+* {
   margin-top: 0;
 }
 
@@ -14,7 +14,7 @@ scss/dollar-variable-pattern
   align-items: center;
   max-width: 30em;
   margin-inline: auto;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .sh-molecule-section-header .sh-molecule-section-header__subtitle {
@@ -35,18 +35,18 @@ scss/dollar-variable-pattern
   flex-direction: column-reverse;
 }
 
-.sh-molecule-section-header + .sh-section__content {
+.sh-molecule-section-header+.sh-section__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-inline: auto;
-  text-wrap: pretty;
+  text-wrap: balance;
   max-width: 30em;
   text-align: center;
 }
 
-.sh-molecule-section-header + .sh-section__content .sh-section__intro {
+.sh-molecule-section-header+.sh-section__content .sh-section__intro {
   /* max-width: 30em; */
 }
 

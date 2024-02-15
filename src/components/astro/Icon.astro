@@ -1,11 +1,12 @@
 ---
-import { IconSizes, SvgStructure } from "types/iconTypes";
+import { IconSizes, SvgStructure } from "../../../types/iconTypes";
 import { parse } from "node-html-parser";
 
 export interface Props {
   name: string;
   width?: IconSizes;
   height?: IconSizes;
+  class?: string;
 }
 
 function getSVG(name: string): SvgStructure {
@@ -23,12 +24,24 @@ function getSVG(name: string): SvgStructure {
   const root = parse(files[filepath]);
 
   const svg = root.querySelector("svg");
-  const { attributes, innerHTML } = svg;
 
-  return {
-    attributes,
-    innerHTML,
-  };
+  if (svg !== null) {
+    const { attributes, innerHTML } = svg;
+
+    // Rest of your code that uses attributes and innerHTML
+
+    return {
+      attributes,
+      innerHTML,
+    };
+  } else {
+    console.log("svg is null");
+    // Handle the case where svg is null, maybe throw an error or provide a default value
+    return {
+      attributes: {}, // Example default value for attributes
+      innerHTML: "", // Example default value for innerHTML
+    };
+  }
 }
 
 const { name, ...attributes } = Astro.props as Props;
@@ -45,6 +58,4 @@ const strippedInnerHTML = removeFillFromPathElements(innerHTML);
 const svgAttributes = { ...baseAttributes, ...attributes };
 ---
 
-<svg {...svgAttributes} set:html={strippedInnerHTML} aria-hidden="true">
-  <!--<title>{icon}</title>-->
-</svg>
+<svg {...svgAttributes} set:html={strippedInnerHTML} aria-hidden="true" />

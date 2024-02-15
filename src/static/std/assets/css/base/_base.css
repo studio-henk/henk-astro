@@ -16,7 +16,7 @@
 
 ::selection {
   color: currentColor;
-  background-color: var(--color-accent5, beige);
+  background-color: var(--color-accent5, pink);
 }
 
 html {
@@ -28,28 +28,29 @@ html {
   font-family: var(--font-body, sans-serif), sans-serif;
   font-size: 100%;
   font-feature-settings: "pnum" on, "lnum" on;
-  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--total-bars-height, 80px);
+}
+
+@supports (-webkit-font-smoothing: antialiased) {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
 :root {
-  --total-bars-height: calc(
-    var(--NavBarHeight-mobile, 80px) + var(--MsgBarHeight, 0px)
-  );
+  --total-bars-height: calc(var(--NavBarHeight-mobile, 80px) + var(--MsgBarHeight, 0px));
 }
 
 @media only screen and (min-width: 1024px) {
   :root {
-    --total-bars-height: calc(
-      var(--NavBarHeight-desktop, 80px) + var(--MsgBarHeight, 0px)
-    );
+    --total-bars-height: calc(var(--NavBarHeight-desktop, 80px) + var(--MsgBarHeight, 0px));
   }
 }
 
 body {
   background-color: var(--color-background-page, #fff);
   color: var(--color-text-page, #000);
-  margin: 0;
-  /*padding: var(--paddingTopMobile, 0) 0 0 0;*/
   padding: var(--total-bars-height, 80px) 0 0 0;
   font-family: var(--font-body, sans-serif), sans-serif;
   font-weight: 400;
@@ -60,21 +61,33 @@ body {
   padding: 0;
 }
 
-@media only screen and (min-width: 1280px) {
-  /*body {
-        padding: var(--total-bars-height, 80px) 0 0 0;
-    }*/
-}
-
 strong {
   font-weight: 500;
 }
 
+/* weights */
+.fw-normal,
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+/* italic */
+.fstyle-italic {
+  font-style: italic;
+}
+
+
+
 /* all font sizes as classes */
-.size-font-12 {
+/* .size-font-12 {
   font-size: calc(12 / var(--size-font-body) * 1em);
   line-height: calc(24 / 12);
 }
+
 .size-font-14 {
   font-size: calc(14 / var(--size-font-body) * 1em);
   line-height: calc(24 / 14);
@@ -113,7 +126,7 @@ strong {
 .size-font-42 {
   font-size: calc(42 / var(--size-font-body) * 1em);
   line-height: calc(64 / 42);
-}
+} */
 
 /*Description
 @name: link
@@ -193,8 +206,8 @@ ol {
 }
 
 /*2nd level*/
-li > ul,
-li > ol {
+li>ul,
+li>ol {
   margin-top: 0;
 }
 
@@ -205,7 +218,11 @@ li > ol {
 
 /*def list*/
 dt {
-  font-weight: 400;
+  font-weight: 500;
+}
+
+dd {
+  margin-bottom: 1.5rem;
 }
 
 figure {
@@ -216,6 +233,6 @@ figure img {
   display: block;
 }
 
-figure img + figcaption {
+figure img+figcaption {
   text-align: left;
 }

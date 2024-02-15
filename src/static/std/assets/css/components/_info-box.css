@@ -1,8 +1,8 @@
 .info-box {
-  --color-background-component-bgbox: var(--color-accent1);
+  --color-background-component-bgbox: var(--color-henk-white);
   --color-text-component-bgbox: var(--color-henk-black);
   border-radius: 0.70588235rem;
-  background-color: var(--color-background-component-bgbox, #f3f1ec);
+  background-color: var(--color-background-component-bgbox, #fff);
   color: var(--color-text-component-bgbox, #000);
   padding: 1.5em;
 }
@@ -37,8 +37,7 @@
   height: 28px;
 }
 
-.info-box__body {
-}
+.info-box__body {}
 
 .info-box__body * {
   margin: 0;

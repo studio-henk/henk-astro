@@ -1,14 +1,16 @@
 .org-nav-list-links .org-nav-list-links__heading {
-  font-size: calc(var(--size-font-12) / var(--size-font-body) * 1rem);
+  font-size: calc(var(--size-font-13) / var(--size-font-body) * 1rem);
   line-height: 2;
   /*font-weight: 400;*/
   /*text-transform: uppercase;
   letter-spacing: 0.2em;*/
   margin: 0;
 }
+
 .org-nav-list-links a {
   display: block;
 }
+
 .org-nav-list-links a:hover,
 .org-nav-list-links a:focus {
   text-decoration-line: underline;

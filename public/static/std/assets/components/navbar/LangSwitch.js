@@ -1,6 +1,6 @@
 /* TODO: browser history support?
-*   checkbox status is cached and shows wrong option checked after user clicked 'back' button
-* */
+ *   checkbox status is cached and shows wrong option checked after user clicked 'back' button
+ * */
 const template = document.createElement("template");
 template.innerHTML = `
   <style>
@@ -27,7 +27,7 @@ template.innerHTML = `
         width: 12px;
         height: 12px;
         display: block;
-        background-color: var(--color-accent19, #000);
+        background-color: var(--color-henk-black, #000);
         border-radius: 50%;
         transition: transform .3s ease;
     }
@@ -61,7 +61,7 @@ template.innerHTML = `
 
 class LangSwitch extends HTMLElement {
   static get observedAttributes() {
-    return ['lang', 'data-url'];
+    return ["lang", "data-url"];
   }
 
   constructor() {
@@ -80,11 +80,11 @@ class LangSwitch extends HTMLElement {
   }
 
   set lang(value) {
-      this.setAttribute('lang', value);
+    this.setAttribute("lang", value);
   }
 
   get lang() {
-    return this.getAttribute('lang');
+    return this.getAttribute("lang");
   }
 
   attributeChangedCallback(attrName, oldValue, newValue) {
@@ -98,9 +98,9 @@ class LangSwitch extends HTMLElement {
   handleClickEvent(e) {
     e.preventDefault();
     if (this.lang === "nl") {
-      this.lang = "en"
+      this.lang = "en";
     } else {
-      this.lang = "nl"
+      this.lang = "nl";
     }
   }
 }

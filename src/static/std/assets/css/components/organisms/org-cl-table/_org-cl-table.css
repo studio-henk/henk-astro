@@ -1,9 +1,11 @@
 .cl-table {
   width: 100%;
 }
+
 .cl-table caption {
   text-align: left;
 }
+
 .cl-table th {
   text-align: left;
   border-bottom: 1px solid #d3d3d3;
@@ -13,10 +15,12 @@
   padding: 30px 8px 10px 0;
   font-weight: 400;
 }
-.cl-table tr + tr td {
+
+.cl-table tr+tr td {
   border-top: 1px solid #d3d3d3;
 }
-.cl-table + .cl-table {
+
+.cl-table+.cl-table {
   margin-top: 3rem;
 }
 
@@ -30,7 +34,7 @@ td[data-alignment=align-right] {
 td[data-alignment=align-number] {
   font-family: monospace, monospace;
   white-space: nowrap;
-  font-size: calc(var(--size-font-14) / 16 * 1em);
+  font-size: calc(var(--size-font-13) / 16 * 1em);
   min-width: 12ch;
   width: 12ch;
 }
@@ -48,6 +52,7 @@ td[data-alignment=align-left] {
 tr .v-align {
   line-height: 54px;
 }
-tr .v-align > * {
+
+tr .v-align>* {
   vertical-align: middle;
 }
