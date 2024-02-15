@@ -5,6 +5,7 @@ export interface Props {
   title?: string;
   titleWeight?: "400" | "500";
   titleStyle?: "normal" | "italic";
+  smallText?: string;
   content?: string;
   id?: string;
   showGrid?: boolean;
@@ -15,6 +16,7 @@ const {
   title = "Heading here",
   titleWeight = "400",
   titleStyle = "normal",
+  smallText,
   content,
   id,
   showGrid,
@@ -33,6 +35,13 @@ const {
         >
           {title}
         </h2>
+        <Fragment set:html={smallText} class="fs-x-small" />
+        <!-- <p class="fs-x-small">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, fuga
+          ducimus maiores expedita reiciendis consequuntur inventore numquam ex
+          amet natus, provident nobis ipsa aliquam modi voluptates dicta,
+          deleniti voluptatibus cupiditate!
+        </p> -->
       </div>
 
       <div class="content-block__content">
