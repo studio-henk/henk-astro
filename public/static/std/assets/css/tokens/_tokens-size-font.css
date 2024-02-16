@@ -51,9 +51,9 @@
   --size-font-heading-4-min: var(--size-font-16);
   --size-font-heading-4-max: var(--size-font-20);
   --size-font-heading-5-min: var(--size-font-16);
-  --size-font-heading-5-max: var(--size-font-20);
+  --size-font-heading-5-max: var(--size-font-16);
   --size-font-heading-6-min: var(--size-font-16);
-  --size-font-heading-6-max: var(--size-font-20);
+  --size-font-heading-6-max: var(--size-font-16);
 
   /* target screen where font-size reaches the max */
   --size-screen-target: 1728;

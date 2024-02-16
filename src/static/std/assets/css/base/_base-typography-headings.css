@@ -90,7 +90,7 @@ h6,
 
 .fs-small {
   font-size: calc(var(--size-font-small) / var(--size-font-body) * 1rem);
-  line-height: calc(16/13);
+  line-height: calc(20/13);
 }
 
 .fs-x-small {

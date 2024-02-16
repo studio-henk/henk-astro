@@ -25,7 +25,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </ContentBlock>
   <ContentBlock
     title="Typescale Roman"
-    smallText="<p class='fs-x-small'>The HENK Typescale is founded upon a body text size of 16px, accompanied by a line-height of 24px (1.5 multiplier). Employing the <strong>Major Third as a modular scale</strong> (Scale 1.25), the Typescale encompasses a total of 8 font sizes.</p><p class='fs-x-small'>The concept of a modular scale in typography has deep historical roots and was eloquently explored by <strong>Robert Bringhurst</strong> in his seminal work, <em>'The Elements of Typographic Style.'</em></p><p class='fs-x-small'>In the realm of web design, Tim Brown has played a pivotal role in advancing this idea into practical application. His groundbreaking article marked the inception of utilizing modular scales in production, underscoring their relevance and impact in contemporary design practices. See his <a href='https://alistapart.com/article/more-meaningful-typography' target='_blank'>article that started it all</a>, or <a href='https://vimeo.com/17079380' target='_blank'>watch his event talk</a>.</p>"
+    smallText="<p class='fs-small ta-justify'>The HENK Typescale is founded upon a body text size of 16px, accompanied by a line-height of 24px (1.5 multiplier). Employing the <strong>Major Third as a modular scale</strong> (Scale 1.25), the Typescale encompasses a total of 8 font sizes.</p><p class='fs-small ta-justify'>The concept of a modular scale in typography has deep historical roots and was eloquently explored by <strong>Robert Bringhurst</strong> in his seminal work, <em>'The Elements of Typographic Style.'</em></p><p class='fs-small ta-justify'>In the realm of web design, Tim Brown has played a pivotal role in advancing this idea into practical application. His groundbreaking article marked the inception of utilizing modular scales in production, underscoring their relevance and impact in contemporary design practices. See his <a href='https://alistapart.com/article/more-meaningful-typography' target='_blank'>article that started it all</a>, or <a href='https://vimeo.com/17079380' target='_blank'>watch his event talk</a>.</p>"
   >
     <p
       class="fs-xxx-large baseline-8"
@@ -67,15 +67,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       The quick brown fox<br /> jumps over the lazy dog
     </p>
     <p
-      class="fs-small baseline-8"
+      class="fs-small baseline-4"
       slot="content"
-      title="13px, line-height: 16px"
+      title="13px, line-height: 20px"
       style="background-position-y: 6px;"
     >
       The quick brown fox<br /> jumps over the lazy dog
     </p>
     <p
-      class="fs-x-small baseline-8"
+      class="fs-x-small baseline-4"
       slot="content"
       title="10px, line-height: 16px"
       style="background-position-y: 4px;"
@@ -124,14 +124,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       The quick brown fox<br /> jumps over the lazy dog
     </p>
     <p
-      class="fs-small baseline-8 fw-500"
+      class="fs-small baseline-4 fw-500"
       slot="content"
       style="background-position-y: 6px;"
     >
       The quick brown fox<br /> jumps over the lazy dog
     </p>
     <p
-      class="fs-x-small baseline-8 fw-500"
+      class="fs-x-small baseline-4 fw-500"
       slot="content"
       style="background-position-y: 4px;"
     >
@@ -178,14 +178,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       The quick brown fox<br /> jumps over the lazy dog
     </p>
     <p
-      class="fs-small fstyle-italic baseline-8"
+      class="fs-small fstyle-italic baseline-4"
       slot="content"
       style="background-position-y: 6px;"
     >
       The quick brown fox<br /> jumps over the lazy dog
     </p>
     <p
-      class="fs-x-small fstyle-italic baseline-8"
+      class="fs-x-small fstyle-italic baseline-4"
       slot="content"
       style="background-position-y: 4px;"
     >
@@ -201,7 +201,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </ContentBlock>
   <ContentBlock
     title="Headings"
-    smallText="<p class='fs-x-small'>Headings follow the same modular scale of 1.25 up until h4.</p><p class='fs-x-small'>H5 and h6 headings currently have no distinction but could have style differences like bolder or italic. Up for debate.</p><p class='fs-x-small'>On mobile only the h1 and h2 are larger than the body text size. H3 has a font weight of medium.</p>"
+    smallText="<p class='fs-small'>Headings follow the same modular scale of 1.25 up until h4.</p><p class='fs-small'>H5 and h6 headings currently have no distinction but could have style differences like bolder or italic. Up for debate.</p><p class='fs-small'>On mobile only the h1 and h2 are larger than the body text size. H3 has a font weight of medium.</p>"
   >
     <h1 slot="content">Heading 1</h1>
     <h2 slot="content">Heading 2</h2>
@@ -258,5 +258,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     line-height: 1;
     bottom: -16px;
     width: max-content;
+  }
+
+  .ta-justify {
+    text-align: justify;
+    hyphens: auto;
+    text-justify: inter-word;
   }
 </style>
