@@ -37,6 +37,15 @@ const primaryNavJSON = JSON.stringify(primaryNav);
 // const {hasHero} = Astro.props;
 ---
 
+<!-- <script define:vars={{title}}>
+  alert(title);
+<script> -->
+<script is:inline define:vars={{ primaryNavJSON }}>
+  // window.navDataObject = primaryNavJSON;
+  window.navDataObject = JSON.parse(primaryNavJSON);
+  // console.log(window.navDataObject);
+</script>
+
 <script is:inline src="/static/std/assets/js/vue.global.prod.min.js"></script>
 
 <!-- swiper -->
@@ -54,10 +63,19 @@ const primaryNavJSON = JSON.stringify(primaryNav);
 ></script>
 
 <script
-  src="/static/std/assets/components/NavBar/NavBar2.js"
+  src="/static/std/assets/components/NavBar/NavBarDesktop.js"
+  type="module"
+  defer
+></script>
+<script
+  src="/static/std/assets/components/NavBar/NavBarMobile.js"
   type="module"
   defer
 ></script>
 
 <script src="/static/std/assets/components/NavBar/LangSwitchAction.js" defer
+></script>
+<script
+  src="/static/std/assets/js/web-components/HamburgerButton.js"
+  type="module"
 ></script>

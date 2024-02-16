@@ -4,7 +4,7 @@ import HeroBrick from "../../components/bricks/HeroBrick.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Type">
+<BaseLayout title="Type" hasHero="true" Theme="dark">
   <HeroBrick
     title="Type"
     text="<p>HENK uses Neue Haas Grotesk. Re-designed by Christian Schwartz, based on original Helvetica.</p>"
@@ -37,8 +37,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <p
       class="fs-xx-large baseline-8"
       slot="content"
-      title="31px, line-height: 32px"
-      style="background-position-y: 4px;"
+      title="31px, line-height: 40px"
+      style="background-position-y: 0px;"
     >
       The quick brown fox<br /> jumps over the lazy dog
     </p>
@@ -98,7 +98,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <p
       class="fs-xx-large baseline-8 fw-500"
       slot="content"
-      style="background-position-y: 4px;"
+      style="background-position-y: 0px;"
     >
       The quick brown fox<br /> jumps over the lazy dog
     </p>
@@ -152,7 +152,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <p
       class="fs-xx-large fstyle-italic baseline-8"
       slot="content"
-      style="background-position-y: 4px;"
+      style="background-position-y: 0px;"
     >
       The quick brown fox<br /> jumps over the lazy dog
     </p>
@@ -199,7 +199,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       The quick brown fox<br /> jumps over the lazy dog
     </p>
   </ContentBlock>
-  <ContentBlock title="Headings">
+  <ContentBlock
+    title="Headings"
+    smallText="<p class='fs-x-small'>Headings follow the same modular scale of 1.25 up until h4.</p><p class='fs-x-small'>H5 and h6 headings currently have no distinction but could have style differences like bolder or italic. Up for debate.</p><p class='fs-x-small'>On mobile only the h1 and h2 are larger than the body text size. H3 has a font weight of medium.</p>"
+  >
     <h1 slot="content">Heading 1</h1>
     <h2 slot="content">Heading 2</h2>
     <h3 slot="content">Heading 3</h3>
@@ -209,7 +212,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </ContentBlock>
 </BaseLayout>
 <style is:global>
-  .baseline-24 {
+  .baseline-24:hover {
     background: linear-gradient(
       to bottom,
       red,
@@ -220,7 +223,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     background-size: 100% 24px;
   }
 
-  .baseline-8 {
+  .baseline-8:hover {
     background: linear-gradient(
       to bottom,
       lightgrey,
@@ -231,7 +234,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     background-size: 100% 8px;
   }
 
-  .baseline-4 {
+  .baseline-4:hover {
     background: linear-gradient(
       to bottom,
       lightblue,

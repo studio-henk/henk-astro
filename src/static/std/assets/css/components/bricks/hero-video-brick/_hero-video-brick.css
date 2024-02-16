@@ -41,7 +41,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
   max-width: 30em;
   text-wrap: balance;
 }
@@ -57,22 +57,14 @@
 }
 
 .hero-video-brick__header {
-  gap: 8px;
+  gap: 24px;
 }
 
 .hero-video-brick__header-title {
-  /* font-size: clamp(1.5rem, 2.34375vw, 2.625rem); */
-  /* 40, 64 */
-  /* line-height: clamp(40px, 3.57142857vw, 64px); */
   text-wrap: balance;
   text-align: center;
 }
 
-/* 
-fs: 16
-lh: 24
-lh: 32, 56 
-*/
 .hero-video-brick__header-subtitle {
   font-size: 1rem;
   line-height: 1.5;

@@ -10,11 +10,11 @@ if (lang == "nl") {
 }
 let otherURL = "/" + otherLang + "/" + currentPath;
 
-import primaryNav from "../../public/data/navigation_data.json";
+// import primaryNav from "../../public/data/navigation_data.json";
 import Icon from "./astro/Icon.astro";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 // Convert the object to a JSON string
-const primaryNavJSON = JSON.stringify(primaryNav);
+// const primaryNavJSON = JSON.stringify(primaryNav);
 
 let { Theme } = Astro.props;
 if (!Theme) {
@@ -23,7 +23,8 @@ if (!Theme) {
 let { showMsgBar } = Astro.props;
 ---
 
-<div id="NavBar" data-primary-nav={primaryNavJSON}>
+<!-- <div id="NavBar" data-primary-nav={primaryNavJSON}> -->
+<div id="NavBar">
   <header
     class="masthead masthead-desktop"
     :class="{ 'NavBar--isScrolled': isScrolled, 'NavBar--isHovered': statusNavBarHovered, 'NavBar--submenuOpen': showSubmenu }"
@@ -35,71 +36,75 @@ let { showMsgBar } = Astro.props;
     v-cloak
   >
     <div class="primary-nav-container">
-      <AtomLogo url="/" icon="logo-henk-solo" width="140" height="32" />
-      <nav class="primary-nav">
-        <a
-          class="primary-nav__link"
-          v-for="item in navigationData"
-          :key="item.id"
-          :href="item.url"
-          @mouseover="handlePrimaryNavItemHover(item)"
-          @touchstart.passive="handlePrimaryNavItemTouch(item)"
-          @click="handlePrimaryNavItemClick(item, $event)"
-          @focus="handlePrimaryNavItemHover(item)"
-          >[[ item.navTitle ]]
-        </a>
-      </nav>
-      <div class="utilities-nav">
-        <div class="utils utils_contact-bar">
-          <a class="utils_contact-bar-link" href={`/${lang}/shops/`}>
-            <Icon
-              class="sh-atom-icon"
-              width="24"
-              height="24"
-              name="icon-location"
-            />
-            Stores
+      <div class="primary-nav-container__grid-item">
+        <AtomLogo url="/" icon="logo-henk-solo" width="140" height="32" />
+      </div>
+      <div class="primary-nav-container__grid-item">
+        <nav class="primary-nav">
+          <a
+            class="primary-nav__link"
+            v-for="item in navigationData"
+            :key="item.id"
+            :href="item.url"
+            @mouseover="handlePrimaryNavItemHover(item)"
+            @touchstart.passive="handlePrimaryNavItemTouch(item)"
+            @click="handlePrimaryNavItemClick(item, $event)"
+            @focus="handlePrimaryNavItemHover(item)"
+            >[[ item.navTitle ]]
           </a>
-          <a class="utils_contact-bar-link" href={`/${lang}/contact/`}
-            >Contact</a
-          >
+        </nav>
+        <div class="utilities-nav">
+          <div class="utils utils_contact-bar">
+            <a class="utils_contact-bar-link" href={`/${lang}/shops/`}>
+              <Icon
+                class="sh-atom-icon"
+                width="24"
+                height="24"
+                name="icon-location"
+              />
+              Stores
+            </a>
+            <a class="utils_contact-bar-link" href={`/${lang}/contact/`}
+              >Contact</a
+            >
+          </div>
+          <ul class="utilities-nav__list">
+            <li class="utilities-nav__item" id="utilities-nav__search">
+              <a
+                href="/en/search-results"
+                class="sh-atom-button --icon-search"
+                data-style="plain-dark"
+              >
+                <Icon
+                  class="sh-atom-icon"
+                  width="24"
+                  height="24"
+                  name="icon-search"
+                />
+                Search
+              </a>
+            </li>
+            <li class="utilities-nav__item" id="utilities-nav__cart">
+              <a
+                href="/en/cart/list"
+                class="sh-atom-button --icon-cart"
+                data-style="plain-dark"
+              >
+                <Icon
+                  class="sh-atom-icon"
+                  width="24"
+                  height="24"
+                  name="icon-cart"
+                />
+                Cart
+              </a>
+            </li>
+            <li class="utilities-nav__item" id="utilities-nav__lang">
+              <lang-switch data-url={otherURL} title={otherURL} lang={lang}
+              ></lang-switch>
+            </li>
+          </ul>
         </div>
-        <ul class="utilities-nav__list">
-          <li class="utilities-nav__item" id="utilities-nav__search">
-            <a
-              href="/en/search-results"
-              class="sh-atom-button --icon-search"
-              data-style="plain-dark"
-            >
-              <Icon
-                class="sh-atom-icon"
-                width="24"
-                height="24"
-                name="icon-search"
-              />
-              Search
-            </a>
-          </li>
-          <li class="utilities-nav__item" id="utilities-nav__cart">
-            <a
-              href="/en/cart/list"
-              class="sh-atom-button --icon-cart"
-              data-style="plain-dark"
-            >
-              <Icon
-                class="sh-atom-icon"
-                width="24"
-                height="24"
-                name="icon-cart"
-              />
-              Cart
-            </a>
-          </li>
-          <li class="utilities-nav__item" id="utilities-nav__lang">
-            <lang-switch data-url={otherURL} title={otherURL} lang={lang}
-            ></lang-switch>
-          </li>
-        </ul>
       </div>
     </div>
     <transition appear>

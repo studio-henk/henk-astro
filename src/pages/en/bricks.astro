@@ -2,8 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import HeroVideo from "../../components/bricks/HeroVideo.astro";
 import SliderBrickVarA from "../../components/bricks/SliderBrickVarA.astro";
+// import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.bak.astro";
 import SplitscreenBrick from "../../components/bricks/SplitscreenBrick.astro";
-import SplitscreenBrick2 from "../../components/bricks/SplitscreenBrick2.astro";
 import BlogSlider from "../../components/bricks/BlogSlider.astro";
 import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
 import BlogSlider1 from "../../components/bricks/BlogSlider1.astro";
@@ -32,51 +32,74 @@ import UspBrick from "../../components/bricks/UspBrick.astro";
   />
   <SliderBrickVarA title="SliderBrickVarA Heading" swiperID="2" />
   <SplitscreenBrick
-    image="/images/slant1.jpg"
-    title="SplitscreenBrick Heading jshfdjshd jshdj sj hsjh sj sjhdjs djh"
+    mediaSrc="/images/slant1.jpg"
+    mediaUrl="#"
+    title="Win €1000 shopping credit"
     subtitle="SplitscreenBrick Subtitle"
-    intro="SplitscreenBrick Text"
     buttonText="Button text"
-  />
+    url="#"
+    hasSlotContent={true}
+  >
+    <p slot="splitscreen-text">
+      Could your interior use a fresh update? Good news. We're giving you the
+      chance to win €1,000 shopping credit at Studio HENK. Sign up for our
+      newsletter now and follow us on Instagram, Facebook, or TikTok.
+    </p>
+    <p slot="splitscreen-text">
+      For even more chances to win, tag your friends. Who knows, you might soon
+      have that beautiful new piece of furniture that's been on your wishlist
+      for a while in your home. The promotion runs until Sunday, January 28th.
+    </p>
+  </SplitscreenBrick>
   <SplitscreenBrick
-    image="/images/bcorp.jpg"
-    title="SplitscreenBrick Order Reversed"
-    subtitle="SplitscreenBrick Subtitle"
-    intro="SplitscreenBrick Text"
+    mediaSrc="/images/bcorp.jpg"
+    title="A zero-waste furniture industry"
+    subtitle="Our Mission"
     buttonText="Button text"
     order="reverse"
-  />
-  <SplitscreenBrick2
+    hasSlotContent={true}
+  >
+    <p slot="splitscreen-text">
+      As a B Corp, we want to use our business as a force for good. It's our
+      mission to revolutionise the furniture industry from within, making it
+      zero-waste. We strive to disrupt industry standards by creating beautiful
+      furniture that is circular by design and made-to last, thereby positively
+      impacting people and the planet. Discover more about our mission and B
+      Corp status.
+    </p>
+  </SplitscreenBrick>
+  <!-- <SplitscreenBrick
     mediaSrc="/images/bcorp.jpg"
     mediaUrl="/en/the-form-of-things"
     title="SplitscreenBrick 2"
     subtitle="SplitscreenBrick Subtitle"
-    text="SplitscreenBrick Text"
     buttonText="Button text"
     buttonUrl="/en/the-form-of-things"
-  />
-  <SplitscreenBrick2
+  /> -->
+  <SplitscreenBrick
     mediaSrc="https://assets.studio-henk.nl/assets/Images/slant-campaign/Co.mp4"
     mediaUrl="/en/the-form-of-things"
     isVideo={true}
-    title="SplitscreenBrick 2 Order Reversed"
-    subtitle="SplitscreenBrick Subtitle"
-    text="SplitscreenBrick Text"
+    title="SplitscreenBrick with Video"
+    subtitle="video"
     buttonText="Button text"
     buttonUrl="/en/the-form-of-things"
     order="reverse"
-  />
-  <BlockquoteBrick
+    hasSlotContent={true}
+  >
+    <p slot="splitscreen-text">There is a video there !</p>
+  </SplitscreenBrick>
+  <!-- <BlockquoteBrick
     text="Organic shapes, soft lines, straight angles – the Studio Henk collection is characterised by a play with form. A fitting piece of furniture for every interior."
-  />
-  <BlockquoteBrick
+  /> -->
+  <!-- <BlockquoteBrick
     text="To Be or Not to Be."
     credit="W. Shakespeare"
     jobtitle="Poet"
-  />
-  <BlogSlider1 />
-  <BlogSlider2 />
-  <DoubleImageBrick
+  /> -->
+  <!-- <BlogSlider1 />
+  <BlogSlider2 /> -->
+  <!-- <DoubleImageBrick
     largeImageTitle="Slim-X Wood Dining Table"
     largeImageCaption="Crafted elegance"
     image="/images/dib1.png"
@@ -85,9 +108,9 @@ import UspBrick from "../../components/bricks/UspBrick.astro";
     smallImage="/images/dib2.png"
     buttonText="Discover more"
     buttonURL="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
-  />
-  <FullwidthMediaBrick />
+  /> -->
+  <!-- <FullwidthMediaBrick />
   <FullwidthVideoBrick />
   <SectionHeader />
-  <UspBrick />
+  <UspBrick /> -->
 </BaseLayout>

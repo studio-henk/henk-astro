@@ -39,7 +39,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
   max-width: 30em;
   text-align: center;
   text-wrap: balance;
@@ -56,7 +56,7 @@
 }
 
 .hero-brick__header {
-  gap: 8px;
+  gap: 24px;
 }
 
 .hero-brick__header-title {
@@ -81,18 +81,19 @@
   position: absolute;
   transform: translateX(-50%);
   transition: none;
+  color: currentColor;
 }
 
 @media only screen and (min-width: 992px) {
   .hero-brick__content {
-    gap: 28px;
+    gap: 24px;
   }
 
   .hero-brick__header {
-    gap: 12px;
+    gap: 24px;
   }
 
   .hero-brick__footer {
-    margin-top: 12px;
+    /* margin-top: 12px; */
   }
 }

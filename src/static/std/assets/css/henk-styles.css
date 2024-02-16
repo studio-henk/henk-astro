@@ -15,7 +15,7 @@
 
 /* Layout */
 @import "layout/grid.css";
-@import "layout/sh-l-grid.css";
+/* @import "layout/sh-l-grid.css"; */
 @import "layout/sh-l-page-main.css";
 
 @import "base/_icons.css";
@@ -51,7 +51,7 @@
 @import "components/atoms/atom-sup/atom-sup.css";
 /* @import "components/atoms/atom-link-more/atom-link-more.css"; */
 @import "components/atoms/atom-icon/sh-atom-icon.css";
-@import "components/atoms/atom-headings/atom-headings.css";
+/* @import "components/atoms/atom-headings/atom-headings.css"; */
 /* @import "components/atoms/atom-link-button/atom-link-button.css"; */
 @import "components/atoms/atom-tag/atom-tag.css";
 @import "components/atoms/atom-blockquote/atom-blockquote.css";
@@ -79,7 +79,7 @@
 /* @import "components/bricks/hero-brick-v2/hero-brick-v2.css"; */
 
 @import "components/molecules/molecule-l-button-group/_molecule-l-button-group.css";
-@import "components/molecules/sh-molecule-section-header/_sh-molecule-section-header.css";
+/* @import "components/molecules/sh-molecule-section-header/_sh-molecule-section-header.css"; */
 @import "components/molecules/sh-molecule-bg-box/_sh-molecule-bg-box.css";
 @import "components/molecules/sh-molecule-padding-box/_sh-molecule-padding-box.css";
 /*@import "components/molecules/molecule-info-box/molecule-info-box.css";*/

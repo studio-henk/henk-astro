@@ -20,6 +20,13 @@ createApp({
     };
   },
   methods: {
+    getNavDataFromWindowObject() {
+      const navData = window.navDataObject;
+      // console.log(navData);
+
+      this.navigationData = navData.navigationData;
+      this.isLoading = false;
+    },
     getNavData() {
       // Access the element with the ID 'NavBar' and retrieve the 'data-primary-nav' attribute
       const primaryNavAttribute = document
@@ -84,7 +91,7 @@ createApp({
       this.showSubmenu = false;
       this.statusNavBarHovered = false;
       this.resetSubmenu();
-      this.removeBodyOverflow();
+      // this.removeBodyOverflow();
     },
     handlePrimaryNavItemHover(item) {
       // console.log(`Hovered over ${item.navTitle}`);
@@ -94,7 +101,7 @@ createApp({
         this.currentItems = item.childrenData || [];
         this.showSubmenu = true;
         // overflow on body here to prevent scrolling while submenu open
-        this.setBodyOverflow();
+        // this.setBodyOverflow();
       } else {
         this.showSubmenu = false;
       }
@@ -126,15 +133,14 @@ createApp({
       this.currentItems = [];
       this.stack = [];
       this.isGoingBack = false;
-      this.removeBodyOverflow();
+      // this.removeBodyOverflow();
     },
   },
   created() {
-    this.getNavData();
+    //this.getNavData();
+    this.getNavDataFromWindowObject();
   },
   mounted() {
-    // Set the navigationData property based on the retrieved attribute
-    // this.navigationData = JSON.parse(primaryNavAttribute).navigationData;*/
     this.$nextTick(() => {
       this.getNavBarHeight();
       // for debugging to keep menu open

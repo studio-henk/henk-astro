@@ -15,6 +15,7 @@ scss/dollar-variable-pattern
   max-width: 30em;
   margin-inline: auto;
   text-wrap: balance;
+  gap: 24px;
 }
 
 .sh-molecule-section-header .sh-molecule-section-header__subtitle {

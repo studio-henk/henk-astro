@@ -26,13 +26,6 @@ const {
     <!-- surrounding A element -->
     <a class="hero-video-brick__anchor-link" href={url}>
       <!--video-->
-      <!-- <video muted="" loop="" playsinline="" autoplay="">
-        <source
-          src="https://assets.studio-henk.nl/assets/Images/home/tmp-off/studio-henk-trace-buitencollectie.mp4"
-          type="video/mp4"
-        />
-        Sorry, your browser doesn't support embedded videos.
-      </video> -->
       <Video src={videoSRC} />
       <div class="hero-video-brick__overlay">
         <div class="hero-video-brick__content">
@@ -42,11 +35,13 @@ const {
             </p>
             <h1 class="hero-video-brick__header-title">{title}</h1>
           </header>
-          <main class="hero-video-brick__body">
-            <p class="hero-video-brick__body-intro">
-              {text}
-            </p>
-          </main>
+          {
+            text && (
+              <main class="hero-video-brick__body">
+                <p class="hero-video-brick__body-intro">{text}</p>
+              </main>
+            )
+          }
           <footer class="hero-video-brick__footer">
             <!--button type selector -->
             <span
@@ -57,6 +52,7 @@ const {
               {buttonText}
               <Icon name="icon-arrow-right-animated" />
             </span>
+            <slot name="hero-footer" />
           </footer>
         </div>
       </div>
