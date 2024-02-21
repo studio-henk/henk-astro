@@ -12,6 +12,7 @@ let otherURL = "/" + otherLang + "/" + currentPath;
 
 // import primaryNav from "../../public/data/navigation_data.json";
 import Icon from "./astro/Icon.astro";
+import { IconSizes, SvgStructure } from "../../types/iconTypes";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 // Convert the object to a JSON string
 // const primaryNavJSON = JSON.stringify(primaryNav);
@@ -77,8 +78,8 @@ let { showMsgBar } = Astro.props;
               >
                 <Icon
                   class="sh-atom-icon"
-                  width="24"
-                  height="24"
+                  width={IconSizes.Medium}
+                  width={IconSizes.Medium}
                   name="icon-search"
                 />
                 Search

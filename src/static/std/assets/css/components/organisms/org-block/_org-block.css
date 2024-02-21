@@ -156,8 +156,8 @@
   .sh-org-block[data-fullscreen][data-hasbgoverlay].--is-hero picture img {
     /* update 2023-06-29 • 13:44 - CEST */
     /* height: calc(100svh - var(--size-height-for-hero)); */
-    /* height: 100svh; */
-    height: calc(100svh - var(--total-bars-height));
+    height: 100svh;
+    /* height: calc(100svh - var(--total-bars-height)); */
   }
 }
 

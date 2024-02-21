@@ -28,7 +28,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="SplitscreenBrick" data-order={order}>
+<section class="SplitscreenBrick" data-order={order}>
   <div class="SplitscreenBrick__grid">
     <div class="SplitscreenBrick__grid-item">
       <a class="SplitscreenBrick__link" href={mediaUrl}>
@@ -45,7 +45,7 @@ const {
               Sorry, your browser doesn't support embedded videos.
             </video>
           ) : (
-            <img src={mediaSrc} alt={alt} />
+            <img src={mediaSrc} alt={alt} class="SplitscreenBrick__img" />
           )
         }
       </a>
@@ -71,10 +71,11 @@ const {
       </div>
     </div>
   </div>
-</div>
+</section>
 <style is:global>
   .SplitscreenBrick {
     padding: 24px 24px 48px 24px;
+    background-color: var(--color-background-primary, #fff);
   }
 
   .SplitscreenBrick__grid {
@@ -101,6 +102,10 @@ const {
     .SplitscreenBrick .SplitscreenBrick__video {
       height: 100svh;
     }
+  }
+
+  .SplitscreenBrick__img {
+    height: auto;
   }
 
   .SplitscreenBrick__content {

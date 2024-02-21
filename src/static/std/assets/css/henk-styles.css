@@ -15,7 +15,8 @@
 
 /* Layout */
 @import "layout/grid.css";
-/* @import "layout/sh-l-grid.css"; */
+/* turn off later */
+@import "layout/sh-l-grid.css";
 @import "layout/sh-l-page-main.css";
 
 @import "base/_icons.css";
@@ -68,6 +69,7 @@
 @import "components/atoms/_atom-logo.css";
 
 /* Bricks */
+/* @import "components/bricks/_SplitscreenBrick.css"; */
 @import "components/bricks/faq-brick/_faq-brick.css";
 @import "components/bricks/doubleimage-brick/_doubleimage-brick.css";
 @import "components/bricks/hero-video-brick/_hero-video-brick.css";
@@ -123,7 +125,7 @@
 @import "components/organisms/sh-l-flex-container/_sh-l-flex-container.css";
 @import "components/organisms/sh-media-block/_sh-media-block.css";
 @import "components/organisms/org-k-block/_org-k-block.css";
-@import "components/organisms/org-splitscreen/_org-splitscreen.css";
+/* @import "components/organisms/org-splitscreen/_org-splitscreen.css"; */
 @import "components/organisms/org-base-slider/_org-base-slider.css";
 @import "components/organisms/org-base-slider/_org-slider-variant-A.css";
 @import "components/organisms/org-base-slider/_org-slider-variant-B.css";

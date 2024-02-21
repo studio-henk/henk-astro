@@ -136,10 +136,6 @@ const {
   </head>
   <body>
     <div class="wrapper">
-      <!--value comes from head <title> tag....usually, which is set in title field on SEO tab in pimcore-->
-      <!-- <div id="page-title">
-        <h1 class="sr-only">{title}</h1>
-      </div> -->
       <TheHeader Theme={Theme} hasHero={hasHero} showMsgBar={showMsgBar} />
       <slot name="pre-main" />
       <main id={mainID} class={mainClass}>
