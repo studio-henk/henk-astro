@@ -21,7 +21,8 @@ createApp({
   },
   methods: {
     getNavDataFromWindowObject() {
-      const navData = window.navDataObject;
+      // const navData = window.navDataObject;
+      const navData = JSON.parse(window.navDataObject);
       // console.log(navData);
 
       this.navigationData = navData.navigationData;

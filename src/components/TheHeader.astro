@@ -6,7 +6,7 @@ import Icon from "../components/astro/Icon.astro";
 import MsgBar from "../components/MsgBar.astro";
 import NavBarMobile from "../components/NavBarMobile.astro";
 import primaryNav from "../../public/data/navigation_data.json";
-import NavBarDesktop from "./NavBarDesktop.astro";
+import NavBarDesktop from "../components/NavBarDesktop.astro";
 
 const lang = getLangFromUrl(Astro.url);
 // const { NavOnHero } = Astro.props;
@@ -41,8 +41,8 @@ const primaryNavJSON = JSON.stringify(primaryNav);
   alert(title);
 <script> -->
 <script is:inline define:vars={{ primaryNavJSON }}>
-  // window.navDataObject = primaryNavJSON;
-  window.navDataObject = JSON.parse(primaryNavJSON);
+  window.navDataObject = primaryNavJSON;
+  // window.navDataObject = JSON.parse(primaryNavJSON);
   // console.log(window.navDataObject);
 </script>
 

@@ -7,6 +7,9 @@
         embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
           Language: "nl_NL",
         });
+
+        // Call handleButtonAvailability() here, when initialization is successful
+        handleButtonAvailability();
       });
       embeddedservice_bootstrap.init(
         "00D3H0000008q6o",
@@ -70,7 +73,7 @@
 <script
   type="text/javascript"
   src="https://studio-henk--train.sandbox.my.site.com/ESWStudioHenkwebCHat1701949332624/assets/js/bootstrap.min.js"
-  onload="initEmbeddedMessaging(); handleButtonAvailability();"
+  onload="initEmbeddedMessaging();"
   defer
 ></script>
 <style is:global>

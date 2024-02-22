@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .sh-org-usp {
-  background-color: var(--color-accent7, #ccc);
+  background-color: var(--color-accent5, #ccc);
   color: var(--color-henk-black);
   display: grid;
   grid-auto-rows: auto;

@@ -43,7 +43,7 @@
 }
 
 .sh-org-block[data-dark-bg] {
-  background-color: var(--color-accent12);
+  background-color: var(--color-accent16);
   color: var(--color-henk-white);
 }
 
@@ -278,7 +278,7 @@
 }
 
 .sh-org-block.sh-org-block--signup-form {
-  background-color: var(--color-accent17);
+  background-color: var(--color-accent16);
   color: var(--color-white);
   padding: 48px 24px 24px;
 }

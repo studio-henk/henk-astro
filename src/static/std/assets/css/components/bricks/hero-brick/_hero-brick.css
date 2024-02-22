@@ -40,7 +40,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
-  max-width: 30em;
+  max-width: 38em;
   text-align: center;
   text-wrap: balance;
 }
@@ -74,8 +74,18 @@
   transition: none;
 }
 
-.hero-brick .hero-brick__footer .sh-atom-button[data-icon-arrow-down],
+/* .hero-brick .hero-brick__footer .sh-atom-button[data-icon-arrow-down],
 .hero-video-brick .hero-video-brick__footer .sh-atom-button[data-icon-arrow-down] {
+  bottom: 20px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: none;
+  color: currentColor;
+} */
+
+.hero-brick .sh-atom-button[data-icon-arrow-down],
+.hero-video-brick .sh-atom-button[data-icon-arrow-down] {
   bottom: 20px;
   left: 50%;
   position: absolute;
@@ -93,7 +103,4 @@
     gap: 24px;
   }
 
-  .hero-brick__footer {
-    /* margin-top: 12px; */
-  }
 }

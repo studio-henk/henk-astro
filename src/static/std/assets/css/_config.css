@@ -40,7 +40,7 @@
   --color-autofill-input: var(--color-white);
   /* nav */
   /*dropdown .sh-atom-sup highlight "NEW" color*/
-  --color-text-sup-highlight-nav: var(--color-accent8);
+  --color-text-sup-highlight-nav: var(--color-accent5);
   /* sizes from design as plugin numbers. in px */
   --size-font-body: 16;
   --size-font-lineheight-body: 24;

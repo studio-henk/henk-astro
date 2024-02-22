@@ -1,9 +1,13 @@
 ---
+import Icon from "../../components/astro/Icon.astro";
+import { IconSizes } from "../../../types/iconTypes";
+
 interface Props {
   title?: string;
   subtitle?: string;
   buttonText?: string;
   url?: string;
+  hasScrollToAnchor?: boolean;
   text?: string;
   image?: string;
   backgroundColor?: "primary" | "secondary" | "tertiary | highlight";
@@ -14,6 +18,7 @@ const {
   subtitle,
   buttonText,
   url,
+  hasScrollToAnchor,
   text,
   image,
   backgroundColor = "primary"
@@ -48,9 +53,23 @@ const {
           <p class="hero-brick__header-subtitle">{subtitle}</p>
           <h1 class="hero-brick__header-title">{title}</h1>
           <Fragment set:html={text} />
+          <!-- real link / button -->          
           {
-            buttonText && <span class="sh-atom-button" data-style="filled">{buttonText}</span>
-          }          
+            !hasScrollToAnchor && buttonText && <span class="sh-atom-button" data-style="filled">
+              <Fragment set:html={buttonText} />
+              </span>
+          }
+          <!-- if anchor link  -->          
+          {
+            hasScrollToAnchor && <span 
+            class="sh-atom-button" 
+            data-icon-arrow-down="true" 
+            data-style="plain-light"            
+          > 
+            <Fragment set:html={buttonText} />
+            <Icon class="sh-atom-icon" name="icon-arrow-down" />  
+          </span>
+          }                    
         </div>
       </div>
       ) : (
@@ -60,7 +79,8 @@ const {
         <Fragment set:html={text} />
         {
           buttonText && <span class="sh-atom-button" data-style="filled">{buttonText}</span>
-        }        
+        }
+        <span>hello</span>                        
       </div>
       )
     }
@@ -75,19 +95,6 @@ const {
   </div>
 } 
 </div>
-<!-- <script
-  is:inline
-  src="/static/std/assets/toolkit/scripts/components/org-block-hero/org-block-hero_fadein.js"
-  ></script>
-  <script
-  is:inline
-  src="/static/std/assets/toolkit/scripts/components/org-block-hero/org-block-hero_anchorClick.js"
-  ></script>
-  <script is:inline>
-    window.addEventListener("load", function () {
-      setFadeOnHeroBlock.init();
-    });
-  </script> -->
 </section>
 <style>
   .HeroSection {
