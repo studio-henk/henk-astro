@@ -87,7 +87,8 @@
   .NavBarMobile .NavBarMobile__nav.active {
     opacity: 1;
     visibility: visible;
-    height: calc(100svh - var(--total-bars-height, 0));
+    /* height: calc(100svh - var(--total-bars-height, 0)); */
+    height: calc(100svh - var(--total-bars-height, 0) - 40px);
   }
 
   .NavBarMobile .NavBarMobile__list {
@@ -161,6 +162,44 @@
     display: flex;
     /*justify-content: center;*/
     align-items: center;
+  }
+
+  .utils-bar {
+    z-index: 99999999999;
+    position: fixed;
+    bottom: 0;
+    grid-template-columns: repeat(4, 25%);
+    width: 100%;
+    align-items: center;
+    padding: 8px 24px;
+    left: 0;
+    display: none;
+    background-color: var(--color-henk-white);
+    /* justify-items: start; */
+  }
+
+  .utils-bar a {
+    text-decoration: none;
+    font-size: 12px;
+    /* font-weight: 500;
+      letter-spacing: -0.03em; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* background-color: aqua; */
+  }
+
+  .utils-bar a:last-child {
+    /* align-self: flex-end; */
+    justify-self: flex-end;
+  }
+
+  .utils-bar lang-switch {
+    font-size: 12px;
+  }
+
+  .NavBarMobile__nav.active+.utils-bar {
+    display: grid;
   }
 }
 

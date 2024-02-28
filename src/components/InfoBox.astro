@@ -13,7 +13,7 @@ const {
   <div class="component-layout-box">
     <header class="info-box__header">
       <p class="info-box__heading">{title}</p>
-      {icon && <Icon class="sh-atom-icon" name="icon-location" />}
+      {icon && <Icon class="sh-atom-icon" name={icon} />}
     </header>
     <div class="info-box__body" set:html={content} />
     <div class="info-box__footer">

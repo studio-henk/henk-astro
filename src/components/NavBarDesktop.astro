@@ -57,12 +57,10 @@ let { showMsgBar } = Astro.props;
         <div class="utilities-nav">
           <div class="utils utils_contact-bar">
             <a class="utils_contact-bar-link" href={`/${lang}/shops/`}>
-              <Icon
+              <!-- <Icon
                 class="sh-atom-icon"
-                width="24"
-                height="24"
                 name="icon-location"
-              />
+              /> -->
               Stores
             </a>
             <a class="utils_contact-bar-link" href={`/${lang}/contact/`}
@@ -91,12 +89,7 @@ let { showMsgBar } = Astro.props;
                 class="sh-atom-button --icon-cart"
                 data-style="plain-dark"
               >
-                <Icon
-                  class="sh-atom-icon"
-                  width="24"
-                  height="24"
-                  name="icon-cart"
-                />
+                <Icon class="sh-atom-icon" name="icon-cart" />
                 Cart
               </a>
             </li>
@@ -150,7 +143,7 @@ let { showMsgBar } = Astro.props;
                   <span
                     class="gallery-controller__level-link"
                     v-if="item.childrenData"
-                    :tabindex="index"
+                    x:tabindex="index"
                     @click="navigateToNextLevel(item)"
                     >[[ item.navTitle ]]
                     <!-- arrow right -->

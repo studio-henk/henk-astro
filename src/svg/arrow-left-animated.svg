@@ -1,0 +1,22 @@
+<svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-labelledby="iconArrowLeft"
+    id="iconArrowLeft"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title>iconArrowLeft</title>
+    <desc>icon Arrow Left</desc>    
+    <defs>
+        <style>
+            /* :hover #arrow-left-line {
+                transform: ;
+            } */
+        </style>
+    </defs>
+    <!-- <path id="arrow-left-line" fill-rule="evenodd" clip-rule="evenodd" d="M1.48145 3.59998H14V4.39998H1.48145V3.59998Z" fill="black"/>     -->
+    <path id="arrow-left-point" fill-rule="evenodd" clip-rule="evenodd" d="M1.58973 3.99998L5.60462 0.293895L5.06199 -0.293945L0.410278 3.99998L5.06199 8.2939L5.60462 7.70605L1.58973 3.99998Z" fill="currentcolor"/>
+    <line id="arrow-left-line" x1="1" y1="4" x2="14" y2="4" stroke="currentcolor" stroke-width="0.8"  />
+</svg>

@@ -19,7 +19,7 @@ const NavBarMobileApp = createApp({
   },
   methods: {
     getNavDataFromWindowObject() {
-      const navData = window.navDataObject;
+      const navData = JSON.parse(window.navDataObject);
 
       this.navigationData = navData.navigationData;
       this.isLoading = false;

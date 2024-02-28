@@ -4,6 +4,7 @@
   text-align: center;
   /* letter-spacing: 0.1em; */
   background-color: var(--color-henk-white, #fff);
+  border: 1px solid var(--color-henk-white, #fff);
   border-radius: 40px;
   display: inline-flex;
   gap: 0.36363636em;
@@ -13,12 +14,13 @@
   /*margin: 1.75em 0;*/
   vertical-align: middle;
 }
+
 .shopping-cart-product__details--description .sh-atom-tag {
   margin-top: 14px;
 }
 
 .sh-atom-tag__link,
-.sh-atom-tag[data-haslink] > a {
+.sh-atom-tag[data-haslink]>a {
   text-decoration: none;
 }
 
@@ -27,7 +29,7 @@
 }
 
 .sh-atom-tag[data-haslink] .sh-atom-tag__link,
-.sh-atom-tag[data-haslink] > a {
+.sh-atom-tag[data-haslink]>a {
   padding: 0.25em 0.83333333em;
   display: flex;
   gap: 0.36363636em;

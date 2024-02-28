@@ -146,7 +146,8 @@ img.sh-atom-sample {
   /*text-transform: capitalize;*/
   display: grid;
   grid-template-columns: 37px 1fr;
-  gap: 0 22px;
+  /* gap: 0 22px; */
+  gap: 0 0.66666667em;
 }
 
 .sample__quickshop__addtocart-container .cart__delivery svg {
@@ -809,8 +810,10 @@ main.sh-l-page-main .sample__quickshop__content ul,
 
 .samples__filter__container .samples_filter .samples_filter__group .samples_filter__others_list li input[type="checkbox"]:checked+label .icon-checkmark {
   left: auto;
-  right: 4px;
-  top: 10px;
+  /* right: 4px;
+  top: 10px; */
+  right: 2px;
+  top: 6px
 }
 
 .samples__filter__container .samples_filter input[type="checkbox"] {
@@ -860,10 +863,11 @@ main.sh-l-page-main .sample__quickshop__content ul,
 .samples__filter__container .samples_filter input[type="checkbox"]:checked+label .icon-checkmark {
   background-color: transparent;
   position: absolute;
-  left: 4px;
-  top: 5px;
+  left: 0px;
+  top: 2px;
   z-index: 99;
   display: inline-flex;
+  color: var(--color-henk-white);
 }
 
 .samples__filter__container .samples_filter .samples_filter__colors_list label::after {

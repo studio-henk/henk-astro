@@ -12,6 +12,7 @@ let otherURL = "/" + otherLang + "/" + currentPath;
 
 // import primaryNav from "../../public/data/navigation_data.json";
 import Icon from "./astro/Icon.astro";
+import { IconSizes, SvgStructure } from "../../types/iconTypes";
 import AtomLogo from "./Atoms/AtomLogo.astro";
 // Convert the object to a JSON string
 // const primaryNavJSON = JSON.stringify(primaryNav);
@@ -88,44 +89,30 @@ if (!Theme) {
           </span>
           <a v-else :href="item.url" class="page-link"> [[ item.navTitle ]]</a>
         </li>
-        <li
+        <!-- <li
           v-if="currentLevel === 1"
           class="NavBarMobile__list-item NavBarMobile__utils-list-container"
         >
-          <ul class="NavBarMobile__utils-list --direction-horizontal">
-            <li class="NavBarMobile__list-item NavBarMobile__utils-list-item">
-              <a href="/en/stores" class="page-link">
-                <!--search-->
-                Stores
-                <Icon
-                  class="sh-atom-icon"
-                  width="16"
-                  height="16"
-                  name="icon-location"
-                />
-              </a>
-            </li>
-            <li class="NavBarMobile__list-item NavBarMobile__utils-list-item">
-              <a href="/en/search" class="page-link">
-                <!--search-->
-                Search
-                <Icon
-                  class="sh-atom-icon"
-                  width="16"
-                  height="16"
-                  name="icon-search"
-                />
-              </a>
-            </li>
-            <li class="NavBarMobile__list-item NavBarMobile__utils-list-item">
-              <!-- langSwitch -->
-              <lang-switch data-url={otherURL} title={otherURL} lang={lang}>
-              </lang-switch>
-            </li>
-          </ul>
-        </li>
+          here?
+        </li> -->
       </ol>
     </nav>
+    <div class="utils-bar">
+      <a href="/en/stores" class="utils-bar__link">Stores</a>
+      <a href="/en/contact" class="utils-bar__link">Contact</a>
+      <!-- langSwitch -->
+      <lang-switch data-url={otherURL} title={otherURL} lang={lang}
+      ></lang-switch>
+      <a href="/en/search" class="utils-bar__link">
+        <!-- Search -->
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-search"
+        />
+      </a>
+    </div>
   </header>
 </div>
 <div id="pixel-to-watch-mobile"></div>

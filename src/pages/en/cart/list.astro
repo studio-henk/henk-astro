@@ -3,7 +3,9 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import HeadingBadge from "../../../components/HeadingBadge.astro";
 import CartList from "../../../components/CartList.astro";
 import InfoBox from "../../../components/InfoBox.astro";
+import Icon from "../../../components/astro/Icon.astro";
 ---
+
 <BaseLayout title="Cart list">
   <script
     slot="head-scripts"
@@ -35,51 +37,33 @@ import InfoBox from "../../../components/InfoBox.astro";
           data-style="plain-dark"
           data-icon-arrow-left="true"
         >
-          <span class="icon-frame">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                id="arrow-left-line"
-                d="M20 10L7.48148 10"
-                stroke="currentcolor"
-                stroke-width="0.8"></path>
-              <path
-                id="arrow-left-point"
-                d="M11.3333 14L7 10L11.3333 6"
-                stroke="currentcolor"
-                stroke-width="0.8"></path>
-                            </svg>
-                          </span>
-              Continue shopping
-            </a>
-          </div>
-        </div>
-        <div class="cart-page__grid-item" id="cart-list" data-count="1">
-          <!-- cart-list -->
-          <!-- contains modal for desktop -->
-          <CartList />          
-        </div>
-        <div class="cart-page__grid-item" id="info-boxes">
-          <div class="grid-info-box">
-            <InfoBox
-                title="Bezorgen op afspraak"
-                icon="icon-calendar"
-                content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
-            />
-            <InfoBox
-                title="Gratis levering"
-                icon="icon-truck"
-                content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
-            />
+          <!-- <Icon class="sh-atom-icon" name="icon-arrow-left" /> -->
+          <Icon class="sh-atom-icon" name="icon-arrow-left-nav-back" />
+          Continue shopping
+        </a>
+      </div>
+    </div>
+    <div class="cart-page__grid-item" id="cart-list" data-count="1">
+      <!-- cart-list -->
+      <!-- contains modal for desktop -->
+      <CartList />
+    </div>
+    <div class="cart-page__grid-item" id="info-boxes">
+      <div class="grid-info-box">
         <InfoBox
-            title="Waar kunnen we mee helpen?"
-            icon="icon-phone"
-            content="<a href='tel:+31(0)12345678'>+31 (0)12345678</a><br /><a href='mailto:info@studio-henk.nl'>info@studio-henk.nl</a>"
+          title="Bezorgen op afspraak"
+          icon="icon-calendar"
+          content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+        <InfoBox
+          title="Gratis levering"
+          icon="icon-truck-fast"
+          content="<p>Lorem ipsum dolor sit amet, ectetur adi piscing elit, tincidunt tincidunt.</p>"
+        />
+        <InfoBox
+          title="Waar kunnen we mee helpen?"
+          icon="icon-phone"
+          content="<a href='tel:+31(0)12345678'>+31 (0)12345678</a><br /><a href='mailto:info@studio-henk.nl'>info@studio-henk.nl</a>"
         />
       </div>
     </div>
@@ -99,7 +83,9 @@ import InfoBox from "../../../components/InfoBox.astro";
             <p class="cost-section__label">
               <small>Total incl VAT</small>
             </p>
-            <p class="cost-section__data cost-section__data_total"><small>€49</small></p>
+            <p class="cost-section__data cost-section__data_total">
+              <small>€49</small>
+            </p>
           </li>
           <li class="cost-section__list-item cost-section_discount">
             <!--Cadeaukaart-code invoeren-->
@@ -136,7 +122,7 @@ import InfoBox from "../../../components/InfoBox.astro";
                   </label>
                   <span class="molecule-input-label__message-invalid">
                     Please format the code like HENK-ABC-001
-                </span>
+                  </span>
                 </div>
               </div>
               <div class="slot" slot="footer">
@@ -148,7 +134,7 @@ import InfoBox from "../../../components/InfoBox.astro";
                   data-style="filled"
                   data-expand="true"
                   title="Button is disabled if input is empty or invalid."
-                >Add
+                  >Add
                 </button>
               </div>
             </base-modal>
@@ -167,9 +153,9 @@ import InfoBox from "../../../components/InfoBox.astro";
     </div>
   </div>
   <script
-      src="/static/std/assets/js/web-components/BaseModal.min.js"
-      type="module"
-      slot="head-scripts"
+    src="/static/std/assets/js/web-components/BaseModal.min.js"
+    type="module"
+    slot="head-scripts"
   ></script>
 
   <!-- vue app -->
@@ -184,16 +170,13 @@ import InfoBox from "../../../components/InfoBox.astro";
     }).mount("#app");
   </script>
   <script
-      slot="footer-scripts"
-      src="/static/std/assets/toolkit/scripts/org-sheet.min.js"
-      defer
-  >
-  </script>
+    slot="footer-scripts"
+    src="/static/std/assets/toolkit/scripts/org-sheet.min.js"
+    defer
+  ></script>
   <script
-      slot="footer-scripts"
-      src="/static/std/assets/js/page-scripts/cart-list-discount.min.js"
-      defer
-  >
-  </script>
-
+    slot="footer-scripts"
+    src="/static/std/assets/js/page-scripts/cart-list-discount.min.js"
+    defer
+  ></script>
 </BaseLayout>
