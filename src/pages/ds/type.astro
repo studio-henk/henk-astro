@@ -1,6 +1,7 @@
 ---
 import ContentBlock from "../../components/astro/ContentBlock.astro";
 import HeroBrick from "../../components/bricks/HeroBrick.astro";
+import Toc from "../../components/ds/Toc.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -12,7 +13,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     url="#type-font"
     buttonText="Explore"
   />
-  <!-- <p>HENK uses <a href='https://typenetwork.com/articles/neue-haas-grotesk-available-from-font-bureau'>Neue Haas Grotesk</a>. Re-designed by Christian Schwartz, based on original Helvetica.</p> -->
+  <ContentBlock title="Design System">
+    <Toc slot="content" />
+  </ContentBlock>
   <ContentBlock title="Font" id="type-font">
     <dl slot="content">
       <dt>Font:</dt>

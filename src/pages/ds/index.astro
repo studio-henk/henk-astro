@@ -1,6 +1,7 @@
 ---
 import ContentBlock from "../../components/astro/ContentBlock.astro";
 import HeroBrick from "../../components/bricks/HeroBrick.astro";
+import Toc from "../../components/ds/Toc.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -12,25 +13,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     url="#ds-foundations"
     buttonText="Explore"
   />
-  <ContentBlock title="Foundation" id="ds-foundations">
-    <ol slot="content">
-      <li>logo</li>
-      <li>color</li>
-      <li><a href="/ds/type">Type</a></li>
-      <li><a href="/ds/icons">Icons</a></li>
-      <li><a href="/ds/buttons">Buttons</a></li>
-    </ol>
+  <ContentBlock title="Design System Index" id="ds-foundations">
+    <Toc slot="content" />
   </ContentBlock>
   <!-- <ContentBlock title="Atoms">
     <ul slot="content">
       <li><a href="atoms/atom-tag">Atom Tag</a></li>
     </ul>
   </ContentBlock> -->
-  <ContentBlock title="Components">
+  <!-- <ContentBlock title="Components">
     <ul slot="content">
       <li><a href="components/component-InfoBox">InfoBox</a></li>
     </ul>
-  </ContentBlock>
+  </ContentBlock> -->
   <!-- <ContentBlock title="Bricks">
     <ul slot="content">
       <li>

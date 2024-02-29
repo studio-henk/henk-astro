@@ -4,6 +4,7 @@ import HeroBrick from "../../components/bricks/HeroBrick.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/astro/Icon.astro";
 import { IconSizes } from "../../../types/iconTypes";
+import Toc from "../../components/ds/Toc.astro";
 ---
 
 <BaseLayout title="Icons" hasHero="true" Theme="dark">
@@ -14,14 +15,17 @@ import { IconSizes } from "../../../types/iconTypes";
     url="#foundations-icons"
     buttonText="Explore"
   />
-  <ContentBlock title="DS">
+  <ContentBlock title="Design System">
+    <Toc slot="content" />
+  </ContentBlock>
+  <!-- <ContentBlock title="DS">
     <div class="breadcrumbs" slot="content">
       <ol>
         <li><a href="/ds/">Design System Index</a></li>
         <li><a href="/ds/icons">Icons</a></li>
       </ol>
     </div>
-  </ContentBlock>
+  </ContentBlock> -->
   <ContentBlock title="Icons" id="foundations-icons">
     <dl slot="content" class="ds-icon-grid">
       <p>
@@ -457,6 +461,10 @@ import { IconSizes } from "../../../types/iconTypes";
 
   .ds-icon-grid {
     width: 100%;
+  }
+
+  .ds-icon-grid *:first-child {
+    margin-top: 0;
   }
 
   .ds-icon-grid dt {

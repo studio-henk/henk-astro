@@ -7,6 +7,7 @@ import SfChatButton from "../../components/third-party/_sf-chatbutton.astro";
 import MobileNavButton from "../../components/MobileNavButton.astro";
 import Icon from "../../components/astro/Icon.astro";
 import { IconSizes } from "../../../types/iconTypes";
+import Toc from "../../components/ds/Toc.astro";
 ---
 
 <BaseLayout title="Buttons">
@@ -17,13 +18,8 @@ import { IconSizes } from "../../../types/iconTypes";
     url="#foundations-buttons"
     buttonText="Explore"
   />
-  <ContentBlock title="DS">
-    <div class="breadcrumbs" slot="content">
-      <ol>
-        <li><a href="/ds/">Design System Index</a></li>
-        <li><a href="/ds/buttons">Buttons</a></li>
-      </ol>
-    </div>
+  <ContentBlock title="Design System">
+    <Toc slot="content" />
   </ContentBlock>
   <ContentBlock title="Buttons" id="foundations-buttons">
     <dl slot="content">
