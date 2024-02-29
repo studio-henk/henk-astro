@@ -14,9 +14,9 @@
   background-color: var(--color-henk-white, #fff);
 }
 
-.content-block p {
+/* .content-block p {
   margin: 0;
-}
+} */
 
 .content-block .content-block__container {
   max-width: 88.4057971014%;
@@ -31,20 +31,24 @@
 }
 
 .content-block__header {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.5rem; */
 }
 
 .content-block .content-block__content {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   row-gap: 24px;
-  align-items: flex-start;
+  align-items: flex-start; */
 }
 
-.content-block .content-block__content>* {
+/* .content-block .content-block__content>* {
   margin: 0;
+} */
+
+.content-block .content-block__content>*:first-child {
+  margin-top: 0;
 }
 
 .content-block .content-block__heading {
@@ -158,19 +162,6 @@ Triptych image block
 */
 .triptych .triptych__container {
   padding-bottom: 48px;
-  /* padding: calc(
-      var(--size-spacing-units-top-desktop, 23) * var(--size-spacing-unit-base)
-    )
-    calc(
-      var(--size-spacing-units-right-desktop, 0) * var(--size-spacing-unit-base)
-    )
-    calc(
-      var(--size-spacing-units-bottom-desktop, 22) *
-        var(--size-spacing-unit-base)
-    )
-    calc(
-      var(--size-spacing-units-left-desktop, 0) * var(--size-spacing-unit-base)
-    ); */
 }
 
 .triptych__layout[data-grid-columns="3"] {

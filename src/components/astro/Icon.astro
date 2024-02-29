@@ -53,7 +53,8 @@ function removeFillFromPathElements(innerHTML: string) {
   return modifiedInnerHTML;
 }
 
-const strippedInnerHTML = removeFillFromPathElements(innerHTML);
+// const strippedInnerHTML = removeFillFromPathElements(innerHTML);
+const strippedInnerHTML = innerHTML;
 
 const svgAttributes = { ...baseAttributes, ...attributes };
 ---

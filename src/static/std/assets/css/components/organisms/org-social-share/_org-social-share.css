@@ -64,10 +64,10 @@ Icons for facebook etc, used in footer
   display: inline-flex;
 }
 
-.org-social-share__link svg {
+/* .org-social-share__link svg {
   width: 22px;
   height: 22px;
-}
+} */
 
 .org-social-share__link+.org-social-share__link {
   margin-left: 13px;
