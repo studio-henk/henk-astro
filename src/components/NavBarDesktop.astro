@@ -38,7 +38,8 @@ let { showMsgBar } = Astro.props;
   >
     <div class="primary-nav-container">
       <div class="primary-nav-container__grid-item">
-        <AtomLogo url="/" icon="logo-henk-solo" width="140" height="32" />
+        <!-- <AtomLogo url="/" icon="logo-henk-solo" width="140" height="32" /> -->
+        <AtomLogo url="/" icon="logo-henk-solo" width="105" height="24" />
       </div>
       <div class="primary-nav-container__grid-item">
         <nav class="primary-nav">
@@ -55,18 +56,18 @@ let { showMsgBar } = Astro.props;
           </a>
         </nav>
         <div class="utilities-nav">
-          <div class="utils utils_contact-bar">
+          <!-- <div class="utils utils_contact-bar">
             <a class="utils_contact-bar-link" href={`/${lang}/shops/`}>
-              <!-- <Icon
+              <Icon
                 class="sh-atom-icon"
                 name="icon-location"
-              /> -->
+              />
               Stores
             </a>
             <a class="utils_contact-bar-link" href={`/${lang}/contact/`}
               >Contact</a
             >
-          </div>
+          </div> -->
           <ul class="utilities-nav__list">
             <li class="utilities-nav__item" id="utilities-nav__search">
               <a
@@ -88,8 +89,10 @@ let { showMsgBar } = Astro.props;
                 href="/en/cart/list"
                 class="sh-atom-button --icon-cart"
                 data-style="plain-dark"
+                title="Go to your shopping bag"
               >
-                <Icon class="sh-atom-icon" name="icon-cart" />
+                <!-- <Icon class="sh-atom-icon" name="icon-cart" /> -->
+                <Icon class="sh-atom-icon" name="icon-bag" />
                 Cart
               </a>
             </li>

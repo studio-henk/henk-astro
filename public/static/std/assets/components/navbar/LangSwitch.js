@@ -27,7 +27,7 @@ template.innerHTML = `
         width: 12px;
         height: 12px;
         display: block;
-        background-color: var(--color-henk-black, #000);
+        background-color: var(--color-background-knob, #000);
         border-radius: 50%;
         transition: transform .3s ease;
     }
