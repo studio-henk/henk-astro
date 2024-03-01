@@ -75,6 +75,7 @@ import Toc from "../../components/ds/Toc.astro";
           width={IconSizes.Large}
           height={IconSizes.Large}
           name="icon-cart"
+          data-deprecated="true"
         />
         <Icon
           class="sh-atom-icon"
@@ -122,6 +123,13 @@ import Toc from "../../components/ds/Toc.astro";
           class="sh-atom-icon"
           width={IconSizes.Large}
           height={IconSizes.Large}
+          name="icon-search-deprecated"
+          data-deprecated="true"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
           name="icon-search"
         />
         <Icon
@@ -129,6 +137,13 @@ import Toc from "../../components/ds/Toc.astro";
           width={IconSizes.Large}
           height={IconSizes.Large}
           name="icon-truck"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-trashcan-deprecated"
+          data-deprecated="true"
         />
         <Icon
           class="sh-atom-icon"
@@ -151,6 +166,12 @@ import Toc from "../../components/ds/Toc.astro";
         <Icon
           class="sh-atom-icon"
           name="icon-add-to-bag"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-bag"
           width={IconSizes.Large}
           height={IconSizes.Large}
         />
@@ -195,7 +216,7 @@ import Toc from "../../components/ds/Toc.astro";
         <Icon class="sh-atom-icon" name="icon-arrow-right-nav-next" />
         <Icon class="sh-atom-icon" name="icon-calendar" />
         <Icon class="sh-atom-icon" name="icon-arrow-down" />
-        <Icon class="sh-atom-icon" name="icon-cart" />
+        <!-- <Icon class="sh-atom-icon" name="icon-cart" /> -->
         <Icon class="sh-atom-icon" name="icon-chevron-down" />
         <Icon class="sh-atom-icon" name="icon-chevron-up" />
         <Icon class="sh-atom-icon" name="icon-chevron-left" />
@@ -211,6 +232,7 @@ import Toc from "../../components/ds/Toc.astro";
         <Icon class="sh-atom-icon" name="icon-location" />
         <Icon class="sh-atom-icon" name="icon-down-payment" />
         <Icon class="sh-atom-icon" name="icon-add-to-bag" />
+        <Icon class="sh-atom-icon" name="icon-bag" />
         <Icon name="icon-facebook" />
         <Icon name="icon-linkedin" />
         <Icon name="icon-youtube" />
@@ -274,12 +296,12 @@ import Toc from "../../components/ds/Toc.astro";
           height={IconSizes.Small}
           name="icon-arrow-down"
         />
-        <Icon
+        <!-- <Icon
           class="sh-atom-icon"
           width={IconSizes.Small}
           height={IconSizes.Small}
           name="icon-cart"
-        />
+        /> -->
         <Icon
           class="sh-atom-icon"
           width={IconSizes.Small}
@@ -322,6 +344,13 @@ import Toc from "../../components/ds/Toc.astro";
           height={IconSizes.Small}
           name="icon-phone"
         />
+        <!-- <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-search-deprecated"
+          data-deprecated="true"
+        /> -->
         <Icon
           class="sh-atom-icon"
           width={IconSizes.Small}
@@ -355,6 +384,12 @@ import Toc from "../../components/ds/Toc.astro";
         <Icon
           class="sh-atom-icon"
           name="icon-add-to-bag"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-bag"
           width={IconSizes.Small}
           height={IconSizes.Small}
         />
@@ -486,5 +521,10 @@ import Toc from "../../components/ds/Toc.astro";
       transparent
     );
     background-size: 100% 8px;
+  }
+
+  svg.sh-atom-icon[data-deprecated] {
+    color: red;
+    cursor: not-allowed;
   }
 </style>
