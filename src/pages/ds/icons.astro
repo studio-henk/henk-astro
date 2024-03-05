@@ -32,7 +32,7 @@ import Toc from "../../components/ds/Toc.astro";
         Icon size refers to the bounding box. Actual icon size is 4px (padding)
         less.
       </p>
-      <dt>Size: Large: 32px</dt>
+      <!-- <dt>Size: Large: 32px</dt>
       <dd>
         <Icon
           class="sh-atom-icon"
@@ -69,15 +69,15 @@ import Toc from "../../components/ds/Toc.astro";
           width={IconSizes.Large}
           height={IconSizes.Large}
           name="icon-arrow-down"
-        />
-        <Icon
+        /> -->
+      <!-- <Icon
           class="sh-atom-icon"
           width={IconSizes.Large}
           height={IconSizes.Large}
           name="icon-cart"
           data-deprecated="true"
-        />
-        <Icon
+        /> -->
+      <!-- <Icon
           class="sh-atom-icon"
           width={IconSizes.Large}
           height={IconSizes.Large}
@@ -123,13 +123,6 @@ import Toc from "../../components/ds/Toc.astro";
           class="sh-atom-icon"
           width={IconSizes.Large}
           height={IconSizes.Large}
-          name="icon-search-deprecated"
-          data-deprecated="true"
-        />
-        <Icon
-          class="sh-atom-icon"
-          width={IconSizes.Large}
-          height={IconSizes.Large}
           name="icon-search"
         />
         <Icon
@@ -137,13 +130,6 @@ import Toc from "../../components/ds/Toc.astro";
           width={IconSizes.Large}
           height={IconSizes.Large}
           name="icon-truck"
-        />
-        <Icon
-          class="sh-atom-icon"
-          width={IconSizes.Large}
-          height={IconSizes.Large}
-          name="icon-trashcan-deprecated"
-          data-deprecated="true"
         />
         <Icon
           class="sh-atom-icon"
@@ -205,7 +191,7 @@ import Toc from "../../components/ds/Toc.astro";
           width={IconSizes.Large}
           height={IconSizes.Large}
         />
-      </dd>
+      </dd> -->
       <dt>Size: Medium: 24px</dt>
       <dd>
         <Icon class="sh-atom-icon" name="icon-arrow-left" />
@@ -254,6 +240,21 @@ import Toc from "../../components/ds/Toc.astro";
         />
         <Icon
           name="icon-star"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-at"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-phone"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-phone-filled"
           width={IconSizes.Medium}
           height={IconSizes.Medium}
         />
@@ -418,17 +419,46 @@ import Toc from "../../components/ds/Toc.astro";
           width={IconSizes.Small}
           height={IconSizes.Small}
         />
+        <Icon name="icon-at" width={IconSizes.Small} height={IconSizes.Small} />
       </dd>
     </dl>
     <dl slot="content">
       <dt>Still to do:</dt>
       <dd>
         <ul>
-          <li>@ symbol</li>
+          <li><s>@ symbol</s></li>
           <li>telephone like in footer</li>
           <li>whatsapp</li>
           <li>mastercard</li>
         </ul>
+      </dd>
+    </dl>
+  </ContentBlock>
+  <ContentBlock title="Deprecated Icons" id="foundations-icons-deprecated">
+    <dl slot="content" class="ds-icon-grid">
+      <dt>These icons have gone the way of the dodo. Or dinosaurs...</dt>
+      <dd>
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-cart"
+          data-deprecated="true"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-search-deprecated"
+          data-deprecated="true"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-trashcan-deprecated"
+          data-deprecated="true"
+        />
       </dd>
     </dl>
   </ContentBlock>
@@ -456,7 +486,7 @@ import Toc from "../../components/ds/Toc.astro";
       <dd>
         <Icon
           class="sh-atom-icon baseline-8"
-          name="icon-add-to-bag"
+          name="icon-bag"
           width={IconSizes.Ginormous}
           height={IconSizes.Ginormous}
         />

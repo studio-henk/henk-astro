@@ -186,11 +186,11 @@
 
   .utilities-nav__item a:hover,
   [data-theme="dark"].NavBar--submenuOpen .utilities-nav__item a:hover {
-    --color-text-button: var(--color-accent16);
+    /* --color-text-button: var(--color-accent16); */
   }
 
   [data-theme="dark"].NavBar--isHovered .utilities-nav__item a:hover {
-    --color-text-button: var(--color-accent11);
+    /* --color-text-button: var(--color-accent11); */
   }
 
   #utilities-nav__lang {
@@ -336,15 +336,18 @@
   }
 
   .masthead-desktop .primary-nav .primary-nav__link:hover {
-    --color-text-action: var(--color-accent16);
+    /* --color-text-action: var(--color-accent16); */
   }
 
   [data-theme="dark"] .primary-nav .primary-nav__link:hover {
-    --color-text-action: var(--color-accent11);
+    /* --color-text-action: var(--color-accent11); */
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: auto;
   }
 
   [data-theme="dark"].NavBar--submenuOpen .primary-nav .primary-nav__link:hover {
-    --color-text-action: var(--color-accent16);
+    /* --color-text-action: var(--color-accent16); */
   }
 
   /* submenu */

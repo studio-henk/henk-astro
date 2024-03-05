@@ -32,13 +32,13 @@
   }
 }
 
-#configurator__note {
+/* #configurator__note {
   position: absolute;
   font-size: 12px;
   bottom: 0;
   left: 5%;
   z-index: 1;
-}
+} */
 
 .configurator__controls-row {
   position: absolute;

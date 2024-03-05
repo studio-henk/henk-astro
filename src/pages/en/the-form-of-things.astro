@@ -23,13 +23,25 @@ import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
   />
   <SliderBrickVarA title="Our products" swiperID="2" />
   <SplitscreenBrick
-    image="/images/slant1.jpg"
+    mediaSrc="/images/slant1.jpg"
     title="Win €1000 shopping credit."
-    intro="Could your interior use a fresh update? Good news. We're giving you the chance to win €1,000 shopping credit at Studio HENK. Sign up for our newsletter now and follow us on Instagram, Facebook, or TikTok. For even more chances to win, tag your friends. Who knows, you might soon have that beautiful new piece of furniture that's been on your wishlist for a while in your home. The promotion runs until Sunday, January 28th."
     buttonText="Sign up now!"
-  />
+    hasSlotContent={true}
+  >
+    <p>
+      Could your interior use a fresh update? Good news. We're giving you the
+      chance to win €1,000 shopping credit at Studio HENK.
+    </p>
+    <p>
+      Sign up for our newsletter now and follow us on Instagram, Facebook, or
+      TikTok. For even more chances to win, tag your friends. Who knows, you
+      might soon have that beautiful new piece of furniture that's been on your
+      wishlist for a while in your home. The promotion runs until Sunday,
+      January 28th.
+    </p>
+  </SplitscreenBrick>
   <SplitscreenBrick
-    image="/images/bcorp.jpg"
+    mediaSrc="/images/bcorp.jpg"
     title="A zero-waste furniture industry"
     subtitle="Our Mission"
     intro="As a B Corp, we want to use our business as a force for good. It's our mission to revolutionise the furniture industry from within, making it zero-waste. We strive to disrupt industry standards by creating beautiful furniture that is circular by design and made-to last, thereby positively impacting people and the planet. Discover more about our mission and B Corp status."
@@ -37,7 +49,7 @@ import BlockquoteBrick from "../../components/bricks/BlockquoteBrick.astro";
     order="reverse"
   />
   <SplitscreenBrick
-    image="/images/cheap.jpg"
+    mediaSrc="/images/cheap.jpg"
     title="Our designs at a friendlier price"
     subtitle="New"
     intro="We have added new, smart choices to our collection, demonstrating that quality, sustainability, and an up to 15% better price can go hand in hand."
