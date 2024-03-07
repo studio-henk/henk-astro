@@ -19,6 +19,14 @@ createApp({
       navigationData: null,
     };
   },
+  computed: {
+    itemsWithImages() {
+      // return this.currentItems.filter((item) => item.image !== "");
+      return this.currentItems.filter(
+        (item) => item.image !== null && item.image !== ""
+      );
+    },
+  },
   methods: {
     getNavDataFromWindowObject() {
       // const navData = window.navDataObject;
@@ -145,7 +153,7 @@ createApp({
     this.$nextTick(() => {
       this.getNavBarHeight();
       // for debugging to keep menu open
-      this.handlePrimaryNavItemHover(this.navigationData[5]);
+      // this.handlePrimaryNavItemHover(this.navigationData[5]);
     });
 
     // const navBarSkeleton = document.querySelector(".nav-bar-skeleton");

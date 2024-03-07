@@ -56,18 +56,6 @@ let { showMsgBar } = Astro.props;
           </a>
         </nav>
         <div class="utilities-nav">
-          <!-- <div class="utils utils_contact-bar">
-            <a class="utils_contact-bar-link" href={`/${lang}/shops/`}>
-              <Icon
-                class="sh-atom-icon"
-                name="icon-location"
-              />
-              Stores
-            </a>
-            <a class="utils_contact-bar-link" href={`/${lang}/contact/`}
-              >Contact</a
-            >
-          </div> -->
           <ul class="utilities-nav__list">
             <li class="utilities-nav__item" id="utilities-nav__search">
               <a
@@ -127,8 +115,8 @@ let { showMsgBar } = Astro.props;
                 <!-- arrow back -->
                 <Icon
                   class="sh-atom-icon"
-                  width="16"
-                  height="16"
+                  width={IconSizes.Small}
+                  height={IconSizes.Small}
                   name="icon-arrow-left-nav-back"
                 />
                 Back
@@ -163,12 +151,19 @@ let { showMsgBar } = Astro.props;
                 </li>
               </ol>
             </div>
-            <div
+            <!-- <div
               class="gallery-controller__gallery-container"
               v-if="currentItems.length < 5"
+            > -->
+            <div
+              class="gallery-controller__gallery-container"
+              v-if="itemsWithImages.length < 5"
             >
               <ol class="gallery-controller__list gallery-controller__gallery">
-                <li v-for="(item, index) in currentItems" :key="item.navTitle">
+                <li
+                  v-for="(item, index) in itemsWithImages"
+                  :key="item.navTitle"
+                >
                   <gallery-card :category="item" @navigate="navigateToNextLevel"
                   ></gallery-card>
                 </li>
@@ -189,8 +184,12 @@ let { showMsgBar } = Astro.props;
                 navigation-prev-el=".custom-prev-button"
                 navigation-next-el=".custom-next-button"
               >
-                <swiper-slide
+                <!-- <swiper-slide
                   v-for="(item, index) in currentItems"
+                  :key="item.navTitle"
+                > -->
+                <swiper-slide
+                  v-for="(item, index) in itemsWithImages"
                   :key="item.navTitle"
                 >
                   <gallery-card :category="item" @navigate="navigateToNextLevel"

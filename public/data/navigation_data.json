@@ -11,11 +11,18 @@
         {
           "id": 703,
           "navTitle": "Tables",
-          "image": "https://assets.studio-henk.nl/assets/Images/navbar/about-more-bank.jpg",
+          "image": "https://dev.studio-henk.nl/Images/navbar/1013247/image-thumb__1013247__NavBarImages/Tables.jpg",
           "url": "/en/nav-bar/shoppage/tables",
           "isPage": true,
           "hasChildren": true,
           "childrenData": [
+            {
+              "id": 999,
+              "navTitle": "All",
+              "image": null,
+              "url": "/en/products/all-tables",
+              "isPage": true
+            },
             {
               "id": 705,
               "navTitle": "Dining Tables",
@@ -252,7 +259,7 @@
         {
           "id": 668,
           "navTitle": "Contact",
-          "image": "https://assets.studio-henk.nl/assets/Images/navbar/about-contact-chat.jpg",
+          "image": "",
           "url": "/en/about-us/contact",
           "isPage": true,
           "hasChildren": true,
