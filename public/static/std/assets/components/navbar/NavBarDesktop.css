@@ -340,14 +340,16 @@
   }
 
   .masthead-desktop .primary-nav .primary-nav__link:hover {
-    /* --color-text-action: var(--color-accent16); */
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: auto;
   }
 
   [data-theme="dark"] .primary-nav .primary-nav__link:hover {
     /* --color-text-action: var(--color-accent11); */
-    text-decoration: underline;
+    /* text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-decoration-skip-ink: auto;
+    text-decoration-skip-ink: auto; */
   }
 
   [data-theme="dark"].NavBar--submenuOpen .primary-nav .primary-nav__link:hover {

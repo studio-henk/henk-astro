@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "compileCSS": "npx postcss src/static/std/assets/css/henk-styles.css --map -o public/static/std/assets/css/henk-styles.min.css",
     "watch:css": "watch -p 'src/static/std/assets/css/**/*.css' -c 'npm run compileCSS'",
-    "doiuse": "doiuse --browsers 'since 2022-01' public/static/std/assets/css/henk-styles.min.css",
+    "doiuse": "doiuse --browsers 'since 2022-01-01, not and_qq > 0, not and_uc > 0, not baidu > 0' public/static/std/assets/css/henk-styles.min.css",
     "check browsers": "npx browserslist"
   },
   "keywords": [],

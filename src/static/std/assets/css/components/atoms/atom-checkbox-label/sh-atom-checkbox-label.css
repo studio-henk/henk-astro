@@ -18,8 +18,6 @@
   height: auto;
   z-index: 9999;
   opacity: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border: 0;
   cursor: pointer;
@@ -42,9 +40,7 @@
   z-index: 2;
 }
 
-[data-custom-checkbox="true"]
-  input[type="checkbox"]:checked
-  + .sh-atom-label::before {
+[data-custom-checkbox="true"] input[type="checkbox"]:checked+.sh-atom-label::before {
   display: block;
   background-image: url(/static/std/assets/toolkit/svg-standalone/icon-checkmark.svg);
 }
@@ -65,9 +61,7 @@
   padding-left: 1.5rem;
 }
 
-[data-custom-checkbox="true"][data-variant="circle"]
-  input[type="checkbox"]:checked
-  + .sh-atom-label::before {
+[data-custom-checkbox="true"][data-variant="circle"] input[type="checkbox"]:checked+.sh-atom-label::before {
   background-image: none;
   background-color: #000;
   border-radius: 50px;
@@ -90,16 +84,11 @@
   border: 1px solid hsl(0, 0%, 0%);
 }
 
-[data-custom-checkbox="true"][data-variant="circle"]
-  .sh-atom-label
-  .icon-checkmark {
+[data-custom-checkbox="true"][data-variant="circle"] .sh-atom-label .icon-checkmark {
   display: none;
 }
 
-[data-custom-checkbox="true"][data-variant="circle"]
-  input[type="checkbox"]:checked
-  + .sh-atom-label
-  .icon-checkmark {
+[data-custom-checkbox="true"][data-variant="circle"] input[type="checkbox"]:checked+.sh-atom-label .icon-checkmark {
   background-color: hsla(0, 0%, 0%, 0);
   position: absolute;
   left: 4px;

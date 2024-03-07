@@ -1,34 +1,10 @@
 ---
+import SectionHeader from "../../../components/SectionHeader.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Cart Empty">
-    <div class="section-header">
-        <div class="sh-molecule-bg-box" style="
-                    --color-background-component-bgbox: var(--color-white, #fff);
-
-                    --color-text-component-bgbox: var(--color-henk-black, #000);
-                    ">
-            <div class="sh-molecule-padding-box" style="
-                            --size-spacing-units-top: 11;
-                                        --size-spacing-units-right: 5;
-                                        --size-spacing-units-bottom: 11;
-                                        --size-spacing-units-left: 5;
-                                        --size-spacing-units-top-desktop: 51;
-                                        --size-spacing-units-right-desktop: 5;
-                                        --size-spacing-units-bottom-desktop: 30;
-                                        --size-spacing-units-left-desktop: 5;
-                            ">
-                <div class="section-header__layout">
-                    <header class="section-header__header">
-                        <h1 class="h2 section-header__title">Your cart is empty</h1>
-                    </header>
-                    <div class="section-header__footer">
-                        <a href="/en" class="sh-atom-button" data-style="filled">explore the collection
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <SectionHeader
+    title="Your cart is empty Your cart is empty Your cart is empty Your cart is empty Your cart is empty "
+  />
 </BaseLayout>

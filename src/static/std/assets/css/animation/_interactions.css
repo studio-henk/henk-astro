@@ -26,7 +26,6 @@
     position: relative;
     text-decoration: none;
     overflow: hidden;
-    /*width: fit-content; */
     display: inline-block;
 }
 
@@ -34,7 +33,6 @@
     content: '';
     position: absolute;
     width: 100%;
-    /*transform: scaleX(0);*/
     height: 1px;
     bottom: 0;
     left: -110%;
@@ -64,9 +62,7 @@
     transform-origin: bottom left;
 }
 
-.hover-interaction-c-2 {
-
-}
+.hover-interaction-c-2 {}
 
 .hover-interaction-c-2 .hover-interaction-c-2-target {
     position: relative;

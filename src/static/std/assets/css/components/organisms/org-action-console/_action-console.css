@@ -1,46 +1,17 @@
-.action-console {
-  /*&[data-padding-off="true"] {
-    padding: 0;
-  }*/
-  /*.action-console__toolbar a:focus,
-  .action-console__toolbar a:hover,
-  .action-console__toolbar button:hover {
-    background-color: var(--color-henk-black, red);
-    color: #fff;
-  }*/
-  /*.action-console__toolbar a[data-shape="rect"],
-  .action-console__toolbar button[data-shape="rect"],
-  .action-console__toolbar .sh-atom-button[data-shape="rect"] {
-    border-radius: 0;
-    background-color: var(--color-henk-black, red);
-    color: #fff;
-    font-size: 14px;
-    line-height: 28px;
-    padding-top: 19px;
-    padding-bottom: 19px;
-  }*/
-  /*input[type="number"] {
-    text-align: center;
-    appearance: none;
-    -webkit-appearance: none;
-    width: 6ch;
-  }*/
-  /*input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    display: none;
-  }*/
-}
 .action-console[data-has-toolbar=true] .action-console__layout-box {
   padding: 0;
 }
+
 .action-console[data-is-sticky=true] {
   position: sticky;
   bottom: 0;
   z-index: 99;
 }
+
 .action-console * {
   margin: 0;
 }
+
 .action-console .action-console__layout-box {
   display: flex;
   flex-direction: column;
@@ -51,11 +22,13 @@
   background-color: var(--color-background-actionconsole, var(--color-henk-white, #fff));
   color: var(--color-text-actionconsole, var(--color-black, #000));
 }
+
 .action-console .action-console__toolbar {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
+
 @media only screen and (max-width: 991px) {
   .action-console .action-console__toolbar .sh-atom-button {
     border-radius: 0;

@@ -17,3 +17,15 @@
 ## --var-global-font?
 
 - @TODO: CSS img height auto?
+
+## Vendor prefixes
+
+### MOZ
+
+- -moz-focus-inner
+- -moz-focusring
+- -moz-appearance
+- -moz-fit-content
+- ~~-moz-linear-gradient~~ shopping cart css. uncommented, not used
+
+- @-moz-document url-prefix()

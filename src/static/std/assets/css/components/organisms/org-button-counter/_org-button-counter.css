@@ -22,7 +22,7 @@
   height: 1.5rem;
   text-align: center;
   border-radius: 0;
-  -webkit-appearance: none;
+  appearance: none;
   background-color: transparent;
   color: #000;
   border: var(--var-global-button-counter-button-border, 1px) solid #000;
@@ -31,7 +31,8 @@
 .button-counter button svg {
   display: var(--var-global-button-counter-icons-display, none);
 }
-.button-counter button svg + span {
+
+.button-counter button svg+span {
   display: var(--var-global-button-counter-span-display, block);
 }
 
@@ -46,10 +47,10 @@
 
 .button-counter input[type=number]::-webkit-outer-spin-button,
 .button-counter input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
 .button-counter input[type=number] {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }

@@ -1,56 +1,63 @@
 ---
+import Icon from "../../components/astro/Icon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
+
 <BaseLayout title="Search">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="breadcrumbs">
-                    <li class="breadcrumbs__item">
-                        <a href="/en">Home</a>
-                        <svg class="icon icon-chevron-right ">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-right"></use>
-                        </svg>
-                    </li>
-                    <li class="breadcrumbs__item">Search results</li>
-                </ul>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a href="/en">Home</a>
+            <svg class="icon icon-chevron-right">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-right"
+              ></use>
+            </svg>
+          </li>
+          <li class="breadcrumbs__item">Search results</li>
+        </ul>
+      </div>
     </div>
-    <section class="intro">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 offset-col-md-1">
-                    <div class="intro__block">
-                        <form role="search">
-                            <div class="mdl-search">
-                                <input
-                                    type="search"
-                                    id="mySearch"
-                                    class="input-lg"
-                                    name="q"
-                                    placeholder="Search the site..."
-                                    aria-label="Search through site content"
-                                    size="30"
-                                    style="border: 0;border-bottom: 1px solid black;"
-                                >
-                                <button class="sh-atom-button" data-style="outline-dark">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  </div>
+  <section class="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-col-md-1">
+          <div class="intro__block">
+            <form role="search">
+              <div class="mdl-search">
+                <input
+                  type="search"
+                  id="mySearch"
+                  class="input-lg"
+                  name="q"
+                  placeholder="Search the site..."
+                  aria-label="Search through site content"
+                  size="30"
+                  style="border: 0;border-bottom: 1px solid black;"
+                />
+                <button class="sh-atom-button" data-style="outline-dark">
+                  <Icon name="icon-search" />
+                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <title>ic_search_24px</title>
                                         <g class="nc-icon-wrapper" fill="currentcolor">
                                             <path
                                                 d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
                                         </g>
-                                    </svg>
-                                    Search
-                                </button>
-                            </div>
-                            <p class="">You can enter several search keywords separated by a comma.</p>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                                    </svg> -->
+                  Search
+                </button>
+              </div>
+              <p class="">
+                You can enter several search keywords separated by a comma.
+              </p>
+            </form>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
