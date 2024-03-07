@@ -186,6 +186,8 @@ let { showMsgBar } = Astro.props;
                 :css-mode="true"
                 :space-between="16"
                 :navigation="true"
+                navigation-prev-el=".custom-prev-button"
+                navigation-next-el=".custom-next-button"
               >
                 <swiper-slide
                   v-for="(item, index) in currentItems"
@@ -195,6 +197,12 @@ let { showMsgBar } = Astro.props;
                   ></gallery-card>
                 </swiper-slide>
               </swiper-container>
+              <div class="custom-prev-button">
+                <Icon class="sh-atom-icon" name="icon-arrow-left-nav-back" />
+              </div>
+              <div class="custom-next-button">
+                <Icon class="sh-atom-icon" name="icon-arrow-right-nav-next" />
+              </div>
             </div>
           </div>
         </div>

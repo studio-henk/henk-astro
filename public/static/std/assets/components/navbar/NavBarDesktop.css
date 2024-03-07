@@ -320,7 +320,7 @@
   }
 
   .masthead-desktop .primary-nav-container .atom-logo:hover {
-    color: var(--color-accent16);
+    /* color: var(--color-accent16); */
   }
 
   .masthead-desktop .primary-nav-container .primary-nav {
@@ -539,7 +539,7 @@
     /* margin-right: -28px; */
   }
 
-  swiper-container::part(button-prev),
+  /* swiper-container::part(button-prev),
   swiper-container::part(button-next) {
     background-color: var(--color-accent5);
     color: var(--color-henk-black);
@@ -550,6 +550,39 @@
     aspect-ratio: 1;
     --swiper-navigation-top-offset: 44%;
     --swiper-navigation-sides-offset: 44px;
+  } */
+
+  .has-swiper {
+    position: relative;
+  }
+
+  .has-swiper .custom-prev-button,
+  .has-swiper .custom-next-button {
+    background-color: var(--color-accent5);
+    color: var(--color-henk-black);
+    border-radius: 50px;
+    width: 48px;
+    height: auto;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 44%;
+    z-index: 1;
+  }
+
+  .has-swiper .custom-prev-button {
+    left: 1%;
+  }
+
+  .has-swiper .custom-next-button {
+    right: 1%;
+  }
+
+  .has-swiper .custom-prev-button.swiper-button-disabled,
+  .has-swiper .custom-next-button.swiper-button-disabled {
+    display: none;
   }
 
   /* lang-switch */
