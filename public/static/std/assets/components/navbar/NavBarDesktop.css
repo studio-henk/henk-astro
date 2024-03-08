@@ -184,23 +184,10 @@
     --color-text-button: var(--color-black);
   }
 
-  .utilities-nav__item a:hover,
-  [data-theme="dark"].NavBar--submenuOpen .utilities-nav__item a:hover {
-    /* --color-text-button: var(--color-accent16); */
-  }
-
-  [data-theme="dark"].NavBar--isHovered .utilities-nav__item a:hover {
-    /* --color-text-button: var(--color-accent11); */
-  }
-
   #utilities-nav__lang {
     position: relative;
     grid-column: 2;
     grid-row: 1;
-  }
-
-  :root {
-    /* scrollbar-gutter: stable; */
   }
 
   .nav-bar-skeleton {
@@ -276,6 +263,17 @@
     --color-background-knob: var(--color-henk-white);
   }
 
+  .masthead-desktop[data-theme="light"] {
+    --color-background-masthead: var(--color-transparent);
+    --color-text-masthead: var(--color-black);
+    --color-text-action: var(--color-text-masthead, #000);
+    --color-background-knob: var(--color-henk-black);
+  }
+
+  .masthead-desktop[data-theme="light"].NavBar--isScrolled {
+    --color-background-masthead: var(--color-white);
+  }
+
   /* when hovered */
   .masthead-desktop.NavBar--isHovered,
   .masthead-desktop[data-theme="dark"].NavBar--isScrolled {
@@ -343,17 +341,6 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-skip-ink: auto;
-  }
-
-  [data-theme="dark"] .primary-nav .primary-nav__link:hover {
-    /* --color-text-action: var(--color-accent11); */
-    /* text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-decoration-skip-ink: auto; */
-  }
-
-  [data-theme="dark"].NavBar--submenuOpen .primary-nav .primary-nav__link:hover {
-    /* --color-text-action: var(--color-accent16); */
   }
 
   /* submenu */

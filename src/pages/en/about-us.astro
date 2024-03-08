@@ -7,7 +7,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const mainClass = "sh-l-page-main";
 ---
 
-<BaseLayout title="About" showMsgBar="true" mainClass={mainClass}>
+<BaseLayout
+  title="About"
+  showMsgBar="true"
+  mainClass={mainClass}
+  hasHero="true"
+  Theme="light"
+>
   <style>
     .hero-block .hero__image {
       height: auto;
