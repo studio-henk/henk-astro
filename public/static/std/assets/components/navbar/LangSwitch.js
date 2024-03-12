@@ -16,6 +16,10 @@ template.innerHTML = `
         cursor: pointer;
     }
 
+    .LangSwitch__label {
+      font-size: 14px;
+    }
+
     .LangSwitch__track {
         width: 24px;
         background-color: rgba(0, 0, 0, 0.2);

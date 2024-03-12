@@ -62,6 +62,7 @@
   --color-text-button: var(--color-henk-black);
   padding: 0;
   border: 0;
+  border-radius: 0;
 }
 
 .sh-atom-button[data-style="plain-light"] {

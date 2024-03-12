@@ -66,7 +66,7 @@ let { showMsgBar } = Astro.props;
                 <Icon
                   class="sh-atom-icon"
                   width={IconSizes.Medium}
-                  width={IconSizes.Medium}
+                  height={IconSizes.Medium}
                   name="icon-search"
                 />
                 Search
@@ -79,8 +79,12 @@ let { showMsgBar } = Astro.props;
                 data-style="plain-dark"
                 title="Go to your shopping bag"
               >
-                <!-- <Icon class="sh-atom-icon" name="icon-cart" /> -->
-                <Icon class="sh-atom-icon" name="icon-bag" />
+                <Icon
+                  class="sh-atom-icon"
+                  width={IconSizes.Medium}
+                  height={IconSizes.Medium}
+                  name="icon-bag"
+                />
                 Cart
               </a>
             </li>
