@@ -153,7 +153,7 @@ createApp({
     this.$nextTick(() => {
       this.getNavBarHeight();
       // for debugging to keep menu open
-      // this.handlePrimaryNavItemHover(this.navigationData[5]);
+      this.handlePrimaryNavItemHover(this.navigationData[5]);
     });
 
     // const navBarSkeleton = document.querySelector(".nav-bar-skeleton");
