@@ -1,10 +1,12 @@
 ---
-import SectionHeader from "../../../components/SectionHeader.astro";
+import SectionHeader from "../../../components/bricks/SectionHeader.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Cart Empty">
-  <SectionHeader
-    title="Your cart is empty Your cart is empty Your cart is empty Your cart is empty Your cart is empty "
-  />
+  <SectionHeader title="Your cart is empty">
+    <a href="/en/collection" class="sh-atom-button" data-style="filled"
+      >Explore the collection</a
+    >
+  </SectionHeader>
 </BaseLayout>

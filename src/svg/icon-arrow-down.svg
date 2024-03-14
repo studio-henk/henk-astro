@@ -1,5 +1,7 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="icon-arrow-down">
-    <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M12.519 2.45031V2H11.481V2.45031V20.276L5.10097 14.7405L4.73398 14.4221L4 15.0589L4.36699 15.3773L11.633 21.6816L12 22L12.367 21.6816L19.633 15.3773L20 15.0589L19.266 14.4221L18.899 14.7405L12.519 20.276V2.45031Z" fill="#1F1F1F"/>
-</g>
+    <g id="icon-arrow-down">
+        <path id="Union" fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.519 2.45031V2H11.481V2.45031V20.276L5.10097 14.7405L4.73398 14.4221L4 15.0589L4.36699 15.3773L11.633 21.6816L12 22L12.367 21.6816L19.633 15.3773L20 15.0589L19.266 14.4221L18.899 14.7405L12.519 20.276V2.45031Z"
+            fill="currentcolor" />
+    </g>
 </svg>

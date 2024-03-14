@@ -81,53 +81,6 @@ strong {
 }
 
 
-
-/* all font sizes as classes */
-/* .size-font-12 {
-  font-size: calc(12 / var(--size-font-body) * 1em);
-  line-height: calc(24 / 12);
-}
-
-.size-font-14 {
-  font-size: calc(14 / var(--size-font-body) * 1em);
-  line-height: calc(24 / 14);
-}
-
-.size-font-16 {
-  font-size: calc(16 / var(--size-font-body) * 1em);
-  line-height: 1.5;
-}
-
-.size-font-18 {
-  font-size: calc(18 / var(--size-font-body) * 1em);
-  line-height: calc(32 / 18);
-}
-
-.size-font-20 {
-  font-size: calc(20 / var(--size-font-body) * 1em);
-  line-height: calc(32 / 20);
-}
-
-.size-font-24 {
-  font-size: calc(24 / var(--size-font-body) * 1em);
-  line-height: calc(40 / 24);
-}
-
-.size-font-32 {
-  font-size: calc(32 / var(--size-font-body) * 1em);
-  line-height: calc(48 / 32);
-}
-
-.size-font-36 {
-  font-size: calc(36 / var(--size-font-body) * 1em);
-  line-height: calc(56 / 36);
-}
-
-.size-font-42 {
-  font-size: calc(42 / var(--size-font-body) * 1em);
-  line-height: calc(64 / 42);
-} */
-
 /*Description
 @name: link
 new default link with underline
@@ -147,7 +100,7 @@ a:hover {
 }
 
 p {
-  margin: 24px 0;
+  margin: 0 0 1.5em 0;
 }
 
 header {
@@ -235,4 +188,9 @@ figure img {
 
 figure img+figcaption {
   text-align: left;
+}
+
+/* section content last-child margin bottom 0 */
+section div[class*="__content"] *:last-child {
+  margin-bottom: 0;
 }

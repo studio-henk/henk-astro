@@ -103,7 +103,7 @@ h6,
   line-height: calc(12/8);
 }
 
-@media screen and (max-width: 1105px) {
+/* @media screen and (max-width: 1105px) {
 
   .x-large,
   h3,
@@ -117,7 +117,7 @@ h6,
   .h6 {
     font-weight: 500;
   }
-}
+} */
 
 /*h1 as first-child no margin top*/
 h1:first-child {

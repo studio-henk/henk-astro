@@ -5,6 +5,7 @@
 @import "_config.css";
 @import "base/_base.css";
 @import "base/_base-typography-headings.css";
+@import "_backgrounds.css";
 /* @import "base/_base-typography-sizes.css"; */
 
 /* utils */
@@ -74,8 +75,10 @@
 @import "components/bricks/doubleimage-brick/_doubleimage-brick.css";
 @import "components/bricks/hero-video-brick/_hero-video-brick.css";
 @import "components/bricks/hero-brick/_hero-brick.css";
-@import "components/bricks/section-header-brick/_section-header-brick.css";
-@import "components/bricks/quoteBrick/quote-brick.css";
+/* @import "components/bricks/section-header-brick/_section-header-brick.css"; */
+/* @import "components/bricks/quoteBrick/quote-brick.css"; */
+@import "components/bricks/SectionHeader/_SectionHeader.css";
+@import "components/bricks/BlockQuoteBrick/BlockQuoteBrick.css";
 @import "components/bricks/shop-product-row/shop-product-row-brick.css";
 /*TODO: check this, is this for pimcore brickV2?*/
 /* @import "components/bricks/hero-brick-v2/hero-brick-v2.css"; */
@@ -162,7 +165,7 @@
 
 /* Modules */
 @import "modules/_filter.css";
-@import "modules/_stores.css";
+@import "modules/_stores-map.css";
 @import "modules/_fabric.css";
 /*@import "modules/_sh-mdl-buttons.css";*/
 @import "modules/content-blocks.css";

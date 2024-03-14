@@ -31,4 +31,9 @@
   --color-background-secondary: var(--color-transparent);
   --color-background-tertiary: var(--color-accent5);
   --color-background-highlight: var(--color-accent16);
+
+  --color-text-primary: var(--color-henk-black);
+  --color-text-secondary: var(--color-henk-white);
+  --color-text-on-dark: var(--color-text-secondary);
+  --color-text-disabled: var(--color-black-65);
 }

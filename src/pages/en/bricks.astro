@@ -12,7 +12,7 @@ import DoubleImageBrick from "../../components/bricks/DoubleImageBrick.astro";
 import FullwidthMediaBrick from "../../components/bricks/FullwidthMediaBrick.astro";
 import FullwidthVideoBrick from "../../components/bricks/FullwidthVideoBrick.astro";
 import HeroBrick from "../../components/bricks/HeroBrick.astro";
-// import SectionHeader from "../../components/bricks/SectionHeader.astro";
+import SectionHeader from "../../components/bricks/SectionHeader.astro";
 import UspBrick from "../../components/bricks/UspBrick.astro";
 ---
 
@@ -23,10 +23,32 @@ import UspBrick from "../../components/bricks/UspBrick.astro";
     text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquid autem consequuntur enim et fuga harum id incidunt, iusto laboriosam minima officiis, provident sequi sint sunt veritatis vero vitae?"
     videoSRC="/static/std/assets/video/slant-sofa.mp4"
   />
+  <SectionHeader
+    title="Cart is currently empty"
+    byline="New: Paste dining table"
+  >
+    <p>
+      Our sofas are characterized by soft forms and modularity. Create a
+      personal eye-catcher for your home.
+    </p>
+    <p>
+      The characteristically shaped Slant Sofa is a statement in any interior:
+      playful, dynamic, and inviting. It is the ideal sofa with seating comfort
+      for everyone.
+    </p>
+    <p>
+      Create your own unique Slant Sofa by choosing from various modular
+      elements and fabrics.
+    </p>
+    <a href="/en/lala" class="sh-atom-button" data-style="filled"
+      >Discover more</a
+    >
+  </SectionHeader>
+
   <HeroBrick
     title="A longer title to see how it breaks"
     subtitle="This is a subtitle"
-    text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquid autem consequuntur enim et fuga harum id incidunt, iusto laboriosam minima officiis, provident sequi sint sunt veritatis vero vitae?"
+    text="<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquid autem consequuntur enim et fuga harum id incidunt, iusto laboriosam minima officiis, provident sequi sint sunt veritatis vero vitae?</p>"
     image="https://www.studio-henk.nl/Images/samples-landingpage/635088/image-thumb__635088__fullwidthmediaBrickThumb/slide1.jpg"
     url="#"
   />
@@ -49,12 +71,12 @@ import UspBrick from "../../components/bricks/UspBrick.astro";
     url="#"
     hasSlotContent={true}
   >
-    <p slot="splitscreen-text">
+    <p>
       Could your interior use a fresh update? Good news. We're giving you the
       chance to win €1,000 shopping credit at Studio HENK. Sign up for our
       newsletter now and follow us on Instagram, Facebook, or TikTok.
     </p>
-    <p slot="splitscreen-text">
+    <p>
       For even more chances to win, tag your friends. Who knows, you might soon
       have that beautiful new piece of furniture that's been on your wishlist
       for a while in your home. The promotion runs until Sunday, January 28th.
@@ -68,7 +90,7 @@ import UspBrick from "../../components/bricks/UspBrick.astro";
     order="reverse"
     hasSlotContent={true}
   >
-    <p slot="splitscreen-text">
+    <p>
       As a B Corp, we want to use our business as a force for good. It's our
       mission to revolutionise the furniture industry from within, making it
       zero-waste. We strive to disrupt industry standards by creating beautiful
@@ -97,14 +119,17 @@ import UspBrick from "../../components/bricks/UspBrick.astro";
   >
     <p slot="splitscreen-text">There is a video there !</p>
   </SplitscreenBrick>
-  <!-- <BlockquoteBrick
+  <BlockquoteBrick
     text="Organic shapes, soft lines, straight angles – the Studio Henk collection is characterised by a play with form. A fitting piece of furniture for every interior."
-  /> -->
-  <!-- <BlockquoteBrick
+  />
+  <BlockquoteBrick
     text="To Be or Not to Be."
     credit="W. Shakespeare"
     jobtitle="Poet"
-  /> -->
+    source="bla bla"
+    bgColor="--color-accent16"
+    textColor="--color-henk-white"
+  />
   <!-- <BlogSlider1 />
   <BlogSlider2 /> -->
   <DoubleImageBrick
@@ -117,7 +142,7 @@ import UspBrick from "../../components/bricks/UspBrick.astro";
     buttonText="Discover more"
     buttonURL="https://www.studio-henk.nl/en/slim-x-wood-dining-table"
   />
-  <!-- <SectionHeader /> -->
+
   <!-- <FullwidthMediaBrick />
   <FullwidthVideoBrick />
   -->

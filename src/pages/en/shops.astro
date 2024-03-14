@@ -1,191 +1,231 @@
 ---
+import Store from "../../components/astro/Store.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Shops" NavTheme="dark">
-    {/* intro block */}
-    <div class="sh-molecule-bg-box" style="--color-background-component-bgbox:var(--color-white);">
-        <div class="sh-molecule-padding-box" style="
-                --size-spacing-units-top: 24;
-                --size-spacing-units-right: 11;
-                --size-spacing-units-bottom: 26;
-                --size-spacing-units-left: 5;
-                --size-spacing-units-top-desktop: 24;
-                --size-spacing-units-right-desktop: 5;
-                --size-spacing-units-bottom-desktop: 24;
-                --size-spacing-units-left-desktop: 5;
-            ">
-            <div class="page-header">
-                <p class="page-header__page-title">Our Stores</p>
-                <p class="page-header__page-description">Browse our furniture, get inspired for your home, and dive into
-                    our journey.</p>
-            </div>
+  <section id="stores" class="StoreBrick">
+    <div class="StoreBrick__grid">
+      <Store />
+      <div class="StoreBrick__Block">
+        <div class="StoreBrick__store-image-container">
+          <picture class="StoreBrick__Picture">
+            <source
+              srcset="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.avif 1x, /Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy@2x.avif 2x"
+              width="598"
+              height="747"
+              type="image/avif"
+            />
+            <source
+              srcset="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.webp 1x, /Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy@2x.webp 2x"
+              width="598"
+              height="747"
+              type="image/webp"
+            />
+            <source
+              srcset="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.jpg 1x, /Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy@2x.jpg 2x"
+              width="598"
+              height="747"
+              type="image/jpeg"
+            />
+            <img
+              class="StoreBrick__img"
+              src="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.jpg"
+              width="598"
+              height="747"
+              alt=""
+              loading="lazy"
+              srcset="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.jpg 1x, /Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy@2x.jpg 2x"
+            />
+          </picture>
         </div>
-    </div>
+        <h3 class="StoreBrick__store-name">Amsterdam flagship store</h3>
+        <!-- wysiwyg texts -->
+        <div class="StoreBrick__content">
+          <p>
+            With a surface area of almost 1,000m2, spread across three floors,
+            The Home of Studio HENK is our largest and most family-friendly
+            store. Stop by and get inspired by our furniture.
+          </p>
 
-    {/* store grid */}
-
-    <div class="sh-molecule-bg-box" style="--color-background-component-bgbox:var(--color-white);">
-        <div class="sh-molecule-padding-box sh-stores" style="
-                        --size-spacing-units-top: 0;
-                        --size-spacing-units-right: 5;
-                        --size-spacing-units-bottom: 15;
-                        --size-spacing-units-left: 5;
-                        --size-spacing-units-top-desktop: 0;
-                        --size-spacing-units-right-desktop: 5;
-                        --size-spacing-units-bottom-desktop: 17;
-                        --size-spacing-units-left-desktop: 5;
-                    ">
-            <div class="sh-l-grid sh-l-grid--4">
-                <div class="sh-l-grid__item sh-store" style="
-                             animation-delay: 0.15s;
-                             ">
-                    <a href="/en/stores/amsterdam-flagship-store">
-                        <img class="sh-store__image"
-                             src="https://assets.studio-henk.nl/assets/Images/new-stores/studio-henk-store-amsterdam-3.jpeg"
-                             alt="Photo of HENK AMSTERDAM FLAGSHIP STORE">
-                    </a>
-
-                    <p class="sh-store__title">
-                        <a href="/en/stores/amsterdam-flagship-store" style="text-decoration: none;">
-                            AMSTERDAM FLAGSHIP STORE
-                        </a>
-                    </p>
-                    <p class="store-intro">With a surface area of almost 1,000m2, spread across three floors, The Home of Studio HENK is our
-                        largest and most family-friendly store.</p>
-                    <address>Rozengracht 204<br>1016 NL Amsterdam<br>The Netherlands</address>
-                    <p class="store__opening-times">Monday: Closed<br>Tuesday till Saturday: 10.00 - 18.00<br>Sunday: 12.00 - 18.00</p>
-                    <p class="store__holidays">Liberation Day (May 5th) - 10:00 - 18:00<br>Ascension Day (May 18th) - 10.00 - 18.00</p>
-                    <a class="sh-store__link"
-                       href="https://www.google.com/maps/place/Studio+HENK+Amsterdam+Flagship+store/@52.3726924,4.8772189,17z/data=!4m13!1m7!3m6!1s0x47c609dc0a96f429:0x58e08ef0a2d297a0!2sRozengracht+204,+1016+NL+Amsterdam!3b1!8m2!3d52.3726924!4d4.8772189!3m4!1s0x47c6096bedafecb5:0xcf2b8610a886605e!8m2!3d52.3726924!4d4.8772189">
-                        Get Directions
-                    </a>
-                    <div class="sh-buttons">
-                        <a class="sh-atom-button" href="/en/stores/amsterdam-flagship-store" style="
-                                        --color-background-button: var(--color-accent5);
-                                        --color-text-button: var(--color-henk-black);
-                                        --color-border-button: var(--color-background-button);
-                                    ">discover rozengracht</a>
-                    </div>
-                </div>
-                <div class="sh-l-grid__item sh-store" style="
-                             animation-delay: 0.3s;
-                             ">
-                    <a href="/en/stores/antwerp-flagship-store">
-                        <img class="sh-store__image"
-                             src="https://assets.studio-henk.nl/assets/Images/new-stores/studio-henk-store-antwerpen.jpg"
-                             alt="Photo of HENK ANTWERP FLAGSHIP STORE">
-                    </a>
-                    <p class="sh-store__title">
-                        <a href="/en/stores/antwerp-flagship-store" style="text-decoration: none;">ANTWERP FLAGSHIP STORE</a>
-                    </p>
-                    <p class="store-intro">Enter the impressive, classical entrance and discover 450m2 of interior design and furniture inspiration.</p>
-                    <address>Kloosterstraat 52-Rechts,<br>2000 Antwerp<br>Belgium</address>
-                    <p class="store__opening-times">Monday: Closed<br>Tuesday &amp; Wednesday: 11.00 - 18.00<br>Thursday till Sunday: 10.00 - 18.00</p>
-                    <p class="store__holidays">Labour Day (May 1st) - 12.00 - 18.00<br>Ascension Day (May 18th) - 10.00 - 18.00</p>
-                    <a class="sh-store__link"
-                       href="https://www.google.com/maps/place/Studio+HENK+Flagshipstore+Antwerpen/@51.2159162,4.3948317,15z/data=!4m2!3m1!1s0x0:0x9a8f18e166405e3?sa=X&amp;amp;ved=2ahUKEwiGosyO-Nb0AhX7iP0HHWV5A1oQ_BJ6BAgwEAU">
-                        Get Directions
-                    </a>
-                    <div class="sh-buttons">
-                        <a class="sh-atom-button" href="/en/stores/antwerp-flagship-store" style="
-                                        --color-background-button: var(--color-accent5);
-                                        --color-text-button: var(--color-henk-black);
-                                        --color-border-button: var(--color-background-button);
-                                    ">Discover Antwerp</a>
-                    </div>
-                </div>
-                <div class="sh-l-grid__item sh-store" style="
-                             animation-delay: 0.45s;
-                             ">
-                    <a href="/en/stores/amsterdam-brand-store">
-                        <img class="sh-store__image"
-                             src="https://assets.studio-henk.nl/assets/Images/new-stores/studio-henk-store-cruqius-2.jpg"
-                             alt="Photo of HENK AMSTERDAM BRAND STORE">
-                    </a>
-                    <p class="sh-store__title">
-                        <a href="/en/stores/amsterdam-brand-store" style="text-decoration: none;">AMSTERDAM BRAND STORE</a>
-                    </p>
-                    <p class="store-intro">The very first Studio HENK store counts 300m2 of design inspiration spread across two spacious floors.</p>
-                    <address>Cruquiusweg 94C<br>1019AJ Amsterdam<br>The Netherlands</address>
-                    <p class="store__opening-times">Monday: Closed<br>Tuesday till Sunday: 10.00 - 17.00</p>
-                    <p class="store__holidays">Liberation Day (May 5th) - 10:00 - 17:00<br>Ascension Day (May 18th) - 10.00 - 17.00</p>
-                    <a class="sh-store__link"
-                       href="https://www.google.com/maps/place/Studio+HENK+Amsterdam+Brandstore/@52.3682812,4.9504176,15z/data=!4m5!3m4!1s0x0:0x787752560577920!8m2!3d52.3682812!4d4.9504176">
-                        Get Directions
-                    </a>
-                    <div class="sh-buttons">
-                        <a class="sh-atom-button" href="/en/stores/amsterdam-brand-store" style="
-                                        --color-background-button: var(--color-accent5);
-                                        --color-text-button: var(--color-henk-black);
-                                        --color-border-button: var(--color-background-button);
-                                    ">Discover Cruquiusweg</a>
-                    </div>
-                </div>
-                <div class="sh-l-grid__item sh-store" style="
-                             animation-delay: 0.6s;
-                             ">
-                    <a href="/en/stores/utrecht-brand-store">
-                        <img class="sh-store__image"
-                             src="https://assets.studio-henk.nl/assets/Images/new-stores/studio-henk-store-utrecht.jpg"
-                             alt="Photo of HENK UTRECHT BRAND STORE">
-                    </a>
-                    <p class="sh-store__title">
-                        <a href="/en/stores/utrecht-brand-store" style="text-decoration: none;">UTRECHT BRAND STORE</a>
-                    </p>
-                    <p class="store-intro">Our newest store presents the best of our collection in a 350m2 historic building that we restored to its former glory.</p>
-                    <address>Janskerkhof 5<br>3512BK Utrecht<br>The Netherlands</address>
-                    <p class="store__opening-times">Monday: Closed<br>Tuesday till Sunday: 10.00 - 18.00</p>
-                    <p class="store__holidays">Liberation Day (May 5th) - 10:00 - 18:00<br>Ascension Day (May 18th) - 10.00 - 18.00</p>
-                    <a class="sh-store__link"
-                       href="https://www.google.com/maps/place/Janskerkhof+5,+3512+BK+Utrecht/@52.0928178,5.1192052,17z/data=!4m5!3m4!1s0x47c66f450d82bd11:0x2f931787ca38f37e!8m2!3d52.0928145!4d5.1213939">
-                        GET DIRECTIONS
-                    </a>
-                    <div class="sh-buttons">
-                        <a class="sh-atom-button" href="/en/stores/utrecht-brand-store" style="
-                                        --color-background-button: var(--color-accent5);
-                                        --color-text-button: var(--color-henk-black);
-                                        --color-border-button: var(--color-background-button);
-                                    ">Discover Utrecht</a>
-                    </div>
-                </div>
-            </div>
+          <p>
+            Rozengracht 204<br />
+            1016 NL Amsterdam<br />
+            The Netherlands<br />
+            <br />
+            Monday: Closed<br />
+            Tuesday till Saturday: 10.00 - 17.30<br />
+            <strong>Thursday: 10.00 - 21.00 (Late-night shopping)</strong><br />
+            Sunday: 11.00 - 17.00
+          </p>
         </div>
+        <a
+          class="sh-store__link"
+          href="/en/stores/amsterdam-flagship-store#adjusted-opening-hours"
+          title="Click to go to the store page"
+        >
+          Adjusted Opening Hours
+        </a>
+        <a
+          class="sh-store__link"
+          href="https://www.google.com/maps/place/Studio+HENK+Amsterdam+Flagship+store/@52.3726924,4.8772189,17z/data=!4m13!1m7!3m6!1s0x47c609dc0a96f429:0x58e08ef0a2d297a0!2sRozengracht+204,+1016+NL+Amsterdam!3b1!8m2!3d52.3726924!4d4.8772189!3m4!1s0x47c6096bedafecb5:0xcf2b8610a886605e!8m2!3d52.3726924!4d4.8772189"
+          target="_blank"
+        >
+          Get directions
+        </a>
+        <!-- button -->
+        <a
+          href="/en/stores/amsterdam-flagship-store"
+          class="sh-atom-button"
+          data-style="soft">Discover Amsterdam</a
+        >
+      </div>
+      <div class="StoreBrick__Block">
+        <div class="StoreBrick__store-image-container">
+          <picture class="StoreBrick__Picture">
+            <source
+              srcset="/Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy.avif 1x, /Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy@2x.avif 2x"
+              width="598"
+              height="747"
+              type="image/avif"
+            />
+            <source
+              srcset="/Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy.webp 1x, /Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy@2x.webp 2x"
+              width="598"
+              height="747"
+              type="image/webp"
+            />
+            <source
+              srcset="/Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy.jpg 1x, /Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy@2x.jpg 2x"
+              width="598"
+              height="747"
+              type="image/jpeg"
+            />
+            <img
+              class="StoreBrick__img"
+              src="/Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy.jpg"
+              width="598"
+              height="747"
+              alt=""
+              loading="lazy"
+              srcset="/Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy.jpg 1x, /Images/new-stores/998412/image-thumb__998412__storeBrickThumb/studio-henk-store-antwerpen_copy@2x.jpg 2x"
+            />
+          </picture>
+        </div>
+        <h3 class="StoreBrick__store-name">Antwerp flagship store</h3>
+        <!-- wysiwyg texts -->
+        <div class="StoreBrick__content">
+          <p>
+            Enter the impressive, classical entrance and discover 450m2 of
+            interior design and furniture inspiration.
+          </p>
+
+          <address>
+            Kloosterstraat 52-Rechts,<br />
+            2000 Antwerp<br />
+            Belgium<br />
+            <br />
+            Monday: CLosed<br />
+            Tuesday till Saturday: 10.30 - 18.00<br />
+            Sunday: 11.00 - 17.00<br />
+            <br />
+            <strong>Thursday evening: 18.00 - 21.00 (by appointment)</strong>
+          </address>
+        </div>
+        <a
+          class="sh-store__link"
+          href="https://www.studio-henk.nl/en/stores/antwerp-flagship-store#adjusted-opening-hours"
+        >
+          Adjusted opening hours
+        </a>
+        <a
+          class="sh-store__link"
+          href="https://www.google.com/maps/place/Studio+HENK+Flagshipstore+Antwerpen/@51.2159162,4.3948317,15z/data=!4m2!3m1!1s0x0:0x9a8f18e166405e3?sa=X&ved=2ahUKEwiGosyO-Nb0AhX7iP0HHWV5A1oQ_BJ6BAgwEAU"
+          target="_blank"
+        >
+          Get Directions
+        </a>
+        <!-- button -->
+        <a
+          href="/en/stores/antwerp-flagship-store"
+          class="sh-atom-button"
+          data-style="soft">Discover Antwerp</a
+        >
+      </div>
+      <div class="StoreBrick__Block">
+        <div class="StoreBrick__store-image-container">
+          <picture class="StoreBrick__Picture">
+            <source
+              srcset="/Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy.avif 1x, /Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy@2x.avif 2x"
+              width="598"
+              height="747"
+              type="image/avif"
+            />
+            <source
+              srcset="/Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy.webp 1x, /Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy@2x.webp 2x"
+              width="598"
+              height="747"
+              type="image/webp"
+            />
+            <source
+              srcset="/Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy.jpg 1x, /Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy@2x.jpg 2x"
+              width="598"
+              height="747"
+              type="image/jpeg"
+            />
+            <img
+              class="StoreBrick__img"
+              src="/Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy.jpg"
+              width="598"
+              height="747"
+              alt=""
+              loading="lazy"
+              srcset="/Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy.jpg 1x, /Images/new-stores/998414/image-thumb__998414__storeBrickThumb/studio-henk-store-utrecht_copy@2x.jpg 2x"
+            />
+          </picture>
+        </div>
+        <h3 class="StoreBrick__store-name">Utrecht brand store</h3>
+        <!-- wysiwyg texts -->
+        <div class="StoreBrick__content"></div>
+        <!-- button -->
+      </div>
+      <div class="StoreBrick__Block">
+        <div class="StoreBrick__store-image-container">
+          <picture class="StoreBrick__Picture">
+            <source
+              srcset="/Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy.avif 1x, /Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy@2x.avif 2x"
+              width="598"
+              height="747"
+              type="image/avif"
+            />
+            <source
+              srcset="/Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy.webp 1x, /Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy@2x.webp 2x"
+              width="598"
+              height="747"
+              type="image/webp"
+            />
+            <source
+              srcset="/Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy.jpg 1x, /Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy@2x.jpg 2x"
+              width="598"
+              height="747"
+              type="image/jpeg"
+            />
+            <img
+              class="StoreBrick__img"
+              src="/Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy.jpg"
+              width="598"
+              height="747"
+              alt=""
+              loading="lazy"
+              srcset="/Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy.jpg 1x, /Images/rotterdam/998415/image-thumb__998415__storeBrickThumb/Storefront_rotterdam_2000x2500_V3_copy@2x.jpg 2x"
+            />
+          </picture>
+        </div>
+        <h3 class="StoreBrick__store-name">Rotterdam brand store</h3>
+        <!-- wysiwyg texts -->
+        <div class="StoreBrick__content"></div>
+        <!-- button -->
+      </div>
     </div>
+  </section>
 </BaseLayout>
-{/*
-<style>
-    @media only screen and (max-width: 767px) {
-        .sh-store address {
-            margin-top: 28px;
-        }
-    }
-    @media only screen and (min-width: 768px) {
-        .sh-l-grid--4 {
-            align-items: stretch;
-        }
-
-        .sh-l-grid__item.sh-store * {
-            margin: 0;
-        }
-
-        .sh-l-grid__item.sh-store {
-            display: grid;
-            align-items: flex-start;
-            grid-template-rows: max-content min-content 1fr min-content auto min-content auto 74px;
-            gap: 1rem;
-        }
-
-        .store-intro {
-        }
-
-        .store__opening-times {
-        }
-    }
-
-    @media only screen and (min-width: 1368px) {
-        .sh-l-grid__item.sh-store {
-            grid-template-rows: max-content min-content 112px min-content auto min-content auto 74px;
-        }
-    }
-</style>*/}

@@ -1,3 +1,10 @@
+.sh-l-grid__item.sh-store {
+  display: grid;
+  height: 100%;
+}
+
+/* .sh-stores is the padding-box. remove soon */
+
 .sh-stores .sh-store__image {
   border-radius: 8px;
 }

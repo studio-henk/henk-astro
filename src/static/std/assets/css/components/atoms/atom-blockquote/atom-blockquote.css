@@ -1,6 +1,7 @@
 @charset "UTF-8";
-blockquote > p,
-blockquote > a > p,
+
+blockquote>p,
+blockquote>a>p,
 .quote__text {
   text-align: center;
   max-width: 30em;
@@ -19,18 +20,21 @@ blockquote {
   max-width: 945px;
   margin: 1.75rem auto 0;
 }
-blockquote > a {
+
+blockquote>a {
   text-decoration: none;
   color: currentcolor;
 }
-blockquote > p:first-child::before,
-blockquote > a > p:first-child::before,
+
+blockquote>p:first-child::before,
+blockquote>a>p:first-child::before,
 blockquote .quote__text:first-child::before {
   content: open-quote;
   display: inline-block;
 }
-blockquote > p:first-child::after,
-blockquote > a > p:first-child::after,
+
+blockquote>p:first-child::after,
+blockquote>a>p:first-child::after,
 blockquote .quote__text:first-child::after {
   content: close-quote;
 }
@@ -51,11 +55,13 @@ blockquote .quote__text:first-child::after {
   font-feature-settings: "pnum" on, "lnum" on;
   margin-bottom: 0;
 }
+
 .quote__citation cite {
   font-style: italic;
   text-transform: none;
   letter-spacing: normal;
 }
+
 @media only screen and (min-width: 992px) {
   .quote__citation {
     /*font-size: 0.875rem; // 14px*/
@@ -70,6 +76,7 @@ blockquote .quote__text:first-child::after {
   margin-top: 8px;
   /* TODO: use css variables */
 }
+
 @media only screen and (min-width: 992px) {
   .quote__jobtitle {
     /*font-size: 0.875rem; // 14px
