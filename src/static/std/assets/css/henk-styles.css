@@ -79,6 +79,7 @@
 /* @import "components/bricks/quoteBrick/quote-brick.css"; */
 @import "components/bricks/SectionHeader/_SectionHeader.css";
 @import "components/bricks/BlockQuoteBrick/BlockQuoteBrick.css";
+@import "components/bricks/_StoreBrick.css";
 @import "components/bricks/shop-product-row/shop-product-row-brick.css";
 /*TODO: check this, is this for pimcore brickV2?*/
 /* @import "components/bricks/hero-brick-v2/hero-brick-v2.css"; */
@@ -121,7 +122,8 @@
 @import "components/organisms/org-grid-lister/_org-grid-lister.css";
 @import "components/organisms/org-checkout-summary-scroll/_org-checkout-summary-scroll.css";
 @import "components/organisms/org-block/_org-block.css";
-@import "components/organisms/org-block-stores/_org-block-stores.css";
+/* turned off 14 Mar 2024 at 13:40:39 */
+/* @import "components/organisms/org-block-stores/_org-block-stores.css"; */
 @import "components/organisms/org-usp/_org-usp.css";
 @import "components/organisms/org-stories/_org-stories.css";
 @import "components/organisms/sh-big-fat-error-box/_sh-big-fat-error-box.css";
@@ -199,6 +201,7 @@
 @import "pages/_cart.css";
 @import "pages/_listerpage.css";
 @import "pages/_instockapp.css";
+/* remove */
 @import "pages/_stores.css";
 @import "pages/_collection.css";
 @import "pages/_configurator-extension.css";

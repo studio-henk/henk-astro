@@ -1,85 +1,78 @@
 ---
 import { Picture } from "astro:assets";
-import storeRozengracht from "../../images/store-rozengracht.jpeg";
+import { Image } from "astro:assets";
+// import storeRozengracht from "../../images/store-rozengracht.jpeg";
+
+interface Props {
+  image: string;
+  name: string;
+  buttonText: string;
+  buttonHref: string;
+  hoursLinkText?: string;
+  hoursLinkHref?: string;
+  directionsLinkText?: string;
+  directionsLinkHref: string;
+}
+
+const {
+  image,
+  name,
+  buttonText,
+  buttonHref,
+  hoursLinkText = "Adjusted Opening Hours",
+  hoursLinkHref = "#adjusted-opening-hours",
+  directionsLinkText = "Get directions",
+  directionsLinkHref,
+} = Astro.props;
 ---
 
 <div class="StoreBrick__Block">
   <div class="StoreBrick__store-image-container">
-    <Picture
-      src={storeRozengracht}
+    <!-- <picture>
+      <Image
+        src={image}
+        alt="Photo of store front"
+        width="598"
+        height="747"
+        class="StoreBrick__img"
+        densities={[1, 2]}
+        format="webp"
+      />
+    </picture> -->
+    <!-- <Picture
+      src={image}
       formats={["avif", "webp"]}
+      width="598"
+      height="747"
+      alt="A description of my image."
+      class="StoreBrick__img"
+      pictureAttributes={{ class: "StoreBrick__Picture" }}
+    /> -->
+    <Picture
+      src="/images/272x340.jpg"
+      formats={["avif", "webp"]}
+      width="272"
+      height="340"
       alt="A description of my image."
       class="StoreBrick__img"
       pictureAttributes={{ class: "StoreBrick__Picture" }}
     />
-    <!-- <picture class="StoreBrick__Picture">
-      <source
-        srcset="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.avif 1x, /Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy@2x.avif 2x"
-        width="598"
-        height="747"
-        type="image/avif"
-      />
-      <source
-        srcset="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.webp 1x, /Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy@2x.webp 2x"
-        width="598"
-        height="747"
-        type="image/webp"
-      />
-      <source
-        srcset="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.jpg 1x, /Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy@2x.jpg 2x"
-        width="598"
-        height="747"
-        type="image/jpeg"
-      />
-      <img
-        class="StoreBrick__img"
-        src="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.jpg"
-        width="598"
-        height="747"
-        alt=""
-        loading="lazy"
-        srcset="/Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy.jpg 1x, /Images/home-of-studio-henk/998413/image-thumb__998413__storeBrickThumb/studio-henk-showroom-amsterdam-rozengracht6-2_copy@2x.jpg 2x"
-      />
-    </picture> -->
   </div>
-  <h3 class="StoreBrick__store-name">Amsterdam flagship store</h3>
+  <h3 class="StoreBrick__store-name">{name}</h3>
   <!-- wysiwyg texts -->
   <div class="StoreBrick__content">
-    <p>
-      With a surface area of almost 1,000m2, spread across three floors, The
-      Home of Studio HENK is our largest and most family-friendly store. Stop by
-      and get inspired by our furniture.
-    </p>
-
-    <p>
-      Rozengracht 204<br />
-      1016 NL Amsterdam<br />
-      The Netherlands<br />
-      <br />
-      Monday: Closed<br />
-      Tuesday till Saturday: 10.00 - 17.30<br />
-      <strong>Thursday: 10.00 - 21.00 (Late-night shopping)</strong><br />
-      Sunday: 11.00 - 17.00
-    </p>
+    <slot />
   </div>
   <a
     class="sh-store__link"
-    href="/en/stores/amsterdam-flagship-store#adjusted-opening-hours"
+    href={buttonHref + hoursLinkHref}
     title="Click to go to the store page"
   >
-    Adjusted Opening Hours
+    {hoursLinkText}
   </a>
-  <a
-    class="sh-store__link"
-    href="https://www.google.com/maps/place/Studio+HENK+Amsterdam+Flagship+store/@52.3726924,4.8772189,17z/data=!4m13!1m7!3m6!1s0x47c609dc0a96f429:0x58e08ef0a2d297a0!2sRozengracht+204,+1016+NL+Amsterdam!3b1!8m2!3d52.3726924!4d4.8772189!3m4!1s0x47c6096bedafecb5:0xcf2b8610a886605e!8m2!3d52.3726924!4d4.8772189"
-    target="_blank"
-  >
-    Get directions
+  <a class="sh-store__link" href={directionsLinkHref} target="_blank">
+    {directionsLinkText}
   </a>
   <!-- button -->
-  <a
-    href="/en/stores/amsterdam-flagship-store"
-    class="sh-atom-button"
-    data-style="soft">Discover Amsterdam</a
-  >
+  <a href={buttonHref} class="sh-atom-button" data-style="soft">{buttonText}</a>
 </div>
