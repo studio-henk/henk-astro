@@ -21,9 +21,9 @@
 
   .NavBarMobile .NavBarMobile__top {
     position: fixed;
-    /*top: 0;*/
     top: var(--MsgBarHeight, 0);
-    z-index: 999;
+    /* z-index: 999; */
+    z-index: 91049;
     width: 100%;
     background-color: var(--color-white);
     padding: 24px;
@@ -89,7 +89,8 @@
     background-color: var(--color-henk-white);
     position: fixed;
     top: var(--total-bars-height, 0);
-    z-index: 998;
+    /* z-index: 998; */
+    z-index: 91048;
     width: 100%;
     padding: 0 24px 24px 24px;
   }
@@ -98,13 +99,16 @@
     opacity: 1;
     visibility: visible;
     /* height: calc(100svh - var(--total-bars-height, 0)); */
-    height: calc(100svh - var(--total-bars-height, 0) - 40px);
+    /* height: calc(100svh - var(--total-bars-height, 0) - 40px); */
+    height: calc(100svh - var(--total-bars-height, 0) - 40px + 2px);
+    top: calc(var(--total-bars-height, 0) - 1px);
   }
 
   .NavBarMobile .NavBarMobile__list {
     margin: 0;
     list-style: none;
-    max-height: calc(100svh - calc(var(--total-bars-height) + 24px));
+    /* max-height: calc(100svh - calc(var(--total-bars-height) + 24px)); */
+    max-height: calc(100svh - calc(var(--total-bars-height) + 40px));
     overflow-y: scroll;
     height: 100%;
     display: flex;
