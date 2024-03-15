@@ -96,7 +96,8 @@ a {
 
 a:focus,
 a:hover {
-  --color-text-action: var(--color-henk-black);
+  /* --color-text-action: var(--color-henk-black); */
+  --color-text-action: var(--color-text-action-dimmed, grey);
 }
 
 p {

@@ -11,7 +11,7 @@
   --color-background-page: var(--color-white, #fff);
   --color-text-page: var(--color-black-lacquer, #000);
   --color-text-action: var(--color-black-lacquer, #000);
-  --color-text-action-dimmed: var(--color-black-65, red);
+  --color-text-action-dimmed: var(--color-black-55, #999);
   /* text selection */
   --color-text-selection-bg: var(--color-accent5);
   --color-text-selection-text: var(--color-henk-black);

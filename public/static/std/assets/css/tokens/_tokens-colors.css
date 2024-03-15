@@ -8,6 +8,7 @@
   --color-black: #000;
   --color-white: #fff;
   --color-black-65: #a6a6a6;
+  --color-black-55: hsl(0, 0%, 55%);
 
   /* accents */
   --color-accent5: #eae4d7;
