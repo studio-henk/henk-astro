@@ -2,7 +2,7 @@
   "navigationData": [
     {
       "id": 702,
-      "navTitle": "Shop",
+      "navTitle": "Collection",
       "image": null,
       "url": "/en/nav-bar/shoppage",
       "isPage": true,
@@ -137,16 +137,16 @@
     },
     {
       "id": 463,
-      "navTitle": "Samples",
+      "navTitle": "Colour samples",
       "image": null,
       "url": "/en/samples",
       "isPage": true
     },
     {
       "id": 683,
-      "navTitle": "Visit",
+      "navTitle": "Stores",
       "image": null,
-      "url": "/en/visit",
+      "url": "/en/shops",
       "isPage": true,
       "hasChildren": true,
       "childrenData": [
@@ -224,7 +224,7 @@
     },
     {
       "id": 692,
-      "navTitle": "Inspiration",
+      "navTitle": "Service",
       "image": null,
       "url": "/en/inspiration",
       "isPage": true,
@@ -250,7 +250,7 @@
     },
     {
       "id": 574,
-      "navTitle": "About",
+      "navTitle": "About us",
       "image": null,
       "url": "/en/about-us",
       "isPage": true,
