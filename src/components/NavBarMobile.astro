@@ -23,6 +23,8 @@ if (!Theme) {
   Theme = "light";
 }
 
+let { totalItemCount } = Astro.props;
+
 // let { showMsgBar } = Astro.props;
 ---
 
@@ -44,6 +46,15 @@ if (!Theme) {
         <!-- <Icon class="sh-atom-icon" width="24" height="24" name="icon-cart" /> -->
         <Icon class="sh-atom-icon" width="24" height="24" name="icon-bag" />
         Cart
+        {totalItemCount && totalItemCount > 0 ?
+            (totalItemCount < 10 ?
+                    <span class="cart__badge">{totalItemCount}</span>
+                    :
+                    <span class="cart__badge --maxed-out">9<span>+</span></span>
+            )
+            :
+            null
+        }
       </a>
       <!-- hamburger button -->
       <hamburger-button @click="toggleNav"></hamburger-button>
@@ -90,12 +101,6 @@ if (!Theme) {
           </span>
           <a v-else :href="item.url" class="page-link"> [[ item.navTitle ]]</a>
         </li>
-        <!-- <li
-          v-if="currentLevel === 1"
-          class="NavBarMobile__list-item NavBarMobile__utils-list-container"
-        >
-          here?
-        </li> -->
       </ol>
     </nav>
     <div class="utils-bar">
