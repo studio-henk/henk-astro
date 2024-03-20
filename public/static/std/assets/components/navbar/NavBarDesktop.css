@@ -176,6 +176,22 @@
     grid-column: 3;
   }
 
+  #utilities-nav__cart .sh-atom-button.--icon-cart {
+    position: relative;
+  }
+
+  #utilities-nav__cart .cart__badge {
+    font-size: 8px;
+    font-weight: 700;
+    position: absolute;
+    top: 2px;
+    /*left: 10px;*/
+  }
+
+  #utilities-nav__cart .cart__badge.--maxed-out {
+    /*left: 8px;*/
+  }
+
   .utilities-nav__item a[class*="--icon"] {
     text-indent: -999em;
     line-height: 24px;

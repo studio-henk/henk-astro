@@ -215,6 +215,26 @@
   .NavBarMobile__nav.active+.utils-bar {
     display: grid;
   }
+
+  .NavBarMobile .NavBarMobile__top-link {
+    position: relative;
+  }
+
+  .NavBarMobile .cart__badge {
+    font-size: 8px;
+    font-weight: 700;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+  }
+
+  .NavBarMobile .cart__badge.--maxed-out {
+    left: 8px;
+  }
+
+  .NavBarMobile .cart__badge span {
+    font-size: 6px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
