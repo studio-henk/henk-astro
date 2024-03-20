@@ -120,8 +120,12 @@ createApp({
     },
     handlePrimaryNavItemClick(item, event) {
       // console.log("clicked");
-      if (item.childrenData) {
-        // If there are children, prevent the default click action
+      // if (item.childrenData) {
+      //   // If there are children, prevent the default click action
+      //   event.preventDefault();
+      // }
+      if (!document.documentElement.classList.contains("no-touchevents")) {
+        // If the class is not found, prevent the default action
         event.preventDefault();
       }
     },
