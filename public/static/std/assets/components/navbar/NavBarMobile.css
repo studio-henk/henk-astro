@@ -76,7 +76,9 @@
     color: var(--color-black);
   }
 
-  .NavBarMobile .NavBarMobile__header.NavBar--isScrolled .NavBarMobile__top-link {
+  .NavBarMobile
+    .NavBarMobile__header.NavBar--isScrolled
+    .NavBarMobile__top-link {
     color: var(--color-black);
   }
 
@@ -174,7 +176,6 @@
 
   .--direction-horizontal .NavBarMobile__utils-list-item {
     display: flex;
-    /*justify-content: center;*/
     align-items: center;
   }
 
@@ -212,7 +213,7 @@
     font-size: 12px;
   }
 
-  .NavBarMobile__nav.active+.utils-bar {
+  .NavBarMobile__nav.active + .utils-bar {
     display: grid;
   }
 }
