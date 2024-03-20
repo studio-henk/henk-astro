@@ -1,26 +1,86 @@
+---
+interface Props {
+  id?: string;
+  lang?: "en" | "nl";
+  text: string;
+  credit?: string;
+  jobtitle?: string;
+  source?: string;
+  bgColor?:
+    | "--color-henk-black"
+    | "--color-henk-white"
+    | "--color-accent5"
+    | "--color-accent6"
+    | "--color-accent11"
+    | "--color-accent14"
+    | "--color-accent16";
+  textColor?: "--color-henk-black" | "--color-henk-white";
+}
+
+const {
+  id,
+  lang = "en",
+  text,
+  credit,
+  jobtitle,
+  source,
+  bgColor = "--color-henk-white",
+  textColor = "--color-henk-black",
+} = Astro.props;
+---
+
+<section
+  class="BlockQuoteBrick"
+  id={id}
+  lang={lang}
+  style={`--color-background-bqb: var(${bgColor}); --color-text-bqb: var(${textColor});`}
+>
+  {
+    credit ? (
+      <blockquote>
+        <h2 class="quote__text">{text}</h2>
+        {credit && (
+          <div class="quote__meta">
+            <p class="quote__citation">{credit}</p>
+            <p class="quote__jobtitle">{jobtitle}</p>
+          </div>
+          <cite>{source}</cite>
+        )}
+      </blockquote>
+    ) : (
+      <h2 class="quote__text">{text}</h2>
+    )
+  }
+</section>
+
+<!-- <hr />
 <div class="sh-quote-block" lang="en" id="block02">
-    <div class="sh-molecule-bg-box" style="
+  <div
+    class="sh-molecule-bg-box"
+    style="
                     --color-background-component-bgbox: var(--color-henk-white, #f00);
 
                     --color-text-component-bgbox: var(--color-henk-black, #000);
-                    ">
-        <div class="sh-molecule-padding-box" style="
-                            --size-spacing-units-top: 10;
-                                        --size-spacing-units-right: 4;
-                                        --size-spacing-units-bottom: 3;
-                                        --size-spacing-units-left: 4;
-                                        --size-spacing-units-top-desktop: 20;
-                                        --size-spacing-units-right-desktop: 100;
-                                        --size-spacing-units-bottom-desktop: 20;
-                                        --size-spacing-units-left-desktop: 100;
-                            ">
-            <div class="component__layout-box">
-                <p class="quote__text">This collection embraces our past and celebrates the future. A culmination of ten
-                    years of design, these products highlight geometric shapes and our passion for materiality while
-                    balancing presence and permanence.</p>
-
-
-            </div>
-        </div>
+                    "
+  >
+    <div class="sh-molecule-padding-box">
+      <div class="component__layout-box">
+        {
+          credit ? (
+            <blockquote>
+              <p class="quote__text h3">{text}</p>
+              {credit && (
+                <div class="quote__meta">
+                  <p class="quote__citation">{credit}</p>
+                  <p class="quote__jobtitle">{jobtitle}</p>
+                </div>
+              )}
+            </blockquote>
+          ) : (
+            <p class="quote__text h3">{text}</p>
+          )
+        }
+      </div>
     </div>
-</div>
+  </div>
+</div> -->

@@ -8,7 +8,8 @@ template.innerHTML = `
     }
   </style>
   <div class="hello-world">
-  <h1>Hello <span id="name"></span>!</h1> 
+  <h1>Hello <span id="name"></span>!</h1>
+  <slot>default?</slot> 
   </div>
 `;
 

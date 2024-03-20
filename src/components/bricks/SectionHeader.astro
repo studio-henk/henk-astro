@@ -1,0 +1,25 @@
+---
+interface Props {
+  id?: string;
+  byline?: string;
+  title: string;
+  bgColor?: "primary" | "secondary" | "tertiary | highlight";
+  textColor?: "--color-henk-black" | "--color-henk-white";
+}
+
+const {
+  id,
+  byline,
+  title = "Title is required",
+  bgColor = "primary",
+  textColor = "--color-henk-black",
+} = Astro.props;
+---
+
+<section class={`SectionHeader SectionHeader--BG-${bgColor}`} id={id}>
+  <div class="SectionHeader__content">
+    {byline && <p class="SectionHeader__byline">{byline}</p>}
+    <h2 class="SectionHeader__title">{title}</h2>
+    <slot />
+  </div>
+</section>

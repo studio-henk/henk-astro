@@ -1,0 +1,26 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<div class="toc">
+  <ol>
+    {
+      !(currentPath === "/ds/") && (
+        <li>
+          <a href="/ds/">Design System Index</a>
+        </li>
+      )
+    }
+    <li>logo</li>
+    <li>color</li>
+    <li><a href="/ds/type">Type</a></li>
+    <li><a href="/ds/icons">Icons</a></li>
+    <li><a href="/ds/buttons">Buttons</a></li>
+    <li><a href="/ds/text">Text elements</a></li>
+  </ol>
+</div>
+<style>
+  .toc ol {
+    margin-top: 0;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroVideo from "../../components/bricks/HeroVideo.astro";
+import Icon from "../../components/astro/Icon.astro";
+---
+
+<BaseLayout
+  title="The form of things "
+  hasHero="true"
+  Theme="dark"
+  showMsgBar="false"
+>
+  <HeroVideo
+    title="Space of Elegance"
+    subtitle="New: Paste Dining Table"
+    videoSRC="/static/std/assets/video/Paste.mp4"
+  >
+    <div slot="hero-footer" class="hero-video-footer-content">
+      <span
+        class="sh-atom-button"
+        data-style="plain-dark"
+        data-icon-arrow-down="true"
+      >
+        Discover<br />
+        more
+        <Icon class="sh-atom-icon" name="icon-arrow-down" />
+      </span>
+    </div>
+  </HeroVideo>
+</BaseLayout>

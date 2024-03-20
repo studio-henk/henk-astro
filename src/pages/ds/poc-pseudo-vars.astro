@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <h1 id="testpseudo">prefixed tests</h1>
+  <p>select this text pls.</p>
+  <hr />
+  <p id="font-smoothing">-webkit-font-smoothing: antialiased;</p>
+  <p id="text-size-adjust">-webkit-text-size-adjust: 100%</p>
+  <p id="-moz-text-size-adjust">-moz-text-size-adjust: 100%</p>
+  <p id="text-wrap">text-wrap: pretty</p>
+  <p id="text-wrap-balance">text-wrap: balance</p>
+  <p id="scroll-behavior">scroll-behavior: smooth;</p>
+  <hr />
+  <p>outline:1px auto -webkit - probably because of autoprefixer</p>
+</BaseLayout>
+<style is:global>
+  @supports (-webkit-font-smoothing: antialiased) {
+    #font-smoothing::after {
+      content: " ✅";
+    }
+  }
+
+  @supports not (-webkit-font-smoothing: antialiased) {
+    #font-smoothing::after {
+      content: " ⛔";
+    }
+  }
+
+  @supports (-webkit-text-size-adjust: none) {
+    #text-size-adjust::after {
+      content: " ✅";
+    }
+  }
+
+  @supports not (-moz-text-size-adjust: 100%) {
+    #-moz-text-size-adjust::after {
+      content: " ⛔";
+    }
+  }
+
+  /* text-wrap */
+  @supports (text-wrap: pretty) {
+    #text-wrap::after {
+      content: " ✅";
+    }
+  }
+
+  @supports not (text-wrap: pretty) {
+    #text-wrap::after {
+      content: " ⛔";
+    }
+  }
+
+  @supports (text-wrap: balance) {
+    #text-wrap-balance::after {
+      content: " ✅";
+    }
+  }
+
+  @supports not (text-wrap: balance) {
+    #text-wrap-balance::after {
+      content: " ⛔";
+    }
+  }
+
+  /* scroll-behaviour */
+  @supports (scroll-behavior: smooth) {
+    #scroll-behavior::after {
+      content: " ✅";
+    }
+  }
+
+  @supports not (scroll-behavior: smooth) {
+    #scroll-behavior::after {
+      content: " ⛔";
+    }
+  }
+</style>

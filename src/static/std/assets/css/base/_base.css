@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*TODO: discuss*/
+/* *:focus {
+  outline: none;
+} */
+:focus-visible {
+  outline-style: solid;
+  outline-width: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  color: currentColor;
+  background-color: var(--color-accent5, pink);
+}
+
+html {
+  background-color: var(--color-background-page, #fff);
+  color: var(--color-text-page, #000);
+  line-height: 1.5;
+  letter-spacing: 0;
+  height: 100%;
+  font-family: var(--font-body, sans-serif), sans-serif;
+  font-size: 100%;
+  font-feature-settings: "pnum" on, "lnum" on;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--total-bars-height, 80px);
+}
+
+@supports (-webkit-font-smoothing: antialiased) {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+:root {
+  --total-bars-height: calc(var(--NavBarHeight-mobile, 80px) + var(--MsgBarHeight, 0px));
+}
+
+@media only screen and (min-width: 1024px) {
+  :root {
+    --total-bars-height: calc(var(--NavBarHeight-desktop, 80px) + var(--MsgBarHeight, 0px));
+  }
+}
+
+body {
+  background-color: var(--color-background-page, #fff);
+  color: var(--color-text-page, #000);
+  padding: var(--total-bars-height, 80px) 0 0 0;
+  font-family: var(--font-body, sans-serif), sans-serif;
+  font-weight: 400;
+  line-height: calc(1.5em);
+}
+
+[data-has-hero] body {
+  padding: 0;
+}
+
+strong {
+  font-weight: 500;
+}
+
+/* weights */
+.fw-normal,
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+/* italic */
+.fstyle-italic {
+  font-style: italic;
+}
+
+
+/*Description
+@name: link
+new default link with underline
+@todo connect to better var / token, not directly a color ie var-link-color*/
+
+a {
+  color: var(--color-text-action);
+  text-decoration-line: underline;
+  text-underline-offset: 0.0875em;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+
+a:focus,
+a:hover {
+  /* --color-text-action: var(--color-henk-black); */
+  --color-text-action: var(--color-text-action-dimmed, grey);
+}
+
+p {
+  margin: 0 0 1.5em 0;
+}
+
+header {
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+}
+
+div,
+section {
+  box-sizing: border-box;
+}
+
+/* todo: new version with height auto */
+img {
+  max-width: 100%;
+  border: none;
+}
+
+address {
+  font-style: normal;
+}
+
+/*TODO: check this with reset styles*/
+
+/*
+* Remove the gap between audio, canvas, iframes,
+* images, videos and the bottom of their containers:
+* https://github.com/h5bp/html5-boilerplate/issues/440
+*/
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*lists*/
+ul,
+ol {
+  margin: 24px 0 24px 20px;
+}
+
+/*2nd level*/
+li>ul,
+li>ol {
+  margin-top: 0;
+}
+
+.--no-bullets {
+  list-style: none;
+  margin-left: 0;
+}
+
+/*def list*/
+dt {
+  font-weight: 500;
+}
+
+dd {
+  margin-bottom: 1.5rem;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  display: block;
+}
+
+figure img+figcaption {
+  text-align: left;
+}
+
+/* section content last-child margin bottom 0 */
+section div[class*="__content"] *:last-child {
+  margin-bottom: 0;
+}

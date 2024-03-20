@@ -1,0 +1,90 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="section-header">
+  <div
+    class="sh-molecule-bg-box"
+    style="
+                    --color-background-component-bgbox: var(--color-white, #fff);
+
+                    --color-text-component-bgbox: var(--color-henk-black, #000);
+                    "
+  >
+    <div
+      class="sh-molecule-padding-box"
+      style="
+                            --size-spacing-units-top: 11;
+                                        --size-spacing-units-right: 5;
+                                        --size-spacing-units-bottom: 11;
+                                        --size-spacing-units-left: 5;
+                                        --size-spacing-units-top-desktop: 51;
+                                        --size-spacing-units-right-desktop: 5;
+                                        --size-spacing-units-bottom-desktop: 30;
+                                        --size-spacing-units-left-desktop: 5;
+                            "
+    >
+      <div class="section-header__layout">
+        <header class="section-header__header">
+          <h1 class="h2 section-header__title">{title}</h1>
+        </header>
+        <div class="section-header__footer">
+          <a href="/en" class="sh-atom-button" data-style="filled"
+            >explore the collection
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="section-header__container" id="shb_0">
+  <div
+    class="sh-molecule-bg-box"
+    style="
+                    --color-background-component-bgbox: var(--color-accent5, #fff);
+        
+                    --color-text-component-bgbox: var(--color-henk-black, #000);
+                    "
+  >
+    <div
+      class="sh-molecule-padding-box"
+      style="
+                            --size-spacing-units-top: 11;
+                                        --size-spacing-units-right: 6;
+                                        --size-spacing-units-bottom: 12;
+                                        --size-spacing-units-left: 6;
+                                        --size-spacing-units-top-desktop: 12;
+                                        --size-spacing-units-right-desktop: 6;
+                                        --size-spacing-units-bottom-desktop: 12;
+                                        --size-spacing-units-left-desktop: 6;
+                            "
+    >
+      <div class="section-header">
+        <p class="section-header__section-heading">Contact us</p>
+        <p class="section-header__section-description">
+          We are here to help you
+        </p>
+        <p class="section-header__section-text">
+          This collection embraces our past and celebrates the future. A
+          culmination of ten years of design, these products highlight geometric
+          shapes and our passion for materiality while balancing presence and
+          permanence.
+        </p>
+      </div>
+    </div>
+  </div>
+</div> -->
+<style>
+  .section-header .section-header__layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-header .section-header__title {
+    text-align: center;
+  }
+</style>

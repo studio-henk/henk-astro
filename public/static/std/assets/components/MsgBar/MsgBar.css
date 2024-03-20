@@ -1,0 +1,32 @@
+@keyframes bgfadeInMsgBar {
+    0% {
+        background-color: #fff;
+    }
+    100% {
+        background-color: var(--color-accent14);
+    }
+}
+
+.message-bar {
+    background-color: var(--color-accent14,#ccc);
+    padding: 4px 16px;
+    text-align: center;
+    width: 100%;
+    color: #000;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    text-wrap: balance;
+}
+
+.message-bar a {
+    display: inline-block;
+    text-decoration: none;
+    color: currentColor;
+}
+
+@media only screen and (max-width: 767px) {
+    .message-bar {
+        font-size: 12px;
+    }
+}

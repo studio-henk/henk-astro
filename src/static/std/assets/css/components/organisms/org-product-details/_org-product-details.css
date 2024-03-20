@@ -1,0 +1,52 @@
+.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.block * {
+  margin: 0;
+}
+
+.block__col {
+  /* background-color: #ddd; */
+}
+
+.block__heading {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.block .block__list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media only screen and (min-width: 414px) {
+  .block {
+    grid-template-columns: 114px 1fr;
+  }
+}
+.block.wf {
+  background-color: #eee;
+}
+
+.wf .block__col {
+  background-color: #ddd;
+}
+
+.wf .block__heading,
+.wf .block__list-item {
+  background-color: #ccc;
+}
+
+.wf .list-checkmarked__item-icon {
+  background-color: #aaa;
+  color: #aaa;
+}

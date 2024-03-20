@@ -1,0 +1,116 @@
+---
+import ContentBlock from "../../components/astro/ContentBlock.astro";
+import HeroBrick from "../../components/bricks/HeroBrick.astro";
+import Toc from "../../components/ds/Toc.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Text" hasHero="true" Theme="dark">
+  <HeroBrick
+    title="Text"
+    text="<p>Use HTML text content elements to organize blocks or sections of content placed between the opening <body> and closing </body> tags. Important for accessibility and SEO, these elements identify the purpose or structure of that content.</p>"
+    image="https://images.unsplash.com/photo-1515325915697-9279b4f7effc?q=80&w=3864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    url="#type-text-p"
+    buttonText="Explore"
+  />
+  <ContentBlock title="Design System">
+    <Toc slot="content" />
+  </ContentBlock>
+  <ContentBlock title="The Paragraph element" id="type-text-p">
+    <dl slot="content">
+      <dt>The Paragraph element:</dt>
+      <dd>
+        The <code>&lt;p&gt;</code> HTML element represents a paragraph. Paragraphs
+        are usually represented in visual media as blocks of text separated from
+        adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs
+        can be any structural grouping of related content, such as images or form
+        fields.
+        <dt>Accessibility concerns:</dt>
+        <dd>
+          Breaking up content into paragraphs helps make a page more accessible.
+          Screen-readers and other assistive technology provide shortcuts to let
+          their users skip to the next or previous paragraph, letting them skim
+          content like how white space lets visual users skip around.
+        </dd>
+      </dd>
+    </dl>
+  </ContentBlock>
+  <ContentBlock title="The Anchor element">
+    <dl slot="content">
+      <dt>
+        The <code>&lt;a&gt;</code> element
+      </dt>
+      <dd>
+        <p>
+          The <code>&lt;a&gt;</code> HTML element (or anchor element), with its <em
+            >href</em
+          >
+          attribute, creates a hyperlink to web pages, files, email addresses, locations
+          in the same page, or anything else a URL can address. Content within each
+          <code>&lt;a&gt;</code>
+          should indicate the link's destination. If the href attribute is present,
+          pressing the enter key while focused on the <code>&lt;a&gt;</code> element
+          will activate it.
+        </p>
+      </dd>
+    </dl>
+    <p slot="content">
+      This is an <a href="#">inline link</a>.
+    </p>
+  </ContentBlock>
+  <style is:global>
+    .baseline-24:hover {
+      background: linear-gradient(
+        to bottom,
+        red,
+        red 1px,
+        transparent 1px,
+        transparent
+      );
+      background-size: 100% 24px;
+    }
+
+    .baseline-8:hover {
+      background: linear-gradient(
+        to bottom,
+        lightgrey,
+        lightgrey 1px,
+        transparent 1px,
+        transparent
+      );
+      background-size: 100% 8px;
+    }
+
+    .baseline-4:hover {
+      background: linear-gradient(
+        to bottom,
+        lightblue,
+        lightblue 1px,
+        transparent 1px,
+        transparent
+      );
+      background-size: 100% 4px;
+    }
+
+    .content-block p[class^="fs-"] {
+      position: relative;
+    }
+
+    .content-block p[class^="fs-"]::after {
+      color: hsl(0, 0%, 66%);
+      content: attr(title);
+      display: block;
+      font-size: 10px;
+      position: absolute;
+      line-height: 1;
+      bottom: -16px;
+      width: max-content;
+    }
+
+    .ta-justify {
+      text-align: justify;
+      hyphens: auto;
+      text-justify: inter-word;
+    }
+  </style>
+</BaseLayout>

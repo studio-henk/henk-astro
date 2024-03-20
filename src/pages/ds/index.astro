@@ -1,16 +1,42 @@
 ---
+import ContentBlock from "../../components/astro/ContentBlock.astro";
+import HeroBrick from "../../components/bricks/HeroBrick.astro";
+import Toc from "../../components/ds/Toc.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Design System Index">
-  <h1>DS Index</h1>
-  <h2>Atoms</h2>
-  <ul>
-    <li><a href="atoms/atom-tag">Atom Tag</a></li>
-  </ul>
-  <h2>Components</h2>
-  <ul>
-    <li><a href="components/component-InfoBox">InfoBox</a></li>
-  </ul>
-
+<BaseLayout title="DS Index">
+  <HeroBrick
+    title="Design System Index"
+    text="<p>Here you can find our design guidelines, component documentation, and resources for building interfaces with HENK’s design system.</p>"
+    image="https://images.unsplash.com/photo-1561070791-36c11767b26a?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    url="#ds-foundations"
+    buttonText="Explore"
+  />
+  <ContentBlock title="Design System Index" id="ds-foundations">
+    <Toc slot="content" />
+  </ContentBlock>
+  <!-- <ContentBlock title="Atoms">
+    <ul slot="content">
+      <li><a href="atoms/atom-tag">Atom Tag</a></li>
+    </ul>
+  </ContentBlock> -->
+  <!-- <ContentBlock title="Components">
+    <ul slot="content">
+      <li><a href="components/component-InfoBox">InfoBox</a></li>
+    </ul>
+  </ContentBlock> -->
+  <!-- <ContentBlock title="Bricks">
+    <ul slot="content">
+      <li>
+        <a href="components/bricks/brick-SplitScreen">SplitScreenBrick</a>
+      </li>
+    </ul>
+  </ContentBlock> -->
 </BaseLayout>
+<style>
+  /* html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--total-bars-height, 80px);
+  } */
+</style>

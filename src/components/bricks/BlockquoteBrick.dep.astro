@@ -1,0 +1,40 @@
+---
+interface Props {
+  text: string;
+  credit?: string;
+  jobtitle?: string;
+}
+
+const { text, credit, jobtitle } = Astro.props;
+---
+
+<div class="sh-quote-block" lang="en" id="block02">
+  <div
+    class="sh-molecule-bg-box"
+    style="
+                    --color-background-component-bgbox: var(--color-henk-white, #f00);
+
+                    --color-text-component-bgbox: var(--color-henk-black, #000);
+                    "
+  >
+    <div class="sh-molecule-padding-box">
+      <div class="component__layout-box">
+        {
+          credit ? (
+            <blockquote>
+              <p class="quote__text h3">{text}</p>
+              {credit && (
+                <div class="quote__meta">
+                  <p class="quote__citation">{credit}</p>
+                  <p class="quote__jobtitle">{jobtitle}</p>
+                </div>
+              )}
+            </blockquote>
+          ) : (
+            <p class="quote__text h3">{text}</p>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</div>

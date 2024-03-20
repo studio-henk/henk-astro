@@ -1,0 +1,10 @@
+---
+const { badgeNumber = "0", isLink = false, url="#" } = Astro.props;
+---
+{
+    isLink
+        ?
+        <a href={url} class="atom-badge">{badgeNumber}</a>
+        :
+        badgeNumber && <span class="atom-badge">{badgeNumber}</span>
+}

@@ -29,7 +29,7 @@
 {% endif %}-->
 
 <!-- development version, includes helpful console warnings -->
-<script src="/static/std/assets/toolkit/scripts/vue.dev.js"></script>
+<!-- <script src="/static/std/assets/toolkit/scripts/vue.dev.js"></script> -->
 <!--<script src="/static/std/assets/toolkit/scripts/vue.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
 <main>
@@ -132,9 +132,9 @@
                                 'buttonSize': 'xsmall',
                                 'buttonExpand': false,
                                 'buttonOnClick': "",
-                                'buttonBgColor': '--color-accent2',
+                                'buttonBgColor': '--color-henk-white',
                                 'buttonTextColor': '',
-                                'buttonBorderColor': '--color-accent2',
+                                'buttonBorderColor': '--color-henk-white',
                                 'iconName': 'icon-truck-fast',
                                 'iconPlacement': 'left'
                                 } %}#}
@@ -164,9 +164,9 @@
                                 'buttonSize': 'xsmall',
                                 'buttonExpand': false,
                                 'buttonOnClick': "",
-                                'buttonBgColor': '--color-accent2',
+                                'buttonBgColor': '--color-henk-white',
                                 'buttonTextColor': '',
-                                'buttonBorderColor': '--color-accent2',
+                                'buttonBorderColor': '--color-henk-white',
                                 'iconName': 'icon-bag',
                                 'iconPlacement': 'left'
                                 } %}#}
@@ -175,7 +175,7 @@
                                     data-size="xsmall"
                                     data-icon="icon-bag"
                                     class="sh-atom-button"
-                                    style="--color-background-button: var(--color-accent2); --color-border-button: var(--color-accent2); padding: 6px 7px;">
+                                    style="--color-background-button: var(--color-henk-white); --color-border-button: var(--color-henk-white); padding: 6px 7px;">
                                             <svg
                                                 width="12" height="14" viewBox="0 0 12 14" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"><path
@@ -320,6 +320,100 @@
     }
 </style>
 <script>
+        // app
+        var instockproductsArr = JSON.parse('{{ instockpageDataJSON.inStockProducts|json_encode|e('js') }}');
+        var locale = JSON.parse('{{ app.request.locale|json_encode|e('js') }}');
+        const {createApp: stockApp} = Vue;
+        stockApp({
+            delimiters: ['[[', ']]'],
+            el: "#instockapp",
+            data() {
+                return {
+                    appname: "stock-app",
+                    loading: true,
+                    errored: false,
+                    locale: locale,
+                    infoModalVisible: false,
+                    currentProductIndex: null,
+                    products: instockproductsArr
+                }
+            },
+            methods: {
+                showInfoModal(prodIndex) {
+                    this.infoModalVisible = true;
+                    // connect to data
+                    this.currentProductIndex = prodIndex;
+                    // prevent page from scrolling
+                    document.querySelector("body").style.overflow = "hidden";
+                    document.querySelector("body").style.touchAction = "none";
+                },
+                closeInfoModal() {
+                    this.infoModalVisible = false;
+                    // allow page to scroll again
+                    document.querySelector("body").style.overflow = "unset";
+                    document.querySelector("body").style.touchAction = "unset";
+                },
+                sendToOrderCart(prodID) {
+                    let url = "/" + this.locale + "/cart/add?item=" + prodID;
+                    url = url += "&qty=1&doNotRedirect=true";
+
+                    axios.get(url)
+                        .then(function (response) {
+                            console.log(response);
+                            // clear quickCart localstorage if response success
+                            if (response.data.success) {
+                                // show the redirected response
+                                console.log('response ok');
+                                this.closeInfoModal();
+                                // send to cart list page
+                                location.assign('/' + this.locale + '/cart/list/');
+                            }
+                            if (response.status === 200) {
+                                console.log('response 200, success');
+                            }
+                            if (response.status === 404) {
+                                console.log('response 404');
+                            }
+                            if (response.status === 301 || response.status === 302) {
+                                // show the redirecting response
+                                console.log('response NOT ok: 301 or 302');
+                            }
+                        }.bind(this))
+                        .catch(function (error) {
+                            // console.log(error);
+                            if (error.response) {
+                                // The request was made and the server responded with a status code
+                                // that falls out of the range of 2xx
+                                console.log(error.response.data);
+                                console.log(error.response.status);
+                                console.log(error.response.headers);
+                            } else if (error.request) {
+                                // The request was made but no response was received
+                                // console.log(error.request);
+                                console.log('no response received');
+                            } else {
+                                // Something happened in setting up the request that triggered an Error
+                                console.log('Error', error.message);
+                            }
+                            // console.log(error.config);
+                            console.log(error.toJSON());
+                        });
+                    // }
+                }
+            },
+            created() {
+                console.log('app created');
+            },
+            mounted() {
+                this.$nextTick(function () {
+                    // Code that will run only after the
+                    // entire view has been rendered
+                    this.loading = false;
+                });
+            }
+        }).mount('#instockapp');
+    </script>
+<!-- <script>
     // app
     /*var instockproductsArr = JSON.parse('{{ instockpageDataJSON.inStockProducts|json_encode|e('js') }}');
     var locale = JSON.parse('{{ app.request.locale|json_encode|e('js') }}');*/
@@ -408,4 +502,4 @@
             });
         }
     });
-</script>
+    </script> -->

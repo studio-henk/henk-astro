@@ -1,0 +1,95 @@
+.SplitscreenBrick {
+    padding: 24px 24px 48px 24px;
+    background-color: var(--color-background-primary, #fff);
+}
+
+.SplitscreenBrick__grid {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0;
+    max-width: none;
+    row-gap: 1.5rem;
+}
+
+.SplitscreenBrick .SplitscreenBrick__video {
+    object-fit: cover;
+    width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    .SplitscreenBrick .SplitscreenBrick__video {
+        aspect-ratio: 2/3;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .SplitscreenBrick .SplitscreenBrick__video {
+        height: 100svh;
+    }
+}
+
+.SplitscreenBrick__img {
+    height: auto;
+}
+
+.SplitscreenBrick__content {
+    max-width: 30em;
+    text-wrap: balance;
+    display: grid;
+    gap: 24px;
+    justify-content: start;
+    justify-items: start;
+    align-items: start;
+}
+
+.SplitscreenBrick__title {
+    margin: 0;
+}
+
+.SplitscreenBrick__subtitle {
+    margin: 0;
+    grid-row: 1;
+    font-weight: normal;
+}
+
+.SplitscreenBrick__text>*:first-child {
+    margin-top: 0;
+}
+
+.SplitscreenBrick__text>*:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+    .SplitscreenBrick {
+        padding: 0;
+    }
+
+    .SplitscreenBrick__grid {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .SplitscreenBrick__grid-item {
+        flex: 1 1 50%;
+    }
+
+    .SplitscreenBrick[data-order="reverse"] .SplitscreenBrick__grid {
+        flex-direction: row-reverse;
+    }
+
+    .SplitscreenBrick .SplitscreenBrick__content {
+        padding: 0 24px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        margin: 0 auto;
+    }
+
+    .SplitscreenBrick__title,
+    .SplitscreenBrick__subtitle {
+        text-align: center;
+    }
+}

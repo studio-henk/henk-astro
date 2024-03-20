@@ -1,0 +1,470 @@
+{
+    "header": {
+      "title": "Fast Delivery",
+      "description": "Browse our products that have a quick delivery time."
+    },
+    "inStockProducts": [
+        {
+        "id": 14586,
+        "title": "Slim X-Type Dining Table",
+        "description": "FSC certified Oak with a Black Steel Frame Finish",
+        "price": 2549,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-slimx-black.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/slim-x-type-dining-table-studio-henk3.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "The Slim X-type Dining Table, styled with our oak table top and geometric frame, adds character to your home.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/slim-x-type-dining-table-studio-henk3.jpg",
+          "materials": {
+            "bullet1": "A-quality FSC certified oak table top",
+            "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "Black powder coated steel frame"
+          },
+          "dimensions": {
+            "length": "240cm",
+            "width": "90cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 14520,
+        "title": "Butterfly Dining Table",
+        "description": "FSC certified Oak with a Black Steel Frame Finish",
+        "price": 2439,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterfly-black.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/butterfly-dining-table-studio-henk1.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "The Butterfly Dining Table features a steel frame with a unique expression. This timeless classic has become one of our defining and signature designs.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterfly-black-setting.jpg",
+          "materials": {
+            "bullet1": "A-quality FSC certified oak table top",
+            "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "Black powder coated steel frame"
+          },
+          "dimensions": {
+            "length": "220cm",
+            "width": "90cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 15089,
+        "title": "Butterfly Quadpod Dining Table",
+        "description": "FSC certified Oak with a Black Steel Frame Finish",
+        "price": 2579,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterflyqua-black1.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/butterfly-quadpod-dining-table-studio-henk1.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "The Butterfly Table features an intricate steel frame with a unique expression. As Studio HENK’s first rectangle dining table, this timeless classic has evidentially become one of our defining and signature designs.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-butterflyqua-black-setting.jpg",
+          "materials": {
+            "bullet1": "A-quality FSC certified oak table top",
+            "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "Black powder coated steel frame"
+          },
+          "dimensions": {
+            "diameter": "140cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 14534,
+        "title": "Butterfly Dining Table",
+        "description": "FSC certified Oak with a White Steel Frame Finish",
+        "price": 2369,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterfly-white.png",
+        "hoverImage": "",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "The Butterfly Table features an intricate steel frame with a unique expression. As Studio HENK’s first rectangle dining table, this timeless classic has evidentially become one of our defining and signature designs.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterfly-white.png",
+          "materials": {
+            "bullet1": "A-quality FSC certified oak table top",
+            "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "White powder coated steel frame"
+          },
+          "dimensions": {
+            "length": "200cm",
+            "width": "90cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 126151,
+        "title": "Butterfly Dining Bench",
+        "description": "FSC certified Oak with a Black Steel Frame Finish",
+        "price": 1284,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterfly-bench-black.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/butterfly-dining-bench-studio-henk3.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "Create a balanced dining area with the Butterfly Dining Bench and Butterfly Dining Table while providing enough seating for the whole family.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/butterfly-dining-bench-studio-henk3.jpg",
+          "materials": {
+            "bullet1": "A-quality FSC certified oak dining bench",
+            "bullet2": "Coated with hardwax oil in Natural light",
+            "bullet3": "Black powder coated steel frame"
+          },
+          "dimensions": {
+            "length": "180cm",
+            "width": "40cm",
+            "thickness": "4cm"
+          }
+        }
+      },
+      {
+        "id": 126166,
+        "title": "Slim X-Type Dining Bench",
+        "description": "FSC certified Natural Light Oak with a Black Steel Frame Finish",
+        "price": 1334,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-slimx-bench-black.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/slim-x-type-dining-bench-studio-henk2.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "Combine the Slim X-Type Dining Bench with our matching Slim X-Type Dining Table to create a complete dining area.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/slim-x-type-dining-bench-studio-henk2.jpg",
+          "materials": {
+            "bullet1": "A-quality FSC certified oak dining bench",
+            "bullet2": "Coated with hardwax oil in Natural light",
+            "bullet3": "Black powder coated steel frame"
+          },
+          "dimensions": {
+            "length": "200cm",
+            "width": "40cm",
+            "thickness": "4cm"
+          }
+        }
+      },
+    {
+      "id": 14602,
+        "title": "Slim X-Type Dining Table",
+        "description": "FSC certified Oak with a White Steel Frame Finish",
+        "price": 2549,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-slimx-white.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-slimx-white-setting.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+         "description": "The Slim X-type Dining Table, styled with our oak table top and geometric frame, adds character to your home.",
+         "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-slimx-white-setting.jpg",
+          "materials": {
+            "bullet1": "A-quality FSC certified oak dining bench",
+           "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "White powder coated steel frame"
+         },
+          "dimensions": {
+            "length": "240cm",
+            "width": "90cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 15092,
+        "title": "Butterfly Quadpod Dining Table",
+        "description": "FSC certified Oak with a White Steel Frame Finish",
+        "price": 2579,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterflyqua-white1.png",
+        "hoverImage": "",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "The Slim X-type Dining Table, styled with our oak table top and geometric frame, adds character to your home.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterflyqua-white1.png",
+          "materials": {
+            "bullet1": "A-quality FSC certified oak table top",
+            "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "White powder coated steel frame"
+          },
+          "dimensions": {
+            "diameter": "140cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 80032,
+        "title": "Butterfly Tripod Dining Table",
+        "description": "HPL Fenix with a Black Steel Frame Finish",
+        "price": 2739,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterflytri-black2.png",
+        "hoverImage": "",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "The minimalistic Butterfly Tripod frame gives your dining table a light look, while the HPL Fenix table top in black adds depth.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterflytri-black2.png",
+          "materials": {
+            "bullet1": "HPL Fenix Nero Ingo table top",
+            "bullet2": "Table top with chamfered edge finish",
+            "bullet3": "Black powder coated steel frame"
+          },
+          "dimensions": {
+            "diameter": "120cm",
+            "thickness": "4cm"
+          }
+        }
+      },
+      {
+        "id": 139747,
+        "title": "New Co Coffee Table round 50cm",
+        "description": "FSC certified Oak with a Black Steel Frame Finish",
+        "price": 349,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-newco50-black1.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-newco50-black-setting.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "Characterised by simplicity and functionality, the New Co Coffee Table is a welcomed addition to any interior.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-newco50-black-setting.jpg",
+          "materials": {
+            "bullet1": "Coffee table top made from A-quality FSC certified oak",
+            "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "Black powder coated steel frame"
+          },
+          "dimensions": {
+            "diameter": "50cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 139748,
+        "title": "New Co Coffee Table round 50cm",
+        "description": "FSC certified Oak with a White Steel Frame Finish",
+        "price": 349,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-newco50-white1.png",
+        "hoverImage": "",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "Characterised by simplicity and functionality, the New Co Coffee Table is a welcomed addition to any interior.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-newco50-white1.png",
+          "materials": {
+            "bullet1": "Coffee table top made from A-quality FSC certified oak",
+            "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "White powder coated steel frame"
+          },
+          "dimensions": {
+            "diameter": "50cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 139751,
+        "title": "New Co Coffee Table round 90cm",
+        "description": "FSC certified Oak with a Black Steel Frame Finish",
+        "price": 549,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-newco90-black.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/new-co-coffee-table-studio-henk2.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "Characterised by simplicity and functionality, the New Co Coffee Table is a welcomed addition to any interior.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/new-co-coffee-table-studio-henk2.jpg",
+          "materials": {
+            "bullet1": "Coffee table top made from A-quality FSC certified oak",
+            "bullet2": "Black Lacquer coffee table tops are protected with a two-component lacquer",
+            "bullet3": "Black powder coated steel frame"
+          },
+          "dimensions": {
+            "diameter": "90cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 139750,
+        "title": "New Co Coffee Table round 70cm",
+        "description": "FSC certified Oak with a White Steel Frame Finish",
+        "price": 409,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-newco70-white.png",
+        "hoverImage": "",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "Characterised by simplicity and functionality, the New Co Coffee Table is a welcomed addition to any interior.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-newco70-white.png",
+          "materials": {
+            "bullet1": "Coffee table top made from A-quality FSC certified oak",
+            "bullet2": "Coated with hardwax oil in Natural Light",
+            "bullet3": "White powder coated steel frame"
+          },
+          "dimensions": {
+            "diameter": "70cm",
+            "thickness": "3cm"
+          }
+        }
+      },
+      {
+        "id": 126174,
+        "title": "Slim X-Type Dining Bench",
+        "description": "FSC certified Natural Light Oak with a White Steel Frame Finish",
+        "price": 1374,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-slimx-bench-white.png",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/slim-x-type-white-dining-bench-studio-henk2.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "Combine the Slim X-Type Dining Bench with our matching Slim X-Type Dining Table to create a complete dining area.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/slim-x-type-white-dining-bench-studio-henk2.jpg",
+          "materials": {
+            "bullet1": "Dining Bench top made from A-quality FSC certified oak",
+            "bullet2": "Coated with hardwax oil in Natural light",
+            "bullet3": "White powder coated steel frame"
+          },
+          "dimensions": {
+            "length": "220cm",
+            "width": "40cm",
+            "thickness": "4cm"
+          }
+        }
+      },
+      {
+        "id": 126161,
+        "title": "Butterfly Dining Bench",
+        "description": "FSC certified Natural Light Oak with a White Steel Frame Finish",
+        "price": 1414,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterfly-bench-white.png",
+        "hoverImage": "",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "Create a balanced dining area with the Butterfly Dining Bench and Butterfly Dining Table while providing enough seating for the whole family.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-butterfly-bench-white.png",
+          "materials": {
+            "bullet1": "Dining Bench top made from A-quality FSC certified oak",
+            "bullet2": "Coated with hardwax oil in Natural light",
+            "bullet3": "White powder coated steel frame"
+          },
+          "dimensions": {
+            "length": "240cm",
+            "width": "40cm",
+            "thickness": "4cm"
+          }
+        }
+      },
+      {
+        "id": 149249,
+        "title": "Nod L Floor Lamp",
+        "description": "Black steel frame",
+        "price": 969,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-light-nod-floor-1.jpg",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-light-nod-pendant-4.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": "The Nod floor lamp has a steel frame with a round disc placed vertically on top. As a result, the light shines softly into the room.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-light-nod-pendant-4.jpg",
+          "materials": {
+            "bullet1": "The lighting is available in black powdercoated steel",
+            "bullet2": "The cord length is 1,5m",
+            "bullet3": "Socket E27, You can order light bulbs via Tala."
+          },
+          "dimensions": {
+            "height": "170cm",
+            "width": "39cm",
+            "diameter lamp": "35cm"
+          }
+        }
+      },
+      {
+        "id": 149253,
+        "title": "Nod M Pendant Lamp 30cm",
+        "description": "Black steel frame",
+        "price": 409,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-light-nod-pendant-35-1.jpg",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-light-nod-pendant-2.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": " The pendant lamp consists of a steel tube with a round disc underneath in which you can place the light bulb. Hang the lamp above your dining table and create an intimate dinner setting.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-light-nod-pendant-2.jpg",
+          "materials": {
+            "bullet1": "The Nod Pendant Lamp in size M has a diameter of 30cm",
+            "bullet2": "The cord length is 3m",
+            "bullet3": "Socket E27, You can order light bulbs via Tala."
+          },
+          "dimensions": {
+         "diameter": "30cm"
+          }
+        }
+      },
+      {
+        "id": 149255,
+        "title": "Nod L Pendant lamp 40cm",
+        "description": "Black steel frame",
+        "price": 479,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-light-nod-pendant-40-1.jpg",
+        "hoverImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-light-nod-pendant.jpg",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": " The pendant lamp consists of a steel tube with a round disc underneath in which you can place the light bulb. Hang the lamp above your dining table and create an intimate dinner setting.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/studio-henk-light-nod-pendant.jpg",
+          "materials": {
+            "bullet1": "The Nod Pendant Lamp in size L has a diameter of 40cm",
+            "bullet2": "The cord length is 3m",
+            "bullet3": "Socket E27, You can order light bulbs via Tala."
+          },
+          "dimensions": {
+             "diameter": "40cm"
+          }
+        }
+      },
+      {
+        "id": 149257,
+        "title": "Nod XL Pendant lamp 45cm",
+        "description": "Black steel frame",
+        "price": 549,
+        "currency": "€",
+        "transSquareImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-light-nod-pendant-45-1.jpg",
+        "hoverImage": "",
+        "hasFastDelivery": true,
+        "fastDeliveryLabel": "fast delivery",
+        "modal": {
+          "description": " The pendant lamp consists of a steel tube with a round disc underneath in which you can place the light bulb. Hang the lamp above your dining table and create an intimate dinner setting.",
+          "productImage": "https://assets.studio-henk.nl/assets/Images/instock-page/products/studio-henk-light-nod-pendant-45-1.jpg",
+          "materials": {
+            "bullet1": "The Nod Pendant Lamp in size L has a diameter of 45cm",
+            "bullet2": "The cord length is 3m",
+            "bullet3": "Socket E27, You can order light bulbs via Tala."
+          },
+          "dimensions": {
+             "diameter": "45cm"
+          }
+        }
+      }
+    ]
+  }

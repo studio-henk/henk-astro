@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import Icon from "../../../components/Icon.astro";
+/*import Icon from "../../../components/Icon.astro";*/
+// import { Icon } from 'astro-icon/components';
 import AtomTag from "../../../components/Atoms/AtomTag.astro";
 ---
 
@@ -11,14 +12,14 @@ import AtomTag from "../../../components/Atoms/AtomTag.astro";
   <p>with icon left</p>
   <AtomTag
       text="fast delivery"
-      icon="truck"
+      icon="icon-truck"
       iconPosition="left"
   />
   <hr>
   <p>with icon right</p>
   <AtomTag
       text="fast delivery"
-      icon="truck"
+      icon="icon-truck"
       iconPosition="right"
   />
   <hr>
@@ -33,13 +34,13 @@ import AtomTag from "../../../components/Atoms/AtomTag.astro";
   <hr>
   <AtomTag
       text="no link but icon left"
-      icon="truck"
+      icon="icon-truck"
       iconPosition="left"
   />
   <hr>
   <AtomTag
       text="no link but icon right"
-      icon="truck"
+      icon="icon-truck"
       iconPosition="right"
   />
   <hr>
@@ -51,13 +52,13 @@ import AtomTag from "../../../components/Atoms/AtomTag.astro";
   <AtomTag
       text="has link"
       hasLink="https://disney.com"
-      icon="truck"
+      icon="icon-truck"
       iconPosition="left"
   />
   <AtomTag
       text="has link"
       hasLink="https://disney.com"
-      icon="truck"
+      icon="icon-truck"
       iconPosition="right"
   />
 </BaseLayout>

@@ -1,0 +1,76 @@
+.maintenance.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 18.75rem));
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.maintenance.grid > * + * {
+  margin-top: 0;
+}
+.maintenance.grid .column {
+  background-color: lightgrey;
+  /* height: 400px; */
+}
+.maintenance.grid .column > a {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.maintenance.grid .column video {
+  position: relative;
+  z-index: 8;
+  max-width: 100%;
+}
+.maintenance.grid .column a .sh-fabric-name {
+  z-index: 9;
+  position: absolute;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 1rem;
+}
+@supports (text-wrap: balance) {
+  .maintenance.grid .column a .sh-fabric-name {
+    text-wrap: balance;
+  }
+}
+@media only screen and (max-width: 413px) {
+  .maintenance.grid .column a .sh-fabric-name {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .maintenance.grid .column a .sh-fabric-name {
+    font-size: 1.25rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .maintenance.grid .column a .sh-fabric-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sh-mdl-sidebar--state-hidden .sitemap-list__title,
+  .sh-mdl-sidebar--state-hidden .sh-linklist {
+    display: none;
+  }
+}
+
+p.sitemap-list__title {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .maintenance.grid {
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main .maintenance.grid {
+    padding-bottom: 48px;
+  }
+}

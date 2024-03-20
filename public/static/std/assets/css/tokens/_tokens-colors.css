@@ -1,0 +1,40 @@
+:root {
+  /* brand */
+  --color-ral-9005: #0a0c10;
+  --color-ral-9016: #f1f0ea;
+
+  /* neutral */
+  --color-transparent: transparent;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-black-65: #a6a6a6;
+  --color-black-55: hsl(0, 0%, 55%);
+
+  /* accents */
+  --color-accent5: #eae4d7;
+  --color-accent6: #ccb193;
+  --color-accent11: #9aabbc;
+  --color-accent14: #ccc7bd;
+  --color-accent16: #6b7156;
+  --color-henk-danger: #f00;
+  --color-henk-danger-dark: #c00;
+  --color-henk-success: #008000;
+  --color-henk-warning: #ffa500;
+
+  /* alias */
+  --color-black-lacquer: var(--color-ral-9005);
+  --color-white-lacquer: var(--color-ral-9016);
+  --color-henk-black: var(--color-ral-9005);
+  --color-henk-white: var(--color-ral-9016);
+
+  /* alias backgrounds */
+  --color-background-primary: var(--color-henk-white);
+  --color-background-secondary: var(--color-transparent);
+  --color-background-tertiary: var(--color-accent5);
+  --color-background-highlight: var(--color-accent16);
+
+  --color-text-primary: var(--color-henk-black);
+  --color-text-secondary: var(--color-henk-white);
+  --color-text-on-dark: var(--color-text-secondary);
+  --color-text-disabled: var(--color-black-65);
+}

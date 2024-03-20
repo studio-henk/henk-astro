@@ -1,671 +1,418 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Icon from "../../components/Icon.astro";
+import ContentBlock from "../../components/astro/ContentBlock.astro";
+import HeroBrick from "../../components/bricks/HeroBrick.astro";
 import AtomTag from "../../components/Atoms/AtomTag.astro";
+import SfChatButton from "../../components/third-party/_sf-chatbutton.astro";
+import MobileNavButton from "../../components/MobileNavButton.astro";
+import Icon from "../../components/astro/Icon.astro";
+import { IconSizes } from "../../../types/iconTypes";
+import Toc from "../../components/ds/Toc.astro";
 ---
 
 <BaseLayout title="Buttons">
-  <div
-    class="frame"
-    style="max-width: 960px; margin: 0 auto; padding: 2rem 0 0 0;"
-  >
-    <h1>Buttons</h1>
-    <!--<div class="example">
-          <button type="button">button text</button>
-        </div>-->
-    <h2>Default (also <em>Outline Light</em>)</h2>
-    <div
-      class="example"
-      style="background-color: var(--color-accent16);padding: 1rem;"
-    >
-      <button type="button" class="sh-atom-button">button text</button>
-    </div>
-    <h3>Default - small</h3>
-    <div
-      class="example"
-      style="background-color: var(--color-accent16);padding: 1rem;"
-    >
-      <button type="button" class="sh-atom-button" data-size="small"
-        >button text</button
-      >
-    </div>
-    <h2>Outline Dark</h2>
-    <div class="example" style="padding: 1rem;">
-      <button type="button" class="sh-atom-button" data-style="outline-dark"
-        >button text
-      </button>
-    </div>
-    <h2>Filled</h2>
-    <div class="example" style="padding: 1rem;">
-      <button type="button" class="sh-atom-button" data-style="filled"
-        >button text
-      </button>
-    </div>
-    <h2>Soft</h2>
-    <div class="example" style="padding: 1rem;">
-      <button type="button" class="sh-atom-button" data-style="soft"
-        >button text
-      </button>
-    </div>
-    <h2>Arrow right (<em>animated</em>)</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="#"
-        class="sh-atom-button"
-        data-style="filled"
-        data-icon-arrow-right="true"
-        >button text
-        <Icon icon="arrow-right" />
-      </a>
-      <!--<p>new arrow right</p>
-            <a
-                href="#"
-                class="sh-atom-button"
-                data-style="filled"
-                data-icon-arrow-right="true"
+  <HeroBrick
+    title="Buttons"
+    text="<p>HENK uses several versions of buttons</p>"
+    image="https://plus.unsplash.com/premium_photo-1683495245283-7090e82d85dd?q=80&w=2880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    url="#foundations-buttons"
+    buttonText="Explore"
+  />
+  <ContentBlock title="Design System">
+    <Toc slot="content" />
+  </ContentBlock>
+  <ContentBlock title="Buttons" id="foundations-buttons">
+    <dl slot="content">
+      <h3>Default (also <em>Outline Light</em>)</h3>
+      <dt>Default size and look</dt>
+      <dd>
+        <div class="example on-dark">
+          <button type="button" class="sh-atom-button">button text</button>
+        </div>
+        <small><code>class="sh-atom-button"</code></small>
+      </dd>
+      <dt>Small</dt>
+      <dd>
+        <div class="example on-dark">
+          <button type="button" class="sh-atom-button" data-size="small"
+            >button text</button
+          >
+        </div>
+        <small><code>data-size="small"</code></small>
+      </dd>
+      <h3>Styles</h3>
+      <dt>Outline Dark</dt>
+      <dd>
+        <div class="example">
+          <button type="button" class="sh-atom-button" data-style="outline-dark"
+            >button text
+          </button>
+        </div>
+        <small><code>data-style="outline-dark"</code></small>
+      </dd>
+      <dt>Outline Light</dt>
+      <dd>
+        <div class="example on-dark">
+          <button
+            type="button"
+            class="sh-atom-button"
+            data-style="outline-light"
+            >button text
+          </button>
+        </div>
+        <small><code>data-style="outline-light"</code></small>
+      </dd>
+      <h3>Filled</h3>
+      <dt>default filled</dt>
+      <dd>
+        <div class="example">
+          <button type="button" class="sh-atom-button" data-style="filled"
+            >button text
+          </button>
+        </div>
+        <small><code>data-style="filled"</code></small>
+      </dd>
+      <dt>Arrow right</dt>
+      <dd>
+        <div class="example on-dark">
+          <a href="#" class="sh-atom-button" data-style="filled"
+            >Button Text
+            <Icon
+              name="icon-arrow-right"
+              width={IconSizes.Medium}
+              height={IconSizes.Medium}
+            />
+          </a>
+        </div>
+        <small><code>data-style="filled"</code></small>
+      </dd>
+      <dt>Arrow animated</dt>
+      <dd>
+        <div class="example on-dark">
+          <a href="#" class="sh-atom-button" data-style="filled"
+            >button text
+            <Icon
+              name="icon-arrow-right-animated"
+              width={IconSizes.Medium}
+              height={IconSizes.Medium}
+            />
+          </a>
+        </div>
+        <small><code>data-style="filled"</code></small>
+      </dd>
+      <dt>Soft</dt>
+      <dd>
+        <div class="example on-dark">
+          <button type="button" class="sh-atom-button" data-style="soft"
+            >button text
+          </button>
+        </div>
+        <small><code>data-style="soft"</code></small>
+      </dd>
+      <h3>Icon only</h3>
+      <dt>circle</dt>
+      <dd>
+        <div class="example on-dark">
+          <a
+            href="#"
+            class="sh-atom-button"
+            data-style="filled"
+            data-shape="circle"
+            ><Icon name="icon-trashcan" />
+          </a>
+          <a
+            href="#"
+            class="sh-atom-button"
+            data-style="filled"
+            data-shape="circle"
+            data-size="small"
+            ><Icon name="icon-trashcan" />
+          </a>
+          <a
+            href="#"
+            class="sh-atom-button"
+            data-style="soft"
+            data-shape="circle"
+            ><Icon name="icon-close" />
+          </a>
+          <a
+            href="#"
+            class="sh-atom-button"
+            data-style="soft"
+            data-shape="circle"
+            data-size="small"
+            ><Icon name="icon-close" />
+          </a>
+          <!-- <a
+            href="#"
+            class="sh-atom-button"
+            data-style="filled"
+            data-shape="circle"
+            ><Icon name="icon-arrow-right-animated" />
+          </a>
+          <a
+            href="#"
+            class="sh-atom-button"
+            data-style="soft"
+            data-shape="circle"
+            data-size="small"
+            ><Icon name="icon-arrow-right-animated" />
+          </a>
+          <a
+            href="#"
+            class="sh-atom-button"
+            data-style="soft"
+            data-shape="circle"
+            ><Icon name="icon-arrow-right-animated" />
+          </a> -->
+        </div>
+      </dd>
+      <dt>Swiper prev and next</dt>
+      <dd>
+        <div class="example on-dark">
+          <div
+            class="sh-custom-swiper-button-prev sh-atom-button"
+            data-style="soft"
+            data-shape="circle"
+            tabindex="0"
+            role="button"
+            aria-label="Previous slide"
+            aria-controls="swiper-wrapper-10668aa19d29f10713"
+            aria-disabled="false"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="sh-atom-icon"
+              aria-hidden="true"
+              ><!--<title>{icon}</title>-->
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.76367 11.5212L10.3481 4.67718L9.69661 4L2.32575 11.6614L2 12L2.32575 12.3386L9.69661 20L10.3481 19.3228L3.76367 12.4788H21.5393H22V11.5212H21.5393H3.76367Z"
+              ></path>
+            </svg>
+          </div>
+          <div
+            class="sh-custom-swiper-button-next sh-atom-button"
+            data-style="soft"
+            data-shape="circle"
+            data-size="large"
+            data-icon-arrow-right="true"
+            tabindex="0"
+            role="button"
+            aria-label="Next slide"
+            aria-controls="swiper-wrapper-e541b13cbfe10625d"
+            aria-disabled="false"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="sh-atom-icon"
+              aria-hidden="true"
             >
-              icon right
-              <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="arrow-right-line" d="M0 4H12.5185" stroke="currentcolor" stroke-width="0.8"/>
-                <path id="arrow-right-point" d="M8.66667 0L13 4L8.66667 8" stroke="currentcolor" stroke-width="0.8"/>
-              </svg>
-            </a>-->
-    </div>
-    <h2>Arrow left (<em>animated</em>)</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="#"
-        class="sh-atom-button"
-        data-style="filled"
-        data-icon-arrow-left="true"
-      >
-        <Icon icon="arrow-left" />
-        icon left
-      </a>
-    </div>
-    <h2>Plain Light</h2>
-    <div
-      class="example"
-      style="background-color: var(--color-accent16);padding: 1rem;"
-    >
-      <a href="#" class="sh-atom-button" data-style="plain-light"
-        >plain light
-      </a>
-    </div>
-    <h2>Plain Light Animated Underline</h2>
-    <div
-      class="example"
-      style="background-color: var(--color-accent16);padding: 1rem;"
-    >
-      <a
-        href="/en/shops"
-        class="sh-atom-button"
-        data-style="plain-light"
-        data-animated-hover="true">Animated underline light</a
-      >
-    </div>
-    <h3>Plain Dark Animated Underline</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="/en/shops"
-        class="sh-atom-button"
-        data-style="plain-dark"
-        data-animated-hover="true">Animated underline</a
-      >
-    </div>
-    <h2>Plain Light Arrow Right</h2>
-    <div
-      class="example"
-      style="background-color: var(--color-accent16);padding: 1rem;"
-    >
-      <a
-        href="#"
-        class="sh-atom-button"
-        data-style="plain-light"
-        data-icon-arrow-right="true"
-      >
-        plain + arrow right
-        <Icon icon="arrow-right" />
-      </a>
-    </div>
-    <h2>Plain Dark + Arrow Left</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="#"
-        class="sh-atom-button"
-        data-style="plain-dark"
-        data-icon-arrow-left="true"
-      >
-        <Icon icon="arrow-left" />
-        Arrow left
-      </a>
-    </div>
-    <h2>Arrow down Anchor-link</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="#anchor"
-        class="sh-atom-button"
-        data-style="plain-dark"
-        data-icon-arrow-down="true"
-      >
-        Discover<br />
-        more
-        <Icon icon="icon-arrow-down" />
-      </a>
-    </div>
-    <h2>Circle Icon Button</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="/en/cart/remove/378093"
-        class="sh-atom-button-icon"
-        data-style="filled"
-        data-shape="circle"
-      >
-        <span class="icon-frame">
-          <Icon icon="icon-trashcan" />
-        </span>
-      </a>
-    </div>
-    <h3>Circle Icon Button - Small</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="/en/cart/remove/378093"
-        class="sh-atom-button-icon"
-        data-style="filled"
-        data-shape="circle"
-        data-size="small"
-      >
-        <span class="icon-frame">
-          <Icon icon="icon-trashcan" />
-        </span>
-      </a>
-    </div>
-    <h2>Icon Button - Plain</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="/en/cart/remove/378093"
-        class="sh-atom-button-icon"
-        data-style="plain-dark"
-      >
-        <span class="icon-frame">
-          <Icon icon="icon-trashcan" />
-        </span>
-      </a>
-    </div>
-    <h3>Close button</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="/en/cart/remove/378093"
-          class="sh-atom-button-icon"
-          data-style="plain-dark"
-      >
-        <span class="icon-frame">
-          <Icon icon="icon-close" />
-        </span>
-      </a>
-    </div>
-    <h2>With price</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h3>price and expanded</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-around"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-between"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-evenly"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h2>Price and separator •</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <hr>
-    <h3>reverse</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-      >
-        <span class="org-addtocart-console__price">€ 539</span>
-        <span class="org-addtocart-console__separator">•</span>
-        in winkelwagen
-      </a>
-    </div>
-    <h3>with icon</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-      >
-        <span class="sh-atom-button__price">€ 539</span>
-        <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
-      </a>
-    </div>
-    <h3>expanded</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-          data-expand="true"
-      >
-        <span class="sh-atom-button__price">€ 539</span>
-        <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-start separator"
-          data-expand="true"
-      >
-        <span class="sh-atom-button__price">€ 539</span>
-        <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-around separator"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-between separator"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-evenly separator"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h2>As a toolbar</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-          data-expand="true"
-          data-shape="toolbar"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h2>With price</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h3>price and expanded</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-around"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-between"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-evenly"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h2>Price and separator •</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <hr>
-    <h3>reverse</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-      >
-        <span class="org-addtocart-console__price">€ 539</span>
-        <span class="org-addtocart-console__separator">•</span>
-        in winkelwagen
-      </a>
-    </div>
-    <h3>with icon</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-      >
-        <span class="sh-atom-button__price">€ 539</span>
-        <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
-      </a>
-    </div>
-    <h3>expanded</h3>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-          data-expand="true"
-      >
-        <span class="sh-atom-button__price">€ 539</span>
-        <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-start separator"
-          data-expand="true"
-      >
-        <span class="sh-atom-button__price">€ 539</span>
-        <span class="sh-atom-button__separator">•</span>
-        <Icon icon="icon-cart" />
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price separator"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-around separator"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-between separator"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price-evenly separator"
-          data-expand="true"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__separator">•</span>
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h2>As a toolbar</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-          href="#"
-          class="sh-atom-button"
-          data-style="filled"
-          data-alignment="price"
-          data-expand="true"
-          data-shape="toolbar"
-      >
-        in winkelwagen
-        <span class="org-addtocart-console__price">€ 539</span>
-      </a>
-    </div>
-    <h2>Work-In-Progress</h2>
-    <h3>Button + icon</h3>
-    <p>Icon too big.</p>
-    <div class="example">
-      <a href="#" class="sh-atom-button" data-style="filled"
-        >button text
-        <span class="icon-frame">
-          <Icon icon="icon-trashcan" />
-        </span>
-      </a>
-    </div>
-    <h2>Chevron Down</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="#anchor"
-        class="sh-atom-button"
-        data-style="soft"
-      >
-        Show
-        <span class="icon-frame">
-          <Icon icon="icon-chevron-down" />
-        </span>
-      </a>
-    </div>
-    <h2>Chevron Up</h2>
-    <div class="example" style="padding: 1rem;">
-      <a
-        href="#anchor"
-        class="sh-atom-button"
-        data-style="soft"
-      >
-        Hide
-        <span class="icon-frame">
-          <Icon icon="icon-chevron-up" />
-        </span>
-      </a>
-    </div>
-    <!-- end container -->
-    <h2>Grouped</h2>
-    <div class="button-group">
-      <a class="sh-atom-button" data-style="filled">button text</a>
-      <a class="sh-atom-button" data-style="filled">button text</a>
-    </div>
-    <hr>
-    <p>center</p>
-    <div class="button-group" data-alignment="center">
-      <a class="sh-atom-button" data-style="filled">button text</a>
-      <a class="sh-atom-button" data-style="filled">button text</a>
-    </div>
-  </div>
-  <!--<h2>Work-In-Progress</h2>
-  <h2>Button + icon</h2>
-  <p>Icon too big.</p>
-  <div class="example">
-    <a
-        href="#"
-        class="sh-atom-button"
-        data-style="filled"
-    >button text
-      <span class="icon-frame">
-        <Icon icon="icon-trashcan" />
-      </span>
-    </a>
-  </div>
-  <h2>Atom-Tag</h2>
-  <AtomTag text="Made to Order" />
-  <p>
-    From: <a
-      href="https://www.figma.com/file/wppNFHNUP3QZYFNEXzm6qf/PDP-Sticky-Add-to-Cart-%2B-Delivery-times?type=design&node-id=0-1&t=8cUR9uWWEX8p2eRP-0"
-      >Figma PDP</a>
-  </p>
-  <p>with icon left</p>
-  <AtomTag text="fast delivery" icon="truck" iconPosition="left" />
-  <hr />
-  <p>with icon right</p>
-  <AtomTag text="fast delivery" icon="truck" iconPosition="right" />-->
+              <g id="icon-arrow-right-nav-next">
+                <path
+                  id="Union"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M20.2363 12.4788L13.6519 19.3228L14.3034 20L21.6743 12.3386L22 12L21.6743 11.6614L14.3034 4L13.6519 4.67718L20.2363 11.5212L2.46068 11.5212H2V12.4788H2.46068L20.2363 12.4788Z"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </dd>
+      <dt>Price alignment</dt>
+      <dd>
+        <div class="example">
+          <a
+            href="#"
+            class="sh-atom-button"
+            data-style="filled"
+            data-alignment="price"
+          >
+            in winkelwagen
+            <span class="org-addtocart-console__price">€ 539</span>
+          </a>
+        </div>
+      </dd>
+      <dt>Price and • separator</dt>
+      <dd>
+        <div class="example">
+          <a
+            href="#"
+            class="sh-atom-button"
+            data-style="filled"
+            data-alignment="price separator"
+          >
+            in winkelwagen
+            <span class="org-addtocart-console__separator">•</span>
+            <span class="org-addtocart-console__price">€ 539</span>
+          </a>
+        </div>
+      </dd>
+      <h3>Mobile Nav</h3>
+      <dt>Hamburger icon with animation on click</dt>
+      <dd>
+        <div class="example">
+          <MobileNavButton />
+        </div>
+      </dd>
+      <h3>Grouped and aligned</h3>
+      <dt>Left</dt>
+      <dd>
+        <div class="button-group">
+          <a class="sh-atom-button" data-style="filled">button text</a>
+          <a class="sh-atom-button" data-style="filled">button text</a>
+        </div>
+      </dd>
+      <dt>Center</dt>
+      <dd>
+        <div class="button-group" data-alignment="center">
+          <a class="sh-atom-button" data-style="filled">button text</a>
+          <a class="sh-atom-button" data-style="filled">button text</a>
+        </div>
+      </dd>
+      <dt>Right</dt>
+      <dd>
+        <div class="button-group" data-alignment="end">
+          <a class="sh-atom-button" data-style="filled">button text</a>
+          <a class="sh-atom-button" data-style="filled">button text</a>
+        </div>
+      </dd>
+      <dt>Between</dt>
+      <dd>
+        <div class="button-group" data-alignment="between">
+          <a class="sh-atom-button" data-style="filled">button text</a>
+          <a class="sh-atom-button" data-style="filled">button text</a>
+        </div>
+      </dd>
+      <dt>Evenly</dt>
+      <dd>
+        <div class="button-group" data-alignment="evenly">
+          <a class="sh-atom-button" data-style="filled">button text</a>
+          <a class="sh-atom-button" data-style="filled">button text</a>
+        </div>
+      </dd>
+      <dt>Around</dt>
+      <dd>
+        <div class="button-group" data-alignment="around">
+          <a class="sh-atom-button" data-style="filled">button text</a>
+          <a class="sh-atom-button" data-style="filled">button text</a>
+        </div>
+      </dd>
+      <h3>Plain - looks like a link or at least not like a button.</h3>
+      <dt>plain-dark</dt>
+      <dd>
+        <div class="example xon-dark">
+          <a href="" class="sh-atom-button" data-style="plain-dark"
+            >button text</a
+          >
+        </div>
+        <small><code>data-style="plain-dark"</code></small>
+      </dd>
+      <dt>plain-light</dt>
+      <dd>
+        <div class="example on-dark">
+          <a href="" class="sh-atom-button" data-style="plain-light"
+            >button text</a
+          >
+        </div>
+        <small><code>data-style="plain-light"</code></small>
+      </dd>
+      <dt>plain arrow icon right - dark</dt>
+      <dd>
+        <div class="example xon-dark">
+          <a href="#" class="sh-atom-button" data-style="plain-dark"
+            >button text
+            <Icon
+              name="icon-arrow-right-animated"
+              width={IconSizes.Medium}
+              height={IconSizes.Medium}
+            />
+          </a>
+        </div>
+        <small><code>data-style="plain-dark"</code></small>
+      </dd>
+      <dt>plain arrow icon right - light</dt>
+      <dd>
+        <div class="example on-dark">
+          <a href="#" class="sh-atom-button" data-style="plain-light"
+            >button text
+            <Icon
+              name="icon-arrow-right-animated"
+              width={IconSizes.Medium}
+              height={IconSizes.Medium}
+            />
+          </a>
+        </div>
+        <small><code>data-style="plain-light"</code></small>
+      </dd>
+      <dt>Plain with animated underline</dt>
+      <dd>
+        <div class="example on-darkx">
+          <a
+            href="/en/shops"
+            class="sh-atom-button"
+            data-style="plain-dark"
+            data-animated-hover="true">Animated underline</a
+          >
+        </div>
+        <small
+          ><code>data-style="plain-light", data-animated-hover="true"</code
+          ></small
+        >
+      </dd>
+      <dt>Plain dark arrow down</dt>
+      <dd>
+        <div class="example">
+          <a
+            href="#anchor"
+            class="sh-atom-button"
+            data-style="plain-dark"
+            data-icon-arrow-down="true"
+          >
+            Discover<br />
+            more
+            <Icon class="sh-atom-icon" name="icon-arrow-down" />
+          </a>
+        </div>
+        <small
+          ><code>data-style="plain-light", data-icon-arrow-down="true"</code
+          ></small
+        >
+      </dd>
+    </dl>
+  </ContentBlock>
 </BaseLayout>
+<style is:global>
+  /* .frame {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+  } */
+
+  .example {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .on-dark {
+    background-color: var(--color-accent16);
+  }
+
+  /* .swiper-container .slides {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  } */
+</style>

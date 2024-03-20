@@ -1,0 +1,107 @@
+---
+import Icon from "../../components/astro/Icon.astro";
+import { IconSizes } from "../../../types/iconTypes";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+  url?: string;
+  hasScrollToAnchor?: boolean;
+  text?: string;
+  image?: string;
+  backgroundColor?: "primary" | "secondary" | "tertiary | highlight";
+}
+
+const {
+  title,
+  subtitle,
+  buttonText,
+  url,
+  hasScrollToAnchor,
+  text,
+  image,
+  backgroundColor = "primary"
+} = Astro.props;
+---
+
+<section id="hero" class="HeroSection">
+  <div
+  class="sh-org-block --is-hero hero-brick --fade-in"
+  data-fullscreen=""
+  data-hasimage=""
+  data-hasbgoverlay=""
+  data-hasfadein=""
+  >
+  {
+    url ? (<a class="sh-anchor-link" href={url}>
+      {
+        image ? (
+        <picture class="sh-org-fmb__image">
+          <img
+          src={image}
+          width="768"
+          height="417"
+          alt="Hero photo of one of our products"
+          />
+        </picture>
+        <div
+        class="sh-org-block__layer1"
+        style="background-color: hsla(0, 0%, 12%, 30%); color: #fff;"
+        >
+        <div class="hero-brick__content">
+          <p class="hero-brick__header-subtitle">{subtitle}</p>
+          <h1 class="hero-brick__header-title">{title}</h1>
+          <Fragment set:html={text} />
+          <!-- real link / button -->          
+          {
+            !hasScrollToAnchor && buttonText && <span class="sh-atom-button" data-style="filled">
+              <Fragment set:html={buttonText} />
+              </span>
+          }
+          <!-- if anchor link  -->          
+          {
+            hasScrollToAnchor && <span 
+            class="sh-atom-button" 
+            data-icon-arrow-down="true" 
+            data-style="plain-light"            
+          > 
+            <Fragment set:html={buttonText} />
+            <Icon class="sh-atom-icon" name="icon-arrow-down" />  
+          </span>
+          }                    
+        </div>
+      </div>
+      ) : (
+      <div class="hero-brick__content">
+        <p class="hero-brick__header-subtitle">{subtitle}</p>        
+        <h1 class="hero-brick__header-title">{title}</h1>
+        <Fragment set:html={text} />
+        {
+          buttonText && <span class="sh-atom-button" data-style="filled">{buttonText}</span>
+        }
+        <span>hello</span>                        
+      </div>
+      )
+    }
+  </a>
+  ) : <div class="hero-brick__content">
+    <p class="hero-brick__header-subtitle">{subtitle}</p>        
+    <h1 class="hero-brick__header-title">{title}</h1>
+    <Fragment set:html={text} />
+    {
+      buttonText && <span class="sh-atom-button" data-style="filled">{buttonText}</span>
+    }
+  </div>
+} 
+</div>
+</section>
+<style>
+  .HeroSection {
+    /* background-color: var(--color-background-primary); */
+  }
+  
+  .HeroSection:has(img) {
+    /* background-color: yellow; */
+  }
+</style>

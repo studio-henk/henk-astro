@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+---
+<BaseLayout title="Home">
+    <h2>Test Custom element with hello world.</h2>
+    <hello-world name="HENK">test</hello-world>
+    <hello-world name="Karlijn">test slot</hello-world>
+    <hello-world name="Slotless"></hello-world>
+    <hr>
+    <button type="button" id="btn1">open overlay 1</button>
+    <button type="button" id="btn2">open overlay 2</button>
+    <h2>ShOverlay component</h2>
+    <sh-overlay
+        name="overlay1"
+        overlayTrigger="btn1"
+    >
+    </sh-overlay>
+    <hr>
+    <sh-overlay
+        name="with form"
+        overlayTrigger="btn2"
+    >
+        <form method="post" action={"/"+lang+"/search-results"} class="search-modal__form">
+            <label class="search-modal__label" for="txt_search"
+            >What are you looking for?</label
+            >
+            <input
+                class="search-modal__input-text"
+                type="text"
+                name="txt_search"
+                id="txt_search"
+                autocomplete="off"
+                inputmode="text"
+            />
+            <div class="sh-molecule-l-button-group" data-alignment="center">
+                <button class="sh-atom-button" type="submit">Search</button>
+            </div>
+        </form>
+    </sh-overlay>
+    <script slot="head-scripts" src="/src/components/custom-elements/hello-world.js" type="module"></script>
+    <script slot="head-scripts" src="/src/components/custom-elements/sh-overlay.js" type="module"></script>
+</BaseLayout>

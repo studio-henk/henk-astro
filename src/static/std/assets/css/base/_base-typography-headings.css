@@ -1,0 +1,125 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 400;
+  text-align: left;
+  margin: 24px 0;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+.fs-xxx-large,
+h1,
+.h1 {
+  /* calc the relative in-between number
+   (39/1728)*100 = 2.257 
+  */
+  font-size: clamp(calc(var(--size-font-heading-1-min) / var(--size-font-body) * 1rem),
+      calc(var(--size-font-heading-1-max) / var(--size-screen-target) * 100 * 1vw),
+      calc(var(--size-font-heading-1-max) / var(--size-font-body) * 1rem));
+  line-height: clamp(32px, 3vw, 48px);
+}
+
+.fs-xx-large,
+h2,
+.h2 {
+  /* font-size: clamp(20px, 3vw, 31px); */
+  font-size: clamp(calc(var(--size-font-heading-2-min) / var(--size-font-body) * 1rem),
+      calc(var(--size-font-heading-2-max) / var(--size-screen-target) * 100 * 1vw),
+      calc(var(--size-font-heading-2-max) / var(--size-font-body) * 1rem));
+  line-height: clamp(32px, 3vw, 40px);
+}
+
+.fs-x-large,
+h3,
+.h3 {
+  /* font-size: clamp(16px, 3vw, 25px); */
+  font-size: clamp(calc(var(--size-font-heading-3-min) / var(--size-font-body) * 1rem),
+      calc(var(--size-font-heading-3-max) / var(--size-screen-target) * 100 * 1vw),
+      calc(var(--size-font-heading-3-max) / var(--size-font-body) * 1rem));
+  line-height: clamp(24px, 3vw, 32px);
+}
+
+.fs-large,
+h4,
+.h4 {
+  /* font-size: clamp(16px, 3vw, 25px); */
+  font-size: clamp(calc(var(--size-font-heading-4-min) / var(--size-font-body) * 1rem),
+      calc(var(--size-font-heading-4-max) / var(--size-screen-target) * 100 * 1vw),
+      calc(var(--size-font-heading-4-max) / var(--size-font-body) * 1rem));
+  line-height: clamp(24px, 3vw, 24px);
+}
+
+h5,
+.h5 {
+  font-size: clamp(calc(var(--size-font-heading-5-min) / var(--size-font-body) * 1rem),
+      calc(var(--size-font-heading-5-max) / var(--size-screen-target) * 100 * 1vw),
+      calc(var(--size-font-heading-5-max) / var(--size-font-body) * 1rem));
+  line-height: clamp(24px, 3vw, 24px);
+}
+
+h6,
+.h6 {
+  font-size: clamp(calc(var(--size-font-heading-6-min) / var(--size-font-body) * 1rem),
+      calc(var(--size-font-heading-6-max) / var(--size-screen-target) * 100 * 1vw),
+      calc(var(--size-font-heading-6-max) / var(--size-font-body) * 1rem));
+  line-height: clamp(24px, 3vw, 24px);
+}
+
+/* medium? */
+.fs-medium {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.fs-small {
+  font-size: calc(var(--size-font-small) / var(--size-font-body) * 1rem);
+  line-height: calc(20/13);
+}
+
+.fs-x-small {
+  font-size: calc(var(--size-font-x-small) / var(--size-font-body) * 1rem);
+  line-height: calc(16/10);
+}
+
+.fs-xx-small {
+  font-size: calc(var(--size-font-xx-small) / var(--size-font-body) * 1rem);
+  line-height: calc(12/8);
+}
+
+/* @media screen and (max-width: 1105px) {
+
+  .x-large,
+  h3,
+  .h3,
+  .large,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-weight: 500;
+  }
+} */
+
+/*h1 as first-child no margin top*/
+h1:first-child {
+  margin-top: 0;
+}

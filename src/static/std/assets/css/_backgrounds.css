@@ -1,0 +1,16 @@
+  [class*="--BG-primary"] {
+      background-color: var(--color-background-primary);
+  }
+
+  [class*="--BG-secondary"] {
+      background-color: var(--color-background-secondary);
+  }
+
+  [class*="--BG-tertiary"] {
+      background-color: var(--color-background-tertiary);
+  }
+
+  [class*="--BG-highlight"] {
+      background-color: var(--color-background-highlight);
+      color: var(--color-text-on-dark);
+  }

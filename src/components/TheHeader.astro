@@ -1,26 +1,81 @@
 ---
+import AtomLogo from "./Atoms/AtomLogo.astro";
+import { getLangFromUrl } from "../i18n/utils";
+import Icon from "../components/astro/Icon.astro";
+// import NavCard from "./NavCard.astro";
+import MsgBar from "../components/MsgBar.astro";
+import NavBarMobile from "../components/NavBarMobile.astro";
+import primaryNav from "../../public/data/navigation_data.json";
+import NavBarDesktop from "../components/NavBarDesktop.astro";
+
+const lang = getLangFromUrl(Astro.url);
+// const { NavOnHero } = Astro.props;
+let { Theme } = Astro.props;
+let { showMsgBar } = Astro.props;
+
+if (!showMsgBar) {
+  showMsgBar = "false";
+}
+// console.log(showMsgBar);
+
+const currentPath = Astro.url.pathname.substring(4);
+let otherLang;
+if (lang == "nl") {
+  otherLang = "en";
+} else {
+  otherLang = "nl";
+}
+let otherURL = "/" + otherLang + "/" + currentPath;
+// if (!Theme) {
+//   Theme = "light";
+// }
+
+// const tableGallery = 5;
+// Convert the object to a JSON string
+const primaryNavJSON = JSON.stringify(primaryNav);
+
+// const {hasHero} = Astro.props;
 ---
 
-<header class="masthead">
-  <nav>
-    <a href="index">Home</a>
-    <a href="buttons">Buttons</a>
-    <a href="cart-elements">Cart elements</a>
-    <a href="cart">Cart List page</a>
-    <a href="content-blocks">Content blocks</a>
-    <a href="about">About</a>
-    <a href="hero-block">Hero block 2</a>
-  </nav>
-</header>
-<style>
-  .masthead {
-    border-bottom: 1px solid black;
-    padding: 1rem;
-    width: auto;
-  }
+<!-- <script define:vars={{title}}>
+  alert(title);
+<script> -->
+<script is:inline define:vars={{ primaryNavJSON }}>
+  window.navDataObject = primaryNavJSON;
+  // window.navDataObject = JSON.parse(primaryNavJSON);
+  // console.log(window.navDataObject);
+</script>
 
-  .masthead a {
-      text-decoration: none;
-    }
-  }
-</style>
+<script is:inline src="/static/std/assets/js/vue.global.prod.min.js"></script>
+
+<!-- swiper -->
+<script
+  is:inline
+  src="/static/std/assets/js/third-party/swiper-element-bundle.min.js"
+></script>
+
+{showMsgBar === "true" && <MsgBar lang={lang} />}
+
+<NavBarMobile Theme={Theme} />
+<NavBarDesktop Theme={Theme} />
+
+<script src="/static/std/assets/components/NavBar/LangSwitch.js" type="module"
+></script>
+
+<script
+  src="/static/std/assets/components/NavBar/NavBarDesktop.js"
+  type="module"
+  defer
+></script>
+<script
+  src="/static/std/assets/components/NavBar/NavBarMobile.js"
+  type="module"
+  defer
+></script>
+
+<script src="/static/std/assets/components/NavBar/LangSwitchAction.js" defer
+></script>
+<script
+  src="/static/std/assets/js/web-components/HamburgerButton.js"
+  type="module"
+></script>

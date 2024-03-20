@@ -1,54 +1,148 @@
 ---
-import {getLangFromUrl} from '../i18n/utils';
-import TheNav from "../components/TheNav.astro";
-import TheFooter from "../components/TheFooter.astro";
-
+import { getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
-const {title, mainID, mainClass} = Astro.props;
+import TheHeader from "../components/TheHeader.astro";
+import TheFooter from "../components/TheFooter.astro";
+// import SfChatbutton from "../components/third-party/_sf-chatbutton.astro";
+
+const {
+  title,
+  mainID,
+  mainClass,
+  pageClass,
+  NavFont = "new",
+  Theme,
+  hasHero,
+  showMsgBar,
+} = Astro.props;
 ---
-<html lang={lang}>
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+
+<html lang={lang} class={pageClass} data-has-hero={hasHero}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, viewport-fit=cover"
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <meta
-        name="description"
-        content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture."
+      name="description"
+      content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture."
     />
-    <meta name="generator" content={Astro.generator}/>
+    <meta name="theme-color" content="transparent" />
     <title>{title}</title>
-    <!-- henk styles -->
-    <link rel="stylesheet" href="https://use.typekit.net/kzt0jvy.css"/>
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link
-        href="/static/std/assets/toolkit/styles/toolkit.css"
-        media="screen"
-        rel="stylesheet"
-        type="text/css"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon-dark.png"
+      media="(prefers-color-scheme: dark)"
     />
-    <slot name="head-styles"/>
-    <!--<script defer src="/static/std/assets/toolkit/scripts/toolkit.js"></script>-->
-    <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
-    <!--<script defer src="/static/std/assets/toolkit/scripts/heightForHeroes_002.min.js"></script>-->
-    <script defer src="/src/scripts/heightForHeroes_002.min.js"></script>
-    <slot name="head-scripts"/>
-</head>
-<body>
-<div class="wrapper">
-    <h1>hello</h1>
-    <!--value comes from head <title> tag....usually, which is set in title field on SEO tab in pimcore-->
-    <div id="page-title">
-        <h1 class="sr-only">{title}</h1>
+    <link rel="apple-touch-startup-image" href="/launch.png" />
+
+    <!-- preload font -->
+    <link
+      rel="preload"
+      href="/fonts/NeueHaasGrotTextRound-55Roman-Web.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- NavBar styles -->
+    <!-- Preload stylesheets -->
+    <link
+      rel="preload"
+      href="/static/std/assets/css/tokens/_tokens-colors.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="/static/std/assets/css/tokens/_tokens-size-font.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="/static/std/assets/css/tokens/_tokens-size-spacing.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="/static/std/assets/components/MsgBar/MsgBar.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="/static/std/assets/components/NavBar/NavBarMobile.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="/static/std/assets/components/NavBar/NavBarDesktop.css"
+      as="style"
+    />
+
+    <!-- Apply stylesheets -->
+    <link
+      rel="stylesheet"
+      href="/static/std/assets/css/tokens/_tokens-colors.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/std/assets/css/tokens/_tokens-size-font.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/std/assets/css/tokens/_tokens-size-spacing.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/std/assets/components/MsgBar/MsgBar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/std/assets/components/NavBar/NavBarMobile.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/std/assets/components/NavBar/NavBarDesktop.css"
+    />
+
+    <!-- <link
+      href="/src/static/std/assets/css/henk-styles.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
+    <link
+      href="/static/std/assets/css/henk-styles.min.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <slot name="head-styles" />
+
+    <!-- web components -->
+    <script src="/static/std/assets/js/web-components/CountdownTimer.js" defer
+    ></script>
+
+    <!-- <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
+    <script is:inline defer src="/static/std/assets/toolkit/scripts/toolkit.js"
+    ></script> -->
+    <slot name="head-scripts" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <TheHeader Theme={Theme} hasHero={hasHero} showMsgBar={showMsgBar} />
+      <slot name="pre-main" />
+      <main id={mainID} class={mainClass}>
+        <slot />
+      </main>
+      <TheFooter />
     </div>
-    <TheNav />
-    <slot name="pre-main" />
-    <main id={mainID} class={mainClass}>
-        <slot/>
-    </main>
-    <TheFooter/>
-</div>
-<slot name="footer-scripts"/>
-</body>
+    <slot name="footer-scripts" />
+  </body>
 </html>

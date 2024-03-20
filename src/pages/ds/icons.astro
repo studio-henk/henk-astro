@@ -1,42 +1,610 @@
 ---
+import ContentBlock from "../../components/astro/ContentBlock.astro";
+import HeroBrick from "../../components/bricks/HeroBrick.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Icon from "../../components/Icon.astro";
+import Icon from "../../components/astro/Icon.astro";
+import { IconSizes } from "../../../types/iconTypes";
+import Toc from "../../components/ds/Toc.astro";
 ---
-<BaseLayout title="Icons">
-    <h1>Icons</h1>
-    <Icon icon="arrow-right" />
-    <p>test button icon</p>
-    <a
-        href="#"
-        class="sh-atom-button"
-        data-style="filled"
-        data-icon-arrow-right="true"
-    >button text
-        <Icon icon="arrow-right" />
-    </a>
-    <h3>test Icon component</h3>
-    <p>Default is 24px by 24px</p>
-    <Icon
-        icon="search"
-        class="sh-atom-icon"
-    />
-    <p>large: 48px by 48px</p>
-    <Icon
-        icon="search"
-        class="sh-atom-icon"
-        data-size="large"
-        aria-hidden="false"
-    />
-    <p>small: 16px by 16px</p>
-    <Icon
-        icon="search"
-        class="sh-atom-icon"
-        data-size="small"
-    />
-    <!--<Icon
-        icon="search"
-        width="44"
-        height="44"
-    />-->
-    <h2>Arrow Right</h2>
+
+<BaseLayout title="Icons" hasHero="true" Theme="dark">
+  <HeroBrick
+    title="Icons"
+    text="<p>HENK uses a mixture of icons picked from several libraries.</p>"
+    image="https://images.unsplash.com/photo-1506729623306-b5a934d88b53?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    url="#foundations-icons"
+    buttonText="Explore"
+  />
+  <ContentBlock title="Design System">
+    <Toc slot="content" />
+  </ContentBlock>
+  <!-- <ContentBlock title="DS">
+    <div class="breadcrumbs" slot="content">
+      <ol>
+        <li><a href="/ds/">Design System Index</a></li>
+        <li><a href="/ds/icons">Icons</a></li>
+      </ol>
+    </div>
+  </ContentBlock> -->
+  <ContentBlock title="Icons" id="foundations-icons">
+    <dl slot="content" class="ds-icon-grid">
+      <p>
+        Icon size refers to the bounding box. Actual icon size is 4px (padding)
+        less.
+      </p>
+      <!-- <dt>Size: Large: 32px</dt>
+      <dd>
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-arrow-left"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-arrow-right"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-arrow-left-nav-back"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-arrow-right-nav-next"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-calendar"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-arrow-down"
+        /> -->
+      <!-- <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-cart"
+          data-deprecated="true"
+        /> -->
+      <!-- <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-chevron-down"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-chevron-up"
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-chevron-left"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-chevron-right"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-close"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-hamburger"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-phone"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-search"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-truck"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-trashcan"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-location"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-down-payment"
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-add-to-bag"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-bag"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          name="icon-youtube"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          name="icon-star"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          name="icon-instagram"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          name="icon-ideal"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          name="icon-mrcash"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+        <Icon
+          name="icon-visa"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+        />
+      </dd> -->
+      <dt>Size: Medium: 24px</dt>
+      <dd>
+        <Icon class="sh-atom-icon" name="icon-arrow-left" />
+        <Icon class="sh-atom-icon" name="icon-arrow-right" />
+        <!-- <Icon class="sh-atom-icon" name="icon-arrow-right-animated" /> -->
+        <!-- <Icon class="sh-atom-icon" name="arrow-left-animated" /> -->
+        <Icon class="sh-atom-icon" name="icon-arrow-left-nav-back" />
+        <Icon class="sh-atom-icon" name="icon-arrow-right-nav-next" />
+        <Icon class="sh-atom-icon" name="icon-calendar" />
+        <Icon class="sh-atom-icon" name="icon-arrow-down" />
+        <!-- <Icon class="sh-atom-icon" name="icon-cart" /> -->
+        <Icon class="sh-atom-icon" name="icon-chevron-down" />
+        <Icon class="sh-atom-icon" name="icon-chevron-up" />
+        <Icon class="sh-atom-icon" name="icon-chevron-left" />
+        <Icon class="sh-atom-icon" name="icon-chevron-right" />
+        <Icon class="sh-atom-icon" name="icon-close" />
+        <Icon class="sh-atom-icon" name="icon-hamburger" />
+        <Icon class="sh-atom-icon" name="icon-phone" />
+        <Icon class="sh-atom-icon" name="icon-search" />
+        <!-- <Icon class="sh-atom-icon" name="icon-truck" /> -->
+        <Icon class="sh-atom-icon" name="icon-truck-fast" />
+        <!-- <Icon class="sh-atom-icon" name="icon-trashcan" /> -->
+        <Icon class="sh-atom-icon" name="icon-trashcan" />
+        <Icon class="sh-atom-icon" name="icon-location" />
+        <Icon class="sh-atom-icon" name="icon-down-payment" />
+        <Icon class="sh-atom-icon" name="icon-add-to-bag" />
+        <Icon class="sh-atom-icon" name="icon-bag" />
+        <Icon name="icon-facebook" />
+        <Icon name="icon-linkedin" />
+        <Icon name="icon-youtube" />
+        <Icon name="icon-instagram" />
+        <Icon
+          name="icon-ideal"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-mrcash"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-visa"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-star"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-at"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-phone"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-phone-filled"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-minus"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-plus"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-whatsapp"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+        <Icon
+          name="icon-mastercard"
+          width={IconSizes.Medium}
+          height={IconSizes.Medium}
+        />
+      </dd>
+      <dt>Size: Small: 16px</dt>
+      <dd>
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-arrow-left"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-arrow-right"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-arrow-left-nav-back"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-arrow-right-nav-next"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-calendar"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-arrow-down"
+        />
+        <!-- <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-cart"
+        /> -->
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-chevron-down"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-chevron-up"
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-chevron-left"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-chevron-right"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-close"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-hamburger"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-phone"
+        />
+        <!-- <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-search-deprecated"
+          data-deprecated="true"
+        /> -->
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-search"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-truck"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-trashcan"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-location"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+          name="icon-down-payment"
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-add-to-bag"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          class="sh-atom-icon"
+          name="icon-bag"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-facebook"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-linkedin"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-youtube"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-instagram"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-star"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon name="icon-at" width={IconSizes.Small} height={IconSizes.Small} />
+        <Icon
+          name="icon-phone"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-phone-filled"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-minus"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-plus"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-whatsapp"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+        <Icon
+          name="icon-mastercard"
+          width={IconSizes.Small}
+          height={IconSizes.Small}
+        />
+      </dd>
+    </dl>
+    <dl slot="content">
+      <dt>Still to do:</dt>
+      <dd>
+        <ul>
+          <li><s>@ symbol</s></li>
+          <li><s>telephone like in footer</s></li>
+          <li><s>whatsapp</s></li>
+          <li><s>mastercard</s></li>
+        </ul>
+      </dd>
+    </dl>
+  </ContentBlock>
+  <ContentBlock title="Deprecated Icons" id="foundations-icons-deprecated">
+    <dl slot="content" class="ds-icon-grid">
+      <dt>These icons have gone the way of the dodo. Or dinosaurs...</dt>
+      <dd>
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-cart"
+          data-deprecated="true"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-search-deprecated"
+          data-deprecated="true"
+        />
+        <Icon
+          class="sh-atom-icon"
+          width={IconSizes.Large}
+          height={IconSizes.Large}
+          name="icon-trashcan-deprecated"
+          data-deprecated="true"
+        />
+      </dd>
+    </dl>
+  </ContentBlock>
+  <ContentBlock title="Use" id="foundations-icons-use">
+    <dl slot="content">
+      <dt>Figma</dt>
+      <dd>
+        <ul>
+          <li>
+            Figma <a
+              target="_blank"
+              href="https://www.figma.com/file/C1tcSVnN66fHiy1eHqpYHM/Component-%2F-Icon?type=design&node-id=903%3A2&mode=design&t=kPQ0J66yZO8MaWGf-1"
+              >file</a
+            >
+          </li>
+          <li>Use fill not stroke and flatten shapes as much as possible.</li>
+          <li>Assign variable --color-text-page to the fill</li>
+          <li>
+            Add in Component as variant. 24px and 16px. 2px padding around icon
+            shapes.
+          </li>
+          <li>Copy as SVG to a file.</li>
+        </ul>
+      </dd>
+      <dd>
+        <Icon
+          class="sh-atom-icon baseline-8"
+          name="icon-bag"
+          width={IconSizes.Ginormous}
+          height={IconSizes.Ginormous}
+        />
+      </dd>
+    </dl>
+  </ContentBlock>
+  <ContentBlock title="In Code" id="foundations-icons-code">
+    <div class="example" slot="content">
+      <h3>How to use</h3>
+      <h4>In Astro</h4>
+      <pre><code>&lt;Icon 
+  class=&quot;sh-atom-icon&quot; 
+  icon=&quot;icon-trashcan&quot;/&gt;</code>
+      </pre>
+      <hr />
+      <h4>In pimcore Twig files</h4>
+      <pre><code>&#123;% include 'Components/Atoms/atom-icon/_atom-icon.html.twig' with &#123;'iconName' : 'icon-trashcan'&#125; %&#125;</code></pre>
+      <h4>with props</h4>
+      <p>Optional props: width, height, vueConditional</p>
+      <p>
+        <pre><code>&#123;% include 'Components/Atoms/atom-icon/_atom-icon.html.twig' with &#123;'iconName' : 'icon-trashcan', 'width' : '16' &#125; %&#125;</code></pre>
+      </p>
+    </div>
+  </ContentBlock>
 </BaseLayout>
+<style>
+  .page {
+    background-color: #fff;
+    padding: 2rem;
+  }
+
+  pre {
+    /*white-space: break-spaces;*/
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+
+  .ds-icon-grid {
+    width: 100%;
+  }
+
+  .ds-icon-grid *:first-child {
+    margin-top: 0;
+  }
+
+  .ds-icon-grid dt {
+    margin-bottom: 1rem;
+  }
+
+  .ds-icon-grid dd {
+    display: grid;
+    grid-template-columns: repeat(12, 32px);
+    gap: 8px;
+  }
+
+  .baseline-8:hover {
+    background: linear-gradient(
+      to bottom,
+      lightgrey,
+      lightgrey 1px,
+      transparent 1px,
+      transparent
+    );
+    background-size: 100% 8px;
+  }
+
+  svg.sh-atom-icon[data-deprecated] {
+    color: red;
+    cursor: not-allowed;
+  }
+</style>

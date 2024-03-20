@@ -1,0 +1,73 @@
+---
+import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
+// import storeRozengracht from "../../images/store-rozengracht.jpeg";
+
+interface Props {
+  image: string;
+  name: string;
+  buttonText: string;
+  buttonHref: string;
+  hoursLinkText?: string;
+  hoursLinkHref?: string;
+  directionsLinkText?: string;
+  directionsLinkHref: string;
+}
+
+const {
+  image,
+  name,
+  buttonText,
+  buttonHref,
+  hoursLinkText = "Adjusted Opening Hours",
+  hoursLinkHref = "#adjusted-opening-hours",
+  directionsLinkText = "Get directions",
+  directionsLinkHref,
+} = Astro.props;
+---
+
+<div class="StoreBrick__Block">
+  <div class="StoreBrick__store-image-container">
+    <picture class="StoreBrick__Picture">
+      <source
+        srcset={`
+          ${image}-272.avif 272w, 
+          ${image}-720.avif 720w,
+          ${image}-1020.avif 1020w,
+          ${image}-1250.avif 1250w,
+          ${image}-1440.avif 1440w
+        `}
+        type="image/avif"
+      />
+      <a href={buttonHref}>
+        <img
+          src={`${image}-1440.avif`}
+          alt="alt text"
+          class="StoreBrick__img"
+          width="1440"
+          height="1800"
+        />
+      </a>
+    </picture>
+  </div>
+  <h3 class="StoreBrick__store-name">
+    {name}
+    <!-- <a href={buttonHref} class="" data-style="soft">{name}</a> -->
+  </h3>
+  <!-- wysiwyg texts -->
+  <div class="StoreBrick__content">
+    <slot />
+  </div>
+  <a
+    class="sh-store__link"
+    href={buttonHref + hoursLinkHref}
+    title="Click to go to the store page"
+  >
+    {hoursLinkText}
+  </a>
+  <a class="sh-store__link" href={directionsLinkHref} target="_blank">
+    {directionsLinkText}
+  </a>
+  <!-- button -->
+  <a href={buttonHref} class="sh-atom-button" data-style="soft">{buttonText}</a>
+</div>

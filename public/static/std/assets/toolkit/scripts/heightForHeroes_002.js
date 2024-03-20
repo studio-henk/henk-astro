@@ -1,6 +1,6 @@
 const heightForHeroes = {
   name: "heightForHeroes",
-  msgBarSelector: document.querySelector("#msg-covid"),
+  // msgBarSelector: document.querySelector("#msg-covid"),
   navBarSelector: document.querySelector("section.navigation"),
   init: function() {
     // run functions for observers

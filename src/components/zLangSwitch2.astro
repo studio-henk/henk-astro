@@ -1,0 +1,47 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname.substring(4);
+---
+<div class="LangSwitch2" data-url={currentPath} id="LangSwitch2">
+    <span class="LangSwitch2__pseudo-label">NL</span>
+    <input type="checkbox" id="LangSwitch2__language" class="LangSwitch2__checkbox" checked={lang == "en" && true}>
+    <label for="LangSwitch2__language" class="LangSwitch2__label">
+        <span class="slider"></span>
+    </label>
+    <span class="LangSwitch2__pseudo-label">EN</span>
+</div>
+<script is:inline defer define:vars={{lang}}>
+    const LangSwitch2Element = document.getElementById("LangSwitch2");
+    const LangSwitch2__input = document.getElementById("LangSwitch2__language");
+    //const isCheckedDisplay = document.getElementById("isCheckedDisplay");
+    const LangSwitch2__url = LangSwitch2Element.dataset.url;
+    console.log("status on load: " + LangSwitch2__input.checked);
+    console.log(lang);
+
+    function isChecked () {
+        isCheckedDisplay.innerHTML = LangSwitch2__input.checked;
+    }
+
+    function updateChecked () {
+        console.log("status on change: " + LangSwitch2__input.checked);
+        isCheckedDisplay.innerHTML = LangSwitch2__input.checked;
+    }
+
+    // isChecked();
+
+    function handleChangeEvent() {
+        // console.log("hello, change: " + this.checked);
+        // updateChecked();
+        let otherLang;
+        if (lang =="nl") {
+            otherLang = "en"
+        } else {
+            otherLang = "nl"
+        }
+        document.location.assign("/" + otherLang + "/" + LangSwitch2__url);
+    }
+
+    // change listener
+    LangSwitch2__input.addEventListener("change", handleChangeEvent, false);
+</script>

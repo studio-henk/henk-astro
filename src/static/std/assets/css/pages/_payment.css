@@ -1,0 +1,31 @@
+.payment {
+  margin-top: 6rem;
+}
+.payment__image {
+  margin: 0 auto;
+  max-width: 150px;
+}
+.payment__text {
+  margin-top: 3rem;
+}
+
+.payment-container__text {
+  margin-bottom: 0.5rem;
+}
+.payment-container__logo {
+  margin-top: 1rem;
+}
+
+.payment-error {
+  margin-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .payment-error {
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .payment-error {
+    margin-top: 6rem;
+  }
+}

@@ -20,9 +20,7 @@ class BaseModal extends HTMLElement {
     const openButtonText = this.getAttribute("openButtonText") || "Open";
     const modalTitle = this.getAttribute("modalTitle") || "Modal title";
 
-    return `
-      <link rel="stylesheet" href="/public/static/std/assets/css/components/atom-button-new.css" />
-      <link rel="stylesheet" href="/public/static/std/assets/css/components/atom-button-icon.css" />
+    return `      
       <style>
       :host {
         display: inline-block;
@@ -93,11 +91,26 @@ class BaseModal extends HTMLElement {
       .BaseModal__header-title {
         font-size: 1.375rem;      
       }
+
+      .sh-atom-button.modal_open {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        text-decoration: underline;
+        cursor: pointer;
+      }
            
       .modal_close {
-          position: absolute;
-          right: 0;
-          padding: 0;
+        position: absolute;
+        right: 0;
+        padding: 0;
+        appearance: none;
+        border: 0;
+        background: transparent;
+      }
+
+      .modal_close svg {
+        fill: currentcolor;
       }
       </style>
       <div class="BaseModal">
@@ -106,11 +119,15 @@ class BaseModal extends HTMLElement {
           <div class="BaseModal__content">
             <div class="BaseModal__header">
                 <span class="BaseModal__header-title">${modalTitle}</span>
-                <button type="button" class="sh-atom-button-icon modal_close" data-style="plain-dark">
-                    <span class="icon-frame">
-                      <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--<title>{icon}</title>-->
-                        <path d="M1.44766 0.810913L15.0795 14.4427" stroke="currentcolor" stroke-linecap="round"></path> <path d="M15.0797 0.810913L1.44785 14.4428" stroke="currentcolor" stroke-linecap="round"></path></svg>
-                    </span>
+                <button type="button" class="sh-atom-button modal_close" data-style="plain-dark">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sh-atom-icon" aria-hidden="true">
+                        <g id="icon-close">
+                            <g id="icon-close-g">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.20017 2.20018C2.46707 1.93328 2.89979 1.93327 3.16669 2.20017L21.7996 20.8332C22.0664 21.1001 22.0665 21.5328 21.7996 21.7997C21.5327 22.0666 21.0999 22.0666 20.833 21.7997L2.20017 3.1667C1.93328 2.89981 1.93328 2.46708 2.20017 2.20018Z"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.7998 2.20017C22.0667 2.46707 22.0667 2.8998 21.7998 3.1667L3.16695 21.7998C2.90005 22.0667 2.46733 22.0667 2.20043 21.7998C1.93354 21.5329 1.93354 21.1002 2.20043 20.8333L20.8333 2.20018C21.1002 1.93328 21.5329 1.93327 21.7998 2.20017Z"></path>
+                            </g>
+                        </g>
+                    </svg>
                 </button>
             </div>
             <div class="BaseModal__main">            

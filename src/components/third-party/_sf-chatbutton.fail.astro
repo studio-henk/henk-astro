@@ -1,0 +1,37 @@
+<script is:inline defer>
+  // Prevent CORS-related errors from being logged in the console
+  window.addEventListener("error", function (event) {
+    if (event.message.includes("Access to fetch")) {
+      event.preventDefault();
+      console.log("CORS-related error suppressed:", event.message);
+    }
+  });
+
+  function fetchData() {
+    const url =
+      "https://studio-henk--train.sandbox.my.salesforce-scrt.com/embeddedservice/v1/embedded-service-config?orgId=00D3H0000008q6o&esConfigName=Studio_Henk_web_CHat&language=nl_NL";
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          // throw new Error(`HTTP error! Status: ${response.status}`);
+          console.log("Error fetching data:", response.statusText);
+          // Handle the error as needed without throwing an error
+          return null; // or any default value or action you want to take
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Data fetched successfully:", data);
+        // Process the fetched data as needed
+      })
+      .catch((error) => {
+        // console.error("Error fetching data:", error);
+        // Handle the error as needed
+        console.log("Error fetching data:", error);
+      });
+  }
+
+  // Call the function to fetch data
+  fetchData();
+</script>

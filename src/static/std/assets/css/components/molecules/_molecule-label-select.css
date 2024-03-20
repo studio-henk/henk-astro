@@ -1,0 +1,12 @@
+.molecule-label-select {
+  /*border: 8px solid red;*/
+}
+
+[data-show-required-fields=true] [data-required=true] + .atom-label::after {
+  content: "*";
+  color: var(--color-henk-danger);
+  font-weight: 700;
+  right: -2px;
+  position: absolute;
+  top: -4px;
+}

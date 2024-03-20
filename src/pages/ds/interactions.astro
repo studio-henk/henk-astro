@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+// import { Icon } from 'astro-icon/components';
+import AtomTag from "../../components/Atoms/AtomTag.astro";
+import MobileNavButton from "../../components/MobileNavButton.astro";
+---
+
+<BaseLayout title="Interactions" NavTheme="dark">
+  <div
+    class="frame"
+    style="max-width: 960px; margin: 0 auto; padding: 2rem 0 0 0;"
+  >
+    <h1>Interactions</h1>
+    <h2>interaction C</h2>
+    <div
+      class="example"
+      style="background-color: aliceblue;padding: 1rem;"
+    >
+      <a href="/en/configurator-new-nav" class="hover-interaction-c">interaction C</a>
+    </div>
+    <hr>
+    <p>version for surrounding link on image and text</p>
+    <div class="example" style="background-color: aliceblue;padding: 1rem;">
+      <figure class="sh-atom-figure astro-QXWYLH5A" style="--foregroundColor: currentcolor;--backgroundColor: transparent;">
+        <a href="https://disney.com" class="sh-atom-figure__link hover-interaction-c-2 astro-QXWYLH5A" title="Click to go to Disney website.">
+          <div class="sh-atom-figure__image-mask astro-QXWYLH5A">
+            <img src="/static/std/assets/toolkit/images/navbar/shop-base_01.jpg" class="sh-atom-figure__image astro-QXWYLH5A" alt="Photo of a cliff with a nice view on the ocean." width="556" height="722">
+          </div>
+          <figcaption class="sh-atom-figure__caption hover-interaction-c-2-target astro-QXWYLH5A">Title here</figcaption>
+        </a>
+      </figure>
+    </div>
+  </div>
+</BaseLayout>

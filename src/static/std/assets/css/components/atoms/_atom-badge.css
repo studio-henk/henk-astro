@@ -1,0 +1,21 @@
+.atom-badge {
+    background-color: var(--color-background-badge, var(--color-white));
+    color: var(--color-text-badge, currentcolor);
+    border-radius: 100%;
+    /* TODO: make relative to ? */
+    font-size: 15px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    text-decoration: none;
+    aspect-ratio: 1/1;
+    transition: all .3s ease;
+}
+
+.atom-badge:hover {
+    --color-background-badge: var(--color-black);
+    --color-text-badge: var(--color-white);
+}

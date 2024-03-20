@@ -1,0 +1,43 @@
+.brick__hero-v2 {
+}
+
+/* image height calc */
+.brick__hero-v2 .hero-brick .sh-org-fmb__image img {
+  height: calc(100vh - var(--size-height-for-hero, 0px));
+  max-height: unset !important;
+}
+
+@supports (height: 100dvh) {
+  .brick__hero-v2 .hero-brick .sh-org-fmb__image img {
+    height: calc(100dvh - var(--size-height-for-hero, 0px));
+    max-height: unset !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .brick__hero-v2 .hero-brick__content {
+    /*height: 70vh;*/
+    gap: 0;
+    justify-content: flex-end;
+  }
+
+  .brick__hero-v2 .hero-brick__content .hero-brick__header {
+    position: absolute;
+    bottom: 80px;
+    padding: 0 64px;
+    max-width: 247px;
+  }
+}
+
+.brick__hero-v2 .hero-brick__header-subtitle {
+  text-transform: none;
+  font-size: 16px;
+  font-weight: 300;
+  /* letter-spacing: 0.02em; */
+}
+
+@media only screen and (min-width: 992px) {
+  .brick__hero-v2 .hero-brick__header-subtitle {
+    /* letter-spacing: 0.5px; */
+  }
+}

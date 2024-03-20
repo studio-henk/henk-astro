@@ -1,0 +1,11 @@
+---
+// import Icon from "../Icon.astro";
+// import { Icon } from 'astro-icon/components';
+
+import Icon from "../astro/Icon.astro";
+const { url = "/", icon = "henk-logo", width = 174, height = 16 } = Astro.props;
+---
+
+<a href={url} class="atom-logo" tabindex="1">
+  <Icon name={icon} width={width} height={height} />
+</a>

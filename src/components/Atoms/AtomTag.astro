@@ -1,5 +1,8 @@
 ---
-import Icon from "../Icon.astro";
+// import Icon from "../Icon.astro";
+// import { Icon } from 'astro-icon/components';
+
+import Icon from "../astro/Icon.astro";
 const { text, icon, iconPosition, hasLink } = Astro.props;
 ---
 {
@@ -11,13 +14,13 @@ const { text, icon, iconPosition, hasLink } = Astro.props;
         <a href={hasLink} class="sh-atom-tag__link">
             {iconPosition === "left" &&
             <Icon
-                icon={icon}
+                name={icon}
                 data-size=""/>
             }
             {text}
             {
                 iconPosition === "right" && <Icon
-                    icon={icon}
+                    name={icon}
                     data-size=""
                 />
             }
@@ -26,13 +29,13 @@ const { text, icon, iconPosition, hasLink } = Astro.props;
     : <span class="sh-atom-tag">
         {iconPosition === "left" &&
             <Icon
-                icon={icon}
+                name={icon}
                 data-size=""/>
         }
         {text}
         {
             iconPosition === "right" && <Icon
-                icon={icon}
+                name={icon}
                 data-size=""
             />
         }

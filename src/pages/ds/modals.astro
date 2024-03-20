@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContentBlock from "../../components/astro/ContentBlock.astro";
+import HeroBrick from "../../components/bricks/HeroBrick.astro";
+import AtomTag from "../../components/Atoms/AtomTag.astro";
+import SfChatButton from "../../components/third-party/_sf-chatbutton.astro";
+import MobileNavButton from "../../components/MobileNavButton.astro";
+import Icon from "../../components/astro/Icon.astro";
+import { IconSizes } from "../../../types/iconTypes";
+import Toc from "../../components/ds/Toc.astro";
+---
+
+<BaseLayout title="Buttons">
+  <HeroBrick
+    title="Buttons"
+    text="<p>HENK uses several versions of buttons</p>"
+    image="https://plus.unsplash.com/premium_photo-1683495245283-7090e82d85dd?q=80&w=2880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    url="#foundations-buttons"
+    buttonText="Explore"
+  />
+  <ContentBlock title="Design System">
+    <Toc slot="content" />
+  </ContentBlock>
+  <ContentBlock title="Modals" id="foundations-modals">
+    <dl slot="content">
+      <!-- <h3>Default (also <em>Outline Light</em>)</h3>
+      <dt>Default size and look</dt>
+      <dd>
+        <div class="example on-dark">
+          <button type="button" class="sh-atom-button">button text</button>
+        </div>
+        <small><code>class="sh-atom-button"</code></small>
+      </dd> -->
+      <h1>test</h1>
+      <div class="example">
+        <dialog class="dialog-js">
+          <!-- <form action="" method="dialog"> -->
+          <button autofocus>Close</button>
+          <p>This modal dialog has a groovy backdrop!</p>
+          <!-- </form> -->
+        </dialog>
+        <button>Show the dialog</button>
+      </div>
+    </dl>
+  </ContentBlock>
+</BaseLayout>
+<style is:global>
+  .example {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .on-dark {
+    background-color: var(--color-accent16);
+  }
+
+  dialog {
+    margin: auto;
+  }
+
+  .dialog-js {
+    /* position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem; */
+  }
+
+  :modal {
+    border: 5px solid red;
+    background-color: yellow;
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 50%);
+    padding: 1rem;
+  }
+
+  ::backdrop {
+    background-image: linear-gradient(
+      45deg,
+      magenta,
+      rebeccapurple,
+      dodgerblue,
+      green
+    );
+    opacity: 0.75;
+  }
+</style>
+<script is:inline>
+  const dialog = document.querySelector(".dialog-js");
+  const showButton = document.querySelector(".dialog-js + button");
+  const closeButton = document.querySelector(".dialog-js button");
+
+  // "Show the dialog" button opens the dialog modally
+  showButton.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  // "Close" button closes the dialog
+  closeButton.addEventListener("click", () => {
+    dialog.close();
+  });
+</script>

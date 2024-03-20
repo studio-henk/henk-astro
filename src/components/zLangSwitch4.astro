@@ -1,0 +1,66 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname.substring(4);
+---
+
+<div class="langSwitch" data-active={lang === "en" ? "right" : "left"}>
+  {
+    lang === "nl" ? (
+      <span class="langSwitch__label">NL</span>
+    ) : (
+      <a class="langSwitch__link" href="/nl/">
+        NL
+      </a>
+    )
+  }
+
+  <span class="track">
+    <span class="knob"></span>
+  </span>
+  {
+    lang === "en" ? (
+      <span class="langSwitch__link">EN</span>
+    ) : (
+      <a class="langSwitch__link" href="/en/">
+        EN
+      </a>
+    )
+  }
+</div>
+<style>
+  .langSwitch {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .track {
+    width: 24px;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 12px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .knob {
+    width: 12px;
+    height: 12px;
+    display: block;
+    background-color: var(--color-henk-black, #000);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  [data-active="right"] .knob {
+    transform: translateX(100%);
+  }
+</style>
+<script>
+  // take care of click on link inside
+  // set data-active to opposite
+  // prevent default click event
+
+  // other script takes care of going to new page
+</script>

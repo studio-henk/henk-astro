@@ -1,0 +1,5 @@
+dl[data-direction=horizontal],
+.sh-atom-dl[data-direction=horizontal] {
+  display: flex;
+  gap: 8px;
+}

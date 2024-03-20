@@ -1,0 +1,7 @@
+.fs-12 {
+  /* 12
+        font-size: clamp(1rem, 2.34375vw, 1.125rem);
+        line-height: clamp(24px, 1.78571429vw, 32px); */
+}
+
+.fs-14 {}

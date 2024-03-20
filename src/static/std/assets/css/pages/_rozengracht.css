@@ -1,0 +1,254 @@
+/* #sh-rozengracht .sh-molecule-section-header__title {
+  font-weight: 500;
+  margin: 10px 0;
+} */
+
+/* #sh-rozengracht .sh-molecule-section-header__subtitle {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 10px 0;
+} */
+
+/* @media only screen and (max-width: 767px) {
+  #sh-rozengracht .sh-section__intro br {
+    display: none;
+  }
+} */
+
+/* @media only screen and (min-width: 768px) {
+  #sh-rozengracht
+    .sh-org-block:first-child[data-hasimage]
+    .sh-molecule-section-header__title {
+    font-size: 1.375rem;
+    line-height: 38px;
+  }
+  #sh-rozengracht .sh-org-block:first-child[data-hasimage] picture img {
+    max-height: 618px;
+  }
+} */
+
+/* @media only screen and (min-width: 992px) {
+  #sh-rozengracht
+    .sh-org-block:first-child[data-hasimage]
+    .sh-molecule-section-header__title {
+    font-size: 2.0625rem;
+    line-height: 50px;
+  }
+} */
+
+/* #sh-rozengracht .sh-org-block:first-child .sh-molecule-section-header__title,
+#sh-rozengracht
+  .sh-org-block:first-child
+  .sh-molecule-section-header__subtitle {
+  text-align: left;
+} */
+
+
+#sh-rozengracht .sh-org-block__layer1 {
+  padding: 24px;
+}
+
+#sh-rozengracht .sh-org-block__layer1 .sh-atom-button {
+  align-self: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+  #sh-rozengracht .sh-org-block__layer1 {
+    padding: 24px 64px 64px;
+  }
+}
+
+#sh-rozengracht .sh-stores {
+  padding-bottom: 48px;
+}
+
+@media only screen and (min-width: 768px) {
+  #sh-rozengracht .sh-stores {
+    padding: 24px 48px 48px;
+  }
+}
+
+#sh-rozengracht .sh-stores .sh-l-grid__item.sh-store {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#sh-rozengracht .sh-stores .sh-l-grid__item.sh-store .sh-buttons {
+  margin-top: auto;
+}
+
+#sh-rozengracht .sh-stores .sh-store__image {
+  border-radius: 8px;
+}
+
+#sh-rozengracht .sh-stores .sh-store__title {
+  font-size: 0.875rem;
+  line-height: 28px;
+  /* letter-spacing: 0.2em;
+  text-transform: uppercase; */
+  margin-bottom: 10px;
+}
+
+#sh-rozengracht .sh-stores .sh-store__subtitle,
+#sh-rozengracht .sh-stores .sh-store__link {
+  font-size: 0.75rem;
+  line-height: 21px;
+  /* letter-spacing: 0.2em;
+  text-transform: uppercase; */
+  margin-bottom: 0;
+}
+
+#sh-rozengracht .sh-stores .sh-store__link {
+  display: flex;
+  margin: 18px 0;
+}
+
+#sh-rozengracht .sh-stores .sh-store__subtitle+p {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+#sh-rozengracht .sh-stores .sh-store__subtitle+p.sh-store__link__interior {
+  margin-bottom: 46px;
+}
+
+#sh-rozengracht .sh-stores .sh-store__subtitle+p.sh-store__link__interior>a {
+  display: block;
+}
+
+#sh-rozengracht .sh-l-grid--2 {
+  display: grid;
+  padding: 24px;
+  gap: 60px;
+}
+
+#sh-rozengracht .sh-l-grid--2 .sh-l-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#sh-rozengracht .sh-l-grid--2 .sh-l-grid__item .content__container {
+  padding-bottom: 28px;
+}
+
+#sh-rozengracht .sh-l-grid--2 .sh-l-grid__item .sh-atom-button {
+  margin-top: auto;
+}
+
+#sh-rozengracht .sh-l-grid--2 .sh-section__intro {
+  max-width: none;
+  margin: revert;
+}
+
+@media only screen and (min-width: 768px) {
+  #sh-rozengracht .sh-l-grid--2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #sh-rozengracht .sh-l-grid--2 .sh-molecule-section-header__title,
+  #sh-rozengracht .sh-l-grid--2 .sh-molecule-section-header__subtitle,
+  #sh-rozengracht .sh-l-grid--2 .sh-section__content {
+    text-align: left;
+  }
+
+  #sh-rozengracht .sh-l-grid--2 .sh-section__content {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #sh-rozengracht .sh-l-grid--2 {
+    padding: 64px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px;
+    align-items: stretch;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #sh-rozengracht .sh-l-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #sh-rozengracht .sh-l-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1125px) {
+  #sh-rozengracht .sh-l-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.--no-padding {
+  padding: 0;
+}
+
+#sh-rozengracht .sh-media-block {
+  list-style: none;
+  margin: 28px 0 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 28px;
+}
+
+#sh-rozengracht .sh-media-block li {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 24px;
+}
+
+#sh-rozengracht .sh-media-block li .content {
+  display: flex;
+  flex-direction: column;
+}
+
+#sh-rozengracht .sh-media-block li .content .sh-store__link {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+#sh-rozengracht .sh-media-block li p:first-child {
+  margin-top: 0;
+}
+
+#sh-rozengracht .sh-media-block li address {
+  font-size: 0.75rem;
+  line-height: 20px;
+  /* letter-spacing: 1.2px; */
+}
+
+@media only screen and (min-width: 500px) {
+  #sh-rozengracht .sh-media-block li {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#sh-rozengracht .sh-stores .sh-l-grid--2 {
+  padding: 0;
+}
+
+@media only screen and (min-width: 992px) {
+  #sh-rozengracht .sh-stores .sh-l-grid--2 {
+    padding: 0;
+  }
+}
+
+#sh-rozengracht .sh-stores .sh-l-grid__item.sh-store p {
+  margin-bottom: 0;
+}
+
+#sh-rozengracht .sh-stores .sh-store__subtitle+p.sh-store__link__interior {
+  margin-bottom: 46px;
+}
+
+.sh-store__phone {
+  text-decoration: none;
+}
