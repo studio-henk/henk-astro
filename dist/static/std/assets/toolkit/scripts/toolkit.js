@@ -52,7 +52,7 @@
         var isMobileLayout = __webpack_require__(16);
 
         /* ALL COMPONENTS */
-        var mainNavigation = __webpack_require__(2);
+        // var mainNavigation = __webpack_require__(2);
         var Collapser = __webpack_require__(3);
         var filterMobile = __webpack_require__(4);
         var chooseCard = __webpack_require__(5);
@@ -82,7 +82,7 @@
         });
 
         /* LOAD THEM */
-        mainNavigation();
+        // mainNavigation();
         filterMobile();
         isMobileLayout();
         Collapser();
@@ -103,7 +103,7 @@
     /* 2 */
     /***/ (function(module, exports) {
 
-        function mainNavigation() {
+        /*function mainNavigation() {
 
             $(document).ready(function () {
 
@@ -157,7 +157,7 @@
             });
         }
 
-        module.exports = mainNavigation;
+        module.exports = mainNavigation;*/
 
         /***/ }),
     /* 3 */
@@ -487,7 +487,7 @@
                     $('.product-slider__large-image').removeClass('emersyaSlide');
                 }
             } else {
-                console.log("no emersya slide");
+               // console.log("no emersya slide");
             }
             
 
