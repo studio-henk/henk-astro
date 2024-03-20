@@ -39,16 +39,21 @@ const {
         `}
         type="image/avif"
       />
-      <img
-        src={`${image}-1440.avif`}
-        alt="alt text"
-        class="StoreBrick__img"
-        width="1440"
-        height="1800"
-      />
+      <a href={buttonHref}>
+        <img
+          src={`${image}-1440.avif`}
+          alt="alt text"
+          class="StoreBrick__img"
+          width="1440"
+          height="1800"
+        />
+      </a>
     </picture>
   </div>
-  <h3 class="StoreBrick__store-name">{name}</h3>
+  <h3 class="StoreBrick__store-name">
+    {name}
+    <!-- <a href={buttonHref} class="" data-style="soft">{name}</a> -->
+  </h3>
   <!-- wysiwyg texts -->
   <div class="StoreBrick__content">
     <slot />
