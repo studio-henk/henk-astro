@@ -21,6 +21,7 @@ createApp({
   },
   computed: {
     itemsWithImages() {
+      // return this.currentItems.filter((item) => item.image !== "");
       return this.currentItems.filter(
         (item) => item.image !== null && item.image !== ""
       );
@@ -28,7 +29,10 @@ createApp({
   },
   methods: {
     getNavDataFromWindowObject() {
+      // const navData = window.navDataObject;
       const navData = JSON.parse(window.navDataObject);
+      // console.log(navData);
+
       this.navigationData = navData.navigationData;
       this.isLoading = false;
     },
@@ -43,6 +47,7 @@ createApp({
       this.isLoading = false;
     },
     getNavBarHeight() {
+      // let navBarHeight = this.$refs.navBar.clientHeight;
       const navBar = document.getElementById("NavBar");
 
       // Create a ResizeObserver
@@ -60,6 +65,12 @@ createApp({
         );
       }
     },
+    setBodyOverflow() {
+      document.body.style.overflow = "hidden";
+    },
+    removeBodyOverflow() {
+      document.body.style.removeProperty("overflow");
+    },
     handleIntersection(entries) {
       this.isScrolled = entries[0].boundingClientRect.y < 0;
     },
@@ -67,6 +78,7 @@ createApp({
       this.statusNavBarHovered = true;
     },
     handleNavBarMouseLeave() {
+      // console.log('Mouse leave');
       this.showSubmenu = false;
       this.statusNavBarHovered = false;
       this.resetSubmenu();
@@ -78,21 +90,27 @@ createApp({
       // console.log("mouseOut submenu");
     },
     handleSubmenuOverlayTouch() {
+      // console.log('Overlay touched');
       this.showSubmenu = false;
       this.statusNavBarHovered = false;
       this.resetSubmenu();
     },
     handleSubmenuOverlayMouseOver() {
+      // console.log('Overlay MouseOver');
       this.showSubmenu = false;
       this.statusNavBarHovered = false;
       this.resetSubmenu();
+      // this.removeBodyOverflow();
     },
     handlePrimaryNavItemHover(item) {
+      // console.log(`Hovered over ${item.navTitle}`);
       this.resetSubmenu();
       if (item.hasChildren) {
         this.submenuHeading = item.navTitle;
         this.currentItems = item.childrenData || [];
         this.showSubmenu = true;
+        // overflow on body here to prevent scrolling while submenu open
+        // this.setBodyOverflow();
       } else {
         this.showSubmenu = false;
       }
@@ -101,6 +119,11 @@ createApp({
       // console.log("touched?");
     },
     handlePrimaryNavItemClick(item, event) {
+      // console.log("clicked");
+      // if (item.childrenData) {
+      //   // If there are children, prevent the default click action
+      //   event.preventDefault();
+      // }
       if (!document.documentElement.classList.contains("no-touchevents")) {
         // If the class is not found, prevent the default action
         event.preventDefault();
@@ -123,9 +146,11 @@ createApp({
       this.currentItems = [];
       this.stack = [];
       this.isGoingBack = false;
+      // this.removeBodyOverflow();
     },
   },
   created() {
+    //this.getNavData();
     this.getNavDataFromWindowObject();
   },
   mounted() {
@@ -135,7 +160,14 @@ createApp({
       // this.handlePrimaryNavItemHover(this.navigationData[5]);
     });
 
+    // const navBarSkeleton = document.querySelector(".nav-bar-skeleton");
+
+    // Hide the skeleton by setting display: none; after removing the isLoading class
+    // navBarSkeleton.classList.remove("isLoading");
+    // navBarSkeleton.style.display = "none";
+
     // Create an IntersectionObserver
+    // const mastheadDesktop = document.querySelector(".masthead-desktop");
     const pixelToWatch = document.querySelector("#pixel-to-watch");
 
     if (pixelToWatch) {
