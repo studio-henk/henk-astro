@@ -8,7 +8,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-
   /* transitions and animations */
   @keyframes loading {
     0% {
@@ -104,15 +103,12 @@
     max-width: fit-content;
     display: flex;
     flex-direction: column;
-    /* gap: 7px; */
     position: relative;
-    /* top: -6px; */
   }
 
   .utils_contact-bar {
     display: flex;
     justify-content: space-between;
-    /* padding-top: 8px; */
   }
 
   .utils_contact-bar-link {
@@ -157,19 +153,11 @@
     margin: 0;
     grid-template-columns: repeat(3, auto);
     align-items: center;
-    /* padding-bottom: 17px; */
-    position: relative;
-    /* top: 8px; */
   }
 
   #utilities-nav__search,
   #utilities-nav__cart {
     display: flex;
-  }
-
-  .sh-atom-button.--icon-search {
-    /* position: relative;
-    top: 4px; */
   }
 
   #utilities-nav__cart {
@@ -182,20 +170,42 @@
 
   #utilities-nav__cart .cart__badge {
     font-size: 8px;
-    font-weight: 700;
+    font-weight: 500;
     position: absolute;
-    top: 2px;
-    /*left: 10px;*/
+    bottom: -2px;
+    right: 0;
+    background-color: var(--color-henk-black);
+    width: 12px;
+    height: 12px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--color-white);
+    transition: all 0.3s ease;
   }
 
-  #utilities-nav__cart .cart__badge.--maxed-out {
-    /*left: 8px;*/
+  .masthead-desktop[data-theme="dark"] #utilities-nav__cart .cart__badge {
+    background-color: var(--color-white);
+    color: var(--color-henk-black);
+  }
+
+  .masthead-desktop[data-theme="dark"].NavBar--isHovered
+    #utilities-nav__cart
+    .cart__badge,
+  .masthead-desktop[data-theme="dark"].NavBar--isScrolled
+    #utilities-nav__cart
+    .cart__badge {
+    background-color: var(--color-black);
+    color: var(--color-white);
   }
 
   .utilities-nav__item a[class*="--icon"] {
     text-indent: -999em;
     line-height: 24px;
     font-size: 0;
+    transition: all 0.3s ease;
   }
 
   [data-theme="dark"] .utilities-nav__item a {
@@ -272,7 +282,6 @@
     position: fixed;
     top: var(--MsgBarHeight, 0);
     left: 0;
-    /* z-index: 999; */
     z-index: 91049;
     width: 100%;
     padding: 0;
@@ -339,40 +348,30 @@
   .masthead-desktop .primary-nav-container .atom-logo {
     flex: 1 1 auto;
     display: flex;
-    /* position: relative;
-    top: 1px; */
-    /* padding-bottom: 21px; */
-    /* --color-text-logo: var(--color-text-action); */
   }
 
-  .masthead-desktop .primary-nav-container .atom-logo:hover {}
+  .masthead-desktop .primary-nav-container .atom-logo:hover {
+  }
 
   .masthead-desktop .primary-nav-container .primary-nav {
     display: flex;
     gap: 2em;
     flex: 4 1 auto;
-    /* padding-bottom: 17px; */
-    /* align-items: flex-end; */
     align-items: center;
     position: relative;
-    /* top: 2px; */
-    /* top: -2px; */
   }
 
   .masthead-desktop .primary-nav .primary-nav__link {
     text-decoration: none;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .masthead-desktop .primary-nav .primary-nav__link:focus {
     color: currentColor;
   }
 
-  .masthead-desktop .primary-nav .primary-nav__link:hover {
-    /* text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-decoration-skip-ink: auto; */
-  }
+  /* .masthead-desktop .primary-nav .primary-nav__link:hover {
+  } */
 
   /* submenu */
   .masthead-desktop .submenuOverlay {
@@ -399,9 +398,6 @@
   .masthead-desktop.NavBar--submenuOpen {
     --color-background-masthead: var(--color-henk-white);
     --color-text-masthead: var(--color-henk-black);
-    /* --color-text-masthead: var(--color-text-action); */
-
-    /* padding-right: 48px; */
   }
 
   .masthead-desktop.NavBar--submenuOpen.NavBar--isScrolled {
@@ -419,8 +415,6 @@
     grid-template-columns: 1fr 3fr;
     gap: 1rem;
     box-sizing: border-box;
-
-    /* justify-items: start; */
   }
 
   .masthead-desktop .gallery-controller * {
@@ -442,9 +436,8 @@
     padding-top: 3rem;
   }
 
-  .masthead-desktop .gallery-controller__controls>li {
+  .masthead-desktop .gallery-controller__controls > li {
     line-height: 40px;
-    /* cursor: pointer; */
   }
 
   .gallery-controller__list-item {
@@ -468,7 +461,6 @@
 
   .masthead-desktop .gallery-controller__gallery-container.has-swiper {
     overflow: hidden;
-    /* margin-right: -28px; */
   }
 
   .masthead-desktop .gallery-controller__gallery {
@@ -486,7 +478,8 @@
     cursor: pointer;
   }
 
-  .masthead-desktop .gallery-controller__list-item {}
+  /* .masthead-desktop .gallery-controller__list-item {
+  } */
 
   .masthead-desktop .gallery-controller__list-item .page-link {
     display: block;
@@ -495,26 +488,22 @@
   .masthead-desktop[data-theme="dark"] .gallery-controller__level-link,
   .masthead-desktop[data-theme="dark"] .page-link,
   .masthead-desktop[data-theme="dark"] .card__title {
-    /* color: var(--color-henk-black, #000); */
     --color-text-action: var(--color-henk-black);
     color: var(--color-text-action);
   }
 
   .masthead-desktop .gallery-controller__level-link:hover {
-    /* color: var(--color-black); */
     --color-text-action: var(--color-text-action-dimmed);
     text-indent: 0.5rem;
   }
 
   .masthead-desktop .page-link {
     text-decoration: none;
-    /* color: currentColor; */
     color: var(--color-text-action);
     transition: all 0.3s ease;
   }
 
   .masthead-desktop .page-link:hover {
-    /* color: var(--color-text-action-dimmed); */
     --color-text-action: var(--color-text-action-dimmed);
   }
 
@@ -572,30 +561,13 @@
     transform: scale(1.04);
   }
 
-  .masthead-desktop .card:hover .card__image-container+p {
-    /* color: var(--color-accent16); */
-    /* text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1px; */
+  .masthead-desktop .card:hover .card__image-container + p {
     --color-text-action: var(--color-text-action-dimmed);
   }
 
   /* swiper */
-  swiper-container::part(container) {
-    /* margin-right: -28px; */
-  }
-
-  /* swiper-container::part(button-prev),
-  swiper-container::part(button-next) {
-    background-color: var(--color-accent5);
-    color: var(--color-henk-black);
-    border-radius: 50px;
-    width: 16px;
-    height: auto;
-    padding: 1rem;
-    aspect-ratio: 1;
-    --swiper-navigation-top-offset: 44%;
-    --swiper-navigation-sides-offset: 44px;
+  /* swiper-container::part(container) {
+    
   } */
 
   .has-swiper {
@@ -641,5 +613,4 @@
     cursor: not-allowed;
     color: lightgrey;
   }
-
 }

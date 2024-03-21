@@ -46,14 +46,16 @@ let { totalItemCount } = Astro.props;
         <!-- <Icon class="sh-atom-icon" width="24" height="24" name="icon-cart" /> -->
         <Icon class="sh-atom-icon" width="24" height="24" name="icon-bag" />
         Cart
-        {totalItemCount && totalItemCount > 0 ?
-            (totalItemCount < 10 ?
-                    <span class="cart__badge">{totalItemCount}</span>
-                    :
-                    <span class="cart__badge --maxed-out">9<span>+</span></span>
+        {
+          totalItemCount && totalItemCount > 0 ? (
+            totalItemCount < 10 ? (
+              <span class="cart__badge">{totalItemCount}</span>
+            ) : (
+              <span class="cart__badge">
+                9<span>+</span>
+              </span>
             )
-            :
-            null
+          ) : null
         }
       </a>
       <!-- hamburger button -->
