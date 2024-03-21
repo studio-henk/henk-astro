@@ -12,6 +12,7 @@ const lang = getLangFromUrl(Astro.url);
 // const { NavOnHero } = Astro.props;
 let { Theme } = Astro.props;
 let { showMsgBar } = Astro.props;
+let { totalItemCount } = Astro.props;
 
 if (!showMsgBar) {
   showMsgBar = "false";
@@ -56,8 +57,8 @@ const primaryNavJSON = JSON.stringify(primaryNav);
 
 {showMsgBar === "true" && <MsgBar lang={lang} />}
 
-<NavBarMobile Theme={Theme} />
-<NavBarDesktop Theme={Theme} />
+<NavBarMobile Theme={Theme} totalItemCount={totalItemCount} />
+<NavBarDesktop Theme={Theme} totalItemCount={totalItemCount} />
 
 <script src="/static/std/assets/components/NavBar/LangSwitch.js" type="module"
 ></script>

@@ -22,6 +22,8 @@ let { Theme } = Astro.props;
 //   Theme = "light";
 // }
 let { showMsgBar } = Astro.props;
+
+let { totalItemCount } = Astro.props;
 ---
 
 <!-- <div id="NavBar" data-primary-nav={primaryNavJSON}> -->
@@ -86,6 +88,15 @@ let { showMsgBar } = Astro.props;
                   name="icon-bag"
                 />
                 Cart
+                {totalItemCount && totalItemCount > 0 ?
+                    (totalItemCount < 10 ?
+                            <span class="cart__badge">{totalItemCount}</span>
+                            :
+                            <span class="cart__badge --maxed-out">9<span>+</span></span>
+                    )
+                    :
+                    null
+                }
               </a>
             </li>
             <li class="utilities-nav__item" id="utilities-nav__lang">
