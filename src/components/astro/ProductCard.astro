@@ -1,0 +1,412 @@
+---
+interface Props {
+  productName: string;
+  productDescription?: string;
+  productPrice?: string;
+}
+
+const { productName, productDescription, productPrice } = Astro.props;
+---
+
+<div class="background-color-special">
+  <div class="product-image-container">
+    <div class="bolster-no-armrests">
+      <img
+        class="image-7"
+        src="https://www.studio-henk.nl/Images/emersya/chairs-without-background/867585/image-thumb__867585__TransparentSquare/C-BOLSC-B-hemp-acre19.png"
+      />
+    </div>
+  </div>
+  <div class="content">
+    <div class="row-1">
+      <div class="product-name fs-large">{productName}</div>
+      <div class="product-options">
+        <div class="product-icon">
+          <div class="icon-no-armrests">
+            <img
+              class="image-4"
+              src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-chair.jpg"
+            />
+          </div>
+        </div>
+        <div class="product-icon">
+          <div class="icon-armrests">
+            <img
+              class="image-6"
+              src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-armchair.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    {
+      productDescription && (
+        <div class="product-description">{productDescription}</div>
+      )
+    }
+    <div class="row-bottom">
+      <div class="configs">
+        <div class="group-frame">
+          <p class="frame-afwerking">Frame afwerking</p>
+          <div class="frame-colors">
+            <div class="color-swatch-white"></div>
+            <div class="color-swatch-black"></div>
+          </div>
+        </div>
+        <div class="group-stoffering">
+          <div class="stoffering">Stoffering</div>
+          <div class="frame-colors">
+            <div class="color-swatch-white2"></div>
+            <div class="color-swatch-black2"></div>
+            <div class="color-swatch-black3"></div>
+            <div class="color-swatch-black4"></div>
+            <div class="color-swatch-black5"></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-price">{productPrice}</div>
+    </div>
+  </div>
+</div>
+<style>
+  .background-color-special,
+  .background-color-special * {
+    box-sizing: border-box;
+  }
+
+  .background-color-special {
+    background: var(--backgrounds-color-background-brick-primary, #f1f0ea);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-image-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bolster-no-armrests {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 400px;
+    height: 400px;
+    position: relative;
+  }
+
+  .image-7 {
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    object-fit: cover;
+  }
+
+  .content {
+    /* background: #ffffff; */
+    background-color: hsl(0 0% 97% / 1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .row-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .product-name {
+    color: #000000;
+    text-align: left;
+    /* font-family: var(
+      --textstyles-roman-20-font-family,
+      "HaasGrotTextR-55Roman",
+      sans-serif
+    );
+    font-size: var(--textstyles-roman-20-font-size, 20px);
+    line-height: var(--textstyles-roman-20-line-height, 24px);
+    font-weight: var(--textstyles-roman-20-font-weight, 400); */
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .product-options {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .product-icon {
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+
+  .icon-no-armrests {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: calc(50% - 11px);
+    top: calc(50% - 11px);
+  }
+
+  .image-4 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+    top: 0%;
+    mix-blend-mode: darken;
+    object-fit: cover;
+  }
+
+  .icon-armrests {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: calc(50% - 11px);
+    top: calc(50% - 11px);
+  }
+
+  .image-6 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+    top: 0%;
+    mix-blend-mode: darken;
+    object-fit: cover;
+  }
+
+  .product-description {
+    color: #000000;
+    text-align: left;
+    /* font-family: var(
+      --textstyles-roman-16-font-family,
+      "HaasGrotTextR-55Roman",
+      sans-serif
+    );
+    font-size: var(--textstyles-roman-16-font-size, 16px);
+    line-height: var(--textstyles-roman-16-line-height, 24px);
+    font-weight: var(--textstyles-roman-16-font-weight, 400); */
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .row-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .configs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .group-frame {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .frame-afwerking {
+    color: #000000;
+    text-align: left;
+    /* font-family: var(
+      --textstyles-roman-20-font-family,
+      "HaasGrotTextR-55Roman",
+      sans-serif
+    );
+    font-size: var(--textstyles-roman-20-font-size, 20px);
+    line-height: var(--textstyles-roman-20-line-height, 24px);
+    font-weight: var(--textstyles-roman-20-font-weight, 400); */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .frame-colors {
+    flex-shrink: 0;
+    width: 32px;
+    height: 24px;
+    position: relative;
+  }
+
+  .color-swatch-white {
+    background: #ffffff;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+  }
+
+  .color-swatch-black {
+    background: #000000;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 11px;
+    top: 0px;
+  }
+
+  .group-stoffering {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .stoffering {
+    color: #000000;
+    text-align: left;
+    /* font-family: var(
+      --textstyles-roman-20-font-family,
+      "HaasGrotTextR-55Roman",
+      sans-serif
+    );
+    font-size: var(--textstyles-roman-20-font-size, 20px);
+    line-height: var(--textstyles-roman-20-line-height, 24px);
+    font-weight: var(--textstyles-roman-20-font-weight, 400); */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .color-swatch-white2 {
+    background: #fef445;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .color-swatch-black2 {
+    background: #8fd14f;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 12px;
+    top: 0px;
+  }
+
+  .color-swatch-black3 {
+    background: #fac710;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 24px;
+    top: 0px;
+  }
+
+  .color-swatch-black4 {
+    background: #808080;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 36px;
+    top: 0px;
+  }
+
+  .color-swatch-black5 {
+    background: #2d9bf0;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 48px;
+    top: 0px;
+  }
+
+  .product-price {
+    color: #000000;
+    text-align: left;
+    /* font-family: var(
+      --textstyles-roman-20-font-family,
+      "HaasGrotTextR-55Roman",
+      sans-serif
+    );
+    font-size: var(--textstyles-roman-20-font-size, 20px);
+    line-height: var(--textstyles-roman-20-line-height, 24px);
+    font-weight: var(--textstyles-roman-20-font-weight, 400); */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+</style>
