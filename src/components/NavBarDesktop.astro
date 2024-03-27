@@ -10,23 +10,15 @@ if (lang == "nl") {
 }
 let otherURL = "/" + otherLang + "/" + currentPath;
 
-// import primaryNav from "../../public/data/navigation_data.json";
 import Icon from "./astro/Icon.astro";
 import { IconSizes, SvgStructure } from "../../types/iconTypes";
 import AtomLogo from "./Atoms/AtomLogo.astro";
-// Convert the object to a JSON string
-// const primaryNavJSON = JSON.stringify(primaryNav);
 
 let { Theme } = Astro.props;
-// if (!Theme) {
-//   Theme = "light";
-// }
 let { showMsgBar } = Astro.props;
-
 let { totalItemCount } = Astro.props;
 ---
 
-<!-- <div id="NavBar" data-primary-nav={primaryNavJSON}> -->
 <div id="NavBar">
   <header
     class="masthead masthead-desktop"
@@ -40,13 +32,13 @@ let { totalItemCount } = Astro.props;
   >
     <div class="primary-nav-container">
       <div class="primary-nav-container__grid-item">
-        <!-- <AtomLogo url="/" icon="logo-henk-solo" width="140" height="32" /> -->
         <AtomLogo url="/" icon="logo-henk-solo" width="105" height="24" />
       </div>
       <div class="primary-nav-container__grid-item">
         <nav class="primary-nav">
           <a
             class="primary-nav__link"
+            :class="{ 'primary-nav__link--isActive': isActiveItem(item) }"
             v-for="item in navigationData"
             :key="item.id"
             :href="item.url"
@@ -55,6 +47,12 @@ let { totalItemCount } = Astro.props;
             @click="handlePrimaryNavItemClick(item, $event)"
             @focus="handlePrimaryNavItemHover(item)"
             >[[ item.navTitle ]]
+            <Icon
+                name="icon-chevron-down"
+                v-if="item.hasChildren"
+                width={IconSizes.Small}
+                height={IconSizes.Small}
+            />
           </a>
         </nav>
         <div class="utilities-nav">

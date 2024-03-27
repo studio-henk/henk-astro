@@ -8,6 +8,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
+
   /* transitions and animations */
   @keyframes loading {
     0% {
@@ -191,12 +192,8 @@
     color: var(--color-henk-black);
   }
 
-  .masthead-desktop[data-theme="dark"].NavBar--isHovered
-    #utilities-nav__cart
-    .cart__badge,
-  .masthead-desktop[data-theme="dark"].NavBar--isScrolled
-    #utilities-nav__cart
-    .cart__badge {
+  .masthead-desktop[data-theme="dark"].NavBar--isHovered #utilities-nav__cart .cart__badge,
+  .masthead-desktop[data-theme="dark"].NavBar--isScrolled #utilities-nav__cart .cart__badge {
     background-color: var(--color-black);
     color: var(--color-white);
   }
@@ -350,8 +347,7 @@
     display: flex;
   }
 
-  .masthead-desktop .primary-nav-container .atom-logo:hover {
-  }
+  .masthead-desktop .primary-nav-container .atom-logo:hover {}
 
   .masthead-desktop .primary-nav-container .primary-nav {
     display: flex;
@@ -370,8 +366,13 @@
     color: currentColor;
   }
 
-  /* .masthead-desktop .primary-nav .primary-nav__link:hover {
-  } */
+  .masthead-desktop .primary-nav .primary-nav__link svg {
+    transition: all 0.3s ease;
+  }
+
+  .masthead-desktop .primary-nav .primary-nav__link--isActive svg {
+    transform: rotate(180deg);
+  }
 
   /* submenu */
   .masthead-desktop .submenuOverlay {
@@ -436,7 +437,7 @@
     padding-top: 3rem;
   }
 
-  .masthead-desktop .gallery-controller__controls > li {
+  .masthead-desktop .gallery-controller__controls>li {
     line-height: 40px;
   }
 
@@ -477,9 +478,6 @@
     transition: all 0.3s ease;
     cursor: pointer;
   }
-
-  /* .masthead-desktop .gallery-controller__list-item {
-  } */
 
   .masthead-desktop .gallery-controller__list-item .page-link {
     display: block;
@@ -561,7 +559,7 @@
     transform: scale(1.04);
   }
 
-  .masthead-desktop .card:hover .card__image-container + p {
+  .masthead-desktop .card:hover .card__image-container+p {
     --color-text-action: var(--color-text-action-dimmed);
   }
 
@@ -625,7 +623,7 @@
     left: -2em;
   }
 
-  .page-link + sup.highlight {
+  .page-link+sup.highlight {
     left: 0;
     top: -1em;
   }

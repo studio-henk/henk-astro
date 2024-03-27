@@ -17,6 +17,7 @@ createApp({
       currentItems: [],
       isGoingBack: false,
       navigationData: null,
+      activeItem: null,
     };
   },
   computed: {
@@ -93,8 +94,10 @@ createApp({
         this.submenuHeading = item.navTitle;
         this.currentItems = item.childrenData || [];
         this.showSubmenu = true;
+        this.activeItem = item; // Set the active item
       } else {
         this.showSubmenu = false;
+        this.activeItem = null; // Reset the active item if no submenu
       }
     },
     handlePrimaryNavItemTouch(item) {
@@ -123,6 +126,10 @@ createApp({
       this.currentItems = [];
       this.stack = [];
       this.isGoingBack = false;
+      this.activeItem = null; // Reset active item when submenu is reset
+    },
+    isActiveItem(item) {
+      return this.activeItem === item;
     },
   },
   created() {
@@ -132,7 +139,7 @@ createApp({
     this.$nextTick(() => {
       this.getNavBarHeight();
       // for debugging to keep menu open
-      // this.handlePrimaryNavItemHover(this.navigationData[5]);
+      // this.handlePrimaryNavItemHover(this.navigationData[0]);
     });
 
     // Create an IntersectionObserver
