@@ -102,6 +102,7 @@ let { totalItemCount } = Astro.props;
             />
           </span>
           <a v-else :href="item.url" class="page-link"> [[ item.navTitle ]]</a>
+          <sup class="highlight" v-if="item.isHighlighted">[[ item.isHighlighted ]]</sup>
         </li>
       </ol>
     </nav>

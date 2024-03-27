@@ -3,410 +3,259 @@ interface Props {
   productName: string;
   productDescription?: string;
   productPrice?: string;
+  productImage?: string;
+  fullHeight?: boolean;
 }
 
-const { productName, productDescription, productPrice } = Astro.props;
+const {
+  productName,
+  productDescription,
+  productPrice,
+  productImage = "https://www.studio-henk.nl/Images/emersya/chairs-without-background/867585/image-thumb__867585__TransparentSquare/C-BOLSC-B-hemp-acre19.png",
+  fullHeight = false
+} = Astro.props;
 ---
-
-<div class="background-color-special">
-  <div class="product-image-container">
-    <div class="bolster-no-armrests">
-      <img
-        class="image-7"
-        src="https://www.studio-henk.nl/Images/emersya/chairs-without-background/867585/image-thumb__867585__TransparentSquare/C-BOLSC-B-hemp-acre19.png"
-      />
-    </div>
+<div class={`ProductCard ${fullHeight ? 'ProductCard--fullHeight' : ''}`}>
+  <div class="ProductCard__image-container">
+    <img
+        src={productImage}
+        width="1240"
+        height="1240"
+        class="ProductCard__img"
+    >
   </div>
-  <div class="content">
-    <div class="row-1">
-      <div class="product-name fs-large">{productName}</div>
-      <div class="product-options">
-        <div class="product-icon">
-          <div class="icon-no-armrests">
-            <img
-              class="image-4"
-              src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-chair.jpg"
-            />
-          </div>
-        </div>
-        <div class="product-icon">
-          <div class="icon-armrests">
-            <img
-              class="image-6"
-              src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-armchair.jpg"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="ProductCard__content">
+    <p class="ProductCard__ProductName">{productName}</p>
     {
-      productDescription && (
-        <div class="product-description">{productDescription}</div>
-      )
+      productDescription && <p>{productDescription}</p>
     }
-    <div class="row-bottom">
-      <div class="configs">
-        <div class="group-frame">
-          <p class="frame-afwerking">Frame afwerking</p>
-          <div class="frame-colors">
-            <div class="color-swatch-white"></div>
-            <div class="color-swatch-black"></div>
-          </div>
-        </div>
-        <div class="group-stoffering">
-          <div class="stoffering">Stoffering</div>
-          <div class="frame-colors">
-            <div class="color-swatch-white2"></div>
-            <div class="color-swatch-black2"></div>
-            <div class="color-swatch-black3"></div>
-            <div class="color-swatch-black4"></div>
-            <div class="color-swatch-black5"></div>
-          </div>
+    <div class="config-options-container">
+    <img
+        class="config-option-swatch"
+        src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-chair.jpg"
+    />
+    <img
+        class="config-option-swatch"
+        src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-armchair.jpg"
+    />
+    </div>
+    <div class="config">
+      <div class="config-options">
+        <p class="config-options__label">Frame afwerking</p>
+        <div class="config-options-container items-stacked">
+          <div class="config-option-swatch color-white">white</div>
+          <div class="config-option-swatch color-black">black</div>
         </div>
       </div>
-      <div class="product-price">{productPrice}</div>
+      <div class="config-options">
+        <p class="config-options__label">Stoffering</p>
+        <div class="config-options-container items-stacked">
+          <div class="config-option-swatch color-yellow">stof 1</div>
+          <div class="config-option-swatch color-green">stof 2</div>
+          <div class="config-option-swatch color-orange">stof 3</div>
+          <div class="config-option-swatch color-brown">stof 4</div>
+          <div class="config-option-swatch color-blue">stof 5</div>
+        </div>
+      </div>
     </div>
+    <p class="ProductCard__Price">{productPrice}</p>
   </div>
 </div>
 <style>
-  .background-color-special,
-  .background-color-special * {
-    box-sizing: border-box;
-  }
-
-  .background-color-special {
-    background: var(--backgrounds-color-background-brick-primary, #f1f0ea);
+  .ProductCard {
+    background-color: var(--color-background-primary);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 0px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    overflow: hidden;
+    /*aspect-ratio: 2 / 3;*/
   }
 
-  .product-image-container {
-    display: flex;
-    flex-direction: row;
-    gap: 0px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .bolster-no-armrests {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    width: 400px;
-    height: 400px;
-    position: relative;
-  }
-
-  .image-7 {
-    align-self: stretch;
+  .ProductCard__image-container {
     flex: 1;
-    position: relative;
-    object-fit: cover;
   }
 
-  .content {
-    /* background: #ffffff; */
-    background-color: hsl(0 0% 97% / 1);
+  .ProductCard__img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .ProductCard__content * {
+    margin: 0;
+  }
+
+  .ProductCard__content {
     padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
   }
 
-  .row-1 {
+  .ProductCard__ProductName {
+    font-size: 20px;
+    /*white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;*/
+  }
+
+  .ProductCard__Price {
+    text-align: right;
+    font-size: 20px;
+  }
+
+  .config {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 24px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
   }
 
-  .product-name {
-    color: #000000;
-    text-align: left;
-    /* font-family: var(
-      --textstyles-roman-20-font-family,
-      "HaasGrotTextR-55Roman",
-      sans-serif
-    );
-    font-size: var(--textstyles-roman-20-font-size, 20px);
-    line-height: var(--textstyles-roman-20-line-height, 24px);
-    font-weight: var(--textstyles-roman-20-font-weight, 400); */
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .product-options {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    position: relative;
-  }
-
-  .product-icon {
-    border-radius: 50px;
-    border-style: solid;
-    border-color: #000000;
-    border-width: 1px;
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    position: relative;
-  }
-
-  .icon-no-armrests {
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    left: calc(50% - 11px);
-    top: calc(50% - 11px);
-  }
-
-  .image-4 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    right: 0%;
-    left: 0%;
-    bottom: 0%;
-    top: 0%;
-    mix-blend-mode: darken;
-    object-fit: cover;
-  }
-
-  .icon-armrests {
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    left: calc(50% - 11px);
-    top: calc(50% - 11px);
-  }
-
-  .image-6 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    right: 0%;
-    left: 0%;
-    bottom: 0%;
-    top: 0%;
-    mix-blend-mode: darken;
-    object-fit: cover;
-  }
-
-  .product-description {
-    color: #000000;
-    text-align: left;
-    /* font-family: var(
-      --textstyles-roman-16-font-family,
-      "HaasGrotTextR-55Roman",
-      sans-serif
-    );
-    font-size: var(--textstyles-roman-16-font-size, 16px);
-    line-height: var(--textstyles-roman-16-line-height, 24px);
-    font-weight: var(--textstyles-roman-16-font-weight, 400); */
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .row-bottom {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-  }
-
-  .configs {
+  .config-options {
+    //display: none;
+    /*display: flex;
+    gap: 24px;
+    align-items: center;*/
     display: flex;
     flex-direction: column;
     gap: 8px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    position: relative;
   }
 
-  .group-frame {
+  .config-options-container,
+  .config {
+    //display: none;
+  }
+
+  /*.config-options__label {
+    flex: 1;
+    text-align: right;
+  }*/
+
+  /*.config-options-container {
+    flex: 2;
     display: flex;
-    flex-direction: row;
     gap: 8px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    position: relative;
-  }
+  }*/
 
-  .frame-afwerking {
-    color: #000000;
-    text-align: left;
-    /* font-family: var(
-      --textstyles-roman-20-font-family,
-      "HaasGrotTextR-55Roman",
-      sans-serif
-    );
-    font-size: var(--textstyles-roman-20-font-size, 20px);
-    line-height: var(--textstyles-roman-20-line-height, 24px);
-    font-weight: var(--textstyles-roman-20-font-weight, 400); */
-    position: relative;
-    display: flex;
+  .config-option-swatch {
+    --_color-background-swatch: #fff;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-    margin: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    border: 2px solid black;
+    background-color: var(--_color-background-swatch, #f00);
+    font-size: 0;
   }
 
-  .frame-colors {
-    flex-shrink: 0;
-    width: 32px;
-    height: 24px;
+  .config-option-swatch.color-white {
+    --_color-background-swatch: #fff;
+  }
+
+  .config-option-swatch.color-black {
+    --_color-background-swatch: #000;
+  }
+
+  .config-option-swatch.color-yellow {
+    --_color-background-swatch: yellow;
+  }
+
+  .config-option-swatch.color-green {
+    --_color-background-swatch: green;
+  }
+
+  .config-option-swatch.color-orange {
+    --_color-background-swatch: orange;
+  }
+
+  .config-option-swatch.color-brown {
+    --_color-background-swatch: brown;
+  }
+
+  .config-option-swatch.color-blue {
+    --_color-background-swatch: deepskyblue;
+  }
+
+  .config-options-container.items-stacked {
     position: relative;
+    height: 48px;
+    width: 100%;
   }
 
-  .color-swatch-white {
-    background: #ffffff;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: #cccccc;
-    border-width: 1px;
-    width: 22px;
-    height: 22px;
+  .items-stacked .config-option-swatch {
     position: absolute;
-    left: 0px;
-    top: 1px;
+    margin-left: 24px;
   }
 
-  .color-swatch-black {
-    background: #000000;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: 11px;
-    top: 0px;
+  /*.items-stacked .config-option-swatch:not(:first-child) {
+    margin-left: 0;
+  }*/
+
+  .items-stacked .config-option-swatch.color-white,
+  .items-stacked .config-option-swatch.color-yellow {
+    margin-left: 0;
   }
 
-  .group-stoffering {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
+  .items-stacked .config-option-swatch.color-black,
+  .items-stacked .config-option-swatch.color-green {
+    margin-left: 24px;
+  }
+
+  .items-stacked .config-option-swatch.color-orange {
+    margin-left: calc(2 * 24px);
+  }
+
+  .items-stacked .config-option-swatch.color-brown {
+    margin-left: calc(3 * 24px);
+  }
+
+  .items-stacked .config-option-swatch.color-blue {
+    margin-left: calc(4 * 24px);
+  }
+
+  img.config-option-swatch {
+    mix-blend-mode: darken;
+  }
+
+  /*.items-stacked .config-option-swatch:not(:first-child) {
     position: relative;
-  }
+    left: -32px;
+  }*/
 
-  .stoffering {
-    color: #000000;
-    text-align: left;
-    /* font-family: var(
-      --textstyles-roman-20-font-family,
-      "HaasGrotTextR-55Roman",
-      sans-serif
-    );
-    font-size: var(--textstyles-roman-20-font-size, 20px);
-    line-height: var(--textstyles-roman-20-line-height, 24px);
-    font-weight: var(--textstyles-roman-20-font-weight, 400); */
+/*full size image card*/
+  /*.ProductCard--fullHeight {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    aspect-ratio: 2 / 3;
   }
 
-  .color-swatch-white2 {
-    background: #fef445;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
+  .ProductCard--fullHeight .ProductCard__img {
+    border-radius: 8px;
+  }
+
+  .ProductCard--fullHeight .ProductCard__content {
     position: absolute;
-    left: 0px;
-    top: 0px;
-  }
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-background-primary);
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }*/
 
-  .color-swatch-black2 {
-    background: #8fd14f;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: 12px;
-    top: 0px;
-  }
+  @media only screen and (min-width: 1024px) {
+    .config-options {
+      flex-direction: row;
+      align-items: center;
+    }
 
-  .color-swatch-black3 {
-    background: #fac710;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: 24px;
-    top: 0px;
-  }
+    .config-options__label {
+      flex: 2;
+    }
 
-  .color-swatch-black4 {
-    background: #808080;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: 36px;
-    top: 0px;
-  }
-
-  .color-swatch-black5 {
-    background: #2d9bf0;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: 48px;
-    top: 0px;
-  }
-
-  .product-price {
-    color: #000000;
-    text-align: left;
-    /* font-family: var(
-      --textstyles-roman-20-font-family,
-      "HaasGrotTextR-55Roman",
-      sans-serif
-    );
-    font-size: var(--textstyles-roman-20-font-size, 20px);
-    line-height: var(--textstyles-roman-20-line-height, 24px);
-    font-weight: var(--textstyles-roman-20-font-weight, 400); */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    .config-options-container.items-stacked {
+      flex: 3;
+    }
   }
 </style>
