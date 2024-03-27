@@ -15,13 +15,15 @@
           "url": "/en/products/tables",
           "isPage": true,
           "hasChildren": true,
+          "isHighlighted": "New!",
           "childrenData": [
             {
               "id": 999,
               "navTitle": "All",
               "image": null,
               "url": "/en/products/all-tables",
-              "isPage": true
+              "isPage": true,
+              "isHighlighted": "Deal!"
             },
             {
               "id": 705,
