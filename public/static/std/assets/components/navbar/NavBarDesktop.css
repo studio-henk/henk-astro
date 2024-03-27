@@ -613,4 +613,20 @@
     cursor: not-allowed;
     color: lightgrey;
   }
+
+  .gallery-controller__list-item {
+    display: flex;
+  }
+
+  sup.highlight {
+    color: var(--color-henk-danger);
+    top: -1.5em;
+    line-height: 40px;
+    left: -2em;
+  }
+
+  .page-link + sup.highlight {
+    left: 0;
+    top: -1em;
+  }
 }
