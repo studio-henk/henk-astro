@@ -3,7 +3,7 @@ import ProductCardAsGrid from "../../../components/astro/ProductCardAsGrid.astro
 import SectionHeader from "../../../components/bricks/SectionHeader.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 // import Video from "../../../components/Video.astro";
-import ProductCard from "../../../components/astro/ProductCard.astro";
+// import ProductCard from "../../../components/astro/ProductCard.astro";
 ---
 
 <BaseLayout title="Chairs">
@@ -54,7 +54,6 @@ import ProductCard from "../../../components/astro/ProductCard.astro";
         "hallingdal65-907.jpg",
         "hallingdal65-723.jpg",
       ]}
-      client:load
     >
       <!-- <p>Ode Chair without armrest</p> -->
       <ul>
@@ -82,7 +81,6 @@ import ProductCard from "../../../components/astro/ProductCard.astro";
         "hallingdal65-723.jpg",
       ]}
       productSwatchStacked={false}
-      client:load
     >
       <!-- <p>Ode Chair with armrest</p> -->
       <ul>
@@ -177,7 +175,6 @@ import ProductCard from "../../../components/astro/ProductCard.astro";
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       padding: 1.5rem;
-      //align-items: flex-start;
       align-items: stretch;
     }
   }
