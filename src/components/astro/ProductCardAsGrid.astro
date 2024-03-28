@@ -4,9 +4,13 @@ interface Props {
   productLink: string;
   productDescription?: string;
   productPrice?: string;
+  productPrices: string[];
   productImage?: string;
+  productImages: string[];
   productSwatchStacked?: boolean;
   productSwatchSize?: string;
+  fabricNames: string[];
+  fabricImages: string[];
   fullHeight?: boolean;
 }
 
@@ -15,82 +19,159 @@ const {
   productLink,
   productDescription,
   productPrice,
+  productPrices,
   productImage = "https://www.studio-henk.nl/Images/emersya/chairs-without-background/867585/image-thumb__867585__TransparentSquare/C-BOLSC-B-hemp-acre19.png",
+  productImages,
   productSwatchStacked = true,
   productSwatchSize = "",
+  fabricNames,
+  fabricImages,
   fullHeight = false,
 } = Astro.props;
 ---
 
+<!-- <link
+  rel="preload"
+  href="/images/products/chairs/C-ODEA-B-3041-orion-turtle88.png"
+  as="image"
+/> -->
 <div class={`ProductCard ${fullHeight ? "ProductCard--fullHeight" : ""}`}>
-  <a href={productLink} class="ProductCard__link">
-    <div class="ProductCard__image-container">
+  <div class="ProductCard__image-container">
+    <a href={productLink} class="ProductCard__link">
       <img
-        src={productImage}
+        src={`/images/products/chairs/${productImages[0]}`}
         width="1240"
         height="1240"
         class="ProductCard__img"
       />
-    </div>
-    <div class="ProductCard__content">
-      <p class="ProductCard__ProductName">{productName}</p>
-      {productDescription && <p>{productDescription}</p>}
-      <div class="ProductCard__swatch-container">
-        <img
-          class="ProductCard__swatch"
-          src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-chair.jpg"
-        />
-        <img
-          class="ProductCard__swatch"
-          src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-armchair.jpg"
-        />
-      </div>
-      <div class="ProductCard__config">
-        <div class="ProductCard__config-options">
-          <p class="ProductCard__label">Frame afwerking</p>
-          <div
-            class={`ProductCard__swatch-container ${
-              productSwatchSize == "small"
-                ? "ProductCard__swatch-container--small"
-                : ""
-            } ${
-              productSwatchStacked
-                ? "items-stacked"
-                : "ProductCard__swatch-container--small"
-            }
+    </a>
+  </div>
+  <div class="ProductCard__content">
+    <p class="ProductCard__ProductName">{productName}</p>
+    <slot />
+    <div class="ProductCard__config-options">
+      <p class="ProductCard__label">Upholstery</p>
+      <div
+        class={`ProductCard__swatch-container ${
+          productSwatchSize == "small"
+            ? "ProductCard__swatch-container--small"
+            : ""
+        } ${
+          productSwatchStacked
+            ? "items-stacked"
+            : "ProductCard__swatch-container--small"
+        }
           `}
-          >
-            <div class="color-white ProductCard__swatch">white</div>
-            <div class="color-black ProductCard__swatch">black</div>
-          </div>
-        </div>
-        <div class="ProductCard__config-options">
-          <p class="ProductCard__label">Stoffering</p>
-          <div
-            class={`ProductCard__swatch-container ${
-              productSwatchSize == "small"
-                ? "ProductCard__swatch-container--small"
-                : ""
-            } ${
-              productSwatchStacked
-                ? "items-stacked"
-                : "ProductCard__swatch-container--small"
-            }
-          `}
-          >
-            <div class="color-yellow ProductCard__swatch">stof 1</div>
-            <div class="color-green ProductCard__swatch">stof 2</div>
-            <div class="color-orange ProductCard__swatch">stof 3</div>
-            <div class="color-brown ProductCard__swatch">stof 4</div>
-            <div class="color-blue ProductCard__swatch">stof 5</div>
-          </div>
-        </div>
+      >
+        {
+          fabricImages.map((item, index) => (
+            <a
+              href=""
+              class="color-yellow ProductCard__swatch"
+              title={fabricNames[index]}
+              data-image={productImages[index]}
+              data-prices={productPrices[index]}
+            >
+              {item} - {index}
+              <img src={`/images/products/chairs/${item}`} alt="stof" />
+            </a>
+          ))
+        }
+        <!-- <a
+          href={productLink}
+          class="color-yellow ProductCard__swatch ProductCard__swatch--selected"
+          title="olbia sand03"
+          data-image={productImages[0]}
+          data-prices={productPrices[0]}
+        >
+          Olbia sand03
+          <img
+            src="/images/products/chairs/olbia-sand03-250w.avif"
+            alt="olbia sand03"
+          />
+        </a>
+        <a
+          href="https://www.studio-henk.nl/en/products/chairs/oak-hardwax-oil-natural-light-3041-ode-chair-with-armrest-black-orion-turtle88"
+          class="color-green ProductCard__swatch"
+          data-image={productImages[1]}
+          data-prices={productPrices[1]}
+        >
+          Orion Turtle 88
+          <img
+            src="/images/products/chairs/Orion-Turtle88-fabric-250w.avif"
+            alt="Orion Turtle 88"
+          />
+        </a>
+        <a
+          href="#"
+          class="color-orange ProductCard__swatch"
+          data-image={productImages[2]}
+          data-prices={productPrices[2]}
+        >
+          stof 3
+          <img
+            src="/images/products/chairs/hallingdal65-723.jpg"
+            alt="Orion Turtle 88"
+          />
+        </a> -->
+        <!-- <div class="color-brown ProductCard__swatch">stof 4</div>
+        <div class="color-blue ProductCard__swatch">stof 5</div> -->
       </div>
-      <p class="ProductCard__Price">{productPrice}</p>
     </div>
-  </a>
+    <p class="ProductCard__Price">{productPrices[0]}</p>
+  </div>
 </div>
-<style>
+
+<script>
+  function setupProductCardSwatches() {
+    const cards = document.querySelectorAll(".ProductCard");
+
+    cards.forEach((card) => {
+      const swatches = card.querySelectorAll(".ProductCard__swatch");
+      const mainImage = card.querySelector(".ProductCard__img");
+      const priceElement = card.querySelector(".ProductCard__Price");
+
+      swatches.forEach((swatch) => {
+        swatch.addEventListener("mouseover", () => {
+          // Remove selected class from all swatches within this card
+          card
+            .querySelectorAll(".ProductCard__swatch--selected")
+            .forEach((selectedSwatch) => {
+              selectedSwatch.classList.remove("ProductCard__swatch--selected");
+            });
+
+          // Add selected class to the hovered swatch
+          swatch.classList.add("ProductCard__swatch--selected");
+
+          // Get the value of the data-image attribute
+          const dataImage = swatch.getAttribute("data-image");
+          console.log(dataImage);
+
+          // Construct the path for the image
+          const imagePath = dataImage
+            ? `/images/products/chairs/${dataImage}`
+            : "";
+          console.log("imagePath:", imagePath);
+
+          // Update the src attribute of the main image within this card
+          mainImage.src = imagePath;
+          console.log("mainImage.src:", mainImage.src);
+
+          // Get the value of the data-prices attribute
+          const dataPrice = swatch.getAttribute("data-prices");
+          console.log(dataPrice);
+
+          // Update the price element text content
+          priceElement.textContent = dataPrice;
+        });
+      });
+    });
+  }
+
+  // Call the setup function once when the page loads
+  window.addEventListener("DOMContentLoaded", setupProductCardSwatches);
+</script>
+<style is:global>
   .ProductCard {
     background-color: var(--color-background-primary);
     border-radius: 8px;
@@ -122,10 +203,11 @@ const {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     transition: transform 0.3s ease;
+    transform: scale(1.5);
   }
 
   .ProductCard__link:hover .ProductCard__img {
-    transform: scale(1.1);
+    transform: scale(1.75);
   }
 
   .ProductCard__content * {
@@ -137,6 +219,10 @@ const {
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  .ProductCard__content > ul {
+    margin-left: 24px;
   }
 
   .ProductCard__ProductName {
@@ -171,9 +257,21 @@ const {
     width: 48px;
     height: 48px;
     border-radius: 50px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     background-color: var(--_color-background-swatch, #f00);
     font-size: 0;
+  }
+
+  .ProductCard__swatch img {
+    border-radius: 50px;
+  }
+
+  .ProductCard__swatch--selected {
+    border: 2px solid black;
+  }
+
+  .ProductCard__swatch:hover {
+    border: 2px solid black;
   }
 
   .ProductCard__swatch.color-white {

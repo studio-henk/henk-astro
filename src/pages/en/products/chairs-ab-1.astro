@@ -35,26 +35,59 @@ import ProductCard from "@components/astro/ProductCard.astro";
     byline="Poufs"
     bgColor="secondary"
   />
+  <h2>base version: stacked swatched large, render image or product shot</h2>
+  <div class="prodGrid">
+    <ProductCard
+      productName="Bolster Eetkamerstoel"
+      productLink="#1"
+      productPrice="Vanaf €499,-"
+    />
+    <ProductCard
+      productName="Ode Eetkamerstoel"
+      productLink="#2"
+      productPrice="Vanaf €399,-"
+      productImage="/images/bolster9.jpg"
+    />
+  </div>
+  <h2>alt version: swatches small, stacked or unstacked</h2>
+  <div class="prodGrid">
+    <ProductCard
+      productName="Ode Eetkamerstoel"
+      productLink="#2"
+      productPrice="Vanaf €399,-"
+      productSwatchSize="small"
+    />
+    <ProductCard
+      productName="Co Eetkamerstoel"
+      productLink="#3"
+      productPrice="Vanaf €399,-"
+      productImage="/images/bolster9.jpg"
+      productSwatchStacked={false}
+    />
+    <!-- <ProductCard
+      productName="Checker Eetkamerstoel"
+      productLink="#4"
+      productPrice="Vanaf €929,-"
+    /> -->
+    <!--<ProductCard-->
+    <!--    productName="Co Eetkamerstoel"-->
+    <!--    productPrice="Vanaf €399,-"-->
+    <!--    productImage="/images/bolster9.jpg"-->
+    <!--    fullHeight={true}-->
+    <!--/>-->
+    <!--<ProductCard-->
+    <!--    productName="Checker Eetkamerstoel"-->
+    <!--    productPrice="Vanaf €929,-"-->
+    <!--/>-->
+  </div>
+  <h2>alt version: config in grid instead of flex</h2>
   <div class="prodGrid">
     <ProductCardAsGrid
       productName="Ode Chair"
       productLink="#2"
       productPrice="From €399,-"
-      productPrices={["From €399,-", "0", "From €609,-"]}
       productImage="/images/products/chairs/C-ODE-B-facet-beige1037.png"
-      productImages={[
-        "C-ODE-B-olbia-sand03.png",
-        "C-ODE-B-hallingdal65-907.png",
-        "C-ODE-B-hallingdal65-723.png",
-      ]}
       productSwatchSize="small"
-      fabricNames={["olbia sand03", "hallingdal65-907", "hallingdal65-723"]}
-      fabricImages={[
-        "olbia-sand03-250w.jpg",
-        "hallingdal65-907.jpg",
-        "hallingdal65-723.jpg",
-      ]}
-      client:load
     >
       <!-- <p>Ode Chair without armrest</p> -->
       <ul>
@@ -68,21 +101,8 @@ import ProductCard from "@components/astro/ProductCard.astro";
       productName="Ode Chair with armrests"
       productLink="https://www.studio-henk.nl/en/products/chairs/oak-hardwax-oil-natural-light-3041-ode-chair-with-armrest-black-olbia-sand03"
       productPrice="From €449,-"
-      productPrices={["From €499,-", "0", "From €609,-"]}
       productImage="/images/products/chairs/C-ODEA-B-3041-olbia-sand03.png"
-      productImages={[
-        "C-ODEA-B-3041-olbia-sand03.png",
-        "C-ODEA-B-3041-orion-turtle88.png",
-        "C-ODEA-B-3041-hallingdal65-723-1240-transp.png",
-      ]}
-      fabricNames={["olbia sand03", "hallingdal65-907", "hallingdal65-723"]}
-      fabricImages={[
-        "olbia-sand03-250w.jpg",
-        "hallingdal65-907.jpg",
-        "hallingdal65-723.jpg",
-      ]}
       productSwatchStacked={false}
-      client:load
     >
       <!-- <p>Ode Chair with armrest</p> -->
       <ul>
