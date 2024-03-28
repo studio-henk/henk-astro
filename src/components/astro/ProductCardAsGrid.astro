@@ -30,11 +30,6 @@ const {
 } = Astro.props;
 ---
 
-<!-- <link
-  rel="preload"
-  href="/images/products/chairs/C-ODEA-B-3041-orion-turtle88.png"
-  as="image"
-/> -->
 <div class={`ProductCard ${fullHeight ? "ProductCard--fullHeight" : ""}`}>
   <div class="ProductCard__image-container">
     <a href={productLink} class="ProductCard__link">
@@ -77,52 +72,13 @@ const {
             </a>
           ))
         }
-        <!-- <a
-          href={productLink}
-          class="color-yellow ProductCard__swatch ProductCard__swatch--selected"
-          title="olbia sand03"
-          data-image={productImages[0]}
-          data-prices={productPrices[0]}
-        >
-          Olbia sand03
-          <img
-            src="/images/products/chairs/olbia-sand03-250w.avif"
-            alt="olbia sand03"
-          />
-        </a>
-        <a
-          href="https://www.studio-henk.nl/en/products/chairs/oak-hardwax-oil-natural-light-3041-ode-chair-with-armrest-black-orion-turtle88"
-          class="color-green ProductCard__swatch"
-          data-image={productImages[1]}
-          data-prices={productPrices[1]}
-        >
-          Orion Turtle 88
-          <img
-            src="/images/products/chairs/Orion-Turtle88-fabric-250w.avif"
-            alt="Orion Turtle 88"
-          />
-        </a>
-        <a
-          href="#"
-          class="color-orange ProductCard__swatch"
-          data-image={productImages[2]}
-          data-prices={productPrices[2]}
-        >
-          stof 3
-          <img
-            src="/images/products/chairs/hallingdal65-723.jpg"
-            alt="Orion Turtle 88"
-          />
-        </a> -->
-        <!-- <div class="color-brown ProductCard__swatch">stof 4</div>
-        <div class="color-blue ProductCard__swatch">stof 5</div> -->
       </div>
     </div>
     <p class="ProductCard__Price">{productPrices[0]}</p>
   </div>
 </div>
 
-<script>
+<script is:inline>
   function setupProductCardSwatches() {
     const cards = document.querySelectorAll(".ProductCard");
 
@@ -227,9 +183,6 @@ const {
 
   .ProductCard__ProductName {
     font-size: 20px;
-    /*white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;*/
   }
 
   .ProductCard__Price {
@@ -311,34 +264,17 @@ const {
   .items-stacked .ProductCard__swatch {
     position: absolute;
     --spacing-swatch: 24;
-    /* margin-left: 24px; */
-    /* margin-left: calc(var(--spacing-swatch) * 1px); */
   }
 
   .items-stacked .ProductCard__swatch:not(:first-child) {
     margin-left: calc(var(--spacing-swatch) * 1px);
   }
 
-  .items-stacked .ProductCard__swatch.color-white,
-  .items-stacked .ProductCard__swatch.color-yellow {
-    /* margin-left: 0; */
-    /* --spacing-swatch: 0; */
-  }
-
-  .items-stacked .ProductCard__swatch.color-black,
-  .items-stacked .ProductCard__swatch.color-green {
-    /* margin-left: 24px; */
-    /* --spacing-swatch: 24; */
-  }
-
   .items-stacked .ProductCard__swatch.color-orange {
-    /* margin-left: calc(2 * 24px); */
-    /* --spacing-swatch: 24; */
     margin-left: calc(2 * var(--spacing-swatch) * 1px);
   }
 
   .items-stacked .ProductCard__swatch.color-brown {
-    /* margin-left: calc(3 * 24px); */
     margin-left: calc(3 * var(--spacing-swatch) * 1px);
   }
 
@@ -362,31 +298,6 @@ const {
     /* margin-left: 12px; */
     --spacing-swatch: 12;
   }
-
-  /*.items-stacked .config-option-swatch:not(:first-child) {
-    position: relative;
-    left: -32px;
-  }*/
-
-  /*full size image card*/
-  /*.ProductCard--fullHeight {
-    position: relative;
-    aspect-ratio: 2 / 3;
-  }
-
-  .ProductCard--fullHeight .ProductCard__img {
-    border-radius: 8px;
-  }
-
-  .ProductCard--fullHeight .ProductCard__content {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: var(--color-background-primary);
-    width: 100%;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }*/
 
   @media only screen and (min-width: 1024px) {
     .ProductCard__config-options {
