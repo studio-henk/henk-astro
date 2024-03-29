@@ -7,6 +7,11 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Chairs">
+  <script
+    src="/static/std/assets/components/ProductCard/product-card.js"
+    type="module"
+    is:inline
+  ></script>
   <div class="category-breadcrumbs" slot="pre-main">
     <ul class="breadcrumbs">
       <li class="breadcrumbs__item">
@@ -36,63 +41,57 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     bgColor="secondary"
   />
   <div class="prodGrid">
-    <ProductCardAsGrid
-      productName="Ode Chair"
-      productLink="#2"
-      productPrice="From €399,-"
-      productPrices={["From €399,-", "600", "From €609,-"]}
-      productImage="/images/products/chairs/C-ODE-B-facet-beige1037.png"
-      productImages={[
-        "C-ODE-B-olbia-sand03.png",
-        "C-ODE-B-hallingdal65-907.png",
-        "C-ODE-B-hallingdal65-723.png",
-      ]}
-      fabricNames={["olbia sand03", "hallingdal65-907", "hallingdal65-723"]}
-      fabricImages={[
-        "olbia-sand03-250w.jpg",
-        "hallingdal65-907.jpg",
-        "hallingdal65-723.jpg",
-      ]}
-      productSwatchSize="small"
-      productSwatchStacked={false}
+    <product-card
+      product-name="Ode Chair"
+      product-links="['/en/products/chairs/ode-chair-without-armrest-black-olbia-sand03', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-907', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-723']"
+      product-description="This is a comfortable and stylish chair."
+      product-prices="['From €399,-', 'From €449,-', 'From €499,-']"
+      product-images="['C-ODE-B-olbia-sand03.png', 'C-ODE-B-hallingdal65-907.png', 'C-ODE-B-hallingdal65-723.png']"
+      fabric-label="Upholstery"
+      fabric-names="['Olbia sand03', 'hallingdal65-907.jpg', 'hallingdal65-723']"
+      fabric-images="['olbia-sand03-250w.avif', 'hallingdal65-907.jpg', 'hallingdal65-723.jpg', 'hallingdal65-723.jpg', 'hallingdal65-723.jpg']"
     >
-      <!-- <p>Ode Chair without armrest</p> -->
-      <ul>
-        <!-- <li>Customise with standard or Kvadrat upholstery</li> -->
-        <li>Choose armrests with an oak, black or white finish</li>
-        <li>Available with a black or white powder coated frame</li>
-        <li>Available with or without armrests</li>
-      </ul>
-    </ProductCardAsGrid>
-    <ProductCardAsGrid
-      productName="Ode Chair with armrests"
-      productLink="https://www.studio-henk.nl/en/products/chairs/oak-hardwax-oil-natural-light-3041-ode-chair-with-armrest-black-olbia-sand03"
-      productPrice="From €449,-"
-      productPrices={["From €499,-", "0", "From €609,-"]}
-      productImage="/images/products/chairs/C-ODEA-B-3041-olbia-sand03.png"
-      productImages={[
-        "C-ODEA-B-3041-olbia-sand03.png",
-        "C-ODEA-B-3041-hallingdal65-907.png",
-        "C-ODEA-B-3041-hallingdal65-723-1240-transp.png",
-      ]}
-      fabricNames={["olbia sand03", "hallingdal65-907", "hallingdal65-723"]}
-      fabricImages={[
-        "olbia-sand03-250w.jpg",
-        "hallingdal65-907.jpg",
-        "hallingdal65-723.jpg",
-      ]}
-      productSwatchSize="small"
-      productSwatchStacked={false}
+    </product-card>
+    <product-card
+      product-name="Ode Chair with armrests"
+      product-links="['/en/products/chairs/ode-chair-without-armrest-black-olbia-sand03', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-907', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-723']"
+      product-description="This is a comfortable and stylish chair."
+      product-prices="['From €399,-', 'From €449,-', 'From €499,-']"
+      product-images="['C-ODE-B-olbia-sand03.png', 'C-ODE-B-hallingdal65-907.png', 'C-ODE-B-hallingdal65-723.png']"
+      fabric-label="Upholstery"
+      fabric-names="['Olbia sand03', 'hallingdal65-907.jpg', 'hallingdal65-723']"
+      fabric-images="['olbia-sand03-250w.avif', 'hallingdal65-907.jpg', 'hallingdal65-723.jpg']"
     >
-      <!-- <p>Ode Chair with armrest</p> -->
-      <ul>
-        <!-- <li>Customise with standard or Kvadrat upholstery</li> -->
-        <li>Choose armrests with an oak, black or white finish</li>
-        <li>Available in a black or white powder coated frame</li>
-        <li>Available with or without armrests</li>
-      </ul>
-    </ProductCardAsGrid>
+    </product-card>
   </div>
+  <hr />
+  <h2>large</h2>
+  <!-- <div class="prodGrid">
+    <product-card
+      product-name="Ode Chair"
+      product-links="['/en/products/chairs/ode-chair-without-armrest-black-olbia-sand03', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-907', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-723']"
+      product-description="This is a comfortable and stylish chair."
+      product-prices="['From €399,-', 'From €449,-', 'From €499,-']"
+      product-images="['C-ODE-B-olbia-sand03.png', 'C-ODE-B-hallingdal65-907.png', 'C-ODE-B-hallingdal65-723.png']"
+      product-swatch-size="large"
+      fabric-label="Upholstery"
+      fabric-names="['Olbia sand03', 'hallingdal65-907.jpg', 'hallingdal65-723']"
+      fabric-images="['olbia-sand03-250w.avif', 'hallingdal65-907.jpg', 'hallingdal65-723.jpg', 'hallingdal65-723.jpg', 'hallingdal65-723.jpg']"
+    >
+    </product-card>
+    <product-card
+      product-name="Ode Chair with armrests"
+      product-links="['/en/products/chairs/ode-chair-without-armrest-black-olbia-sand03', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-907', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-723']"
+      product-description="This is a comfortable and stylish chair."
+      product-prices="['From €399,-', 'From €449,-', 'From €499,-']"
+      product-images="['C-ODE-B-olbia-sand03.png', 'C-ODE-B-hallingdal65-907.png', 'C-ODE-B-hallingdal65-723.png']"
+      product-swatch-size="large"
+      fabric-label="Upholstery"
+      fabric-names="['Olbia sand03', 'hallingdal65-907.jpg', 'hallingdal65-723']"
+      fabric-images="['olbia-sand03-250w.avif', 'hallingdal65-907.jpg', 'hallingdal65-723.jpg']"
+    >
+    </product-card>
+  </div> -->
   <style>
     .org-grid-lister__item {
       opacity: 0;
@@ -130,6 +129,12 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   }
 
   @media only screen and (min-width: 1200px) {
+    .prodGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
     .prodGrid {
       grid-template-columns: repeat(4, 1fr);
     }
