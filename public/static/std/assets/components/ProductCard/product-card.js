@@ -5,6 +5,10 @@ class ProductCard extends HTMLElement {
     if (!this.productImages) {
       this.productImages = [];
     }
+
+    if (!this.productUsps) {
+      this.productUsps = [];
+    }
     if (!this.productPrices) {
       this.productPrices = [];
     }
@@ -87,6 +91,7 @@ class ProductCard extends HTMLElement {
   }
 
   .ProductCard__content > ul {
+    padding: 0;
     margin-left: 24px;
   }
 
@@ -249,7 +254,7 @@ class ProductCard extends HTMLElement {
         <div class="ProductCard__image-container">
           <a href="${this.productLinks[0]}" class="ProductCard__link">
             <img
-              src="/images/products/chairs/${this.productImages[0]}"
+              src="${this.productImages[0]}"
               width="1240"
               height="1240"
               class="ProductCard__img"
@@ -259,6 +264,9 @@ class ProductCard extends HTMLElement {
         <div class="ProductCard__content">
           <p class="ProductCard__ProductName">${this.productName}</p>
           ${this.productDescription ? `<p>${this.productDescription}</p>` : ""}
+          <ul>
+            ${this.renderUsps()}
+          </ul>          
           <div class="ProductCard__config-options">
             <p class="ProductCard__label">${this.fabricLabel}</p>            
             <div class="ProductCard__swatch-container${
@@ -336,6 +344,17 @@ class ProductCard extends HTMLElement {
     this.setAttribute("product-images", jsonString);
   }
 
+  get productUsps() {
+    const attributeValue = this.getAttribute("product-usps");
+    return attributeValue ? JSON.parse(attributeValue.replace(/'/g, '"')) : [];
+  }
+
+  set productUsps(value) {
+    // Convert the value to JSON string and replace double quotes with single quotes
+    const jsonString = JSON.stringify(value).replace(/"/g, "'");
+    this.setAttribute("product-usps", jsonString);
+  }
+
   get productLinks() {
     const attributeValue = this.getAttribute("product-links");
     return attributeValue ? JSON.parse(attributeValue.replace(/'/g, '"')) : [];
@@ -402,19 +421,39 @@ class ProductCard extends HTMLElement {
   // Add getters and setters for other props as needed
 
   // Method to render swatches based on productImages and fabricNames
+  // renderSwatches() {
+  //   let swatchesHTML = this.fabricImages
+  //     .map(
+  //       (image, index) => `
+  //   <a href="${this.productLinks[index]}" class="ProductCard__swatch${
+  //         index === 0 ? " ProductCard__swatch--selected" : ""
+  //       }"
+  //     title="${this.fabricNames[index]}"
+  //     data-image="${this.productImages[index]}"
+  //     data-prices="${this.productPrices[index]}"
+  //     data-link="${this.productLinks[index]}"
+  //   >
+  //     <img src="${image}" alt="stof" />
+  //   </a>
+  // `
+  //     )
+  //     .join("");
+
+  //   return swatchesHTML;
+  // }
   renderSwatches() {
     let swatchesHTML = this.fabricImages
       .map(
         (image, index) => `
-    <a href="${this.productLinks[index]}" class="ProductCard__swatch${
-          index === 0 ? " ProductCard__swatch--selected" : ""
-        }" 
+    <a href="#" class="ProductCard__swatch${
+      index === 0 ? " ProductCard__swatch--selected" : ""
+    }" 
       title="${this.fabricNames[index]}" 
       data-image="${this.productImages[index]}" 
       data-prices="${this.productPrices[index]}"
       data-link="${this.productLinks[index]}"
     >
-      <img src="/images/products/chairs/${image}" alt="stof" />
+      <img src="${image}" alt="stof" />
     </a>
   `
       )
@@ -423,11 +462,23 @@ class ProductCard extends HTMLElement {
     return swatchesHTML;
   }
 
+  renderUsps() {
+    let uspsHTML = this.productUsps
+      .map(
+        (item, index) => `
+    <li>${this.productUsps[index]}</li>
+  `
+      )
+      .join("");
+
+    return uspsHTML;
+  }
+
   // Method to update main image
   updateMainImage(imagePath) {
     const mainImage = this.shadow.querySelector(".ProductCard__img");
     if (mainImage) {
-      mainImage.src = `/images/products/chairs/${imagePath}`;
+      mainImage.src = `${imagePath}`;
     }
   }
 
