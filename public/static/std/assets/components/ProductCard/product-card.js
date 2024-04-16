@@ -6,9 +6,9 @@ class ProductCard extends HTMLElement {
       this.productImages = [];
     }
 
-    if (!this.productUsps) {
-      this.productUsps = [];
-    }
+    // if (!this.productUsps) {
+    //   this.productUsps = "";
+    // }
     if (!this.productPrices) {
       this.productPrices = [];
     }
@@ -36,7 +36,8 @@ class ProductCard extends HTMLElement {
     // Define a template for the component
     this.template = document.createElement("template");
     this.template.innerHTML = `
-      <style>
+    //#region styles  
+    <style>
         .ProductCard {
     background-color: var(--color-background-primary);
     border-radius: 8px;
@@ -113,7 +114,6 @@ class ProductCard extends HTMLElement {
   .ProductCard__config-options {
     display: flex;
     flex-wrap: wrap;
-    // flex-direction: column;
     gap: 1rem;
   }
 
@@ -145,40 +145,19 @@ class ProductCard extends HTMLElement {
 
   .ProductCard__swatch-container {
     position: relative;
-    // height: 48px;
   }
 
   .ProductCard__swatch-container--small {
     display: flex;
     gap: 4px;
     flex-wrap: nowrap;
-    min-width: 136px;
+    /* min-width: 136px; */
   }
 
   .ProductCard__swatch-container--large {
     display: flex;
     gap:8px;
-  }
-
-  // :host {
-  //   background-color: yellow;
-  //   color:red;
-  // }
-
-  // :host p {
-  //   background-color: magenta;
-  //   color:yellow;
-  // }
-
-  :host([product-swatch-size="large"]) {
-    // background-color: green;
-    // color:yellow;
-  }
-
-  // :host([product-swatch-size="large"]) p {
-  //   background-color: pink;
-  //   color:black;
-  // }
+  }  
 
   :host([product-swatch-size="large"]) .ProductCard__config-options {
     flex-direction: column;
@@ -227,6 +206,7 @@ class ProductCard extends HTMLElement {
   .ProductCard__swatch-container--small .ProductCard__swatch {
     width: 20px;
     height: 20px;
+    cursor: default;
     --spacing-swatch: 12;
   }
 
@@ -248,9 +228,10 @@ class ProductCard extends HTMLElement {
       // flex: 3;
     }
   }
-
       </style>
+      //#endregion
       <div class="ProductCard">
+      //#region template
         <div class="ProductCard__image-container">
           <a href="${this.productLinks[0]}" class="ProductCard__link">
             <img
@@ -264,9 +245,7 @@ class ProductCard extends HTMLElement {
         <div class="ProductCard__content">
           <p class="ProductCard__ProductName">${this.productName}</p>
           ${this.productDescription ? `<p>${this.productDescription}</p>` : ""}
-          <ul>
-            ${this.renderUsps()}
-          </ul>          
+          ${this.productUsps ? `${this.renderUsps()}` : ""}
           <div class="ProductCard__config-options">
             <p class="ProductCard__label">${this.fabricLabel}</p>            
             <div class="ProductCard__swatch-container${
@@ -284,14 +263,12 @@ class ProductCard extends HTMLElement {
               class="sh-atom-button ProductCard__Price" 
               data-style="filled" 
               part="button filled"
-            >${this.productPrices[0]}
-              <!--<span class="sh-atom-button__price xProductCard__Price" part="price">${
-                this.productPrices[0]
-              }</span>-->
+            >${this.productPrices[0]}              
             </a>
           </div>
         </div>
       </div>
+      //#endregion
     `;
 
     // Clone the template content and append it to the shadow root
@@ -312,6 +289,9 @@ class ProductCard extends HTMLElement {
         this.updateMainImageHref(swatch.getAttribute("data-link"));
         this.updateButtonHref(swatch.getAttribute("data-link"));
         this.updatePrice(swatch.getAttribute("data-prices"));
+      });
+      swatch.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default click behavior
       });
     });
   }
@@ -346,7 +326,9 @@ class ProductCard extends HTMLElement {
 
   get productUsps() {
     const attributeValue = this.getAttribute("product-usps");
-    return attributeValue ? JSON.parse(attributeValue.replace(/'/g, '"')) : [];
+    return attributeValue && attributeValue !== "[]"
+      ? JSON.parse(attributeValue.replace(/'/g, '"'))
+      : null;
   }
 
   set productUsps(value) {
@@ -418,29 +400,6 @@ class ProductCard extends HTMLElement {
     this.setAttribute("fabric-names", JSON.stringify(value).replace(/"/g, "'"));
   }
 
-  // Add getters and setters for other props as needed
-
-  // Method to render swatches based on productImages and fabricNames
-  // renderSwatches() {
-  //   let swatchesHTML = this.fabricImages
-  //     .map(
-  //       (image, index) => `
-  //   <a href="${this.productLinks[index]}" class="ProductCard__swatch${
-  //         index === 0 ? " ProductCard__swatch--selected" : ""
-  //       }"
-  //     title="${this.fabricNames[index]}"
-  //     data-image="${this.productImages[index]}"
-  //     data-prices="${this.productPrices[index]}"
-  //     data-link="${this.productLinks[index]}"
-  //   >
-  //     <img src="${image}" alt="stof" />
-  //   </a>
-  // `
-  //     )
-  //     .join("");
-
-  //   return swatchesHTML;
-  // }
   renderSwatches() {
     let swatchesHTML = this.fabricImages
       .map(
@@ -463,13 +422,17 @@ class ProductCard extends HTMLElement {
   }
 
   renderUsps() {
-    let uspsHTML = this.productUsps
-      .map(
-        (item, index) => `
-    <li>${this.productUsps[index]}</li>
-  `
-      )
-      .join("");
+    let uspsHTML = `
+    <ul>
+      ${this.productUsps
+        .map(
+          (item, index) => `
+          <li>${this.productUsps[index]}</li>
+        `
+        )
+        .join("")}
+    </ul>
+  `;
 
     return uspsHTML;
   }
