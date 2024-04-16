@@ -36,7 +36,6 @@ class ProductCard extends HTMLElement {
     // Define a template for the component
     this.template = document.createElement("template");
     this.template.innerHTML = `
-    //#region styles  
     <style>
         .ProductCard {
     background-color: var(--color-background-primary);
@@ -229,9 +228,7 @@ class ProductCard extends HTMLElement {
     }
   }
       </style>
-      //#endregion
       <div class="ProductCard">
-      //#region template
         <div class="ProductCard__image-container">
           <a href="${this.productLinks[0]}" class="ProductCard__link">
             <img
@@ -268,7 +265,6 @@ class ProductCard extends HTMLElement {
           </div>
         </div>
       </div>
-      //#endregion
     `;
 
     // Clone the template content and append it to the shadow root
