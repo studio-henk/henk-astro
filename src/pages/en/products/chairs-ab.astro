@@ -7,108 +7,205 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Chairs">
-  <script
+    <script
     src="/static/std/assets/components/ProductCard/product-card.js"
     type="module"
     is:inline
-  ></script>
-  <div class="category-breadcrumbs" slot="pre-main">
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs__item">
-        <a href="/en">Home</a>
-        <svg class="icon icon-chevron-right">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-right"
-          ></use>
-        </svg>
-      </li>
-      <li class="breadcrumbs__item">
-        <a href="/en/collection">collection</a>
-        <svg class="icon icon-chevron-right">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-right"
-          ></use>
-        </svg>
-      </li>
-      <li class="breadcrumbs__item">Poufs</li>
-    </ul>
-  </div>
-  <SectionHeader
-    title="The Otto is a multifunctional pouf. Use it as an extra seat, footstool or side table."
-    byline="Poufs"
+    ></script>
+    <div class="category-breadcrumbs" slot="pre-main">
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">
+                <a href="/en">Home</a>
+                <svg class="icon icon-chevron-right">
+                    <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-right"
+                    ></use>
+                </svg>
+            </li>
+            <li class="breadcrumbs__item">
+                <a href="/en/collection">producten</a>
+                <svg class="icon icon-chevron-right">
+                    <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-right"
+                    ></use>
+                </svg>
+            </li>
+            <li class="breadcrumbs__item">Eetkamerstoelen</li>
+        </ul>
+    </div>
+    <SectionHeader
+    title="Eetkamerstoelen"
+    xbyline="Eetkamerstoelen"
     bgColor="secondary"
-  />
-  <div class="prodGrid">
-    <product-card
-      product-name="Ode Chair"
-      product-links="['/en/products/chairs/ode-chair-without-armrest-black-olbia-sand03', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-907', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-723']"
-      product-prices="['From €479,-', 'From €609,-', 'From €609,-']"
-      product-images="['/static/std/assets/components/ProductCard/img/C-ODE-B-olbia-sand03.png', '/static/std/assets/components/ProductCard/img/C-ODE-B-hallingdal65-907.png', '/static/std/assets/components/ProductCard/img/C-ODE-B-hallingdal65-723.png']"
-      fabric-label="Upholstery"
-      fabric-names="['Olbia sand03', 'hallingdal65-907.jpg', 'hallingdal65-723']"
-      fabric-images="['/static/std/assets/components/ProductCard/img/olbia-sand03-250w.avif', '/static/std/assets/components/ProductCard/img/hallingdal65-907.jpg', '/static/std/assets/components/ProductCard/img/hallingdal65-723.jpg']"
     >
+        <p>Of je nu op zoek bent naar een stoel om op te dineren, te ontspannen of te werken, onze eetkamerstoelen sluiten naadloos op je behoeften aan.</p>
+    </SectionHeader>
+    <div class="prodGrid">
+        <product-card
+        product-name="Ode stoel"
+        product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-orion-cream02', 'https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-facet-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-orion-turtle88','https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-soil-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-brema-beige05']"
+        product-prices="['Vanaf €399,-', 'Vanaf €489,-', 'Vanaf €399,-', 'Vanaf €489,-', 'Vanaf €489,-']"
+        product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/801342/image-thumb__801342__TransparentSquare/C-ODE-B-orion-cream02.png', 'https://www.studio-henk.nl/Images/emersya/chairs-without-background/824875/image-thumb__824875__TransparentSquare/C-ODE-B-facet-natural01.png', 'https://www.studio-henk.nl/Images/emersya/chairs-without-background/1020243/image-thumb__1020243__TransparentSquare/C-ODE-B-orion-turtle88.png', 'https://www.studio-henk.nl/Images/emersya/chairs-without-background/676151/image-thumb__676151__TransparentSquare/C-ODE-B-soil-natural01.png', 'https://www.studio-henk.nl/Images/emersya/chairs-without-background/832191/image-thumb__832191__TransparentSquare/C-ODE-B-brema-beige05.png']"
+        fabric-label="Stoffering"
+        fabric-names="['orion cream02', 'facet natural01', 'orion-turtle88', 'soil-natural01', 'brema-beige05']"
+        fabric-images="['https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg', 'https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-natural01.jpg', 'https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Turtle88-fabric_1.jpg', 'https://assets.studio-henk.nl/assets/_default_upload_bucket/soil-natural01_1.jpg', 'https://assets.studio-henk.nl/assets/Images/fabrics/small/brema-beige05.jpg']"
+        >
     </product-card>
     <product-card
-      product-name="Ode Chair with armrests"
-      product-links="['/en/products/chairs/ode-chair-without-armrest-black-olbia-sand03', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-907', '/en/products/chairs/ode-chair-without-armrest-black-hallingdal65-723']"
-      product-prices="['From €569,-', 'From €649,-', 'From €649,-']"
-      product-images="['/static/std/assets/components/ProductCard/img/C-ODEA-B-3041-olbia-sand03.png', '/static/std/assets/components/ProductCard/img/C-ODEA-B-3041-hallingdal65-907.png', '/static/std/assets/components/ProductCard/img/C-ODEA-B-3041-hallingdal65-723-1240-transp.png']"
-      fabric-label="Upholstery"
-      fabric-names="['Olbia sand03', 'hallingdal65-907.jpg', 'hallingdal65-723']"
-      fabric-images="['/static/std/assets/components/ProductCard/img/olbia-sand03-250w.avif', '/static/std/assets/components/ProductCard/img/hallingdal65-907.jpg', '/static/std/assets/components/ProductCard/img/hallingdal65-723.jpg']"
+    product-name="Ode stoel met armleuning"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-hardwax-olie-naturel-light-3041-ode-chair-met-armleuning-zwart-cube-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-hardwax-olie-naturel-light-3041-ode-chair-met-armleuning-zwart-orion-cream02','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-hardwax-olie-naturel-light-3041-ode-chair-met-armleuning-zwart-orion-cream02','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-hardwax-olie-naturel-light-3041-ode-chair-met-armleuning-zwart-orion-turtle88','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-hardwax-olie-naturel-light-3041-ode-chair-met-armleuning-zwart-brema-beige05']"
+    product-prices="['Vanaf €569,-', 'Vanaf €489,-', 'Vanaf €489,-', 'Vanaf €489,-', 'Vanaf €579,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/823661/image-thumb__823661__TransparentSquare/C-ODEA-B-3041-cube-natural01.png', 'https://www.studio-henk.nl/Images/emersya/chairs-without-background/1018426/image-thumb__1018426__TransparentSquare/C-ODEA-B-3041-orion-cream02.png', 'https://www.studio-henk.nl/Images/emersya/chairs-without-background/1018426/image-thumb__1018426__TransparentSquare/C-ODEA-B-3041-orion-cream02.png', 'https://www.studio-henk.nl/Images/emersya/chairs-without-background/801340/image-thumb__801340__TransparentSquare/C-ODEA-B-3041-orion-turtle88.png', 'https://www.studio-henk.nl/Images/emersya/chairs-without-background/831072/image-thumb__831072__TransparentSquare/C-ODEA-B-3041-brema-beige05.png']"
+    fabric-label="Stoffering"
+    fabric-names="['cube ntural01', 'orion cream02', 'orion cream02', 'orion turtle88', 'brema beige05']"
+    fabric-images="['https://assets.studio-henk.nl/assets/Images/fabrics/small/cube-natural01.jpg', 'https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg', 'https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg', 'https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Turtle88-fabric_1.jpg', 'https://assets.studio-henk.nl/assets/Images/fabrics/small/brema-beige05.jpg']"
     >
-    </product-card>
-  </div>
-  <hr />
-  <h2>large</h2>
-  <style>
-    .org-grid-lister__item {
-      opacity: 0;
-      animation: 1s linear 0.3s forwards fadeIn;
-    }
+</product-card>
+<product-card
+    product-name="Oblique eetkamerstoel bekleed"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/oblique-dining-chair-bekleed-zwart-facet-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/oblique-dining-chair-bekleed-zwart-olbia-ecru102','https://www.studio-henk.nl/nl/products/eetkamerstoelen/oblique-dining-chair-bekleed-zwart-facet-dolphin180','https://www.studio-henk.nl/nl/products/eetkamerstoelen/oblique-dining-chair-bekleed-zwart-facet-kiezel7','https://www.studio-henk.nl/nl/products/eetkamerstoelen/oblique-dining-chair-bekleed-zwart-orion-shitake124']"
+    product-prices="['Vanaf €549,-','Vanaf €539,-','Vanaf €549,-','Vanaf €549,-','Vanaf €499,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/839131/image-thumb__839131__TransparentSquare/C-OBLIUC-B-facet-natural01.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/839131/image-thumb__839131__TransparentSquare/C-OBLIUC-B-olbia-ecru102.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/839126/image-thumb__839126__TransparentSquare/C-OBLIUC-B-facet-dolphin180.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/810483/image-thumb__810483__TransparentSquare/C-OBLIUC-B-facet-kiezel7.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/810483/image-thumb__810483__TransparentSquare/C-OBLIUC-B-orion-shitake124.png']"
+    fabric-label="Stoffering"
+    fabric-names="['facet natural01','olbia ecru102','facet dolphin180','facet kiezel7','orion shitake124']"
+    fabric-images="['https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-natural01.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/olbia-ecru102.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-dolphin180.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-kiezel7.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Shitake124-fabric_1.jpg']"
+    >
+</product-card>
+<product-card
+    product-name="Co chair"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/co-chair-zonder-armleuning-zwart-orion-cream02','https://www.studio-henk.nl/nl/products/eetkamerstoelen/co-chair-zonder-armleuning-zwart-facet-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/co-chair-zonder-armleuning-zwart-orion-turtle88','https://www.studio-henk.nl/nl/products/eetkamerstoelen/co-chair-zonder-armleuning-zwart-orion-shitake124','https://www.studio-henk.nl/nl/products/eetkamerstoelen/co-chair-zonder-armleuning-zwart-brema-beige05']"
+    product-prices="['Vanaf €399,-','Vanaf €489,-','Vanaf €399,-','Vanaf €399,-','Vanaf €489,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/801336/image-thumb__801336__TransparentSquare/C-CO-B-orion-cream02.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/823362/image-thumb__823362__TransparentSquare/C-CO-B-facet-natural01.png','https://placehold.co/1240?text=Image+Not+Found','https://www.studio-henk.nl/Images/emersya/chairs-without-background/801335/image-thumb__801335__TransparentSquare/C-CO-B-orion-shitake124.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/830850/image-thumb__830850__TransparentSquare/C-CO-B-brema-beige05.png']"
+    fabric-label="Stoffering"
+    fabric-names="['orion cream02','facet natural01','orion turtle88','orion shitake124','brema beige05']"
+    fabric-images="['https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-natural01.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Turtle88-fabric_1.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Shitake124-fabric_1.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/brema-beige05.jpg']"
+    >
+</product-card>
+<product-card
+    product-name="Bolster eetkamerstoel"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/bolster-eetkamerstoel-zonder-armleuning-zwart-hallingdal65-220','https://www.studio-henk.nl/nl/products/eetkamerstoelen/bolster-dining-chair-zonder-armleuning-zwart-andermaat-11','https://www.studio-henk.nl/nl/products/eetkamerstoelen/bolster-dining-chair-zonder-armleuning-zwart-orion-cream02','https://www.studio-henk.nl/nl/products/eetkamerstoelen/bolster-dining-chair-zonder-armleuning-zwart-regain-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/bolster-dining-chair-zonder-armleuning-zwart-tonus4-374']"
+    product-prices="['Vanaf €659,-', 'Vanaf €559,-', 'Vanaf €499,-', 'Vanaf €589,-', 'Vanaf €659,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/866926/image-thumb__866926__TransparentSquare/C-BOLSC-B-hallingdal65-220.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/867538/image-thumb__867538__TransparentSquare/C-BOLSC-B-andermaat-11.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/867682/image-thumb__867682__TransparentSquare/C-BOLSC-B-orion-cream02.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/867627/image-thumb__867627__TransparentSquare/C-BOLSC-B-regain-natural01.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/867039/image-thumb__867039__TransparentSquare/C-BOLSC-B-tonus4-374.png']"
+    fabric-label="Stoffering"
+    fabric-names="['hallingdal65 220', 'andermaat 11', 'orion cream02', 'regain natural01', 'tonus4 374']"
+    fabric-images="['https://assets.studio-henk.nl/assets/Images/fabrics/small/hallingdal65-220.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/andermaat-11_1.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/regain-natural01_2.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/tonus4-374.jpg']"
+    >
+</product-card>
 
-    @keyframes fadeIn {
-      from {
+<product-card
+    product-name="Bolster eetkamerstoel met armleuning"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-lak-bolster-eetkamerstoel-met-armleuning-zwart-rewool-0868','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-lak-bolster-eetkamerstoel-met-armleuning-zwart-facet-beige1037','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-lak-bolster-eetkamerstoel-met-armleuning-zwart-hallingdal65-100','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-lak-bolster-eetkamerstoel-met-armleuning-zwart-orion-cream02','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-lak-bolster-eetkamerstoel-met-armleuning-zwart-regain-taupe12']"
+    product-prices="['Vanaf €799,-', 'Vanaf €719,-', 'Vanaf €799,-', 'Vanaf €679,-', 'Vanaf €719,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/872820/image-thumb__872820__TransparentSquare/C-BOLSAC-B-9016-rewool-0868.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/872400/image-thumb__872400__TransparentSquare/C-BOLSAC-B-9005-facet-beige1037.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/865476/image-thumb__865476__TransparentSquare/C-BOLSAC-B-hallingdal65-100.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/872879/image-thumb__872879__TransparentSquare/C-BOLSAC-B-9005-orion-cream02.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/872777/image-thumb__872777__TransparentSquare/C-BOLSAC-B-9005-regain-taupe12.png']"
+    fabric-label="Stoffering"
+    fabric-names="['rewool 0868', 'facet beige1037', 'hallindal65 100', 'orion cream02', 'regain taupe12']"
+    fabric-images="['https://assets.studio-henk.nl/assets/_default_upload_bucket/rewool-0868_1.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-beige1037.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/hallingdal65-100.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/regain-taupe12_2.jpg']"
+    >
+</product-card>
+
+<product-card
+    product-name="Base stoel"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/base-stoel-zonder-armleuning-eiken-hardwax-olie-naturel-3062','https://www.studio-henk.nl/nl/products/eetkamerstoelen/base-stoel-zonder-armleuning-eiken-gerookt-gebeitst','https://www.studio-henk.nl/nl/products/eetkamerstoelen/base-stoel-zonder-armleuning-eiken-hardwax-oil-naturel-light-3041','https://www.studio-henk.nl/nl/products/eetkamerstoelen/base-stoel-zonder-armleuning-eiken-zwarte-beits']"
+    product-prices="['Vanaf €479,-', 'Vanaf €479,-', 'Vanaf €479,-', 'Vanaf €479,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/676091/image-thumb__676091__TransparentSquare/C-BSC-3062.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/676162/image-thumb__676162__TransparentSquare/C-BSC-0002.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/676090/image-thumb__676090__TransparentSquare/C-BSC-3041.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/676089/image-thumb__676089__TransparentSquare/C-BSC-9017.png']"
+    fabric-label="Afwerking"
+    fabric-names="['Eiken hardwax olie naturel 3062', 'Eiken gerookt gebeitst', 'Eiken hardwax oil naturel light 3041', 'Eiken zwarte beits']"
+    fabric-images="['https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_lakv2.jpg','https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_0002v2.jpg','https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_0008v2.jpg','https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_9017v2.jpg']"
+    >
+</product-card>
+
+<product-card
+    product-name="Oblique eetkamerstoel met armleuningen"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-beits-oblique-dining-chair-met-armleuning-zwart-facet-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-beits-oblique-dining-chair-met-armleuning-zwart-olbia-ecru102','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-beits-oblique-dining-chair-met-armleuning-zwart-facet-dolphin180','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-beits-oblique-dining-chair-met-armleuning-zwart-facet-kiezel7','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-zwarte-beits-oblique-dining-chair-met-armleuning-zwart-orion-shitake124']"
+    product-prices="['Vanaf €579,-', 'Vanaf €549,-', 'Vanaf €579,-', 'Vanaf €579,-', 'Vanaf €519,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/858079/image-thumb__858079__TransparentSquare/C-OBLIWAC-B-9017-facet-natural01.png','https://placehold.co/1240?text=Image+Not+Found','https://www.studio-henk.nl/Images/emersya/chairs-without-background/858019/image-thumb__858019__TransparentSquare/C-OBLIWAC-B-9017-facet-dolphin180.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/858523/image-thumb__858523__TransparentSquare/C-OBLIWAC-B-9017-facet-kiezel7.png','https://placehold.co/1240?text=Image+Not+Found']"
+    fabric-label="Stoffering"
+    fabric-names="['facet natural01', 'olbia ecru102', 'facet dolphin180', 'facet kiezel7', 'orion shitake124']"
+    fabric-images="['https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-natural01.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/olbia-ecru102.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-dolphin180.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-kiezel7.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Shitake124-fabric_1.jpg']"
+    >
+</product-card>
+
+<product-card
+    product-name="Co chair met armleuning"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-gerookt-gebeitst-co-chair-met-armleuning-zwart-orion-cream02','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-gerookt-gebeitst-co-chair-met-armleuning-zwart-facet-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-gerookt-gebeitst-co-chair-met-armleuning-zwart-orion-turtle88','https://placehold.co/1240?text=Image+Not+Found','https://www.studio-henk.nl/nl/products/eetkamerstoelen/eiken-gerookt-gebeitst-co-chair-met-armleuning-zwart-brema-beige05']"
+    product-prices="['Vanaf €449,-', 'Vanaf €549,-', 'Vanaf €449,-', 'Vanaf €449,-', 'Vanaf €549,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/801331/image-thumb__801331__TransparentSquare/C-COA-B-0002-orion-cream02.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/773982/image-thumb__773982__TransparentSquare/C-COA-B-0002-facet-natural01.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/801332/image-thumb__801332__TransparentSquare/C-COA-B-0002-orion-turtle88.png','https://placehold.co/1240?text=Image+Not+Found','https://www.studio-henk.nl/Images/emersya/chairs-without-background/829734/image-thumb__829734__TransparentSquare/C-COA-B-0002-brema-beige05.png']"
+    fabric-label="Stoffering"
+    fabric-names="['orion cream02', 'facet natural01', 'orion turtle88', 'orion shitake124', 'brema beige05']"
+    fabric-images="['https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-natural01.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Turtle88-fabric_1.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Shitake124-fabric_1.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/brema-beige05.jpg']"
+    >
+</product-card>
+
+<product-card
+    product-name="Coode Eettafelbank 120"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/coode-eettafelbank-120-zwart-facet-kiezel7','https://www.studio-henk.nl/nl/products/eetkamerstoelen/coode-eettafelbank-120-zwart-orion-cream02','https://www.studio-henk.nl/nl/products/eetkamerstoelen/coode-eettafelbank-120-zwart-facet-beige1037','https://www.studio-henk.nl/nl/products/eetkamerstoelen/coode-eettafelbank-120-zwart-facet-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/coode-eettafelbank-120-zwart-orion-cream02']"
+    product-prices="['Vanaf €1089,-', 'Vanaf €899,-', 'Vanaf €1089,-', 'Vanaf €1089,-', 'Vanaf €899,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/676179/image-thumb__676179__TransparentSquare/C-COOD-B-facet-kiezel7.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/801346/image-thumb__801346__TransparentSquare/C-COOD-B-orion-cream02.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/805020/image-thumb__805020__TransparentSquare/C-COOD-B-facet-beige1037.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/833218/image-thumb__833218__TransparentSquare/C-COOD-B-facet-natural01.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/801346/image-thumb__801346__TransparentSquare/C-COOD-B-orion-cream02.png']"
+    fabric-label="Stoffering"
+    fabric-names="['facet kiezel7', 'orion cream02', 'facet beige1037', 'facet natural01', 'orion cream02']"
+    fabric-images="['https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-kiezel7.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-beige1037.jpg','https://assets.studio-henk.nl/assets/Images/fabrics/small/facet-natural01.jpg','https://assets.studio-henk.nl/assets/_default_upload_bucket/Orion-Cream02-fabric_1.jpg']"
+    >
+</product-card>
+
+<product-card
+    product-name="Base stoel met armleuning"
+    product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/base-stoel-met-armleuning-eiken-hardwax-olie-naturel-3062','https://www.studio-henk.nl/nl/products/eetkamerstoelen/base-stoel-met-armleuning-eiken-zwarte-beits','https://www.studio-henk.nl/nl/products/eetkamerstoelen/base-stoel-met-armleuning-eiken-hardwax-oil-naturel-light-3041','https://www.studio-henk.nl/nl/products/eetkamerstoelen/base-stoel-met-armleuning-eiken-gerookt-gebeitst']"
+    product-prices="['Vanaf €519,-', 'Vanaf €519,-', 'Vanaf €519,-', 'Vanaf €519,-']"
+    product-images="['https://www.studio-henk.nl/Images/emersya/chairs-without-background/676117/image-thumb__676117__TransparentSquare/C-BSCA-3062.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/676123/image-thumb__676123__TransparentSquare/C-BSCA-0002.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/676119/image-thumb__676119__TransparentSquare/C-BSCA-3041.png','https://www.studio-henk.nl/Images/emersya/chairs-without-background/676125/image-thumb__676125__TransparentSquare/C-BSCA-9017.png']"
+    fabric-label="Afwerking"
+    fabric-names="['Eiken hardwax olie naturel 3062', 'Eiken zwarte beits', 'Eiken hardwax oil naturel light 3041', 'Eiken gerookt gebeitst']"
+    fabric-images="['https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_lakv2.jpg','https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_9017v2.jpg','https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_0008v2.jpg','https://assets.studio-henk.nl/assets/Images/configurator/top%20finish/textures_oak_0002v2.jpg']"
+    >
+</product-card>
+
+</div>
+<style>
+    .org-grid-lister__item {
         opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+        animation: 1s linear 0.3s forwards fadeIn;
     }
-  </style>
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
 </BaseLayout>
 <style>
-  .prodGrid {
-    padding: 1.5em;
-    gap: 24px;
-    display: grid;
-    max-width: 1920px;
-    margin-inline: auto;
-  }
-
-  @media only screen and (min-width: 768px) {
     .prodGrid {
-      background-color: #fff;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      padding: 1.5rem;
-      align-items: stretch;
+        padding: 1.5em;
+        gap: 24px;
+        display: grid;
+        max-width: 1920px;
+        margin-inline: auto;
     }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .prodGrid {
-      grid-template-columns: repeat(3, 1fr);
+    
+    @media only screen and (min-width: 768px) {
+        .prodGrid {
+            background-color: #fff;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            padding: 1.5rem;
+            align-items: stretch;
+        }
     }
-  }
-
-  @media only screen and (min-width: 1440px) {
-    .prodGrid {
-      grid-template-columns: repeat(4, 1fr);
+    
+    @media only screen and (min-width: 1200px) {
+        .prodGrid {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
-  }
+    
+    @media only screen and (min-width: 1440px) {
+        .prodGrid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
 </style>
