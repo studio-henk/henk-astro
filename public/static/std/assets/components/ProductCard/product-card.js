@@ -1,41 +1,41 @@
 class ProductCard extends HTMLElement {
-  constructor() {
-    super();
-    // Initialize productImages with an empty array if it's not already set
-    if (!this.productImages) {
-      this.productImages = [];
-    }
+    constructor() {
+        super();
+        // Initialize productImages with an empty array if it's not already set
+        if (!this.productImages) {
+            this.productImages = [];
+        }
 
-    // if (!this.productUsps) {
-    //   this.productUsps = "";
-    // }
-    if (!this.productPrices) {
-      this.productPrices = [];
-    }
-    if (!this.productLinks) {
-      this.productLinks = [];
-    }
-    if (!this.fabricImages) {
-      this.fabricImages = [];
-    }
-    if (!this.fabricNames) {
-      this.fabricNames = [];
-    }
+        // if (!this.productUsps) {
+        //   this.productUsps = "";
+        // }
+        if (!this.productPrices) {
+            this.productPrices = [];
+        }
+        if (!this.productLinks) {
+            this.productLinks = [];
+        }
+        if (!this.fabricImages) {
+            this.fabricImages = [];
+        }
+        if (!this.fabricNames) {
+            this.fabricNames = [];
+        }
 
-    if (!this.fabricLabel) {
-      this.fabricLabel = "Upholstery";
-    }
+        if (!this.fabricLabel) {
+            this.fabricLabel = "Upholstery";
+        }
 
-    if (!this.productSwatchSize) {
-      this.productSwatchSize = "small";
-    }
+        if (!this.productSwatchSize) {
+            this.productSwatchSize = "small";
+        }
 
-    // Create a shadow root
-    this.shadow = this.attachShadow({ mode: "open" });
+        // Create a shadow root
+        this.shadow = this.attachShadow({ mode: "open" });
 
-    // Define a template for the component
-    this.template = document.createElement("template");
-    this.template.innerHTML = `
+        // Define a template for the component
+        this.template = document.createElement("template");
+        this.template.innerHTML = `
     <style>
         .ProductCard {
     background-color: var(--color-background-primary);
@@ -67,7 +67,8 @@ class ProductCard extends HTMLElement {
 
   .ProductCard__img {    
     width: auto;
-    height: 100%;
+    // height: 100%;
+    height: auto;
     object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -246,9 +247,9 @@ class ProductCard extends HTMLElement {
           <div class="ProductCard__config-options">
             <p class="ProductCard__label">${this.fabricLabel}</p>            
             <div class="ProductCard__swatch-container${
-              this.productSwatchSize === "small"
-                ? " ProductCard__swatch-container--small"
-                : ""
+                this.productSwatchSize === "small"
+                    ? " ProductCard__swatch-container--small"
+                    : ""
             }">
               ${this.renderSwatches()}
             </div>
@@ -267,141 +268,156 @@ class ProductCard extends HTMLElement {
       </div>
     `;
 
-    // Clone the template content and append it to the shadow root
-    this.shadow.appendChild(this.template.content.cloneNode(true));
-  }
+        // Clone the template content and append it to the shadow root
+        this.shadow.appendChild(this.template.content.cloneNode(true));
+    }
 
-  connectedCallback() {
-    // Add event listeners for swatch hover
-    this.shadow.querySelectorAll(".ProductCard__swatch").forEach((swatch) => {
-      swatch.addEventListener("mouseover", () => {
-        // Remove selected class from all swatches within this card
-        this.removeAllSelectedSwatches();
+    connectedCallback() {
+        // Add event listeners for swatch hover
+        this.shadow
+            .querySelectorAll(".ProductCard__swatch")
+            .forEach((swatch) => {
+                swatch.addEventListener("mouseover", () => {
+                    // Remove selected class from all swatches within this card
+                    this.removeAllSelectedSwatches();
 
-        // Add selected class to the hovered swatch
-        swatch.classList.add("ProductCard__swatch--selected");
+                    // Add selected class to the hovered swatch
+                    swatch.classList.add("ProductCard__swatch--selected");
 
-        this.updateMainImage(swatch.getAttribute("data-image"));
-        this.updateMainImageHref(swatch.getAttribute("data-link"));
-        this.updateButtonHref(swatch.getAttribute("data-link"));
-        this.updatePrice(swatch.getAttribute("data-prices"));
-      });
-      swatch.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent default click behavior
-      });
-    });
-  }
+                    this.updateMainImage(swatch.getAttribute("data-image"));
+                    this.updateMainImageHref(swatch.getAttribute("data-link"));
+                    this.updateButtonHref(swatch.getAttribute("data-link"));
+                    this.updatePrice(swatch.getAttribute("data-prices"));
+                });
+                swatch.addEventListener("click", (event) => {
+                    event.preventDefault(); // Prevent default click behavior
+                });
+            });
+    }
 
-  // Define getters and setters for props as attributes
-  get productName() {
-    return this.getAttribute("product-name") || "";
-  }
+    // Define getters and setters for props as attributes
+    get productName() {
+        return this.getAttribute("product-name") || "";
+    }
 
-  set productName(value) {
-    this.setAttribute("product-name", value);
-  }
+    set productName(value) {
+        this.setAttribute("product-name", value);
+    }
 
-  get productDescription() {
-    return this.getAttribute("product-description") || "";
-  }
+    get productDescription() {
+        return this.getAttribute("product-description") || "";
+    }
 
-  set productDescription(value) {
-    this.setAttribute("product-description", value);
-  }
+    set productDescription(value) {
+        this.setAttribute("product-description", value);
+    }
 
-  get productImages() {
-    const attributeValue = this.getAttribute("product-images");
-    return attributeValue ? JSON.parse(attributeValue.replace(/'/g, '"')) : [];
-  }
+    get productImages() {
+        const attributeValue = this.getAttribute("product-images");
+        return attributeValue
+            ? JSON.parse(attributeValue.replace(/'/g, '"'))
+            : [];
+    }
 
-  set productImages(value) {
-    // Convert the value to JSON string and replace double quotes with single quotes
-    const jsonString = JSON.stringify(value).replace(/"/g, "'");
-    this.setAttribute("product-images", jsonString);
-  }
+    set productImages(value) {
+        // Convert the value to JSON string and replace double quotes with single quotes
+        const jsonString = JSON.stringify(value).replace(/"/g, "'");
+        this.setAttribute("product-images", jsonString);
+    }
 
-  get productUsps() {
-    const attributeValue = this.getAttribute("product-usps");
-    return attributeValue && attributeValue !== "[]"
-      ? JSON.parse(attributeValue.replace(/'/g, '"'))
-      : null;
-  }
+    get productUsps() {
+        const attributeValue = this.getAttribute("product-usps");
+        return attributeValue && attributeValue !== "[]"
+            ? JSON.parse(attributeValue.replace(/'/g, '"'))
+            : null;
+    }
 
-  set productUsps(value) {
-    // Convert the value to JSON string and replace double quotes with single quotes
-    const jsonString = JSON.stringify(value).replace(/"/g, "'");
-    this.setAttribute("product-usps", jsonString);
-  }
+    set productUsps(value) {
+        // Convert the value to JSON string and replace double quotes with single quotes
+        const jsonString = JSON.stringify(value).replace(/"/g, "'");
+        this.setAttribute("product-usps", jsonString);
+    }
 
-  get productLinks() {
-    const attributeValue = this.getAttribute("product-links");
-    return attributeValue ? JSON.parse(attributeValue.replace(/'/g, '"')) : [];
-  }
+    get productLinks() {
+        const attributeValue = this.getAttribute("product-links");
+        return attributeValue
+            ? JSON.parse(attributeValue.replace(/'/g, '"'))
+            : [];
+    }
 
-  set productLinks(value) {
-    // Convert the value to JSON string and replace double quotes with single quotes
-    const jsonString = JSON.stringify(value).replace(/"/g, "'");
-    this.setAttribute("product-links", jsonString);
-  }
+    set productLinks(value) {
+        // Convert the value to JSON string and replace double quotes with single quotes
+        const jsonString = JSON.stringify(value).replace(/"/g, "'");
+        this.setAttribute("product-links", jsonString);
+    }
 
-  get productPrices() {
-    // return JSON.parse(this.getAttribute("product-prices")) || [];
-    const attributeValue = this.getAttribute("product-prices");
-    return attributeValue ? JSON.parse(attributeValue.replace(/'/g, '"')) : [];
-  }
+    get productPrices() {
+        // return JSON.parse(this.getAttribute("product-prices")) || [];
+        const attributeValue = this.getAttribute("product-prices");
+        return attributeValue
+            ? JSON.parse(attributeValue.replace(/'/g, '"'))
+            : [];
+    }
 
-  set productPrices(value) {
-    this.setAttribute(
-      "product-prices",
-      JSON.stringify(value).replace(/"/g, "'")
-    );
-  }
+    set productPrices(value) {
+        this.setAttribute(
+            "product-prices",
+            JSON.stringify(value).replace(/"/g, "'")
+        );
+    }
 
-  get productSwatchSize() {
-    return this.getAttribute("product-swatch-size") || "";
-  }
+    get productSwatchSize() {
+        return this.getAttribute("product-swatch-size") || "";
+    }
 
-  set productSwatchSize(value) {
-    this.setAttribute("product-swatch-size", value);
-  }
+    set productSwatchSize(value) {
+        this.setAttribute("product-swatch-size", value);
+    }
 
-  get fabricLabel() {
-    return this.getAttribute("fabric-label") || "";
-  }
+    get fabricLabel() {
+        return this.getAttribute("fabric-label") || "";
+    }
 
-  set fabricLabel(value) {
-    this.setAttribute("fabric-label", value);
-  }
+    set fabricLabel(value) {
+        this.setAttribute("fabric-label", value);
+    }
 
-  get fabricImages() {
-    // return JSON.parse(this.getAttribute("fabric-images")) || [];
-    const attributeValue = this.getAttribute("fabric-images");
-    return attributeValue ? JSON.parse(attributeValue.replace(/'/g, '"')) : [];
-  }
+    get fabricImages() {
+        // return JSON.parse(this.getAttribute("fabric-images")) || [];
+        const attributeValue = this.getAttribute("fabric-images");
+        return attributeValue
+            ? JSON.parse(attributeValue.replace(/'/g, '"'))
+            : [];
+    }
 
-  set fabricImages(value) {
-    this.setAttribute(
-      "fabric-images",
-      JSON.stringify(value).replace(/"/g, "'")
-    );
-  }
+    set fabricImages(value) {
+        this.setAttribute(
+            "fabric-images",
+            JSON.stringify(value).replace(/"/g, "'")
+        );
+    }
 
-  get fabricNames() {
-    // return JSON.parse(this.getAttribute("fabric-names")) || [];
-    const attributeValue = this.getAttribute("fabric-names");
-    return attributeValue ? JSON.parse(attributeValue.replace(/'/g, '"')) : [];
-  }
+    get fabricNames() {
+        // return JSON.parse(this.getAttribute("fabric-names")) || [];
+        const attributeValue = this.getAttribute("fabric-names");
+        return attributeValue
+            ? JSON.parse(attributeValue.replace(/'/g, '"'))
+            : [];
+    }
 
-  set fabricNames(value) {
-    this.setAttribute("fabric-names", JSON.stringify(value).replace(/"/g, "'"));
-  }
+    set fabricNames(value) {
+        this.setAttribute(
+            "fabric-names",
+            JSON.stringify(value).replace(/"/g, "'")
+        );
+    }
 
-  renderSwatches() {
-    let swatchesHTML = this.fabricImages
-      .map(
-        (image, index) => `
+    renderSwatches() {
+        let swatchesHTML = this.fabricImages
+            .map(
+                (image, index) => `
     <a href="#" class="ProductCard__swatch${
-      index === 0 ? " ProductCard__swatch--selected" : ""
+        index === 0 ? " ProductCard__swatch--selected" : ""
     }" 
       title="${this.fabricNames[index]}" 
       data-image="${this.productImages[index]}" 
@@ -411,67 +427,69 @@ class ProductCard extends HTMLElement {
       <img src="${image}" alt="stof" />
     </a>
   `
-      )
-      .join("");
+            )
+            .join("");
 
-    return swatchesHTML;
-  }
+        return swatchesHTML;
+    }
 
-  renderUsps() {
-    let uspsHTML = `
+    renderUsps() {
+        let uspsHTML = `
     <ul>
       ${this.productUsps
-        .map(
-          (item, index) => `
+          .map(
+              (item, index) => `
           <li>${this.productUsps[index]}</li>
         `
-        )
-        .join("")}
+          )
+          .join("")}
     </ul>
   `;
 
-    return uspsHTML;
-  }
-
-  // Method to update main image
-  updateMainImage(imagePath) {
-    const mainImage = this.shadow.querySelector(".ProductCard__img");
-    if (mainImage) {
-      mainImage.src = `${imagePath}`;
+        return uspsHTML;
     }
-  }
 
-  // Method to update main image href
-  updateMainImageHref(imageLink) {
-    const mainImageLink = this.shadow.querySelector(".ProductCard__link");
-    if (mainImageLink) {
-      mainImageLink.href = `${imageLink}`;
+    // Method to update main image
+    updateMainImage(imagePath) {
+        const mainImage = this.shadow.querySelector(".ProductCard__img");
+        if (mainImage) {
+            mainImage.src = `${imagePath}`;
+        }
     }
-  }
 
-  // Method to update button href
-  updateButtonHref(imageLink) {
-    const button = this.shadow.querySelector(".sh-atom-button");
-    if (button) {
-      button.href = `${imageLink}`;
+    // Method to update main image href
+    updateMainImageHref(imageLink) {
+        const mainImageLink = this.shadow.querySelector(".ProductCard__link");
+        if (mainImageLink) {
+            mainImageLink.href = `${imageLink}`;
+        }
     }
-  }
 
-  // Method to update price element
-  updatePrice(price) {
-    const priceElement = this.shadow.querySelector(".ProductCard__Price");
-    if (priceElement) {
-      priceElement.textContent = price;
+    // Method to update button href
+    updateButtonHref(imageLink) {
+        const button = this.shadow.querySelector(".sh-atom-button");
+        if (button) {
+            button.href = `${imageLink}`;
+        }
     }
-  }
 
-  removeAllSelectedSwatches() {
-    this.shadow
-      .querySelectorAll(".ProductCard__swatch--selected")
-      .forEach((selectedSwatch) => {
-        selectedSwatch.classList.remove("ProductCard__swatch--selected");
-      });
-  }
+    // Method to update price element
+    updatePrice(price) {
+        const priceElement = this.shadow.querySelector(".ProductCard__Price");
+        if (priceElement) {
+            priceElement.textContent = price;
+        }
+    }
+
+    removeAllSelectedSwatches() {
+        this.shadow
+            .querySelectorAll(".ProductCard__swatch--selected")
+            .forEach((selectedSwatch) => {
+                selectedSwatch.classList.remove(
+                    "ProductCard__swatch--selected"
+                );
+            });
+    }
 }
 
 // Define the custom element
