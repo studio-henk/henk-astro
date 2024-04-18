@@ -33,7 +33,7 @@ class ProductCard extends HTMLElement {
 
         // Access the value of the fabric-label-suffix attribute directly in the constructor
         const fabricLabelSuffix = this.getAttribute("fabric-label-suffix");
-        this.fabricLabelSuffix = fabricLabelSuffix || "Meer";
+        this.fabricLabelSuffix = fabricLabelSuffix || "+Meer";
 
         // Create a shadow root
         this.shadow = this.attachShadow({ mode: "open" });
