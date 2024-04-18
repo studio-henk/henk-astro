@@ -23,9 +23,17 @@ class ProductCard extends HTMLElement {
             this.fabricLabel = "Upholstery";
         }
 
+        if (!this.fabricLabelSuffix) {
+            this.fabricLabelSuffix = "Meer";
+        }
+
         if (!this.productSwatchSize) {
             this.productSwatchSize = "small";
         }
+
+        // Access the value of the fabric-label-suffix attribute directly in the constructor
+        const fabricLabelSuffix = this.getAttribute("fabric-label-suffix");
+        this.fabricLabelSuffix = fabricLabelSuffix || "Meer";
 
         // Create a shadow root
         this.shadow = this.attachShadow({ mode: "open" });
@@ -259,7 +267,9 @@ class ProductCard extends HTMLElement {
                     }">
                     ${this.renderSwatches()}
                     </div>
-                    <span class="ProductCard__label">+540</span>
+                    <span class="ProductCard__label">${
+                        this.fabricLabelSuffix
+                    }</span>
                 </div>
                 <div class="button-group" data-alignment="end" part="button-group align-end">
                     <a 
