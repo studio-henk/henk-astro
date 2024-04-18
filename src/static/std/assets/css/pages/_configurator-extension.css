@@ -74,11 +74,13 @@
 needed to position content below configurator image on portrait screens
 otherwise it would go under the image.
 */
-.configurator__grid:not(.configurator__grid--is-landscape) .configurator__right-column {
+.configurator__grid:not(.configurator__grid--is-landscape)
+  .configurator__right-column {
   padding-top: calc(var(--size-height-for-configurator, 12rem) + 1rem);
 }
 
-.configurator__grid.configurator__grid--is-landscape .configurator__right-column {
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__right-column {
   padding-top: 2rem;
 }
 
@@ -95,7 +97,7 @@ otherwise it would go under the image.
   margin: 0 !important;
 }
 
-.configurator .steps+.steps {
+.configurator .steps + .steps {
   margin: 0;
 }
 
@@ -127,7 +129,8 @@ otherwise it would go under the image.
   width: 50%;
 }
 
-.configurator__grid.configurator__grid--is-landscape .configurator__view--image {
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__view--image {
   /* height: calc(100svh - var(--size-height-for-hero)); */
   position: relative;
 }
@@ -136,13 +139,15 @@ otherwise it would go under the image.
   opacity: 1;
 }
 
-.configurator__grid.configurator__grid--is-landscape .configurator__view--image img {
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__view--image
+  img {
   object-fit: cover;
   aspect-ratio: 16/9;
   position: relative;
 }
 
-.configurator .configurator__container>.configurator__grid,
+.configurator .configurator__container > .configurator__grid,
 .configurator__controls-row {
   margin: 0;
 }
@@ -195,7 +200,9 @@ otherwise it would go under the image.
 }
 
 .configurator__right-column .choose-cards__item--image::before {
-  background: transparent url("/static/std/assets/toolkit/svg-standalone/icon-checkmark-white.svg") no-repeat 50%;
+  background: transparent
+    url("/static/std/assets/toolkit/svg-standalone/icon-checkmark-white.svg")
+    no-repeat 50%;
   top: 8px;
   right: 6px;
 }
@@ -210,6 +217,16 @@ otherwise it would go under the image.
   position: sticky;
   bottom: 0;
   z-index: 99;
+  padding: 1em;
+  background-color: #fff;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .configurator .configurator__right-column .product-summary {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 .product-specificaties {
@@ -221,7 +238,7 @@ otherwise it would go under the image.
   z-index: 99;
 }
 
-section.configurator~footer.org-footer {
+section.configurator ~ footer.org-footer {
   margin-top: 0;
 }
 

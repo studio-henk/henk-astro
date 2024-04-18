@@ -49,7 +49,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-
   .sh-org-blog-teaser .blog-swiper,
   .sh-org-blog-teaser .swiper {
     padding: 0 0 24px 24px !important;
@@ -63,4 +62,8 @@
 
 .sh-org-blog-teaser .sh-org-blog-teaser__image {
   border-radius: 0;
+}
+
+.sh-org-blog-teaser .sh-org-blog-teaser__post-title {
+  margin-top: 1rem;
 }
