@@ -374,11 +374,11 @@ class ProductCard extends HTMLElement {
             : [];
     }
 
-    set productImages(value) {
-        // Convert the value to JSON string and replace double quotes with single quotes
-        const jsonString = JSON.stringify(value).replace(/"/g, "'");
-        this.setAttribute("product-images", jsonString);
-    }
+    // set productImages(value) {
+    //     // Convert the value to JSON string and replace double quotes with single quotes
+    //     const jsonString = JSON.stringify(value).replace(/"/g, "'");
+    //     this.setAttribute("product-images", jsonString);
+    // }
 
     get productUsps() {
         const attributeValue = this.getAttribute("product-usps");
