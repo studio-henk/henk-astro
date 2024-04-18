@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/astro/Icon.astro";
+import { IconSizes } from "../../../types/iconTypes";
 // import { Icon } from 'astro-icon/components';
 ---
 
@@ -3753,7 +3754,10 @@ import Icon from "../../components/astro/Icon.astro";
               In winkelwagen <span>€ 1899</span>
             </a>
             <a href="#" class="sh-atom-button" data-style="filled">Bekijk in winkel</a>
-            <a href="#" class="sh-atom-button" data-style="filled">Deel je keuze</a>
+            <!-- <a href="#" class="sh-atom-button" data-style="filled">Deel je keuze</a> -->
+            <a id="button-share" href="#" class="sh-atom-button" data-style="filled" data-shape="circle">
+                <Icon name="icon-share" width={IconSizes.Small} height={IconSizes.Small} />
+            </a>
           </div>
         </div>
       </div>
