@@ -7,8 +7,13 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Chairs">
-    <script
+    <!-- <script
     src="/static/std/assets/components/ProductCard/product-card.js"
+    type="module"
+    is:inline
+    ></script> -->
+    <script
+    src="/static/std/assets/components/ProductCard/product-card.v.1.0.1.js"
     type="module"
     is:inline
     ></script>
@@ -44,13 +49,14 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 <div class="prodGrid">    
     
     <product-card
-    product-name="Ode stoel WEBP"
+    product-name="Ode stoel"
     product-links="['https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-orion-cream02', 'https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-facet-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-orion-turtle88','https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-soil-natural01','https://www.studio-henk.nl/nl/products/eetkamerstoelen/ode-chair-zonder-armleuning-zwart-brema-beige05']"
     product-prices="['Vanaf €399,-', 'Vanaf €489,-', 'Vanaf €399,-', 'Vanaf €489,-', 'Vanaf €489,-']"
     product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-ODE-B-orion-cream02.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/C-ODE-B-facet-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/C-ODE-B-orion-turtle88.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/C-ODE-B-soil-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/C-ODE-B-brema-beige05.webp']"
     fabric-label="Stoffering"
     fabric-names="['orion cream02', 'facet natural01', 'orion turtle88', 'soil-natural01', 'brema-beige05']"
     fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Cream02-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Turtle88-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/soil-natural01_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/brema-beige05.webp']"
+    product-tags="['5+1 gratis']"
     >
 </product-card>
 
@@ -62,6 +68,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-ODE
 fabric-label="Stoffering"
 fabric-names="['cube natural01', 'orion cream02', 'orion shitake124', 'orion turtle88', 'brema beige05']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/cube-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Cream02-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Shitake124-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Turtle88-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/brema-beige05.webp']"
+product-tags="['5+1 gratis']"
 ></product-card>
 
 <product-card
@@ -72,6 +79,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-OBL
 fabric-label="Stoffering"
 fabric-names="['facet natural01', 'brema natural01', 'facet dolphin180', 'facet kiezel7', 'soil natural01']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/brema-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-dolphin180.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-kiezel7.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/soil-natural01_1.webp']"
+product-tags="['5+1 gratis']"
 ></product-card>
 
 <product-card
@@ -82,6 +90,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-OBL
 fabric-label="Stoffering"
 fabric-names="['facet natural01', 'regain eucalyptus193', 'facet dolphin180', 'facet kiezel7', 'juke grey65']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/regain-eucalyptus193.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-dolphin180.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-kiezel7.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/juke-grey65.webp']"
+product-tags="['5+1 gratis']"
 ></product-card>
 
 <product-card
@@ -92,6 +101,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-CO-
 fabric-label="Stoffering"
 fabric-names="['orion cream02', 'facet natural01', 'cube black61', 'orion shitake124', 'brema beige05']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Cream02-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/cube-black61.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Shitake124-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/brema-beige05.webp']"
+product-tags="['5+1 gratis']"
 ></product-card>
 
 <product-card
@@ -102,6 +112,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-COA
 fabric-label="Stoffering"
 fabric-names="['Orion Cream02', 'Facet Natural01', 'Orion Turtle88', 'Orion Steel149', 'Brema Beige05']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Cream02-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-natural01.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Turtle88-fabric_1.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Steel149-fabric.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/brema-beige05.webp']"
+product-tags="['5+1 gratis']"
 ></product-card>
 
 <product-card
@@ -112,6 +123,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-BOL
 fabric-label="Stoffering"
 fabric-names="['hallingdal65 220', 'andermaat 11', 'orion cream02', 'regain natural01', 'tonus4 374']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/hallingdal65-220.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/andermaat-11_1.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Cream02-fabric_1.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/regain-natural01_2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/tonus4-374.webp']"
+product-tags="['5+1 gratis']"
 >
 </product-card>
 
@@ -123,6 +135,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-BOL
 fabric-label="Stoffering"
 fabric-names="['rewool 0868', 'facet beige1037', 'hallindal65 100', 'orion cream02', 'regain taupe12']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/rewool-0868_1.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-beige1037.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/hallingdal65-100.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Cream02-fabric_1.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/regain-taupe12_2.webp']"
+product-tags="['5+1 gratis']"
 >
 </product-card>
 
@@ -134,6 +147,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-BSC
 fabric-label="Afwerking"
 fabric-names="['Eiken hardwax olie naturel 3062', 'Eiken gerookt gebeitst', 'Eiken hardwax oil naturel light 3041', 'Eiken zwarte beits']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_lakv2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_0002v2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_0008v2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_9017v2.webp']"
+product-tags="['5+1 gratis']"
 >
 </product-card>
 
@@ -145,6 +159,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-BSC
 fabric-label="Afwerking"
 fabric-names="['Eiken hardwax olie naturel 3062', 'Eiken zwarte beits', 'Eiken hardwax oil naturel light 3041', 'Eiken gerookt gebeitst']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_lakv2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_9017v2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_0008v2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_0002v2.webp']"
+product-tags="['5+1 gratis']"
 >
 </product-card>
 
@@ -156,6 +171,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-COO
 fabric-label="Stoffering"
 fabric-names="['facet kiezel7', 'orion cream02', 'facet beige1037', 'facet natural01', 'orion cream02']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-kiezel7.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Cream02-fabric_1.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-beige1037.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/facet-natural01.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/Orion-Cream02-fabric_1.webp']"
+product-tags="['5+1 gratis']"
 >
 </product-card>
 
@@ -167,6 +183,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-TRA
 fabric-label="Afwerking"
 fabric-names="['Zwart Poedercoating KTL', 'Licht ivoor Poedercoating KTL', 'Kaki grijs Poedercoating KTL', 'Wit Poedercoating KTL']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/9005.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/1015.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/7008.webp', 'https://assets.studio-henk.nl/assets/test/ab-test-lister/9010.webp']"
+product-tags="['5+1 gratis']"
 >
 </product-card>
 
@@ -178,6 +195,7 @@ product-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/C-CHE
 fabric-label="Afwerking"
 fabric-names="['Beuken zwart gebeitst','Eiken hardwax oil naturel light 3041','Beuken gerookt gebeitst','Eiken hardwax olie naturel 3062']"
 fabric-images="['https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_9017v2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_0008v2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_0002v2.webp','https://assets.studio-henk.nl/assets/test/ab-test-lister/textures_oak_lakv2.webp']"
+product-tags="['5+1 gratis']"
 >
 </product-card>
 
