@@ -222,13 +222,13 @@ otherwise it would go under the image.
   display: flex;
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .configurator .configurator__right-column .product-summary {
     flex-direction: column;
     gap: 16px;
     padding-top: 60px;
   }
-}
+} */
 
 .product-specificaties {
   padding: 1em;
@@ -279,7 +279,7 @@ section.configurator ~ footer.org-footer {
 }
 
 #button-share {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  right: 0;
+  right: 0; */
 }
