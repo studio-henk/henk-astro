@@ -164,6 +164,7 @@
 @import "patterns/_form.css";
 @import "patterns/_popover.css";
 @import "patterns/_tables.css";
+@import "patterns/_sticky.css";
 
 /* Modules */
 @import "modules/_filter.css";

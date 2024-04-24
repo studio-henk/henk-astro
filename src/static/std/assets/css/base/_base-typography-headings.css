@@ -10,7 +10,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-weight: 400;
+  font-weight: var(--weight-font-heading, 500);
   text-align: left;
   margin: 24px 0;
 }
