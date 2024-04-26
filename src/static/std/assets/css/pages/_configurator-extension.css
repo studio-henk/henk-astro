@@ -210,7 +210,18 @@ otherwise it would go under the image.
   position: sticky;
   bottom: 0;
   z-index: 99;
+  padding: 1em;
+  background-color: #fff;
+  display: flex;
 }
+
+/* @media screen and (max-width: 767px) {
+  .configurator .configurator__right-column .product-summary {
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 60px;
+  }
+} */
 
 .product-specificaties {
   padding: 1em;
@@ -258,4 +269,10 @@ section.configurator~footer.org-footer {
   .configurator__grid.configurator__grid--is-landscape .configurator__view {
     width: 70%;
   }
+}
+
+#button-share {
+  /* position: absolute;
+  top: 0;
+  right: 0; */
 }
