@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/astro/Icon.astro";
-// import { Icon } from 'astro-icon/components';
+import { IconSizes } from "../../../types/iconTypes";
 ---
 
 <BaseLayout title="Configurator">
@@ -28,9 +28,9 @@ import Icon from "../../components/astro/Icon.astro";
               data-bstoggle="modal"
               data-bstarget="#config_image"
             >
-              <span id="configurator__price1" class="sh-atom-button__price"
+              <!-- <span id="configurator__price1" class="sh-atom-button__price"
                 >€ 1849</span
-              >
+              > -->
               <!--<img id="configurator__image" src="/static/std/assets/toolkit/images/T-RC-0008-STD-B-B.jpg" alt="Configurator" class="img-responsive">-->
               <img
                 id="configurator__image"
@@ -3728,29 +3728,22 @@ import Icon from "../../components/astro/Icon.astro";
             </div>
           </div>
 
-          <div class="product-summary">
+          <div class="product-summary" style="justify-content: flex-end;">
+            here
             <a
               href="javascript:redirectToCart()"
               class="sh-atom-button"
               data-style="filled"
-              data-alignment="price-start"
-              data-expand="true"
-              data-shape="toolbar"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 64 64"
-                id="icon-cart-full"
-                width="22"
-                style="height: auto;"
-              >
-                <path
-                  d="M17.2 49.8c0 .8.3 1.5.9 2.1s1.3.9 2.1.9 1.5-.3 2.1-.9c.6-.6.9-1.3.9-2.1s-.3-1.5-.9-2.1-1.3-.9-2.1-.9-1.5.3-2.1.9c-.6.7-.9 1.3-.9 2.1zm26.7 0c0 .8.3 1.5.9 2.1.6.6 1.3.9 2.1.9s1.5-.3 2.1-.9c.6-.6.9-1.3.9-2.1s-.3-1.5-.9-2.1c-.6-.6-1.3-.9-2.1-.9s-1.5.3-2.1.9c-.5.7-.9 1.3-.9 2.1zM16.6 17.5l-1.1-4.9c-.2-.8-.6-1.2-1.4-1.2H8.2v2.8h4.5l1.8 7.9 2.9 13.2-1.6 6.9c-.1.4.1.9.3 1.2.3.4.6.6 1.2.6h35.2v-2.8H19.1l.6-2.9h30.5l5.4-17c.4-1.3 1.3-3.9 1.3-3.9H53"
-                  fill="currentcolor"
-                >
-                </path>
-              </svg>
-              Add to cart
+            >  
+                <Icon
+                class="sh-atom-icon"
+                width={IconSizes.Medium}
+                height={IconSizes.Medium}
+                name="icon-bag"
+            />              
+            
+                <!-- In winkelwagen -->
+                <span>€ 1899</span>
             </a>
           </div>
         </div>
