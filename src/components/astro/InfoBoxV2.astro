@@ -1,19 +1,22 @@
 ---
-import Icon from '../components/astro/Icon.astro';
+import Icon from '../../components/astro/Icon.astro';
 
 interface Props {
     title?: string;
     icon?: string;
-    content?: string;
     style?: string;
 }
 
 const {
     title = 'Heading here',
     icon,
-    content = '<p>Lorem ipsum, content here.</p>',
     style,
 } = Astro.props;
+
+// const compSlots = Astro.slots;
+// console.log("compSlots:", compSlots);
+// console.log("footSlot:", compSlots.footer);
+const slots = Astro.slots;
 ---
 
 <div
@@ -32,17 +35,20 @@ const {
                 )
             }
         </header>
-        <div
-            class="info-box__body"
-            set:html={content}
-        />
-        <div class="info-box__footer">
-            <a
-                href="#"
-                class="sh-atom-button"
-                data-style="outline-dark"
-                >button</a
-            >
+        <div class="info-box__body">
+            <slot>
+                <p>Lorem ipsum, content here.</p>
+            </slot>
         </div>
+        {slots.footer &&
+            <div class="info-box__footer">
+                <slot name="footer"></slot>
+            </div>
+        }
     </div>
 </div>
+<style>
+    .info-box__heading {
+        font-weight: var(--weight-font-500, 500);
+    }
+</style>

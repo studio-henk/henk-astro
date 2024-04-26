@@ -1,7 +1,10 @@
 {
   "extends": "astro/tsconfigs/base",
   "include": ["src/**/*.ts", "**/*.ts"],
-  "compilerOptions": {    
+  "compilerOptions": {
+    "target": "es2018",
+    "outDir": "public/components/custom-elements",
+    "rootDir": "src/components/custom-elements",
     "forceConsistentCasingInFileNames": false,
     "baseUrl": ".",
     "paths": {

@@ -6,6 +6,43 @@ import InfoBox from "../../../components/InfoBox.astro";
 ---
 
 <BaseLayout title="Component InfoBox">
+    
+    <h1>InfoBox Component Documentation</h1>
+
+    <p>The InfoBox component is a versatile component that allows you to display informational content in a structured and visually appealing manner. It provides options for displaying a title, an optional icon, main content, and a footer section. The component is designed to be customizable and accessible, making it suitable for a wide range of use cases.</p>
+
+    <h2>Props</h2>
+    <p>The InfoBox component accepts the following props:</p>
+    <ul>
+        <li><code>title</code> (optional): The title of the InfoBox. Default value is "Heading here".</li>
+        <li><code>icon</code> (optional): The name of the icon to display next to the title. Default value is <code>undefined</code>.</li>
+        <li><code>style</code> (optional): Custom CSS styles to apply to the InfoBox container. Default value is an empty string.</li>
+    </ul>
+
+    <h2>Slots</h2>
+    <p>The InfoBox component supports the following slots:</p>
+    <ul>
+        <li>Default Slot: Use this slot to insert the main content of the InfoBox. This slot is required.</li>
+        <li>Footer Slot: Use this slot to insert additional content in the footer section of the InfoBox. This slot is optional.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Here's an example of how to use the InfoBox component:</p>
+    <pre><code>&lt;InfoBox title="Example InfoBox" icon="info"&gt;
+    &lt;p&gt;This is the main content of the InfoBox.&lt;/p&gt;
+    
+    &lt;div slot="footer"&gt;
+        &lt;button&gt;Footer Button&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/InfoBox&gt;</code></pre>
+
+    <h2>Accessibility</h2>
+    <p>The InfoBox component is designed with accessibility in mind. It uses semantic HTML elements, ARIA attributes, and keyboard navigation to ensure that it is usable by all users, including those with disabilities.</p>
+
+    <h2>Support and Feedback</h2>
+    <p>If you have any questions, feedback, or issues related to the InfoBox component, please feel free to reach out to us on GitHub or via email.</p>
+
+    <hr>
     <div class="grid-info-box">
         <InfoBox
             title="Title here. No icon."

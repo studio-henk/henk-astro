@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/astro/Icon.astro';
 import { IconSizes } from '../../../types/iconTypes';
+import InfoBox from '../../components/InfoBox.astro';
+import InfoBoxV2 from '../../components/astro/InfoBoxV2.astro';
 // import { Icon } from 'astro-icon/components';
 ---
 
@@ -4380,27 +4382,37 @@ import { IconSizes } from '../../../types/iconTypes';
                                 </li>
                                 <li
                                     class="product-specificaties__list--item"
-                                    style="justify-content: center; border-bottom: 0px;"
+                                    style="border-bottom: 0px;"
                                 >
-                                    <a
-                                        href="/en/stores"
-                                        class="sh-atom-button"
-                                        data-style="filled"
-                                        >Bekijk in winkel</a
+                                    <InfoBoxV2
+                                        title="Bekijk je tafel in een van onze winkels"
+                                        icon="icon-location"
                                     >
+                                        <p>
+                                            <a href="/en/stores">Bezoek</a> ons of
+                                            maak een afspraak in Amsterdam, Antwerpen,
+                                            Rotterdam of Utrecht.
+                                        </p>
+                                        <a
+                                            slot="footer"
+                                            href="/en/stores"
+                                            class="sh-atom-button"
+                                            data-style="outline-dark"
+                                            >Bekijk in winkel
+                                        </a>
+                                    </InfoBoxV2>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
                     <div
                         class="product-summary"
                         style="justify-content: space-between;"
                         data-is-sticky="true"
                     >
-                        <base-modal
+                        <base-modal-v2
                             hidden
-                            modalTitle="Deel je keuze"
+                            modalTitle="Mail je keuze"
                         >
                             <button
                                 id="button-share"
@@ -4415,56 +4427,79 @@ import { IconSizes } from '../../../types/iconTypes';
                                     height={IconSizes.Small}
                                 />
                             </button>
+                            <!-- <button
+                                id="button-share"
+                                class="sh-atom-button modal_open"
+                                data-style="filled"
+                                slot="trigger"
+                            >
+                                <Icon
+                                    name="icon-mail"
+                                    width={IconSizes.Medium}
+                                    height={IconSizes.Medium}
+                                />
+                                Mail
+                            </button> -->
 
                             <div
                                 class="slot"
                                 slot="content"
-                            >                            
-                            <div
-                                class="share-form-container"
                             >
-                            <form class="base-form" action="/submitted" method="POST">
-                                <fieldset class="base-form__fieldset">
-                                <label
-                                class="base-form__label"
-                                for="txt_email"
-                                title="Please enter a valid email address."
-                            >
-                                Email Address
-                            </label>
-                            <input
-                                class="base-form__input"
-                                type="email"
-                                name="txt_email"
-                                id="txt_email"
-                                autocomplete="email"
-                                inputmode="text"
-                                placeholder="Enter your email address"
-                                minlength="5"
-                                required=""
-                                title="Please enter a valid email address."
-                            />
-                            <span class="base-form__message fs-small">
-                                Please enter a valid email address.
-                            </span>
-                        </fieldset>
-                        </form>
-                        </div>
+                                <div class="share-form-container">
+                                    <form
+                                        class="base-form"
+                                        action="/submitted"
+                                        method="POST"
+                                    >
+                                        <fieldset class="base-form__fieldset">
+                                            <label
+                                                class="base-form__label"
+                                                for="txt_email"
+                                                title="Please enter a valid email address."
+                                            >
+                                                Email Address
+                                            </label>
+                                            <input
+                                                class="base-form__input"
+                                                type="email"
+                                                name="txt_email"
+                                                id="txt_email"
+                                                autocomplete="email"
+                                                inputmode="text"
+                                                placeholder="Enter your email address"
+                                                minlength="5"
+                                                required=""
+                                                title="Please enter a valid email address."
+                                            />
+                                            <span
+                                                class="base-form__message fs-small"
+                                            >
+                                                Please enter a valid email
+                                                address.
+                                            </span>
+                                            <div class="sh-atom-checkbox-label">
+                                                <input type="checkbox" class="atom-checkbox" id="hocker" required="" />
+                                                <label class="atom-label" for="hocker">Ik ga akkoord met de <a href="/en/privacy-policy-studio-h-k" target="_blank">privacy voorwaarden</a></label>
+                                                <span class="molecule-label-checkbox__hint-required">*</span>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
                             </div>
                             <div
                                 class="slot"
                                 slot="footer"
                             >
-                            <button
-                            type="submit"
-                            id="button-send"
-                            class="sh-atom-button"
-                            data-style="filled"
-                        >
-                            Verstuur
-                        </button>
+                                <button
+                                    type="submit"
+                                    id="button-send"
+                                    class="sh-atom-button"
+                                    data-style="filled"
+                                >
+                                    Verstuur
+                                </button>
                             </div>
-                        </base-modal>                        
+                        </base-modal-v2>
                         <a
                             href="javascript:redirectToCart()"
                             class="sh-atom-button"
@@ -4540,14 +4575,14 @@ import { IconSizes } from '../../../types/iconTypes';
 
     .base-form {
         padding: 24px 0 8px;
-    }   
+    }
 
     .base-form__fieldset {
         border-color: var(--color-henk-black);
         display: flex;
         flex-direction: column;
         gap: 4px;
-    }   
+    }
 
     .base-form__label {
         color: var(--color-henk-black);
@@ -4558,7 +4593,7 @@ import { IconSizes } from '../../../types/iconTypes';
         border-radius: 4px;
         border: 1px solid var(--color-henk-black);
         background-color: var(--color-white);
-    }   
+    }
 
     .base-form__message {
         visibility: hidden;
