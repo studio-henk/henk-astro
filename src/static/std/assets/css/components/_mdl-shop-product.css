@@ -199,12 +199,15 @@
 }
 
 .mdl-shop-product[data-variant="category-setting"] .mdl-shop-product__title {
+  --_min-font-size: 20;
+  --_max-font-size: 31;
+  
   color: var(--color-white, #f00);
-  margin-top: 0;
-  font-size: 2.0625rem;
-  /*font-weight: 500;*/
+  margin: 0;  
+  /* font-size: max(20px, 1.61458333vw); */    
+  font-size: max(calc(var(--_min-font-size, 20px) / 16 * 1rem), calc(var(--_max-font-size, 31px) * 100) / var(--size-screen-target) * 1vw);
+  line-height: 1.5;
   letter-spacing: 0;
-  line-height: 50px;
   padding-left: 0;
 }
 

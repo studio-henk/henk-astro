@@ -4,9 +4,16 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Cart Empty">
-  <SectionHeader title="Your cart is empty">
-    <a href="/en/collection" class="sh-atom-button" data-style="filled"
-      >Explore the collection</a
+    <SectionHeader 
+        title="Your cart is empty" 
+        level={1}
+        bgColor="secondary"
     >
-  </SectionHeader>
+        <a
+            href="/en/collection"
+            class="sh-atom-button"
+            data-style="filled"            
+            >Explore the collection</a
+        >
+    </SectionHeader>
 </BaseLayout>
