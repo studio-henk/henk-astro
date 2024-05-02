@@ -7,6 +7,8 @@
     margin: 0 -0.25rem;
     display: flex;
     flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); */
     position: relative;
 }
 

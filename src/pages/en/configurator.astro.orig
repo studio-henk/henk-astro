@@ -1,9 +1,18 @@
 ---
+<<<<<<< HEAD
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/astro/Icon.astro';
+import { IconSizes } from '../../../types/iconTypes';
+import InfoBox from '../../components/InfoBox.astro';
+import InfoBoxV2 from '../../components/astro/InfoBoxV2.astro';
+// import { Icon } from 'astro-icon/components';
+=======
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/astro/Icon.astro";
 import { IconSizes } from "../../../types/iconTypes";
 // import InfoBox from '../../components/InfoBox.astro';
 import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
+>>>>>>> feature/IT-3227-view-in-store
 ---
 
 <BaseLayout title="Configurator">
@@ -34,7 +43,15 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
                             class="configurator__view--image"
                             data-bstoggle="modal"
                             data-bstarget="#config_image"
-                        >                                                    
+                        >
+                            <!-- <span id="configurator__price1" class="sh-atom-button__price"
+                >€ 1849</span
+<<<<<<< HEAD
+                > -->
+=======
+              > -->
+>>>>>>> feature/IT-3227-view-in-store
+                            <!--<img id="configurator__image" src="/static/std/assets/toolkit/images/T-RC-0008-STD-B-B.jpg" alt="Configurator" class="img-responsive">-->
                             <img
                                 id="configurator__image"
                                 src="/static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-4096w.png"
@@ -43,8 +60,53 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
                                 width="2000"
                                 height="2000"
                                 loading="eager"
-                            />                            
-                        </div>                        
+                            />
+                            <!--<img
+<<<<<<< HEAD
+                    id="configurator__image"
+                    srcset="/static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-4096w.png 4096w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-2048w.png 2048w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1890w.png 1890w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1720w.png 1720w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1536w.png 1536w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1330w.png 1330w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1090w.png 1090w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-768w.png 768w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-256w.png 256w"
+                    sizes="100vw"
+                    src="/static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1536w.png"
+                    alt="Configurator"
+                    class="img-responsive"
+                    />-->
+                        </div>
+
+                        <!--<div class="row configurator__controls-row">
+                    &lt;!&ndash;<a href="javascript:redirectToCart()" class="sh-atom-button" data-style="outline-dark" data-alignment="price-between" data-size="small">
+                        <Icon name="icon-cart" />
+                        <span class="org-addtocart-console__price">€ 539</span>
+                    </a>&ndash;&gt;
+                    &lt;!&ndash;<span class="sh-atom-button" data-style="outline-dark"
+                    >Enlarge</span
+                    >
+                    <span class="sh-atom-button" data-style="outline-dark"
+                    >View in 3D</span
+                    >&ndash;&gt;
+                </div>-->
+=======
+                  id="configurator__image"
+                  srcset="/static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-4096w.png 4096w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-2048w.png 2048w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1890w.png 1890w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1720w.png 1720w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1536w.png 1536w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1330w.png 1330w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1090w.png 1090w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-768w.png 768w, /static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-256w.png 256w"
+                  sizes="100vw"
+                  src="/static/std/assets/toolkit/images/configurator/t-rc-0008-crc-b-b-1536w.png"
+                  alt="Configurator"
+                  class="img-responsive"
+              />-->
+                        </div>
+
+                        <!--<div class="row configurator__controls-row">
+              &lt;!&ndash;<a href="javascript:redirectToCart()" class="sh-atom-button" data-style="outline-dark" data-alignment="price-between" data-size="small">
+                <Icon name="icon-cart" />
+                <span class="org-addtocart-console__price">€ 539</span>
+              </a>&ndash;&gt;
+              &lt;!&ndash;<span class="sh-atom-button" data-style="outline-dark"
+                >Enlarge</span
+              >
+              <span class="sh-atom-button" data-style="outline-dark"
+                >View in 3D</span
+              >&ndash;&gt;
+            </div>-->
+>>>>>>> feature/IT-3227-view-in-store
                     </div>
                 </div>
                 <div
@@ -196,6 +258,7 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
                                                         class="img-responsive"
                                                     />
                                                     <!--<svg width="78" height="30" viewBox="0 0 78 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<<<<<<< HEAD
     <rect x="0.15" y="0.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
     <rect x="0.15" y="13.65" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
     <rect x="0.15" y="27.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
@@ -204,6 +267,16 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
     <rect x="0.15" y="9.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
     <rect x="0.15" y="22.65" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
 </svg>-->
+=======
+                        <rect x="0.15" y="0.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="13.65" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="27.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="4.65" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="18.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="9.15" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="22.65" width="77.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                      </svg>-->
+>>>>>>> feature/IT-3227-view-in-store
                                                 </div>
                                                 <span
                                                     class="choose-cards__item--label"
@@ -247,6 +320,7 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
                                                         class="img-responsive"
                                                     />
                                                     <!--<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<<<<<<< HEAD
     <rect x="0.15" y="0.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
     <rect x="0.15" y="13.65" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
     <rect x="0.15" y="27.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
@@ -255,6 +329,16 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
     <rect x="0.15" y="9.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
     <rect x="0.15" y="22.65" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
 </svg>-->
+=======
+                        <rect x="0.15" y="0.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="13.65" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="27.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="4.65" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="18.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="9.15" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                        <rect x="0.15" y="22.65" width="29.7" height="2.7" stroke="black" stroke-width="0.3"/>
+                      </svg>-->
+>>>>>>> feature/IT-3227-view-in-store
                                                 </div>
                                                 <span
                                                     class="choose-cards__item--label"
@@ -4375,11 +4459,11 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
                                             >Bekijk in winkel
                                         </a>
                                     </InfoBoxV2>
-                                </li>                                
+                                </li>
+<<<<<<< HEAD
                             </ul>
                         </div>
                     </div>
-
                     <div
                         class="product-summary"
                         style="justify-content: space-between;"
@@ -4401,7 +4485,21 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
                                     width={IconSizes.Small}
                                     height={IconSizes.Small}
                                 />
-                            </button>                            
+                            </button>
+                            <!-- <button
+                                id="button-share"
+                                class="sh-atom-button modal_open"
+                                data-style="filled"
+                                slot="trigger"
+                            >
+                                <Icon
+                                    name="icon-mail"
+                                    width={IconSizes.Medium}
+                                    height={IconSizes.Medium}
+                                />
+                                Mail
+                            </button> -->
+
                             <div
                                 class="slot"
                                 slot="content"
@@ -4461,6 +4559,17 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
                                 </button>
                             </div>
                         </base-modal-v2>
+=======
+                                <!-- <li class="product-specificaties__list--item" style="justify-content: center"><a href="/en/stores" class="sh-atom-button" data-style="filled">Bekijk in winkel</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div
+                        class="product-summary"
+                        style="justify-content: flex-end;"
+                    >
+>>>>>>> feature/IT-3227-view-in-store
                         <a
                             href="javascript:redirectToCart()"
                             class="sh-atom-button"
@@ -4472,8 +4581,14 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
                                 height={IconSizes.Medium}
                                 name="icon-bag"
                             />
+<<<<<<< HEAD
+                            <!-- In winkelwagen -->
+                            <span>€ 1899</span>
+=======
+
                             <!-- In winkelwagen -->
                             <span id="configurator__price1" class="sh-atom-button__price">€ 1899</span>
+>>>>>>> feature/IT-3227-view-in-store
                         </a>
                     </div>
                 </div>
@@ -4488,13 +4603,14 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
     src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
 ></script>
 <script is:inline slot="footer-scripts">
-    $("#hideLessTopFinishes").click(function () {
+<<<<<<< HEAD
+    $('#hideLessTopFinishes').click(function () {
         $.each(hiddenTopFinish, function (indexes, values) {
             $('#' + values).hide();
         });
         //$("#showMoreTopFinish").attr('data-hideTopFinish', hideLessTopFinish);
-        $("#showMoreTopFinish").show();
-        $("#hideLessTopFinishes").hide();
+        $('#showMoreTopFinish').show();
+        $('#hideLessTopFinishes').hide();
     });
 
     $('#showMoreTopFinish').click(function () {
@@ -4504,6 +4620,24 @@ import InfoBoxV2 from "../../components/astro/InfoBoxV2.astro";
         //$("#hideLessTopFinishes").attr('data-hideTopFinish', showHiddenTopFinish);
         $('#showMoreTopFinish').hide();
         $('#hideLessTopFinishes').show();
+=======
+    $("#hideLessTopFinishes").click(function () {
+        $.each(hiddenTopFinish, function (indexes, values) {
+            $("#" + values).hide();
+        });
+        //$("#showMoreTopFinish").attr('data-hideTopFinish', hideLessTopFinish);
+        $("#showMoreTopFinish").show();
+        $("#hideLessTopFinishes").hide();
+    });
+
+    $("#showMoreTopFinish").click(function () {
+        $.each(hiddenTopFinish, function (indexes, values) {
+            $("#" + values).show();
+        });
+        //$("#hideLessTopFinishes").attr('data-hideTopFinish', showHiddenTopFinish);
+        $("#showMoreTopFinish").hide();
+        $("#hideLessTopFinishes").show();
+>>>>>>> feature/IT-3227-view-in-store
     });
 </script>
 
