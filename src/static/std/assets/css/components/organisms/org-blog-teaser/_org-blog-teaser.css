@@ -64,3 +64,7 @@
 .sh-org-blog-teaser .sh-org-blog-teaser__image {
   border-radius: 0;
 }
+
+.sh-org-blog-teaser .sh-org-blog-teaser__post-title {
+  margin-top: 1rem;
+}
