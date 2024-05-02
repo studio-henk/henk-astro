@@ -30,4 +30,8 @@
 
 .sh-org-steps-block .sh-org-grid__item > img + p {
   margin-top: 1rem;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> feature/IT-3189-lister-feature-titles

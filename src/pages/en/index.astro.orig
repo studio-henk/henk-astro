@@ -19,6 +19,71 @@ import ReviewsBrick from "../../components/bricks/ReviewsBrick.astro";
     showMsgBar="true"
     totalItemCount="0"
 >
+<<<<<<< HEAD
+  <HeroVideo
+    title="The Form of Things"
+    subtitle="New: Slant Sofa"
+    videoSRC="/static/std/assets/video/slant-sofa.mp4"
+    url="/en/the-form-of-things"
+  />
+  <!-- <SliderBrickVarA title="Our products" swiperID="2" /> -->
+  <SplitscreenBrick
+    mediaSrc="/images/slant1.jpg"
+    title="Win €1000 shopping credit."
+    buttonText="Sign up now!"
+    hasSlotContent={true}
+  >
+    <p>
+      Could your interior use a fresh update? Good news. We're giving you the
+      chance to win €1,000 shopping credit at Studio HENK. Sign up for our
+      newsletter now and follow us on Instagram, Facebook, or TikTok.
+    </p>
+    <p>
+      For even more chances to win, tag your friends. Who knows, you might soon
+      have that beautiful new piece of furniture that's been on your wishlist
+      for a while in your home. The promotion runs until Sunday, January 28th.
+    </p>
+  </SplitscreenBrick>
+  <BlogSlider2 />
+  <!-- <HeroVideo
+    title="Discover the world of Studio HENK"
+    subtitle="Studio HENK Stores"
+    videoSRC="/static/std/assets/video/StudioHenk_StoresMix_website.mp4"
+    url="/en/shops"
+  /> -->
+  <UspBrick />
+  <SplitscreenBrick
+    mediaSrc="/images/bcorp.jpg"
+    title="A zero-waste furniture industry"
+    subtitle="Our Mission"
+    buttonText="Find out more"
+    order="reverse"
+    hasSlotContent={true}
+  >
+    <p>
+      As a B Corp, we want to use our business as a force for good. It's our
+      mission to revolutionise the furniture industry from within, making it
+      zero-waste.
+    </p>
+    <p>
+      We strive to disrupt industry standards by creating beautiful furniture
+      that is circular by design and made-to last, thereby positively impacting
+      people and the planet. Discover more about our mission and B Corp status.
+    </p>
+  </SplitscreenBrick>
+  <!-- <SliderBrickVarA title="Customer favorites" swiperID="2" /> -->
+  <!-- <CustomerFavoritesSlider /> -->
+  <!-- <SplitscreenBrick
+    image="/images/cheap.jpg"
+    title="Our designs at a friendlier price"
+    subtitle="New"
+    intro="We have added new, smart choices to our collection, demonstrating that quality, sustainability, and an up to 15% better price can go hand in hand."
+    buttonText="Discover more"
+  /> -->
+  <!-- <QuickDeliverySlider /> -->
+  <!-- <ReviewsBrick />
+  <BlogSlider1 /> -->
+=======
     <HeroVideo
         title="The Form of Things"
         subtitle="New: Slant Sofa"
@@ -44,13 +109,6 @@ import ReviewsBrick from "../../components/bricks/ReviewsBrick.astro";
             January 28th.
         </p>
     </SplitscreenBrick>
-  <BlogSlider2 />
-  <!-- <HeroVideo
-    title="Discover the world of Studio HENK"
-    subtitle="Studio HENK Stores"
-    videoSRC="/static/std/assets/video/StudioHenk_StoresMix_website.mp4"
-    url="/en/shops"
-  /> -->
     <UspBrick />
     <SplitscreenBrick
         mediaSrc="/images/bcorp.jpg"
@@ -72,4 +130,5 @@ import ReviewsBrick from "../../components/bricks/ReviewsBrick.astro";
             mission and B Corp status.
         </p>
     </SplitscreenBrick>
+>>>>>>> feature/IT-3189-lister-feature-titles
 </BaseLayout>

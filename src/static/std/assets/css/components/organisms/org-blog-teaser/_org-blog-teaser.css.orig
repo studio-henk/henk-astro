@@ -1,0 +1,73 @@
+.sh-org-blog-teaser {
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-blog-teaser {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    padding-right: 24px;
+    padding-bottom: 0px;
+  }
+}
+
+.sh-org-blog-teaser .sh-org-blog-teaser__section-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.sh-org-blog-teaser .sh-org-blog-teaser__section-header__title {
+  text-align: center;
+  margin: 0;
+}
+
+.sh-org-blog-teaser .sh-org-blog-teaser__grid {
+  align-self: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-blog-teaser .sh-org-blog-teaser__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+.sh-org-blog-teaser .sh-org-blog-teaser__grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+
+.sh-org-blog-teaser .blog-swiper,
+.sh-org-blog-teaser .swiper {
+  padding: 0 24px 24px !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-blog-teaser .blog-swiper,
+  .sh-org-blog-teaser .swiper {
+    padding: 0 0 24px 24px !important;
+  }
+}
+
+.sh-org-blog-teaser .swiper-wrapper {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+}
+
+.sh-org-blog-teaser .sh-org-blog-teaser__image {
+  border-radius: 0;
+}
+
+.sh-org-blog-teaser .sh-org-blog-teaser__post-title {
+  margin-top: 1rem;
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> feature/IT-3189-lister-feature-titles

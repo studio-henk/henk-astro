@@ -210,6 +210,15 @@
 }
 
 .mdl-shop-product[data-variant="category-setting"] .mdl-shop-product__title {
+<<<<<<< HEAD
+  color: var(--color-white, #fff);
+  margin-top: 0;
+  font-size: clamp(calc(var(--size-font-heading-2-min) / var(--size-font-body) * 1rem),
+      calc(var(--size-font-heading-2-max) / var(--size-screen-target) * 100 * 1vw),
+      calc(var(--size-font-heading-2-max) / var(--size-font-body) * 1rem));
+  line-height: clamp(32px, 3vw, 40px);
+  font-weight: 500;
+=======
   --_min-font-size: 20;
   --_max-font-size: 31;
   
@@ -217,10 +226,8 @@
   margin: 0;  
   /* font-size: max(20px, 1.61458333vw); */    
   font-size: max(calc(var(--_min-font-size, 20px) / 16 * 1rem), calc(var(--_max-font-size, 31px) * 100) / var(--size-screen-target) * 1vw);
-      calc(var(--size-font-heading-2-max) / var(--size-screen-target) * 100 * 1vw),
-      calc(var(--size-font-heading-2-max) / var(--size-font-body) * 1rem));
   line-height: 1.5;
-  font-weight: 500;
+>>>>>>> feature/IT-3189-lister-feature-titles
   letter-spacing: 0;
   padding-left: 0;
 }

@@ -1,25 +1,33 @@
 ---
 interface Props {
-  id?: string;
-  byline?: string;
-  title: string;
-  bgColor?: "primary" | "secondary" | "tertiary | highlight";
-  textColor?: "--color-henk-black" | "--color-henk-white";
+    id?: string;
+    byline?: string;
+    title: string;
+    bgColor?: "primary" | "secondary" | "tertiary | highlight";
+    textColor?: "--color-henk-black" | "--color-henk-white";
+    level?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 const {
-  id,
-  byline,
-  title = "Title is required",
-  bgColor = "primary",
-  textColor = "--color-henk-black",
+    id,
+    byline,
+    title = "Title is required",
+    bgColor = "primary",
+    textColor = "--color-henk-black",
+    level = 2, // Default to h2 if level prop is not provided
 } = Astro.props;
+
+// const TitleElement = `h${level}`; // Dynamically determine the tag name for the title
+const TitleElement = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; // Dynamically determine the tag name for the title
 ---
 
-<section class={`SectionHeader SectionHeader--BG-${bgColor}`} id={id}>
-  <div class="SectionHeader__content">
-    {byline && <p class="SectionHeader__byline">{byline}</p>}
-    <h2 class="SectionHeader__title">{title}</h2>
-    <slot />
-  </div>
+<section
+    class={`SectionHeader SectionHeader--BG-${bgColor}`}
+    id={id}
+>
+    <div class="SectionHeader__content">
+        {byline && <p class="SectionHeader__byline">{byline}</p>}        
+        <TitleElement class="SectionHeader__title">{title}</TitleElement>
+        <slot />
+    </div>
 </section>
