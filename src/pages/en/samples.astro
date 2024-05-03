@@ -4,112 +4,123 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout title="samples">
     <h1>Samples</h1>
-    <div
-        class="sh-l-grid"
-        data-variant="samples"
-        data-columns-mobile="4"
-        data-columns-desktop="10"
-        style="--data-columns-mobile: 4; --data-columns-desktop: 10; --data-text-align: center;"
-    >
-        <div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl/_default_upload_bucket/804026/image-thumb__804026__henk-250-width-jpg-format/0008_2400x2400.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Eiken naturel lak</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
-        </div><div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl/Images/materials-icons-2023/big%20size/804027/image-thumb__804027__henk-250-width-jpg-format/3041-Oak-hardwax-oil-natural-light.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Eiken hardwax olie naturel light</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
-        </div><div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl//_default_upload_bucket/804028/image-thumb__804028__henk-250-width-jpg-format/3062_2400x2400v2.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Eiken hardwax olie naturel</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
-        </div><div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl//_default_upload_bucket/804029/image-thumb__804029__henk-250-width-jpg-format/9017_2400x2400.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Eiken zwarte beits</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
-        </div><div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl//_default_upload_bucket/804025/image-thumb__804025__henk-250-width-jpg-format/0002_2400x2400.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Eiken gerookt gebeitst</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
-        </div><div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl//Images/configurator/top%20finish/4976/image-thumb__4976__henk-250-width-jpg-format/textures_oak_9005.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Eiken zwarte lak</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
-        </div><div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl//_default_upload_bucket/635204/image-thumb__635204__henk-250-width-jpg-format/9016%20witte%20lak.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Eiken witte lak</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
-        </div><div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl//_default_upload_bucket/804024/image-thumb__804024__henk-250-width-jpg-format/0001_2400x2400.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Walnoot naturel lak</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
-        </div><div class="sh-l-grid__item">
-            <img
-                class="sh-atom-sample"
-                src="https://studio-henk.nl//_default_upload_bucket/635203/image-thumb__635203__henk-250-width-jpg-format/textures_Iroko_0007_1024x1024.jpg"
-                alt="sample"
-                style="cursor: pointer;"
-            /><small>Iroko</small><button
-                class="sh-atom-button"
-                type="button"
-                data-size="small"
-                data-style="filled"><span>Bekijk</span></button>
+    <div class="sample-groups-container">
+        <div
+            class="sh-l-grid"
+            data-variant="samples"
+            data-columns-mobile="4"
+            data-columns-desktop="10"
+            style="--data-columns-mobile: 4; --data-columns-desktop: 10; --data-text-align: center;"
+        >
+            <div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl/_default_upload_bucket/804026/image-thumb__804026__henk-250-width-jpg-format/0008_2400x2400.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Eiken naturel lak</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div><div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl/Images/materials-icons-2023/big%20size/804027/image-thumb__804027__henk-250-width-jpg-format/3041-Oak-hardwax-oil-natural-light.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Eiken hardwax olie naturel light</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div><div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl//_default_upload_bucket/804028/image-thumb__804028__henk-250-width-jpg-format/3062_2400x2400v2.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Eiken hardwax olie naturel</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div><div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl//_default_upload_bucket/804029/image-thumb__804029__henk-250-width-jpg-format/9017_2400x2400.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Eiken zwarte beits</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div><div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl//_default_upload_bucket/804025/image-thumb__804025__henk-250-width-jpg-format/0002_2400x2400.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Eiken gerookt gebeitst</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div><div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl//Images/configurator/top%20finish/4976/image-thumb__4976__henk-250-width-jpg-format/textures_oak_9005.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Eiken zwarte lak</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div><div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl//_default_upload_bucket/635204/image-thumb__635204__henk-250-width-jpg-format/9016%20witte%20lak.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Eiken witte lak</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div><div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl//_default_upload_bucket/804024/image-thumb__804024__henk-250-width-jpg-format/0001_2400x2400.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Walnoot naturel lak</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div><div class="sh-l-grid__item">
+                <img
+                    class="sh-atom-sample"
+                    src="https://studio-henk.nl//_default_upload_bucket/635203/image-thumb__635203__henk-250-width-jpg-format/textures_Iroko_0007_1024x1024.jpg"
+                    alt="sample"
+                    style="cursor: pointer;"
+                /><small>Iroko</small><button
+                    class="sh-atom-button"
+                    type="button"
+                    data-size="small"
+                    data-style="filled"><span>Bekijk</span></button
+                >
+            </div>
         </div>
     </div>
 </BaseLayout>
