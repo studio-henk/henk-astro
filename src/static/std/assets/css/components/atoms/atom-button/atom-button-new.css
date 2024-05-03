@@ -1,3 +1,4 @@
+::part(button),
 .sh-atom-button {
   font-family: var(--font-body, sans-serif), sans-serif;
   font-size: 1rem;
@@ -20,6 +21,7 @@
   gap: 0.5em;
 }
 
+::part(button filled),
 .sh-atom-button[data-style="filled"] {
   --color-background-button: var(--color-henk-black);
   --color-text-button: var(--color-henk-white);
@@ -234,11 +236,17 @@
 }
 
 /* alignment */
+::part(button price-align),
 .sh-atom-button[data-alignment*="price"] {
   display: inline-grid;
   grid-template-columns: repeat(2, auto);
   column-gap: 1em;
   justify-content: center;
+}
+
+::part(price),
+.sh-atom-button .sh-atom-button__price {
+  font-weight: 500;
 }
 
 .sh-atom-button[data-alignment*="price-around"] {

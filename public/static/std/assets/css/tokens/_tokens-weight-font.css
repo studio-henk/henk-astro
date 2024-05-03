@@ -1,0 +1,10 @@
+:root {
+  --weight-font-400: 400;
+  --weight-font-500: 500;
+  --weight-font-700: 700;
+
+  --weight-font-body: var(--weight-font-400);
+  --weight-font-heading: var(--weight-font-500);
+  --weight-font-button: var(--weight-font-700);
+  --weight-font-label: var(--weight-font-500);
+}

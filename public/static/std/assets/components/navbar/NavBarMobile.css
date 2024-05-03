@@ -22,7 +22,6 @@
   .NavBarMobile .NavBarMobile__top {
     position: fixed;
     top: var(--MsgBarHeight, 0);
-    /* z-index: 999; */
     z-index: 91049;
     width: 100%;
     background-color: var(--color-white);
@@ -52,13 +51,6 @@
     font-size: 0;
   }
 
-  /* .NavBarMobile .NavBarMobile__header.NavBar--isOpen .NavBarMobile__top,
-  .NavBarMobile .NavBarMobile__header.NavBar--isOpen .NavBarMobile__top-link {
-    background-color: var(--color-henk-white);
-    color: var(--color-black);
-    --color-background-button-nav-mobile: var(--color-black);
-    transition: all 0.3s ease;
-  } */
   .NavBarMobile .NavBarMobile__header.NavBar--isOpen .NavBarMobile__top {
     background-color: var(--color-henk-white);
     color: var(--color-black);
@@ -76,7 +68,9 @@
     color: var(--color-black);
   }
 
-  .NavBarMobile .NavBarMobile__header.NavBar--isScrolled .NavBarMobile__top-link {
+  .NavBarMobile
+    .NavBarMobile__header.NavBar--isScrolled
+    .NavBarMobile__top-link {
     color: var(--color-black);
   }
 
@@ -89,7 +83,6 @@
     background-color: var(--color-henk-white);
     position: fixed;
     top: var(--total-bars-height, 0);
-    /* z-index: 998; */
     z-index: 91048;
     width: 100%;
     padding: 0 24px 24px 24px;
@@ -98,8 +91,6 @@
   .NavBarMobile .NavBarMobile__nav.active {
     opacity: 1;
     visibility: visible;
-    /* height: calc(100svh - var(--total-bars-height, 0)); */
-    /* height: calc(100svh - var(--total-bars-height, 0) - 40px); */
     height: calc(100svh - var(--total-bars-height, 0) - 40px + 2px);
     top: calc(var(--total-bars-height, 0) - 1px);
   }
@@ -107,7 +98,6 @@
   .NavBarMobile .NavBarMobile__list {
     margin: 0;
     list-style: none;
-    /* max-height: calc(100svh - calc(var(--total-bars-height) + 24px)); */
     max-height: calc(100svh - calc(var(--total-bars-height) + 40px));
     overflow-y: scroll;
     height: 100%;
@@ -151,33 +141,6 @@
     animation: fadeOutIn 1s ease-in-out normal forwards;
   }
 
-  .NavBarMobile .NavBarMobile__utils-list-container {
-    flex: 1;
-    display: flex;
-  }
-
-  .NavBarMobile .NavBarMobile__utils-list {
-    list-style: none;
-    margin: 0;
-    align-self: flex-end;
-    width: 100%;
-  }
-
-  .NavBarMobile .NavBarMobile__utils-list-item {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .NavBarMobile .NavBarMobile__utils-list.--direction-horizontal {
-    display: flex;
-  }
-
-  .--direction-horizontal .NavBarMobile__utils-list-item {
-    display: flex;
-    /*justify-content: center;*/
-    align-items: center;
-  }
-
   .utils-bar {
     z-index: 99999999999;
     position: fixed;
@@ -195,12 +158,9 @@
   .utils-bar a {
     text-decoration: none;
     font-size: 12px;
-    /* font-weight: 500;
-      letter-spacing: -0.03em; */
     display: flex;
     flex-direction: column;
     align-items: start;
-    /* background-color: aqua; */
   }
 
   .utils-bar a:last-child {
@@ -212,8 +172,63 @@
     font-size: 12px;
   }
 
-  .NavBarMobile__nav.active+.utils-bar {
+  .NavBarMobile__nav.active + .utils-bar {
     display: grid;
+  }
+
+  .NavBarMobile .NavBarMobile__top-link {
+    position: relative;
+  }
+
+  .NavBarMobile .cart__badge {
+    font-size: 8px;
+    font-weight: 500;
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    background-color: var(--color-henk-black);
+    width: 12px;
+    height: 12px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--color-white);
+    transition: all 0.3s ease;
+  }
+
+  .NavBarMobile[data-theme="dark"] .cart__badge {
+    background-color: var(--color-white);
+    color: var(--color-henk-black);
+  }
+
+  .NavBarMobile[data-theme="dark"] .NavBar--isHovered .cart__badge,
+  .NavBarMobile[data-theme="dark"] .NavBar--isScrolled .cart__badge,
+  .NavBarMobile[data-theme="dark"] .NavBar--isOpen .cart__badge {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+
+  .NavBarMobile .cart__badge span {
+    font-size: 6px;
+  }
+
+  .NavBarMobile__list-item {
+    display: flex;
+  }
+
+  sup.highlight {
+    color: var(--color-henk-danger);
+    top: -1em;
+    line-height: 40px;
+    left: -2em;
+    font-size: 14px;
+  }
+
+  .page-link + sup.highlight {
+    left: 0;
+    top: -1em;
   }
 }
 

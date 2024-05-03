@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "include": ["src/**/*.ts", "**/*.ts"],
-  "compilerOptions": {
+  "compilerOptions": {    
     "forceConsistentCasingInFileNames": false,
     "baseUrl": ".",
     "paths": {

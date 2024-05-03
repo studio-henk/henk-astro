@@ -1,148 +1,216 @@
 ---
-import { getLangFromUrl } from "../i18n/utils";
+import { getLangFromUrl } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
-import TheHeader from "../components/TheHeader.astro";
-import TheFooter from "../components/TheFooter.astro";
+import TheHeader from '../components/TheHeader.astro';
+import TheFooter from '../components/TheFooter.astro';
 // import SfChatbutton from "../components/third-party/_sf-chatbutton.astro";
 
 const {
-  title,
-  mainID,
-  mainClass,
-  pageClass,
-  NavFont = "new",
-  Theme,
-  hasHero,
-  showMsgBar,
+    title,
+    mainID,
+    mainClass,
+    pageClass,
+    NavFont = 'new',
+    Theme,
+    hasHero,
+    showMsgBar,
+    totalItemCount,
 } = Astro.props;
 ---
 
-<html lang={lang} class={pageClass} data-has-hero={hasHero}>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <meta
-      name="description"
-      content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture."
-    />
-    <meta name="theme-color" content="transparent" />
-    <title>{title}</title>
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-touch-icon-dark.png"
-      media="(prefers-color-scheme: dark)"
-    />
-    <link rel="apple-touch-startup-image" href="/launch.png" />
+<html
+    lang={lang}
+    class={pageClass}
+    data-has-hero={hasHero}
+>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            http-equiv="x-ua-compatible"
+            content="ie=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="Studio HENK is an Amsterdam-based interior design company, founded by two brothers from the Netherlands. We design and produce stunning furniture."
+        />
+        <meta
+            name="theme-color"
+            content="transparent"
+        />
+        <title>{title}</title>
+        <link
+            rel="manifest"
+            href="/site.webmanifest"
+        />
+        <link
+            rel="icon"
+            href="/favicon.ico"
+            sizes="32x32"
+        />
+        <link
+            rel="icon"
+            href="/icon.svg"
+            type="image/svg+xml"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon-dark.png"
+            media="(prefers-color-scheme: dark)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="/launch.png"
+        />
 
-    <!-- preload font -->
-    <link
-      rel="preload"
-      href="/fonts/NeueHaasGrotTextRound-55Roman-Web.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <!-- NavBar styles -->
-    <!-- Preload stylesheets -->
-    <link
-      rel="preload"
-      href="/static/std/assets/css/tokens/_tokens-colors.css"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="/static/std/assets/css/tokens/_tokens-size-font.css"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="/static/std/assets/css/tokens/_tokens-size-spacing.css"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="/static/std/assets/components/MsgBar/MsgBar.css"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="/static/std/assets/components/NavBar/NavBarMobile.css"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="/static/std/assets/components/NavBar/NavBarDesktop.css"
-      as="style"
-    />
+        <!-- preload font -->
+        <link
+            rel="preload"
+            href="/fonts/NeueHaasGrotTextRound-55Roman-Web.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <!-- NavBar styles -->
+        <!-- Preload stylesheets -->
+        <link
+            rel="preload"
+            href="/static/std/assets/css/tokens/_tokens-colors.css"
+            as="style"
+        />
+        <link
+            rel="preload"
+            href="/static/std/assets/css/tokens/_tokens-size-font.css"
+            as="style"
+        />
+        <link
+            rel="preload"
+            href="/static/std/assets/css/tokens/_tokens-weight-font.css"
+            as="style"
+        />
+        <link
+            rel="preload"
+            href="/static/std/assets/css/tokens/_tokens-size-spacing.css"
+            as="style"
+        />
+        <link
+            rel="preload"
+            href="/static/std/assets/components/MsgBar/MsgBar.css"
+            as="style"
+        />
+        <link
+            rel="preload"
+            href="/static/std/assets/components/NavBar/NavBarMobile.css"
+            as="style"
+        />
+        <link
+            rel="preload"
+            href="/static/std/assets/components/NavBar/NavBarDesktop.css"
+            as="style"
+        />
 
-    <!-- Apply stylesheets -->
-    <link
-      rel="stylesheet"
-      href="/static/std/assets/css/tokens/_tokens-colors.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/static/std/assets/css/tokens/_tokens-size-font.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/static/std/assets/css/tokens/_tokens-size-spacing.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/static/std/assets/components/MsgBar/MsgBar.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/static/std/assets/components/NavBar/NavBarMobile.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/static/std/assets/components/NavBar/NavBarDesktop.css"
-    />
+        <!-- Apply stylesheets -->
+        <link
+            rel="stylesheet"
+            href="/static/std/assets/css/tokens/_tokens-colors.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/static/std/assets/css/tokens/_tokens-size-font.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/static/std/assets/css/tokens/_tokens-weight-font.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/static/std/assets/css/tokens/_tokens-size-spacing.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/static/std/assets/components/MsgBar/MsgBar.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/static/std/assets/components/NavBar/NavBarMobile.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/static/std/assets/components/NavBar/NavBarDesktop.css"
+        />
 
-    <!-- <link
+        <!-- <link
       href="/src/static/std/assets/css/henk-styles.css"
       media="screen"
       rel="stylesheet"
       type="text/css"
     /> -->
-    <link
-      href="/static/std/assets/css/henk-styles.min.css"
-      media="screen"
-      rel="stylesheet"
-      type="text/css"
-    />
+        <link
+            href="/static/std/assets/css/henk-styles.min.css"
+            media="screen"
+            rel="stylesheet"
+            type="text/css"
+        />
 
-    <slot name="head-styles" />
+        <slot name="head-styles" />
 
-    <!-- web components -->
-    <script src="/static/std/assets/js/web-components/CountdownTimer.js" defer
-    ></script>
+        <!-- web components -->
+        <script
+            src="/static/std/assets/js/web-components/CountdownTimer.js"
+            defer
+        ></script>
 
-    <!-- <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
-    <script is:inline defer src="/static/std/assets/toolkit/scripts/toolkit.js"
+        <!-- <script
+        src="/static/std/assets/js/web-components/BaseModal.min.js"
+        defer
+        type="module"
     ></script> -->
-    <slot name="head-scripts" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <TheHeader Theme={Theme} hasHero={hasHero} showMsgBar={showMsgBar} />
-      <slot name="pre-main" />
-      <main id={mainID} class={mainClass}>
-        <slot />
-      </main>
-      <TheFooter />
-    </div>
-    <slot name="footer-scripts" />
-  </body>
+        <script
+            src="/static/std/assets/js/web-components/BaseModal.js"
+            defer
+            type="module"
+        ></script>
+        
+        <script
+            src="/components/custom-elements/BaseModalV2.min.js"
+            defer
+        ></script>
+        
+
+        <script defer src="/static/std/assets/toolkit/scripts/libs.js"></script>
+        <script
+            is:inline
+            defer
+            src="/static/std/assets/toolkit/scripts/toolkit.js"
+        ></script>
+        <slot name="head-scripts" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <TheHeader
+                Theme={Theme}
+                hasHero={hasHero}
+                showMsgBar={showMsgBar}
+                totalItemCount={totalItemCount}
+            />
+            <slot name="pre-main" />
+            <main
+                id={mainID}
+                class={mainClass}
+            >
+                <slot />
+            </main>
+            <TheFooter />
+        </div>
+        <slot name="footer-scripts" />
+    </body>
 </html>

@@ -1,0 +1,209 @@
+---
+import ProductCardAsGrid from "../../../components/astro/ProductCardAsGrid.astro";
+import SectionHeader from "../../../components/bricks/SectionHeader.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+// import Video from "../../../components/Video.astro";
+import ProductCard from "@components/astro/ProductCard.astro";
+---
+
+<BaseLayout title="Chairs">
+  <div class="category-breadcrumbs" slot="pre-main">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs__item">
+        <a href="/en">Home</a>
+        <svg class="icon icon-chevron-right">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-right"
+          ></use>
+        </svg>
+      </li>
+      <li class="breadcrumbs__item">
+        <a href="/en/collection">collection</a>
+        <svg class="icon icon-chevron-right">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="/static/std/assets/toolkit/svg/sprite.svg#icon-chevron-right"
+          ></use>
+        </svg>
+      </li>
+      <li class="breadcrumbs__item">Poufs</li>
+    </ul>
+  </div>
+  <SectionHeader
+    title="The Otto is a multifunctional pouf. Use it as an extra seat, footstool or side table."
+    byline="Poufs"
+    bgColor="secondary"
+  />
+  <h2>base version: stacked swatched large, render image or product shot</h2>
+  <div class="prodGrid">
+    <ProductCard
+      productName="Bolster Eetkamerstoel"
+      productLink="#1"
+      productPrice="Vanaf €499,-"
+    />
+    <ProductCard
+      productName="Ode Eetkamerstoel"
+      productLink="#2"
+      productPrice="Vanaf €399,-"
+      productImage="/images/bolster9.jpg"
+    />
+  </div>
+  <h2>alt version: swatches small, stacked or unstacked</h2>
+  <div class="prodGrid">
+    <ProductCard
+      productName="Ode Eetkamerstoel"
+      productLink="#2"
+      productPrice="Vanaf €399,-"
+      productSwatchSize="small"
+    />
+    <ProductCard
+      productName="Co Eetkamerstoel"
+      productLink="#3"
+      productPrice="Vanaf €399,-"
+      productImage="/images/bolster9.jpg"
+      productSwatchStacked={false}
+    />
+    <!-- <ProductCard
+      productName="Checker Eetkamerstoel"
+      productLink="#4"
+      productPrice="Vanaf €929,-"
+    /> -->
+    <!--<ProductCard-->
+    <!--    productName="Co Eetkamerstoel"-->
+    <!--    productPrice="Vanaf €399,-"-->
+    <!--    productImage="/images/bolster9.jpg"-->
+    <!--    fullHeight={true}-->
+    <!--/>-->
+    <!--<ProductCard-->
+    <!--    productName="Checker Eetkamerstoel"-->
+    <!--    productPrice="Vanaf €929,-"-->
+    <!--/>-->
+  </div>
+  <h2>alt version: config in grid instead of flex</h2>
+  <div class="prodGrid">
+    <ProductCardAsGrid
+      productName="Ode Chair"
+      productLink="#2"
+      productPrice="From €399,-"
+      productImage="/images/products/chairs/C-ODE-B-facet-beige1037.png"
+      productSwatchSize="small"
+    >
+      <!-- <p>Ode Chair without armrest</p> -->
+      <ul>
+        <!-- <li>Customise with standard or Kvadrat upholstery</li> -->
+        <li>Choose armrests with an oak, black or white finish</li>
+        <li>Available with a black or white powder coated frame</li>
+        <li>Available with or without armrests</li>
+      </ul>
+    </ProductCardAsGrid>
+    <ProductCardAsGrid
+      productName="Ode Chair with armrests"
+      productLink="https://www.studio-henk.nl/en/products/chairs/oak-hardwax-oil-natural-light-3041-ode-chair-with-armrest-black-olbia-sand03"
+      productPrice="From €449,-"
+      productImage="/images/products/chairs/C-ODEA-B-3041-olbia-sand03.png"
+      productSwatchStacked={false}
+    >
+      <!-- <p>Ode Chair with armrest</p> -->
+      <ul>
+        <!-- <li>Customise with standard or Kvadrat upholstery</li> -->
+        <li>Choose armrests with an oak, black or white finish</li>
+        <li>Available in a black or white powder coated frame</li>
+        <li>Available with or without armrests</li>
+      </ul>
+    </ProductCardAsGrid>
+  </div>
+  <style>
+    .org-grid-lister__item {
+      opacity: 0;
+      animation: 1s linear 0.3s forwards fadeIn;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</BaseLayout>
+<!-- <script is:inline>
+  const myImage1 = document.querySelector("#myImage1");
+  const myImage2 = "/images/products/chairs/C-ODEA-B-3041-orion-turtle88.png";
+  console.log(myImage1.src);
+  // set to 2
+  myImage1.src = myImage2;
+  console.log(myImage1.src);
+</script> -->
+<!-- <script is:inline>
+  function setupProductCardSwatches() {
+    const swatches = document.querySelectorAll(".ProductCard__swatch");
+    const mainImage = document.querySelector(".ProductCard__img");
+    // console.log(mainImage);
+
+    swatches.forEach((swatch) => {
+      swatch.addEventListener("mouseover", () => {
+        // Remove selected class from all swatches
+        document
+          .querySelectorAll(".ProductCard__swatch--selected")
+          .forEach((selectedSwatch) => {
+            selectedSwatch.classList.remove("ProductCard__swatch--selected");
+          });
+
+        // Add selected class to the hovered swatch
+        swatch.classList.add("ProductCard__swatch--selected");
+
+        // Get the value of the data-image attribute
+        const dataImage = swatch.getAttribute("data-image");
+        console.log(dataImage);
+
+        // Construct the path for the image
+        const imagePath = dataImage
+          ? `/images/products/chairs/${dataImage}.png`
+          : "";
+        console.log("imagePath:", imagePath);
+
+        // Update the src attribute of the main image
+        mainImage.src = imagePath;
+        console.log("mainImage.src:", mainImage.src);
+
+        // Update the src attribute of the main image
+        // if (dataImage) {
+        //   console.log("hello");
+        //   mainImage.src = `/images/products/chairs/${dataImage}.png`;
+        // }
+      });
+    });
+  }
+
+  // Call the setup function once when the page loads
+  window.addEventListener("DOMContentLoaded", setupProductCardSwatches);
+</script> -->
+<style>
+  .prodGrid {
+    padding: 1.5em;
+    gap: 24px;
+    display: grid;
+    max-width: 1920px;
+    margin-inline: auto;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .prodGrid {
+      background-color: #fff;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding: 1.5rem;
+      align-items: stretch;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .prodGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

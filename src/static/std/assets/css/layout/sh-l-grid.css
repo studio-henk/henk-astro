@@ -193,8 +193,10 @@
 .sh-l-grid[data-variant="samples"] {
   display: grid;
   text-align: var(--data-text-align, left);
-  grid-template-columns: repeat(auto-fill, 98px);
-  gap: 28px 28px;
+  /* grid-template-columns: repeat(auto-fill, 98px); */
+  grid-template-columns: repeat(auto-fill,minmax(76px,1fr));
+  /* gap: 28px 28px; */
+  gap: 1rem;
   padding: 24px 0;
   align-items: stretch;
 }

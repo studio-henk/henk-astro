@@ -1,0 +1,73 @@
+---
+import HeroBrick from '../../components/bricks/HeroBrick.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="React Test 1"
+    hasHero="true"
+    Theme="dark"
+    showMsgBar="false"
+>
+    <HeroBrick
+        title="React Tests"
+        text="<p>Using React components in Astro</p>"
+        image="https://images.unsplash.com/photo-1596299786007-9974099be52b?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        url="#type-font"
+        buttonText="Explore"
+    />
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" is:inline
+    ></script>
+    <script
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        is:inline
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" is:inline
+    ></script>
+    <script
+        is:inline
+        src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.6.2/typescript.min.js"
+    ></script>
+    <script type="text/typescript" is:inline>
+        const app: HTMLElement | null = document.getElementById('app');
+
+        interface HeaderProps {
+            title?: string;
+        }
+
+        function Header({ title }: HeaderProps): JSX.Element {
+            return <h1>{title ? title : 'Default title'}</h1>;
+        }
+
+        function HomePage(): JSX.Element {
+            const names: string[] = [
+                'Ada Lovelace',
+                'Grace Hopper',
+                'Margaret Hamilton',
+            ];
+
+            const [likes, setLikes] = React.useState<number>(0);
+
+            function handleClick(): void {
+                setLikes(likes + 1);
+            }
+
+            return (
+                <div>
+                    <Header title="Develop. Preview. Ship." />
+                    <ul>
+                        {names.map((name: string) => (
+                            <li key={name}>{name}</li>
+                        ))}
+                    </ul>
+
+                    <button onClick={handleClick}>Like ({likes})</button>
+                </div>
+            );
+        }
+
+        const root: React.Root = ReactDOM.createRoot(app!);
+        root.render(<HomePage />);
+    </script>
+</BaseLayout>

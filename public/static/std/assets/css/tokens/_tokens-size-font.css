@@ -1,17 +1,4 @@
 :root {
-  /* --size-font-12: 12;
-  --size-font-14: 14;
-  --size-font-16: 16;
-  --size-font-18: 18;
-  --size-font-20: 20;
-  --size-font-24: 24;
-  --size-font-32: 32;
-  --size-font-36: 36;
-  --size-font-42: 42;
-  --size-font-48: 48;
-  --size-font-60: 60;
-  --size-font-76: 76; */
-
   /* Major third 
   39px 
   31px 
@@ -30,6 +17,16 @@
   --size-font-13: 13;
   --size-font-10: 10;
   --size-font-8: 8;
+
+  /* new primitives */
+  --size-font-xs: 8;
+  --size-font-sm: 10;
+  --size-font-md: 13;
+  --size-font-lg: 16;
+  --size-font-xl: 20;
+  --size-font-2xl: 25;
+  --size-font-3xl: 31;
+  --size-font-4xl: 39;
 
   /* alias keywords */
   --size-font-xxx-large: var(--size-font-39);

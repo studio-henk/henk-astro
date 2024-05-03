@@ -1,7 +1,4 @@
-.SectionHeader {
-    /* --color-background-section-header: var(--color-henk-white);
-    --color-text-section-header: var(--color-henk-black); */
-
+.SectionHeader {    
     padding: 1.5rem;
     /* background-color: var(--color-background-section-header, #fff); */
     /* color: var(--color-text-section-header, #000); */
@@ -14,7 +11,7 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    max-width: 38em;
+    max-width: 32em;
     text-align: center;
     text-wrap: balance;
 }

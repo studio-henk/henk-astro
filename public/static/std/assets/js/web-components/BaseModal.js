@@ -20,7 +20,7 @@ class BaseModal extends HTMLElement {
     const openButtonText = this.getAttribute("openButtonText") || "Open";
     const modalTitle = this.getAttribute("modalTitle") || "Modal title";
 
-    return `      
+    return `
       <style>
       :host {
         display: inline-block;
@@ -91,7 +91,7 @@ class BaseModal extends HTMLElement {
       .BaseModal__header-title {
         font-size: 1.375rem;      
       }
-
+      
       .sh-atom-button.modal_open {
         appearance: none;
         border: 0;
@@ -108,7 +108,7 @@ class BaseModal extends HTMLElement {
         border: 0;
         background: transparent;
       }
-
+      
       .modal_close svg {
         fill: currentcolor;
       }

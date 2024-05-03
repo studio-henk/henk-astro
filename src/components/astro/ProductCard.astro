@@ -1,0 +1,307 @@
+---
+interface Props {
+  productName: string;
+  productLink: string;
+  productDescription?: string;
+  productPrice?: string;
+  productImage?: string;
+  productSwatchStacked?: boolean;
+  productSwatchSize?: string;
+  fullHeight?: boolean;
+}
+
+const {
+  productName,
+  productLink,
+  productDescription,
+  productPrice,
+  productImage = "https://www.studio-henk.nl/Images/emersya/chairs-without-background/867585/image-thumb__867585__TransparentSquare/C-BOLSC-B-hemp-acre19.png",
+  productSwatchStacked = true,
+  productSwatchSize = "",
+  fullHeight = false,
+} = Astro.props;
+---
+
+<div class={`ProductCard ${fullHeight ? "ProductCard--fullHeight" : ""}`}>
+  <a href={productLink} class="ProductCard__link">
+    <div class="ProductCard__image-container">
+      <img
+        src={productImage}
+        width="1240"
+        height="1240"
+        class="ProductCard__img"
+      />
+    </div>
+    <div class="ProductCard__content">
+      <p class="ProductCard__ProductName">{productName}</p>
+      {productDescription && <p>{productDescription}</p>}
+      <div class="ProductCard__swatch-container">
+        <img
+          class="ProductCard__swatch"
+          src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-chair.jpg"
+        />
+        <img
+          class="ProductCard__swatch"
+          src="https://assets.studio-henk.nl/assets/Images/chairs-model-icons-2023/configurator-bolster-armchair.jpg"
+        />
+      </div>
+      <div class="ProductCard__config">
+        <div class="ProductCard__config-options">
+          <p class="ProductCard__label">Frame afwerking</p>
+          <div
+            class={`ProductCard__swatch-container ${
+              productSwatchSize == "small"
+                ? "ProductCard__swatch-container--small"
+                : ""
+            } ${
+              productSwatchStacked
+                ? "items-stacked"
+                : "ProductCard__swatch-container--small"
+            }
+          `}
+          >
+            <div class="color-white ProductCard__swatch">white</div>
+            <div class="color-black ProductCard__swatch">black</div>
+          </div>
+        </div>
+        <div class="ProductCard__config-options">
+          <p class="ProductCard__label">Stoffering</p>
+          <div
+            class={`ProductCard__swatch-container ${
+              productSwatchSize == "small"
+                ? "ProductCard__swatch-container--small"
+                : ""
+            } ${
+              productSwatchStacked
+                ? "items-stacked"
+                : "ProductCard__swatch-container--small"
+            }
+          `}
+          >
+            <div class="color-yellow ProductCard__swatch">stof 1</div>
+            <div class="color-green ProductCard__swatch">stof 2</div>
+            <div class="color-orange ProductCard__swatch">stof 3</div>
+            <div class="color-brown ProductCard__swatch">stof 4</div>
+            <div class="color-blue ProductCard__swatch">stof 5</div>
+          </div>
+        </div>
+      </div>
+      <p class="ProductCard__Price">{productPrice}</p>
+    </div>
+  </a>
+</div>
+<style>
+  .ProductCard {
+    background-color: var(--color-background-primary);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /*aspect-ratio: 2 / 3;*/
+  }
+
+  .ProductCard__link {
+    text-decoration: none;
+  }
+
+  .ProductCard__link:focus,
+  .ProductCard__link:hover {
+    color: currentColor;
+  }
+
+  .ProductCard__image-container {
+    flex: 1;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .ProductCard__img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .ProductCard__link:hover .ProductCard__img {
+    transform: scale(1.1);
+  }
+
+  .ProductCard__content * {
+    margin: 0;
+  }
+
+  .ProductCard__content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ProductCard__ProductName {
+    font-size: 20px;
+    /*white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;*/
+  }
+
+  .ProductCard__Price {
+    text-align: right;
+    font-size: 20px;
+  }
+
+  .ProductCard__config {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ProductCard__config-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ProductCard__swatch {
+    --_color-background-swatch: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    border: 2px solid black;
+    background-color: var(--_color-background-swatch, #f00);
+    font-size: 0;
+  }
+
+  .ProductCard__swatch.color-white {
+    --_color-background-swatch: #fff;
+  }
+
+  .ProductCard__swatch.color-black {
+    --_color-background-swatch: #000;
+  }
+
+  .ProductCard__swatch.color-yellow {
+    --_color-background-swatch: yellow;
+  }
+
+  .ProductCard__swatch.color-green {
+    --_color-background-swatch: green;
+  }
+
+  .ProductCard__swatch.color-orange {
+    --_color-background-swatch: orange;
+  }
+
+  .ProductCard__swatch.color-brown {
+    --_color-background-swatch: brown;
+  }
+
+  .ProductCard__swatch.color-blue {
+    --_color-background-swatch: deepskyblue;
+  }
+
+  .ProductCard__swatch-container {
+    position: relative;
+    height: 48px;
+    width: 100%;
+  }
+
+  .items-stacked .ProductCard__swatch {
+    position: absolute;
+    --spacing-swatch: 24;
+    /* margin-left: 24px; */
+    /* margin-left: calc(var(--spacing-swatch) * 1px); */
+  }
+
+  .items-stacked .ProductCard__swatch:not(:first-child) {
+    margin-left: calc(var(--spacing-swatch) * 1px);
+  }
+
+  .items-stacked .ProductCard__swatch.color-white,
+  .items-stacked .ProductCard__swatch.color-yellow {
+    /* margin-left: 0; */
+    /* --spacing-swatch: 0; */
+  }
+
+  .items-stacked .ProductCard__swatch.color-black,
+  .items-stacked .ProductCard__swatch.color-green {
+    /* margin-left: 24px; */
+    /* --spacing-swatch: 24; */
+  }
+
+  .items-stacked .ProductCard__swatch.color-orange {
+    /* margin-left: calc(2 * 24px); */
+    /* --spacing-swatch: 24; */
+    margin-left: calc(2 * var(--spacing-swatch) * 1px);
+  }
+
+  .items-stacked .ProductCard__swatch.color-brown {
+    /* margin-left: calc(3 * 24px); */
+    margin-left: calc(3 * var(--spacing-swatch) * 1px);
+  }
+
+  .items-stacked .ProductCard__swatch.color-blue {
+    /* margin-left: calc(4 * 24px); */
+    margin-left: calc(4 * var(--spacing-swatch) * 1px);
+  }
+
+  img.ProductCard__swatch {
+    mix-blend-mode: darken;
+  }
+
+  .ProductCard__swatch-container--small {
+    height: 24px;
+    line-height: 12px;
+  }
+
+  .ProductCard__swatch-container--small .ProductCard__swatch {
+    width: 24px;
+    height: 24px;
+    /* margin-left: 12px; */
+    --spacing-swatch: 12;
+  }
+
+  /*.items-stacked .config-option-swatch:not(:first-child) {
+    position: relative;
+    left: -32px;
+  }*/
+
+  /*full size image card*/
+  /*.ProductCard--fullHeight {
+    position: relative;
+    aspect-ratio: 2 / 3;
+  }
+
+  .ProductCard--fullHeight .ProductCard__img {
+    border-radius: 8px;
+  }
+
+  .ProductCard--fullHeight .ProductCard__content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-background-primary);
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }*/
+
+  @media only screen and (min-width: 1024px) {
+    .ProductCard__config-options {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .ProductCard__label {
+      flex: 2;
+    }
+
+    .ProductCard__swatch-container {
+      flex: 3;
+    }
+  }
+</style>
