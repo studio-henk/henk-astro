@@ -77,7 +77,6 @@
   line-height: 28px;
   margin-top: 4px;
   font-size: 1rem;
-  /*font-weight: 500;*/
   text-transform: none;
   letter-spacing: 0;
   padding-left: 0;
@@ -94,7 +93,6 @@
 }
 
 .mdl-shop-product .mdl-shop-product__desc {
-  /*font-size: 0.75rem;*/
   font-size: 13px;
   margin: 0;
   padding-left: 0;
@@ -215,10 +213,7 @@
   
   color: var(--color-white, #f00);
   margin: 0;  
-  /* font-size: max(20px, 1.61458333vw); */    
-  font-size: max(calc(var(--_min-font-size, 20px) / 16 * 1rem), calc(var(--_max-font-size, 31px) * 100) / var(--size-screen-target) * 1vw);
-      calc(var(--size-font-heading-2-max) / var(--size-screen-target) * 100 * 1vw),
-      calc(var(--size-font-heading-2-max) / var(--size-font-body) * 1rem));
+  font-size: max(calc(var(--_min-font-size, 20px) / 16 * 1rem), calc(var(--_max-font-size, 31px) * 100) / var(--size-screen-target) * 1vw);      
   line-height: 1.5;
   font-weight: 500;
   letter-spacing: 0;
@@ -365,10 +360,6 @@
   }
 }
 
-[data-grid="shop-product"][data-variant="square"] {
-  /* @todo: where is this used??? */
-}
-
 [data-grid="shop-product"][data-variant="square"]
   .mdl-shop-product:not([data-hover="dissolve"])
   .mdl-shop-product__link {
@@ -450,25 +441,14 @@
   padding: 0 clamp(32px, 7.24638vw, 48px) 3rem;
 }
 
-/* UPDATED 2023-08-03 • 11:18 - CEST */
-.mdl-shop-product__desc {
-  /*flex: 1 1 42px;*/
-}
-
 .mdl-shop-product__price {
-  margin: 4px 0 0 0;
-  /*font-size: 0.875rem; // 14px*/
-  /*font-size: 0.75rem; // 12px*/
+  margin: 4px 0 0 0; 
   font-size: 13px;
-  /*font-weight: 400;*/
   line-height: 25px;
   font-feature-settings: "pnum" on, "lnum" on;
   padding-right: 12px;
 }
 
-/*
-UPDATED 2023-08-31 • 10:25 - CEST
-*/
 .mdl-shop-product > * > .sh-atom-tag {
   margin: 0;
   position: absolute;
