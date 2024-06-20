@@ -1,0 +1,14 @@
+---
+const componentName = "simpleButton";
+
+interface Props {
+    buttonText?: string;
+    buttonType?: string;    
+}
+
+const {
+    buttonText = 'button text',
+    buttonType = 'button',
+} = Astro.props;
+---
+<button>{buttonText}</button>
