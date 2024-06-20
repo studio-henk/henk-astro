@@ -1,22 +1,19 @@
-@keyframes bgfadeInMsgBar {
-    0% {
-        background-color: #fff;
-    }
-    100% {
-        background-color: var(--color-accent14);
-    }
-}
-
 .message-bar {
-    background-color: var(--color-accent14,#ccc);
+    /*background-color: var(--color-accent14,#ccc);*/
+    background-color: var(--color-surface-action-1-light);
+    color: var(--color-text-on-dark, #fff);
     padding: 4px 16px;
     text-align: center;
     width: 100%;
-    color: #000;
     position: fixed;
+    left: 0;
     top: 0;
     z-index: 1000;
     text-wrap: balance;
+    display: flex;
+    place-content: center;
+    column-gap: 24px;
+    flex-wrap: wrap;
 }
 
 .message-bar a {
@@ -27,6 +24,6 @@
 
 @media only screen and (max-width: 767px) {
     .message-bar {
-        font-size: 12px;
+        font-size: 13px;
     }
 }

@@ -9,30 +9,30 @@ template.innerHTML = `
   </style>
   <div class="hello-world">
   <h1>Hello <span id="name"></span>!</h1>
-  <slot>default?</slot> 
+  <slot>default?</slot>
   </div>
 `;
 
 class HelloWorld extends HTMLElement {
-    constructor() {
-        super();
-        this.shadow = this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.shadowRoot.querySelector("#name").innerText = "World";
-    }
+  constructor() {
+    super();
+    this.shadow = this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.querySelector("#name").innerText = "World";
+  }
 
-    static get observedAttributes() {
-        return ["name"];
-    }
+  static get observedAttributes() {
+    return ["name"];
+  }
 
-    attributeChangedCallback(property, oldValue, newValue) {
-        if (oldValue === newValue) return;
-        this[property] = newValue;
-    }
+  attributeChangedCallback(property, oldValue, newValue) {
+    if (oldValue === newValue) return;
+    this[property] = newValue;
+  }
 
-    connectedCallback() {
-        this.shadowRoot.querySelector("#name").innerText = this.name;
-    }
+  connectedCallback() {
+    this.shadowRoot.querySelector("#name").innerText = this.name;
+  }
 }
 
 customElements.define("hello-world", HelloWorld);

@@ -9,182 +9,184 @@ import { IconSizes } from "../../types/iconTypes";
 ---
 
 <div class="cart-list">
-  <form method="post" id="cart_form" action="/en/cart/update">
-    <ul class="cart-list__list">
-      <li class="cart-list__list-item">
-        <img
-          src="https://www.studio-henk.nl/Images/emersya/poof-without-background/702040/image-thumb__702040__TransparentSquare/OT-OTTOS-3062-steelcut2-135.png"
-          alt="Otto S"
-          width="1240"
-          height="1240"
-          class="cart-list__list-item-image"
-        />
-        <p class="cart-list__list-item-content-title">
-          Nod L Staande lamp <span class="sh-atom-tag">in Stock !</span>
-        </p>
-        <!-- MOBILE Button for SHEET -->
-        <a
-          href="#"
-          class="cart-list__list-item-content-link sh-atom-button"
-          data-function="openSheet"
-          data-hide="tablet|desktop"
-          data-style="plain"
-          data-text-underline="true"
-          data-size="small"
-          >Product info
-        </a>
-        <!-- DESKTOP -->
-        <!-- new SideModal here -->
-        <Side-Modal
-          button-type="button"
-          button-id="sideModalButton1"
-          button-text="Product info"
-          modal-max-width="470"
-          data-hide="mobile"
-          overlay-opacity="0.1"
-        >
-          <template #header>
-            <!-- <p class="modal__heading"></p> -->
-          </template>
-          <template #body>
-            <slot name="body">
-              <OrgMedia productName="Nod L - Prod 1" />
-              <ProdSpecs />
-            </slot>
-          </template>
-        </Side-Modal>
-        <!-- wc stepper here -->
-        <Stepper />
-        <div class="cart-list__list-item-content-grid">
-          <a
-            href="/en/cart/remove/149249"
-            class="sh-atom-button"
-            data-style="outline-dark"
-            data-shape="circle"
-          >
-            <Icon
-              class="sh-atom-icon"
-              width={IconSizes.Medium}
-              height={IconSizes.Medium}
-              name="icon-trashcan"
-            />
-          </a>
-          <span class="cart-list__list-item-content-price">€49</span>
-        </div>
-        <div class="cart-list__list-item-info">
-          <p class="cart-list__list-item-downpayment">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 64 64"
-              style="width: 20px; height: 20px;"
-            >
-              <g data-name="Hand Euro">
-                <path
-                  d="M44 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 44 1zm2 12a1 1 0 0 1 0 2h-6.91a5.6 5.6 0 0 0 0 2H46a1 1 0 0 1 0 2h-6.188A6 6 0 0 0 45 22a5.848 5.848 0 0 0 3.419-1.084 1 1 0 0 1 1.162 1.628A7.83 7.83 0 0 1 45 24a8.009 8.009 0 0 1-7.411-5H36a1 1 0 0 1 0-2h1.069a7.281 7.281 0 0 1 0-2H36a1 1 0 0 1 0-2h1.589A8.009 8.009 0 0 1 45 8a7.752 7.752 0 0 1 4.587 1.47 1 1 0 1 1-1.174 1.619A5.764 5.764 0 0 0 45 10a6 6 0 0 0-5.188 3z"
-                  style="fill:currentColor"></path>
-                <path
-                  d="M60.88 32.12a3.93 3.93 0 0 0-5.42 0L44.59 43H29a1 1 0 0 1 0-2h10.5a3.5 3.5 0 0 0 0-7H19a1.033 1.033 0 0 0-.71.29l-6.88 6.88 12.42 12.42L26.41 51H47a1.033 1.033 0 0 0 .71-.29l13.17-13.17a3.839 3.839 0 0 0 0-5.42zM7.707 40.293a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414l17 17a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0 0-1.414zM2.29 48.29A1.033 1.033 0 0 0 2 49v13a1 1 0 0 0 1 1h13a1.033 1.033 0 0 0 .71-.29l.88-.88L3.17 47.41z"
-                  style="fill:currentColor"></path>
-              </g>
-            </svg>
-            Downpayment €500
-          </p>
-          <p class="cart-list__list-item-date">
-            <Icon class="sh-atom-icon" name="icon-truck" />
-            Delivery within a week
-          </p>
-        </div>
-        <!-- sheet -->
-        <OrgSheet productName="Nod L - Prod 1" />
-      </li>
-      <li class="cart-list__list-item">
-        <img
-          src="https://www.studio-henk.nl/Images/emersya/poof-without-background/702040/image-thumb__702040__TransparentSquare/OT-OTTOS-3062-steelcut2-135.png"
-          alt="Otto S"
-          width="1240"
-          height="1240"
-          class="cart-list__list-item-image"
-        />
-        <p class="cart-list__list-item-content-title">
-          Other Product <span class="sh-atom-tag">in Stock !</span>
-        </p>
-        <!-- MOBILE Button for SHEET -->
-        <a
-          href="#"
-          class="cart-list__list-item-content-link sh-atom-button"
-          data-function="openSheet"
-          data-hide="tablet|desktop"
-          data-style="plain"
-          data-text-underline="true"
-          data-size="small"
-          >Product info
-        </a>
-        <!-- DESKTOP -->
-        <!-- new SideModal here -->
-        <Side-Modal
-          button-type="button"
-          button-id="sideModalButton2"
-          button-text="Product info"
-          modal-max-width="470"
-          data-hide="mobile"
-          overlay-opacity="0.1"
-        >
-          <template #header>
-            <!-- <p class="modal__heading"></p> -->
-          </template>
-          <template #body>
-            <slot name="body">
-              <OrgMedia productName="Other Product - Prod 2" />
-              <ProdSpecs />
-            </slot>
-          </template>
-        </Side-Modal>
-        <!-- wc stepper here -->
-        <Stepper />
-        <div class="cart-list__list-item-content-grid">
-          <a
-            href="/en/cart/remove/149249"
-            class="sh-atom-button"
-            data-style="outline-dark"
-            data-shape="circle"
-            data-size="35"
-            data-role="destructive"
-          >
-            <Icon
-              class="sh-atom-icon"
-              width={IconSizes.Medium}
-              height={IconSizes.Medium}
-              name="icon-trashcan"
-            />
-          </a>
-          <span class="cart-list__list-item-content-price">€49</span>
-        </div>
-        <div class="cart-list__list-item-info">
-          <p class="cart-list__list-item-downpayment">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 64 64"
-              style="width: 20px; height: 20px;"
-            >
-              <g data-name="Hand Euro">
-                <path
-                  d="M44 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 44 1zm2 12a1 1 0 0 1 0 2h-6.91a5.6 5.6 0 0 0 0 2H46a1 1 0 0 1 0 2h-6.188A6 6 0 0 0 45 22a5.848 5.848 0 0 0 3.419-1.084 1 1 0 0 1 1.162 1.628A7.83 7.83 0 0 1 45 24a8.009 8.009 0 0 1-7.411-5H36a1 1 0 0 1 0-2h1.069a7.281 7.281 0 0 1 0-2H36a1 1 0 0 1 0-2h1.589A8.009 8.009 0 0 1 45 8a7.752 7.752 0 0 1 4.587 1.47 1 1 0 1 1-1.174 1.619A5.764 5.764 0 0 0 45 10a6 6 0 0 0-5.188 3z"
-                  style="fill:currentColor"></path>
-                <path
-                  d="M60.88 32.12a3.93 3.93 0 0 0-5.42 0L44.59 43H29a1 1 0 0 1 0-2h10.5a3.5 3.5 0 0 0 0-7H19a1.033 1.033 0 0 0-.71.29l-6.88 6.88 12.42 12.42L26.41 51H47a1.033 1.033 0 0 0 .71-.29l13.17-13.17a3.839 3.839 0 0 0 0-5.42zM7.707 40.293a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414l17 17a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0 0-1.414zM2.29 48.29A1.033 1.033 0 0 0 2 49v13a1 1 0 0 0 1 1h13a1.033 1.033 0 0 0 .71-.29l.88-.88L3.17 47.41z"
-                  style="fill:currentColor"></path>
-              </g>
-            </svg>
-            Downpayment €500
-          </p>
-          <p class="cart-list__list-item-date">
-            <Icon class="sh-atom-icon" name="icon-truck" />
-            Delivery within a week
-          </p>
-        </div>
-        <!-- sheet -->
-        <OrgSheet productName="Other Prod - Prod 2" />
-      </li>
-    </ul>
-  </form>
+    <form method="post" id="cart_form" action="/en/cart/update">
+        <ul class="cart-list__list">
+            <li class="cart-list__list-item">
+                <img
+                    src="https://www.studio-henk.nl/Images/emersya/poof-without-background/702040/image-thumb__702040__TransparentSquare/OT-OTTOS-3062-steelcut2-135.png"
+                    alt="Otto S"
+                    width="1240"
+                    height="1240"
+                    class="cart-list__list-item-image"
+                />
+                <p class="cart-list__list-item-content-title">
+                    Nod L Staande lamp <span class="sh-atom-tag"
+                        >in Stock !</span
+                    >
+                </p>
+                <!-- MOBILE Button for SHEET -->
+                <a
+                    href="#"
+                    class="cart-list__list-item-content-link sh-atom-button"
+                    data-function="openSheet"
+                    data-hide="tablet|desktop"
+                    data-style="plain"
+                    data-text-underline="true"
+                    data-size="small"
+                    >Product info
+                </a>
+                <!-- DESKTOP -->
+                <!-- new SideModal here -->
+                <Side-Modal
+                    button-type="button"
+                    button-id="sideModalButton1"
+                    button-text="Product info"
+                    modal-max-width="470"
+                    data-hide="mobile"
+                    overlay-opacity="0.1"
+                >
+                    <template #header>
+                        <!-- <p class="modal__heading"></p> -->
+                    </template>
+                    <template #body>
+                        <slot name="body">
+                            <OrgMedia productName="Nod L - Prod 1" />
+                            <ProdSpecs />
+                        </slot>
+                    </template>
+                </Side-Modal>
+                <!-- wc stepper here -->
+                <Stepper />
+                <div class="cart-list__list-item-content-grid">
+                    <a
+                        href="/en/cart/remove/149249"
+                        class="sh-atom-button"
+                        data-style="outline-dark"
+                        data-shape="circle"
+                    >
+                        <Icon
+                            class="sh-atom-icon"
+                            width={IconSizes.Medium}
+                            height={IconSizes.Medium}
+                            name="icon-trashcan"
+                        />
+                    </a>
+                    <span class="cart-list__list-item-content-price">€49</span>
+                </div>
+                <div class="cart-list__list-item-info">
+                    <p class="cart-list__list-item-downpayment">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 64 64"
+                            style="width: 20px; height: 20px;"
+                        >
+                            <g data-name="Hand Euro">
+                                <path
+                                    d="M44 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 44 1zm2 12a1 1 0 0 1 0 2h-6.91a5.6 5.6 0 0 0 0 2H46a1 1 0 0 1 0 2h-6.188A6 6 0 0 0 45 22a5.848 5.848 0 0 0 3.419-1.084 1 1 0 0 1 1.162 1.628A7.83 7.83 0 0 1 45 24a8.009 8.009 0 0 1-7.411-5H36a1 1 0 0 1 0-2h1.069a7.281 7.281 0 0 1 0-2H36a1 1 0 0 1 0-2h1.589A8.009 8.009 0 0 1 45 8a7.752 7.752 0 0 1 4.587 1.47 1 1 0 1 1-1.174 1.619A5.764 5.764 0 0 0 45 10a6 6 0 0 0-5.188 3z"
+                                    style="fill:currentColor"></path>
+                                <path
+                                    d="M60.88 32.12a3.93 3.93 0 0 0-5.42 0L44.59 43H29a1 1 0 0 1 0-2h10.5a3.5 3.5 0 0 0 0-7H19a1.033 1.033 0 0 0-.71.29l-6.88 6.88 12.42 12.42L26.41 51H47a1.033 1.033 0 0 0 .71-.29l13.17-13.17a3.839 3.839 0 0 0 0-5.42zM7.707 40.293a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414l17 17a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0 0-1.414zM2.29 48.29A1.033 1.033 0 0 0 2 49v13a1 1 0 0 0 1 1h13a1.033 1.033 0 0 0 .71-.29l.88-.88L3.17 47.41z"
+                                    style="fill:currentColor"></path>
+                            </g>
+                        </svg>
+                        Downpayment €500
+                    </p>
+                    <p class="cart-list__list-item-date">
+                        <Icon class="sh-atom-icon" name="icon-truck" />
+                        Delivery within a week
+                    </p>
+                </div>
+                <!-- sheet -->
+                <OrgSheet productName="Nod L - Prod 1" />
+            </li>
+            <li class="cart-list__list-item">
+                <img
+                    src="https://www.studio-henk.nl/Images/emersya/poof-without-background/702040/image-thumb__702040__TransparentSquare/OT-OTTOS-3062-steelcut2-135.png"
+                    alt="Otto S"
+                    width="1240"
+                    height="1240"
+                    class="cart-list__list-item-image"
+                />
+                <p class="cart-list__list-item-content-title">
+                    Other Product <span class="sh-atom-tag">in Stock !</span>
+                </p>
+                <!-- MOBILE Button for SHEET -->
+                <a
+                    href="#"
+                    class="cart-list__list-item-content-link sh-atom-button"
+                    data-function="openSheet"
+                    data-hide="tablet|desktop"
+                    data-style="plain"
+                    data-text-underline="true"
+                    data-size="small"
+                    >Product info
+                </a>
+                <!-- DESKTOP -->
+                <!-- new SideModal here -->
+                <Side-Modal
+                    button-type="button"
+                    button-id="sideModalButton2"
+                    button-text="Product info"
+                    modal-max-width="470"
+                    data-hide="mobile"
+                    overlay-opacity="0.1"
+                >
+                    <template #header>
+                        <!-- <p class="modal__heading"></p> -->
+                    </template>
+                    <template #body>
+                        <slot name="body">
+                            <OrgMedia productName="Other Product - Prod 2" />
+                            <ProdSpecs />
+                        </slot>
+                    </template>
+                </Side-Modal>
+                <!-- wc stepper here -->
+                <Stepper />
+                <div class="cart-list__list-item-content-grid">
+                    <a
+                        href="/en/cart/remove/149249"
+                        class="sh-atom-button"
+                        data-style="outline-dark"
+                        data-shape="circle"
+                        data-size="35"
+                        data-role="destructive"
+                    >
+                        <Icon
+                            class="sh-atom-icon"
+                            width={IconSizes.Medium}
+                            height={IconSizes.Medium}
+                            name="icon-trashcan"
+                        />
+                    </a>
+                    <span class="cart-list__list-item-content-price">€49</span>
+                </div>
+                <div class="cart-list__list-item-info">
+                    <p class="cart-list__list-item-downpayment">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 64 64"
+                            style="width: 20px; height: 20px;"
+                        >
+                            <g data-name="Hand Euro">
+                                <path
+                                    d="M44 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 44 1zm2 12a1 1 0 0 1 0 2h-6.91a5.6 5.6 0 0 0 0 2H46a1 1 0 0 1 0 2h-6.188A6 6 0 0 0 45 22a5.848 5.848 0 0 0 3.419-1.084 1 1 0 0 1 1.162 1.628A7.83 7.83 0 0 1 45 24a8.009 8.009 0 0 1-7.411-5H36a1 1 0 0 1 0-2h1.069a7.281 7.281 0 0 1 0-2H36a1 1 0 0 1 0-2h1.589A8.009 8.009 0 0 1 45 8a7.752 7.752 0 0 1 4.587 1.47 1 1 0 1 1-1.174 1.619A5.764 5.764 0 0 0 45 10a6 6 0 0 0-5.188 3z"
+                                    style="fill:currentColor"></path>
+                                <path
+                                    d="M60.88 32.12a3.93 3.93 0 0 0-5.42 0L44.59 43H29a1 1 0 0 1 0-2h10.5a3.5 3.5 0 0 0 0-7H19a1.033 1.033 0 0 0-.71.29l-6.88 6.88 12.42 12.42L26.41 51H47a1.033 1.033 0 0 0 .71-.29l13.17-13.17a3.839 3.839 0 0 0 0-5.42zM7.707 40.293a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414l17 17a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0 0-1.414zM2.29 48.29A1.033 1.033 0 0 0 2 49v13a1 1 0 0 0 1 1h13a1.033 1.033 0 0 0 .71-.29l.88-.88L3.17 47.41z"
+                                    style="fill:currentColor"></path>
+                            </g>
+                        </svg>
+                        Downpayment €500
+                    </p>
+                    <p class="cart-list__list-item-date">
+                        <Icon class="sh-atom-icon" name="icon-truck" />
+                        Delivery within a week
+                    </p>
+                </div>
+                <!-- sheet -->
+                <OrgSheet productName="Other Prod - Prod 2" />
+            </li>
+        </ul>
+    </form>
 </div>

@@ -7,37 +7,37 @@
 
 class BaseModalV2 extends HTMLElement {
   static get observedAttributes() {
-    return ['open', 'openButtonText', 'modalTitle'];
+    return ["open", "openButtonText", "modalTitle"];
   }
 
   constructor() {
     super();
-    this.shadow = this.attachShadow({ mode: 'open' });
+    this.shadow = this.attachShadow({ mode: "open" });
     // this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
   generateTemplate() {
-    const openButtonText = this.getAttribute('openButtonText') || 'Open';
-    const modalTitle = this.getAttribute('modalTitle') || 'Modal title';
+    const openButtonText = this.getAttribute("openButtonText") || "Open";
+    const modalTitle = this.getAttribute("modalTitle") || "Modal title";
 
-    return `      
+    return `
     <style>
     :host {
       display: inline-block;
       position: relative;
       box-sizing: border-box;
     }
-    
+
     :host * {
       box-sizing: border-box;
     }
-    
+
     :host([open]) {
     }
-    
+
     .BaseModal {
     }
-    
+
     .BaseModal__overlay {
       display: flex;
       opacity: 0;
@@ -48,18 +48,18 @@ class BaseModalV2 extends HTMLElement {
       left:0;
       bottom:0;
       right:0;
-      z-index: -1;      
+      z-index: -1;
       justify-content: center;
       align-items:center;
-      transition: opacity 1.3s ease; 
+      transition: opacity 1.3s ease;
     }
-    
+
     :host([open]) .BaseModal__overlay {
-      opacity: 1; 
+      opacity: 1;
       z-index: 9999999;
       pointer-events: all;
     }
-    
+
     .BaseModal__content {
       background-color: var(--color-white,#fff);
       border-radius: 8px;
@@ -78,25 +78,25 @@ class BaseModalV2 extends HTMLElement {
       display: flex;
       justify-content: flex-end;
     }
-    
+
     @media only screen and (min-width: 768px) {
       .BaseModal__content {
         width: 50vw;
         min-width: 25vw;
         max-width: 640px;
       }
-    }           
-    
+    }
+
     .BaseModal__header {
       display: flex;
       justify-content: center;
       position:relative;
     }
-    
+
     .BaseModal__header-title {
-      font-size: 1.375rem;      
+      font-size: 1.375rem;
     }
-    
+
     .sh-atom-button.modal_open {
       appearance: none;
       border: 0;
@@ -104,7 +104,7 @@ class BaseModalV2 extends HTMLElement {
       text-decoration: underline;
       cursor: pointer;
     }
-    
+
     .modal_close {
       position: absolute;
       right: 0;
@@ -113,15 +113,15 @@ class BaseModalV2 extends HTMLElement {
       border: 0;
       background: transparent;
     }
-    
+
     .modal_close svg {
       fill: currentcolor;
     }
     </style>
-    <div class="BaseModal">      
+    <div class="BaseModal">
       <!-- <button type="button" class="sh-atom-button modal_open" part="open-button button filled" data-style="filled">${openButtonText}</button> -->
       <slot name="trigger"></slot>
-      <div class="BaseModal__overlay">               
+      <div class="BaseModal__overlay">
         <div class="BaseModal__content">
           <div class="BaseModal__header">
             <span class="BaseModal__header-title">${modalTitle}</span>
@@ -136,7 +136,7 @@ class BaseModalV2 extends HTMLElement {
               </svg>
             </button>
     </div>
-    <div class="BaseModal__main">            
+    <div class="BaseModal__main">
     <slot name="content" />
     </div>
     <div class="BaseModal__footer">
@@ -155,7 +155,7 @@ class BaseModalV2 extends HTMLElement {
     // TODO: try without shadow dom
 
     // remove hidden attr
-    this.removeAttribute('hidden');
+    this.removeAttribute("hidden");
 
     // event handler on button
     // const thisOpenButtonElement = this.shadowRoot.querySelector('.modal_open');
@@ -163,45 +163,46 @@ class BaseModalV2 extends HTMLElement {
 
     // event handler on button
     const slotTrigger = this.shadowRoot.querySelector('slot[name="trigger"]');
-    slotTrigger.addEventListener('click', this.openModal.bind(this));
+    slotTrigger.addEventListener("click", this.openModal.bind(this));
 
-    const thisCloseButtonElement = this.shadowRoot.querySelector('.modal_close');
+    const thisCloseButtonElement =
+      this.shadowRoot.querySelector(".modal_close");
     const thisModalOverlay = this.shadowRoot.querySelector(
-      '.BaseModal__overlay'
+      ".BaseModal__overlay",
     );
 
     // thisOpenButtonElement.addEventListener('click', this.openModal.bind(this));
     thisCloseButtonElement.addEventListener(
-      'click',
-      this.closeModal.bind(this)
+      "click",
+      this.closeModal.bind(this),
     );
-    thisModalOverlay.addEventListener('click', this.closeModal.bind(this));
+    thisModalOverlay.addEventListener("click", this.closeModal.bind(this));
 
     // Event handler for the modal content
     const modalContentElement = this.shadowRoot.querySelector(
-      '.BaseModal__content'
+      ".BaseModal__content",
     );
-    modalContentElement.addEventListener('click', (event) => {
+    modalContentElement.addEventListener("click", (event) => {
       // Prevent the click event from propagating to the overlay
       event.stopPropagation();
     });
   }
 
   disconnectedCallback() {
-    console.log('disconnectedCallback called');
+    console.log("disconnectedCallback called");
   }
 
   // A getter/setter for an open property.
   get open() {
-    return this.hasAttribute('open');
+    return this.hasAttribute("open");
   }
 
   set open(val) {
     // Reflect the value of the open property as an HTML attribute.
     if (val) {
-      this.setAttribute('open', '');
+      this.setAttribute("open", "");
     } else {
-      this.removeAttribute('open');
+      this.removeAttribute("open");
     }
   }
 
@@ -212,19 +213,19 @@ class BaseModalV2 extends HTMLElement {
   }
 
   openModal() {
-    document.querySelector('body').classList.add('BaseModal_open');
+    document.querySelector("body").classList.add("BaseModal_open");
     this.open = true;
   }
 
   // Close the modal when the overlay is clicked
   closeModal() {
     // console.log("clicked, closing");
-    document.querySelector('body').classList.remove('BaseModal_open');
-    if (document.querySelector('body').classList.length === 0) {
-      document.querySelector('body').removeAttribute('class');
+    document.querySelector("body").classList.remove("BaseModal_open");
+    if (document.querySelector("body").classList.length === 0) {
+      document.querySelector("body").removeAttribute("class");
     }
     this.open = false;
   }
 }
 
-customElements.define('base-modal-v2', BaseModalV2);
+customElements.define("base-modal-v2", BaseModalV2);

@@ -191,12 +191,8 @@
     color: var(--color-henk-black);
   }
 
-  .masthead-desktop[data-theme="dark"].NavBar--isHovered
-    #utilities-nav__cart
-    .cart__badge,
-  .masthead-desktop[data-theme="dark"].NavBar--isScrolled
-    #utilities-nav__cart
-    .cart__badge {
+  .masthead-desktop[data-theme="dark"].NavBar--isHovered #utilities-nav__cart .cart__badge,
+  .masthead-desktop[data-theme="dark"].NavBar--isScrolled #utilities-nav__cart .cart__badge {
     background-color: var(--color-black);
     color: var(--color-white);
   }
@@ -369,6 +365,11 @@
     flex-wrap: nowrap;
     gap: 4px;
     text-wrap: nowrap;
+    color: currentColor;
+  }
+
+  .masthead-desktop .primary-nav .primary-nav__link:hover {
+    color: var(--color-ui-text-action);
   }
 
   .masthead-desktop .primary-nav .primary-nav__link:focus {

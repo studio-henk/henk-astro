@@ -5,6 +5,6 @@ export default defineConfig({
   compressHTML: false,
   integrations: [],
   build: {
-    inlineStylesheets: `never`,
+    inlineStylesheets: "never",
   },
 });
