@@ -10,6 +10,7 @@ import UspBrick from "../../components/bricks/UspBrick.astro";
 import CustomerFavoritesSlider from "../../components/bricks/CustomerFavoritesSlider.astro";
 import QuickDeliverySlider from "../../components/bricks/QuickDeliverySlider.astro";
 import ReviewsBrick from "../../components/bricks/ReviewsBrick.astro";
+import SectionHeader from "../../components/bricks/SectionHeader.astro";
 ---
 
 <BaseLayout
@@ -51,7 +52,7 @@ import ReviewsBrick from "../../components/bricks/ReviewsBrick.astro";
     videoSRC="/static/std/assets/video/StudioHenk_StoresMix_website.mp4"
     url="/en/shops"
   /> -->
-    <UspBrick />
+    <UspBrick />    
     <SplitscreenBrick
         mediaSrc="/images/bcorp.jpg"
         title="A zero-waste furniture industry"
@@ -72,4 +73,206 @@ import ReviewsBrick from "../../components/bricks/ReviewsBrick.astro";
             mission and B Corp status.
         </p>
     </SplitscreenBrick>
+    <SectionHeader 
+        title="Section Header" 
+        byline="Byline"
+        level={2}
+        bgColor="secondary"
+    >
+        <p>This is a section header with a byline and a subtitle</p>    
+    </SectionHeader>
+    <div class="henk-content-divider henk-content-divider--default" style="margin: 0px; padding: 0px;"><hr></div>
+    <div class="faq-container">
+        <h2>Questions?</h2>
+        <div class="henk-details-group">
+          <details class="henk-details henk-details--plusmin">
+            <summary class="henk-details__summary">
+              What is the purpose of this component?
+            </summary>
+            <div class="henk-details__content">
+              <p>
+                This component is used to display a list of frequently asked
+                questions.
+              </p>
+            </div>
+          </details>
+          <details class="henk-details henk-details--plusmin">
+            <summary class="henk-details__summary">
+              How many samples can I order?
+            </summary>
+            <div class="henk-details__content">
+              <p>
+                You are free to assemble your own samples or choose from our curated
+                sample packs, which include six material samples each. You can help us
+                reduce waste by ordering only the samples you need.
+              </p>
+            </div>
+          </details>
+          <details class="henk-details henk-details--plusmin">
+            <summary class="henk-details__summary">
+              When can I expect my samples?
+            </summary>
+            <div class="henk-details__content">
+              <p>
+                You should expect your samples within 7 days. Please contact us if you
+                have not received your samples within one week.
+              </p>
+            </div>
+          </details>
+          <details class="henk-details henk-details--plusmin">
+            <summary class="henk-details__summary">
+              Why do you want me to return the samples?
+            </summary>
+            <div class="henk-details__content">
+              <p>
+                By returning your samples, you can help us ensure that nothing goes to
+                waste. We repurpose samples by using them in the stores if they are
+                still in good condition.
+              </p>
+            </div>
+          </details>
+          <details class="henk-details henk-details--plusmin">
+            <summary class="henk-details__summary">
+              How can I return my samples?
+            </summary>
+            <div class="henk-details__content">
+              <p>
+                You can return your sample pack to any of our stores or mail it to us
+                for free via Antwoordnummer 98189, 1000 VA Amsterdam.
+              </p>
+            </div>
+          </details>
+          <details class="henk-details henk-details--plusmin">
+            <summary class="henk-details__summary">
+              Will I be reimbursed for the samples?
+            </summary>
+            <div class="henk-details__content">
+              <p>
+                When you return the samples to one of our stores, we will reimburse
+                the cost as a discount with your order. Unfortunately, we're not able
+                to offer reimbursement when you return your samples to us via mail.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+      
 </BaseLayout>
+<style is:global>
+    .henk-content-divider {
+    background-color: #fff;
+}
+
+.henk-content-divider hr {
+    border: none;
+    height: 1px;
+    background-color: var(--color-ui-border-default, #d1d1d1)
+}
+
+.henk-content-divider--primary hr {
+    background-color: var(--color-ui-border-primary, #1b33cb)
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    max-width: 1208px;
+    margin: 0 auto;
+    transition: all .3s ease
+}
+
+@media screen and (min-width: 768px) {
+    .faq-container {
+        padding:40px
+    }
+}
+
+.henk-details {
+    margin-bottom: 1.5rem;
+    color-scheme: light dark
+}
+
+.henk-details-group .henk-details {
+    margin-bottom: 0
+}
+
+.henk-details__summary {
+    cursor: pointer;
+    font-weight: 400
+}
+
+.henk-details__content {
+    margin-top: 10px;
+    max-width: 60ch
+}
+
+.henk-details.henk-details--plusmin {
+    border-bottom: 1px solid var(--color-ui-border-default)
+}
+
+.henk-details.henk-details--plusmin .henk-details__summary {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding: 3px 12px 3px 0;
+    transition: all .3s ease;
+    position: relative
+}
+
+.henk-details.henk-details--plusmin[open] .henk-details__summary {
+    color: var(--color-ui-text-primary);
+    position: relative
+}
+
+.henk-details.henk-details--plusmin .henk-details__summary:before {
+    content: "+";
+    display: inline-flex;
+    font-size: 1.25rem;
+    justify-content: center;
+    line-height: 24px;
+    transition: all .3s ease;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    transform-origin: center center;
+    z-index: 1;
+    opacity: 1
+}
+
+.henk-details.henk-details--plusmin[open] .henk-details__summary:before {
+    transform: rotate(90deg);
+    opacity: 0
+}
+
+.henk-details.henk-details--plusmin .henk-details__summary:after {
+    content: "–";
+    position: absolute;
+    top: 3px;
+    right: 0;
+    opacity: 0;
+    transition: all .3s ease
+}
+
+.henk-details.henk-details--plusmin[open] .henk-details__summary:after {
+    opacity: 1
+}
+
+.henk-details.henk-details--plusmin .henk-details__summary:hover {
+    color: var(--color-ui-text-action-hover)
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-ui-surface-default: var(--color-alias-base-black);
+        --color-ui-text-body: var(--color-alias-base-white);
+        --color-ui-text-action-hover: var(--color-alias-primary-light, blue)
+    }
+
+    .henk-details.henk-details--plusmin[open] .henk-details__summary {
+        color: var(--color-alias-primary-light)
+    }
+}
+
+</style>

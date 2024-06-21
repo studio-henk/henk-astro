@@ -3,6 +3,7 @@ import { getLangFromUrl } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 import TheHeader from '../components/TheHeader.astro';
 import TheFooter from '../components/TheFooter.astro';
+import NewsLetterBlock from '../components/astro/NewsLetterBlock.astro';
 // import SfChatbutton from "../components/third-party/_sf-chatbutton.astro";
 
 const {
@@ -218,6 +219,7 @@ const {
             >
                 <slot />
             </main>
+            <NewsLetterBlock />
             <TheFooter />
         </div>
         <slot name="footer-scripts" />

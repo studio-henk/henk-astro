@@ -503,7 +503,8 @@
   }
 
   .masthead-desktop .gallery-controller__level-link:hover {
-    --color-text-action: var(--color-text-action-dimmed);
+    /* --color-text-action: var(--color-text-action-dimmed); */
+    --color-text-action: var(--color-ui-text-action-hover);
     text-indent: 0.5rem;
   }
 
@@ -514,7 +515,8 @@
   }
 
   .masthead-desktop .page-link:hover {
-    --color-text-action: var(--color-text-action-dimmed);
+    /* --color-text-action: var(--color-text-action-dimmed); */
+    --color-text-action: var(--color-ui-text-action-hover);
   }
 
   .masthead-desktop .gallery-controller__controls .page-link:hover {

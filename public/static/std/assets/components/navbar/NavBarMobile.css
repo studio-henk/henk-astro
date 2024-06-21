@@ -47,6 +47,12 @@
     color: var(--color-white);
   }
 
+  .NavBarMobile[data-theme="light"] .NavBarMobile__top {
+    background-color: var(--color-transparent);
+    color: var(--color-black);
+    --color-background-button-nav-mobile: var(--color-black);
+  }
+
   .NavBarMobile__top-link {
     font-size: 0;
   }
@@ -131,6 +137,7 @@
   .NavBarMobile .page-link {
     display: block;
     text-decoration: none;
+    color: currentColor;
   }
 
   .NavBarMobile .NavBarMobile__button-back {
