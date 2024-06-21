@@ -158,7 +158,7 @@ import SectionHeader from "../../components/bricks/SectionHeader.astro";
       </div>
       
 </BaseLayout>
-<style is:global>
+<style>
     .henk-content-divider {
     background-color: #fff;
 }
@@ -179,7 +179,10 @@ import SectionHeader from "../../components/bricks/SectionHeader.astro";
     padding: 24px;
     max-width: 1208px;
     margin: 0 auto;
-    transition: all .3s ease
+    transition: all .3s ease;
+    color-scheme: light dark;
+    background-color: var(--color-ui-surface-default, #fff);
+    color: var(--color-ui-text-body, #000);
 }
 
 @media screen and (min-width: 768px) {
@@ -264,7 +267,7 @@ import SectionHeader from "../../components/bricks/SectionHeader.astro";
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    .faq-container {        
         --color-ui-surface-default: var(--color-alias-base-black);
         --color-ui-text-body: var(--color-alias-base-white);
         --color-ui-text-action-hover: var(--color-alias-primary-light, blue)
