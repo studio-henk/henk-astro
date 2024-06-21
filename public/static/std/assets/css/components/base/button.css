@@ -1,0 +1,180 @@
+.henk-button,
+::part(henk-button) {
+  /* --_color-button-background: var(--color-ui-surface-default); */
+  --_color-button-background: var(--color-ui-surface-transparent);
+  --_color-button-text: var(--color-alias-primary);
+  --_color-button-border: var(--color-alias-primary);
+  background-color: var(--_color-button-background);
+  color: var(--_color-button-text);
+  border: 1px solid var(--_color-button-border);
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  line-height: 1.5;
+  padding: 0.5625em 24px;
+  text-decoration: none;
+  font-family: var(--font-body, sans-serif), sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.henk-button:hover,
+:hover span.henk-button,
+::part(henk-button):hover,
+::part(henk-button):hover span {
+  --_color-button-background: var(--color-ui-surface-quaternary);
+  --_color-button-text: var(--color-alias-primary-dark);
+  --_color-button-border: var(--color-alias-primary-dark);
+}
+
+.henk-button--primary,
+::part(henk-button--primary) {
+  --_color-button-background: var(--color-ui-surface-primary);
+  /* --_color-button-text: var(--color-alias-base-white); */
+  --_color-button-text: var(--color-ui-text-on-primary);
+  --_color-button-border: var(--color-ui-border-primary);
+}
+
+.henk-button--primary:hover {
+  --_color-button-background: var(--color-alias-primary-dark);
+  --_color-button-text: var(--color-ui-text-on-primary);
+  --_color-button-border: var(--color-alias-primary-dark);
+}
+
+.henk-button--secondary {
+  --_color-button-background: var(--color-ui-surface-secondary);
+  --_color-button-text: var(--color-ui-text-on-secondary);
+  --_color-button-border: var(--color-ui-border-secondary);
+}
+
+.henk-button--secondary:hover {
+  --_color-button-background: var(--color-alias-secondary-dark);
+  --_color-button-text: var(--color-ui-text-on-secondary);
+  --_color-button-border: var(--color-alias-secondary-dark);
+}
+
+.henk-button--tertiary {
+  --_color-button-background: var(--color-ui-surface-tertiary);
+  --_color-button-text: var(--color-ui-text-on-tertiary);
+  --_color-button-border: var(--color-ui-border-tertiary);
+}
+
+.henk-button--tertiary:hover {
+  --_color-button-background: var(--color-alias-tertiary-dark);
+  --_color-button-text: var(--color-ui-text-on-tertiary);
+  --_color-button-border: var(--color-alias-tertiary-dark);
+}
+
+/* same colour on top of same color */
+[class*="--BG-primary"] .henk-button--primary,
+[class*="--bg-primary"] .henk-button--primary {
+  --_color-button-border: var(--color-ui-border-on-primary);
+}
+
+[class*="--BG-secondary"] .henk-button--secondary,
+[class*="--bg-secondary"] .henk-button--secondary {
+  --_color-button-border: var(--color-ui-border-on-secondary);
+}
+
+[class*="--BG-tertiary"] .henk-button--tertiary,
+[class*="--bg-tertiary"] .henk-button--tertiary {
+  --_color-button-border: var(--color-ui-border-on-tertiary);
+}
+
+/* icon-only button */
+.henk-button--icon-only {
+  padding-inline: 9px;
+}
+
+/* .henk-button:has(i.henk-icon) {
+
+} */
+
+.henk-button:has(.icon--large) {
+  padding-block: 9px;
+}
+
+/* disabled state */
+.henk-button[disabled] {
+  --_color-button-background: var(--color-ui-surface-disabled);
+  --_color-button-text: var(--color-ui-text-disabled);
+  --_color-button-border: var(--color-ui-border-default);
+
+  cursor: not-allowed;
+}
+
+/* loading state */
+.henk-button[data-state="loading"] {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  --color-spinner-loader: var(--_color-button-text);
+  color: transparent;
+  overflow: hidden;
+}
+
+.henk-button[data-state="loading"]:before,
+.henk-button[data-state="loading"]:after {
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  aspect-ratio: 1 / 1;
+}
+
+.henk-button[data-state="loading"]:before {
+  position: absolute;
+  display: block;
+  content: "loading...";
+  margin: 0 auto;
+  /*font-size: 0.4em;*/
+  font-size: 1em;
+  text-indent: -9999em;
+  border-top: 0.25em solid rgba(255, 255, 255, 0.2);
+  border-right: 0.25em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.25em solid rgba(255, 255, 255, 0.2);
+  /* spinning part */
+  border-left: 0.25em solid var(--color-spinner-loader, #fff);
+  /* border-left: 1em solid var(--_color-button-text, #fff);
+   */
+  transform: translateZ(0);
+  animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.henk-button[data-state="loading"][data-accent="transparent"]:not([data-text-color]) {
+  --_color-button-text: var(--color-text-page);
+  --color-border-button: var(--color-text-page);
+}
+
+.henk-button[data-state="loading"][data-accent="transparent"][data-text-color] {
+  --color-border-button: var(--_color-button-text);
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .henk-button--default,
+  ::part(henk-button) {
+    /* --_color-button-background: var(--color-ui-surface-transparent); */
+    --_color-button-text: var(--color-alias-primary-light-aaa);
+    --_color-button-border: var(--color-alias-primary-light-aaa);
+  }
+
+  .henk-button--tertiary {
+    --_color-button-border: var(--color-ui-border-on-dark);
+  }
+}

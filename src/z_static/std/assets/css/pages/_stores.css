@@ -1,0 +1,40 @@
+.sh-l-grid__item.sh-store {
+  display: grid;
+  height: 100%;
+}
+
+/* .sh-stores is the padding-box. remove soon */
+
+.sh-stores .sh-store__image {
+  border-radius: 8px;
+}
+
+.sh-stores .sh-store__title {
+  /*font-size: 0.875rem;*/
+  /*line-height: 28px;*/
+  /*letter-spacing: 0.2em;*/
+  /*text-transform: uppercase;*/
+  /*margin-bottom: 10px;*/
+}
+
+.sh-stores .sh-store__subtitle,
+.sh-stores .sh-store__link {
+  /*font-size: 0.75rem;*/
+  /*line-height: 21px;*/
+  /* letter-spacing: 0.2em;
+  text-transform: uppercase; */
+  margin-bottom: 0;
+}
+
+.sh-stores .sh-store__link {
+  display: flex;
+  margin: 18px 0;
+}
+
+.sh-stores .sh-l-grid__item.sh-store p {
+  margin-bottom: 0;
+}
+
+.sh-stores .sh-l-grid__item.sh-store .sh-buttons {
+  margin-top: auto;
+}

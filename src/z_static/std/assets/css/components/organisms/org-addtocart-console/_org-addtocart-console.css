@@ -1,0 +1,121 @@
+:root[data-theme~="addtocart-v2"],
+:root[data-theme~="sh-henk-v2"] {
+  --var-local-component-bgc: var(--color-henk-white);
+  --var-local-component-shadow: none;
+}
+
+.org-addtocart-console {
+  background-color: transparent;
+  float: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.org-addtocart-console *+* {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .org-addtocart-console {
+    background-color: #f3f1ed;
+    float: none;
+    position: sticky;
+    bottom: 0;
+    margin: 0 -16px;
+    padding: 1rem 1rem 2rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .org-addtocart-console {
+    max-width: max-content;
+    margin: auto 0 auto auto;
+  }
+}
+
+.org-addtocart-console__label {
+  margin: 0;
+}
+
+.org-addtocart-console__hidden {
+  display: none;
+}
+
+.org-addtocart-console .product-summary__quantity,
+.org-addtocart-console__quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.org-addtocart-console__price {
+  font-feature-settings: "lnum";
+}
+
+.org-addtocart-console__delivery {
+  flex: 1 1 40px;
+  display: flex;
+  align-items: center;
+}
+
+.org-addtocart-console__delivery p {
+  font-size: 0.75rem;
+  line-height: 18px;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .org-addtocart-console__delivery p {
+    font-size: 0.8125rem;
+  }
+}
+
+/* exception */
+.org-addtocart-console .sh-atom-button {
+  display: inline-grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 1rem;
+  justify-content: center;
+}
+
+.org-addtocart-console .sh-atom-button .org-addtocart-console__price {
+  min-width: 62px;
+}
+
+/*@media only screen and (max-width: 767px) {
+  .org-addtocart-console .sh-atom-button {
+    background-color: #f3f1ed;
+  }
+}*/
+@media only screen and (min-width: 768px) {
+  .mcl-order-switcher {
+    display: grid;
+    grid-template-areas: "desc" "conf" "addtocart" "details";
+  }
+
+  .mcl-order-switcher .product-description {
+    grid-area: desc;
+  }
+
+  .mcl-order-switcher .product-configuration {
+    grid-area: conf;
+    margin-top: 0;
+  }
+
+  .mcl-order-switcher .details-container {
+    grid-area: details;
+  }
+
+  .mcl-order-switcher .org-addtocart-console {
+    grid-area: addtocart;
+    margin-top: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .product-configuration {
+    background: #fcfaf8;
+    margin: 28px -16px 0 -16px;
+    padding: 8px 16px;
+  }
+}

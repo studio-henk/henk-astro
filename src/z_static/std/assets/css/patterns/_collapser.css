@@ -1,0 +1,22 @@
+.collapser__content {
+  transform: translateZ(0);
+  height: 0;
+  padding: 0;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+.collapser__content.collapser--expanded {
+  display: block;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.js-collapser-trigger:hover {
+  cursor: pointer;
+}
+
+.collapser--expanded > .icon {
+  transition: transform 0.4s;
+  transform: rotate(180deg);
+}

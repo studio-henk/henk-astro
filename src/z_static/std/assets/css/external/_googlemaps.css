@@ -1,0 +1,21 @@
+.gm-ui-hover-effect {
+  top: 0 !important;
+  right: 2px !important;
+}
+
+.mapsPopup > img[src*="logo-henk-solo"] {
+  margin: 0 0 1rem;
+}
+
+.mapsPopup > a > p {
+  margin: 0 0 1rem;
+}
+
+.mapsPopup ul {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.gm-style-iw-d {
+  padding: 12px;
+}

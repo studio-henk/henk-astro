@@ -1,0 +1,78 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 400;
+  text-align: left;
+  margin: 24px 0;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+.fs-xxx-large,
+h1,
+.h1 {
+  /* font-size: max(calc(31 / 16 * 1rem), calc(39 * 100 / 1728 * 1vw)); */
+  /* font-size: max(1.9375rem,calc(29.182px + .568vw)); */
+  font-size: max(calc(31 / 16 * 1rem), calc(29.182px + .568vw));
+  line-height: clamp(40px, 3vw, 48px);
+}
+
+.fs-xx-large,
+h2,
+.h2 {
+  /* font-size: max(calc(25 / 16 * 1rem), calc(31 * 100 / 1728 * 1vw)); */
+  /* font-size: max(25px,23.636px + .426vw); */
+  font-size: max(calc(25 / 16 * 1rem), calc(23.636px + .426vw));
+  line-height: clamp(32px, 3vw, 40px);
+}
+
+.fs-x-large,
+h3,
+.h3 {
+  /* font-size: max(calc(20 / 16 * 1rem), calc(25 * 100 / 1728 * 1vw)); */
+  font-size: max(calc(20 / 16 * 1rem), calc(18.864px + 0.355vw));
+  line-height: clamp(24px, 3vw, 32px);
+}
+
+.fs-large,
+h4,
+.h4 {
+  /* font-size: max(calc(16 / 16 * 1rem), calc(20 * 100 / 1728 * 1vw)); */
+  font-size: max(calc(16 / 16 * 1rem), calc(15.091px + 0.284vw));
+  line-height: clamp(24px, 3vw, 32px);
+}
+
+h5,
+.h5 {
+  /* font-size: max(calc(16 / 16 * 1rem), calc(20 * 100 / 1728 * 1vw)); */
+  font-size: max(calc(16 / 16 * 1rem), calc(15.091px + 0.284vw));
+  line-height: clamp(24px, 3vw, 32px);
+}
+
+h6,
+.h6 {
+  /* font-size: max(calc(16 / 16 * 1rem), calc(20 * 100 / 1728 * 1vw)); */
+  font-size: max(calc(16 / 16 * 1rem), calc(15.091px + 0.284vw));
+  line-height: clamp(24px, 3vw, 32px);
+}
+
+/*h1 as first-child no margin top*/
+h1:first-child {
+  margin-top: 0;
+}

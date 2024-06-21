@@ -1,0 +1,379 @@
+.normal {
+  font-weight: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.bold {
+  font-weight: 400;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-shadow {
+  text-shadow: 0.5px 0.5px 0.5px #000;
+}
+
+.xs-right {
+  float: right !important;
+}
+
+@media (min-width: 544px) {
+  .sm-right {
+    float: right !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md-right {
+    float: right !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .lg-right {
+    float: right !important;
+  }
+}
+
+@media (min-width: 1366px) {
+  .xl-right {
+    float: right !important;
+  }
+}
+
+.flex-fix-ie {
+  display: flex;
+  flex-direction: row;
+}
+
+.rotate {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cursorpointer {
+  cursor: pointer;
+}
+
+a.cursorpointer {
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show-block {
+  display: block !important;
+}
+
+.show-inline-block {
+  display: inline-block !important;
+}
+
+.show-inline {
+  display: inline !important;
+}
+
+/*
+ * Hide input without blocking validation
+ */
+span.hidden-input+input {
+  opacity: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-width: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+/* .sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; } */
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.img-responsive img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/*********************/
+/* SHOW HIDE HELPERS */
+/*********************/
+.hidden-xs {
+  display: none !important;
+}
+
+/* SM hide */
+@media (min-width: 544px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+/* MD hide */
+@media (min-width: 768px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+/* LG hide */
+@media (min-width: 992px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+/* XL hide */
+@media (min-width: 1366px) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
+
+/* SM show */
+@media (min-width: 544px) {
+  .visible-sm-block {
+    display: block !important;
+  }
+
+  .visible-sm-inline {
+    display: inline !important;
+  }
+
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+
+/* MD show */
+@media (min-width: 768px) {
+  .visible-md-block {
+    display: block !important;
+  }
+
+  .visible-md-inline {
+    display: inline !important;
+  }
+
+  .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+
+/* lg show */
+@media (min-width: 992px) {
+  .visible-lg-block {
+    display: block !important;
+  }
+
+  .visible-lg-inline {
+    display: inline !important;
+  }
+
+  .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+
+/* xl show */
+@media (min-width: 1366px) {
+  .visible-xl-block {
+    display: block !important;
+  }
+
+  .visible-xl-inline {
+    display: inline !important;
+  }
+
+  .visible-xl-inline-block {
+    display: inline-block !important;
+  }
+}
+
+.visible-print {
+  display: none !important;
+}
+
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+}
+
+.visible-print-block {
+  display: none !important;
+}
+
+@media print {
+  .visible-print-block {
+    display: block !important;
+  }
+}
+
+.visible-print-inline {
+  display: none !important;
+}
+
+@media print {
+  .visible-print-inline {
+    display: inline !important;
+  }
+}
+
+.visible-print-inline-block {
+  display: none !important;
+}
+
+@media print {
+  .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
+}
+
+/* Border radius */
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.quote {
+  font-size: 1.25rem;
+  line-height: 1.6875rem;
+}
+
+.pull-over-small {
+  position: relative;
+  top: -1.875rem;
+  margin-bottom: -1.875rem;
+}
+
+.pull-over-medium {
+  position: relative;
+  top: -5rem;
+  margin-bottom: -5rem;
+}
+
+.ratio16-9:before {
+  padding-top: 56.25%;
+}
+
+.ratio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

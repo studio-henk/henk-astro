@@ -1,0 +1,32 @@
+.SectionHeader {    
+    padding: 1.5rem;
+    /* background-color: var(--color-background-section-header, #fff); */
+    /* color: var(--color-text-section-header, #000); */
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.SectionHeader__content {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    max-width: 32em;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.SectionHeader__title {
+    text-align: center;
+    text-wrap: balance;
+}
+
+.SectionHeader__byline {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .SectionHeader {
+        padding: 5rem 2.5rem;
+    }
+}

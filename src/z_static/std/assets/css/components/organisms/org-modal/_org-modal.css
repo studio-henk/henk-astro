@@ -1,0 +1,173 @@
+.sh-org-modal {
+  /*z-index: 91040;*/
+  z-index: 1;
+}
+
+.sh-org-modal.sh-org-modal--status-open {
+  z-index: 999999;
+}
+
+.sh-org-modal .sh-org-modal__inner {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.sh-org-modal .sh-org-modal__inner .sh-org-modal__modal-container {
+  position: relative;
+  background: var(--color-white, #f00);
+  width: 90vw;
+  max-height: 90vh;
+  min-height: 90vh;
+  height: 90vh;
+  border-radius: 8px;
+  cursor: default;
+}
+
+@supports (min-height: 100dvh) {
+  .sh-org-modal .sh-org-modal__inner .sh-org-modal__modal-container {
+    max-height: 90dvh;
+    height: auto;
+    min-height: unset;
+  }
+
+  .sh-org-modal .sh-org-modal__inner .sh-org-modal__modal-container .sh-org-modal__modal-content {
+    max-height: calc(100dvh - 28px - 28px - 38px - 44px - 48px - 10dvh);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-modal .sh-org-modal__inner .sh-org-modal__modal-container {
+    height: 100vh;
+  }
+}
+
+.sh-org-modal .sh-org-modal__inner .sh-org-modal__grid {
+  display: grid;
+  gap: 1.5rem;
+  height: 100%;
+  grid-template-rows: 44px 1fr 44px;
+}
+
+.sh-org-modal .sh-org-modal__inner .sh-org-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sh-org-modal .sh-org-modal__inner .sh-org-modal__header * {
+  margin: 0;
+}
+
+.sh-org-modal .sh-org-modal__inner .sh-org-modal__header .sh-atom-button svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  /* ensure svg will never be the target of mouse event */
+  pointer-events: none;
+}
+
+.sh-org-modal .sh-org-modal__inner .sh-org-modal__modal-content {
+  overflow: auto;
+  max-height: calc(90vh - 28px - 28px - 38px - 44px - 48px);
+}
+
+@media only screen and (min-width: 992px) {
+  .sh-org-modal .sh-org-modal__inner .sh-org-modal__modal-content {
+    max-height: none;
+  }
+}
+
+.sh-org-modal .sh-org-modal__inner .sh-org-modal__footer {
+  margin-top: auto;
+}
+
+.sh-org-modal .sh-org-modal__inner .sh-org-modal__footer .sh-molecule-l-button-group {
+  margin-top: 0;
+  min-width: 239px;
+}
+
+.sh-org-modal .sh-org-modal__inner.sh-org-modal__inner--status-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sh-org-modal[data-variant=filter] {
+  display: flex;
+  justify-content: flex-start;
+  position: sticky;
+  top: 89px;
+}
+
+@media only screen and (min-width: 992px) {
+  .sh-org-modal[data-variant=filter] {
+    top: 120px;
+    margin-top: -36px;
+  }
+}
+
+.sh-org-modal[data-variant=filter]>.sh-molecule-bg-box>.sh-molecule-padding-box>.sh-molecule-l-button-group {
+  gap: 8px;
+}
+
+@media only screen and (min-width: 992px) {
+  .sh-org-modal[data-variant=filter]>.sh-molecule-bg-box>.sh-molecule-padding-box>.sh-molecule-l-button-group {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+  }
+}
+
+.sh-org-modal[data-variant=filter] .sh-org-modal__inner .filter__checklist label.checkbox {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-modal[data-variant=filter] .sh-org-modal__inner {
+    place-content: flex-end;
+    place-items: normal;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-modal[data-variant=filter] .sh-org-modal__grid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-modal[data-variant=filter] .sh-org-modal__modal-container {
+    border-radius: 0;
+    width: unset;
+    max-height: unset;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-modal[data-variant=filter] .sh-org-modal__inner--status-open .sh-org-modal__modal-container {
+    transform: translateX(0);
+  }
+}
+
+.sh-org-modal[data-variant=filter] .sh-org-modal__modal-content {
+  flex: 2 1 auto;
+}
+
+.sh-org-modal[data-variant=filter] .sh-molecule-bg-box,
+.sh-org-modal[data-variant=filter] .sh-molecule-padding-box {
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,44 @@
+.SliderBrickVariantA {
+  padding-bottom: 24px;
+  position: relative;
+}
+
+.SliderBrickVariantA .SliderBrickVariantA__HeadingContainer {
+  padding: 24px;
+}
+
+.SliderBrickVariantA .SliderBrickVariantA__Heading {
+  margin: 0;
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .SliderBrickVariantA .SliderBrickVariantA__Heading {
+    text-align: center;
+  }
+
+  .SliderBrickVariantA .swiper {
+    position: unset;
+    padding-top: 0 !important;
+  }
+
+  .SliderBrickVariantA .swiper-wrapper {
+    padding-top: 0px !important;
+  }
+
+  .SliderBrickVariantA .sh-custom-swiper-button-prev,
+  .SliderBrickVariantA .sh-custom-swiper-button-next {
+    position: absolute;
+    /* top: 32px; */
+    /* top: clamp(1rem, 1.6vw, 2rem); */
+    top: 1rem;
+  }
+
+  .SliderBrickVariantA .sh-custom-swiper-button-prev {
+    right: 6rem;
+  }
+
+  .SliderBrickVariantA .sh-custom-swiper-button-next {
+    right: 2rem;
+  }
+}

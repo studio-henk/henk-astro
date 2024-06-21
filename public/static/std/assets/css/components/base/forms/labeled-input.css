@@ -1,0 +1,32 @@
+.henk-labeled-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.henk-labeled-input.--dir-horizontal {
+  flex-direction: row; 
+  justify-content: flex-start;
+  align-items: center; 
+  gap: 0.5rem;  
+}
+
+.henk-labeled-input .henk-label {
+  margin-bottom: 4px;
+}
+
+.henk-labeled-input .henk-input {
+  margin-bottom: 24px;
+}
+
+.henk-labeled-input.--dir-horizontal .henk-label {
+  margin-bottom: 0;
+}
+
+.henk-labeled-input.--dir-horizontal .henk-input {
+  flex: 1;
+}
+
+.henk-labeled-input .required-indicator {
+  color: var(--color-ui-text-danger);
+} 

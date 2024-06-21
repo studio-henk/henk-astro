@@ -1,0 +1,72 @@
+.action-console[data-has-toolbar=true] .action-console__layout-box {
+  padding: 0;
+}
+
+.action-console[data-is-sticky=true] {
+  position: sticky;
+  bottom: 0;
+  z-index: 99;
+}
+
+.action-console * {
+  margin: 0;
+}
+
+.action-console .action-console__layout-box {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* configurable */
+  padding: 0 1rem 24px;
+  /* configurable */
+  background-color: var(--color-background-actionconsole, var(--color-henk-white, #fff));
+  color: var(--color-text-actionconsole, var(--color-black, #000));
+}
+
+.action-console .action-console__toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+@media only screen and (max-width: 991px) {
+  .action-console .action-console__toolbar .sh-atom-button {
+    border-radius: 0;
+  }
+}
+
+/* @supports (container-type: inline-size) {
+  .action-console {
+    container-type: inline-size;
+    container-name: action-console;
+  }
+
+@container action-console (max-width:767 px) {
+  .action-console__layout-box {
+    background-color: yellow;
+  }
+}
+
+@container action-console (min-width:768 px) {
+  .action-console__layout-box {
+    background-color: green;
+  }
+
+} @container action-console (min-width:992 px) {
+  .action-console__layout-box {
+  }
+}
+}
+*/
+/*
+@supports not (container-type: inline-size) {
+  .action-console {
+    background-color: red;
+  }
+
+  @media screen and (min-width: 414px) {
+    .action-console__layout-box {
+
+    }
+  }
+}*/

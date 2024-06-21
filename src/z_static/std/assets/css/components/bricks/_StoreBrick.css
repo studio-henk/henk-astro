@@ -1,0 +1,51 @@
+.StoreBrick {
+    padding: 1.5rem;
+}
+
+.StoreBrick__grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.StoreBrick__Block {
+    display: grid;
+    justify-items: start;
+    align-items: start;
+    grid-template-rows: auto auto 1fr auto auto auto;
+    gap: 24px;
+}
+
+.StoreBrick__store-image-container {
+    width: 100%;
+}
+
+.StoreBrick__Picture {
+    display: flex;
+    width: 100%;
+}
+
+.StoreBrick__img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.StoreBrick__store-name {
+    margin: 0;
+}
+
+.StoreBrick__Block .sh-atom-button {
+    grid-row: 6;
+}
+
+@media screen and (min-width: 568px) {
+    .StoreBrick__grid {
+        grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .StoreBrick {
+        padding: 2.5rem;
+    }
+}

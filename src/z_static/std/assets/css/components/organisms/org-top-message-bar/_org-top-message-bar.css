@@ -1,0 +1,21 @@
+.sh-org-msg-bar {
+  background-color: var(--color-accent14, #ccc);
+  width: 100%;
+  position: relative;
+  z-index: 999;
+  padding: 4px 16px;
+  text-align: center;
+}
+.sh-org-msg-bar * {
+  margin: 0;
+  padding: 0;
+}
+.sh-org-msg-bar a {
+  display: inline-block;
+  text-decoration: none;
+}
+.sh-org-msg-bar a:hover, .sh-org-msg-bar a:focus {
+  text-decoration-line: underline;
+  text-underline-offset: 0.4em;
+  text-decoration-thickness: 1px;
+}

@@ -2,8 +2,7 @@
 ---
 
 <div
-  class="sh-org-blog-teaser"
-  style="background-color: var(--color-henk-white, #f00);"
+  class="sh-org-blog-teaser"  
   id="blogsliderblock2_4"
 >
   <div class="sh-org-blog-teaser__section-header">
@@ -38,7 +37,7 @@
           </p>
         </a>
         <div class="sh-molecule-l-button-group" data-alignment="center">
-          <a href="/en/samples" class="sh-atom-button" data-style="filled">
+          <a href="/en/samples" class="henk-button henk-button--default">
             Order samples
 
             <svg
@@ -104,8 +103,7 @@
         <div class="sh-molecule-l-button-group" data-alignment="center">
           <a
             href="/en/interior-advice"
-            class="sh-atom-button"
-            data-style="filled"
+            class="henk-button henk-button--default"
           >
             Free appointment
 
@@ -169,7 +167,7 @@
         </a>
 
         <div class="sh-molecule-l-button-group" data-alignment="center">
-          <a href="/en/shops" class="sh-atom-button" data-style="filled">
+          <a href="/en/shops" class="henk-button henk-button--default">
             Find a store
 
             <svg
@@ -196,16 +194,20 @@
                 </g>
               </g>
               <style>
+                .sh-org-blog-teaser__grid-item > a {
+                    color: currentColor;
+                }
+                
                 #icon-arrow-right-animated #line,
                 #icon-arrow-right-animated #head {
                   transition: transform 0.2s ease;
                 }
 
-                .sh-atom-button:hover #icon-arrow-right-animated #line {
+                .henk-button:hover #icon-arrow-right-animated #line {
                   transform: scaleX(1.7);
                 }
 
-                .sh-atom-button:hover #icon-arrow-right-animated #head {
+                .henk-button:hover #icon-arrow-right-animated #head {
                   transform: translateX(10px);
                 }
               </style>

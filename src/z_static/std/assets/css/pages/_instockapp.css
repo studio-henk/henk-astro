@@ -1,0 +1,94 @@
+#instockapp .mdl-shop-product__link {
+  cursor: pointer;
+}
+#instockapp .mdl-shop-product .sh-molecule-l-button-group {
+  position: absolute;
+  right: 12px;
+  top: 20px;
+  margin: 0;
+  align-items: center;
+  gap: 8px;
+}
+#instockapp .fail-whale {
+  display: flex;
+  flex-direction: column;
+  background: hsl(0, 0%, 96%);
+  width: 100%;
+  height: 100%;
+  font-size: 3.3125rem;
+  place-content: center;
+  place-items: center;
+  border-radius: 8px 8px 0 0;
+}
+#instockapp .fail-whale::after {
+  content: "aww, there should have been an image here...";
+  font-size: 0.75rem;
+}
+#instockapp .sample__modal-heading-level2,
+#instockapp .product-dimensions {
+  font-size: 0.75rem;
+  line-height: 20px;
+}
+@media only screen and (min-width: 992px) {
+  #instockapp .sample__modal-heading-level2,
+  #instockapp .product-dimensions {
+    font-size: 1rem;
+    line-height: 28px;
+  }
+}
+#instockapp .product-dimensions {
+  list-style: none;
+  margin: 0;
+}
+#instockapp .product-dimensions li {
+  display: flex;
+  justify-content: space-between;
+}
+#instockapp .sample__modal-heading-level2 + ul {
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  #instockapp .sample__quickshop__container.sh-vue-modal {
+    grid-template-rows: 1fr;
+    align-items: center;
+  }
+  #instockapp .sample__quickshop .sh-l-grid {
+    grid-template-rows: 300px calc(90vh - 300px);
+  }
+  #instockapp .sample__quickshop .sh-l-grid__item + .sh-l-grid__item {
+    display: flex;
+    flex-direction: column;
+  }
+  #instockapp .sample__quickshop__content {
+    overflow: scroll;
+  }
+  #instockapp .sample__quickshop__addtocart-container {
+    margin: 0 32px 32px 32px;
+  }
+  @supports (min-height: 100dvh) {
+    #instockapp .sample__quickshop .sh-l-grid {
+      grid-template-rows: 300px calc(90dvh - 300px);
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  #instockapp .sample__quickshop .sh-l-grid > .sh-l-grid__item:first-child {
+    display: flex;
+  }
+  #instockapp .sample__quickshop .sh-l-grid__item + .sh-l-grid__item {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+  }
+  #instockapp .sample__quickshop .sh-l-grid .sh-l-grid__item .sample__modal-image {
+    max-height: none;
+  }
+  #instockapp .sample__quickshop__content {
+    height: auto;
+    overflow: auto;
+    padding: 0;
+  }
+}
+#instockapp .sample__quickshop__addtocart-container .cart__delivery {
+  display: inline-flex;
+}

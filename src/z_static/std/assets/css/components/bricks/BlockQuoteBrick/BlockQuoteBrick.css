@@ -1,0 +1,25 @@
+.BlockQuoteBrick {
+    background-color: var(--color-background-bqb, #fff);
+    color: var(--color-text-bqb, #000);
+    padding: 1.5rem;
+}
+
+.BlockQuoteBrick blockquote {
+    margin-top: 0;
+    max-width: unset;
+}
+
+.quote__text {
+    text-wrap: balance;
+}
+
+.quote__text:last-child,
+.quote__jobtitle {
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .BlockQuoteBrick {
+        padding: 5rem 2.5rem;
+    }
+}

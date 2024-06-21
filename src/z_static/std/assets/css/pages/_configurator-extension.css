@@ -1,0 +1,295 @@
+.configurator {
+  /* --size-card-item: 58;
+  --size-card-column-gap: 12; */
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .configurator {
+    /* --size-card-item: 88;
+    --size-card-column-gap: 40; */
+  }
+}
+
+@media only screen and (min-width: 414px) and (max-width: 767px) {
+  .configurator {
+    /* --size-card-column-gap: 22; */
+  }
+}
+
+/* #configurator__price1 {
+  position: absolute;
+  font-size: 1rem;
+  bottom: 24px;
+  left: 5%;
+  z-index: 1;
+} */
+
+/* @media only screen and (min-width: 1024px) {
+  #configurator__price1 {
+    font-size: 2.25rem;
+    bottom: 32px;
+  }
+} */
+
+/* #configurator__note {
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  left: 5%;
+  z-index: 1;
+} */
+
+.configurator__controls-row {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.configurator__container.container::after,
+.configurator__container.container::before,
+.configurator__container .row::after,
+.configurator__container .row::before {
+  content: none;
+}
+
+.configurator .configurator__container {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+
+.configurator__grid.configurator__grid--is-landscape {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.configurator__grid-item {
+  padding: 0;
+  float: none;
+  width: auto;
+}
+
+/*
+needed to position content below configurator image on portrait screens
+otherwise it would go under the image.
+*/
+.configurator__grid:not(.configurator__grid--is-landscape)
+  .configurator__right-column {
+  padding-top: calc(var(--size-height-for-configurator, 12rem) + 1rem);
+}
+
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__right-column {
+  padding-top: 2rem;
+}
+
+.configurator__right-column .product-configuration {
+  background-color: transparent;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.configurator__right-column .product-configuration .selector__label {
+  margin: 0 !important;
+}
+
+.configurator .steps + .steps {
+  margin: 0;
+}
+
+.selector__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.configurator__view {
+  background-color: var(--color-white, #fff);
+  margin: 0;
+  position: fixed;
+  z-index: 9;
+  /*cursor: default;*/
+}
+
+.configurator__grid:not(.configurator__grid--is-landscape) .configurator__view {
+  aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 56.25vw;
+  transition: all 0.3s ease;
+}
+
+.configurator__grid.configurator__grid--is-landscape .configurator__view {
+  width: 50%;
+}
+
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__view--image {
+  /* height: calc(100svh - var(--size-height-for-hero)); */
+  position: relative;
+}
+
+.choose-cards__item--image img:not(.texture) {
+  opacity: 1;
+}
+
+.configurator__grid.configurator__grid--is-landscape
+  .configurator__view--image
+  img {
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+.configurator .configurator__container > .configurator__grid,
+.configurator__controls-row {
+  margin: 0;
+}
+
+.configurator__right-column .choose-cards {
+  margin: 0;
+  /* column-gap: calc(var(--size-card-column-gap) / 16 * 1rem); */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.configurator__right-column .choose-cards__item {
+  /* zoom: unset; */
+  width: auto;
+  /* flex: 0 1 calc(var(--size-card-item) * 1px); */
+  padding: 0;
+  margin: 0;
+  hyphens: auto;
+  display: flex;
+  flex-flow: column wrap;
+  row-gap: 8px;
+  justify-content: flex-start;
+}
+
+.choose-cards__item--favorite {
+  height: auto;
+  top: unset;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.choose-cards__item--image {
+  margin: 0;
+}
+
+.configurator__right-column .choose-cards__item--image {
+  border: 0;
+}
+
+/* noinspection Stylelint */
+.configurator__right-column .choose-cards__item--image img.texture,
+.configurator__right-column .topEdgeType .choose-cards__item--image img {
+  border-radius: 50%;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 3px 4px rgb(0 0 0/14%);
+}
+
+.configurator__right-column .choose-cards__item--image::after {
+  background-color: var(--color-accent16, green);
+  top: 5%;
+}
+
+.configurator__right-column .choose-cards__item--image::before {
+  background: transparent
+    url("/static/std/assets/toolkit/svg-standalone/icon-checkmark-white.svg")
+    no-repeat 50%;
+  top: 8px;
+  right: 6px;
+}
+
+.configurator__right-column .choose-cards__item--label {
+  padding: 0;
+  text-align: center;
+}
+
+.configurator .configurator__right-column .product-summary {
+  width: 100%;
+  /* position: sticky; */
+  /* bottom: 0; */
+  z-index: 99;
+  padding: 1em;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.configurator .configurator__right-column .product-summary[data-is-sticky=true] {
+  /* position: unset; */
+  bottom: 0;
+}
+
+
+/* @media screen and (max-width: 767px) {
+  .configurator .configurator__right-column .product-summary {
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 60px;
+  }
+} */
+
+.product-specificaties {
+  padding: 1em;
+}
+
+.org-footer {
+  position: relative;
+  z-index: 99;
+}
+
+section.configurator ~ footer.org-footer {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .choose-cards__item--favorite {
+    width: 75px;
+    left: -8px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .configurator__right-column .choose-cards__item--image::before {
+    top: 6px;
+  }
+}
+
+/* 1280 */
+@media only screen and (min-width: 1280px) {
+  .configurator__grid.configurator__grid--is-landscape {
+    grid-template-columns: 60% 40%;
+  }
+
+  .configurator__grid.configurator__grid--is-landscape .configurator__view {
+    width: 60%;
+  }
+}
+
+/* 1920 */
+@media only screen and (min-width: 1920px) {
+  .configurator__grid.configurator__grid--is-landscape {
+    grid-template-columns: 70% 30%;
+  }
+
+  .configurator__grid.configurator__grid--is-landscape .configurator__view {
+    width: 70%;
+  }
+}
+
+#button-share {
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+}

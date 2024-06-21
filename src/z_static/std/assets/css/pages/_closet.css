@@ -1,0 +1,6 @@
+.closet_rows {
+  display: none;
+}
+.closet_rows__active {
+  display: block;
+}

@@ -1,0 +1,35 @@
+.styled-checklist {
+  list-style: none;
+  position: relative;
+}
+.styled-checklist > li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+.styled-checklist > li:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  background: url("/static/std/assets/toolkit/svg-standalone/icon-checkmark.svg");
+}
+
+ul.unstyled,
+ol.unstyled {
+  list-style: none;
+  margin-left: 0;
+}
+
+ul.basic-list {
+  margin-left: 16px;
+  margin-bottom: 16px;
+}
+ul.basic-list li:first-of-type {
+  font-weight: normal;
+}
+
+.sh-linklist a {
+  text-decoration: none;
+}

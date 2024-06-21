@@ -1,0 +1,16 @@
+@media only screen and (min-width: 992px) {
+  .sh-stories__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+    margin: 0 30px;
+  }
+}
+.sh-stories__story .sh-stories__content {
+  padding: 0 24px 33px 24px;
+}
+@media only screen and (min-width: 992px) {
+  .sh-stories__story .sh-stories__content {
+    padding: 0;
+  }
+}

@@ -1,0 +1,13 @@
+.BaseModal_open {
+    overflow: hidden;
+}
+
+.BaseModal_open .action-console {}
+
+.BaseModal_open .action-console[data-is-sticky=true] {
+    z-index: 99999;
+}
+
+.BaseModal_open .product-summary[data-is-sticky=true] {
+  position: unset;
+}

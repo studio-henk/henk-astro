@@ -1,0 +1,183 @@
+.sh-hero-block-campaign {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-feature-settings: "liga";
+}
+
+.sh-hero-block-campaign.--fade-in {
+  opacity: 1;
+}
+
+.sh-hero-block-campaign * {
+  padding: 0;
+  margin: 0;
+}
+
+.sh-hero-block-campaign__title {
+  font-size: 2.1875rem;
+  /*font-weight: 300;*/
+  line-height: 45px;
+  text-align: center;
+  /* letter-spacing: 1.5px; */
+  margin: 77px 0 19px 0;
+}
+
+.sh-hero-block-campaign__slogan {
+  font-size: 1rem;
+  line-height: 25px;
+  text-align: center;
+  /* letter-spacing: 1.2px; */
+  color: var(--color-black, #000);
+  padding-bottom: 81px;
+}
+
+.sh-hero-link-scroll {
+  position: absolute;
+  bottom: 25px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 25px;
+  /* letter-spacing: 0.2em; */
+  /* text-transform: uppercase; */
+  font-feature-settings: "pnum" on, "lnum" on;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 280px) {
+  .sh-hero-block-campaign__text {
+    position: absolute;
+    top: 128px;
+    text-align: center;
+    z-index: 99;
+    margin: 0;
+  }
+  .sh-hero-block-campaign__title {
+    color: #fff;
+  }
+  .sh-hero-block-campaign__slogan {
+    color: #fff;
+    padding: 0;
+  }
+  .sh-hero-block-campaign__image img {
+    height: calc(100vh - 52px - 57px);
+    object-fit: cover;
+    width: 100vw;
+  }
+}
+@media only screen and (min-width: 415px) {
+  .sh-hero-block-campaign {
+    justify-content: center;
+  }
+  .sh-hero-block-campaign__text {
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+    margin: 0;
+    top: auto;
+  }
+  .sh-hero-block-campaign__image img {
+    height: calc(100vh - 34px - 57px);
+    object-fit: cover;
+    width: 100vw;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .sh-hero-block-campaign__image img {
+    height: calc(100vh - 34px - 168px);
+  }
+  .sh-hero-block-campaign__title {
+    font-size: 3.3125rem;
+    line-height: 70px;
+    text-align: center;
+    /* letter-spacing: 0.04em; */
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1126px) {
+  .sh-hero-block-campaign__image img {
+    height: calc(100vh - 34px - 88px);
+  }
+  .sh-molecule-section-header__title {
+    font-size: 2.0625rem;
+    line-height: 50px;
+    /* letter-spacing: 0.07em; */
+  }
+}
+/* store blocks */
+.sh-org-block--stores * {
+  padding: 0;
+  margin: 0;
+}
+
+.sh-org-block--stores .sh-l-flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sh-org-block--stores .sh-l-flex__item {
+  background-color: #cbc6bc;
+  padding: 44px 24px 54px;
+  text-decoration: none;
+}
+
+.sh-org-block--stores .sh-store-title {
+  font-size: 0.875rem;
+  line-height: 25px;
+  font-weight: 400;
+  text-align: center;
+  /* letter-spacing: 0.2em; */
+  /* text-transform: uppercase; */
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: #1f1f1f;
+  margin-bottom: 36px;
+}
+
+.sh-org-block--stores .sh-l-flex__item:last-child {
+  background-color: #a2947f;
+  color: #fff;
+}
+
+.sh-org-block--stores .sh-l-flex__item:last-child .sh-store-title {
+  color: #fff;
+}
+
+.sh-org-block--stores .sh-atom__figure {
+  margin-bottom: 36px;
+}
+
+.sh-org-block--stores .sh-atom__figure + p {
+  line-height: 24px;
+  /* letter-spacing: 1.2px; */
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .sh-org-block--stores .sh-l-flex-container {
+    flex-direction: row;
+  }
+  .sh-org-block--stores .sh-l-flex__item {
+    flex: 1 1 50%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .sh-org-block--stores .sh-store-title {
+    margin-bottom: 54px;
+  }
+  .sh-org-block--stores .sh-l-flex__item {
+    padding: 3.6111111111vw 8.4722222222vw 4.7222222222vw;
+  }
+  .sh-org-block--stores .sh-atom__figure {
+    margin-bottom: 42px;
+  }
+}

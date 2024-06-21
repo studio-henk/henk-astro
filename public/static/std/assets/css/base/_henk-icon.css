@@ -1,0 +1,37 @@
+/* the i element is used for icons */
+.henk-icon {
+  display: inline-flex;
+  place-content: center;
+  padding: 2px;
+}
+
+/* default size is 20px for svg, 24px for i parent by padding */
+
+/* 
+size default = 24px -> icon size 20px 
+size medium = 20px -> icon size 16px
+size small = 16px -> icon size 12px
+*/
+
+.henk-icon.icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* 20 */
+.henk-icon.icon--large svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* 16 */
+.henk-icon.icon--medium svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* 12 */
+.henk-icon.icon--small svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}

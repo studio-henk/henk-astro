@@ -1,0 +1,132 @@
+.fabric-module {
+  margin-top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 45678983;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+@media (min-width: 768px) {
+  .fabric-module {
+    margin-top: 7rem;
+  }
+}
+.fabric-module__image {
+  position: relative;
+  overflow: hidden;
+  cursor: url("/static/std/assets/toolkit/images/icons/zoom.png"), default;
+  margin-bottom: 1rem;
+}
+@media (min-width: 544px) {
+  .fabric-module__image {
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .fabric-module__image {
+    margin-top: 0;
+  }
+}
+.fabric-module__image div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.fabric-module__image--zoom {
+  transition: transform 0.4s ease-out;
+}
+@media (max-width: 767px) {
+  .fabric-module__image--zoom {
+    transform: scale(1.6) !important;
+  }
+}
+@media (max-width: 543px) {
+  .fabric-module__image--zoom {
+    transform: scale(2) !important;
+  }
+}
+.fabric-module__image--loader {
+  background: url("../../toolkit/svg-standalone/loader.svg");
+  width: 64px;
+  height: 64px;
+  z-index: 45678989;
+  position: absolute;
+  left: 50%;
+  margin-left: -32px;
+  top: 50%;
+  margin-top: -32px;
+}
+.fabric-module__close {
+  z-index: 1051;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.fabric-module__close:before {
+  content: "ESC";
+  position: absolute;
+  bottom: 0;
+}
+.fabric-module__title {
+  margin: 0;
+}
+.fabric-module__subtitle {
+  margin-top: 0;
+  padding-bottom: 0.75rem;
+}
+.fabric-module__thumbs {
+  margin-top: 0;
+}
+.fabric-module__thumbs > h2 {
+  margin-top: 0;
+}
+.fabric-module__thumbs .choose-cards {
+  margin: 0 -8px;
+}
+.fabric-module__thumbs .choose-cards__item {
+  width: 16.6666666667%;
+}
+.fabric-module .fabric-collection-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+.fabric-module .fabric-collection-list__item {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+#fabric-module-zoom {
+  opacity: 0;
+  z-index: 45678984;
+}
+
+#fabric-module-zoom-backup {
+  z-index: 45678983;
+}
+
+#fabric-module .selector__bar--value span:first-of-type,
+.fabic-module__thumbs--title {
+  text-transform: capitalize;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.rotating {
+  animation: rotating 1.2s linear infinite;
+}

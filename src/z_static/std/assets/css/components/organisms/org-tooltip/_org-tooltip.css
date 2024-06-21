@@ -1,0 +1,100 @@
+/* stylelint-disable selector-class-pattern, custom-property-pattern, scss/dollar-variable-pattern */
+.sh-org-tooltip {
+  position: relative;
+  cursor: help;
+  margin-left: 8px;
+}
+.sh-org-tooltip.--with-text {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  line-height: 20px;
+  /* letter-spacing: 1.2px; */
+}
+@media only screen and (max-width: 279px) {
+  .sh-org-tooltip.--with-text {
+    text-indent: -999em;
+    background-color: transparent;
+    padding: 0;
+  }
+  .sh-org-tooltip.--with-text > svg {
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 280px) {
+  .sh-org-tooltip.--with-text > svg {
+    margin-right: 8px;
+  }
+}
+.sh-org-tooltip .sh-org-tooltip__content {
+  display: none;
+  position: absolute;
+  right: auto;
+  left: 0;
+  top: 32px;
+  border: 1px solid var(--color-henk-black, #000);
+  background-color: var(--color-henk-white, #fff);
+  padding: 12px;
+  color: var(--color-henk-black, #000);
+  font-size: 0.625rem;
+  line-height: 17px;
+  z-index: 9999;
+  text-align: left;
+  min-width: 166px;
+  width: 166px;
+  max-width: 220px;
+}
+.sh-org-tooltip[data-allowhtml]:hover .sh-org-tooltip__content,
+.sh-org-tooltip[data-allowhtml]:focus .sh-org-tooltip__content {
+  display: block;
+}
+
+.sh-org-tooltip > .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.sh-org-tooltip[data-content]:hover::after,
+.sh-org-tooltip[data-content]:focus::after {
+  content: attr(data-content);
+  position: absolute;
+  right: 0;
+  top: 24px;
+  min-width: 220px;
+  border: 1px solid var(--color-henk-black, #000);
+  /* border-radius: 10px; */
+  background-color: var(--color-henk-white, #fff);
+  padding: 12px;
+  color: #000;
+  font-size: 0.75rem;
+  line-height: 20px;
+  z-index: 9999;
+  text-align: left;
+  width: 75vw;
+  max-width: 250px;
+  text-indent: 0;
+}
+
+.sh-org-tooltip[data-direction="ltr"]:hover::after,
+.sh-org-tooltip[data-direction="ltr"]:focus::after {
+  left: 0;
+  right: auto;
+}
+
+.sh-org-tooltip[data-placement="top-down"]:hover::after,
+.sh-org-tooltip[data-placement="top-down"]:focus::after {
+  bottom: auto;
+  top: 24px;
+}
+
+.sh-org-tooltip[data-placement="bottom-up"]:hover::after,
+.sh-org-tooltip[data-placement="bottom-up"]:focus::after {
+  top: auto;
+  bottom: 24px;
+}
+
+:not(.selector__bar--value) > .sh-org-tooltip[data-content] {
+  margin-top: 8px;
+  margin-left: 0;
+}
