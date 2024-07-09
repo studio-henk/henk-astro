@@ -1,5 +1,5 @@
 .henk-button,
-::part(henk-button) {  
+::part(henk-button) {
   /* --_color-button-background: var(--color-ui-surface-default); */
   --_color-button-background: var(--color-ui-surface-transparent);
   --_color-button-text: var(--color-alias-primary);
@@ -47,9 +47,9 @@
 }
 
 .henk-button--secondary {
- --_color-button-background: var(--color-ui-surface-secondary);
- --_color-button-text: var(--color-ui-text-on-secondary);
- --_color-button-border: var(--color-ui-border-secondary); 
+  --_color-button-background: var(--color-ui-surface-secondary);
+  --_color-button-text: var(--color-ui-text-on-secondary);
+  --_color-button-border: var(--color-ui-border-secondary);
 }
 
 .henk-button--secondary:hover {
@@ -58,14 +58,12 @@
   --_color-button-border: var(--color-alias-secondary-dark);
 }
 
-.henk-button--default,
 .henk-button--tertiary {
   --_color-button-background: var(--color-ui-surface-tertiary);
   --_color-button-text: var(--color-ui-text-on-tertiary);
   --_color-button-border: var(--color-ui-border-tertiary);
 }
 
-.henk-button--default:hover,
 .henk-button--tertiary:hover {
   --_color-button-background: var(--color-alias-tertiary-dark);
   --_color-button-text: var(--color-ui-text-on-tertiary);
@@ -75,17 +73,17 @@
 /* same colour on top of same color */
 [class*="--BG-primary"] .henk-button--primary,
 [class*="--bg-primary"] .henk-button--primary {
-  --_color-button-border: var(--color-ui-border-on-primary); 
+  --_color-button-border: var(--color-ui-border-on-primary);
 }
 
 [class*="--BG-secondary"] .henk-button--secondary,
 [class*="--bg-secondary"] .henk-button--secondary {
-  --_color-button-border: var(--color-ui-border-on-secondary); 
+  --_color-button-border: var(--color-ui-border-on-secondary);
 }
 
 [class*="--BG-tertiary"] .henk-button--tertiary,
 [class*="--bg-tertiary"] .henk-button--tertiary {
-  --_color-button-border: var(--color-ui-border-on-tertiary); 
+  --_color-button-border: var(--color-ui-border-on-tertiary);
 }
 
 /* icon-only button */
@@ -106,7 +104,7 @@
   --_color-button-background: var(--color-ui-surface-disabled);
   --_color-button-text: var(--color-ui-text-disabled);
   --_color-button-border: var(--color-ui-border-default);
-  
+
   cursor: not-allowed;
 }
 
@@ -121,7 +119,8 @@
   overflow: hidden;
 }
 
-.henk-button[data-state="loading"]:before, .henk-button[data-state="loading"]:after {
+.henk-button[data-state="loading"]:before,
+.henk-button[data-state="loading"]:after {
   border-radius: 50%;
   width: 1.5em;
   height: 1.5em;
@@ -149,10 +148,11 @@
 
 @keyframes load8 {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
+
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -165,8 +165,16 @@
   --color-border-button: var(--_color-button-text);
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
+
+  .henk-button--default,
+  ::part(henk-button) {
+    /* --_color-button-background: var(--color-ui-surface-transparent); */
+    --_color-button-text: var(--color-alias-primary-light-aaa);
+    --_color-button-border: var(--color-alias-primary-light-aaa);
+  }
+
   .henk-button--tertiary {
     --_color-button-border: var(--color-ui-border-on-dark);
   }
-}  */
+}

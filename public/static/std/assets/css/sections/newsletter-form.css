@@ -1,0 +1,55 @@
+.henk-newsletter-form {
+  padding: 40px 24px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-ui-surface-default);
+  position: relative;
+  z-index: 9;
+}
+
+.henk-newsletter-form__container {
+  display: flex;
+  flex-direction: column;
+  /* gap: 24px; */
+  max-width: fit-content;
+}
+
+.henk-newsletter-form .henk-labeled-input {
+  margin-bottom: 0;
+}
+
+.henk-newsletter-form__actions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.henk-newsletter-form__title,
+.henk-newsletter-form__description {
+  max-width: 30em;
+}
+
+/* .henk-newsletter-form__description {
+  max-width: 30em;
+} */
+
+@media (min-width: 768px) {
+  .henk-newsletter-form .henk-labeled-input .henk-input {
+      margin-bottom: 0;
+  }
+
+  .henk-newsletter-form__container {
+      align-items: center;
+  }
+
+  .henk-newsletter-form__title,
+  .henk-newsletter-form__description {
+      text-align: center;
+      text-wrap: balance;
+  }  
+  
+  .henk-newsletter-form__actions-container {
+      flex-direction: row;
+      justify-content: flex-start;
+  }
+}
