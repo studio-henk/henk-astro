@@ -1,0 +1,20 @@
+.star-rating__stars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 4px;
+  line-height: 1;
+}
+
+.star-rating__rating {
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+
+.star-rating__reviews {
+  font-size: 10px;
+  line-height: 16px;
+  margin: 0;
+}

@@ -113,7 +113,8 @@
 /* @import "components/organisms/org-newsletter-form/_org-newsletter-form.css"; */
 /* @import "components/organisms/org-social-share/_org-social-share.css"; */
 /* @import "components/organisms/org-footer/_org-footer.css"; */
-@import "sections/footer.css";
+@import "sections/henk-footer.css";
+@import "components/star-rating.css";
 @import "components/organisms/org-button-counter/_org-button-counter.css";
 @import "components/organisms/org-addtocart-console/_org-addtocart-console.css";
 @import "components/organisms/org-segmented-control/_org-segmented-control.css";
